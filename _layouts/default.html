@@ -18,11 +18,11 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    {% if page.assets.js }
-      {% for script in page.assets.js }
+    {% if page.assets.js %}
+      {% for script in page.assets.js %}
         <script src="{{ script }}">
-      {% endfor }
-    {% endif }
+      {% endfor %}
+    {% endif %}
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
