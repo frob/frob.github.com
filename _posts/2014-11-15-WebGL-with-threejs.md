@@ -2,47 +2,11 @@
 layout: post
 title: WebGL with three.js
 canonical: http://www.kwallcompany.com/thought/webgl-threejs
+assets:
+  - js:
+    - //cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js
 ---
-
-     <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script><script>
-<!--//--><![CDATA[// ><!--
-
-   var scene = new THREE.Scene();
-   var camera = new THREE.PerspectiveCamera(45, 640/480, 1, 1000);
-   var renderer = new THREE.WebGLRenderer();
-   renderer.setSize(640, 480);
-   renderer.setClearColor(0x000000, 0);
-   jQuery("#content article .field-name-body").append(renderer.domElement);
-   jQuery("#content article .field-name-body canvas").css( {
-    "margin": "1em auto",
-    "display": "block"
-    });
-
-   var geometry = new THREE.BoxGeometry(1,1,1);
-   var material = new THREE.MeshLambertMaterial({color: 0x00ff00});
-   var cube = new THREE.Mesh(geometry, material);
-
-   var fog = THREE.Fog(0x000000, 1, 5);
-   var ambient = new THREE.AmbientLight( 0x101030 );
-   var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-   directionalLight.position.set( 0, 1, 0 );
-
-   scene.add(cube);
-   scene.fog = fog;
-   scene.add(ambient);
-   scene.add(directionalLight);
-
-   camera.position.z = 2;
-   var render = function () {
-    requestAnimationFrame(render);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    renderer.render(scene, camera);
-   };
-   render();
-
-//--><!]]>
-</script><canvas width="1280" height="960" style="width: 640px; height: 480px; margin: 1em auto; display: block;"></canvas><p>Everything is moving away from the compiled native app and over to a more naturally cross platform ehh, platform: the web browser. While this has the advantage of (those not using IE) to have the same experience no matter what platform the site (hence to forth to be known as the webapp) is running on. This does still have some limitations. One relitively new api that has come out of this is WebGL</p>
+<canvas width="1280" height="960" style="width: 640px; height: 480px; margin: 1em auto; display: block;"></canvas><p>Everything is moving away from the compiled native app and over to a more naturally cross platform ehh, platform: the web browser. While this has the advantage of (those not using IE) to have the same experience no matter what platform the site (hence to forth to be known as the webapp) is running on. This does still have some limitations. One relitively new api that has come out of this is WebGL</p>
 <p><a href="http://www.khronos.org/webgl/wiki/Main_Page" target="_blank">WebGL </a>is a way for web developers to directly access the <a href="http://www.opengl.org/" target="_blank">OpenGL </a>apis. WebGL has shown some remarkable adoption over the past few years and I have to think this is due to it being based on the very stable open apis from OpenGL. If you have used OpenGL (or any 3D programming) there is alot to do before anything can be rendered to the screen. I am not talking about art assets either, I am talking about templated boilerplate code that makes this stuff very tedios to start with. Luckily there are lots of Javascript people writing libraries so I don't have to rewrite the same boiler-plate code over and over again.</p>
 <h2>Enter Three.js</h2>
 <p><a href="http://threejs.org/" target="_blank">Three.js is a boiler-plate framework for building WebGL</a> applications. It takes care of much of the work that normally comes from building 3D apps and you can get up and running with a few lines of code.</p>
