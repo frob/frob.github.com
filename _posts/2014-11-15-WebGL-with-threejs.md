@@ -1,6 +1,6 @@
 ---
 layout: post
-title: You're up and running!
+title: WebGL with three.js
 canonical: http://www.kwallcompany.com/thought/webgl-threejs
 ---
 
