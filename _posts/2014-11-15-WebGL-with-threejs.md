@@ -2,6 +2,7 @@
 layout: post
 title: WebGL with three.js
 canonical: http://www.kwallcompany.com/thought/webgl-threejs
+tags: []
 assets:
   - js:
     - //cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js
