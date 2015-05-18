@@ -1,14 +1,17 @@
 ---
 layout: post
 title: WebGL with three.js
-canonical: http://www.kwallcompany.com/thought/webgl-threejs
-tags: []
+canonical: http://www.kwallcompany.com/blog/webgl-threejs
+category: New Web
+tags: [threejs, kwallcompany]
 assets:
-  - js:
-    - //cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js
+  js:
+    - "//code.jquery.com/jquery-1.11.3.min.js"
+    - "//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"
+    - "/assets/js/2014-11-15-webgl.js"
 ---
 <p>Everything is moving away from the compiled native app and over to a more naturally cross platform ehh, platform: the web browser. While this has the advantage of (those not using IE) to have the same experience no matter what platform the site (hence to forth to be known as the webapp) is running on. This does still have some limitations. One relitively new api that has come out of this is WebGL</p>
-<canvas width="1280" height="960" style="width: 640px; height: 480px; margin: 1em auto; display: block;"></canvas>
+<div id="screen-wrapper"></div>
 <p><a href="http://www.khronos.org/webgl/wiki/Main_Page" target="_blank">WebGL </a>is a way for web developers to directly access the <a href="http://www.opengl.org/" target="_blank">OpenGL </a>apis. WebGL has shown some remarkable adoption over the past few years and I have to think this is due to it being based on the very stable open apis from OpenGL. If you have used OpenGL (or any 3D programming) there is alot to do before anything can be rendered to the screen. I am not talking about art assets either, I am talking about templated boilerplate code that makes this stuff very tedios to start with. Luckily there are lots of Javascript people writing libraries so I don't have to rewrite the same boiler-plate code over and over again.</p>
 <h2>Enter Three.js</h2>
 <p><a href="http://threejs.org/" target="_blank">Three.js is a boiler-plate framework for building WebGL</a> applications. It takes care of much of the work that normally comes from building 3D apps and you can get up and running with a few lines of code.</p>

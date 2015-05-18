@@ -9,8 +9,11 @@ layout: default
     {{ content }}
   </div>
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+  <div class="date-author">
+    Written on {{ page.date | date: "%B %e, %Y" }} by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    {% if page.tags contains 'kwallcompany' %}
+      <div class="kwallcompany-mark"><a class="canonical-link" href="{{ page.canonical }}">{{ page.title }} was originally posted on kwallcompany.com</a>. Written while working for Kwall</div>
+    {% endif %}
   </div>
 
   {% include disqus.html disqus_identifier=page.disqus_identifier %}

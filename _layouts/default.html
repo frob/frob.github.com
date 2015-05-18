@@ -20,7 +20,7 @@
 
     {% if page.assets.js %}
       {% for script in page.assets.js %}
-        <script src="{{ script }}">
+        <script src="{{ script }}"></script>
       {% endfor %}
     {% endif %}
 
@@ -45,6 +45,7 @@
         </header>
       </div>
     </div>
+    <!-- <div id="debug"> {{ page.assets }} </div> -->
 
     <div id="main" role="main" class="container">
       {{ content }}

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Drupal or Wordpress? Why not Jekyll.
-canonical: http://www.kwallcompany.com/thought/wordpress-or-drupal-why-not-jekyll
-tags: [drupal, wordpress, jekyll]
+canonical: http://www.kwallcompany.com/blog/wordpress-or-drupal-why-not-jekyll
+tags: [drupal, wordpress, jekyll, kwallcompany]
 ---
 <p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler aprouch is a program called Jekyll. Noticed I didn't call Jekyll a Content Management System.</p>
 <p>So if Jekyll isn't a CMS then what is it? Jekyll is a "blog aware" static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.&nbsp;</p>
