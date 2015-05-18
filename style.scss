@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font: 18px/1.4 'Raleway', $helvetica;
   color: $darkGray;
 }
 
@@ -31,9 +31,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
+  font-family: 'Cutive Mono', $helveticaNeue;
   color: $darkerGray;
-  font-weight: bold;
+  font-weight: bolder;
 
   line-height: 1.7;
   margin: 1em 0 15px;
@@ -151,12 +151,12 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 }
 
 .masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  padding: 20px 0 0 0;
+  // border-bottom: 1px solid $lightGray;
 
   @include mobile {
     text-align: center;
@@ -194,16 +194,18 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $helveticaNeue;
+  font-family: 'VT323', $helveticaNeue;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 32px;
+  line-height: 0.6em;
   letter-spacing: 1px;
 }
 
 .site-description {
-  margin: -5px 0 0 0;
+  margin: 5px 0 0 0;
   color: $gray;
   font-size: 16px;
+  line-height: 2em;
 
   @include mobile {
     margin: 3px 0;
@@ -213,7 +215,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
+  font-family: 'VT323', $helveticaNeue;
   font-size: 18px;
 
   @include mobile {
@@ -244,6 +246,10 @@ nav {
 .posts > .post {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
+
+  h1 {
+    font-family: 'Cutive Mono';
+  }
 }
 
 .posts > .post:last-child {
