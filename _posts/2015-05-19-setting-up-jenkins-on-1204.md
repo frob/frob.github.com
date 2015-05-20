@@ -9,9 +9,9 @@ assets:
   css:
 ---
 
-What I have noticed, is that every step by step for installing Jenkins on Ubuntu 12.04 is currently wrong. I is wrong becasue Jenkins recently began to require Java 1.7 instead of 1.6.
+What I have noticed, is that every step by step for installing Jenkins on Ubuntu 12.04 is currently wrong. It is wrong because Jenkins recently began to require Java 1.7 instead of 1.6.
 
-I was able to find one saving grace. This site gave a great [step by step on installing Jenkins](http://www.whiteboardcoder.com/2014/01/install-jenkins-ubuntu.html) --which I am going to condence for you all here.
+I was able to find one saving grace. This site gave a great [step by step on installing Jenkins](http://www.whiteboardcoder.com/2014/01/install-jenkins-ubuntu.html) --which I am going to condense for you all here.
 
 ## Install the correct JAVA RTE
 
