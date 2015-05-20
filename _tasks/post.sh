@@ -18,8 +18,12 @@ read -d '' body <<EOF
 ---
 layout: post
 title: $title
-categories: 
-  - 
+canonical:
+category:
+tags: []
+assets:
+  js:
+  css:
 ---
 
 EOF

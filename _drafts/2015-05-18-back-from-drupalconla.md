@@ -3,7 +3,7 @@ layout: post
 title: Back from DrupalConLA (A postmortem)
 canonical:
 category: drupalcon
-tags: [drupal, drupalcon, public transportation, rant]
+tags: [drupalcon, public transportation, rant]
 assets:
   js:
   css:
