@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -29,6 +30,19 @@ module.exports = function(grunt) {
           drafts: true
         }
       }
+    },
+
+    shipit: {
+      default: {
+        workspace: '_site/',
+        deployTo: '~/frob.github.com',
+        // repositoryUrl: pkg.repository.url,
+        ignores: ['Gruntfile.js', 'node_modules', 'package.json'],
+        keepReleases: 3,
+        staging: {
+          servers: ['deploy@frankrobertanderson.com']
+        }
+      }
     }
   });
 
@@ -39,7 +53,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-jekyll');
 
+  // deployment tasks
+  grunt.loadNpmTasks('grunt-shipit');
+  grunt.loadNpmTasks('shipit-deploy');
+
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('pwd', function() {
+    grunt.shipit.remote('pwd', this.async());
+  });
 
 };
