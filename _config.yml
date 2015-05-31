@@ -6,7 +6,7 @@
 name: Frank Robert Anderson
 
 # Short bio or description (displayed in the header)
-description: I am a full Developer who does Drupal good and likes to do other stuff good too.
+description: I am a Developer who does web good and likes to do other stuff good too.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
@@ -14,6 +14,15 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 #
 # Flags below are optional
 #
+
+# Blogroll
+blogroll:
+  -
+    name: BTMash's blob of contradictions
+    url: http://btmash.com
+  -
+    name: LA Grafitti
+    url: https://lagraffiti.wordpress.com/
 
 # Includes an icon in the footer for each username you enter
 footer-links:

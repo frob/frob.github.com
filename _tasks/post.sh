@@ -11,7 +11,7 @@ d=$(date +"%Y-%m-%d")
 
 slug=$(echo $title | tr '[:upper:]' '[:lower:]' | tr '[:space:]' '-')
 slug="${slug:0:${#slug}-1}"
-post="./_posts/$d-$slug.md"
+post="./_drafts/$d-$slug.md"
 
 body=""
 read -d '' body <<EOF

@@ -55,7 +55,16 @@
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
-          {% include svg-icons.html %}
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            {% include svg-icons.html %}
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            {% for blogrollitem in site.blogroll %}
+            <a class="blogroll-item" href="{{ blogrollitem.url }}">{{ blogrollitem.name }}</a><br />
+            {% endfor %}
+          </div>
           <div class="copyright"> Copyright Frank Robert Anderson {{ site.time | date: '%Y' }} </div>
         </footer>
       </div>

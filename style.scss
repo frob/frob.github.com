@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 'Raleway', $helvetica;
+  font: $font-size/1.4 'Raleway', $helvetica;
   color: $darkGray;
 }
 
@@ -287,6 +287,28 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+  font-size: 0;
+
+  * {
+    vertical-align: top;
+  }
+
+  .social-icons {
+    font-size: $font-size;
+    display: inline-block;
+    width: 60%;
+  }
+
+  .blogroll {
+    font-size: $font-size;
+    display: inline-block;
+    width: 40%;
+  }
+
+  .copyright {
+    font-size: $font-size;
+    width: 100%;
+  }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
