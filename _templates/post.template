@@ -1,12 +1,14 @@
 ---
 layout: post
-title: {title}
-canonical: {original url}
-tags: [{array of tags}]
-category: {category}
+title: {{ title }}
+canonical: {{ canonical }}
+tags: {{ tags }}
+category: {{ category }}
 assets:
   js:
-    { array of js files, absolute }
+    - {{ js }}
   css:
-    { array of css files, absolute }
+    - {{ css }}
 ---
+
+{{ body }}
