@@ -11,6 +11,8 @@
     "vinyl-fs": "^1.0.0"
   },
   "scripts": {
-    "clean": "rm -rf node_modules && rm -rf _site"
+    "clean": "rm -rf node_modules && rm -rf _site",
+    "build": "jekyll build",
+    "prebuild": "npm install"
   }
 }
