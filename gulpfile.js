@@ -26,14 +26,14 @@ gulp.task('new-draft', function() {
   if (typeof options.title != 'undefined') {
     var title = options.title;
     var fullTitle = time.toString() + '-' + title.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.md';
-    var options = {
+    var swigOptions = {
       data: {
         title: title,
       }
     }
 
     return gulp.src('_templates/post.template')
-      .pipe(swig(options))
+      .pipe(swig(swigOptions))
       .pipe(rename(fullTitle))
       .pipe(vfs.dest('_drafts', { overwrite: false }));
   }
@@ -41,3 +41,10 @@ gulp.task('new-draft', function() {
     console.log("Please enter a title");
   }
 });
+
+gulp.task('publish-draft', function() {
+  var options = minimist(process.argv.slice(1));
+
+  return gulp.src('_drafts/' + options.draft)
+    .pipe(vfs.dest('_posts', {overwrite: options.overwrite | false}));
+})
