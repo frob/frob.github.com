@@ -29,6 +29,7 @@ gulp.task('new-draft', function() {
     var swigOptions = {
       data: {
         title: title,
+        body: options.body
       }
     }
 
