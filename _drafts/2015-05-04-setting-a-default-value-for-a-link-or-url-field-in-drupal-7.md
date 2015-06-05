@@ -2,7 +2,7 @@
 layout: post
 title: Setting a default value for a link or url field in Drupal 7
 canonical:
-tags: ["drupal"]
+tags: ["drupal", "fapi", "field"]
 category:
 assets:
   js:
