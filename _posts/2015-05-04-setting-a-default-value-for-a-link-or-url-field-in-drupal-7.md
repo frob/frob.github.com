@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Setting a default value for a link or url field in Drupal 7
+date: 2015-05-04
 canonical:
 tags: ["drupal"]
 category:

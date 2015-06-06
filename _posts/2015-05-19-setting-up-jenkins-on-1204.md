@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Setting Up Jenkins on 12.04
+date: 2015-05-19
 canonical:
 category:
 tags: []

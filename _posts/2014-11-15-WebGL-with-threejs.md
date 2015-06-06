@@ -1,6 +1,7 @@
 ---
 layout: post
 title: WebGL with three.js
+date: 2014-11-15
 canonical: http://www.kwallcompany.com/blog/webgl-threejs
 category: New Web
 tags: [threejs, kwallcompany]
