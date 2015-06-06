@@ -10,8 +10,11 @@
     {% if page.canonical == nil %}  <link rel="canonical" href="http://www.frobiovox.com{{ page.url }}" />  {% endif %}
 
     <meta name="author" content="{{ site.name }}" />
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% else %}
     <meta name="description" content="{{ site.description }}">
-
+    {% endif %}
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link href='http://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
 
     {% if page.assets.js %}
       {% for script in page.assets.js %}
