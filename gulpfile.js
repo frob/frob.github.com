@@ -1,9 +1,12 @@
 var gulp = require('gulp'),
     minimist = require('minimist'),
     swig = require('gulp-swig'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    taskListing = require('gulp-task-listing');
 
 var vfs = require('vinyl-fs');
+
+gulp.task('help', taskListing);
 
 gulp.task('default', function() {
   // do stuff
