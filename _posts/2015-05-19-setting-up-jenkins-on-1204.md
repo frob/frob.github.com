@@ -2,6 +2,7 @@
 layout: post
 title: Setting Up Jenkins on 12.04
 date: 2015-05-19
+description: "In this post Frank walks through the basics of setting up Jenkins to run on Ubuntu. This is a simple step by step with links to more information."
 canonical:
 category:
 tags: []

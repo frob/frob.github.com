@@ -2,6 +2,7 @@
 layout: post
 title: WebGL with three.js
 date: 2014-11-15
+description: "Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then."
 canonical: http://www.kwallcompany.com/blog/webgl-threejs
 category: New Web
 tags: [threejs, kwallcompany]
