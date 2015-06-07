@@ -1,6 +1,8 @@
 ---
 layout: post
 title: {{ title }}
+date: {{ date }}
+description: "{{ desc }}"
 canonical: {{ canonical }}
 tags: {{ tags }}
 category: {{ category }}
