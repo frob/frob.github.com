@@ -16,14 +16,19 @@ gulp.task('default', function() {
 gulp.task('new-draft', function() {
   var options = minimist(process.argv.slice(2));
 
-  var date = new Date();
-  var time = {
-    year: date.getFullYear(),
-    month: (date.getMonth() < 10 ) ? '0' + date.getMonth() : date.getMonth(),
-    day: (date.getDay() < 10 ) ? '0' + date.getDay() : date.getDay(),
-    toString: function() {
-      return this.year + '-' + this.month + '-' + this.day;
+  if (typeof options.date == 'undefined') {
+    var date = new Date();
+    var time = {
+      year: date.getFullYear(),
+      month: (date.getMonth() < 10 ) ? '0' + date.getMonth() : date.getMonth(),
+      day: (date.getDay() < 10 ) ? '0' + date.getDay() : date.getDay(),
+      toString: function() {
+        return this.year + '-' + this.month + '-' + this.day;
+      }
     }
+  }
+  else {
+    var time = { toString: function() { return options.date; }};
   }
 
   if (typeof options.title != 'undefined') {
@@ -32,6 +37,7 @@ gulp.task('new-draft', function() {
     var swigOptions = {
       data: {
         title: title,
+        date: time.toString(),
         body: options.body
       }
     }
