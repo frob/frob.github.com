@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Support should not be based on Marketshare
+date: 2013-10-06
+description: "Some general thoughts on the how and why of Graceful Degradation and Progressive Enhancement."
 canonical:
 tags:
 category:
