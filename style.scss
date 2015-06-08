@@ -19,9 +19,15 @@ html {
 
 body {
 	background: $white;
+  background-color: $lightGray;
   font: $font-size/1.4 'Raleway', $helvetica;
   color: $darkGray;
   line-height: 1.4em;
+}
+
+.not-footer {
+  background: $white;
+  padding-bottom: 1em;
 }
 
 .container {
@@ -37,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bolder;
 
   line-height: 1.7;
-  margin: 1em 0;
+  margin: 0 0 1em 0;
   padding: 0;
 
   @include mobile {
@@ -117,6 +123,11 @@ img {
 
 p {
   line-height: 1.7em;
+  font-size: 1.1em;
+}
+
+article.post {
+  padding: 1em 0 2.5em;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -222,10 +233,14 @@ p {
 }
 
 nav {
-  float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: 'VT323', $helveticaNeue;
-  font-size: 18px;
+  font-size: 16px;
+  width: 100%;
+  clear: both;
+  background-color: $black;
+  text-align: right;
+  padding: .1em;
 
   @include mobile {
     float: none;
@@ -236,14 +251,16 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: $white;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
+    display: inline-block;
 
     @include mobile {
+      color: $white;
       margin: 0 10px;
-      color: $blue;
+      background-color: $blue;
     }
   }
 }
@@ -254,7 +271,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
- // border-bottom: 1px solid $lightGray;
+  margin: 1em 0;
 
   h1 {
     font-family: 'Cutive Mono';
@@ -277,10 +294,12 @@ nav {
   }
 
   .author-info {
-    padding: .2em 1em;
+    padding: .1em 1em;
     background-color: #222;
     color: #eee;
     display: inline-block;
+    font-size: 16px;
+    font-family: 'VT323', $helveticaNeue;
   }
 
   .comments {
@@ -290,10 +309,11 @@ nav {
   .read-more {
     font-size: 0;
     display: block;
+    font-family: 'VT323', $helveticaNeue;
 
     &:after {
       text-transform: uppercase;
-      font-size: 11px;
+      font-size: 14px;
       content: "READ MORE";
       text-align: center;
       color: #eee;
@@ -310,9 +330,8 @@ nav {
 }
 
 .wrapper-footer {
-  margin-top: 50px;
+  margin-top: 0;
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
   background-color: $lightGray;
 }
 
@@ -338,8 +357,9 @@ footer {
   }
 
   .copyright {
-    font-size: $font-size;
+    font-size: 14px;
     width: 100%;
+    padding: 2em 0 .5em;
   }
 }
 
