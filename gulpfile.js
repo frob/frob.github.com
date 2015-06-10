@@ -18,10 +18,12 @@ gulp.task('new-draft', function() {
 
   if (typeof options.date == 'undefined') {
     var date = new Date();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
     var time = {
       year: date.getFullYear(),
-      month: (date.getMonth() < 10 ) ? '0' + date.getMonth() : date.getMonth(),
-      day: (date.getDay() < 10 ) ? '0' + date.getDay() : date.getDay(),
+      month: (month < 10 ) ? '0' + month : month,
+      day: (day < 10 ) ? '0' + day : day,
       toString: function() {
         return this.year + '-' + this.month + '-' + this.day;
       }
@@ -41,11 +43,12 @@ gulp.task('new-draft', function() {
         body: options.body
       }
     }
-
-    return gulp.src('_templates/post.template')
-      .pipe(swig(swigOptions))
-      .pipe(rename(fullTitle))
-      .pipe(vfs.dest('_drafts', { overwrite: false }));
+console.log(date.getMonth());
+console.log(fullTitle);
+    // return gulp.src('_templates/post.template')
+    //   .pipe(swig(swigOptions))
+    //   .pipe(rename(fullTitle))
+    //   .pipe(vfs.dest('_drafts', { overwrite: false }));
   }
   else {
     console.log("Please enter a title");
