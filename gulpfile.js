@@ -43,12 +43,11 @@ gulp.task('new-draft', function() {
         body: options.body
       }
     }
-console.log(date.getMonth());
-console.log(fullTitle);
-    // return gulp.src('_templates/post.template')
-    //   .pipe(swig(swigOptions))
-    //   .pipe(rename(fullTitle))
-    //   .pipe(vfs.dest('_drafts', { overwrite: false }));
+
+    return gulp.src('_templates/post.template')
+      .pipe(swig(swigOptions))
+      .pipe(rename(fullTitle))
+      .pipe(vfs.dest('_drafts', { overwrite: false }));
   }
   else {
     console.log("Please enter a title");
