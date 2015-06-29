@@ -260,7 +260,6 @@ nav {
     @include mobile {
       color: $white;
       margin: 0 10px;
-      background-color: $blue;
     }
   }
 }
@@ -271,7 +270,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  margin: 1em 0;
+  margin: 0 0 1em 0;
 
   h1 {
     font-family: 'Cutive Mono';
