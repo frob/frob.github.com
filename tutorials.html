@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<p class="subhead">These are the (often misspelled)  misadventures of Frank Anderson in blogging.</p>
+<p class="subhead">These are the past 10 posts that could be remotely classified as tutorials.</p>
 
 <div class="posts">
-  {% for post in site.tags.frontpage limit:10 %}
+  {% for post in site.tags.tutorial limit:10 %}
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>

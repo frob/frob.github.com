@@ -4,7 +4,7 @@ title: Creating screen-reader friendly read more  links
 date: 2014-05-06
 description: ""
 canonical:
-tags:
+tags: [tutorial, css, frontpage]
 category:
 assets:
   js:

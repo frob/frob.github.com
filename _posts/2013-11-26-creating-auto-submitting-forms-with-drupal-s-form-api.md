@@ -4,7 +4,7 @@ title: Creating Auto Submitting Forms with Drupal's Form API
 date: 2013-11-26
 description: ""
 canonical: http://www.kwallcompany.com/blog/creating-auto-submitting-forms-drupals-form-api
-tags: ['drupal', 'kwallcompany']
+tags: ['drupal', 'kwallcompany', tutorial]
 category:
 assets:
   js:

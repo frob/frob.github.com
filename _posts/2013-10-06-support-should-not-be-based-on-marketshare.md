@@ -4,7 +4,7 @@ title: Support should not be based on Marketshare
 date: 2013-10-06
 description: "Some general thoughts on the how and why of Graceful Degradation and Progressive Enhancement. No tutorials here, more philosophical than functional"
 canonical:
-tags: ['web development']
+tags: ['web development', rant, frontpage]
 category:
 assets:
   js:

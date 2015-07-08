@@ -4,7 +4,7 @@ title: Drupal or Wordpress? Why not Jekyll.
 date: 2015-01-27
 description: "Are you fedup with the offerings of Drupal, Wordpress, and other big CMS's? Then maybe a return to roots is in order. Let look at Jekyll"
 canonical: http://www.kwallcompany.com/blog/wordpress-or-drupal-why-not-jekyll
-tags: [drupal, wordpress, jekyll, kwallcompany]
+tags: [drupal, wordpress, jekyll, kwallcompany, tutorial, frontpage]
 ---
 If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler aprouch is a program called Jekyll. Noticed I didn't call Jekyll a Content Management System.
 

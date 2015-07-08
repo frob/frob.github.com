@@ -4,7 +4,7 @@ title: Utilizing Front End CSS Design Paradigms In Drupal
 date: 2014-01-24
 description: ""
 canonical: http://www.kwallcompany.com/blog/utilizing-front-end-css-design-paradigms-drupal
-tags: ["drupal", 'kwallcompany']
+tags: ["drupal", 'kwallcompany', tutorial, drupalcamp]
 category:
 assets:
   js:
