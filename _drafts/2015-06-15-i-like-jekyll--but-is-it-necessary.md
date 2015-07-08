@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I like jekyll, but is it nesesary?
+title: I like Jekyll, but is it necessary?
 date: 2015-06-15
 description: ""
 canonical:
