@@ -4,7 +4,7 @@ title: I like Jekyll, but is it necessary?
 date: 2015-06-15
 description: ""
 canonical:
-tags: [frontpage, drupal, rant]
+tags: [frontpage, rant]
 category:
 assets:
   js:
