@@ -55,7 +55,10 @@ file[property] = content.attributes;
 
 Due to my inexperience with Gulp I have no idea how to get to the file object. There is a hint in the documentation <q>.pipe(…) // you may want to take a look at gulp-marked at this point</q>. That was still not much help. So to the issue queue.
 
-### Issue Number 8: Expose frontMatter
+### Issue Number 8: Expose frontMatter, or not
 https://github.com/lmtm/gulp-front-matter/issues/8 talks about exposing the frontmatter or just better documentation in general as it seems to be a large issue with this package.
 
 My conclusion is that front-matter shouldn't be handled with gulp, but instead it should be handled by node. In this case the the front-matter will control the flow of the steam and thus it shouldn't be considered when reading the stream. The gulp-front-matter plugin will do one thing really well for me. It will strip the front-matter from my source and allow me to parse it with liquid or with markdown or whatever.
+
+## Bad plug-ins
+So, here it is. The liquid plugin just didn't work. I don't have the time to waist on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.
