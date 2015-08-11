@@ -1,0 +1,49 @@
+{
+  "name": "Frank Robert Anderson",
+  "description": "I am a Developer who does web good and likes to do other stuff good too.",
+  "avatar": "https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png",
+  "blogroll": [
+    {
+      "name": "BTMash's blob of contradictions",
+      "url": "http://btmash.com"
+    },
+    {
+      "name": "LA Grafitti",
+      "url": "https://lagraffiti.wordpress.com/"
+    }
+  ],
+  "footer-links": {
+    "dribbble": null,
+    "email": null,
+    "facebook": null,
+    "flickr": null,
+    "github": "frob",
+    "instagram": null,
+    "linkedin": null,
+    "pinterest": null,
+    "rss": null,
+    "twitter": "frobdfas",
+    "stackoverflow": null
+  },
+  "disqus": "frobiovox",
+  "google_analytics": "UA-11010946-5",
+  "url": "https://www.frobiovox.com",
+  "baseurl": "",
+  "markdown": "redcarpet",
+  "highlighter": "pygments",
+  "permalink": "/posts/:year/:month/:day/:title.html",
+  "version": "v2.0.0",
+  "sass": {
+    "sass_dir": "_scss",
+    "style": ":expanded"
+  },
+  "gems": [
+    "jekyll-sitemap"
+  ],
+  "exclude": [
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE",
+    "README.md"
+  ]
+}

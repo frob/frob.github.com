@@ -1,0 +1,18 @@
+
+<p class="subhead">These are the (possibly misspelled)  misadventures of Frank Anderson in blogging.</p>
+
+<div class="posts">
+  {% for post in site.tags.frontpage limit:10 %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <aside class="author-info">Written on {{ post.date | date: "%B %e, %Y" }}</aside>
+      <p>If things look a little funny, it is because I finally have gottent around to bring in some of my old content and it still isn't quite ported.</p>
+      <div class="entry">
+        {{ post.content | truncatewords:40}}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More about {{ post.title }}</a>
+    </article>
+  {% endfor %}
+</div>

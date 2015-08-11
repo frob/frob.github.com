@@ -60,3 +60,35 @@ gulp.task('publish-draft', function() {
   return gulp.src('_drafts/' + options.draft)
     .pipe(vfs.dest('_posts', {overwrite: options.overwrite | false}));
 })
+
+// Adding exparamental stuff that may one day make it so I don't have to build with jekyll
+var yaml = require('gulp-yaml');
+var frontMatter = require('gulp-front-matter');
+var liquid = require("gulp-liquid");
+
+gulp.task('test-config', function() {
+  // var config = gulp.src('./_config.yml')
+  //   .pipe(yaml({ space: 2 }))
+  //   .pipe(gulp.dest('./gulp-dist/'));
+
+   var i = gulp.src("./_layouts/default.html")
+       .pipe(liquid({
+           locals: {
+             site: {
+               name: "fun time"
+             }
+           }
+       }))
+       .pipe(gulp.dest("./gulp-dist"));
+})
+
+gulp.task('test-index', function() {
+  var index = gulp.src('./index.html')
+    .pipe(frontMatter({ // optional configuration
+      property: 'frontMatter', // property added to file object
+      remove: true // should we remove front-matter header?
+    }));
+    console.log(index);
+    // console.log(slide_properties);
+    index.pipe(gulp.dest('./gulp-dist/'))
+})
