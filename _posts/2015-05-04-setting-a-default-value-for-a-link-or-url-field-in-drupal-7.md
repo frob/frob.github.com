@@ -4,7 +4,7 @@ title: Setting a default value for a link or url field in Drupal 7
 date: 2015-05-04
 description: "Sometimes the best solution is to do something hacky. I am not saying this is the best way to make Drupal forms autosubmit. I am only saying that this is one way."
 canonical:
-tags: ["drupal", tutorial, frontpage]
+tags: ["drupal", tutorial, frontpage, 'quarzack13']
 category:
 assets:
   js:
