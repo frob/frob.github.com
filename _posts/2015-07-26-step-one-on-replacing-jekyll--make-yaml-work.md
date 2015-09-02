@@ -16,7 +16,7 @@ assets:
 As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.
 
 # YAML Parsing
-First am trying to use (npm-yaml)[https://www.npmjs.com/package/gulp-yaml]. Simple installation, ```npm install --save-dev npm-yaml```. And it works great with the \_config file that holds general site information. So I try it with the html.
+First am trying to use [npm-yaml](https://www.npmjs.com/package/gulp-yaml). Simple installation, ```npm install --save-dev npm-yaml```. And it works great with the \_config file that holds general site information. So I try it with the html.
 
 ```javascript
 gulp.task('test-index', function() {
@@ -44,7 +44,7 @@ Error: JS-YAML: end of the stream or a document separator is expected at line 12
 
 Hmmm, It looks like the YAML Front matter will be a bit more dificult.
 
-First I tried (yaml-front-matter)[https://www.npmjs.com/package/yaml-front-matter], which wasn't what I wanted. It works with node but I was hoping to find a gulp plugin. So I found (gulp-front-matter)[https://github.com/lmtm/gulp-front-matter] which looks promising. This one is a gulp plugin and it looks like it will work, but it isn't well documented. Looks like I have some code to read.
+First I tried [yaml-front-matter](https://www.npmjs.com/package/yaml-front-matter), which wasn't what I wanted. It works with node but I was hoping to find a gulp plugin. So I found [gulp-front-matter](https://github.com/lmtm/gulp-front-matter) which looks promising. This one is a gulp plugin and it looks like it will work, but it isn't well documented. Looks like I have some code to read.
 
 ## Bad documentation
 I read the code and the only hint looks to be here on line 40
