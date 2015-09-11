@@ -4,7 +4,7 @@ title: "Add Some Style to Your JavaScript Log"
 date: 2015-09-10
 description: "Style can be passes as a parameter to the console.log function."
 canonical:
-tags: frontpage, tutorials
+tags: frontpage, tutorials, browsers, debug
 category:
 assets:
   js:
