@@ -52,7 +52,7 @@ I you are not aware already, there are quite a few methods available in the glob
 
 ### Results across browsers
 
-In the console. From the screen shots below you will see that this works will all modern browsers (although, I don't have direct access to a PC with IE or Edge at the moment, but I will assume they work too).
+In the console. From the screen shots below you will see that this works will all modern browsers (although, I don't have direct access to a PC with IE or <del>Edge</del> at the moment, <del>but I will assume they work too</del>).
 
 **Chrome**
 
@@ -65,3 +65,6 @@ In the console. From the screen shots below you will see that this works will al
 **Firefox Firebug**
 
 <img class="image-center" src="/images/2015091003.png" />
+
+#### Appendix
+This doesn't work in Edge.
