@@ -24,6 +24,8 @@ So it was time to open my console. This is what I found.
 
 Which lead to the question "how did he do that?"
 
+<aside class="inline">The that in question is the stylish console message. From the image one can see colors and drop shadows. Neat!</aside>
+
 # How <span title="The colorful console message">**_that_**</span> is done.
 
 I you are not aware already, there are quite a few methods available in the global ```console``` object. If you are not familure I recommend the [Mozilla Developer Network pages on ```console```](https://developer.mozilla.org/en-US/docs/Web/API/consol). Some methods of importance are:
