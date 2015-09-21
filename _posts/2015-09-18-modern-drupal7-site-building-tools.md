@@ -4,7 +4,7 @@ title: Modern Drupal7 Site Building Tools
 date: 2015-09-18T00:00:00.000Z
 description: ""
 canonical: null
-tags: null
+tags: [drupal, frontpage, quarzack13]
 category: null
 assets:
   js:
@@ -109,7 +109,7 @@ Drupal 7 is not the new hotness. It is the old standard. As such the libraries t
 
 To this end, I use jQuery update. It is simple, it allows the site-builder to pick a version of jQuery to use with a theme. It also facilitates loading that version from a CDN and the loading of the jQuery migrate module.
 
-** Notice ** If using the CDN, pick it before starting with theming. Not every CDN will have the same code for the same versions of jQuery.
+**Notice** If using the CDN, pick it before starting with theming. Not every CDN will have the same code for the same versions of jQuery.
 
 ## [Ember](https://www.drupal.org/project/ember)
 
