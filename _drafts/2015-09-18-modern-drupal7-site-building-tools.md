@@ -21,15 +21,27 @@ Drupal8 is nearly out and it might seem as though Drupal 7 has lost its steam. H
 
 I know, I know, many of these modules are not new and this isn't a list of everything someone will need to build a site; this is a list of modules that allow site builders and someone with some front-end skill to build complicated sites with little to no custom module code.
 
-## [Views](https://www.drupal.org/project/views)
+## [View Field](https://www.drupal.org/project/viewfield)
+
+Not to be confused with [Views Field](https://www.drupal.org/project/views_field), the [View Field](https://www.drupal.org/project/viewfield) Module allows site-builders to add fields to entities that allow the content editor to add views to fields. These views are configurable per piece of content. This means there can be a basic page content type that can have all the things that a page shoule have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing.
 
 ## [Entity Views Attach](https://www.drupal.org/project/eva)
 
+Unlike [View Field](https://www.drupal.org/project/viewfield), this module is all about the same view as a field on an entity. This module allows the site-builders to configure a view to act like a field on an entity bundle. For an example, we want to have a list of all the content that a user has flagged on the user's profile page, and the design has that list in the middle of the rest of the fields. With this module the listing can be configured to be a pseudo field on the users entity that is then free to be positioned along with the rest of the user fields.
+
 ## [Block Class](https://www.drupal.org/project/block_class)
+
+Very simple, put classes on blocks.
+
+## [Fences](https://www.drupal.org/project/fences)
+
+Drupal, out-of-the-box puts classes on everything with wrappers on wrappers on wrappers, in an attempt to do all things for all use-cases. As is shown over and over again, if something attempts to do all things it will inevitably do all things poorly. This is one of those things that, arguably, Drupal does poorly.
+
+[Fences](https://www.drupal.org/project/fences) attempts to tame this problem on the field level by making the wrappers for fields configurable. This has drawbacks: one of the cleanest options is to have no wrapper, and while this sounds like a good idea, it is not. This can lead one field to run into the next and can really just make things more difficult to target with css; Also, this module forces field to be wrapped on a per field bases instead of a per display basis. This might sound like it is forcing the site-builder to think semantically about the content, semantics can change based on display so this is to be used with a bit of caution.
 
 ## [Field Formatter Class](https://www.drupal.org/project/field_formatter_class)
 
-## [Fences](https://www.drupal.org/project/fences)
+Simple, put classes on field wrappers. Notice I said wrappers. This doesn't put the class on the field, so when used in conjunction with the [Fences](https://www.drupal.org/project/fences) Module's no wrapper, this can lead to confusing results as no class is rendered because no wrapper is rendered.
 
 ## [Elements](https://www.drupal.org/project/elements)
 
