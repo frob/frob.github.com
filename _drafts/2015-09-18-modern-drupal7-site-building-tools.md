@@ -53,13 +53,29 @@ I know, I know, many of these modules are not new and this isn't a list of every
 
 ## [jQuery Update](https://www.drupal.org/project/jquery_update)
 
+Drupal 7 is not the new hotness. It is the old standard. As such the libraries that where once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.
+
+To this end, I use jQuery update. It is simple, it allows the site-builder to pick a version of jQuery to use with a theme. It also facilitates loading that version from a CDN and the loading of the jQuery migrate module.
+
 ## [Ember](https://www.drupal.org/project/ember)
+
+This is the new admin theme hotness from Aquia. It is semantic and accessible and it follows the Aquia's style guidelines. Ember is still in development so expect some glitches.
+
+I recommend creating a sub-theme of this theme so that furhter customization can be done without having to hack at ember.
 
 ## [Ember Support](https://www.drupal.org/project/ember_support)
 
+Does some stuff that ember cannot due in the theme space.
+
 ## [Menu Attributes](https://www.drupal.org/project/menu_attributes)
 
+This modules adds attributes to menu items and menu links. This means that there is no more needing to theme off of a System generated mlid based class.
+
+Why is theming off of a system generated mlid based class bad. Because this can change from install to install. Just like theming off of node id, theming off of menu link id is a bad idea.
+
 ## [Field Group](https://www.drupal.org/project/field_group)
+
+Seriously, why isn't this in core? This is what a module should be; it allows users to put the fields in groups, both in the form display and in the view mode display. This module also allows for the use of vertical tabs, jquery ui tabs for horizontal tabs, and collapsable groups.
 
 ## [Speedboxes](https://www.drupal.org/project/speedboxes)
 
