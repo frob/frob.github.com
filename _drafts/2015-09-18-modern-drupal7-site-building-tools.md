@@ -6,10 +6,10 @@ description: ""
 canonical: null
 tags: null
 category: null
-assets: 
-  js: 
+assets:
+  js:
     - null
-  css: 
+  css:
     - null
 published: true
 ---
@@ -25,15 +25,15 @@ I know, I know, many of these modules are not new and this isn't a list of every
 
 ## [Title](https://www.drupal.org/project/title)
 
-Originally designed to make up for the short coming of Drupal 7 keeping the title as a property (not a field) and what that meant for entity translations. This is a module that I use for every site for one reason. It makes the title into a field. This allows it to be placed in a view mode like any other field. Used in congunction with Fences and this allow for semantic and accessible markup in any view mode with a wide veriety of layouts.
+Originally designed to make up for the short coming of Drupal 7 keeping the title as a property (not a field) and what that meant for entity translations. This is a module that I use for every site for one reason. It makes the title into a field. This allows it to be placed in a view mode like any other field. Used in conjunction with Fences and this allow for semantic and accessible markup in any view mode with a wide variety of layouts.
 
 ## [Field Group](https://www.drupal.org/project/field_group)
 
-Seriously, why isn't this in core? This is what a module should be; it allows users to put the fields in groups, both in the form display and in the view mode display. This module also allows for the use of vertical tabs, jquery ui tabs for horizontal tabs, and collapsable groups.
+Seriously, why isn't this in core? This is what a module should be; it allows users to put the fields in groups, both in the form display and in the view mode display. This module also allows for the use of vertical tabs, jquery ui tabs for horizontal tabs, and collapsible groups.
 
 ## [Fences](https://www.drupal.org/project/fences)
 
-Drupal, out-of-the-box, puts classes on everything with wrappers on wrappers on wrappers in an attempt to do all things for all use-cases. As is shown over and over again thoughout history, if something attempts to do all things it will inevitably [do all things poorly](https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II). This is one of those things that, arguably, Drupal does poorly.
+Drupal, out-of-the-box, puts classes on everything with wrappers on wrappers on wrappers in an attempt to do all things for all use-cases. As is shown over and over again throughout history, if something attempts to do all things it will inevitably [do all things poorly](https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II). This is one of those things that, arguably, Drupal does poorly.
 
 [Fences](https://www.drupal.org/project/fences) attempts to tame this problem on the field level by making the wrappers for fields configurable. This has drawbacks: One of the cleanest options is to have no wrapper, and while this sounds like a good idea, it is not. This can lead one field to run into the next and can really just make things more difficult to target with css; Also, this module forces fields to be wrapped on a per field bases instead of a per display basis. This might sound like it is forcing the site-builder to think semantically about the content, however, semantics can change based on display so this is to be used with a bit of caution.
 
@@ -47,7 +47,7 @@ Simple, put classes on field wrappers. Notice I said wrappers. This doesn't put 
 
 ## [Context](https://www.drupal.org/project/context)
 
-Really it is Context and all the moduels that support Context, such as [Context Entity Field](https://www.drupal.org/project/context_entity_field). Context is sort of like the [Rules](https://www.drupal.org/project/rules) Module and core's block placement had a baby. It is based on the idea that, if 'thing' is true (condition) then (reaction) will happen. 
+Really it is Context and all the modules that support Context, such as [Context Entity Field](https://www.drupal.org/project/context_entity_field). Context is sort of like the [Rules](https://www.drupal.org/project/rules) Module and core's block placement had a baby. It is based on the idea that, if 'thing' is true (condition) then (reaction) will happen.
 
 At first this module was thought of as an alternative to <span title="the devil">Panels</span>. However, it does much more than place blocks. With it (and the before mentioned helper module) a site-builder can add a select list to a node and have that select list add classes to the page body or add template suggestions to that node based on the content editor's input --all without code.
 
@@ -75,9 +75,9 @@ Unlike [View Field](https://www.drupal.org/project/viewfield), this module is al
 
 ## [Bean](https://www.drupal.org/project/bean)
 
-Bean stands for <q>Block Entities Arn't Nodes.</q> This is a stab at the [other way of doing this](https://www.drupal.org/project/nodeblock).
+Bean stands for <q>Block Entities Aren't Nodes.</q> This is a stab at the [other way of doing this](https://www.drupal.org/project/nodeblock).
 
-Block's are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features --because blocks ar'nt entities and don't have fields.
+Block's are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features --because blocks are'nt entities and don't have fields.
 
 Beans can have fields, because a Bean is a new type of entity, a block entity. This also gives us a better experience for content editors that will be building blocks. Content editors are given revisions, and a block listing page that works just like the content listing page. This means we can have views of blocks too.
 
@@ -115,7 +115,7 @@ To this end, I use jQuery update. It is simple, it allows the site-builder to pi
 
 This is the new admin theme hotness from Aquia. It is semantic and accessible and it follows the Aquia's style guidelines. Ember is still in development so expect some glitches.
 
-I recommend creating a sub-theme of this theme so that furhter customization can be done without having to hack at ember.
+I recommend creating a sub-theme of this theme so that further customization can be done without having to hack at ember.
 
 ## [Ember Support](https://www.drupal.org/project/ember_support)
 
@@ -131,7 +131,7 @@ This is a module that truly must be seen to be believed; it is one of those modu
 
 What it does is allow the site-builder to draw a rectangular area around check boxes and then check/uncheck/toggle all the selected checkboxes. This makes configuring the user permission page so much easier.
 
-The down side to this module used to be that did this on every page or forced the user to use a bookmarklet as a toggle. I recently took over maintanership of this module and I have changed it so that the library responsible only loads on the permissions page and the organic groups permissions page.
+The down side to this module used to be that did this on every page or forced the user to use a bookmarklet as a toggle. I recently took over maintainership of this module and I have changed it so that the library responsible only loads on the permissions page and the organic groups permissions page.
 
 ## Installation
 
@@ -140,7 +140,7 @@ To install these modules just type:
 drush dl context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
 ```
 
-```bash 
+```bash
 drush en context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
 ```
 If you do not what to have to confirm over and over again, then you will probably want to pass the ```-y``` flag to the drush command.
