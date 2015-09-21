@@ -45,23 +45,37 @@ Simple, put classes on field wrappers. Notice I said wrappers. This doesn't put 
 
 ## [Elements](https://www.drupal.org/project/elements)
 
-## [Viewfield](https://www.drupal.org/project/viewfield)
+This is an old module based on the idea that new things happen and it isn't always the core team that should have to deal with new things. Today this module allows for more modern form api stuff to be rendered. Check the project page for specific details.
 
 ## [Entity View Mode](https://www.drupal.org/project/entity_view_mode)
 
+Personally, I like code, and I like to write my view modes with code. But this module works too. This module allows the site-builder to add view modes to any bundle on any entity. There is one large drawback, all this stuff is stored in one big variable. That means the a features export with the strongarm module will get all the settings for all the bundles on all content types. There is movement in the issue queue to make this less all-or-nothing but for now, this is how it is.
+
 ## [Node Class](https://www.drupal.org/project/node_class)
+
+I love modules that put classes on things that content people or site-builders can configure. This is one of those modules. It allows the content editor to put classes on nodes.
 
 ## [Display Suite](https://www.drupal.org/project/ds)
 
-## [Skinr](https://www.drupal.org/project/skinr)
+If I had one major complaint about Display Suite, it would be that it does too much (even though it does everything pretty well). With this modules a site-builder can: override/layout entity forms, add view modes to bundles, add/remove fields from display, wrap fields in wrappers, and much much more. Read the project description and watch some tutorial videos for more.
 
 ## [Context](https://www.drupal.org/project/context)
 
+Really it is Context and all the moduels that support Context, such as [Context Entity Field](https://www.drupal.org/project/context_entity_field). Context is sort of like rules and block placement had a baby. It is based on the idea that, if thing is true (condition) then (reaction). At first this module was thought of as an alternative to <span title="the devil">Panels</span>. However, it does much more. With it (and the before mentioned module) a site-builder can add a select list to a node and have that select list add classes to the page body or add template suggestions to that node --all without code.
+
 ## [Less](https://www.drupal.org/project/less)
+
+Less!?!, I thought everyone used sass now and less was gone. Nope, less is awesome. It is just as awesome as sass and there is nothing that can be done with sass that cannot be done with less.
+
+Once the flame war dies down, continue reading.
+
+This module does a really cool thing. It ties Drupal's css attaching with a less compiler. This less compiler can be php based, such as the old Lefo php less compiler, or the new less.php compiler. It can even be the lessjs node plugin that is installed on the server. I works with css aggregation and it works with the autoprefixing node postCSS plugin as well.
+
+**Notice** there is a sass Drupal module that works with the old Lefo sass library. However, both the php lib and the Drupal module are not well supported.
 
 ## [Bootstrap Theme](https://www.drupal.org/project/bootstrap)
 
-## [Bootstrap Library](https://www.drupal.org/project/bootstrap_library)
+Bootstap is a fine front-end framework, and if you are building a site for boostrap developers then this is the place to go. I like to use [Bootstrap Library](https://www.drupal.org/project/bootstrap_library) for actually adding the Boostrap code.
 
 ## [jQuery Update](https://www.drupal.org/project/jquery_update)
 
@@ -99,7 +113,7 @@ The down side to this module used to be that did this on every page or forced th
 
 ## [Title](https://www.drupal.org/project/title)
 
-Originally designed to make up for the short coming of Drupal 7 keeping the title as a property and what that meant for entity translations. This is a module that I use for everysite for one reason. It makes the title into a field. This allows it to be placed in a view mode like any other field. Used in congunction with Fences and this allow for semantic and accessible markup in any view mode with a wide veriety of layouts.
+Originally designed to make up for the short coming of Drupal 7 keeping the title as a property and what that meant for entity translations. This is a module that I use for every site for one reason. It makes the title into a field. This allows it to be placed in a view mode like any other field. Used in congunction with Fences and this allow for semantic and accessible markup in any view mode with a wide veriety of layouts.
 
 ## [Bean](https://www.drupal.org/project/bean)
 
