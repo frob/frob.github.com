@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Modern Drupal7 Site Building Tools
-date: 2015-09-18T00:00:00.000Z
+date: 2015-09-22T00:00:00.000Z
 description: ""
 canonical: null
 tags: [drupal, frontpage, quarzack13]
