@@ -17,7 +17,7 @@ published: true
 
 ## Why build a site with Drupal 7
 
-Drupal8 is nearly out making Drupal 7 look like it isn't an appealing choice. However, Drupal 7 is still a contender. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.
+Drupal8 is nearly out making Drupal 7 look like it isn't an appealing choice. However, Drupal 7 is still a contender for the conviences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.
 
 # The Modules
 
