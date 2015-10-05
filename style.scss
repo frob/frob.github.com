@@ -375,6 +375,30 @@ footer {
   display: block;
 }
 
+.no-first-bullets > ul > li {
+  list-style: none;
+  list-style-type: none;
+}
+
+aside.inline {
+  background-color: #EEE;
+  display: block;
+  padding: 1.5em;
+  line-height: 1.5em;
+  padding-left: 4em;
+  position: relative;
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0.05em;
+    left: -.25em;
+    content: ">";
+    color: white;
+    font-size: 12em;
+  }
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "_highlights";
