@@ -1,13 +1,16 @@
 ---
 layout: post
 title: Reflecting on Elixir and Phoenix
-date: 2015-10-03T00:00:00.000Z
+snarktitle: The future is now
+date: 2015-10-09T12:02:17.000Z
 description: "I reflect on what I have seen at ElixirConf 2015, what does this mean for Drupal, and Why use Elixir or Phoenix instead of Drupal or Jekyll."
 canonical: null
 tags:
   - drupal
   - elixir
   - jekyll
+  - frontpage
+  - quarzack13
 category: null
 assets:
   js:
@@ -32,7 +35,7 @@ Elixir is a functional language that compiles down to Erlang. Erlang was develop
 
 # What is [Phoenix](http://www.phornixframework.com)?
 
-[Phoenix](http://www.phornixframework.com) is a Rails-like MVC framework that is written in Elixir. Phoenix makes good use of Elixir's tools (such as mix, plug, and ecto) and other Elixir components to create a highly scalable, fault-tolerant, and highly available web-application framework. This is still a very bare-bones and brand new framework. Phoenix 1.0.0 was just released. While I am very impressed, there are still some pieces that are missing. <mark>Some of these piece are missing in Rails and other MVC based frameworks as well</mark>. This is one reason I seldom use (or recommend) a MVC for back-end development.
+[Phoenix](http://www.phornixframework.com) is a Rails-like MVC framework that is written in Elixir. Phoenix makes good use of Elixir's tools (such as mix, plug, and ecto) and other Elixir components to create a highly scalable, fault-tolerant, and highly available web-application framework. This is still a very bare-bones and brand new framework. Phoenix 1.0.0 was just released. While I am very impressed, there are still some pieces that are missing. <em>Some of these piece are missing in Rails and other MVC based frameworks as well</em>. This is one reason I seldom use (or recommend) a MVC for back-end development.
 
 ## Phoenix feature overview?
 
