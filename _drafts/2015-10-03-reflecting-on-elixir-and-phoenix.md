@@ -4,15 +4,15 @@ title: Reflecting on Elixir and Phoenix
 date: 2015-10-03T00:00:00.000Z
 description: "I reflect on what I have seen at ElixirConf 2015, what does this mean for Drupal, and Why use Elixir or Phoenix instead of Drupal or Jekyll."
 canonical: null
-tags: 
+tags:
   - drupal
   - elixir
   - jekyll
 category: null
-assets: 
-  js: 
+assets:
+  js:
     - null
-  css: 
+  css:
     - null
 published: true
 ---
@@ -20,19 +20,19 @@ published: true
 
 ## The New Hotness
 
-I read a post recently that had the click bait title "Is Drupal Dying?" Ironiclly I read this while attending [ElixirConf](http://www.elixirconf.com). The basis of that post was clients asking for the <q>next</q> thing --expecting Drupal to be old and busted in five years.
+I read a post recently that had the click bait title "Is Drupal Dying?" Ironically I read this while attending [ElixirConf](http://www.elixirconf.com). The basis of that post was clients asking for the <q>next</q> thing --expecting Drupal to be old and busted in five years.
 
-I am at ElixirConf because I see great potential in Elixir, Erlang, and [Phoenix](http://www.phornixframework.com). I expect it to be the next big thing and for it to help provide a scailable platform for highly available, highly scailable, and interactive/dynamic websites.
+I am at ElixirConf because I see great potential in Elixir, Erlang, and [Phoenix](http://www.phornixframework.com). I expect it to be the next big thing and for it to help provide a scalable platform for highly available, highly scalable, and interactive / dynamic websites.
 
-I consider myself a technologyst. As such, I am always looking for the <q>next</q> thing. However, I would caution my clients against it.
+I consider myself a technologist. As such, I am always looking for the <q>next</q> thing. However, I would caution my clients against it.
 
 # What is Elixir?
 
-Elixir is a functional language that compiles down to Erlang. Erlang was developed by Ericson to run their phone switches. It is a fault-tollerant language that is designed to handle connections. However, Erlang is a difficult language to work with. Here are some examples about [how Elixir simplifies Erlang](http://elixir-lang.org/crash-course.html).
+Elixir is a functional language that compiles down to Erlang. Erlang was developed by Ericson to run their phone switches. It is a fault-tolerant language that is designed to handle connections. However, Erlang is a difficult language to work with. Here are some examples about [how Elixir simplifies Erlang](http://elixir-lang.org/crash-course.html).
 
 # What is [Phoenix](http://www.phornixframework.com)?
 
-[Phoenix](http://www.phornixframework.com) is a Rails-like MVC framework that is written in Elixir. Phoenix makes good use of Elixir's tools (such as mix, plug, and ecto) and other Elixir components to create a highly scalable, fault-tollerant, and highly available web-application framwork. This is still a very bare-bones and brand new framework. Phoenix 1.0.0 was just released. While I am very impressed, there are still some piecies that are missing. <mark>Some of these piece are missing in Rails and other MVC based frameworks as well</mark>. This is one reason I seldom use (or recommend) a MVC for backend development.
+[Phoenix](http://www.phornixframework.com) is a Rails-like MVC framework that is written in Elixir. Phoenix makes good use of Elixir's tools (such as mix, plug, and ecto) and other Elixir components to create a highly scalable, fault-tolerant, and highly available web-application framework. This is still a very bare-bones and brand new framework. Phoenix 1.0.0 was just released. While I am very impressed, there are still some pieces that are missing. <mark>Some of these piece are missing in Rails and other MVC based frameworks as well</mark>. This is one reason I seldom use (or recommend) a MVC for back-end development.
 
 ## Phoenix feature overview?
 
@@ -43,17 +43,17 @@ The thing to remember is that phoenix is a bare metal type of framework. All it 
  - **Routes**
    - Paths to content, these can be dynamic.
  - **Plugs**
-   - Modules of additional functionallity. The connections is pushed through the Plugs and the Plugs affect the connection.
+   - Modules of additional functionality. The connections is pushed through the Plugs and the Plugs affect the connection.
  - **Models**
-   - Definitions (schemas) of data.
+   - Definition (schema) of data.
  - **Views**
    - How the data is displayed
  - **Controllers**
    - How the data can be manipulated.
 
-The nice thing about Phoenix is that it uses many pieces of tech form Elixir but it is also built to play well with other techknowlagies.
+The nice thing about Phoenix is that it uses many pieces of tech form Elixir but it is also built to play well with other technologies.
 
-# Some not-scientific-at-all&trade; benchmarks.
+# Some not-scientific-at-all &trade; benchmarks.
 
 I am testing with apache benchmark. Running 1000 requests with 100 concurrent users. I am not going to do a test of Drupal, I will only be comparing Phoenix to a site that was statically generated beforehand and delivered with NGINX. Test where done with apache benchmark.
 
@@ -142,7 +142,7 @@ Completed 900 requests
 Completed 1000 requests
 Finished 1000 requests
 
-Server Software:        
+Server Software:
 Server Hostname:        127.0.0.1
 Server Port:            4000
 
@@ -182,15 +182,15 @@ Percentage of the requests served within a certain time (ms)
  100%   1168 (longest request)
 ```
 
-All this test does is make me think Phoenix might be onto something. This isn't desisive, however, Phoenix was delivering dynamic pages to the browser nearly as fast as nginx was delivering static files.
+All this test does is make me think Phoenix might be onto something. This isn't decisive, however, Phoenix was delivering dynamic pages to the browser nearly as fast as nginx was delivering static files.
 
-This definitally warrents further testing. My next test might be with some more complicated models and user access controlls. However, my interest with Phoenix has more to do with the websocket handling. These where the preliminary tests to see if Phoenix is even worth my limited time. 
+This definitely warrants further testing. My next test might be with some more complicated models and user access controls. However, my interest with Phoenix has more to do with the web-socket handling. These where the preliminary tests to see if Phoenix is even worth my limited time.
 
 It is.
 
 # Drupal's heel
 
-My opinion is that Drupal's biggest streangth (and the root of it's staying power) comes from our (as in the Drupal Community) acceptance that things change. Drupal 7 was a huge step forward from Drupal 6. Dld apis where gone or changed in ways that where incompatible with Drupal 6. Remember that when Drupal 7 was released, no one was even developing on Drupal 6 anymore --everyone was using Pressflow. 
+My opinion is that Drupal's biggest strength (and the root of it's staying power) comes from our (as in the Drupal Community) acceptance that things change. Drupal 7 was a huge step forward from Drupal 6. Old apis where gone or changed in ways that where incompatible with Drupal 6. Remember that when Drupal 7 was released, no one was even developing on Drupal 6 anymore --everyone was using Pressflow.
 
 Drupal 8, from all I can see, *gives us more tools out of the box than any other site building platform*. This is a good time.
 
