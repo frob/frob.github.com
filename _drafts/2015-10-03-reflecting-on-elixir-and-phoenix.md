@@ -1,23 +1,30 @@
 ---
 layout: post
 title: Reflecting on Elixir and Phoenix
-date: 2015-10-03
+date: 2015-10-03T00:00:00.000Z
 description: "I reflect on what I have seen at ElixirConf 2015, what does this mean for Drupal, and Why use Elixir or Phoenix instead of Drupal or Jekyll."
-canonical:
-tags: [drupal, elixir, jekyll]
-category:
-assets:
-  js:
-    -
-  css:
-    -
+canonical: null
+tags: 
+  - drupal
+  - elixir
+  - jekyll
+category: null
+assets: 
+  js: 
+    - null
+  css: 
+    - null
+published: true
 ---
+
 
 ## The New Hotness
 
-I read a post recently that had the click bait title "Is Drupal Dying?" Ironiclly I read this while attending [ElixirConf](http://www.elixirconf.com). The basis of that post was clients asking for the <q>next</q> thing --expecting Drupal to be old and busted by then.
+I read a post recently that had the click bait title "Is Drupal Dying?" Ironiclly I read this while attending [ElixirConf](http://www.elixirconf.com). The basis of that post was clients asking for the <q>next</q> thing --expecting Drupal to be old and busted in five years.
 
-I am at ElixirConf because I see great potential in Elixir, Erlang, and [Phoenix](http://www.phornixframework.com). I expect them to be the next big thing and to really provide a scailable platform for highly available, highly scailable, and interactive/dynamic websites.
+I am at ElixirConf because I see great potential in Elixir, Erlang, and [Phoenix](http://www.phornixframework.com). I expect it to be the next big thing and for it to help provide a scailable platform for highly available, highly scailable, and interactive/dynamic websites.
+
+I consider myself a technologyst. As such, I am always looking for the <q>next</q> thing. However, I would caution my clients against it.
 
 # What is Elixir?
 
@@ -25,18 +32,18 @@ Elixir is a functional language that compiles down to Erlang. Erlang was develop
 
 # What is [Phoenix](http://www.phornixframework.com)?
 
-[Phoenix](http://www.phornixframework.com) is a Rails-like MVC framework that is written in Elixir. Phoenix makes good use of Elixir's tools (such as mix, plug, and ecto) and other Elixir components to create a highly scalable, fault-tollerant, and highly available web-application framwork. This is still a very bare-bones and brand new framework. Phoenix 1.0.0 was just released. While I am very impressed, there are still some piecies that are missing. Some of these piece are missing in Rails and other MVC based frameworks. This is one reason I seldom use MVC for backend development.
+[Phoenix](http://www.phornixframework.com) is a Rails-like MVC framework that is written in Elixir. Phoenix makes good use of Elixir's tools (such as mix, plug, and ecto) and other Elixir components to create a highly scalable, fault-tollerant, and highly available web-application framwork. This is still a very bare-bones and brand new framework. Phoenix 1.0.0 was just released. While I am very impressed, there are still some piecies that are missing. <mark>Some of these piece are missing in Rails and other MVC based frameworks as well</mark>. This is one reason I seldom use (or recommend) a MVC for backend development.
 
 ## Phoenix feature overview?
 
-The thing to remember is that phoenix is a bare metal type of framework. All it gives the developer out-of-the-box is Endpoints, Routes, Plugs, Models, Views, and Controllers.
+The thing to remember is that phoenix is a bare metal type of framework. All it gives the developer out-of-the-box are: **Endpoints**, **Routes**, **Plugs**, **Models**, **Views**, and **Controllers**.
 
  - **Endpoints**
    - Where the client can connect; web-sockets and http.
  - **Routes**
-   - Paths to content
+   - Paths to content, these can be dynamic.
  - **Plugs**
-   - Points of additional functionallity. The connections is pushed through the Plugs and the Plugs affect the connection.
+   - Modules of additional functionallity. The connections is pushed through the Plugs and the Plugs affect the connection.
  - **Models**
    - Definitions (schemas) of data.
  - **Views**
@@ -44,7 +51,7 @@ The thing to remember is that phoenix is a bare metal type of framework. All it 
  - **Controllers**
    - How the data can be manipulated.
 
-The nice thing about Phoenix is that it uses many pieces of tech form Elixir and other places to embrace outside tech.
+The nice thing about Phoenix is that it uses many pieces of tech form Elixir but it is also built to play well with other techknowlagies.
 
 # Some not-scientific-at-all&trade; benchmarks.
 
@@ -54,7 +61,7 @@ I am testing with apache benchmark. Running 1000 requests with 100 concurrent us
 
 ## Static Site served with __nginx__
 
-This is a site that I have in production. It was Drupal, I retired the site and archived it to static html. The web-server is running nginx and it only serves static sites.
+This is a site that I have in production. It was Drupal, I retired the site and archived it to static html. The web-server is running nginx and it only serves static sites. Neither Phoenix or NGINX are being used in a completely optimized way. Remember, these are not-scientific-at-all&trade; benchmarks.
 
 ```
 01:18 $ ab -n 1000 -c 100 http://www.lnltowing.com/
@@ -114,7 +121,7 @@ Percentage of the requests served within a certain time (ms)
 
 ## Dynamic site served with __Phoenix__
 
-This is Phoenix running on my local machine in dev mode with live code reloading. I added a couple custom models and controllers, but otherwise it is basically vanilla Phoenix.
+This is Phoenix running on my local machine in dev mode with live code reloading. I added a couple custom models and controllers, but otherwise it is basically vanilla Phoenix in development mode.
 
 ```
 01:16 $ ab -n 1000 -c 100 http://127.0.0.1:4000/admin/content
@@ -175,12 +182,16 @@ Percentage of the requests served within a certain time (ms)
  100%   1168 (longest request)
 ```
 
-All this test does is make me think I might be onto something. This isn't definitve, however, Phoenix was delivering dynamic pages to the browser nearly as fast as nginx was delivering static files.
+All this test does is make me think Phoenix might be onto something. This isn't desisive, however, Phoenix was delivering dynamic pages to the browser nearly as fast as nginx was delivering static files.
 
-This definitally warrents further testing. My next test will be with some more complicated models and user access controlls.
+This definitally warrents further testing. My next test might be with some more complicated models and user access controlls. However, my interest with Phoenix has more to do with the websocket handling. These where the preliminary tests to see if Phoenix is even worth my limited time. 
+
+It is.
 
 # Drupal's heel
 
-My opinion is that Drupal's biggest streangth (and the root of it's staying power) comes from our (as in the Drupal Community) acceptance that things change. Drupal 7 was a huge step forward from Drupal 6 old apis where gone or changed in ways that where incompatible with Drupal 6. Remember that when Drupal 7 was released, no one was developing on Drupal 6 --everyone was using Pressflow. Drupal 8, from all I can see, *gives us more tools out of the box than any other site building platform*. This is a good time.
+My opinion is that Drupal's biggest streangth (and the root of it's staying power) comes from our (as in the Drupal Community) acceptance that things change. Drupal 7 was a huge step forward from Drupal 6. Dld apis where gone or changed in ways that where incompatible with Drupal 6. Remember that when Drupal 7 was released, no one was even developing on Drupal 6 anymore --everyone was using Pressflow. 
 
-For the longest time I thought Drupal's biggest problem was PHP --and I mostly still think that. The difference between now and 5 years ago is that PHP's development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real good concepts. PHP is still really fast. Big pipe can work, things are possible. All of this gives me hope. It gives me hope for Drupal.
+Drupal 8, from all I can see, *gives us more tools out of the box than any other site building platform*. This is a good time.
+
+For the longest time I thought Drupal's biggest problem was PHP --and I mostly still think that. The difference between now and 5 years ago is that PHP's development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real potential. PHP has always been really fast and it is still really fast. Big pipe is the <q>new thing</q> for PHP and it can work, things are possible. All of this gives me hope. It gives me hope for Drupal.
