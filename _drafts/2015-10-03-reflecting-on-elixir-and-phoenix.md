@@ -177,10 +177,10 @@ Percentage of the requests served within a certain time (ms)
 
 All this test does is make me think I might be onto something. This isn't definitve, however, Phoenix was delivering dynamic pages to the browser nearly as fast as nginx was delivering static files.
 
-This definitally warrents further testing.
+This definitally warrents further testing. My next test will be with some more complicated models and user access controlls.
 
 # Drupal's heel
 
 My opinion is that Drupal's biggest streangth (and the root of it's staying power) comes from our (as in the Drupal Community) acceptance that things change. Drupal 7 was a huge step forward from Drupal 6 old apis where gone or changed in ways that where incompatible with Drupal 6. Remember that when Drupal 7 was released, no one was developing on Drupal 6 --everyone was using Pressflow. Drupal 8, from all I can see, *gives us more tools out of the box than any other site building platform*. This is a good time.
 
-For the longest time I thought Drupal's biggest problem was PHP --and I still think that. The difference now from 5 years ago is that PHP's development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real good concepts. And php is still really fast. Big pipe is a reality, it could work, things are possible. All of this gives me hope. It gives me hope for Drupal.
+For the longest time I thought Drupal's biggest problem was PHP --and I mostly still think that. The difference between now and 5 years ago is that PHP's development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real good concepts. PHP is still really fast. Big pipe can work, things are possible. All of this gives me hope. It gives me hope for Drupal.
