@@ -24,6 +24,7 @@ To be clear I didn't write this [snippit](http://jekyllsnippets.com/excluding-js
     ---
 
     [
+    {% raw %}
     {% for post in site.posts %}
         {
           "title"    : "{{ post.title }}",
@@ -32,6 +33,7 @@ To be clear I didn't write this [snippit](http://jekyllsnippets.com/excluding-js
           "content"  : "{{ post.content | escape }}"
         } {% if forloop.last %}{% else %},\{% endif %}
     {% endfor %}
+    {% endraw %}
     ]
 
 ```
@@ -47,6 +49,7 @@ With this snippit (added for convenience) we get most of the way there. My plan 
     ---
 
     [
+    {% raw %}
     {% for post in site.posts %}
         {
           "title"    : "{{ post.title }}",
@@ -57,6 +60,7 @@ With this snippit (added for convenience) we get most of the way there. My plan 
           "description"  : "{{ post.description | escape }}"
         } {% if forloop.last %}{% else %},{% endif %}
     {% endfor %}
+    {% endraw %}
     ]
 
 ```
@@ -73,6 +77,7 @@ layout: nil
 ---
 
 [
+{% raw %}
 {% for post in site.posts %}
     {
       "title"    : "{{ post.title }}",
@@ -95,14 +100,24 @@ layout: nil
       "description"  : "{{ post.description | escape }}"
     } {% if forloop.last %}{% else %},{% endif %}
 {% endfor %}
+{% endraw %}
 ]
 
 ```
 
 This gives me a single listing page. Now we need posts.
 
-> Aside note. Jekyll is having a really hard time with this post. It keeps wanting to parse the liquid in the code examples.
+> Aside note. Jekyll is having a really hard time with this post. It keeps wanting to parse the liquid in the code examples. Thankfully [Jekyll Liquid now has a proper escaping system](http://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags). Use ```liquid{% raw %}{% raw %}{% endraw %}```.
 
 ## Building the posts. NPM to the rescue (maybe)
 
+## Footnotes
 
+Jekyll complains about using ```ruby nill``` for a layout type. It doesn't break, but I also create two layout templates json_default.json and json.json. Now that it is working, I will rename the templates to something abit more meaningful:
+
+```bash
+default.json
+post.json
+```
+
+I think these are better names.
