@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     minimist = require('minimist'),
     swig = require('gulp-swig'),
     rename = require('gulp-rename'),
-    taskListing = require('gulp-task-listing');
+    taskListing = require('gulp-task-listing'),
+    replace = require('gulp-replace');;
 
 var vfs = require('vinyl-fs');
 
@@ -10,6 +11,12 @@ gulp.task('help', taskListing);
 
 gulp.task('default', function() {
   // do stuff
+});
+
+gulp.task('build-api', function() {
+  return gulp.src('_posts/*')
+    .pipe(replace(/layout\: post/, 'layout: json'))
+    .pipe(vfs.dest('api/v01/posts', { overwrite: true }));
 });
 
 // Add a new post
