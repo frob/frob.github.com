@@ -24,14 +24,14 @@ To be clear I didn't write this [snippit](http://jekyllsnippets.com/excluding-js
     ---
 
     [
-    \{% for post in site.posts %}
+    {% for post in site.posts %}
         {
           "title"    : "{{ post.title }}",
           "url"     : "{{ post.url }}",
           "date"     : "{{ post.date | date: "%B %d, %Y" }}",
           "content"  : "{{ post.content | escape }}"
-        } \{% if forloop.last %}{% else %},\{% endif %}
-    \{% endfor %}
+        } {% if forloop.last %}{% else %},\{% endif %}
+    {% endfor %}
     ]
 
 ```
@@ -47,7 +47,7 @@ With this snippit (added for convenience) we get most of the way there. My plan 
     ---
 
     [
-    \{% for post in site.posts %}
+    {% for post in site.posts %}
         {
           "title"    : "{{ post.title }}",
           "url"     : "{{ post.url }}",
@@ -55,8 +55,8 @@ With this snippit (added for convenience) we get most of the way there. My plan 
           "tags"  : {{ post.tags }},
           "categories"  : {{ post.categories }},
           "description"  : "{{ post.description | escape }}"
-        } \{% if forloop.last %}{% else %},{% endif %}
-    \{% endfor %}
+        } {% if forloop.last %}{% else %},{% endif %}
+    {% endfor %}
     ]
 
 ```
