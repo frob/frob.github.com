@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: Creating Auto Submitting Forms with Drupal's Form API
 date: 2013-11-26
 description: ""

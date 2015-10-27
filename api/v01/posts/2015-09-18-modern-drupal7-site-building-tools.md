@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: Modern Drupal7 Site Building Tools
 date: 2015-09-22T00:00:00.000Z
 description: ""

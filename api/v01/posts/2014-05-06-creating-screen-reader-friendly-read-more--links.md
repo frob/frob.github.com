@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: Creating screen-reader friendly read more  links
 date: 2014-05-06
 description: ""

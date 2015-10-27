@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: I like Jekyll, but is it necessary?
 date: 2015-06-15
 description: ""

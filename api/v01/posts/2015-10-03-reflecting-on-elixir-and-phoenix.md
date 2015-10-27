@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: Reflecting on Elixir and Phoenix
 snarktitle: The future is now
 date: 2015-10-09T12:02:17.000Z

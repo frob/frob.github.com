@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: Utilizing Front End CSS Design Paradigms In Drupal
 date: 2014-01-24
 description: ""

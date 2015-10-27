@@ -15,7 +15,7 @@ gulp.task('default', function() {
 
 gulp.task('build-api', function() {
   return gulp.src('_posts/*')
-    .pipe(replace(/layout\: post/, 'layout: json'))
+    .pipe(replace(/layout\: post/, 'layout: json\nsitemap: false'))
     .pipe(vfs.dest('api/v01/posts', { overwrite: true }));
 });
 

@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: Step One on replacing Jekyll, make yaml work
 date: 2015-07-26
 description: ""

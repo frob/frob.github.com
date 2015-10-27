@@ -1,5 +1,6 @@
 ---
 layout: json
+sitemap: false
 title: Back from DrupalConLA (A postmortem)
 canonical:
 category: drupalcon
