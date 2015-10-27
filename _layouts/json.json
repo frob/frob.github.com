@@ -2,24 +2,24 @@
 layout: json_default
 ---
 
-    {
-      "title"    : "{{ page.title }}",
-      "url"     : "{{ page.url }}",
-      "permalink": "/posts/{{ page.date | date: "%Y/%B/%d" }}/{{ page.path | replace: 'api/v01/posts/', '' | replace: '.md', '' }}.html",
-      "date"     : "{{ page.date | date: "%B %d, %Y" }}",
-      {% if page.tags %} "tags"  : [
-        {% for tag in page.tags %} "{{ tag }}"
-        {% if forloop.last %}{% else %},{% endif %}
-        {% endfor %}
-        ],
-      {% endif %}
-      {% if page.tags == nil %} "tags"  : [],  {% endif %}
-      {% if page.categories %} "categories"  : [
-        {% for category in page.categories %} "{{ category }}"
-        {% if forloop.last %}{% else %},{% endif %}
-        {% endfor %}
-        ],
-      {% endif %}
-      {% if page.categories == nil %} "categories"  : [],  {% endif %}
-      "content"  : "{{ content | escape }}"
-    }
+{
+  "title"    : "{{ page.title }}",
+  "url"     : "{{ page.url }}",
+  "permalink": "/posts/{{ page.date | date: "%Y/%B/%d" }}/{{ page.path | replace: 'api/v01/posts/', '' | replace: '.md', '' }}.html",
+  "date"     : "{{ page.date | date: "%B %d, %Y" }}",
+  {% if page.tags %} "tags"  : [
+    {% for tag in page.tags %} "{{ tag }}"
+    {% if forloop.last %}{% else %},{% endif %}
+    {% endfor %}
+    ],
+  {% endif %}
+  {% if page.tags == nil %} "tags"  : [],  {% endif %}
+  {% if page.categories %} "categories"  : [
+    {% for category in page.categories %} "{{ category }}"
+    {% if forloop.last %}{% else %},{% endif %}
+    {% endfor %}
+    ],
+  {% endif %}
+  {% if page.categories == nil %} "categories"  : [],  {% endif %}
+  "content"  : "{{ content | escape }}"
+}
