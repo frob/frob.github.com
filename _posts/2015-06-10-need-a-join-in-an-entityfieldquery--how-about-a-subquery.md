@@ -5,9 +5,11 @@ date: 2015-06-10
 description: "Did you know that EntityFieldQueries can have subqueries? They can."
 canonical:
 tags:
-  - Drupal
-  - Tutorial
+  - drupal
+  - tutorial
 category:
+  - drupal
+  - tutorial
 assets:
   js:
     -
