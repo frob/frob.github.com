@@ -17,7 +17,8 @@ assets:
 
 I saw this over at [stackexchange](http://drupal.stackexchange.com/a/153695/17227) and I had to write about it.
 
-Shaddap and give me the code:
+_**Shaddap and give me the code:**_
+
 ```php
 $query = new EntityFieldQuery();
 $query->entityCondition('entity_type', 'user');
