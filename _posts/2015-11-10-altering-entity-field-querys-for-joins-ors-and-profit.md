@@ -8,7 +8,12 @@ tags:
   - Frontpage
   - Drupal
   - Tutorial
-category: null
+  - quarzack13
+category: 
+  - tutorial
+  - drupal
+  - frontpage
+  - quarzack13
 assets: 
   js: 
     - null
