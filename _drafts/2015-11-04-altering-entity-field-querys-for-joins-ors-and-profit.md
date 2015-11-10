@@ -1,22 +1,26 @@
 ---
 layout: post
 title: Altering Entity Field Querys for JOINS ORs and Profit
-date: 2015-11-04
+date: 2015-11-04T00:00:00.000Z
 description: "EntityFieldQueries are one of the most useful things in Drupal 7, using tags we can get around some of the limitations of using them."
-canonical:
-tags:
+canonical: null
+tags: 
   - Frontpage
   - Drupal
   - Tutorial
-category:
-assets:
-  js:
-    -
-  css:
-    -
+category: null
+assets: 
+  js: 
+    - null
+  css: 
+    - null
+published: true
 ---
 
-One of my favorite features from Drupal 7 is the [EntityFieldQuery interface]. The [power of the EntityFieldQuery](https://www.phase2technology.com/blog/building-energy-gov-without-views/) is a well known thing, and I a have written about [extending EntityFieldQueries with subqueries] before. This time I will go into extending the query as a query object, using Drupal's hook and alter architecture.
+
+One of my favorite features from Drupal 7 is the [EntityFieldQuery](https://api.drupal.org/api/drupal/includes!entity.inc/class/EntityFieldQuery/7). The [power of the EntityFieldQuery](https://www.phase2technology.com/blog/building-energy-gov-without-views/) is a well known thing, and I a have written about [extending EntityFieldQueries with subqueries](https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html) before. This time I will go into extending the query as a query object, using Drupal's hook and alter architecture.
+
+## Simple EntityFieldQuery
 
 For our example we will start with a simple EntityFieldQuery for getting a list of nodes.
 
@@ -39,6 +43,8 @@ Now lets say that we want this list to be a keyword filtered list of title or ta
 ```php
 $query->fieldCondition('field_related_curriculum', 'tid', $structure_taxonomy, 'IN');
 ```
+
+## How EntityFieldQueries can start to break down
 
 But how do we add an ```OR``` statement to also allow for the title keyword filter?
 
