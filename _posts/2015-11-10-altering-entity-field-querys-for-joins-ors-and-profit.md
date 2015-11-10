@@ -5,9 +5,9 @@ date: 2015-11-10T00:00:00.000Z
 description: "EntityFieldQueries are one of the most useful things in Drupal 7, using tags we can get around some of the limitations of using them."
 canonical: null
 tags: 
-  - Frontpage
-  - Drupal
-  - Tutorial
+  - frontpage
+  - drupal
+  - tutorial
   - quarzack13
 category: 
   - tutorial
