@@ -2,7 +2,7 @@
 layout: post
 title: Lets plan a new Arduino based video game console
 date: 2015-12-22
-description: ""
+description: "Why do we need a new game system? Because everything made today does too much."
 canonical:
 tags:
 category:
@@ -19,8 +19,11 @@ I saw this video.
 
 (video of kids unable to put a cassette into a walkman)
 
-It got me thinking about how old people used to complain about the "push button"
- generation. And it got me thinking about my kids, a generation behind the one that has every user interface purpose built for ease of use. Everything I see built today is about as easy as it can be. I consider this to be a bad thing. Creativity strives in constraints. We need constraints, even if the constrains are contrived.
+It got me thinking about how old people used to talk about the "push button" generation. And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today is about as easy as it can be. In general this is a good thing, however, I consider this to be a bad thing. It's easy for physical tools to be re-imaginged and used for other purposes than they are intended; such as using a screw driver to pry up a staple. The same thing is true of command line tools. It's the heart of the way \*nix systems work. One purpose built command being piped into another to achieve something possibly unintended.
+
+Creativity strives in constraints. We need constraints, even if the constrains are contrived.
+
+ Systems built today are purpose built, which isn't a bad thing, except that most of our systems without flexibility (this seems like the major down side of graphical user interfaces, but that is another rant for another day). It's difficult to achieve something new with a tool when all that is exposed to the user is a single start button.
 
 # What I want to do
 
@@ -45,6 +48,18 @@ This is my current plan, this will change as I attempt to do things and fail at 
 
 I like the Arduino because it's open source and easy to access. These are available everywhere and it isn't too powerful. I do wonder if it isn't powerful enough, but seeing what people have done with them: Arduboy, space invaders, asteroids, etc; I think the Arduino will be good for a processor.
 
-My biggest worry so far is the display, I don't want to use so much of the Arduino's limited power to drive a display. My current plan for this is to use two Arduinos. One for actual processing and another for driving the display. The central processor will feed a frame buffer and the other Arduino will read the framebuffer and drive the display. My goal is to have several modes for the framebuffer to pass the info to the Arduino. For example, allow a program to pass a diffed framebuffer raster and some other info to allow for different special effects.
+My biggest worry so far is the display, I don't want to use so much of the Arduino's limited power to drive a display. My current plan for this is to use two Arduinos. One for actual processing and another for driving the display. The central processor will feed a frame buffer and the other Arduino will read the frame-buffer and drive the display. My goal is to have several modes for the frame-buffer to pass the info to the Arduino. For example, allow a program to pass a diffed frame-buffer raster and some other info to allow for different special effects.
 
 I still have no real plans for sound, other than the quality I want to aim for is a mix of Sound Blaster 16, SNES, and NES. Input was just going to be handled with the io on the Arduino.
+
+### How am I going to do this
+
+As I said before my plan is to get this far enough along with proof of concepts that other people (that might know more about what they are doing) will gain interest and take care of more of the fine points. I will need to learn a lot about the Arduino in-order-to pull this off. Here is my factored list so far (I will link to new posts from here, and I expect this list to grow as I find out more things I don't know).
+
+ - Two Arduinos talking to each other
+ - An Arduino writing/reading from some type of RAM
+ - An Arduino reading a program from some type of ROM
+ - An Arduino displaying stuff on a TV/Monitor
+ - An Arduino getting input from an off the shelf game Controller
+
+I have seen articles where people have done each of these things independently with an Arduino. I hope to pull all this together.
