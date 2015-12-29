@@ -17,11 +17,11 @@ assets:
 
 I saw this video.
 
-(video of kids unable to put a cassette into a walkman)
+<iframe width="420" height="315" src="https://www.youtube.com/embed/6kJV-BdsUWs" frameborder="0" allowfullscreen></iframe>
 
-It got me thinking about how old people used to talk about the "push button" generation. And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today is about as easy as it can be. In general this is a good thing, however, I consider this to be a bad thing. It's easy for physical tools to be re-imaginged and used for other purposes than they are intended; such as using a screw driver to pry up a staple. The same thing is true of command line tools. It's the heart of the way \*nix systems work. One purpose built command being piped into another to achieve something possibly unintended.
+It got me thinking about how older people used to talk about the ["push button" generation](http://www.seattletimes.com/nation-world/is-push-button-age-producing-a-generation-of-simpletons/). And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today is about as easy as it can be. In general this is a good thing, however, I consider this to be a bad thing. It's easy for physical tools to be re-imaginged and used for other purposes than they are intended; such as using a screw driver to pry up a staple. The same thing is true of command line tools. It's the heart of the way \*nix systems work. One purpose built command being piped into another to achieve something possibly unintended.
 
-Creativity strives in constraints. We need constraints, even if the constrains are contrived.
+[Creativity strives in constraints](http://www.slideshare.net/chesterbr/atari-2600programming). We need constraints, even if the constrains are contrived.
 
  Systems built today are purpose built, which isn't a bad thing, except that most of our systems without flexibility (this seems like the major down side of graphical user interfaces, but that is another rant for another day). It's difficult to achieve something new with a tool when all that is exposed to the user is a single start button.
 
@@ -46,7 +46,7 @@ I have not done this before. I have lots of experience programming, but little e
 
 This is my current plan, this will change as I attempt to do things and fail at them.
 
-I like the Arduino because it's open source and easy to access. These are available everywhere and it isn't too powerful. I do wonder if it isn't powerful enough, but seeing what people have done with them: Arduboy, space invaders, asteroids, etc; I think the Arduino will be good for a processor.
+I like the Arduino because it's open source and easy to access. These are available everywhere and it isn't too powerful. I do wonder if it isn't powerful enough, but seeing what people have done with them: [Arduboy](https://www.arduboy.com/), [space invaders](http://apcmag.com/arduino-project-7-build-a-retro-gamebox.htm/), [asteroids](http://nootropicdesign.com/hackvision/games.html#asteroids), etc; I think the Arduino will be good for a processor.
 
 My biggest worry so far is the display, I don't want to use so much of the Arduino's limited power to drive a display. My current plan for this is to use two Arduinos. One for actual processing and another for driving the display. The central processor will feed a frame buffer and the other Arduino will read the frame-buffer and drive the display. My goal is to have several modes for the frame-buffer to pass the info to the Arduino. For example, allow a program to pass a diffed frame-buffer raster and some other info to allow for different special effects.
 
