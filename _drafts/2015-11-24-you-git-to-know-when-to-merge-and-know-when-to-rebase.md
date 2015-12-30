@@ -1,17 +1,34 @@
 ---
 layout: post
 title: You Git to Know When To Merge and Know When to Rebase
-date: 2015-11-24
+date: 2015-11-24T00:00:00.000Z
 description: ""
-canonical:
-tags:
-category:
-assets:
-  js:
-    -
-  css:
-    -
+canonical: null
+tags: null
+category: null
+assets: 
+  js: 
+    - null
+  css: 
+    - null
+published: true
 ---
+
+Where I work, we have recently switched to git for our vcs. Being the experienced Drupal Developer that I am, I am also an experienced git user. Git isn't perfact and like most good tools, learning to use it is like learning to play the harmonica: the only differnece between someone who has used it for 10 hours and someone who has used it for 10 years is the amount of songs they know.
+
+If you want to know how git works then go read this article explaining how git works. Otherwise keep reading and I will teach you the ``` git pull --rebase``` song.
+
+## Why rebase?
+
+If you don't know how git works then this isn't going to make sense and you should read that article I linked to earlier.
+
+> Git logs a history of changes. Each change is a commit and is stored as a snapshot of the codebase. Each commit links to the next to make this history sequenchial.
+
+### What is rebasing
+
+Rebasing takes all the local commits and rewindes them; making it as though they never happened. Then, git pulls in all the remote changes. Then, git makes the remote HEAD the local HEAD, and then applies the local commits on top of the remote ones.
+
+## Why not to rebase?
 
 ✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↑·3|✚ 1]
 12:02 $ git commit sites/all/modules/custom/oen_custom/oen_custom.module -m "updated the comment form to use custom node for destination"
