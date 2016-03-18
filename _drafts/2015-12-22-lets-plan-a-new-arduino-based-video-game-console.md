@@ -6,10 +6,10 @@ description: "Why do we need a new game system? Because everything made today do
 canonical: null
 tags: null
 category: null
-assets: 
-  js: 
+assets:
+  js:
     - null
-  css: 
+  css:
     - null
 published: true
 ---
@@ -21,17 +21,23 @@ I saw this video.
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/6kJV-BdsUWs" frameborder="0" allowfullscreen></iframe>
 
-These videos beg the question. How do I stop my kids from being like this. Even those from my generation seem to have a hard time dealing with the physical world. It is easier to build something in Minecraft rather than building something in real life.
+These videos beg the question; How do I stop my kids from being like this?
 
-It got me thinking about how older people used to talk about the ["push button" generation](http://www.seattletimes.com/nation-world/is-push-button-age-producing-a-generation-of-simpletons/). And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today is about as easy as it can be. In general this is a good thing, however, I consider this to be a bad thing when it stops people from figuring it out. It's easy for physical tools to be re-imaginged and used for other purposes than they are intended; such as using a screw driver to pry up a staple. The same thing is true of command line tools. It's the heart of the way \*nix systems work. One purpose built command being piped into another to achieve something possibly unintended. This isn't quite so easy when the system only allows one type of input and the only way to use it is to tap on the giant start button.
+ When it's easier to build something in Minecraft than in the real world. How can I keep my kids interested in the physical world when everything is becoming digital.
+
+This got me thinking about how the older generation used to talk about the ["push button" generation](http://www.seattletimes.com/nation-world/is-push-button-age-producing-a-generation-of-simpletons/). And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today (hardware or software) is about as easy as it can be. Usually nothing more than a single "GO" button.
+
+In general this is a good thing, except I consider this to be a bad thing when it stops us from figuring out how things work. It's easy for physical tools to be re-imaginged and used for other purposes than they're intended; such as using a screw driver to pry up a staple, or some channel locks to pull out a finishing nail. The same thing is true of command line tools. It's the heart of the way \*nix systems work. One purpose built command being piped into another to achieve something possibly unintended. This isn't quite so easy when the system only allows one type of input and the only way to use it is to tap on the giant start button.
 
 [Creativity strives in constraints](http://www.slideshare.net/chesterbr/atari-2600programming). We need constraints, even if the constrains are contrived.
 
-Systems built today are purpose built, which isn't a bad thing, except that most of our systems without flexibility (this seems like the major down side of graphical user interfaces, but that is another rant for another day). It's difficult to achieve something new with a tool when all that is exposed to the user is a single start button.
+There are two things that are universal with children. Education and Games. Games are considered fun and Education (mostly) is considered not fun. So how do we solve this with games?
 
-### How do we stop this?
+### How do we stop this? Games!
 
-Games and open source everything. Kids like to build things (just look at legos), kids like to learn things, and kids like to play games. We had cartrage based video games, today the only video games systems are ones built for maximum convenience; they all work off of downloadable games. I think this is key. We need cartrages, kids need something that they can controle and is physically obviouse how it works. We need to put the kids back in controle of making things happen.
+Games and open source everything. Kids like to build things (just look at legos), kids like to learn things, and kids like to play games. We used to have cartridge based video games. In other words, we used to have to work for our video games.
+
+Today the only video games systems are ones built for maximum convenience; they all work off of downloadable games. I think this is key. We need cartrages, kids need something that they can controle and is physically obviouse how it works. We need to put the kids back in controle of making things happen.
 
 # What I want to do
 
