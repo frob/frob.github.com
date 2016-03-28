@@ -1,16 +1,25 @@
 ---
 layout: post
 title: Simplify Drupal 8 field value calls
-date: 2016-03-18
-description: ""
+date: 2016-03-28
+description: "Explore a bit of field fetching with Drupal 8"
 canonical:
 tags:
+  - frontpage
+  - drupal
+  - tutorial
+  - quarzack13
 category:
+  - tutorial
+  - drupal
+  - frontpage
+  - quarzack13
 assets:
   js:
     -
   css:
     -
+published: true
 ---
 
 Things change, it's a fact of life; even more so it's a fact of a web developer's life.
