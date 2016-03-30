@@ -98,6 +98,16 @@ use Drupal\node\Entity\Node
 $title = Node::load($nid)->get('title')->value;
 ```
 
+### We don't really need to call ```get()```
+
+As pointed out by Dezső BICZÓ in the comments, get() is a magic method. Therefore, in this case we can call for ```$node->title``` directly. That can further simplify our example.
+
+```php
+use Drupal\node\Entity\Node
+
+$title = Node::load($nid)->title->value;
+```
+
 ## Things to remember
 
 This isn't sanitary!
