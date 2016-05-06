@@ -5,7 +5,7 @@ date: 2015-12-22T00:00:00.000Z
 description: "Why do we need a new game system? Because everything made today does too much."
 canonical: null
 tags: null
-category: null
+category: ['rant', 'frontpage']
 assets:
   js:
     - null
@@ -37,7 +37,7 @@ There are two things that are universal with children. Education and Games. Game
 
 Games and open source everything. Kids like to build things (just look at legos), kids like to learn things, and kids like to play games. We used to have cartridge based video games. In other words, we used to have to work for our video games.
 
-Today the only video games systems are ones built for maximum convenience; they all work off of downloadable games. I think this is key. We need cartrages, kids need something that they can controle and is physically obviouse how it works. We need to put the kids back in controle of making things happen.
+Today the only video games systems are ones built for maximum convenience; they all work off of downloadable games. I think this is key. We need cartridges, kids need something that they can control and is physically obvious how it works. We need to put the kids back in control of making things happen.
 
 # What I want to do
 
