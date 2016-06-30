@@ -25,7 +25,7 @@ Git is a great tool for managing source control. Git flow is a great workflow fo
 
 ## Background
 
-[skip TLDR;](#tldr)
+[skip to TLDR;](#tldr)
 
 ### Sematic Versioning
 
