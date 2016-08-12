@@ -194,6 +194,28 @@ vendor
 composer.lock
 ```
 
+## Bonus points, something borrowed
+
+I was going to stop here, but after reading that I think it is missing something. The other real power from composer. Using someone else's code.
+
+I still want to keep this simple so I am adding something simple and *maybe* useful: a timer [_phpunit/php-timer_](https://packagist.org/packages/phpunit/php-timer).
+
+To add 3rd party packages to your package you run the ```composer require``` command. In order to add the php-timer we run:
+
+```bash
+$ composer require phpunit/php-timer
+```
+
+Unlike npm we do not need to specify the ```--save``` argument. Composer assumes the save. Here is another awesome thing that composer does for us. Composer will "solve" our dependency tree for us. What that means is that the packages will tell composer what versions of dependencies they support and composer will figure out what the latest version that fits that requirement.
+
+For example if dependency *foo* can use version 5 and above of the *php-timer* package, but dependency *bar* doesn't work with version 7 or version 5, but does work with version 6. Then composer knows that only the latest release of version 6 is supported by your application.
+
+> If there are lots of dependencies and sub-dependencies then solving this issue takes time. Also, composer will tell you if it cannot be solved. If two packages are not compatible then composer will tell you right away.
+
+After we run that command we will see ```"phpunit/php-timer": "^1.0"``` was added as a requirement. We can tell composer to only use some versions, but I will let you read the docs on that.
+
+@TODO: finish the rest of the post.
+
 ## Composer and Drupal
 
 As my professional life goes, 99% of my php work is Drupal -- and it has been since release of Drupal 6. I have done work in other languages and I have used other frameworks but when it comes to when I get paid to write php it is almost always Drupal.
