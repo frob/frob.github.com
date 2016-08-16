@@ -2,15 +2,24 @@
 layout: post
 title: Basic Hello World with composer and php
 date: 2016-08-11
-description: ""
+description: "I Hello World style introduction to Composer."
 canonical:
 tags:
+  - frontpage
+  - drupal
+  - tutorial
+  - quarzack13
 category:
+  - frontpage
+  - drupal
+  - tutorial
+  - quarzack13
 assets:
   js:
     -
   css:
     -
+published: true
 ---
 
 # Getting started with composer
