@@ -214,7 +214,75 @@ For example if dependency *foo* can use version 5 and above of the *php-timer* p
 
 After we run that command we will see ```"phpunit/php-timer": "^1.0"``` was added as a requirement. We can tell composer to only use some versions, but I will let you read the docs on that.
 
-@TODO: finish the rest of the post.
+There is one more thing that we need to do before we can use the *PHP_Timer* class in our project. We will need to edit the ```composer.json``` file to tell our autoloader about our new class.
+
+```json
+"autoload": {
+    "psr-0": {
+        "HelloWorld": "src/"
+    },
+    "classname": {
+      "PHP_Timer": "src/"
+    }
+}
+```
+
+Here we are adding the ```classname``` keyword and then listing the "PHP_Timer" class as member with "src/" as the value. I got this value because inside the ```vendor/php-timer``` directory is the *PHP_Timer* class, without any ```namespace``` keyword. Due to the lack of a namespace space we just have to tell the autoload that when we declare ```use PHP_Timer;``` in our php file that we need the *PHP_Timer* class loaded.
+
+> I fingured out what to do by looking at packages that used PHP_Timer. [Read composer namespaces in five minutes to learn more about how composer uses namespaces](https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/).
+
+Now that we have added the classname to the composer file we can start to use it in our greetings.php file. Lets add the some use of the php-timer class to the *Greetings* class.
+
+```php
+<?php
+namespace HelloWorld;
+
+use PHP_Timer;
+
+class Greetings {
+  public static function sayHelloWorld() {
+    $timer = new PHP_Timer();
+    $timer->start();
+    return "Hello World\n" . $timer->resourceUsage() . "\n";
+  }
+}
+```
+
+Now when we run the test it will print:
+
+```bash
+$ php tests/test.php
+Hello World
+Time: 1 ms, Memory: 0.50MB
+```
+
+## Scripts, scripts, and scripts
+
+Currently to test our command we need to run ```php tests/test.php``` from the command line. That is about as simple as it gets. But what about if we want to run a linter or some real tests? This is where the *scripts* member in the ```composer.json``` file comes into play.
+
+Lets add a *scripts* deffinition to the end of our ```composer.json``` file:
+
+```json
+"scripts": {
+  "test": "php tests/test.php"
+}
+```
+
+Now we only need to run the command ```composer test``` or ```composer run test``` from the command line in order to run our tests. The value of the *scripts* member is a list of key value pairs where the key is the name of the command and the value is the command that is run. The value can even be an array of commands that composer will run.
+
+If we change that to:
+
+```json
+"scripts": {
+  "test": ["php tests/test.php", "echo Hello"]
+}
+```
+
+Then composer will run both the commands.
+
+> ```composer run``` is shorthand for ```composer run-script```
+
+There are a whole slew of pre-defined commands that we can add to our ```composer.json``` file. For example, using the key ```post-update-cmd``` will run the scripts after the ```update``` and before the ```isntall``` commands.
 
 ## Composer and Drupal
 
