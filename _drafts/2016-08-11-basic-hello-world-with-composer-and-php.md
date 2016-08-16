@@ -282,7 +282,7 @@ Then composer will run both the commands.
 
 > ```composer run``` is shorthand for ```composer run-script```
 
-There are a whole slew of pre-defined commands that we can add to our ```composer.json``` file. For example, using the key ```post-update-cmd``` will run the scripts after the ```update``` and before the ```isntall``` commands.
+There are a whole slew of pre-defined commands that we can add to our ```composer.json``` file. For example, using the key ```post-update-cmd``` will run the scripts after the ```update``` and before the ```install``` commands.
 
 ## Composer and Drupal
 
