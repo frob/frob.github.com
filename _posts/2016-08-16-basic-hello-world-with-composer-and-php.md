@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Basic Hello World with composer and php
-date: 2016-08-11
+date: 2016-08-16T17:40:00.000Z
 description: "I Hello World style introduction to Composer."
 canonical:
 tags:
