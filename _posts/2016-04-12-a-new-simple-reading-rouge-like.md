@@ -1,16 +1,26 @@
 ---
 layout: post
 title: a new simple reading rouge like
-date: 2016-04-12
-description: ""
+date: 2016-09-30
+description: "With everyone's kids being so smart it is a wonder that we don't have machine generated children's book already. This sounds like an oversight to me because computers are already raising our kids."
 canonical:
 tags:
+  - frontpage
+  - gaming
+  - parenting
+  - rouge-like
+  - rouge-lite
+  - machine generating book
 category:
+  - frontpage
+  - gaming
+  - parenting
 assets:
   js:
     -
   css:
     -
+published: true
 ---
 
 ## My kid is smart&trade;
@@ -23,7 +33,12 @@ Inside every computer there is a book just waiting to be generated --or somethin
 
 ## Procedural conversation is hard
 
-Just like we just saw with [Microsoft's Tay bot](https://en.wikipedia.org/wiki/Tay_(bot)) gone nazi sympathizer. Procedural conversation generation is hard and it can have unforeseen results. Even with the [bot API's MS announced](https://dev.botframework.com/) at [BUILD](https://build.microsoft.com/). Thankfully, these book need to be simple. They have to be simple so that children can learn to read by reading them. If I keep the structure down to as simple a structure as possible and also template that structure so that it can must build sentences that match the template then I think we will be in a good place in both complexity and safety. This will be just slightly more complicated than a [madlib](https://en.wikipedia.org/wiki/Mad_Libs).
+Just like we just saw with [Microsoft's Tay bot](https://en.wikipedia.org/wiki/Tay_(bot)) gone [nazi sympathizer](https://twitter.com/geraldmellor/status/712880710328139776).
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;Tay&quot; went from &quot;humans are super cool&quot; to full nazi in &lt;24 hrs and I&#39;m not at all concerned about the future of AI <a href="https://t.co/xuGi1u9S1A">pic.twitter.com/xuGi1u9S1A</a></p>&mdash; Gerry (@geraldmellor) <a href="https://twitter.com/geraldmellor/status/712880710328139776">March 24, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Procedural conversation generation is hard and it can have unforeseen results. Even with the [bot API's MS announced](https://dev.botframework.com/) at [BUILD](https://build.microsoft.com/). Thankfully, these book need to be simple. They have to be simple so that children can learn to read by reading them. If I keep the structure down to as simple a structure as possible and also template that structure so that it can must build sentences that match the template then I think we will be in a good place in both complexity and safety. This will be just slightly more complicated than a [madlib](https://en.wikipedia.org/wiki/Mad_Libs).
 
 ## Book structure
 
