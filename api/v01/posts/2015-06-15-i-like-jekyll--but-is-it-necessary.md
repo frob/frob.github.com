@@ -14,7 +14,7 @@ assets:
     -
 ---
 
-One of the first "Content Management Systems" I ever wrote was a pearl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn't extremely useful to me. It was more of an academic experience &ndash; especially because, at the time, I wasn't a professional web developer.
+One of the first "Content Management Systems" I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn't extremely useful to me. It was more of an academic experience &ndash; especially because, at the time, I wasn't a professional web developer.
 
 For the past 8 or so years I have been working primarily in [Drupal](https://www.drupal.org). I have seen other CMS's [come and go and comeback](http://www.joomla.com). I have seen forks and communities fall apart due to in fighting. I have seen major versions of projects that where worked on for years [get shelved and ultimately abandoned](http://www.exult.sf.net). I have seen much of this in the 8 or so years that I have been working with Drupal.
 
