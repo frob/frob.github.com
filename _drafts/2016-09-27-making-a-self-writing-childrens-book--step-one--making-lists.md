@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Making a self writing children's book: step one, making lists
+title: "Making a self writing children's book: step one, making lists"
 date: 2016-09-27
 description: ""
 canonical:
