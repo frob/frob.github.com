@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lets take a look at webVR with aframe
+title: Lets take a look at webVR with AFrame
 date: 2016-10-24
 description: "I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame."
 canonical:
@@ -23,7 +23,7 @@ blah blah blah
 
 Remember when you read my [introduction to Threejs](https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html) (because you are an avid reader of my blog)? Well that will be useful now because AFrame uses Threejs behind the scenes to manage the webgl. So lets do that first.
 
-<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/" />
+<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/" ></iframe>
 
 My old example converts easily to A-Frame. While the Threejs example is around 30 lines of Javascript, the A-Frame example converts to about 9 custom html tags with no custom JS. Not even for the animation. I am not the kind of person that considers code to be harder than markup, but in this case it makes more sense to use markup and the majority of the information that is lost is the boilerplate code. All we have to do to setup a scene is use the ```<a-scene></a-scene>``` tags. All the parts of the scene go inside.
 
@@ -70,7 +70,9 @@ I am not going to go through how to create new components or even include the so
 
 Using the above billboard component we can get a scene like this:
 
-<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-billboard.html" />
+<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-billboard.html" ></iframe>
+
+> Note that this billboard example will only work if the ad blockers are turned off. They don't like that this library has the word billboard in it. In case you are wondering, billboard is the name of an ad. Just to avoid confusion. So that no one is confused. I really, really, really hope that you are not confused.
 
 ### Models
 
