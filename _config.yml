@@ -64,7 +64,6 @@ baseurl: ""
 markdown: redcarpet
 highlighter: rouge
 permalink: /posts/:year/:month/:day/:title.html
-keep_files: _site
 
 # The release of Jekyll Now that you're using
 version: v3.0.0
