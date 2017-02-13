@@ -15,8 +15,8 @@ deploy:
   local-dir: _site
   acl: public_read
   on:
-    repo: frob/Travis-s3-pub-test
-    branch: 1.0.x
+    repo: frob/frob.github.com
+    branch: master
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
