@@ -13,6 +13,8 @@ deploy:
     secure: bqCc+SCKc7SyjD/P4Y9U0zaH1UINswNrwp/nyQFx1//+kuJNyEDP8rs1Q69LEL8WzRq46oddNB25CjnkX/Iw1rAG3ucsEVULTfvW1N7sGLjfxx0eSz5fsoGlkVFlhWC7e+iYHsEBuSVpNMxQY4Vh5mHVsBkSxPL5NjK+MwKV0ZCD1o+MTny55iUFRiioCRL2vULRcLJzsdqOT5qm1fnmDU3Nss924EVDDsb8xLCJqZnAFxFl98XEqQffmgIZEhGGgQhtFdr4qixArCTL3S4nTWzzVR13eGOdZaiHQ7ellnn4vupdx0qUQi1OoCxjN/bblO6+XRhMVP3EAtoiPagN6KrP+0OL4Pn+RzmH89I/f5mnpv1aYx7LagpXgqc0dZ9QfUvwybYdniRQl5p6w1tUIWL8woKVMaLh81oQeB1fzHmwAEhdSWfZpZR1hB6UQRRnJw8zoPPnaK+gQhIA4XrTEH0fzGtDrnKrnrHkxezILc8pIKgfjbXWvVPJaZiuPVLVPQLJS3J4i1+JrBTj8emYDa4efJTpAOU2/40e3172UP+fwmfO3KSwRMA+agolTp0LuqofRo0UFCCpx+P+FwamXRxB3RpCE59HMmTcfS8LqEtYdoyR4U7hcp6zSjFtVeVCkL3jB7HJuXtysjNqwXTj8lW0pdgEsl1HFLU3GqHpgN4=
   bucket: travis-s3-pub-test
   local-dir: _site
+  skip_cleanup: true
+  sudo: false
   acl: public_read
   on:
     repo: frob/frob.github.com
