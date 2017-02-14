@@ -12,6 +12,7 @@ deploy:
   secret_access_key:
     secure: c8O3I0S6g9Bhg5elxoxEvb3Ew05brJajifgy0ORcQcFDnOBwS7axqHxlpgTHd1Res5ryp1m/0Mk/XSmwSR66QNIgHVBJ+6XxGc+/9xG8TokRVgwDe1Lk0TQgw2TDK9XQ1CO6iV/vsLtepeSuD9t9hD4tq3/LTa+dCsOxwd//4iU=
   bucket: www.frobiovox.com
+  region: us-west-1
   local-dir: _site
   skip_cleanup: true
   upload-dir: site
