@@ -17,5 +17,8 @@
     "build": "jekyll build",
     "prebuild": "npm install",
     "serve-draft": "jekyll serve --draft"
+  },
+  "dependencies": {
+    "backstopjs": "^2.7.5"
   }
 }
