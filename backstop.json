@@ -21,7 +21,7 @@
     {
       "label": "Frobiovox Homepage",
       "url": "http://127.0.0.1:8080",
-      "referenceUrl": "https://www.frobiovox.com",
+      "referenceUrl": "http://127.0.0.1:8080",
       "hideSelectors": [],
       "removeSelectors": [ "#disqus_thread"],
       "selectorExpansion": true,
@@ -36,7 +36,7 @@
     {
       "label": "Frobiovox River",
       "url": "http://127.0.0.1:8080/river.html",
-      "referenceUrl": "https://www.frobiovox.com/river.html",
+      "referenceUrl": "http://127.0.0.1:8080/river.html",
       "hideSelectors": [],
       "removeSelectors": [ "#disqus_thread"],
       "selectorExpansion": true,
@@ -51,7 +51,7 @@
     {
       "label": "Frobiovox Article",
       "url": "http://127.0.0.1:8080/posts/2016/11/21/my-dilemma-what-technology-to-pursue.html",
-      "referenceUrl": "https://www.frobiovox.com/posts/2016/11/21/my-dilemma-what-technology-to-pursue.html",
+      "referenceUrl": "http://127.0.0.1:8080/posts/2016/11/21/my-dilemma-what-technology-to-pursue.html",
       "hideSelectors": [],
       "removeSelectors": [ "#disqus_thread"],
       "selectorExpansion": true,
@@ -66,7 +66,7 @@
     {
       "label": "Frobiovox WebGL",
       "url": "http://127.0.0.1:8080/posts/2014/11/15/WebGL-with-threejs.html",
-      "referenceUrl": "https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html",
+      "referenceUrl": "http://127.0.0.1:8080/posts/2014/11/15/WebGL-with-threejs.html",
       "hideSelectors": [],
       "removeSelectors": [ "#disqus_thread"],
       "selectorExpansion": true,
