@@ -6,6 +6,13 @@ branches:
     - "/1.(.*)/"
     - master
 script: bundle exec jekyll build; bundle exec ls -l
+before_install:
+  - nvm install node
+  - nvm install v7
+  - nvm use v7
+  - npm install
+  - npm install -g backstopjs
+  - npm install -g http-server
 deploy:
   provider: s3
   access_key_id: AKIAJPSOMJEQB55SGEUA
