@@ -11,3 +11,6 @@ _test/shots
 _test/shots/*
 _test/wraith
 _test/waith/*
+
+backstop_data/bitmaps_test
+backstop_data/html_report
