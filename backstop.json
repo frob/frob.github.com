@@ -88,6 +88,6 @@
   },
   "casperFlags": [],
   "engine": "phantomjs",
-  "report": ["browser"],
+  "report": ["CI"],
   "debug": false
 }
