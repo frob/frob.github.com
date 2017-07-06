@@ -16,11 +16,11 @@ before_install:
   - npm install
   - npm install -g backstopjs
   - npm install -g http-server
-  - git checkout DEPLOYED_HASH
+  - git checkout $DEPLOYED_HASH
   - bundle exec jekyll build
   - npm run reference
-  - git checkout TRAVIS_PULL_REQUEST_BRANCH
-  - git checkout TRAVIS_BRANCH
+  - git checkout $TRAVIS_PULL_REQUEST_BRANCH
+  - git checkout $TRAVIS_BRANCH
 deploy:
   provider: s3
   access_key_id: AKIAJPSOMJEQB55SGEUA
