@@ -22,6 +22,11 @@
   },
   "dependencies": {
     "backstopjs": "^2.7.5",
-    "http-server": "^0.10.0"
+    "http-server": "^0.10.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-jekyll-dates": "0.0.5",
+    "metalsmith-layouts": "^1.8.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-nested": "^0.3.8"
   }
 }
