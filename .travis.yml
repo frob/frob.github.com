@@ -5,7 +5,7 @@ branches:
   only:
     - "/1.(.*)/"
     - master
-script: bundle exec jekyll build; bundle exec ls -l && npm test
+script: bundle exec jekyll build && npm test
 after_script:
   - cat backstop_data/ci_report/xunit.xml
   - cat backstop_data/html_report/config.js
@@ -16,6 +16,11 @@ before_install:
   - npm install
   - npm install -g backstopjs
   - npm install -g http-server
+  - git checkout DEPLOYED_HASH
+  - bundle exec jekyll build
+  - npm run reference
+  - git checkout TRAVIS_PULL_REQUEST_BRANCH
+  - git checkout TRAVIS_BRANCH
 deploy:
   provider: s3
   access_key_id: AKIAJPSOMJEQB55SGEUA
@@ -30,5 +35,6 @@ deploy:
     repo: frob/frob.github.com
 env:
   global:
+    - DEPLOYED_HASH=d31acaea68a0e6ec13197cfb06f96e8928069f3b
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 sudo: false

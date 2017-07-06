@@ -13,6 +13,7 @@
     "vinyl-fs": "^1.0.0"
   },
   "scripts": {
+    "reference": "http-server _site & backstop reference",
     "test": "http-server _site & backstop test",
     "clean": "rm -rf node_modules && rm -rf _site",
     "build": "jekyll build",
