@@ -3,6 +3,7 @@ const collections = require('metalsmith-collections');
 const layouts     = require('metalsmith-layouts');
 const markdown    = require('metalsmith-markdown');
 const permalinks  = require('metalsmith-permalinks');
+const nested = require('metalsmith-nested');
 const date = require('metalsmith-jekyll-dates');
 const yaml = require('js-yaml');
 const fs   = require('fs');
@@ -18,8 +19,28 @@ function debug(logToConsole) {
       for (var f in files) {
         console.log('\nFILE:');
         console.log(files[f]);
+        console.log('contents: ' + files[f].contents)
       }
     }
+
+    done();
+  };
+};
+
+function jekyllAttributes() {
+  return function(files, metalsmith, done) {
+      for (var f in files) {
+        files[f].content = files[f].contents;
+        files[f].page = {
+          title: files[f].title,
+          date: files[f].date,
+          description: files[f].description,
+          canonical: files[f].canonical,
+          tags: files[f].tags,
+          category: files[f].category,
+          assets: files[f].assets
+        }
+      }
 
     done();
   };
@@ -45,6 +66,10 @@ ms = Metalsmith(__dirname)
     .use(layoutsByName({
       directory: '_layouts'
     }))
+    // .use(nested({
+    //   directory: '_layouts'
+    // }))
+    .use(jekyllAttributes())
     .use(layouts({              // wrap layouts around html
       engine: 'liquid',     // use the layout engine you like
       directory: '_layouts',

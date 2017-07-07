@@ -10,7 +10,7 @@ layout: default
   </div>
 
   <div class="date-author">
-    Written on {{ date | date: "%b %d, %Y" }} by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    Written on {{ page.date | date: "%b %d, %Y" }} by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
     {% if page.tags contains 'kwallcompany' %}
       <div class="kwallcompany-mark"><a class="canonical-link" href="{{ page.canonical }}">{{ page.title }} was originally posted on kwallcompany.com</a>. Written while working for Kwall</div>
     {% endif %}
