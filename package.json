@@ -8,8 +8,8 @@
     "gulp-replace": "^0.5.4",
     "gulp-swig": "0.7.4",
     "gulp-task-listing": "^1.0.0",
+    "metalsmith-debug": "^1.1.0",
     "minimist": "^1.1.1",
-    "swig": "^1.4.2",
     "vinyl-fs": "^1.0.0"
   },
   "scripts": {
@@ -23,12 +23,15 @@
   "dependencies": {
     "backstopjs": "^2.7.5",
     "http-server": "^0.10.0",
+    "js-yaml": "^3.8.4",
     "metalsmith": "^2.3.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-jekyll-dates": "0.0.5",
     "metalsmith-layouts": "^1.8.1",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-nested": "^0.3.8",
-    "metalsmith-permalinks": "^0.5.0"
+    "metalsmith-permalinks": "^0.5.0",
+    "swig": "^1.4.2",
+    "metalsmith-swig": "^1.2.1"
   }
 }
