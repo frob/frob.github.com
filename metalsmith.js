@@ -3,6 +3,7 @@ const collections = require('metalsmith-collections');
 const layouts     = require('metalsmith-layouts');
 const markdown    = require('metalsmith-markdown');
 const permalinks  = require('metalsmith-permalinks');
+const date = require('metalsmith-jekyll-dates');
 const yaml = require('js-yaml');
 const fs   = require('fs');
 // const debug = require('metalsmith-debug');
@@ -28,7 +29,7 @@ function debug(logToConsole) {
   const config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
 
 ms = Metalsmith(__dirname)
-    .metadata(config)
+    .metadata({"site":config})
     .source('./_posts')            // source directory
     .destination('./_site')     // destination directory
     .clean(true)                // clean destination before
@@ -37,9 +38,10 @@ ms = Metalsmith(__dirname)
     // }))                         // use `collections.posts` in layouts
     .use(markdown())            // transpile all md into html
     .use(permalinks({           // change URLs to permalink URLs
-      // relative: false,         // put css only in /css
+      relative: false,         // put css only in /css
       pattern: config.permalink
     }))
+    .use(date())
     .use(layoutsByName({
       directory: '_layouts'
     }))
