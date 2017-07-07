@@ -65,47 +65,8 @@ function jekyllAttributes() {
   };
 };
 
-function childLayout() {
+function wrappingLayout() {
   return function(files, metalsmith, done) {
-    // var counter = 0;
-    // for (var f in files) {
-    // //   var frontMatter = fm('' + files[f].contents);
-    // //   var wrapperTemplate = fs.readFileSync('./_layouts/' + frontMatter.attributes.layout + '.html', 'utf8');
-    // //   var render = liquid.compile(wrapperTemplate);
-    // //
-    // //   var context = liquid.newContext({
-    // //     locals: {
-    // //       content: files[f].content,
-    // //       page: files[f].page,
-    // //       site: files[f].site
-    // //     }
-    // //   });
-    // //
-    // //   context.onInclude(function (name, callback) {
-    // //     var extname = path.extname(name) ? '' : '.html';
-    // //     var filename = path.resolve('_includes', name + extname);
-    // //
-    // //     fs.readFile(filename, {encoding: 'utf8'}, function (err, data){
-    // //       if (err) {
-    // //         return callback(err);
-    // //       }
-    // //       var inc = liquid.parse(data);
-    // //       callback(null, inc);
-    // //     });
-    // //   });
-    // //
-    // //   render(context, function (err) {
-    // //     if (err) {
-    // //       console.error(err);
-    // //     }
-    // //     // console.log(context.getBuffer());
-    // //     // console.log(files[f].contents.length);
-    // //     files[f].contents = new Buffer('abc');//context.getBuffer());
-    // //     // console.log(files[f].contents.length);
-    // //     done();
-    // //   });
-    // // }
-    //     }
       const wrapTemplate = function(f, done) {
         var frontMatter = fm('' + files[f].contents);
 
@@ -155,7 +116,7 @@ ms = Metalsmith(__dirname)
       directory: '_layouts',
       includeDir: '_includes'
     }))
-    .use(childLayout())
+    .use(wrappingLayout())
     // .use(writemetadata())
     .use(debug(true))
     .clean(true)
