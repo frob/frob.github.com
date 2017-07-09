@@ -7,13 +7,11 @@ const nested = require('metalsmith-nested');
 const date = require('metalsmith-jekyll-dates');
 const yaml = require('js-yaml');
 const fs   = require('fs');
-// const debug = require('metalsmith-debug');
 const layoutsByName = require('metalsmith-layouts-by-name');
 const fm = require('front-matter');
 const md = require('marked');
 const liquid = require('tinyliquid');
 const path = require('path');
-var writemetadata = require('metalsmith-writemetadata');
 var consolodate = require('consolidate');
 var each = require('async').each;
 
@@ -70,112 +68,124 @@ function wrappingLayout() {
       const wrapTemplate = function(f, done) {
         var frontMatter = fm('' + files[f].contents);
 
-        // var wrapperTemplate = fs.readFileSync('./_layouts/' + frontMatter.attributes.layout + '.html', 'utf8');
-        // var render = liquid.compile(wrapperTemplate);
-        // var context = liquid.newContext({
-        //   locals: {
-        //     content: frontMatter.body,
-        //     page: files[f].page,
-        //     site: metalsmith.metadata().site
-        //   }
-        // });
-        // context.onInclude(function (name, callback) {
-        //   var extname = path.extname(name) ? '' : '.html';
-        //   var filename = path.resolve('./_includes/', name + extname);
-        //
-        //   fs.readFile(filename, {encoding: 'utf8'}, function (err, data){
-        //     if (err) {
-        //       return callback(err);
-        //     }
-        //     var inc = liquid.parse(data);
-        //     callback(null, inc);
-        //   });
-        // });
-        //
-        // render(context, function (err) {
-        //   if (err) {
-        //     console.error(err);
-        //   }
-        //   // console.log(context.getBuffer());
-        //   // console.log(files[f].contents.length);
-        //   files[f].contents = new Buffer(context.getBuffer());
-        //   // console.log(files[f].contents.length);
-        //   done();
-        // });
+        if ('layout' in frontMatter.attributes) {
+          // var wrapperTemplate = fs.readFileSync('./_layouts/' + frontMatter.attributes.layout + '.html', 'utf8');
+          // var render = liquid.compile(wrapperTemplate);
+          // var context = liquid.newContext({
+          //   locals: {
+          //     content: frontMatter.body,
+          //     page: files[f].page,
+          //     site: metalsmith.metadata().site
+          //   }
+          // });
+          // context.onInclude(function (name, callback) {
+          //   var extname = path.extname(name) ? '' : '.html';
+          //   var filename = path.resolve('./_includes/', name + extname);
+          //
+          //   fs.readFile(filename, {encoding: 'utf8'}, function (err, data){
+          //     if (err) {
+          //       return callback(err);
+          //     }
+          //     var inc = liquid.parse(data);
+          //     callback(null, inc);
+          //   });
+          // });
+          //
+          // render(context, function (err) {
+          //   if (err) {
+          //     console.error(err);
+          //   }
+          //   // console.log(context.getBuffer());
+          //   // console.log(files[f].contents.length);
+          //   files[f].contents = new Buffer(context.getBuffer());
+          //   // console.log(files[f].contents.length);
+          //   done();
+          // });
 
-        var options = files[f];
-        options.includeDir = '_includes';
-        options.site = metalsmith.metadata().site;
-        options.content = frontMatter.body;
-        consolodate.liquid('./_layouts/' + frontMatter.attributes.layout + '.html',
-          options,
-          function (err, html) {
-            if (err) {
-              throw err;
-            }
+          var options = files[f];
+          options.includeDir = '_includes';
+          options.site = metalsmith.metadata().site;
+          options.content = frontMatter.body;
+          consolodate.liquid('./_layouts/' + frontMatter.attributes.layout + '.html',
+            options,
+            function (err, html) {
+              if (err) {
+                throw err;
+              }
 
-            files[f].contents = new Buffer(html);
-            done();
-        });
+              files[f].contents = new Buffer(html);
+              done();
+          });
+        } else {
+          done();
+        }
       };
 
       each(Object.keys(files), wrapTemplate, done)
 
   };
 };
+
 // Get load the jekyll config.
   var config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
   config.time = new Date();
 
 ms = Metalsmith(__dirname)
     .metadata({"site":config})
-    .source('./_posts')            // source directory
-    .destination('./_site')     // destination directory
-    // .use(collections({          // group all blog posts by internally
-    //   posts: 'posts/*.md'       // adding key 'collections':'posts'
-    // }))                         // use `collections.posts` in layouts
-    .use(markdown())            // transpile all md into html
-    .use(permalinks({           // change URLs to permalink URLs
-      relative: false,         // put css only in /css
+    .source('./_posts')
+    .ignore([
+      '_drafts',
+      '_includes',
+      '_layouts',
+      '_scss',
+      '_tasks',
+      '_templates',
+      '_test',
+      '.*',
+      'backstop.json',
+      'backstop_data',
+      '.git',
+      '.travis.yml',
+      'package.json,',
+      'CNAME',
+      '*.urls',
+      'metalsmith.js',
+      'README.md',
+      '*.scss',
+      'api',
+      'assets',
+      'images',
+      'node_modules',
+      'Gemfile',
+      'Gruntfile.js',
+      'googleb9297b879f594869'
+    ])
+    .destination('./_site')
+    .use(collections({
+      posts: '_posts/*.md'
+    }))                         // use `collections.posts` in layouts
+    .use(markdown())
+    .use(permalinks({
+      relative: false,
       pattern: config.permalink
     }))
     .use(date())
     .use(layoutsByName({
       directory: '_layouts'
     }))
-    // .use(nested({
-    //   directory: '_layouts'
-    // }))
     .use(jekyllAttributes())
-    .use(layouts({              // wrap layouts around html
-      engine: 'liquid',     // use the layout engine you like
+    .use(layouts({
+      engine: 'liquid',
       directory: '_layouts',
-      includeDir: '_includes'
+      includeDir: '_includes',
+      pattern: ['**/*.md', '*.html']
     }))
     .use(wrappingLayout())
-    // .use(writemetadata())
     .use(debug(true))
     .clean(true)
-    .build(function(err) {      // build process
-      if (err) throw err;       // error handling is required
+    .build(function(err) {
+      if (err) {
+        console.log(err);
+        throw err;
+      }       // error handling is required
     });
-
-// {
-//   "source": "./_posts",
-//   "destination": "./_site",
-//   "metadata": {
-//     "title": "My Jekyll-Powered Blog",
-//     "description": "My second, super-cool, Jekyll-powered blog."
-//   },
-//   "plugins": {
-//     "metalsmith-drafts": {},
-//     "metalsmith-markdown": {},
-//     "metalsmith-permalinks": {
-//       "pattern": ":title"
-//     },
-//     "metalsmith-layouts": {
-//       "engine": "swig",
-//       "directory": "_layouts"
-//     }
-//   }
-// }
