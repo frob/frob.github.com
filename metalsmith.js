@@ -29,7 +29,7 @@ function debug(logToConsole) {
         if (f == '2016-11-21-my-dilemma--what-technology-to-pursue/index.html') {
           console.log('\nFILE:');
           console.log(files[f]);
-          // console.log('contents: ' + files[f].contents);
+          console.log('contents: ' + files[f].contents);
         }
       }
     }
@@ -70,8 +70,43 @@ function wrappingLayout() {
       const wrapTemplate = function(f, done) {
         var frontMatter = fm('' + files[f].contents);
 
+        // var wrapperTemplate = fs.readFileSync('./_layouts/' + frontMatter.attributes.layout + '.html', 'utf8');
+        // var render = liquid.compile(wrapperTemplate);
+        // var context = liquid.newContext({
+        //   locals: {
+        //     content: frontMatter.body,
+        //     page: files[f].page,
+        //     site: metalsmith.metadata().site
+        //   }
+        // });
+        // context.onInclude(function (name, callback) {
+        //   var extname = path.extname(name) ? '' : '.html';
+        //   var filename = path.resolve('./_includes/', name + extname);
+        //
+        //   fs.readFile(filename, {encoding: 'utf8'}, function (err, data){
+        //     if (err) {
+        //       return callback(err);
+        //     }
+        //     var inc = liquid.parse(data);
+        //     callback(null, inc);
+        //   });
+        // });
+        //
+        // render(context, function (err) {
+        //   if (err) {
+        //     console.error(err);
+        //   }
+        //   // console.log(context.getBuffer());
+        //   // console.log(files[f].contents.length);
+        //   files[f].contents = new Buffer(context.getBuffer());
+        //   // console.log(files[f].contents.length);
+        //   done();
+        // });
+
         var options = files[f];
-        options.includeDir = './_includes';
+        options.includeDir = '_includes';
+        options.site = metalsmith.metadata().site;
+        options.content = frontMatter.body;
         consolodate.liquid('./_layouts/' + frontMatter.attributes.layout + '.html',
           options,
           function (err, html) {
@@ -89,7 +124,8 @@ function wrappingLayout() {
   };
 };
 // Get load the jekyll config.
-  const config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
+  var config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
+  config.time = new Date();
 
 ms = Metalsmith(__dirname)
     .metadata({"site":config})
