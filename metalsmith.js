@@ -18,16 +18,15 @@ var each = require('async').each;
 function debug(logToConsole) {
   return function(files, metalsmith, done) {
     if (logToConsole) {
-      console.log('\nMETADATA:');
-      console.log(metalsmith.metadata());
+      // console.log('\nMETADATA:');
+      // console.log(metalsmith.metadata());
+      console.log(Object.keys(files));
 
-      // console.log('\nFILE:');
-      // console.log(files[files.length - 1]);
       for (var f in files) {
-        if (f == '2016-11-21-my-dilemma--what-technology-to-pursue/index.html') {
+        if (f == 'river/index.html') {
           console.log('\nFILE:');
           console.log(files[f]);
-          console.log('contents: ' + files[f].contents);
+          // console.log('contents: ' + files[f].contents);
         }
       }
     }
@@ -50,12 +49,12 @@ function jekyllAttributes() {
           assets: files[f].assets
         }
 
-        delete files[f].title;
-        delete files[f].date;
-        delete files[f].description;
-        delete files[f].canonical;
-        delete files[f].tags;
-        delete files[f].category;
+        // delete files[f].title;
+        // delete files[f].date;
+        // delete files[f].description;
+        // delete files[f].canonical;
+        // delete files[f].tags;
+        // delete files[f].category;
         delete files[f].assets;
       }
 
@@ -121,19 +120,59 @@ function wrappingLayout() {
         }
       };
 
-      each(Object.keys(files), wrapTemplate, done)
-
+      each(Object.keys(files), wrapTemplate, done);
   };
 };
 
+function jekyllFiles() {
+  return function(files, metalsmith, done) {
+      const wrapTemplate = function(f, done) {
+        var wrapperTemplate = files[f].contents.toString();
+        var render = liquid.compile(wrapperTemplate);
+        var context = liquid.newContext({
+          locals: {
+            content: files[f].contents.toString(),
+            page: files[f].page,
+            site: metalsmith.metadata().site
+          }
+        });
+        context.onInclude(function (name, callback) {
+          var extname = path.extname(name) ? '' : '.html';
+          var filename = path.resolve('./_includes/', name + extname);
+
+          fs.readFile(filename, {encoding: 'utf8'}, function (err, data){
+            if (err) {
+              return callback(err);
+            }
+            var inc = liquid.parse(data);
+            callback(null, inc);
+          });
+        });
+
+        render(context, function (err) {
+          if (err) {
+            console.error(err);
+          }
+          // console.log(context.getBuffer());
+          // console.log(files[f].contents.length);
+          files[f].contents = new Buffer(context.getBuffer());
+          // console.log(files[f].contents.length);
+          done();
+        });
+      };
+      each(Object.keys(files), wrapTemplate, done);
+  };
+}
+
 // Get load the jekyll config.
-  var config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
-  config.time = new Date();
+var config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
+config.time = new Date();
 
 ms = Metalsmith(__dirname)
     .metadata({"site":config})
-    .source('./_posts')
+    .source('./')
     .ignore([
+      '*.xml',
       '_drafts',
       '_includes',
       '_layouts',
@@ -141,16 +180,19 @@ ms = Metalsmith(__dirname)
       '_tasks',
       '_templates',
       '_test',
+      '_config.yml',
       '.*',
       'backstop.json',
       'backstop_data',
       '.git',
       '.travis.yml',
-      'package.json,',
+      'LICENSE',
+      'package.json',
       'CNAME',
       '*.urls',
       'metalsmith.js',
       'README.md',
+      'LICENCE',
       '*.scss',
       'api',
       'assets',
@@ -158,12 +200,16 @@ ms = Metalsmith(__dirname)
       'node_modules',
       'Gemfile',
       'Gruntfile.js',
-      'googleb9297b879f594869'
+      'gulpfile.js',
+      'googleb9297b879f594869.html'
     ])
+    .use(jekyllFiles())
     .destination('./_site')
     .use(collections({
       posts: '_posts/*.md'
-    }))                         // use `collections.posts` in layouts
+      // @TODO: add tags
+      // @TODO: add category
+    }))
     .use(markdown())
     .use(permalinks({
       relative: false,
@@ -178,14 +224,15 @@ ms = Metalsmith(__dirname)
       engine: 'liquid',
       directory: '_layouts',
       includeDir: '_includes',
-      pattern: ['**/*.md', '*.html']
+      pattern: ['*.md', '**/*.md', '**/*.html', '*.html']
     }))
     .use(wrappingLayout())
     .use(debug(true))
     .clean(true)
     .build(function(err) {
+      // Error handling is required.
       if (err) {
         console.log(err);
         throw err;
-      }       // error handling is required
+      }
     });
