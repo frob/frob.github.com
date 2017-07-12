@@ -18,8 +18,8 @@ var each = require('async').each;
 function debug(logToConsole) {
   return function(files, metalsmith, done) {
     if (logToConsole) {
-      // console.log('\nMETADATA:');
-      // console.log(metalsmith.metadata());
+      console.log('\nMETADATA:');
+      console.log(metalsmith.metadata());
       console.log(Object.keys(files));
 
       for (var f in files) {
@@ -37,69 +37,49 @@ function debug(logToConsole) {
 
 function jekyllAttributes() {
   return function(files, metalsmith, done) {
-      for (var f in files) {
-        files[f].content = files[f].contents;
-        files[f].page = {
-          title: files[f].title,
-          date: files[f].date,
-          description: files[f].description,
-          canonical: files[f].canonical,
-          tags: files[f].tags,
-          category: files[f].category,
-          assets: files[f].assets
-        }
-
-        // delete files[f].title;
-        // delete files[f].date;
-        // delete files[f].description;
-        // delete files[f].canonical;
-        // delete files[f].tags;
-        // delete files[f].category;
-        delete files[f].assets;
+    const attachAttributes = function(f, done) {
+      files[f].content = files[f].contents;
+      files[f].page = {
+        title: files[f].title,
+        date: files[f].date,
+        description: files[f].description,
+        canonical: files[f].canonical,
+        tags: files[f].tags,
+        category: files[f].category,
+        assets: files[f].assets
       }
+      if (!('site' in files[f])) {
+        files[f].site = metalsmith.metadata().site;
 
-    done();
+        if (!('posts' in files[f].site) && ('collections' in metalsmith.metadata()) && ('posts' in metalsmith.metadata().collections)) {
+          for (post in metalsmith.metadata().collections.posts) {
+            if (typeof post === Number) {
+              files[f].site.posts[parseInt(post)] = metalsmith.metadata().collections.posts[post];
+            }
+          }
+          files[f].site.posts = metalsmith.metadata().collections.posts;
+        }
+      }
+      delete files[f].title;
+      delete files[f].date;
+      delete files[f].description;
+      delete files[f].canonical;
+      delete files[f].tags;
+      delete files[f].category;
+      delete files[f].assets;
+
+      done();
+    };
+
+    each(Object.keys(files), attachAttributes, done);
   };
 };
 
 function wrappingLayout() {
   return function(files, metalsmith, done) {
       const wrapTemplate = function(f, done) {
-        var frontMatter = fm('' + files[f].contents);
-
+        var frontMatter = fm(files[f].contents.toString());
         if ('layout' in frontMatter.attributes) {
-          // var wrapperTemplate = fs.readFileSync('./_layouts/' + frontMatter.attributes.layout + '.html', 'utf8');
-          // var render = liquid.compile(wrapperTemplate);
-          // var context = liquid.newContext({
-          //   locals: {
-          //     content: frontMatter.body,
-          //     page: files[f].page,
-          //     site: metalsmith.metadata().site
-          //   }
-          // });
-          // context.onInclude(function (name, callback) {
-          //   var extname = path.extname(name) ? '' : '.html';
-          //   var filename = path.resolve('./_includes/', name + extname);
-          //
-          //   fs.readFile(filename, {encoding: 'utf8'}, function (err, data){
-          //     if (err) {
-          //       return callback(err);
-          //     }
-          //     var inc = liquid.parse(data);
-          //     callback(null, inc);
-          //   });
-          // });
-          //
-          // render(context, function (err) {
-          //   if (err) {
-          //     console.error(err);
-          //   }
-          //   // console.log(context.getBuffer());
-          //   // console.log(files[f].contents.length);
-          //   files[f].contents = new Buffer(context.getBuffer());
-          //   // console.log(files[f].contents.length);
-          //   done();
-          // });
 
           var options = files[f];
           options.includeDir = '_includes';
@@ -126,9 +106,9 @@ function wrappingLayout() {
 
 function jekyllFiles() {
   return function(files, metalsmith, done) {
-      const wrapTemplate = function(f, done) {
-        var wrapperTemplate = files[f].contents.toString();
-        var render = liquid.compile(wrapperTemplate);
+      const parseTemplate = function(f, done) {
+        var template = files[f].contents.toString();
+        var render = liquid.compile(template);
         var context = liquid.newContext({
           locals: {
             content: files[f].contents.toString(),
@@ -136,6 +116,12 @@ function jekyllFiles() {
             site: metalsmith.metadata().site
           }
         });
+
+        if (('collections' in metalsmith.metadata()) && ('posts' in metalsmith.metadata().collections)) {
+          context._locals.site.posts = metalsmith.metadata().collections.posts;
+        }
+
+        if (f === 'river/index.html') console.log(context);
         context.onInclude(function (name, callback) {
           var extname = path.extname(name) ? '' : '.html';
           var filename = path.resolve('./_includes/', name + extname);
@@ -153,14 +139,12 @@ function jekyllFiles() {
           if (err) {
             console.error(err);
           }
-          // console.log(context.getBuffer());
-          // console.log(files[f].contents.length);
           files[f].contents = new Buffer(context.getBuffer());
-          // console.log(files[f].contents.length);
+
           done();
         });
       };
-      each(Object.keys(files), wrapTemplate, done);
+      each(Object.keys(files), parseTemplate, done);
   };
 }
 
@@ -203,10 +187,13 @@ ms = Metalsmith(__dirname)
       'gulpfile.js',
       'googleb9297b879f594869.html'
     ])
-    .use(jekyllFiles())
     .destination('./_site')
     .use(collections({
-      posts: '_posts/*.md'
+      posts: {
+        pattern: '_posts/*.md',
+        refer: false,
+        sortBy: 'date'
+      }
       // @TODO: add tags
       // @TODO: add category
     }))
@@ -220,14 +207,15 @@ ms = Metalsmith(__dirname)
       directory: '_layouts'
     }))
     .use(jekyllAttributes())
+    .use(jekyllFiles())
     .use(layouts({
       engine: 'liquid',
       directory: '_layouts',
       includeDir: '_includes',
-      pattern: ['*.md', '**/*.md', '**/*.html', '*.html']
+      pattern: ['*.md', '*.html']
     }))
     .use(wrappingLayout())
-    .use(debug(true))
+    // .use(debug(true))
     .clean(true)
     .build(function(err) {
       // Error handling is required.
