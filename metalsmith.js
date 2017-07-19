@@ -12,8 +12,8 @@ const fm = require('front-matter');
 const md = require('marked');
 const liquid = require('tinyliquid');
 const path = require('path');
-var consolodate = require('consolidate');
-var each = require('async').each;
+const consolodate = require('consolidate');
+const each = require('async').each;
 
 function debug(logToConsole) {
   return function(files, metalsmith, done) {
@@ -79,13 +79,14 @@ function wrappingLayout() {
   return function(files, metalsmith, done) {
       const wrapTemplate = function(f, done) {
         var frontMatter = fm(files[f].contents.toString());
-        if ('layout' in frontMatter.attributes) {
+        const layout = ('layout' in files[f]) ? files[f].layout : ('layout' in frontMatter.attributes) ? frontMatter.attributes.layout : false;
+        if (layout) {
 
           var options = files[f];
           options.includeDir = '_includes';
           options.site = metalsmith.metadata().site;
           options.content = frontMatter.body;
-          consolodate.liquid('./_layouts/' + frontMatter.attributes.layout + '.html',
+          consolodate.liquid('./_layouts/' + layout + ( layout.endsWith('html') ? '' : '.html'),
             options,
             function (err, html) {
               if (err) {
