@@ -63,7 +63,7 @@ baseurl: ""
 
 markdown: redcarpet
 highlighter: rouge
-permalink: /posts/:year/:month/:day/:title.html
+permalink: ./posts/:year/:month/:day/:title.html
 
 # The release of Jekyll Now that you're using
 version: v3.0.0
