@@ -2,6 +2,7 @@
 layout: post
 title: Back from DrupalConLA (A postmortem)
 canonical:
+date: 2015-05-18
 category: drupalcon
 tags: [drupalcon, public transportation, rant]
 assets:
