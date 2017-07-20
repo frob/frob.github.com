@@ -60,13 +60,18 @@ function jekyllAttributes() {
           files[f].site.posts = metalsmith.metadata().collections.posts;
         }
       }
-      delete files[f].title;
-      delete files[f].date;
-      delete files[f].description;
-      delete files[f].canonical;
-      delete files[f].tags;
-      delete files[f].category;
-      delete files[f].assets;
+      const pubDate = new Date(files[f].date);
+      files[f].year = pubDate.getFullYear();
+      files[f].month = pubDate.getMonth() < 9 ? "0" + parseInt(pubDate.getMonth() + 1) : pubDate.getMonth() + 1;
+      files[f].day = pubDate.getUTCDate() < 9 ? "0" + pubDate.getUTCDate() : pubDate.getUTCDate();
+
+      // delete files[f].title;
+      // delete files[f].date;
+      // delete files[f].description;
+      // delete files[f].canonical;
+      // delete files[f].tags;
+      // delete files[f].category;
+      // delete files[f].assets;
 
       done();
     };
@@ -198,17 +203,25 @@ ms = Metalsmith(__dirname)
       // @TODO: add tags
       // @TODO: add category
     }))
+    .use(jekyllAttributes())
+    .use(jekyllFiles())
     .use(markdown())
+    .use(date())
     .use(permalinks({
       relative: false,
-      pattern: config.permalink
+      pattern: ':title.html',
+      date: 'YYYY',
+
+      linksets: [{
+        match: { collection: 'posts' },
+        pattern: config.permalink,
+        date: 'mmddyy'
+      }]
+
     }))
-    .use(date())
     .use(layoutsByName({
       directory: '_layouts'
     }))
-    .use(jekyllAttributes())
-    .use(jekyllFiles())
     .use(layouts({
       engine: 'liquid',
       directory: '_layouts',
