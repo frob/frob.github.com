@@ -23,9 +23,9 @@ function debug(logToConsole) {
       console.log(Object.keys(files));
 
       for (var f in files) {
-        if (f == 'river/index.html') {
+        if (f == 'posts/nan/nan/nan/back-from-drupalconla-a-postmortem.html/index.html') {
           console.log('\nFILE:');
-          console.log(files[f]);
+          // console.log(files[f]);
           // console.log('contents: ' + files[f].contents);
         }
       }
@@ -121,9 +121,6 @@ function jekyllFiles() {
           context._locals.site.tags = metalsmith.metadata().collections;
         }
 
-if (f == 'index.html') {
-console.log(context);
-}
         context.onInclude(function (name, callback) {
           var extname = path.extname(name) ? '' : '.html';
           var filename = path.resolve('./_includes/', name + extname);
