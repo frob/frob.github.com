@@ -50,15 +50,6 @@ function jekyllAttributes() {
       }
       if (!('site' in files[f])) {
         files[f].site = metalsmith.metadata().site;
-
-        if (!('posts' in files[f].site) && ('collections' in metalsmith.metadata()) && ('posts' in metalsmith.metadata().collections)) {
-          for (post in metalsmith.metadata().collections.posts) {
-            if (typeof post === Number) {
-              files[f].site.posts[parseInt(post)] = metalsmith.metadata().collections.posts[post];
-            }
-          }
-          files[f].site.posts = metalsmith.metadata().collections.posts;
-        }
       }
       const pubDate = new Date(files[f].date);
       files[f].year = pubDate.getFullYear();
@@ -86,7 +77,6 @@ function wrappingLayout() {
         var frontMatter = fm(files[f].contents.toString());
         const layout = ('layout' in files[f]) ? files[f].layout : ('layout' in frontMatter.attributes) ? frontMatter.attributes.layout : false;
         if (layout) {
-
           var options = files[f];
           options.includeDir = '_includes';
           options.site = metalsmith.metadata().site;
@@ -127,7 +117,13 @@ function jekyllFiles() {
           context._locals.site.posts = metalsmith.metadata().collections.posts;
         }
 
-        if (f === 'river/index.html') console.log(context);
+        if (('collections' in metalsmith.metadata()) && ('posts' in metalsmith.metadata().collections)) {
+          context._locals.site.tags = metalsmith.metadata().collections;
+        }
+
+if (f == 'index.html') {
+console.log(context);
+}
         context.onInclude(function (name, callback) {
           var extname = path.extname(name) ? '' : '.html';
           var filename = path.resolve('./_includes/', name + extname);
@@ -199,6 +195,11 @@ ms = Metalsmith(__dirname)
         pattern: '_posts/*.md',
         refer: false,
         sortBy: 'date'
+      },
+      frontpage: {
+        refer: false,
+        sortBy: 'date',
+        reverse: true
       }
       // @TODO: add tags
       // @TODO: add category
@@ -226,7 +227,7 @@ ms = Metalsmith(__dirname)
       engine: 'liquid',
       directory: '_layouts',
       includeDir: '_includes',
-      pattern: ['*.md', '*.html']
+      pattern: ['*.md']
     }))
     .use(wrappingLayout())
     // .use(debug(true))
