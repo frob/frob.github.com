@@ -77,30 +77,40 @@ function jekyllAttributes() {
 
 function wrappingLayout() {
   return function(files, metalsmith, done) {
-      const wrapTemplate = function(f, done) {
-        var frontMatter = fm(files[f].contents.toString());
-        const layout = ('layout' in files[f]) ? files[f].layout : ('layout' in frontMatter.attributes) ? frontMatter.attributes.layout : false;
-        if (layout) {
-          var options = files[f];
-          options.includeDir = '_includes';
-          options.site = metalsmith.metadata().site;
-          options.content = frontMatter.body;
-          consolodate.liquid('./_layouts/' + layout + ( layout.endsWith('html') ? '' : '.html'),
-            options,
-            function (err, html) {
-              if (err) {
-                throw err;
-              }
+    const wrapTemplate = function(f, done) {
+      // const fixCollectionMetainfo = function(tag) {
+      //   for (i in files[f].site.tags[tag]) {
+      //     if (typeof files[f].site.tags[tag][i] != 'undefined') {
+      //       files[f].site.tags[tag][i].url = 'mambajamba';
+      //     }
+      //     console.log(files[f].site.tags[tag][i]);
+      //   }
+      // };
+      // each(Object.keys(files[f].site.tags), fixCollectionMetainfo);
 
-              files[f].contents = new Buffer(html);
-              done();
+      var frontMatter = fm(files[f].contents.toString());
+      const layout = ('layout' in files[f]) ? files[f].layout : ('layout' in frontMatter.attributes) ? frontMatter.attributes.layout : false;
+      if (layout) {
+        var options = files[f];
+        options.includeDir = '_includes';
+        options.site = metalsmith.metadata().site;
+        options.content = frontMatter.body;
+        consolodate.liquid('./_layouts/' + layout + ( layout.endsWith('html') ? '' : '.html'),
+          options,
+          function (err, html) {
+            if (err) {
+              throw err;
+            }
+
+            files[f].contents = new Buffer(html);
+            done();
           });
-        } else {
-          done();
-        }
-      };
+      } else {
+        done();
+      }
+    };
 
-      each(Object.keys(files), wrapTemplate, done);
+    each(Object.keys(files), wrapTemplate, done);
   };
 };
 
