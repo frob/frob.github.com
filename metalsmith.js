@@ -48,9 +48,7 @@ function jekyllAttributes() {
         category: files[f].category,
         assets: files[f].assets
       }
-      if (!('site' in files[f])) {
-        files[f].site = metalsmith.metadata().site;
-      }
+
       const pubDate = new Date(files[f].date);
       files[f].year = pubDate.getFullYear();
       files[f].month = pubDate.getMonth() < 9 ? "0" + parseInt(pubDate.getMonth() + 1) : pubDate.getMonth() + 1;
@@ -120,7 +118,6 @@ function jekyllFiles() {
         if (('collections' in metalsmith.metadata()) && ('posts' in metalsmith.metadata().collections)) {
           context._locals.site.tags = metalsmith.metadata().collections;
         }
-
         context.onInclude(function (name, callback) {
           var extname = path.extname(name) ? '' : '.html';
           var filename = path.resolve('./_includes/', name + extname);
@@ -144,6 +141,30 @@ function jekyllFiles() {
         });
       };
       each(Object.keys(files), parseTemplate, done);
+  };
+}
+
+function jekylleCollections() {
+  return function(files, metalsmith, done) {
+      const attachCollections = function(f, done) {
+        if (!('site' in files[f])) {
+          files[f].site = metalsmith.metadata().site;
+        }
+        if (typeof files[f].tags != 'undefined' && files[f].tags != null) {
+          if (typeof files[f].collection == 'undefined') {
+            files[f].collection = ['posts'];
+          }
+          files[f].tags.map(function (i) {
+            files[f].collection.push(i);
+          });
+          done();
+        }
+        else {
+          done();
+        }
+      };
+
+      each(Object.keys(files), attachCollections, done);
   };
 }
 
@@ -187,6 +208,7 @@ ms = Metalsmith(__dirname)
       'googleb9297b879f594869.html'
     ])
     .destination('./_site')
+    .use(jekylleCollections())
     .use(collections({
       posts: {
         pattern: '_posts/*.md',
@@ -195,14 +217,25 @@ ms = Metalsmith(__dirname)
       },
       frontpage: {
         refer: false,
-        sortBy: 'date',
-        reverse: true
+        sortBy: 'date'
+      },
+      rants: {
+        refer: false,
+        sortBy: 'date'
+      },
+      quarzack13: {
+        refer: false,
+        sortBy: 'date'
+      },
+      tutorials: {
+        refer: false,
+        sortBy: 'date'
       }
       // @TODO: add tags
       // @TODO: add category
     }))
-    .use(jekyllAttributes())
     .use(jekyllFiles())
+    .use(jekyllAttributes())
     .use(markdown())
     .use(date())
     .use(permalinks({
