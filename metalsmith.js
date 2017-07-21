@@ -3,7 +3,7 @@ const collections = require('metalsmith-collections');
 const layouts     = require('metalsmith-layouts');
 const markdown    = require('metalsmith-markdown');
 const permalinks  = require('metalsmith-permalinks');
-const nested = require('metalsmith-nested');
+// const nested = require('metalsmith-nested');
 const date = require('metalsmith-jekyll-dates');
 const yaml = require('js-yaml');
 const fs   = require('fs');
@@ -246,18 +246,6 @@ ms = Metalsmith(__dirname)
     .use(jekyllAttributes())
     .use(markdown())
     .use(date())
-    .use(permalinks({
-      relative: false,
-      pattern: ':title.html',
-      date: 'YYYY',
-
-      linksets: [{
-        match: { collection: 'posts' },
-        pattern: config.permalink,
-        date: 'mmddyy'
-      }]
-
-    }))
     .use(layoutsByName({
       directory: '_layouts'
     }))
@@ -266,6 +254,19 @@ ms = Metalsmith(__dirname)
       directory: '_layouts',
       includeDir: '_includes',
       pattern: ['*.md']
+    }))
+    .use(permalinks({
+      relative: false,
+      pattern: ':title.html',
+      date: 'YYYY',
+
+      linksets: [{
+        match: { collection: 'posts' },
+        pattern: config.permalink
+      },{
+        match: { collection: 'frontpage' },
+        pattern: config.permalink
+      }]
     }))
     .use(wrappingLayout())
     // .use(debug(true))
@@ -299,6 +300,7 @@ function modCollections(opts){
       var data = files[file];
 console.log(files[file]);
       data.url = data.path = file;
+      data.content = md(data.contents.toString());
 
       match(file, data).forEach(function(key){
         if (key && keys.indexOf(key) < 0){
