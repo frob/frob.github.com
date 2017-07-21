@@ -9,9 +9,9 @@ layout: default
     <article class="post">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-      <aside class="author-info">Written on {{ post.date | date: "%B %e, %Y" }}</aside>
+      <aside class="author-info">Written on {{ post.date | date: "%b %d, %Y" }}</aside>
       <div class="entry">
-        {{ post.content | truncatewords:40}}
+        {{ post.content | strip_html | truncatewords:40}}
       </div>
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More about {{ post.title }}</a>
