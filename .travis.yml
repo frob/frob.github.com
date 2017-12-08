@@ -7,19 +7,19 @@ branches:
     - master
 script: bundle exec jekyll build && npm test
 after_script:
-  - cat backstop_data/ci_report/xunit.xml
-  - cat backstop_data/html_report/config.js
+#  - cat backstop_data/ci_report/xunit.xml
+#  - cat backstop_data/html_report/config.js
 before_install:
-  - nvm install node
-  - nvm install v7
-  - nvm use v7
-  - npm install
-  - npm install -g backstopjs
-  - npm install -g http-server
+#  - nvm install node
+#  - nvm install v7
+#  - nvm use v7
+#  - npm install
+#  - npm install -g backstopjs
+#  - npm install -g http-server
 before_script:
   # - git checkout $DEPLOYED_HASH
   - bundle exec jekyll build
-  - npm run reference
+#  - npm run reference
   # - git checkout $TRAVIS_PULL_REQUEST_BRANCH
   # - git checkout $TRAVIS_BRANCH
 deploy:
