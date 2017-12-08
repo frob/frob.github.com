@@ -5,7 +5,7 @@ branches:
   only:
     - "/1.(.*)/"
     - master
-script: bundle exec jekyll build && npm test
+script: bundle exec jekyll build # && npm test
 after_script:
 #  - cat backstop_data/ci_report/xunit.xml
 #  - cat backstop_data/html_report/config.js
