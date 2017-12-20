@@ -53,6 +53,7 @@ For the vast majority of people who would be switch from Fahrenheit to Celsius, 
 <td align="center">over 40 °C</td>
 <td align="left">These places exist on earth, but I have no idea why anyone would live there.</td>
 </tr></tbody></table>
+
 ## What is Fahrenheit
 
 Fahrenheit was a scale that (to the best of our knowlege) was derived by 0 °F being a stable solution of ice, water, and ammonium chloride, and the temprature of a health human being 96 °F. In the final standard of the scale the healthy human ended up being 98.6 °F and freezing water at sea level was 32 °F.
