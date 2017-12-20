@@ -17,16 +17,42 @@ TLDR;
 
 For the vast majority of people who would be switch from Fahrenheit to Celsius, this is what you need to know.
 
-|    Celsius     | Action to take                                                                                                 |
-|:--------------:|:---------------------------------------------------------------------------------------------------------------|
-|   Below 0 °C   | It is frozen, wear a jacket and possibly themals. The further below 0 °C the more warm cloths you need to wear. |
-| 0 °C to 10 °C  | Its cold, but not freezing. Wear a jacket.                                                                     |
-| 10 °C to 20 °C | There is a chill, a shirt is fine if you're into colder weather.                                               |
-| 20 °C to 25 °C | The temperature is ideal for human beings.                                                                     |
-| 25 °C to 30 °C | It is warm but not hot.                                                                                        |
-| 30 °C to 40 °C | It is hot, unless necessary don't go outside or in the sun.                                                    |
-|   over 40 °C   | These places exist on earth, but I have no idea why anyone would live there.                                   |
-
+<table>
+<thead>
+<tr>
+<th align="center">Celsius</th>
+<th align="left">Action to take</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Below 0 °C</td>
+<td align="left">It is frozen, wear a jacket and possibly themals. The further below 0 °C the more warm cloths you need to wear.</td>
+</tr>
+<tr>
+<td align="center">0 °C to 10 °C</td>
+<td align="left">Its cold, but not freezing. Wear a jacket.</td>
+</tr>
+<tr>
+<td align="center">10 °C to 20 °C</td>
+<td align="left">There is a chill, a shirt is fine if you're into colder weather.</td>
+</tr>
+<tr>
+<td align="center">20 °C to 25 °C</td>
+<td align="left">The temperature is ideal for human beings.</td>
+</tr>
+<tr>
+<td align="center">25 °C to 30 °C</td>
+<td align="left">It is warm but not hot.</td>
+</tr>
+<tr>
+<td align="center">30 °C to 40 °C</td>
+<td align="left">It is hot, unless necessary don't go outside or in the sun.</td>
+</tr>
+<tr>
+<td align="center">over 40 °C</td>
+<td align="left">These places exist on earth, but I have no idea why anyone would live there.</td>
+</tr></tbody></table>
 ## What is Fahrenheit
 
 Fahrenheit was a scale that (to the best of our knowlege) was derived by 0 °F being a stable solution of ice, water, and ammonium chloride, and the temprature of a health human being 96 °F. In the final standard of the scale the healthy human ended up being 98.6 °F and freezing water at sea level was 32 °F.
@@ -53,34 +79,121 @@ Or don't bother converting. Refer to the following table.
 
 ## Fahrenheit to Celsius Table
 
-| Fahrenheit | Celsius |
-|:----------:|:-------:|
-|  -22.0 °F  | -30 °C  |
-|  -4.0 °F   | -20 °C  |
-|  14.0 °F   | -10 °C  |
-|  15.8 °F   |  -9 °C  |
-|  17.6 °F   |  -8 °C  |
-|  19.4 °F   |  -7 °C  |
-|  21.2 °F   |  -6 °C  |
-|  23.0 °F   |  -5 °C  |
-|  24.8 °F   |  -4 °C  |
-|  26.6 °F   |  -3 °C  |
-|  28.4 °F   |  -2 °C  |
-|  30.2 °F   |  -1 °C  |
-|  32.0 °F   |  0 °C   |
-|  33.8 °F   |  1 °C   |
-|  35.6 °F   |  2 °C   |
-|  37.4 °F   |  3 °C   |
-|  39.2 °F   |  4 °C   |
-|  41.0 °F   |  5 °C   |
-|  42.8 °F   |  6 °C   |
-|  44.6 °F   |  7 °C   |
-|  46.4 °F   |  8 °C   |
-|  48.2 °F   |  9 °C   |
-|  50.0 °F   |  10 °C  |
-|  68.0 °F   |  20 °C  |
-|  86.0 °F   |  30 °C  |
-|  104.0 °F  |  40 °C  |
-|  122.0 °F  |  50 °C  |
+<table>
+<thead>
+<tr>
+<th align="center">Fahrenheit</th>
+<th align="center">Celsius</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">-22.0 °F</td>
+<td align="center">-30 °C</td>
+</tr>
+<tr>
+<td align="center">-4.0 °F</td>
+<td align="center">-20 °C</td>
+</tr>
+<tr>
+<td align="center">14.0 °F</td>
+<td align="center">-10 °C</td>
+</tr>
+<tr>
+<td align="center">15.8 °F</td>
+<td align="center">-9 °C</td>
+</tr>
+<tr>
+<td align="center">17.6 °F</td>
+<td align="center">-8 °C</td>
+</tr>
+<tr>
+<td align="center">19.4 °F</td>
+<td align="center">-7 °C</td>
+</tr>
+<tr>
+<td align="center">21.2 °F</td>
+<td align="center">-6 °C</td>
+</tr>
+<tr>
+<td align="center">23.0 °F</td>
+<td align="center">-5 °C</td>
+</tr>
+<tr>
+<td align="center">24.8 °F</td>
+<td align="center">-4 °C</td>
+</tr>
+<tr>
+<td align="center">26.6 °F</td>
+<td align="center">-3 °C</td>
+</tr>
+<tr>
+<td align="center">28.4 °F</td>
+<td align="center">-2 °C</td>
+</tr>
+<tr>
+<td align="center">30.2 °F</td>
+<td align="center">-1 °C</td>
+</tr>
+<tr>
+<td align="center">32.0 °F</td>
+<td align="center">0 °C</td>
+</tr>
+<tr>
+<td align="center">33.8 °F</td>
+<td align="center">1 °C</td>
+</tr>
+<tr>
+<td align="center">35.6 °F</td>
+<td align="center">2 °C</td>
+</tr>
+<tr>
+<td align="center">37.4 °F</td>
+<td align="center">3 °C</td>
+</tr>
+<tr>
+<td align="center">39.2 °F</td>
+<td align="center">4 °C</td>
+</tr>
+<tr>
+<td align="center">41.0 °F</td>
+<td align="center">5 °C</td>
+</tr>
+<tr>
+<td align="center">42.8 °F</td>
+<td align="center">6 °C</td>
+</tr>
+<tr>
+<td align="center">44.6 °F</td>
+<td align="center">7 °C</td>
+</tr>
+<tr>
+<td align="center">46.4 °F</td>
+<td align="center">8 °C</td>
+</tr>
+<tr>
+<td align="center">48.2 °F</td>
+<td align="center">9 °C</td>
+</tr>
+<tr>
+<td align="center">50.0 °F</td>
+<td align="center">10 °C</td>
+</tr>
+<tr>
+<td align="center">68.0 °F</td>
+<td align="center">20 °C</td>
+</tr>
+<tr>
+<td align="center">86.0 °F</td>
+<td align="center">30 °C</td>
+</tr>
+<tr>
+<td align="center">104.0 °F</td>
+<td align="center">40 °C</td>
+</tr>
+<tr>
+<td align="center">122.0 °F</td>
+<td align="center">50 °C</td>
+</tr></tbody></table>
 
 Thats it, empower yourself. Celsius is easy. Just do it!
