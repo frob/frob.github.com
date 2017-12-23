@@ -4,7 +4,9 @@ title: Switching to Celsius from Fahrenheit for normal people
 date: 2017-04-23
 description: ""
 canonical:
-tags:
+tags: 
+  - frontpage
+  - tutorial
 category:
 assets:
   js:
@@ -15,7 +17,7 @@ assets:
 
 TLDR;
 
-For the vast majority of people who would be switch from Fahrenheit to Celsius, this is what you need to know.
+For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know.
 
 <table>
 <thead>
