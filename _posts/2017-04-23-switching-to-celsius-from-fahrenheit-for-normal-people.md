@@ -2,7 +2,7 @@
 layout: post
 title: Switching to Celsius from Fahrenheit for normal people
 date: 2017-04-23
-description: ""
+description: "For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know."
 canonical:
 tags: 
   - frontpage
