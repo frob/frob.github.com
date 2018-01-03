@@ -19,6 +19,8 @@ TLDR;
 
 For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know.
 
+<!--- This comment is here to try and keep the liquid template engine that my blog runs on from truncating in the middle of the next table and thus breaking the layout of my river pages. Please disregard this text, liquid has a limitation in that it doesn't have a fix html or any html stipping that isn't as heavy handed as remove everything. I want to keep some of my styling so I am adding this --!>
+
 <table>
 <thead>
 <tr>
