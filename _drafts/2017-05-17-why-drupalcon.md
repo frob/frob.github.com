@@ -2,16 +2,21 @@
 layout: post
 title: Why DrupalCon
 date: 2017-05-17
-description: ""
-canonical:
+description: "Contributing to Drupal allows us to ensure it remains the best and most flexible general purpose Content Management System. Contributing to Drupal is the job of the Drupal Community."
+canonical: https://www.clarity-innovations.com/blog/fanderson/drupalcon-recap-collaboration-and-contribution
 tags:
 category:
+  - frontpage
+  - quarzack13
+  - drupal
 assets:
   js:
     -
   css:
     -
 ---
+
+# Collaboration and Contribution at DrupalCon
 
 [Drupal](https://www.drupal.org) is the most flexible general purpose Content Management System on the market today --Open Source or not. Using Drupal allows us to provide a cost effective and flexible platform for our clients. Contributing to Drupal allows us to ensure it remains the best and most flexible general purpose Content Management System.
 
