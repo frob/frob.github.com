@@ -6,6 +6,7 @@ description: "I should continue my series on Machine Generated text or Composer 
 canonical:
 tags:
 category:
+  - frontpage
 assets:
   js:
     - "//cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js"
@@ -45,7 +46,7 @@ My old example converts easily to A-Frame. While the threejs example is around 3
   <a-entity position="0 0 2">
     <a-camera></a-camera>
   </a-entity>
-</a-scene>
+</a-scene>~
 ```
 
 To recreate my Threejs example I used these components and primitives:
