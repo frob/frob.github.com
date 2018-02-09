@@ -13,22 +13,40 @@ assets:
     -
 ---
 
-Do you remember that time when you googled a js lib, only to find something with the same name but was a completely different js lib? Well that happened when I was looking for [A-Frame](https://aframe.io). Just so you know we are not talking about this slightly older mvc js framework with the same name; we are going to be talking about [Mozilla's WebVR lib A-Frame](https://aframe.io).
+Do you remember that time when you tried to find a Javascript library only to find the wrong Javascript library with the same name. Well that happened when I was looking for [A-Frame](https://aframe.io). Just so you know we are not talking about the slightly older MVC Javascript framework named AFrame; today, we are going to be talking about [Mozilla's WebVR library A-Frame](https://aframe.io).
 
 # What is [A-Frame](https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”)
 
-A-Frame is an open-source web framework for building virtual reality experiences on the web. We can build VR web sites that we can move and look around in with only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and fast to develop, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.
+A-Frame is an open-source web framework for building virtual reality experiences on the web. We can use A-Frame to build VR web page using only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and extensible, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.
 
 ## How to use A Frame
 
-Remember when you read my [introduction to Threejs](https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html) (because you are an avid reader of my blog)? Well that will be useful now because A-Frame uses threejs behind the scenes to manage the webgl. So lets do that first.
+Remember when you read my [introduction to Threejs](https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html) (because you are an avid reader of my blog)? If you know how to use threejs then you already know how to extend A-Frame. That is because A-Frame uses threejs behind the scenes to manage the webgl. Let's take a look at the example from my threejs post.
 
 <iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/" ></iframe>
 
 My old example converts easily to A-Frame. While the threejs example is around 30 lines of Javascript, the A-Frame example converts to about 9 lines of custom html tags with no custom JS. It doesn't even use custom js for the animation. I am not the kind of person that considers code to be harder than markup, but in this case it makes more sense to use markup and the majority of the information that is lost is the boilerplate code. All we have to do to setup a scene is use the ```<a-scene></a-scene>``` tags. All the parts of the scene go inside.
 
-@TODO: include example index here.
-[A-Frame example: threejs port](https://from.github.io/aframeexamples).
+[A-Frame example: threejs port](https://frob.github.io/aframeexamples).
+
+```HTML
+<a-scene fog="type: linear; color: #000; near: 1; far: 5" color="black">
+  <a-box position="0 1.5 0" rotation="0 45 0" width="1" height="1" depth="1"  color="#00ff00">
+    <a-animation attribute="rotation"
+                 dur="9500"
+                 easing="linear"
+                 from="0 45 0"
+                 to="-360 405 0"
+                 repeat="indefinite"></a-animation>
+  </a-box>
+  <a-sky color="#000"></a-sky>
+  <a-entity light="type: ambient; color: #101030"></a-entity>
+  <a-entity light="type: directional; color: #ffffff; intensity: 0.5" position="0 1 0"></a-entity>
+  <a-entity position="0 0 2">
+    <a-camera></a-camera>
+  </a-entity>
+</a-scene>
+```
 
 To recreate my Threejs example I used these components and primitives:
  - [scene](https://aframe.io/docs/0.3.0/core/scene.html)
@@ -75,7 +93,7 @@ If you read the above carefully you will notice that a skybox is just a primitiv
 
 or
 
-```html  
+```html
 <a-assets>
   <img id="sky" src="sky.png">
 </a-assets>
@@ -114,7 +132,7 @@ The billboard custom component allows us to create a normal entity and just use 
 
 #### Assets
 
-This is as good a time as any to talk about asset management in A-Frame (you might have noticed the ```a-asset``` tag in the last exmpale). Simple scenes can handle assets in a simple manner --with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then [A-Frame's asset management system](https://aframe.io/docs/0.3.0/core/asset-management-system.html) comes in very handy. Here is an example of both ways of [loading assets ripped ripped straight from the docs](https://aframe.io/docs/0.3.0/primitives/a-image.html).
+This is as good a time as any to talk about asset management in A-Frame (you might have noticed the ```a-asset``` tag in the last example). Simple scenes can handle assets in a simple manner --with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then [A-Frame's asset management system](https://aframe.io/docs/0.3.0/core/asset-management-system.html) comes in very handy. Here is an example of both ways of [loading assets ripped ripped straight from the docs](https://aframe.io/docs/0.3.0/primitives/a-image.html).
 
 ```html
 <a-assets>
@@ -167,9 +185,7 @@ You will notice that the above demo has a rather bland looking teapot. This is b
 
 As said before shaders are how the computer knows what to display. A-Frame has some basic default shaders built in, but it also supports custom shaders.
 
-@TODO how to include custom shaders.
-
-Generally speaking there are two types of Shaders: Vertex Shaders and Pixel Shaders. Bla Blah Blah, how WebGL uses shaders. Vertex Shaders act on the geometry of an object and the Pixel Shaders affect the image on a pixel by pixel basis.
+Generally speaking there are two types of Shaders: Vertex Shaders and Pixel Shaders. Vertex Shaders act on the geometry of an object and the Pixel Shaders affect the image on a pixel by pixel basis.
 
 A common use of the Vertex Shaders is to provide a smoothly effect on a mesh (it is impossible to have a truly smooth mesh, a Vertex Shader can make a dodecahedron appear to be smooth in the middle). A common use of a Pixel Shader is provide a bump map or normal map effect. This can provide seemingly complex depth on a very simple model. Another common use of a Pixel Shader is to produce a post processing effect on the whole image --think of an instagram filter.
 
@@ -179,19 +195,13 @@ One of the downsides to the way A-Frame is built is that on an A-Frame page ther
 
 There also exists the *HTML Shader*, which is a custom shader that takes HTML from the dom and places it in a scene. My experience with the HTML Shader has not been favorable, and I question how portable and scalable it is and how well if reacts to events.
 
-@TODO include example on using HTML Shader.
-
-### Events
-
-@TODO write a bit about using events within a scene, both with markup and with Javascript.
-
 ## Is it cool?
 
 This seems like the biggest question more Javascript developers ask when adopting a new library. The short answer is yes but the longer answer is it depends.
 
 ### It depends?
 
-The usability of this cool new tech is all about what we do with it. I have given talks on A-Frame and the question is normally framed like this "What can we do with it?" And I respond I just showed you what it was meant to do. I bring this up to say, lets not paralax WebVR. It's cool, but if we don't use it the right way it will suck.
+The usability of this cool new tech is all about what we do with it. I have given talks on A-Frame and the question is normally framed like this "What can we do with it?" And I respond I just showed you what it was meant to do. I bring this up to say, lets not parallax WebVR. It's cool, but if we don't use it the right way it will suck.
 
 ### Can I use it?
 
