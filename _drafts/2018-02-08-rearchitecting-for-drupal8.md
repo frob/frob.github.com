@@ -628,13 +628,13 @@ EntityForm is not supported on Drupal 8.There is a discussion about whither or n
   -   Contact module extras
   -   Relation module
 
-     Didn't bring this module up in the modules used because we didn't use it, but this is a really cool module. This module has the ability to supplant the functionality of flag and organic groups. It adds the concept of entity endpoints which allow us to make fieldable relations between entities. In the example of this LMS that entity would have all the fields for the response, an endpoint for the paragraphs item (renamed paragraph revision for Drupal 8), and an endpoint for the user.
+      Didn't bring this module up in the modules used because we didn't use it, but this is a really cool module. This module has the ability to supplant the functionality of flag and organic groups. It adds the concept of entity endpoints which allow us to make fieldable relations between entities. In the example of this LMS that entity would have all the fields for the response, an endpoint for the paragraphs item (renamed paragraph revision for Drupal 8), and an endpoint for the user.
 
-      I have used this module for saving user state in js apps and for keeping track of users completion status for resources in custom Professional Development portals.
+       I have used this module for saving user state in js apps and for keeping track of users completion status for resources in custom Professional Development portals.
 
   -   Fund the development of a stable release.
 
-     While I do encourage finding alternatives, at this state in Drupal 8 development I would encourage us to choose the final option because, frankly, aside from the comment module none of the above options are any more stable than eform and more importantly Drupal 8 needs more stability in contrib.
+      While I do encourage finding alternatives, at this state in Drupal 8 development I would encourage us to choose the final option because, frankly, aside from the comment module none of the above options are any more stable than eform and more importantly Drupal 8 needs more stability in contrib.
 
 **Second problem**
 -   Paragraphs doesn't want me to reference paragraphs
