@@ -5,6 +5,8 @@ date: 2018-02-15
 description: "This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effor possible was put into trascribing it from presentation format to a web page."
 canonical:
 tags:
+ - rants
+ - quarzack13
 category:
  - rants
  - quarzack13
