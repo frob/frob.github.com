@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why DrupalCon
-date: 2017-05-17
+date: 2018-02-20
 description: "Contributing to Drupal allows us to ensure it remains the best and most flexible general purpose Content Management System. Contributing to Drupal is the job of the Drupal Community."
 canonical: https://www.clarity-innovations.com/blog/fanderson/drupalcon-recap-collaboration-and-contribution
 tags:
