@@ -5,6 +5,9 @@ date: 2018-02-20
 description: "Contributing to Drupal allows us to ensure Drupal remains the best and most flexible general purpose Content Management System. Contributing to Drupal is the job of the Drupal Community."
 canonical: https://www.clarity-innovations.com/blog/fanderson/drupalcon-recap-collaboration-and-contribution
 tags:
+  - frontpage
+  - quarzack13
+  - drupal
 category:
   - frontpage
   - quarzack13
