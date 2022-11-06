@@ -3,14 +3,14 @@
   "version": "2.0.0",
   "repository": "https://github.com/frob/frob.github.com",
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-swig": "0.7.4",
+    "gulp-swig": "0.9.1",
     "gulp-task-listing": "^1.0.0",
     "minimist": "^1.1.1",
     "swig": "^1.4.2",
-    "vinyl-fs": "^1.0.0"
+    "vinyl-fs": "^3.0.3"
   },
   "scripts": {
     "reference": "http-server _site & backstop reference",
