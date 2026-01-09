@@ -1,0 +1,45 @@
+image: ruby:2.3.3
+
+variables:
+  NOKOGIRI_USE_SYSTEM_LIBRARIES: "true"
+
+stages:
+  - build
+  - deploy
+
+# Only run on master branch and branches matching /1.(.*)/ pattern
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH =~ /^1\..*/'
+
+cache:
+  paths:
+    - vendor/ruby
+
+before_script:
+  - bundle install --path vendor/ruby
+
+build:
+  stage: build
+  script:
+    - bundle exec jekyll build
+  artifacts:
+    paths:
+      - _site
+    expire_in: 1 hour
+
+deploy:
+  stage: deploy
+  image: python:3.9
+  before_script:
+    - pip install awscli
+  script:
+    - aws s3 sync _site/ s3://www.frobiovox.com --delete --acl public-read --region us-west-1
+  only:
+    - master
+  environment:
+    name: production
+    url: http://www.frobiovox.com
+  dependencies:
+    - build
