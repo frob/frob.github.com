@@ -28,7 +28,7 @@ The main problem is me. I mostly work in PHP and Zed sucks at PHP. One thing tha
 
 I started out asking about AI enabled IDEs. I wasn't originally planning on asking about Xdebug.
 
-**User:** What is the best AI enabled IDE for php
+**User:** What is the best AI enabled IDE for PHP
 
 > **Assistant:** For PHP development with AI assistance, here are the strongest options:
 
@@ -73,11 +73,11 @@ The initial response didn't even have Zed in the running.
 
 ## Xdebug Integration with Zed
 
-This made me think about why I don't use Zed so much for php. I use Drupal for most PHP projects and Xdebug has been a necessity of Drupal development since the release of Drupal 8. PHPStorm has a really good Xdebug integration and I haven't been able to find a suitable replacement.
+This made me think about why I don't use Zed so much for PHP. I use Drupal for most PHP projects and Xdebug has been a necessity of Drupal development since the release of Drupal 8. PhpStorm has a really good Xdebug integration and I haven't been able to find a suitable replacement.
 
-I have tried VSCode but it has similar issues with Xdebug as Zed and it isn't all that much faster. My primary problem with PHPStorm is the speed, but the latest version also integrates AI and I will just come out and say it. The PHPStorm AI sucks. 90% of the time is is autocompleting things I don't want. When it gets it right, it can be like magic. But having to repair 90% of autocompleted code is really annoying. I have had better results with Zed. 
+I have tried VSCode but it has similar issues with Xdebug as Zed and it isn't all that much faster. My primary problem with PhpStorm is the speed, but the latest version also integrates AI and I will just come out and say it. The PhpStorm AI sucks. 90% of the time is is auto completing things I don't want. When it gets it right, it can be like magic. But having to repair 90% of auto completed code is really annoying. I have had better results with Zed. 
 
-**User:** how do I integrate zed with xdebug?
+**User:** how do I integrate zed with XDebug?
 
 > **Assistant:** Great news - Zed actually has built-in Xdebug support through its PHP extension! Here's how to set it up:
 
@@ -85,7 +85,7 @@ I have tried VSCode but it has similar issues with Xdebug as Zed and it isn't al
 
 > 1. **Install the PHP extension** in Zed (if you haven't already)
 
-> 2. **Configure Xdebug in your php.ini** file:
+> 2. **Configure Xdebug in your PHP.ini** file:
 ```ini
    zend_extension=xdebug.so
    xdebug.mode=debug
@@ -132,13 +132,13 @@ I have tried VSCode but it has similar issues with Xdebug as Zed and it isn't al
 
 This is back to the normal issues. I had already gotten to this point before. All set up with no connection for unknown reasons.
 
-> **User:** Looks like the debugger cannot connect. I am getting this error in the php container "Could not connect to debugging client. Tried: localhost:9003"
+> **User:** Looks like the debugger cannot connect. I am getting this error in the PHP container "Could not connect to debugging client. Tried: localhost:9003"
 
 > **Assistant:** This is a common issue with Docker/container setups. The problem is that `localhost` from inside the container refers to the container itself, not your host machine where Zed is running.
 
 > ### Fix the Xdebug Configuration
 
-> You need to tell Xdebug to connect to your **host machine** instead of localhost. Update your Xdebug configuration in php.ini:
+> You need to tell Xdebug to connect to your **host machine** instead of localhost. Update your Xdebug configuration in PHP.ini:
 ```ini
 zend_extension=xdebug.so
 xdebug.mode=debug
@@ -220,7 +220,7 @@ Now, it looks like it is going to work. All that is left is a little debugging. 
 
 > **1. Verify Xdebug is actually connecting to Zed:**
 
-> Add this to your php.ini to get detailed logs:
+> Add this to your PHP.ini to get detailed logs:
 ```ini
 xdebug.log=/tmp/xdebug.log
 xdebug.log_level=7
@@ -281,7 +281,7 @@ telnet host.docker.internal 9003
 
 ## Connection Success but Still Not Breaking
 
-I have to be honest here. I don't think I have used `telnet` since playing Tradewars in college. I definately wouldn't have tried it as a debugging tool here without the prompt. That said, I don't think it saved time. It did instill confidence that everything could communicate.
+I have to be honest here. I don't think I have used `telnet` since playing Tradewars in college. I definitely wouldn't have tried it as a debugging tool here without the prompt. That said, I don't think it saved time. It did instill confidence that everything could communicate.
 
 > **User:** When I ran telnet, it said "Escape character is '^'"
 
@@ -293,7 +293,7 @@ I have to be honest here. I don't think I have used `telnet` since playing Trade
 
 > ### Enable Xdebug logging to see what's happening:
 
-> In your container's php.ini:
+> In your container's PHP.ini:
 ```ini
 xdebug.log=/tmp/xdebug.log
 xdebug.log_level=7
@@ -345,7 +345,7 @@ This is one of those things that I still have a hard time getting over when deal
 
 ## Node.js Dependency Discussion
 
-I asked the LLM if it knew why node had to be installed. It is some good insight into how Zed uses the vscode bridge to get the connection with minimal effort. This also makes sense, given the related petigry of zed and vs-code.
+I asked the LLM if it knew why node had to be installed. It is some good insight into how Zed uses the VSCode bridge to get the connection with minimal effort. This also makes sense, given the related pedigree of zed and vs-code.
 
 > **User:** Is there any way to get around having node as a requirement?
 
@@ -389,8 +389,8 @@ Here I lamented a bit and the LLM responded with some advice that might be usefu
 
 --- 
 
-Essentially, this is what I was doing. I still used phpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using phpStorm for over 10 years. This too is getting bloated. It is InteliJ based --which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.
+Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is InteliJ based --which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.
 
-Latetly, phpStorm has begun it's, somewhat, clunky AI integrations. I find the AI in phpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed --it is far more AI first. Zed allows us to use AI's from many sources, including Ollama based local AIs.
+Lately, PhpStorm has begun it's, somewhat, clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed --it is far more AI first. Zed allows us to use AI's from many sources, including Ollama based local AIs.
 
 I look forward to using Zed, more, now that Xdebug is working.
