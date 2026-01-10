@@ -17,14 +17,11 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 
 # Blogroll
 blogroll:
-  -
-    name: BTMash's blob of contradictions
+  - name: BTMash's blob of contradictions
     url: http://btmash.com
-  -
-    name: LA Grafitti
+  - name: LA Grafitti
     url: https://lagraffiti.wordpress.com/
-  -
-    name: Justin Biard's icodealot
+  - name: Justin Biard's icodealot
     url: http://icodealot.com/
 
 # Includes an icon in the footer for each username you enter
@@ -74,13 +71,18 @@ sass:
   style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
-gems:
+plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
 # Exclude these files from your production _site
 exclude:
-    - Gemfile
-    - Gemfile.lock
-    - LICENSE
-    - README.md
-    - node_modules
+  - Dockerfile
+  - Makefile
+  - backstop.json
+  - Gruntfile.js
+  - gulpfile.js
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - node_modules

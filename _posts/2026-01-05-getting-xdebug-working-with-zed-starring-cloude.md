@@ -28,7 +28,7 @@ The main problem is me. I mostly work in PHP and Zed sucks at PHP. One thing tha
 
 I started out asking about AI enabled IDEs. I wasn't originally planning on asking about Xdebug.
 
-**User:** What is the best AI enabled IDE for PHP
+> **User:** What is the best AI enabled IDE for PHP
 
 > **Assistant:** For PHP development with AI assistance, here are the strongest options:
 
@@ -48,7 +48,7 @@ I started out asking about AI enabled IDEs. I wasn't originally planning on aski
 
 The initial response didn't even have Zed in the running.
 
-**User:** Why don't you recommend zed
+> **User:** Why don't you recommend zed
 
 > **Assistant:** You're right to bring up Zed! I should have mentioned it - it's a legitimate option, especially since it has built-in AI features and is gaining momentum.
 
@@ -77,7 +77,7 @@ This made me think about why I don't use Zed so much for PHP. I use Drupal for m
 
 I have tried VSCode but it has similar issues with Xdebug as Zed and it isn't all that much faster. My primary problem with PhpStorm is the speed, but the latest version also integrates AI and I will just come out and say it. The PhpStorm AI sucks. 90% of the time is is auto completing things I don't want. When it gets it right, it can be like magic. But having to repair 90% of auto completed code is really annoying. I have had better results with Zed. 
 
-**User:** how do I integrate zed with XDebug?
+> **User:** how do I integrate zed with XDebug?
 
 > **Assistant:** Great news - Zed actually has built-in Xdebug support through its PHP extension! Here's how to set it up:
 
