@@ -33,6 +33,19 @@ title = 'Frank Robert Anderson'
   mediaType = "application/rss+xml"
   baseName = "feed"
 
+[outputFormats.RSSAlt]
+  mediaType = "application/rss+xml"
+  baseName = "rss"
+  rel = "alternate"
+
+[outputFormats.DrupalRSS]
+  mediaType = "application/rss+xml"
+  baseName = "drupal"
+  rel = "alternate"
+
+[outputs]
+  home = ["HTML", "RSS", "RSSAlt", "DrupalRSS"]
+
 [[menus.main]]
   name = 'Blog'
   url = '/'
