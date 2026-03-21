@@ -1,0 +1,29 @@
+<div class="wrapper-footer">
+    <div class="container">
+        <footer>
+            <div class="social-icons">
+                <h3>Social Networks</h3>
+                {{ with .Site.Params.github }}
+                <a href="https://github.com/{{ . }}">GitHub</a><br>
+                {{ end }}
+                {{ with .Site.Params.twitter }}
+                <a href="https://twitter.com/{{ . }}">Twitter</a><br>
+                {{ end }}
+                <a href="{{ "index.xml" | relURL }}">RSS</a>
+            </div>
+
+            {{ with .Site.Params.blogroll }}
+            <div class="blogroll">
+                <h3>Blogroll</h3>
+                {{ range . }}
+                <a href="{{ .url }}">{{ .name }}</a><br>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            <div class="copyright">
+                <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+            </div>
+        </footer>
+    </div>
+</div>

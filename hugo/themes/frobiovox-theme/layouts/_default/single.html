@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="container">
+    <article class="post">
+        <h1>{{ .Title }}</h1>
+        <div class="date">{{ .Date.Format "January 2, 2006" }}</div>
+
+        {{ if .Params.canonical }}
+        <div class="canonical sr-only">
+            Originally published at:
+            <a href="{{ .Params.canonical }}">{{ .Params.canonical }}</a>
+        </div>
+        {{ end }}
+        {{ if .Params.category }}
+        <div class="mb-2">
+            <span class="badge badge-outline">{{ .Params.category }}</span>
+        </div>
+        {{ end }} {{ if .Params.tags }}
+        <div class="flex flex-wrap gap-1 mb-2">
+            {{ range .Params.tags }}
+            <span class="badge">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }} {{ .Content }}
+    </article>
+</div>
+{{ end }}

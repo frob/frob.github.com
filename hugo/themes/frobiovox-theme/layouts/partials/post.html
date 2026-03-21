@@ -1,0 +1,10 @@
+<article class="post">
+    <h2 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="author-info">Written on {{ .Date.Format "January 2, 2006" }}</p>
+    {{ if .Params.description }}
+    <p>{{ .Params.description }}</p>
+    {{ else if .Summary }}
+    <p>{{ .Summary }}</p>
+    {{ end }}
+    <a class="read-more" href="{{ .RelPermalink }}"></a>
+</article>

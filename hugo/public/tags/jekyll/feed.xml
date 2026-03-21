@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/jekyll/</link>
+    <description>Recent content in Jekyll on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jekyll/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add an API to Your Jekyll Blog</title>
+      <link>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</link>
+      <pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</guid>
+      <description>&lt;p&gt;I really like &lt;a href=&#34;https://pages.github.com/&#34;&gt;github pages&lt;/a&gt;. I &lt;a href=&#34;https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html&#34;&gt;built my blog on it&lt;/a&gt;, even though &lt;a href=&#34;https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html&#34;&gt;I host it myself&lt;/a&gt;. When friends and family ask for me to build them a site &lt;a href=&#34;http://wapro.lbtech.org/&#34;&gt;I will point them to github pages&lt;/a&gt;. Markdown is so easy, liquid is so easy. What isn&amp;rsquo;t easy is dynamic lists of content. A simple list of related content isn&amp;rsquo;t as easy. Sure there are ways, but I want to learn &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;Reactjs&lt;/a&gt; &amp;ndash;so I will build it with that. That will require a RESTful API for my content.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reflecting on Elixir and Phoenix</title>
+      <link>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link>
+      <pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid>
+      <description>&lt;h2 id=&#34;the-new-hotness&#34;&gt;The New Hotness&lt;/h2&gt;&#xA;&lt;p&gt;I read a post recently that had the click bait title &amp;ldquo;Is Drupal Dying?&amp;rdquo; Ironically I read this while attending &lt;a href=&#34;http://www.elixirconf.com&#34;&gt;ElixirConf&lt;/a&gt;. The basis of that post was clients asking for the &lt;q&gt;next&lt;/q&gt; thing &amp;ndash;expecting Drupal to be old and busted in five years.&lt;/p&gt;&#xA;&lt;p&gt;I am at ElixirConf because I see great potential in Elixir, Erlang, and &lt;a href=&#34;http://www.phornixframework.com&#34;&gt;Phoenix&lt;/a&gt;. I expect it to be the next big thing and for it to help provide a scalable platform for highly available, highly scalable, and interactive / dynamic websites.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Drupal or Wordpress? Why not Jekyll.</title>
+      <link>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
+      <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
+      <description>&lt;p&gt;If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler aprouch is a program called Jekyll. Noticed I didn&amp;rsquo;t call Jekyll a Content Management System.&lt;/p&gt;&#xA;&lt;p&gt;So if Jekyll isn&amp;rsquo;t a CMS then what is it? Jekyll is a &amp;ldquo;blog aware&amp;rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  serve:
+    desc: Start the Hugo development server
+    dir: hugo
+    cmd: hugo server
+
+  serve:drafts:
+    desc: Start the Hugo development server with drafts visible
+    dir: hugo
+    cmd: hugo server --buildDrafts
+
+  build:
+    desc: Build the site to frob-hugo/public
+    dir: hugo
+    cmd: hugo
+
+  build:prod:
+    desc: Build the site for production (minified)
+    dir: hugo
+    cmd: hugo --minify

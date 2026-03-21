@@ -1,0 +1,59 @@
+baseURL = 'https://www.frobiovox.com/'
+theme = 'frobiovox-theme'
+contentDir = '../content'
+languageCode = 'en-us'
+googleAnalytics = 'G-Y3P20PDQ91'
+title = 'Frank Robert Anderson'
+
+[params]
+  description = 'I am a Developer who does web good and likes to do other stuff good too.'
+  author = 'Frank Robert Anderson'
+  avatar = '/images/top.png'
+  github = 'frob'
+  twitter = 'frobiovox'
+
+  [[params.blogroll]]
+    name = 'Blob of contradictions'
+    url = 'https://www.btmash.com/'
+
+  [[params.blogroll]]
+    name = 'iCodealot'
+    url = 'https://icodealot.com/'
+
+[permalinks]
+  posts = '/posts/:year/:month/:day/:slug/'
+
+[taxonomies]
+  tag = 'tags'
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "feed"
+
+[[menus.main]]
+  name = 'Blog'
+  url = '/'
+  weight = 1
+
+[[menus.main]]
+  name = 'Tutorials'
+  url = '/tags/tutorial/'
+  weight = 2
+
+[[menus.main]]
+  name = 'Rants'
+  url = '/tags/rant/'
+  weight = 3
+
+[[menus.main]]
+  name = 'Everything'
+  url = '/posts/'
+  weight = 4
+
+[[menus.main]]
+  name = 'Back to My Site'
+  url = 'http://www.frankrobertanderson.com'
+  weight = 5
