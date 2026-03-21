@@ -7,9 +7,6 @@ Personal blog for [www.frobiovox.com](https://www.frobiovox.com), built with [Hu
 ```
 content/posts/    # Blog posts (markdown)
 hugo/             # Hugo site (config, layouts, theme)
-_posts/           # Legacy Jekyll source posts
-_drafts/          # Legacy Jekyll source drafts
-_tasks/normalize/ # Go tool for normalizing post front matter
 ```
 
 ## Local Development
