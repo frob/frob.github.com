@@ -9,24 +9,18 @@ fi
 
 d=$(date +"%Y-%m-%d")
 
-slug=$(echo $title | tr '[:upper:]' '[:lower:]' | tr '[:space:]' '-')
-slug="${slug:0:${#slug}-1}"
-post="./_drafts/$d-$slug.md"
+slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr '[:space:]' '-' | tr -cd '[:alnum:]-')
+post="./content/posts/$d-$slug.md"
 
-body=""
-read -d '' body <<EOF
+cat > "$post" <<EOF
 ---
-layout: post
 title: $title
-canonical:
-category:
+date: "$d"
+slug: $slug
+draft: true
 tags: []
-assets:
-  js:
-  css:
 ---
 
 EOF
 
-echo "$body" > $post
-subl . $post
+echo "Created $post"
