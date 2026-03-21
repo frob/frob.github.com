@@ -1,0 +1,12 @@
+{
+  "name": "frobiovox",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "tw-animate-css": "^1.0.0",
+    "vite": "^6.0.0"
+  }
+}

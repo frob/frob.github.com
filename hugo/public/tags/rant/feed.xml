@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rant on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/rant/</link>
+    <description>Recent content in Rant on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rant/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rearchitecting for Drupal 8; a DrupalCon Session</title>
+      <link>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</link>
+      <pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</guid>
+      <description>&lt;h1 id=&#34;rearchitecting-for-drupal-8&#34;&gt;Rearchitecting for Drupal 8&lt;/h1&gt;&#xA;&lt;p&gt;This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effor possible was put into trascribing it from presentation format to a web page.&lt;/p&gt;&#xA;&lt;h2 id=&#34;in-case-you-are-wondering&#34;&gt;In case you are wondering&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://nicspaull.files.wordpress.com/2013/10/you-are-here.jpg&#34; alt=&#34;You are here in the&#xA;galaxy&#34; title=&#34;You are here in the galaxy&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;hello-my-name-is-frank&#34;&gt;Hello My Name Is Frank&lt;/h2&gt;&#xA;&lt;p&gt;I am a Christian, Father, and Technology Enthusiast.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Online my name is&lt;/em&gt; &lt;strong&gt;frob&lt;/strong&gt; (IRC, &lt;a href=&#34;https://drupal.org/u/frob&#34;&gt;d.o&lt;/a&gt;, github)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;On Twitter I am&lt;/em&gt; &lt;strong&gt;&lt;a href=&#34;https://twitter.com/frobdfas&#34;&gt;@frobdfas&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;My Blog is&lt;/em&gt; &lt;a href=&#34;https://www.frobiovox.com&#34;&gt;www.frobiovox.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;I work for&lt;/em&gt; &lt;a href=&#34;https://www.clarity-innovations.com&#34;&gt;Clarity Innovations Inc&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/cilogo.jpg&#34; alt=&#34;Clarity Innovations Logo&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My Dilemma; What Technology to Pursue</title>
+      <link>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid>
+      <description>&lt;p&gt;Be warned, this is a rant.&lt;/p&gt;&#xA;&lt;p&gt;I have a Dilemma about what to focus on learning. I will always explore technology. I will always study, this is my nature. As God has built us, I will always work. This is not a question of what tech I will use here and there. Or what tech I will dabble in as an aside. I need another focus, I have been doing Drupal and php for a long time &amp;ndash;now is not time to move on, just time to hedge my speciality.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lets plan a new Arduino based video game console</title>
+      <link>http://localhost:1313/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/</link>
+      <pubDate>Tue, 22 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/</guid>
+      <description>&lt;h2 id=&#34;why-make-an-new-old-video-game-system&#34;&gt;WHY make an new old video game system!?!&lt;/h2&gt;&#xA;&lt;p&gt;I saw this video.&lt;/p&gt;&#xA;&lt;iframe width=&#34;420&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/6kJV-BdsUWs&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;p&gt;These videos beg the question; How do I stop my kids from being like this?&lt;/p&gt;&#xA;&lt;p&gt;When it&amp;rsquo;s easier to build something in Minecraft than in the real world. How can I keep my kids interested in the physical world when everything is becoming digital.&lt;/p&gt;&#xA;&lt;p&gt;This got me thinking about how the older generation used to talk about the &lt;a href=&#34;http://www.seattletimes.com/nation-world/is-push-button-age-producing-a-generation-of-simpletons/&#34;&gt;&amp;ldquo;push button&amp;rdquo; generation&lt;/a&gt;. And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today (hardware or software) is about as easy as it can be. Usually nothing more than a single &amp;ldquo;GO&amp;rdquo; button.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Step One on replacing Jekyll, make yaml work</title>
+      <link>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link>
+      <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid>
+      <description>&lt;p&gt;As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.&lt;/p&gt;&#xA;&lt;h1 id=&#34;yaml-parsing&#34;&gt;YAML Parsing&lt;/h1&gt;&#xA;&lt;p&gt;First am trying to use &lt;a href=&#34;https://www.npmjs.com/package/gulp-yaml&#34;&gt;npm-yaml&lt;/a&gt;. Simple installation, &lt;code&gt;npm install --save-dev npm-yaml&lt;/code&gt;. And it works great with the _config file that holds general site information. So I try it with the html.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;task&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;test-index&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./index.html&amp;#39;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;pipe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;yaml&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;space&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; }))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;pipe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;dest&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./gulp-dist/&amp;#39;&lt;/span&gt;))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With that I get a big fat &amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>I like Jekyll, but is it necessary?</title>
+      <link>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid>
+      <description>&lt;p&gt;One of the first &amp;ldquo;Content Management Systems&amp;rdquo; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&amp;rsquo;t extremely useful to me. It was more of an academic experience – especially because, at the time, I wasn&amp;rsquo;t a professional web developer.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Support should not be based on Marketshare</title>
+      <link>http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/</link>
+      <pubDate>Sun, 06 Oct 2013 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/</guid>
+      <description>&lt;p&gt;In web development IE has been the bane of front-end developers everywhere. For a long time it was IE6, and now it is IE8/9 that give the most grief. Every browser has its little issues here and there. Little quirks that make us developers need to test in every conceivable situation. Specifically it is that browsers do things their own way (for better or worse); they may or may not conform to standards and they may do somethings that are completely non-standard.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Back from DrupalConLA (A postmortem)</title>
+      <link>http://localhost:1313/posts/1/01/01/back-from-drupalconla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/1/01/01/back-from-drupalconla/</guid>
+      <description>&lt;p&gt;I have been in LA again for DrupalCon. To my surprise this was not the first year of a DrupalCon Stabbing.&lt;/p&gt;&#xA;&lt;p&gt;I lived in Long Beach for around 7 years. Every time I had some regular obligation. I did my due diligence and checked to see if I could take public transit to wherever I was going, whenever I need to go there. Be it school, or work, or church. I was never able to find a reasonable commut on public transportation. Ever time I found a 20 mile commute would lead to a 3 hour and 5 transfer bus rout. I was simply a fact that nowhere that I needed to go was a place the bus wanted to take me.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

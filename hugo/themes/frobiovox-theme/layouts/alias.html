@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <title>Redirecting...</title>
+    <script>
+        // JavaScript redirect as backup
+        window.location.href = "{{ .Permalink }}";
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <p>This page has moved to <a href="{{ .Permalink }}">{{ .Permalink }}</a>.</p>
+</body>
+</html>

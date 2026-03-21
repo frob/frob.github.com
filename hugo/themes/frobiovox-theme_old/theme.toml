@@ -1,0 +1,12 @@
+name = "Frobiovox"
+license = "MIT"
+licenselink = "https://github.com/yourusername/frobiovox-theme/blob/main/LICENSE"
+description = "A Hugo theme"
+homepage = "https://github.com/yourusername/frobiovox-theme"
+tags = ["blog", "responsive", "minimal"]
+features = ["responsive", "clean design"]
+min_version = "0.120.0"
+
+[author]
+  name = ""
+  homepage = ""

@@ -1,0 +1,14 @@
+<article class="card">
+    <div class="card-header">
+        <h2 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="card-description">{{ .Date.Format "January 2, 2006" }}</p>
+    </div>
+    {{ if .Params.description }}
+    <div class="card-content">{{ .Params.description }}</div>
+    {{ else if .Summary }}
+    <div class="card-content">{{ .Summary }}</div>
+    {{ end }}
+    <div class="card-footer">
+        <a class="read-more" href="{{ .RelPermalink }}"></a>
+    </div>
+</article>

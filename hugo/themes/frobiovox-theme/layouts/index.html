@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="container">
+    {{ .Content }}
+    <div class="posts">
+        {{ range first 50 .Site.RegularPages }} {{ partial "post.html" . }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}

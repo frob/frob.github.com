@@ -1,0 +1,27 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "My Hugo Site"
+theme = "frobiovox"
+
+[permalinks]
+  posts = "/posts/:year/:month/:day/:slug/"
+
+[params]
+  description = "A blog using the Frobiovox theme"
+  avatar = "/images/avatar.png"
+  github = "yourusername"
+  twitter = "yourusername"
+
+  [[params.blogroll]]
+    name = "Example Blog"
+    url = "https://example.com"
+
+[[menu.main]]
+  name = "Blog"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 2
