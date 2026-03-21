@@ -19,6 +19,9 @@ date: "$d"
 slug: $slug
 draft: true
 tags: []
+assets:
+  js:
+  css:
 ---
 
 EOF
