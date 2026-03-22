@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frank Robert Anderson</title>
+    <description>I am a Developer who does web good and likes to do other stuff good too.</description>
+    <link>https://www.frobiovox.com</link>
+    <atom:link href="https://www.frobiovox.com/drupal.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Why DrupalCon</title>
+        <description>Collaboration and Contribution at DrupalCon Drupal is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal...</description>
+        <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2018/02/20/why-drupalcon.html</guid>
+      </item>
+    
+      <item>
+        <title>Rearchitecting for Drupal 8; a DrupalCon Session</title>
+        <description>Rearchitecting for Drupal 8 This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effor possible was put into trascribing it from presentation format to a web page. In case you are wondering Hello My Name Is Frank I am a Christian, Father, and Technology Enthusiast. Online my name is frob (IRC, d.o, github) On Twitter I am @frobdfas My Blog is...</description>
+        <pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html</guid>
+      </item>
+    
+      <item>
+        <title>Basic Hello World with composer and php</title>
+        <description>Getting started with composer I want this to be an introduction to using Composer. If you are looking for more information about using Drupal with Composer then you should checkout the official composer facade doc page on drupal.org. I will not be talking about publishing to Packagist. My php is nearly always for Drupal, and as such, if I publish anything it will most likely be to a project on...</description>
+        <pubDate>Tue, 16 Aug 2016 17:40:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php.html</guid>
+      </item>
+    
+      <item>
+        <title>Simplify Drupal 8 field value calls</title>
+        <description>Things change, it&amp;#39;s a fact of life; even more so it&amp;#39;s a fact of a web developer&amp;#39;s life. In semantic versioned frameworks every new major version brings new api and discards the old apis. Like ripping off a band-aid, this is an excruciatingly painful experience that will eventually bring forward a less painful future. Thus, it has been with the change from Drupal 7 to Drupal 8.x. Get the title...</description>
+        <pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls.html</guid>
+      </item>
+    
+      <item>
+        <title>Altering Entity Field Querys for JOINS ORs and Profit</title>
+        <description>One of my favorite features from Drupal 7 is the EntityFieldQuery. The power of the EntityFieldQuery is a well known thing, and I a have written about extending EntityFieldQueries with subqueries before. This time I will go into extending the query as a query object, using Drupal&amp;#39;s hook and alter architecture. Simple EntityFieldQuery For our example we will start with a simple EntityFieldQuery for getting a list of nodes. $query...</description>
+        <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit.html</guid>
+      </item>
+    
+      <item>
+        <title>Reflecting on Elixir and Phoenix</title>
+        <description>The New Hotness I read a post recently that had the click bait title &amp;quot;Is Drupal Dying?&amp;quot; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the next thing --expecting Drupal to be old and busted in five years. I am at ElixirConf because I see great potential in Elixir, Erlang, and Phoenix. I expect it to be the next big thing and...</description>
+        <pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix.html</guid>
+      </item>
+    
+      <item>
+        <title>Modern Drupal7 Site Building Tools</title>
+        <description>Why build a site with Drupal 7 Drupal8 is nearly out making Drupal 7 look like it isn&amp;#39;t an appealing choice. However, Drupal 7 is still a contender for the conviences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7. The Modules I know, I know, many of these modules are not new and...</description>
+        <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools.html</guid>
+      </item>
+    
+      <item>
+        <title>Setting a default value for a link or url field in Drupal 7</title>
+        <description>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values. In case you don&amp;#39;t I suggest reading these pages first: The Drupal Form API The hook system api.drupal.org&amp;#39;s hook_form_alter for Drupal7 doc page Normally these things are just all well and good, do something like. &amp;lt;?php /** * Implements hook_form_alter(). */ function some_modules_form_alter(&amp;amp;$form, &amp;amp;$form_state, $form_id) { $form['field_element']['#default_value'] = &quot;some...</description>
+        <pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7.html</guid>
+      </item>
+    
+      <item>
+        <title>Utilizing Front End CSS Design Paradigms In Drupal</title>
+        <description>At SandCamp I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of the multitude of css paradigms.
+
+Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014
+
+
+</description>
+        <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal.html</guid>
+      </item>
+    
+      <item>
+        <title>Creating Auto Submitting Forms with Drupal's Form API</title>
+        <description>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the various options for building forms in Drupal. I will be focusing on forms built with Drupal’s Form API (or fapi). My use case was a semi-typical one: have the input from one select list affect the options in another select list. Here is my wireframe: [insert wireframe here] This could be done in any number...</description>
+        <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api.html</guid>
+      </item>
+    
+  </channel>
+</rss>

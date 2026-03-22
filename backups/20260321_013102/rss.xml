@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Frank Robert Anderson</title>
+    <description>I am a Developer who does web good and likes to do other stuff good too.</description>
+    <link>https://www.frobiovox.com</link>
+    <atom:link href="https://www.frobiovox.com/rss.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>How to play gloom with a 52 card deck</title>
+        
+        
+          <description>&lt;p&gt;I played the Edward Gorey insired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&amp;#39;t for you then try these rules on a standard 52 card deck.&lt;/p&gt;
+</description>
+        
+        <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck.html</guid>
+      </item>
+    
+      <item>
+        <title>Why DrupalCon</title>
+        
+        
+          <description>&lt;h1&gt;Collaboration and Contribution at DrupalCon&lt;/h1&gt;
+</description>
+        
+        <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2018/02/20/why-drupalcon.html</guid>
+      </item>
+    
+      <item>
+        <title>Rearchitecting for Drupal 8; a DrupalCon Session</title>
+        
+        
+          <description>&lt;h1&gt;Rearchitecting for Drupal 8&lt;/h1&gt;
+</description>
+        
+        <pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html</guid>
+      </item>
+    
+      <item>
+        <title>Switching to Celsius from Fahrenheit for normal people</title>
+        
+        
+          <description>&lt;p&gt;TLDR;&lt;/p&gt;
+</description>
+        
+        <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people.html</guid>
+      </item>
+    
+      <item>
+        <title>My Dilemma; What Technology to Pursue</title>
+        
+        
+          <description>&lt;p&gt;Be warned, this is a rant.&lt;/p&gt;
+</description>
+        
+        <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/11/21/my-dilemma-what-technology-to-pursue.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/11/21/my-dilemma-what-technology-to-pursue.html</guid>
+      </item>
+    
+      <item>
+        <title>Lets take a look at webVR with AFrame</title>
+        
+        
+          <description>&lt;p&gt;Do you remember that time when you tried to find a Javascript library only to find the wrong Javascript library with the same name. Well that happened when I was looking for &lt;a href=&quot;https://aframe.io&quot;&gt;A-Frame&lt;/a&gt;. Just so you know we are not talking about the slightly older MVC Javascript framework named AFrame; today, we are going to be talking about &lt;a href=&quot;https://aframe.io&quot;&gt;Mozilla&amp;#39;s WebVR library A-Frame&lt;/a&gt;.&lt;/p&gt;
+</description>
+        
+        <pubDate>Mon, 24 Oct 2016 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with-aframe.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with-aframe.html</guid>
+      </item>
+    
+      <item>
+        <title>a new simple reading rogue like</title>
+        
+        
+          <description>&lt;h2&gt;My kid is smart&amp;trade;&lt;/h2&gt;
+</description>
+        
+        <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like.html</guid>
+      </item>
+    
+      <item>
+        <title>Basic Hello World with composer and php</title>
+        
+        
+          <description>&lt;h1&gt;Getting started with composer&lt;/h1&gt;
+</description>
+        
+        <pubDate>Tue, 16 Aug 2016 17:40:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php.html</guid>
+      </item>
+    
+      <item>
+        <title>Semantic Git</title>
+        
+        
+          <description>&lt;p&gt;Git is a great tool for managing source control. Git flow is a great workflow for working with git branches and tags. Semantic versioning is a great way for labeling and cataloging version dependence. If we put them together then we will have a dependency system that is reenforced by workflow that is reenforced by a dependency system. This is a circular dependency that is good.&lt;/p&gt;
+</description>
+        
+        <pubDate>Fri, 27 May 2016 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/05/27/semantic-git.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/05/27/semantic-git.html</guid>
+      </item>
+    
+      <item>
+        <title>Simplify Drupal 8 field value calls</title>
+        
+        
+          <description>&lt;p&gt;Things change, it&amp;#39;s a fact of life; even more so it&amp;#39;s a fact of a web developer&amp;#39;s life.&lt;/p&gt;
+</description>
+        
+        <pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate>
+        <link>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls.html</link>
+        <guid isPermaLink="true">https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls.html</guid>
+      </item>
+    
+  </channel>
+</rss>
+ 

@@ -1,0 +1,121 @@
+[
+  {
+  "title"    : "Drupal or Wordpress? Why not Jekyll.",
+  "url"     : "/api/v01/posts/2015-01-27-drupal-or-wordpress-why-not-jekyll",
+  "permalink": "/posts/2015/January/27/2015-01-27-drupal-or-wordpress-why-not-jekyll.html",
+  "date"     : "January 27, 2015",
+   "tags"  : [
+     "drupal"
+    ,
+     "wordpress"
+    ,
+     "jekyll"
+    ,
+     "kwallcompany"
+    ,
+     "tutorial"
+    ,
+     "frontpage"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;p&gt;If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler aprouch is a program called Jekyll. Noticed I didn&amp;#39;t call Jekyll a Content Management System.&lt;/p&gt;
+
+&lt;p&gt;So if Jekyll isn&amp;#39;t a CMS then what is it? Jekyll is a &amp;quot;blog aware&amp;quot; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.&lt;/p&gt;
+
+&lt;h2&gt;What are the advantages to static site generation?&lt;/h2&gt;
+
+&lt;p&gt;The biggest advantage is simplelified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necesary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.&lt;/p&gt;
+
+&lt;h3&gt;Another Advantage is simplisity. Jekyll has a very logical file structure:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Configuration goes into the _config.yml file&lt;/li&gt;
+&lt;li&gt;Posts go into _posts directory&lt;/li&gt;
+&lt;li&gt;Layout Templates go into the _layouts directory&lt;/li&gt;
+&lt;li&gt;Block Templates go into the _includes directory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Basic Configuration&lt;/h2&gt;
+
+&lt;p&gt;Inside the _config.yml you will find some basic configuration.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Name of your site (displayed in the header)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Name of the Site&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Short bio or description (displayed in the header)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Web Developer from Somewhere&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# URL of your avatar or profile pic (you could use your GitHub profile pic)&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;avatar&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;url to the logo&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Includes an icon in the footer for each username you enter&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;footer-links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;dribbble&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;flickr&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;instagram&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;linkedin&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;pinterest&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;rss&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# just type anything here for a working RSS icon, make sure you set the &quot;url&quot; above!&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;stackoverflow&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# your stackoverflow profile, e.g. &quot;users/50476/bart-kiers&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Your disqus shortname, entering this will enable commenting on posts&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;disqus&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;google_analytics&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Plugins&lt;/h2&gt;
+
+&lt;p&gt;One of the cooler parts of Jekyll is that even though it is generating a static site it can have plugins that extend it&amp;#39;s functionallity. Plugs will fall into one of four categories.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generators
+
+&lt;ul&gt;
+&lt;li&gt;Creating new content based on the existing content. Multilanugauge sites, more content listings, etc..&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Converters
+
+&lt;ul&gt;
+&lt;li&gt;Filtering content in some way. This could be adding tokens or just using something other than markdown.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Commands
+
+&lt;ul&gt;
+&lt;li&gt;These are commands that are outside of the content scope. For Drupal people think of this as drush commands for Jekyll.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Tags
+
+&lt;ul&gt;
+&lt;li&gt;Tags are taxonomy based functionallity; catigorization or linking of content.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Posts&lt;/h2&gt;
+
+&lt;p&gt;As I said be fore the Jekyll system is blog aware. That means that aside from pages Jekyll expects there to be posts of content.&lt;/p&gt;
+
+&lt;p&gt;All content is put into the _posts directory and has a specific naming convention including the date and expected url for the post. By default a post is written in markdown and it has a yaml header with some meta data about the post.&lt;/p&gt;
+
+&lt;h2&gt;Where do I use it&lt;/h2&gt;
+
+&lt;h3&gt;Drupal for Firebug Developer blog/api test&lt;/h3&gt;
+
+&lt;p&gt;After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&amp;#39;t want to ask the old maintainer to put the page back up and I didn&amp;#39;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I desided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.&lt;/p&gt;
+
+&lt;h3&gt;Frobiovox.com or frob.gitbug.io&lt;/h3&gt;
+
+&lt;p&gt;Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.&lt;/p&gt;
+"
+}
+
+]

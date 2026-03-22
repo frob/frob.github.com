@@ -1,0 +1,70 @@
+[
+  {
+  "title"    : "Creating screen-reader friendly read more  links",
+  "url"     : "/api/v01/posts/2014-05-06-creating-screen-reader-friendly-read-more--links",
+  "permalink": "/posts/2014/May/06/2014-05-06-creating-screen-reader-friendly-read-more--links.html",
+  "date"     : "May 06, 2014",
+   "tags"  : [
+     "tutorial"
+    ,
+     "css"
+    ,
+     "frontpage"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;p&gt;Over the course of my career I have worked on more than a fair share of higher-eduation sites. When dealing with a universities website there are many challenges. One of the biggest challenges is in dealing with the accessibility standards. I am writing about &lt;a href=&quot;http://www.w3.org/TR/WCAG20/&quot;&gt;WCAG&lt;/a&gt;. The WebCAG, or Web Content Accessibility Guidelines, is a detailed list for how accessibility should be done on the web.&lt;/p&gt;
+
+&lt;p&gt;I might write about the problems with WebCAG at some point, but this article is about strictly an incompatability between what the designer/UX people want and what the WebCAG says about &amp;quot;READ MORE&amp;quot; links. &lt;a href=&quot;http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html&quot;&gt;Specifically WCAG 2.0 SC 2.4.4&lt;/a&gt;. this states that any link needs to have context.&lt;/p&gt;
+
+&lt;p&gt;The issue with this is even though the standard says:&lt;/p&gt;
+
+&lt;p&gt;&lt;q&gt;A Web page contains a collection of news articles. The main page lists the first few sentences of each article, followed by a &amp;quot;Read more&amp;quot; link. A screen reader command to read the current paragraph provides the context to interpret the purpose of the link.&lt;/q&gt;&lt;/p&gt;
+
+&lt;p&gt;This is incorect. A screen reader will list all the links on a page. If two links have the same text bug go to different places it will get confused becaseu there could be 20 or more links that all go to different places but still say &amp;quot;Read More.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;My sollution? Use css to hide the full title text (or better yet something more relevant, however, content editors usually cannot be bothered) for the read more link and use more css to show Read More in its place.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.read-more&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;text-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;uppercase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;11px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;READ MORE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So here (example is in scss) you can see that we are using a simple technique, borrowed from image replacements to make the text invisible but still seen by screen readers to hide the text. After that, we just replace it with the after pseudo selector &lt;code&gt;:after&lt;/code&gt; to show whatever text we want to display for &amp;quot;READ MORE.&amp;quot;&lt;/p&gt;
+
+&lt;h2&gt;What about multilagual sites?!?!&lt;/h2&gt;
+
+&lt;p&gt;Just add a body class for each language and then adjust the content rule accordingly.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.en&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.read-more&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;READ MORE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.es&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.read-more&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;leer más&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.cn&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.read-more&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;阅读更多&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.klingon&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.read-more&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;latlh laD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https://translate.google.com/&quot;&gt;Google Translator&lt;/a&gt; for the Spanish and Simplified Chinese translations. Thanks to (Bing translator for the Klingon)[https://www.bing.com/translator/].&lt;/p&gt;
+"
+}
+
+]

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Step One on replacing Jekyll, make yaml work – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll-make-yaml-work.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Step One on replacing Jekyll, make yaml work</h1>
+
+  <div class="entry">
+    <p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
+
+<h1>YAML Parsing</h1>
+
+<p>First am trying to use <a href="https://www.npmjs.com/package/gulp-yaml">npm-yaml</a>. Simple installation, <code>npm install --save-dev npm-yaml</code>. And it works great with the _config file that holds general site information. So I try it with the html.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">test-index</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">./index.html</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">yaml</span><span class="p">({</span> <span class="na">space</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">./gulp-dist/</span><span class="dl">'</span><span class="p">))</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>With that I get a big fat ...</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">✔ ~/repos/self/frob.github.com <span class="o">[</span>jekylless L|✚ 2…1]
+23:31 <span class="nv">$ </span>gulp test-index
+<span class="o">[</span>23:33:37] Using gulpfile ~/repos/self/frob.github.com/gulpfile.js
+<span class="o">[</span>23:33:37] Starting <span class="s1">'test-index'</span>...
+<span class="o">[</span>23:33:37] Finished <span class="s1">'test-index'</span> after 7.25 ms
+
+events.js:85
+      throw er<span class="p">;</span> // Unhandled <span class="s1">'error'</span> event
+            ^
+Error: JS-YAML: end of the stream or a document separator is expected at line 12, column 64:
+     ... <span class="s2">"&gt;Written on &lt;/aside&gt;
+</span></code></pre></div>
+<p>Hmmm, It looks like the YAML Front matter will be a bit more dificult.</p>
+
+<p>First I tried <a href="https://www.npmjs.com/package/yaml-front-matter">yaml-front-matter</a>, which wasn&#39;t what I wanted. It works with node but I was hoping to find a gulp plugin. So I found <a href="https://github.com/lmtm/gulp-front-matter">gulp-front-matter</a> which looks promising. This one is a gulp plugin and it looks like it will work, but it isn&#39;t well documented. Looks like I have some code to read.</p>
+
+<h2>Bad documentation</h2>
+
+<p>I read the code and the only hint looks to be here on line 40</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">file</span><span class="p">[</span><span class="nx">property</span><span class="p">]</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">attributes</span><span class="p">;</span>
+</code></pre></div>
+<p>Due to my inexperience with Gulp I have no idea how to get to the file object. There is a hint in the documentation <q>.pipe(…) // you may want to take a look at gulp-marked at this point</q>. That was still not much help. So to the issue queue.</p>
+
+<h3>Issue Number 8: Expose frontMatter, or not</h3>
+
+<p>https://github.com/lmtm/gulp-front-matter/issues/8 talks about exposing the frontmatter or just better documentation in general as it seems to be a large issue with this package.</p>
+
+<p>My conclusion is that front-matter shouldn&#39;t be handled with gulp, but instead it should be handled by node. In this case the the front-matter will control the flow of the steam and thus it shouldn&#39;t be considered when reading the stream. The gulp-front-matter plugin will do one thing really well for me. It will strip the front-matter from my source and allow me to parse it with liquid or with markdown or whatever.</p>
+
+<h2>Bad plug-ins</h2>
+
+<p>So, here it is. The liquid plugin just didn&#39;t work. I don&#39;t have the time to waist on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on July 26, 2015 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

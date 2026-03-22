@@ -1,0 +1,277 @@
+[
+  {
+  "title"    : "Basic Hello World with composer and php",
+  "url"     : "/api/v01/posts/2016-08-16-basic-hello-world-with-composer-and-php",
+  "permalink": "/posts/2016/August/16/2016-08-16-basic-hello-world-with-composer-and-php.html",
+  "date"     : "August 16, 2016",
+   "tags"  : [
+     "frontpage"
+    ,
+     "drupal"
+    ,
+     "tutorial"
+    ,
+     "quarzack13"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;h1&gt;Getting started with composer&lt;/h1&gt;
+
+&lt;p&gt;I want this to be an introduction to using &lt;a href=&quot;https://getcomposer.org&quot;&gt;Composer&lt;/a&gt;. If you are looking for more information about using &lt;a href=&quot;https://www.drupal.org&quot;&gt;Drupal&lt;/a&gt; with &lt;a href=&quot;https://getcomposer.org&quot;&gt;Composer&lt;/a&gt; then you should checkout the &lt;a href=&quot;https://www.drupal.org/node/2718229&quot;&gt;official composer facade doc page&lt;/a&gt; on drupal.org.&lt;/p&gt;
+
+&lt;p&gt;I will &lt;em&gt;not&lt;/em&gt; be talking about publishing to &lt;a href=&quot;https://packagist.org&quot;&gt;Packagist&lt;/a&gt;. My php is nearly always for &lt;a href=&quot;https://www.drupal.org&quot;&gt;Drupal&lt;/a&gt;, and as such, if I publish anything it will most likely be to a project on &lt;a href=&quot;https://www.drupal.org&quot;&gt;drupal.org&lt;/a&gt;. In the end I will philosophize about &lt;a href=&quot;https://www.drupal.org&quot;&gt;Drupal&lt;/a&gt; and &lt;a href=&quot;https://getcomposer.org&quot;&gt;Composer&lt;/a&gt;, but we will start with the &lt;a href=&quot;https://getcomposer.org&quot;&gt;composer&lt;/a&gt; basics.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lets get started!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When dealing with any package managed project, I like to start with initializing the project. This goes for &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt; or &lt;a href=&quot;https://getcomposer.org&quot;&gt;composer&lt;/a&gt;. True, it isn&amp;#39;t 100% necessary, but it is a good way to keep it all organized from the beginning.&lt;/p&gt;
+
+&lt;h2&gt;Initialize our package&lt;/h2&gt;
+
+&lt;p&gt;After installing composer, run this command in your project&amp;#39;s directory.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;composer init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will run you through a bunch of questions: &lt;em&gt;name&lt;/em&gt;, &lt;em&gt;description&lt;/em&gt;, &lt;em&gt;license&lt;/em&gt;, etc. These are the prompts (at the time of this writing) and my responses to the prompts.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;
+
+  Welcome to the Composer config generator
+
+
+
+This &lt;span class=&quot;nb&quot;&gt;command &lt;/span&gt;will guide you through creating your composer.json config.
+
+Package name &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&amp;lt;vendor&amp;gt;/&amp;lt;name&amp;gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;fanderson/composer]: frob/greetings
+Description &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;: This is a simple hello world example.
+Author &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Frank Anderson &amp;lt;frob@249517.no-reply.drupal.org&amp;gt;, n to skip]:
+Minimum Stability &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;: dev
+Package Type &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;e.g. library, project, metapackage, composer-plugin&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
+License &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;:
+
+Define your dependencies.
+
+Would you like to define your dependencies &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;require&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; interactively &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;? n
+Would you like to define your dev dependencies &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;require-dev&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; interactively &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;? n
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Most of these should be easy enough to figure out and I will not go over all of them here. If you want to know what all this stuff really means, then go &lt;a href=&quot;https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup&quot;&gt;read the composer docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Write some code&lt;/h2&gt;
+
+&lt;p&gt;I will start coding by creating the file &lt;code&gt;greetings.php&lt;/code&gt; in the &lt;code&gt;src/HelloWorld&lt;/code&gt; directory:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;HelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Greetings&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sayHelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Hello World&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Add some basic dependencies&lt;/h3&gt;
+
+&lt;p&gt;Now we have created our class, but we still have to tell composer about it. To do that we need to make some changes to our &lt;code&gt;composer.json&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;frob/greetings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;This is a simple hello world example.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;authors&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Frank Anderson&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;frob@249517.no-reply.drupal.org&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;minimum-stability&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dev&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;require&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=5.5.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;autoload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;psr-0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;HelloWorld&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The new stuff starts in the &lt;code&gt;&amp;quot;require&amp;quot;&lt;/code&gt; part. My changes are some simple ones, first, I have php 5.5.24 installed locally. Thus I add compatibility to anything greater than 5.5.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Notice: I am not doing it here, but you need to be careful with open ended requirements. I have no idea if this code will work on php 9, but I don&amp;#39;t care so I didn&amp;#39;t bother adding the &lt;code&gt;|| &amp;lt;9.0&lt;/code&gt; or whatever to the &lt;a href=&quot;https://getcomposer.org/doc/01-basic-usage.md#package-versions&quot;&gt;required php version&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The second change is adding &lt;a href=&quot;http://www.php-fig.org/psr/psr-0/&quot;&gt;PSR-0 autoloading&lt;/a&gt; of my HelloWorld namespace. This will become important soon.&lt;/p&gt;
+
+&lt;h2&gt;Install dependencies&lt;/h2&gt;
+
+&lt;p&gt;Now we get to run &lt;code&gt;composer install&lt;/code&gt; and see all the magic happen.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;composer &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This does three important things:&lt;/p&gt;
+
+&lt;h3&gt;&lt;em&gt;Updating dependencies (including require-dev)&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;This project has no dependencies other than php version 5.5 or higher. But if it did then they would be installed. By default they are installed in the &lt;code&gt;vendor&lt;/code&gt; directory. Unlike npm there are plugins that can change where vendor code is installed.&lt;/p&gt;
+
+&lt;h3&gt;&lt;em&gt;Writing lock file&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;If we look at our directory tree after running &lt;code&gt;composer install&lt;/code&gt; it looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;composer.json
+composer.lock
+src/
+  greetings.php
+vendor/
+  autoload.php
+  composer/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notice the &lt;code&gt;composer.lock&lt;/code&gt; file. That file needs to be added to the repository.&lt;/p&gt;
+
+&lt;p&gt;When executing builds for production the lock file will be used to ensure that the same versions of things that worked for you in development are going to be installed in production. That way you don&amp;#39;t have to worry about mysterious dependency versions breaking things in deploy.&lt;/p&gt;
+
+&lt;h3&gt;&lt;em&gt;Generating autoload files&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;This is the really cool part of composer. It generates an &lt;code&gt;autoload.php&lt;/code&gt; file. This file is used by composer to automatically load files based on the &lt;a href=&quot;http://www.php-fig.org/psr/psr-0/&quot;&gt;PSR-0 spec&lt;/a&gt; we stated earlier (see, I told you it would be important).&lt;/p&gt;
+
+&lt;p&gt;This is also why composer installs itself into the vendor directory --composer is what handles the autoloading. This is huge, and also a big reason to use composer.&lt;/p&gt;
+
+&lt;p&gt;Now so long as we handle the namespaces correctly and we follow the &lt;a href=&quot;http://www.php-fig.org/psr/&quot;&gt;PSR&lt;/a&gt; (in this case PSR-0) then we can just load the autoloader and composer will make sure we have what we need when we need it.&lt;/p&gt;
+
+&lt;h2&gt;Lets use it&lt;/h2&gt;
+
+&lt;p&gt;Right now we have some potential energy. All this code, but nothing is using it. Kind of like the strength with OOP is also its weakness -- encapsulated code doesn&amp;#39;t do anything by itself. Thus, we need to write some &lt;em&gt;cough&lt;/em&gt; procedural code that uses this object.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Fun fact, I really did cough when I wrote that.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So then, lets write some tests. Create a &lt;code&gt;tests&lt;/code&gt; directory and add a file &lt;code&gt;test.php&lt;/code&gt; to it with the following contents.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Autoload files using the Composer autoloader.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;require_once&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;__DIR__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/../vendor/autoload.php&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;HelloWorld\Greetings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Greetings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sayHelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Like I said before, autoloading and composer give us the handy &lt;code&gt;use&lt;/code&gt; and &lt;code&gt;namespace&lt;/code&gt; keywords. It is beyond the scope of this article to discus &lt;a href=&quot;http://phpenthusiast.com/blog/how-to-autoload-with-composer&quot;&gt;how the autoloader works&lt;/a&gt;, just that it does and how to use it.&lt;/p&gt;
+
+&lt;p&gt;Remember the directory stucture &lt;code&gt;src/HelloWorld&lt;/code&gt; and the require statement in the &lt;code&gt;composer.json&lt;/code&gt; file? In our &lt;code&gt;composer.json&lt;/code&gt; we told the autoloader to expect a psr-0 directory structure and that our code would be in &lt;code&gt;src&lt;/code&gt;. Then we declared the &lt;code&gt;namespace HelloWorld;&lt;/code&gt; in our &lt;code&gt;greetings.php&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Now in our &lt;code&gt;test.php&lt;/code&gt; file we are &lt;em&gt;using&lt;/em&gt; (with the &lt;code&gt;use&lt;/code&gt; keyword) the &lt;code&gt;HelloWorld\Greetings&lt;/code&gt; namespace and object in our test to call the &lt;code&gt;Greetings::sayHelloWorld();&lt;/code&gt; static method.&lt;/p&gt;
+
+&lt;h2&gt;Lets commit&lt;/h2&gt;
+
+&lt;p&gt;At this point lets commit our code. The begs the question, what is our code? For now that is only the src and tests directory and the composer.php file. Lets initialize and commit those.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git init
+git add src tests composer.json
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;initial commit&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We should also setup a &lt;code&gt;.gitignore&lt;/code&gt; file so git stops barking at us about the vendor and &lt;code&gt;composer.lock&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If this was a project I would be leaving the composer.lock in file the repository. We have set this up more like utility library than an actual project. It is only valuable for deployment and it be ignored by composer when this is used as a library anyway.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So run this from the command line:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;vendor&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; .gitignore
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;composer.lock&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will append both &lt;code&gt;vendor&lt;/code&gt; and &lt;code&gt;composer.lock&lt;/code&gt; to the &lt;code&gt;.gitignore&lt;/code&gt; file (or create it if it doesn&amp;#39;t exist) thus it&amp;#39;s contents will look like this.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;vendor
+composer.lock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Bonus points, something borrowed&lt;/h2&gt;
+
+&lt;p&gt;I was going to stop here, but after reading that I think it is missing something. The other real power from composer. Using someone else&amp;#39;s code.&lt;/p&gt;
+
+&lt;p&gt;I still want to keep this simple so I am adding something simple and &lt;em&gt;maybe&lt;/em&gt; useful: a timer &lt;a href=&quot;https://packagist.org/packages/phpunit/php-timer&quot;&gt;&lt;strong&gt;phpunit/php-timer&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To add 3rd party packages to your package you run the &lt;code&gt;composer require&lt;/code&gt; command. In order to add the php-timer we run:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;composer require phpunit/php-timer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Unlike npm we do not need to specify the &lt;code&gt;--save&lt;/code&gt; argument. Composer assumes the save. Here is another awesome thing that composer does for us. Composer will &lt;strong&gt;&amp;quot;solve&amp;quot;&lt;/strong&gt; our dependency tree for us. What that means is that the packages will tell composer what versions of dependencies they support and composer will figure out what the latest version that fits that requirement.&lt;/p&gt;
+
+&lt;p&gt;For example if dependency &lt;strong&gt;foo&lt;/strong&gt; can use version &lt;strong&gt;5&lt;/strong&gt; and above of the &lt;strong&gt;php-timer&lt;/strong&gt; package, but dependency &lt;strong&gt;bar&lt;/strong&gt; doesn&amp;#39;t work with version &lt;strong&gt;7&lt;/strong&gt; or version &lt;strong&gt;5&lt;/strong&gt;, but does work with version &lt;strong&gt;6&lt;/strong&gt;. Then composer knows that only the latest release of version &lt;strong&gt;6&lt;/strong&gt; is supported by your application.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If there are lots of dependencies and sub-dependencies then solving this issue takes time. Also, composer will tell you if it cannot be solved. If two packages are not compatible then composer will tell you right away.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;After we run that command we will see &lt;code&gt;&amp;quot;phpunit/php-timer&amp;quot;: &amp;quot;^1.0&amp;quot;&lt;/code&gt; was added as a requirement. We can tell composer to only use some versions, but I will let you read the docs on that.&lt;/p&gt;
+
+&lt;p&gt;There is one more thing that we need to do before we can use the &lt;em&gt;PHP_Timer&lt;/em&gt; class in our project. We will need to edit the &lt;code&gt;composer.json&lt;/code&gt; file to tell our autoloader about our new class.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;nl&quot;&gt;&quot;autoload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;psr-0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;HelloWorld&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;classname&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;PHP_Timer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here we are adding the &lt;code&gt;classname&lt;/code&gt; keyword and then listing the &amp;quot;PHP&lt;em&gt;Timer&amp;quot; class as member with &amp;quot;src/&amp;quot; as the value. I got this value because inside the &lt;code&gt;vendor/php-timer&lt;/code&gt; directory is the *PHP&lt;/em&gt;Timer* class, without any &lt;code&gt;namespace&lt;/code&gt; keyword. Due to the lack of a namespace we just have to tell the autoloader that when we declare &lt;code&gt;use PHP_Timer;&lt;/code&gt; in our php file that we need the &lt;em&gt;PHP_Timer&lt;/em&gt; class loaded.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I fingured out what to do by looking at packages that used PHP_Timer. It can be confusing, &lt;a href=&quot;https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/&quot;&gt;Read composer namespaces in five minutes to learn more about how composer uses namespaces&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now that we have added the classname to the composer file we can start to use it in our greetings.php file. Lets add the some use of the php-timer class to the &lt;em&gt;Greetings&lt;/em&gt; class.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;HelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PHP_Timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Greetings&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sayHelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PHP_Timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;resourceUsage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now when we run the test it will print:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;php tests/test.php
+Hello World
+Time: 1 ms, Memory: 0.50MB
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Scripts, scripts, and scripts&lt;/h2&gt;
+
+&lt;p&gt;Currently, to test our command we need to run &lt;code&gt;php tests/test.php&lt;/code&gt; from the command line. That is about as simple as it gets. But what about if we want to run a &lt;a href=&quot;https://packagist.org/packages/squizlabs/php_codesniffer&quot;&gt;linter&lt;/a&gt; or some &lt;a href=&quot;https://packagist.org/packages/phpunit/phpunit&quot;&gt;real tests&lt;/a&gt;? This is where the &lt;em&gt;scripts&lt;/em&gt; member in the &lt;code&gt;composer.json&lt;/code&gt; file comes into play.&lt;/p&gt;
+
+&lt;p&gt;Lets add a &lt;em&gt;scripts&lt;/em&gt; definition to the end of our &lt;code&gt;composer.json&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;nl&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;php tests/test.php&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now we only need to run the command &lt;code&gt;composer test&lt;/code&gt; or &lt;code&gt;composer run test&lt;/code&gt; from the command line in order to run our tests. The value of the &lt;em&gt;scripts&lt;/em&gt; member is a list of key value pairs where the key is the name of the command and the value is the command that is run. The value can even be an array of commands that composer will run.&lt;/p&gt;
+
+&lt;p&gt;If we change that to:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;nl&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;php tests/test.php&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;echo Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then composer will run both the commands.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;composer run&lt;/code&gt; is shorthand for &lt;code&gt;composer run-script&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There are a whole slew of &lt;a href=&quot;https://getcomposer.org/doc/articles/scripts.md#command-events&quot;&gt;pre-defined commands&lt;/a&gt; that we can add to our &lt;code&gt;composer.json&lt;/code&gt; file. For example, using the key &lt;code&gt;post-update-cmd&lt;/code&gt; will run the scripts after the &lt;code&gt;update&lt;/code&gt; and before the &lt;code&gt;install&lt;/code&gt; commands.&lt;/p&gt;
+
+&lt;p&gt;Download my &lt;a href=&quot;https://github.com/frob/greetings/tree/composer&quot;&gt;Hello World Greetings composer project&lt;/a&gt; from github.&lt;/p&gt;
+
+&lt;h2&gt;Composer and Drupal&lt;/h2&gt;
+
+&lt;p&gt;As my professional life goes, 99% of my php work is Drupal -- and it has been since release of Drupal 6. I have done work in other languages and I have used other frameworks; but when it comes to me getting paid to write php, it is almost always Drupal.&lt;/p&gt;
+
+&lt;p&gt;As I said, I got started with Drupal seriously with Drupal 6, but now, as is the Drupal way, Drupal 6 is dead and Drupal 8 is new. Drupal 8 was a nearly complete re-architecture of Drupal.&lt;/p&gt;
+
+&lt;p&gt;Drupal was special, it was special because when we (Drupal Developers) needed something we built it. Our issue was that we built it for us. Now the needs of Drupal aren&amp;#39;t unique. We build drush, but every project seems to have a cli now-a-days.&lt;/p&gt;
+
+&lt;p&gt;Drush has make functionality. It can handle bundling our projects together with a build process. It also gives us the ability to download and install modules or change/modify our configuration. We can start temporary web-servers with Drush and do simple development work or test patches. The issue is that Drush was our tool and no one else&amp;#39;s.&lt;/p&gt;
+
+&lt;p&gt;With Drupal 8 we are leaving the island and seeing how others have solved problems. We don&amp;#39;t have to do it all ourselves and sometimes it is better not to even try. There is a whole slew of functionality out there that we can now incorporate into our modules. Composer is the key in all of that.&lt;/p&gt;
+"
+}
+
+]

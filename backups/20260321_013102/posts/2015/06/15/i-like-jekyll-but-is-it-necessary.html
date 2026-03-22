@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>I like Jekyll, but is it necessary? – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2015/06/15/i-like-jekyll-but-is-it-necessary.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>I like Jekyll, but is it necessary?</h1>
+
+  <div class="entry">
+    <p>One of the first &quot;Content Management Systems&quot; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&#39;t extremely useful to me. It was more of an academic experience &ndash; especially because, at the time, I wasn&#39;t a professional web developer.</p>
+
+<p>For the past 8 or so years I have been working primarily in <a href="https://www.drupal.org">Drupal</a>. I have seen other CMS&#39;s <a href="http://www.joomla.com">come and go and comeback</a>. I have seen forks and communities fall apart due to in fighting. I have seen major versions of projects that where worked on for years <a href="http://www.exult.sf.net">get shelved and ultimately abandoned</a>. I have seen much of this in the 8 or so years that I have been working with Drupal.</p>
+
+<p>Drupal has been rock solid. However, every-time I have tried to launch by blog on Drupal I would get stuck in the weeds. I have re-built wordpress 3 times with Drupal. Each time getting the blog to a different 80% mark before other work or obligations would take me away. So this time I launched my blog on Jekyll. I gathered together as much old content as I could find and consolidated here, using the Jekyll Quickstart repo.</p>
+
+<p>I also built the WAPRO meetup website in Jekyll using github pages and the same Jekyll Quickstart fork. It takes 5 minutes (10 if the internet connection is slow). Just fork the quickstart repo, change the _config.yml and you&#39;re up and running. All that is left after that is writing content. Also, github is hosting your site for free. If you want <a href="/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">to learn more about Jekyll read my post on Jekyll</a>.</p>
+
+<p>Everything is rainbows. But I am not someone who can just sit back and let a rainbow be a rainbow. (Remember the bit on re-building Wordpress in Drupal over and over?) So I made Jenkins watch my github pages repo and publish my blog on my server every-time I committed and pushed the repository. Easy right? No, that is not enough. I needed a simple way of working with by blog so I started writing some Grunt commands to do things like add a new draft or start Jekyll serve.</p>
+
+<p>Grunt, led me to Gulp. So I have gotten to know Gulp. I like Gulp more than I expected to. When you boil it down Gulp provides an intelligent extraction from disk io. You say Gulp get these files <code>gulp.src(*.js)</code> and Gulp gets them and asks you what you want to do with them. Oh Gulp, process them and write those files right over there <code>gulp.dest(&#39;build&#39;)</code>.</p>
+
+<h2>Awesome!</h2>
+
+<p>So, Gulp looks for all my files, processes them and then writes them. Why do I need Jekyll now? Personally I like to stream line my dependencies. Ruby is just another dependency now. Currently I am using SASS, but that is only because Jekyll uses Ruby. I can do everything with Less that I need SASS to do (really I can). So I really don&#39;t need Ruby for this. Let&#39;s see what does it take to make Jekyll with Gulp.</p>
+
+<h2>What Does Jekyll give us?</h2>
+
+<p>We have established [<a href="/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">in another post</a> that Jekyll gives us these things.</p>
+
+<ul>
+<li>Centralized configuration and globals <strong>_config.yml</strong></li>
+<li>Templates <strong>Liquid Templates</strong></li>
+<li>Markdown Parsing</li>
+<li>YAML Front matter</li>
+<li>Plug-in input Processing</li>
+<li>Bonus Points
+
+<ul>
+<li>Build Management</li>
+<li>Drafts</li>
+<li>Test Web Server</li>
+</ul></li>
+</ul>
+
+<h2>The plan</h2>
+
+<p>I already know that there are gulp plug-ins that say they do, liquid templates, markdown parsing, and yaml parsing. The issue with relying on Gulp is that it is still a relatively new technology. This means that plug-ins sometimes say they do something or they don&#39;t do something fully or they are simply empty repositories that show where something was once going to be built. I am going to attempt this. But <strong>no promises</strong>. <em>This</em> is for me. As I complete something I will post a link in the list above.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on June 15, 2015 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

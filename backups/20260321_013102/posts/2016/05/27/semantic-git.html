@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Semantic Git – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2016/05/27/semantic-git.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="Using git-flow as a workflow for semantic versioning. This is a circular dependency that is good.">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Semantic Git</h1>
+
+  <div class="entry">
+    <p>Git is a great tool for managing source control. Git flow is a great workflow for working with git branches and tags. Semantic versioning is a great way for labeling and cataloging version dependence. If we put them together then we will have a dependency system that is reenforced by workflow that is reenforced by a dependency system. This is a circular dependency that is good.</p>
+
+<h1>Semantic git-flow</h1>
+
+<h2>Background</h2>
+
+<p><a href="#tldr">skip TLDR;</a></p>
+
+<h3>Sematic Versioning</h3>
+
+<p>At a high-level Semantic Versioning aims to solve dependency issues by creating a standard versioning system that allows anyone to understand what has changed in a new version.</p>
+
+<h4>Example</h4>
+
+<p><em>1.2.3</em></p>
+
+<p><em><em>Major</em></em>.<em><em>Minor</em></em>.<em><em>Patch</em></em></p>
+
+<p>Major
+: Changing this is mandatory in the case of a backwards incompatible api change.</p>
+
+<p>Minor
+: Changing this is mandatory in the case of a backwards compatible api change or addition of new features.</p>
+
+<p>Patch
+: Changing this is mandatory in the case of any other change, that is not adding functionality or breaking backwards compatibility.</p>
+
+<h3>Git Flow</h3>
+
+<p>A git workflow that dictates what branches to make and why. A typical git-flow workflow will include 3+ branches:</p>
+
+<p><em>stable</em>
+: the current stable branch</p>
+
+<p><em>master</em>
+: the current development or HEAD</p>
+
+<p><em>master-feature</em>
+: where the work is actually accomplished</p>
+
+<p>The git flow workflow is designed so that:</p>
+
+<ul>
+<li>hot-fixing the stable product is always possible</li>
+<li>new features can be added to the stable product by merging in the feature branch</li>
+<li>git history remains linear to that it doesn&#39;t become git branch spaghetti</li>
+</ul>
+
+<h2>Semantic git <a name="tldr"></a></h2>
+
+<p>By merging these two ideas we can make it clear what is in development on any branch at any time and what that means to the product.</p>
+
+<h3>Stable</h3>
+
+<p><em>1.2.3</em>
+: By utilizing semantic versioning we can always keep it clear what our stable code is by using tags to snapshot stable code. In this way <em>stable</em> wouldn&#39;t be a branch but rather a tag. Since the <em>patch</em> number should increment any time there is a new stable release this should be a sane mechanism for it.</p>
+
+<h3>master</h3>
+
+<p><em>1.2.x</em>
+: There could me multiple master branches, one of any supported major.minor version combination. No work should be done directly on the master branches.</p>
+
+<h3>master-feature</h3>
+
+<p><em>1.2.x-feature</em>
+: It is obvious what is being worked on in the branch and what master version it is based on.</p>
+
+<h2>Workflow</h2>
+
+<ol>
+<li><p>Initialize git and create master branch</p>
+
+<ol>
+<li><code>git init</code></li>
+<li><code>git checkout -b 1.0.x</code></li>
+<li><code>git push -u origin 1.0.x</code></li>
+</ol></li>
+<li><p>Create new branch for &quot;Checkout Widget&quot; feature development</p>
+
+<ol>
+<li><code>git checkout -b 1.2.x-checkout-widget</code></li>
+<li><em>Work on project</em></li>
+<li><code>git fetch</code></li>
+<li><code>git pull --rebase origin 1.2.x</code></li>
+<li><code>git push origin 1.2.x-checkout-widget</code></li>
+</ol></li>
+<li><p>Create merge request in Gitlab or a pull request in github (shown here is what happens on the command line)</p>
+
+<ol>
+<li><code>git checkout 1.2.x-checkout-widget</code></li>
+<li><code>git pull --rebase 1.2.x</code></li>
+<li><em>test and peer review</em></li>
+<li><code>git checkout 1.2.x</code></li>
+<li><code>git merge 1.2.x-checkout-widget</code></li>
+</ol>
+
+<blockquote>
+<p>This is also handy if you are working on your own sub-feature branches that do not require further peer review.</p>
+</blockquote></li>
+<li><p>Create release tag and publish new release</p>
+
+<ul>
+<li><em>Patch release</em>
+
+<ol>
+<li><code>git tag 1.2.4</code> <em>Assumes the current release is 1.2.3</em></li>
+<li><code>git push origin 1.2.4</code></li>
+</ol></li>
+<li><em>Minor release</em>
+
+<ol>
+<li><code>git tag 1.2.0</code> <em>Assumes the current release is 1.1.&lt;any-number&gt;</em></li>
+<li><code>git push origin 1.2.0</code></li>
+<li><code>git checkout -b 1.3.x</code></li>
+<li><code>git push -u origin 1.3.x</code></li>
+</ol></li>
+</ul></li>
+</ol>
+
+<blockquote>
+<p>Notice the new Minor Release comes from the branch of the same name. Same is true of Major Releases. As soon as it is known that backwards compatibility will be broken, then new Major Release branch should be made. Before work is started on a new feature, a new Minor Release branch should be made.</p>
+</blockquote>
+
+  </div>
+
+  <div class="date-author">
+    Written on May 27, 2016 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

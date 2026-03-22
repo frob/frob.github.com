@@ -1,0 +1,105 @@
+[
+  {
+  "title"    : "Simplify Drupal 8 field value calls",
+  "url"     : "/api/v01/posts/2016-03-28-simplify-drupal-8-field-value-calls",
+  "permalink": "/posts/2016/March/28/2016-03-28-simplify-drupal-8-field-value-calls.html",
+  "date"     : "March 28, 2016",
+   "tags"  : [
+     "frontpage"
+    ,
+     "drupal"
+    ,
+     "tutorial"
+    ,
+     "quarzack13"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;p&gt;Things change, it&amp;#39;s a fact of life; even more so it&amp;#39;s a fact of a web developer&amp;#39;s life.&lt;/p&gt;
+
+&lt;p&gt;In semantic versioned frameworks every new major version brings new api and discards the old apis. Like ripping off a band-aid, this is an excruciatingly painful experience that will eventually bring forward a less painful future. Thus, it has been with the change from Drupal 7 to Drupal 8.x.&lt;/p&gt;
+
+&lt;h1&gt;Get the title of a node&lt;/h1&gt;
+
+&lt;p&gt;Let load a node and return the title.&lt;/p&gt;
+
+&lt;h2&gt;Drupal 7&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;node_load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$nid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Easy right? Two lines, done!&lt;/p&gt;
+
+&lt;p&gt;Now lets look at the Drupal 8 way.&lt;/p&gt;
+
+&lt;h2&gt;Drupal 8&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\Drupal\node\Entity\Node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$nid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$title_field&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;title&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title_field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Wow, look at all those words.&lt;/p&gt;
+
+&lt;p&gt;Lets take a look at what is happening here. First, we load the node, that is what all that &lt;code&gt;\Drupal\node\Entity\Node::load()&lt;/code&gt; business is doing. Second, We load the title field (that is correct titles are fields in Drupal 8) this is done with the &lt;code&gt;get&lt;/code&gt; method. Third, we have to get the value from that field that we got with a call to the &lt;code&gt;value&lt;/code&gt; member.&lt;/p&gt;
+
+&lt;p&gt;So much work just to get the title. Clearly things where easier in Drupal 7.&lt;/p&gt;
+
+&lt;p&gt;Well, not so fast. What if the site is multi-lingual? Or what if we need more than just the title. Remember, Drupal 7 didn&amp;#39;t use objects so it was impossible to get those values in a &amp;quot;normal&amp;quot; way. That is unless you consider &lt;code&gt;$node-&amp;gt;field_name[0][LANGUAGE_NONE][&amp;#39;value&amp;#39;]&lt;/code&gt; normal. This isn&amp;#39;t a stab at Drupal 7&amp;#39;s brilliant architecture. Drupal 7&amp;#39;s architecture gave us an awe inspiring amount of freedom within an engine to build nearly anything we wanted. However, the api&amp;#39;s (or lack there of) have not aged well.&lt;/p&gt;
+
+&lt;p&gt;The point of all that is, there is just this one getter to get a value from a field. No longer do we need to &lt;code&gt;dpm&lt;/code&gt; a value and see what is there and then pull the right value with the correct delta, for the correct language, from the correct &amp;quot;value.&amp;quot; Now we just &lt;code&gt;get()&lt;/code&gt; the field, and pull the &lt;code&gt;value&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Simplify&lt;/h2&gt;
+
+&lt;p&gt;Now that we are past all that, let us see how we can improve upon that getter snippit.&lt;/p&gt;
+
+&lt;h3&gt;use&lt;/h3&gt;
+
+&lt;p&gt;First we can utilize the use keyword so the Node static object will be directly accessible inside our namespace. This will be the only thing that I mention in this post that increase the number of lines.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;kn&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Drupal\node\Entity\Node&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+
+$node = Node::load($nid)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$title_field&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;title&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title_field&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Don&amp;#39;t split the &lt;code&gt;get()&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt; calls&lt;/h3&gt;
+
+&lt;p&gt;There is no need to separate the field getter from the value getter. We can eliminate the field variable and one line by concatenating those commands.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;kn&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Drupal\node\Entity\Node&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+
+$node = Node::load($nid)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;title&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Don&amp;#39;t split the &lt;code&gt;load()&lt;/code&gt; and &lt;code&gt;get()&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt; calls&lt;/h3&gt;
+
+&lt;p&gt;While we are at it we should just put it all on one line.&lt;/p&gt;
+
+&lt;p&gt;If all we want is the title there is no reason to save the node to a variable. There isn&amp;#39;t anything wrong with saving it to a variable, but it can be confusing to have all these variables laying around when you come back to this code after six months.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;kn&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Drupal\node\Entity\Node&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+
+$title = Node::load($nid)-&amp;gt;get(&#39;title&#39;)-&amp;gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;We don&amp;#39;t really need to call &lt;code&gt;get()&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;As pointed out by Dezső BICZÓ in the comments, get() is a magic method. Therefore, in this case we can call for &lt;code&gt;$node-&amp;gt;title&lt;/code&gt; directly. That can further simplify our example.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;kn&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Drupal\node\Entity\Node&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+
+$title = Node::load($nid)-&amp;gt;title-&amp;gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Things to remember&lt;/h2&gt;
+
+&lt;p&gt;This isn&amp;#39;t sanitary!&lt;/p&gt;
+
+&lt;p&gt;If the title isn&amp;#39;t being output through twig then remember to sanitize anything that comes from the db.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;kn&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Drupal\Component\Utility\Xss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Xss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It&amp;#39;s important to remember that when dealing with a new version it&amp;#39;s tempting to say, &amp;quot;This used to be easy and now it is hard.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;It only used to be easy because we knew how to do things without having to do too much research. Now things are hard --but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.&lt;/p&gt;
+"
+}
+
+]

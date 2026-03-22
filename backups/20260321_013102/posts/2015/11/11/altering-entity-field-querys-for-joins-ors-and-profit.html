@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Altering Entity Field Querys for JOINS ORs and Profit – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="EntityFieldQueries are one of the most useful things in Drupal 7, using tags we can get around some of the limitations of using them.">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Altering Entity Field Querys for JOINS ORs and Profit</h1>
+
+  <div class="entry">
+    <p>One of my favorite features from Drupal 7 is the <a href="https://api.drupal.org/api/drupal/includes!entity.inc/class/EntityFieldQuery/7">EntityFieldQuery</a>. The <a href="https://www.phase2technology.com/blog/building-energy-gov-without-views/">power of the EntityFieldQuery</a> is a well known thing, and I a have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&#39;s hook and alter architecture.</p>
+
+<h2>Simple EntityFieldQuery</h2>
+
+<p>For our example we will start with a simple EntityFieldQuery for getting a list of nodes.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php">
+  <span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityFieldQuery</span><span class="p">();</span>
+  <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">entityCondition</span><span class="p">(</span><span class="s1">'entity_type'</span><span class="p">,</span> <span class="s1">'node'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">entityCondition</span><span class="p">(</span><span class="s1">'bundle'</span><span class="p">,</span> <span class="s1">'activity_set'</span><span class="p">);</span>
+
+  <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$result</span><span class="p">[</span><span class="s1">'node'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$activity_sets</span> <span class="o">=</span> <span class="nx">node_load_multiple</span><span class="p">(</span><span class="nb">array_keys</span><span class="p">(</span><span class="nv">$result</span><span class="p">[</span><span class="s1">'node'</span><span class="p">]));</span>
+    <span class="nv">$activity_sets</span> <span class="o">=</span> <span class="nx">node_view_multiple</span><span class="p">(</span><span class="nv">$activity_sets</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>Now lets say that we want this list to be a keyword filtered list of title or taxonomy. But, we also want to filter this to exclusively show nodes with another taxonomy field&#39;s values. The one taxonomy field is an easy addition.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">fieldCondition</span><span class="p">(</span><span class="s1">'field_related_curriculum'</span><span class="p">,</span> <span class="s1">'tid'</span><span class="p">,</span> <span class="nv">$structure_taxonomy</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">);</span>
+</code></pre></div>
+<h2>How EntityFieldQueries can start to break down</h2>
+
+<p>But how do we add an <code>OR</code> statement to also allow for the title keyword filter?</p>
+
+<p>EntityFieldQuery doesn&#39;t allow for <code>OR</code> out of the box. We could extend the EntityFieldQuery class and add some interface to it to try and handle this case. OR, we could just use Drupal&#39;s hook and alter system to alter the query before we execute the query.</p>
+
+<p>Before we can alter the query, we must know what query we want to alter. We will do this by tagging the query when we created the EntityFieldQuery.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">addTag</span><span class="p">(</span><span class="s1">'keyword'</span><span class="p">);</span>
+</code></pre></div>
+<p>While we are at it we will have to add our filter criteria as well.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">addMetaData</span><span class="p">(</span><span class="s1">'options'</span><span class="p">,</span> <span class="nv">$options</span><span class="p">);</span>
+</code></pre></div>
+<p>There now we have what we will need for our alter hook. To alter this query we will need to implement hook<em>query</em>TAG_alter().</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
+ * Implements hook_query_TAG_alter().
+ */</span>
+<span class="k">function</span> <span class="nf">module_name_query_keyword_alter</span><span class="p">(</span><span class="nx">QueryAlterableInterface</span> <span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// @TODO: make this do things.</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>What we want is for any single word in the title to come back with a like. I did it this way. I realize that this can be done in a variety of different ways.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$keywords</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="nv">$options</span><span class="p">[</span><span class="s1">'keywords'</span><span class="p">]);</span>
+
+<span class="nv">$or</span> <span class="o">=</span> <span class="nx">db_or</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$keywords</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">foreach</span> <span class="p">(</span><span class="nv">$keywords</span> <span class="k">as</span> <span class="nv">$keyword</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$or</span><span class="o">-&gt;</span><span class="na">condition</span><span class="p">(</span><span class="s1">'node.title'</span><span class="p">,</span> <span class="s1">'%'</span> <span class="o">.</span> <span class="nv">$keyword</span> <span class="o">.</span> <span class="s1">'%'</span><span class="p">,</span> <span class="s1">'LIKE'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">condition</span><span class="p">(</span><span class="nv">$or</span><span class="p">);</span>
+</code></pre></div>
+<p>There, we are done, right? Nope. We may think that we are, however, if we ran that code we would get a PDO exception. Why? Because we are not doing any propertyConditions on the original EntityFieldQuery. Drupal is smart enough to know that if it isn&#39;t using the node table in the EFQ that it doesn&#39;t need to <code>JOIN</code> it.</p>
+
+<p>To fix this, go back up to the original EntityFieldQuery and add this line <code>$query-&gt;propertyCondition(&#39;status&#39;, 1);</code>. Awesome, now our code will execute and everything is sun shine and rainbows.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on November 11, 2015 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>
