@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Need a join in an EntityFieldQuery, how about a subquery? – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery-how-about-a-subquery.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="Did you know that EntityFieldQueries can have subqueries? They can.">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Need a join in an EntityFieldQuery, how about a subquery?</h1>
+
+  <div class="entry">
+    <p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it.</p>
+
+<p><em><strong>Shaddap and give me the code:</strong></em></p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityFieldQuery</span><span class="p">();</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">entityCondition</span><span class="p">(</span><span class="s1">'entity_type'</span><span class="p">,</span> <span class="s1">'user'</span><span class="p">);</span>
+
+<span class="nv">$roles_subquery</span> <span class="o">=</span> <span class="nx">db_select</span><span class="p">(</span><span class="s1">'users_roles'</span><span class="p">,</span> <span class="s1">'ur'</span><span class="p">);</span>
+<span class="nv">$roles_subquery</span><span class="o">-&gt;</span><span class="na">fields</span><span class="p">(</span><span class="s1">'ur'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">));</span>
+<span class="nv">$roles_subquery</span><span class="o">-&gt;</span><span class="na">condition</span><span class="p">(</span><span class="s1">'rid'</span><span class="p">,</span> <span class="nv">$my_role_id</span><span class="p">);</span>
+
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">propertyCondition</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="nv">$roles_subquery</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">);</span>
+</code></pre></div>
+<p>In case you do not want to click the link I put in the opening paragraph. That is the code.</p>
+
+<h2>What was the problem?</h2>
+
+<p>This is the question.</p>
+
+<blockquote>
+<p>I thought this was an easy task, yet there does not seem to be a Drupal-method for this. I came as far as knowing I have to use EntityFieldQuery for this - because the API said conditions for user<em>load</em>multiple() are deprecated.</p>
+
+<p>So I tried this:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EntityFieldQuery</span><span class="p">;</span>
+  <span class="nv">$query</span>
+    <span class="o">-&gt;</span><span class="na">entityCondition</span><span class="p">(</span><span class="s1">'entity_type'</span><span class="p">,</span> <span class="s1">'user'</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">propertyCondition</span><span class="p">(</span><span class="s1">'rid'</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+
+  <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+</code></pre></div>
+<p>What this developer wants to do is a query to find all users of a certain role. The problem here is that propertyConditions will only allow querying based on the fields of the base table for the entity and role isn&#39;t in the user table. Further, role isn&#39;t even a field so fieldCondition wouldn&#39;t help either. Also, when doing an EntityFieldQuery we cannot do a typical <code>JOIN</code> as we normally would.</p>
+
+<h2>What is the solution.</h2>
+
+<p>To get around this we need to limit the EntityFieldQuery based on the uid and not the role. That means we need to get a the list of all the uids from the <code>user_role</code> table.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$roles_subquery</span> <span class="o">=</span> <span class="nx">db_select</span><span class="p">(</span><span class="s1">'users_roles'</span><span class="p">,</span> <span class="s1">'ur'</span><span class="p">);</span>
+<span class="nv">$roles_subquery</span><span class="o">-&gt;</span><span class="na">fields</span><span class="p">(</span><span class="s1">'ur'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">));</span>
+<span class="nv">$roles_subquery</span><span class="o">-&gt;</span><span class="na">condition</span><span class="p">(</span><span class="s1">'rid'</span><span class="p">,</span> <span class="nv">$my_role_id</span><span class="p">);</span>
+</code></pre></div>
+<p>This will give us a query that will return a list of all the user ids for a particular role. Then we can use that to do a propertyCondition on the EntityFieldQuery to limit it to those uids.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">propertyCondition</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">,</span> <span class="nv">$roles_subquery</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">);</span>
+</code></pre></div>
+<p>The interesting thing about this is that this isn&#39;t an array of results being passed to the propertyCondition. Instead, this is passing the query object. Then, Drupal&#39;s query builder will build the query to include that.</p>
+
+<p>Seriously, well done with the whole DB layer in Drupal 7.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on June 10, 2015 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

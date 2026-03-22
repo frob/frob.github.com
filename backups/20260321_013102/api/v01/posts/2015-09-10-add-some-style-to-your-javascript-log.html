@@ -1,0 +1,83 @@
+[
+  {
+  "title"    : "Add Some Style to Your JavaScript Log",
+  "url"     : "/api/v01/posts/2015-09-10-add-some-style-to-your-javascript-log",
+  "permalink": "/posts/2015/September/10/2015-09-10-add-some-style-to-your-javascript-log.html",
+  "date"     : "September 10, 2015",
+   "tags"  : [
+     "frontpage"
+    ,
+     "tutorials"
+    ,
+     "browsers"
+    ,
+     "debug"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;p&gt;&lt;a href=&quot;#howitdo&quot;&gt;Skip the fluff&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Backstory&lt;/h2&gt;
+
+&lt;p&gt;Anytime I want to show off what the web can do with a simple blog I have to pull up &lt;a href=&quot;http://acko.net&quot;&gt;this awesome site&lt;/a&gt;. I was on &lt;a href=&quot;http://acko.net/&quot;&gt;A Very Cool Site about Hackery, Math &amp;amp; Design&lt;/a&gt;, and the question was asked &amp;quot;how did he do that?&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;So it was time to open my console. This is what I found.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;image-center&quot; src=&quot;/images/2015091005.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Which lead to the question &amp;quot;how did he do that?&amp;quot;&lt;/p&gt;
+
+&lt;aside class=&quot;inline&quot;&gt;The that in question is the stylish console message. From the image one can see colors and drop shadows. Neat!&lt;/aside&gt;
+
+&lt;h1&gt;How &lt;span title=&quot;The colorful console message&quot;&gt;&lt;strong&gt;&lt;em&gt;that&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt; is done.&lt;/h1&gt;
+
+&lt;p&gt;I you are not aware already, there are quite a few methods available in the global &lt;code&gt;console&lt;/code&gt; object. If you are not familure I recommend the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/consol&quot;&gt;Mozilla Developer Network pages on &lt;code&gt;console&lt;/code&gt;&lt;/a&gt;. Some methods of importance are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;log (&lt;em&gt;duh&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;assert&lt;/li&gt;
+&lt;li&gt;trace&lt;/li&gt;
+&lt;li&gt;error&lt;/li&gt;
+&lt;li&gt;count&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are old news and I wont go into them in detail here. Just look them up on the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/consol&quot;&gt;MDN docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;howitdo&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;So then how was it done?&lt;/h2&gt;
+
+&lt;p&gt;Scroll ahead to the &lt;q&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/console#Outputting_text_to_the_console&quot;&gt;Outputting Text to the console&lt;/a&gt;&lt;/q&gt; portion of the MDN doc and you will see that &lt;code&gt;console.log&lt;/code&gt; will take in its first parameter some string wrappers. &lt;code&gt;%f&lt;/code&gt; for float, &lt;code&gt;%s&lt;/code&gt; for string, and so on. At the very bottom of the page you will see the &lt;code&gt;%c&lt;/code&gt;, which wrapps the remaining text in some style as the second parameter.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%cHello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;color: red;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Will render as:&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red;&quot;&gt;Hello&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3&gt;Results across browsers&lt;/h3&gt;
+
+&lt;p&gt;In the console. From the screen shots below you will see that this works will all modern browsers (although, I don&amp;#39;t have direct access to a PC with IE or &lt;del&gt;Edge&lt;/del&gt; at the moment, &lt;del&gt;but I will assume they work too&lt;/del&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Chrome&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;image-center&quot; src=&quot;/images/2015091001.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Firefox Inspector&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;image-center&quot; src=&quot;/images/2015091002.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Firefox Firebug&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;image-center&quot; src=&quot;/images/2015091003.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4&gt;Appendix&lt;/h4&gt;
+
+&lt;p&gt;This doesn&amp;#39;t work in Edge.&lt;/p&gt;
+"
+}
+
+]

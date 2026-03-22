@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Simplify Drupal 8 field value calls – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="Explore a bit of field fetching with Drupal 8">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Simplify Drupal 8 field value calls</h1>
+
+  <div class="entry">
+    <p>Things change, it&#39;s a fact of life; even more so it&#39;s a fact of a web developer&#39;s life.</p>
+
+<p>In semantic versioned frameworks every new major version brings new api and discards the old apis. Like ripping off a band-aid, this is an excruciatingly painful experience that will eventually bring forward a less painful future. Thus, it has been with the change from Drupal 7 to Drupal 8.x.</p>
+
+<h1>Get the title of a node</h1>
+
+<p>Let load a node and return the title.</p>
+
+<h2>Drupal 7</h2>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$node</span> <span class="o">=</span> <span class="nx">node_load</span><span class="p">(</span><span class="nv">$nid</span><span class="p">);</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+</code></pre></div>
+<p>Easy right? Two lines, done!</p>
+
+<p>Now lets look at the Drupal 8 way.</p>
+
+<h2>Drupal 8</h2>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$node</span> <span class="o">=</span> <span class="nx">\Drupal\node\Entity\Node</span><span class="o">::</span><span class="na">load</span><span class="p">(</span><span class="nv">$nid</span><span class="p">);</span>
+<span class="nv">$title_field</span> <span class="o">=</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'title'</span><span class="p">);</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="nv">$title_field</span><span class="o">-&gt;</span><span class="na">value</span><span class="p">;</span>
+</code></pre></div>
+<p>Wow, look at all those words.</p>
+
+<p>Lets take a look at what is happening here. First, we load the node, that is what all that <code>\Drupal\node\Entity\Node::load()</code> business is doing. Second, We load the title field (that is correct titles are fields in Drupal 8) this is done with the <code>get</code> method. Third, we have to get the value from that field that we got with a call to the <code>value</code> member.</p>
+
+<p>So much work just to get the title. Clearly things where easier in Drupal 7.</p>
+
+<p>Well, not so fast. What if the site is multi-lingual? Or what if we need more than just the title. Remember, Drupal 7 didn&#39;t use objects so it was impossible to get those values in a &quot;normal&quot; way. That is unless you consider <code>$node-&gt;field_name[0][LANGUAGE_NONE][&#39;value&#39;]</code> normal. This isn&#39;t a stab at Drupal 7&#39;s brilliant architecture. Drupal 7&#39;s architecture gave us an awe inspiring amount of freedom within an engine to build nearly anything we wanted. However, the api&#39;s (or lack there of) have not aged well.</p>
+
+<p>The point of all that is, there is just this one getter to get a value from a field. No longer do we need to <code>dpm</code> a value and see what is there and then pull the right value with the correct delta, for the correct language, from the correct &quot;value.&quot; Now we just <code>get()</code> the field, and pull the <code>value</code>.</p>
+
+<h2>Simplify</h2>
+
+<p>Now that we are past all that, let us see how we can improve upon that getter snippit.</p>
+
+<h3>use</h3>
+
+<p>First we can utilize the use keyword so the Node static object will be directly accessible inside our namespace. This will be the only thing that I mention in this post that increase the number of lines.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">use</span> <span class="nn">Drupal\node\Entity\Node</span><span class="err">
+
+$node = Node::load($nid)</span><span class="p">;</span>
+<span class="nv">$title_field</span> <span class="o">=</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'title'</span><span class="p">);</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="nv">$title_field</span><span class="o">-&gt;</span><span class="na">value</span><span class="p">;</span>
+</code></pre></div>
+<h3>Don&#39;t split the <code>get()</code> and <code>value</code> calls</h3>
+
+<p>There is no need to separate the field getter from the value getter. We can eliminate the field variable and one line by concatenating those commands.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">use</span> <span class="nn">Drupal\node\Entity\Node</span><span class="err">
+
+$node = Node::load($nid)</span><span class="p">;</span>
+<span class="nv">$title</span> <span class="o">=</span> <span class="nv">$node</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'title'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">value</span><span class="p">;</span>
+</code></pre></div>
+<h3>Don&#39;t split the <code>load()</code> and <code>get()</code> and <code>value</code> calls</h3>
+
+<p>While we are at it we should just put it all on one line.</p>
+
+<p>If all we want is the title there is no reason to save the node to a variable. There isn&#39;t anything wrong with saving it to a variable, but it can be confusing to have all these variables laying around when you come back to this code after six months.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">use</span> <span class="nn">Drupal\node\Entity\Node</span><span class="err">
+
+$title = Node::load($nid)-&gt;get('title')-&gt;value</span><span class="p">;</span>
+</code></pre></div>
+<h3>We don&#39;t really need to call <code>get()</code></h3>
+
+<p>As pointed out by Dezső BICZÓ in the comments, get() is a magic method. Therefore, in this case we can call for <code>$node-&gt;title</code> directly. That can further simplify our example.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">use</span> <span class="nn">Drupal\node\Entity\Node</span><span class="err">
+
+$title = Node::load($nid)-&gt;title-&gt;value</span><span class="p">;</span>
+</code></pre></div>
+<h2>Things to remember</h2>
+
+<p>This isn&#39;t sanitary!</p>
+
+<p>If the title isn&#39;t being output through twig then remember to sanitize anything that comes from the db.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">use</span> <span class="nn">Drupal\Component\Utility\Xss</span><span class="p">;</span>
+
+<span class="nx">Xss</span><span class="o">::</span><span class="na">filter</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span>
+</code></pre></div>
+<p>It&#39;s important to remember that when dealing with a new version it&#39;s tempting to say, &quot;This used to be easy and now it is hard.&quot;</p>
+
+<p>It only used to be easy because we knew how to do things without having to do too much research. Now things are hard --but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on March 28, 2016 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

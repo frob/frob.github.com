@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Lets take a look at webVR with AFrame – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with-aframe.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame.">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src="//cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js"></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>["//cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js"], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Lets take a look at webVR with AFrame</h1>
+
+  <div class="entry">
+    <p>Do you remember that time when you tried to find a Javascript library only to find the wrong Javascript library with the same name. Well that happened when I was looking for <a href="https://aframe.io">A-Frame</a>. Just so you know we are not talking about the slightly older MVC Javascript framework named AFrame; today, we are going to be talking about <a href="https://aframe.io">Mozilla&#39;s WebVR library A-Frame</a>.</p>
+
+<h1>What is <a href="https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-%E2%80%9Ca-frame%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D-or-%E2%80%9Caframevr%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D">A-Frame</a></h1>
+
+<p>A-Frame is an open-source web framework for building virtual reality experiences on the web. We can use A-Frame to build VR web page using only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and extensible, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.</p>
+
+<h2>How to use A Frame</h2>
+
+<p>Remember when you read my <a href="https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html">introduction to Threejs</a> (because you are an avid reader of my blog)? If you know how to use threejs then you already know how to extend A-Frame. That is because A-Frame uses threejs behind the scenes to manage the webgl. Let&#39;s take a look at the example from my threejs post.</p>
+
+<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/" ></iframe>
+
+<p>My old example converts easily to A-Frame. While the threejs example is around 30 lines of Javascript, the A-Frame example converts to about 9 lines of custom html tags with no custom JS. It doesn&#39;t even use custom js for the animation. I am not the kind of person that considers code to be harder than markup, but in this case it makes more sense to use markup and the majority of the information that is lost is the boilerplate code. All we have to do to setup a scene is use the <code>&lt;a-scene&gt;&lt;/a-scene&gt;</code> tags. All the parts of the scene go inside.</p>
+
+<p><a href="https://frob.github.io/aframeexamples">A-Frame example: threejs port</a>.</p>
+<div class="highlight"><pre><code class="language-HTML" data-lang="HTML">&lt;a-scene fog="type: linear; color: #000; near: 1; far: 5" color="black"&gt;
+  &lt;a-box position="0 1.5 0" rotation="0 45 0" width="1" height="1" depth="1"  color="#00ff00"&gt;
+    &lt;a-animation attribute="rotation"
+                 dur="9500"
+                 easing="linear"
+                 from="0 45 0"
+                 to="-360 405 0"
+                 repeat="indefinite"&gt;&lt;/a-animation&gt;
+  &lt;/a-box&gt;
+  &lt;a-sky color="#000"&gt;&lt;/a-sky&gt;
+  &lt;a-entity light="type: ambient; color: #101030"&gt;&lt;/a-entity&gt;
+  &lt;a-entity light="type: directional; color: #ffffff; intensity: 0.5" position="0 1 0"&gt;&lt;/a-entity&gt;
+  &lt;a-entity position="0 0 2"&gt;
+    &lt;a-camera&gt;&lt;/a-camera&gt;
+  &lt;/a-entity&gt;
+&lt;/a-scene&gt;~
+</code></pre></div>
+<p>To recreate my Threejs example I used these components and primitives:
+ - <a href="https://aframe.io/docs/0.3.0/core/scene.html">scene</a>
+  <strong>a-scene</strong> This is the container that holds the other components and primitives. There should only be one on a page. This is also where several global properties should be defined; this is where the <em>fog</em> got defined in my example reboot. If you want more scenes on a page, then use iframes.
+ - <a href="https://aframe.io/docs/0.3.0/primitives/a-box.html">box</a>
+  <strong>a-box</strong> A-Frame provides several simple primitives, this is one of them. Read the docs to find them all. Models are also allowed.
+ - <a href="https://aframe.io/docs/0.3.0/core/animations.html">animation</a>
+ - <a href="https://aframe.io/docs/0.3.0/primitives/a-sky.html">sky</a>
+ - <a href="https://aframe.io/docs/0.3.0/core/entity.html">entity</a>
+ - <a href="https://aframe.io/docs/0.3.0/components/camera.html">camera</a></p>
+
+<p>In order to have multiple examples on this page we need to use iframes, so I will provide links to the <a href="https://github.com/frob/aframeexamples">A-Frame examples used on this page</a> and the <a href="https://github.com/aframevr/aframe/blob/master/examples">official A-Frame examples</a> after each example.</p>
+
+<h3>3D primitives</h3>
+
+<p>According to <a href="https://github.com/aframevr/aframe/blob/master/examples/boilerplate/hello-world/index.html">AFrame&#39;s Hello World example</a>, just insert some simple invalid html and the lib will take care of the rest.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div&gt;</span>
+<span class="nt">&lt;a-scene&gt;</span>
+
+  <span class="nt">&lt;a-sphere</span> <span class="na">position=</span><span class="s">"0 1.25 -1"</span> <span class="na">radius=</span><span class="s">"1.25"</span> <span class="na">color=</span><span class="s">"#EF2D5E"</span><span class="nt">&gt;&lt;/a-sphere&gt;</span>
+  <span class="nt">&lt;a-box</span> <span class="na">position=</span><span class="s">"-1 0.5 1"</span> <span class="na">rotation=</span><span class="s">"0 45 0"</span> <span class="na">width=</span><span class="s">"1"</span> <span class="na">height=</span><span class="s">"1"</span> <span class="na">depth=</span><span class="s">"1"</span>  <span class="na">color=</span><span class="s">"#4CC3D9"</span><span class="nt">&gt;&lt;/a-box&gt;</span>
+  <span class="nt">&lt;a-cylinder</span> <span class="na">position=</span><span class="s">"1 0.75 1"</span> <span class="na">radius=</span><span class="s">"0.5"</span> <span class="na">height=</span><span class="s">"1.5"</span> <span class="na">color=</span><span class="s">"#FFC65D"</span><span class="nt">&gt;&lt;/a-cylinder&gt;</span>
+  <span class="nt">&lt;a-plane</span> <span class="na">rotation=</span><span class="s">"-90 0 0"</span> <span class="na">width=</span><span class="s">"4"</span> <span class="na">height=</span><span class="s">"4"</span> <span class="na">color=</span><span class="s">"#7BC8A4"</span><span class="nt">&gt;&lt;/a-plane&gt;</span>
+
+  <span class="nt">&lt;a-sky</span> <span class="na">color=</span><span class="s">"#ECECEC"</span><span class="nt">&gt;&lt;/a-sky&gt;</span>
+  <span class="nt">&lt;a-entity</span> <span class="na">position=</span><span class="s">"0 0 3.8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a-camera&gt;&lt;/a-camera&gt;</span>
+  <span class="nt">&lt;/a-entity&gt;</span>
+<span class="nt">&lt;/a-scene&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<p>The best example of primitives is on the <a href="https://aframe.io/examples/showcase/helloworld/">A-Frame homepage</a>.</p>
+
+<h3>Skybox</h3>
+
+<p>If you read the above carefully you will notice that a skybox is just a primitive in A-Frame. This can be just a color or an asset, such as an <a href="https://www.flickr.com/groups/equirectangular/">equirectangular image</a>.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a-sky</span> <span class="na">color=</span><span class="s">"#ECECEC"</span><span class="nt">&gt;&lt;/a-sky&gt;</span>
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a-assets&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"sky"</span> <span class="na">src=</span><span class="s">"sky.png"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/a-assets&gt;</span>
+<span class="nt">&lt;a-sky</span> <span class="na">src=</span><span class="s">"#sky"</span><span class="nt">&gt;&lt;/a-sky&gt;</span>
+</code></pre></div>
+<p>This is much easier than having to sync up textures and position on 5 separate quads or having to define an inner texture for a cube and keeping the position up-to-date with the camera position.</p>
+
+<h3>Billboards and custom components</h3>
+
+<p>Unfortunately, A-Frame doesn&#39;t support billboard components out-of-the-box. But it is built on an <a href="https://aframe.io/docs/0.3.0/docs/core">enitty-component-system pattern</a> (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a <a href="https://github.com/blairmacintyre/aframe-look-at-billboard-component">random billboard component from github</a>.</p>
+
+<p>I am not going to go through how to create new components or even include the source code here. Take a look for yourself, it is only 165 lines and it really isn&#39;t all that complicated. Maybe if I ever need to write a new custom component I will do a writeup about it.</p>
+
+<blockquote>
+<p>A <a href="http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/billboards/">billboard</a> is a 3D primitive that usually consists of two triangles that make up a rectangle face that is always pointed at the camera.</p>
+</blockquote>
+
+<p>Using the above billboard component we can get a scene like this (<a href="https://frob.github.io/aframeexamples/example-billboard.html">billboard example</a>):</p>
+
+<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-billboard.html" ></iframe>
+
+<blockquote>
+<p>Note that this billboard example will only work if the ad blockers are turned off. They don&#39;t like that this library has the word billboard in it. In case you are wondering, billboard is the name of an ad. Just to avoid confusion. So that no one is confused. I really, really, really hope that you are not confused.</p>
+</blockquote>
+
+<p>Here is the important part.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a-assets&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"scorpion"</span> <span class="na">src=</span><span class="s">"images/8bitninja.gif"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/a-assets&gt;</span>
+
+<span class="nt">&lt;a-entity</span> <span class="na">billboard</span> <span class="na">id=</span><span class="s">"ninja1"</span> <span class="na">position=</span><span class="s">"0 1 0"</span> <span class="na">geometry=</span><span class="s">"primitive: plane; height: 1.5; width:1;"</span> <span class="na">material=</span><span class="s">"src: #scorpion;opacity:.8"</span> <span class="nt">&gt;&lt;/a-entity&gt;</span>
+</code></pre></div>
+<p><a href="https://www.github.com/frob/aframeexamples/master/example-billboard.html">Full bullboard example code</a>.</p>
+
+<p>The billboard custom component allows us to create a normal entity and just use an attribute <code>billboard</code> to tell A-Frame that this entity is a billboard. There are many custom A-Frame components, links are available on the A-Frame component docs page.</p>
+
+<h4>Assets</h4>
+
+<p>This is as good a time as any to talk about asset management in A-Frame (you might have noticed the <code>a-asset</code> tag in the last example). Simple scenes can handle assets in a simple manner --with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then <a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html">A-Frame&#39;s asset management system</a> comes in very handy. Here is an example of both ways of <a href="https://aframe.io/docs/0.3.0/primitives/a-image.html">loading assets ripped ripped straight from the docs</a>.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a-assets&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"my-image"</span> <span class="na">src=</span><span class="s">"image.png"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/a-assets&gt;</span>
+<span class="c">&lt;!-- Using the asset management system. --&gt;</span>
+<span class="nt">&lt;a-image</span> <span class="na">src=</span><span class="s">"#my-image"</span><span class="nt">&gt;&lt;/a-image&gt;</span>
+<span class="c">&lt;!-- Defining the URL inline. Not recommended but more comfortable for web developers. --&gt;</span>
+<span class="nt">&lt;a-image</span> <span class="na">src=</span><span class="s">"another-image.png"</span><span class="nt">&gt;&lt;/a-image&gt;</span>
+</code></pre></div>
+<p>Non-multimedia assets have the default behavior of blocking the rendering of the scene until all assets have loaded --this is configurable on a per asset basis. This simplifies the preloading of assets. There are more <a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html">asset controls in the docs</a>, such as having a timeout that the scene will begin loading even if the assets don&#39;t load in time or dealing with asset <strong>loaded</strong> events.</p>
+
+<h3>Models</h3>
+
+<p>Primitives are nice for simple things, but aside from A-Frame demos I doubt they will be used too often in a real application. Luckily A-Frame has a simple way to load mesh objects. To demo this I will demo the same model or mesh that every 3D demo uses --the <a href="https://en.wikipedia.org/wiki/Utah_teapot">Utah Teapot</a>.</p>
+
+<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-model.html" ></iframe>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a-scene</span> <span class="na">fog=</span><span class="s">"type: linear; color: #000; near: 1; far: 5"</span> <span class="na">color=</span><span class="s">"black"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a-assets&gt;</span>
+    <span class="nt">&lt;a-asset-item</span> <span class="na">id=</span><span class="s">"teapot"</span> <span class="na">src=</span><span class="s">"models/teapot.obj"</span><span class="nt">&gt;&lt;/a-asset-item&gt;</span>
+  <span class="nt">&lt;/a-assets&gt;</span>
+
+  <span class="nt">&lt;a-entity</span> <span class="na">obj-model=</span><span class="s">"obj: #teapot"</span> <span class="na">color=</span><span class="s">"green"</span> <span class="na">position=</span><span class="s">"0 0 -2.5"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a-animation</span> <span class="na">attribute=</span><span class="s">"rotation"</span>
+                 <span class="na">dur=</span><span class="s">"9500"</span>
+                 <span class="na">easing=</span><span class="s">"linear"</span>
+                 <span class="na">from=</span><span class="s">"0 45 0"</span>
+                 <span class="na">to=</span><span class="s">"0 405 0"</span>
+                 <span class="na">repeat=</span><span class="s">"indefinite"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/a-animation&gt;</span>
+  <span class="nt">&lt;/a-entity&gt;</span>
+
+  <span class="nt">&lt;a-sky</span> <span class="na">color=</span><span class="s">"#000"</span><span class="nt">&gt;&lt;/a-sky&gt;</span>
+  <span class="nt">&lt;a-entity</span> <span class="na">light=</span><span class="s">"type: ambient; color: #101030"</span><span class="nt">&gt;&lt;/a-entity&gt;</span>
+  <span class="nt">&lt;a-entity</span> <span class="na">light=</span><span class="s">"type: directional; color: #ffffff; intensity: 0.5"</span> <span class="na">position=</span><span class="s">"0 1 0"</span><span class="nt">&gt;&lt;/a-entity&gt;</span>
+  <span class="nt">&lt;a-entity</span> <span class="na">position=</span><span class="s">"0 0 2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a-camera&gt;&lt;/a-camera&gt;</span>
+  <span class="nt">&lt;/a-entity&gt;</span>
+<span class="nt">&lt;/a-scene&gt;</span>
+</code></pre></div>
+<h4>Meshes Materials and Shaders oh my!</h4>
+
+<p>You will notice that the above demo has a rather bland looking teapot. This is because it only uses a mesh object and has no material. If you are not familiar with 3D, something that is seen on the screen is normally a combination of three different things. There is the Mesh (or Model) that defines the geometry of the object, there is the Material that defines the textures used to show definition in the object, and there is the Shader that is the part that says how to put all three things together. Shaders are very powerful things and can be extremely complicated, so I will not go into how to write them in this article. They can give the 3D artist a huge amount of visual flexibility even with very simple meshes. I will go into more depth on shaders in a moment, but please checkout this video on shaders, they are awesome.</p>
+
+<h3>Shaders</h3>
+
+<p>As said before shaders are how the computer knows what to display. A-Frame has some basic default shaders built in, but it also supports custom shaders.</p>
+
+<p>Generally speaking there are two types of Shaders: Vertex Shaders and Pixel Shaders. Vertex Shaders act on the geometry of an object and the Pixel Shaders affect the image on a pixel by pixel basis.</p>
+
+<p>A common use of the Vertex Shaders is to provide a smoothly effect on a mesh (it is impossible to have a truly smooth mesh, a Vertex Shader can make a dodecahedron appear to be smooth in the middle). A common use of a Pixel Shader is provide a bump map or normal map effect. This can provide seemingly complex depth on a very simple model. Another common use of a Pixel Shader is to produce a post processing effect on the whole image --think of an instagram filter.</p>
+
+<h3>Composite</h3>
+
+<p>One of the downsides to the way A-Frame is built is that on an A-Frame page there can be no other content. Okay, this isn&#39;t completely true. Some html can be layered outside the A-Frame <code>a-scene</code> tags. But the results are inconsistent and mostly undesirable. The recommended way to include text in a scene is to bake the text into a texture and apply that texture to a quad (or plane).</p>
+
+<p>There also exists the <em>HTML Shader</em>, which is a custom shader that takes HTML from the dom and places it in a scene. My experience with the HTML Shader has not been favorable, and I question how portable and scalable it is and how well if reacts to events.</p>
+
+<h2>Is it cool?</h2>
+
+<p>This seems like the biggest question more Javascript developers ask when adopting a new library. The short answer is yes but the longer answer is it depends.</p>
+
+<h3>It depends?</h3>
+
+<p>The usability of this cool new tech is all about what we do with it. I have given talks on A-Frame and the question is normally framed like this &quot;What can we do with it?&quot; And I respond I just showed you what it was meant to do. I bring this up to say, lets not parallax WebVR. It&#39;s cool, but if we don&#39;t use it the right way it will suck.</p>
+
+<h3>Can I use it?</h3>
+
+<p>Go checkout caniuse for WebGL and WebVR the browser support for A-Frame and the browser support for threejs.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on October 24, 2016 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

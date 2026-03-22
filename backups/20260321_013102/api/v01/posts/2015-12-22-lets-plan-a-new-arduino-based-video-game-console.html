@@ -1,0 +1,80 @@
+[
+  {
+  "title"    : "Lets plan a new Arduino based video game console",
+  "url"     : "/api/v01/posts/2015-12-22-lets-plan-a-new-arduino-based-video-game-console",
+  "permalink": "/posts/2015/December/22/2015-12-22-lets-plan-a-new-arduino-based-video-game-console.html",
+  "date"     : "December 22, 2015",
+  
+   "tags"  : [],  
+  
+   "categories"  : [],  
+  "content"  : "&lt;h2&gt;WHY make an new old video game system!?!&lt;/h2&gt;
+
+&lt;p&gt;I saw this video.&lt;/p&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6kJV-BdsUWs&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;These videos beg the question; How do I stop my kids from being like this?&lt;/p&gt;
+
+&lt;p&gt;When it&amp;#39;s easier to build something in Minecraft than in the real world. How can I keep my kids interested in the physical world when everything is becoming digital.&lt;/p&gt;
+
+&lt;p&gt;This got me thinking about how the older generation used to talk about the &lt;a href=&quot;http://www.seattletimes.com/nation-world/is-push-button-age-producing-a-generation-of-simpletons/&quot;&gt;&amp;quot;push button&amp;quot; generation&lt;/a&gt;. And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today (hardware or software) is about as easy as it can be. Usually nothing more than a single &amp;quot;GO&amp;quot; button.&lt;/p&gt;
+
+&lt;p&gt;In general this is a good thing, except I consider this to be a bad thing when it stops us from figuring out how things work. It&amp;#39;s easy for physical tools to be re-imaginged and used for other purposes than they&amp;#39;re intended; such as using a screw driver to pry up a staple, or some channel locks to pull out a finishing nail. The same thing is true of command line tools. It&amp;#39;s the heart of the way *nix systems work. One purpose built command being piped into another to achieve something possibly unintended. This isn&amp;#39;t quite so easy when the system only allows one type of input and the only way to use it is to tap on the giant start button.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.slideshare.net/chesterbr/atari-2600programming&quot;&gt;Creativity strives in constraints&lt;/a&gt;. We need constraints, even if the constrains are contrived.&lt;/p&gt;
+
+&lt;p&gt;There are two things that are universal with children. Education and Games. Games are considered fun and Education (mostly) is considered not fun. So how do we solve this with games?&lt;/p&gt;
+
+&lt;h3&gt;How do we stop this? Games!&lt;/h3&gt;
+
+&lt;p&gt;Games and open source everything. Kids like to build things (just look at legos), kids like to learn things, and kids like to play games. We used to have cartridge based video games. In other words, we used to have to work for our video games.&lt;/p&gt;
+
+&lt;p&gt;Today the only video games systems are ones built for maximum convenience; they all work off of downloadable games. I think this is key. We need cartridges, kids need something that they can control and is physically obvious how it works. We need to put the kids back in control of making things happen.&lt;/p&gt;
+
+&lt;h1&gt;What I want to do&lt;/h1&gt;
+
+&lt;p&gt;A cartridge based open source video game system. I would like this to be around the 16-bit (SNES, Genesis, and Turbo Graphics 16) era of difficulty. I think those consoles gave us a good mix of game-play, game-difficulty and ease-of-use.&lt;/p&gt;
+
+&lt;h2&gt;How I think this will work&lt;/h2&gt;
+
+&lt;h3&gt;Disclaimer&lt;/h3&gt;
+
+&lt;p&gt;I have not done this before. I have lots of experience programming, but little experience with digital electronics. My hope is that I get something useable working that inspires people that know more about what they are doing to stay within the vision and this becomes its own project.&lt;/p&gt;
+
+&lt;h3&gt;Goals&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cheap off-the-shelf parts (read easy to access)&lt;/li&gt;
+&lt;li&gt;Games read from cartridge&lt;/li&gt;
+&lt;li&gt;Simple (possibly already existing) Controller&lt;/li&gt;
+&lt;li&gt;Open source&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;My plan&lt;/h3&gt;
+
+&lt;p&gt;This is my current plan, this will change as I attempt to do things and fail at them.&lt;/p&gt;
+
+&lt;p&gt;I like the Arduino because it&amp;#39;s open source and easy to access. These are available everywhere and it isn&amp;#39;t too powerful. I do wonder if it isn&amp;#39;t powerful enough, but seeing what people have done with them: &lt;a href=&quot;https://www.arduboy.com/&quot;&gt;Arduboy&lt;/a&gt;, &lt;a href=&quot;http://apcmag.com/arduino-project-7-build-a-retro-gamebox.htm/&quot;&gt;space invaders&lt;/a&gt;, &lt;a href=&quot;http://nootropicdesign.com/hackvision/games.html#asteroids&quot;&gt;asteroids&lt;/a&gt;, etc; I think the Arduino will be good for a processor.&lt;/p&gt;
+
+&lt;p&gt;My biggest worry so far is the display, I don&amp;#39;t want to use so much of the Arduino&amp;#39;s limited power to drive a display. My current plan for this is to use two Arduinos. One for actual processing and another for driving the display. The central processor will feed a frame buffer and the other Arduino will read the frame-buffer and drive the display. My goal is to have several modes for the frame-buffer to pass the info to the Arduino. For example, allow a program to pass a diffed frame-buffer raster and some other info to allow for different special effects.&lt;/p&gt;
+
+&lt;p&gt;I still have no real plans for sound, other than the quality I want to aim for is a mix of Sound Blaster 16, SNES, and NES. Input was just going to be handled with the io on the Arduino.&lt;/p&gt;
+
+&lt;h3&gt;How am I going to do this&lt;/h3&gt;
+
+&lt;p&gt;As I said before my plan is to get this far enough along with proof of concepts that other people (that might know more about what they are doing) will gain interest and take care of more of the fine points. I will need to learn a lot about the Arduino in-order-to pull this off. Here is my factored list so far (I will link to new posts from here, and I expect this list to grow as I find out more things I don&amp;#39;t know).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Two Arduinos talking to each other&lt;/li&gt;
+&lt;li&gt;An Arduino writing/reading from some type of RAM&lt;/li&gt;
+&lt;li&gt;An Arduino reading a program from some type of ROM&lt;/li&gt;
+&lt;li&gt;An Arduino displaying stuff on a TV/Monitor&lt;/li&gt;
+&lt;li&gt;An Arduino getting input from an off the shelf game Controller&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have seen articles where people have done each of these things independently with an Arduino. I hope to pull all this together.&lt;/p&gt;
+"
+}
+
+]

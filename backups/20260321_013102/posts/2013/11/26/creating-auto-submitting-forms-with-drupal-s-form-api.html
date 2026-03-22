@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Creating Auto Submitting Forms with Drupal's Form API – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+     <link rel="canonical" href="http://www.kwallcompany.com/blog/creating-auto-submitting-forms-drupals-form-api" /> 
+    
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Creating Auto Submitting Forms with Drupal's Form API</h1>
+
+  <div class="entry">
+    <p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>.</p>
+
+<p>I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
+
+<p>My use case was a semi-typical one: have the input from one select list affect the options in another select list. Here is my wireframe: [insert wireframe here]</p>
+
+<p>This could be done in any number of ways including:</p>
+
+<ul>
+<li>ahah (or ajax)</li>
+<li>I could have javascript limit the options after selection without a server call</li>
+<li>Or, I could reload the page after the first selection is made</li>
+</ul>
+
+<p>I chose to reload the page after the first choice was made.</p>
+
+<p>Drupal has a built in handler for ajax like behavior in its form api aptly named “#ajax”. Using the ajax element in the Drupal’s form api looks like this:</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$form</span><span class="p">[</span><span class="s1">'form_element'</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'#type'</span> <span class="o">=&gt;</span> <span class="s1">'submit'</span><span class="p">,</span>
+  <span class="err">‘</span><span class="c1">#value' =&gt; t('Submit'),</span>
+  <span class="err">‘</span><span class="c1">#ajax' =&gt; array(</span>
+    <span class="s1">'callback'</span> <span class="o">=&gt;</span> <span class="s1">'callback_function'</span><span class="p">,</span>
+    <span class="s1">'method'</span> <span class="o">=&gt;</span> <span class="s1">'replace'</span><span class="p">,</span>
+    <span class="s1">'effect'</span> <span class="o">=&gt;</span> <span class="s1">'fade'</span><span class="p">,</span>
+  <span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>It is pretty verbose, requires a php callback, and can be a bit of overkill for auto-submitting a form. In the days of pure HTML forms, we would simply add the form submit straight to the form input. As it turns out we can do the same thing to our form by exploiting the fact that the form API uses render arrays. All we have to do is attach this code snipit to our form element.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'#attributes'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'onChange'</span> <span class="o">=&gt;</span> <span class="s1">'document.getElementById("people-filter-form").submit();'</span><span class="p">)</span>
+</code></pre></div>
+<p>Notice what is happening here. We are adding attributes to the form element. This is the same way that we would attach classes, only this time we are adding the attribute <tt>onChange=&#39;&lt;some js to execute&gt;&#39;.</tt></p>
+
+<p>Below is the full form definition.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="cd">/**
+ * Custom Report User Filter Form
+ */</span>
+<span class="k">function</span> <span class="nf">people_filter_form</span><span class="p">(</span><span class="nv">$form</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nv">$form_state</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$form</span><span class="p">[</span><span class="s1">'person'</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'#type'</span> <span class="o">=&gt;</span> <span class="s1">'select'</span><span class="p">,</span>
+    <span class="s1">'#options'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+      <span class="s1">''</span> <span class="o">=&gt;</span> <span class="s1">'Select a Person'</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s1">'#default_value'</span> <span class="o">=&gt;</span> <span class="nb">empty</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'person'</span><span class="p">])</span> <span class="o">?</span> <span class="s1">''</span> <span class="o">:</span> <span class="nx">check_plain</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'person'</span><span class="p">]),</span>
+    <span class="s1">'#attributes'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'onChange'</span> <span class="o">=&gt;</span><span class="p">;</span> <span class="s1">'document.getElementById("iris-app-people-filter-form").submit();'</span><span class="p">),</span>
+  <span class="p">);</span>
+  <span class="nv">$people</span> <span class="o">=</span> <span class="nx">_get_select_list_data</span><span class="p">(</span><span class="s1">'person'</span><span class="p">);</span>
+  <span class="k">foreach</span> <span class="p">(</span><span class="nv">$people</span> <span class="k">as</span> <span class="nv">$person</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$form</span><span class="p">[</span><span class="s1">'person'</span><span class="p">][</span><span class="s1">'#options'</span><span class="p">][</span><span class="nv">$person</span><span class="o">-&gt;</span><span class="na">uid</span><span class="p">]</span> <span class="o">=</span>  <span class="nv">$person</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">name</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nv">$form</span><span class="p">[</span><span class="s1">'submit'</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'#type'</span> <span class="o">=&gt;</span> <span class="s1">'submit'</span><span class="p">,</span>
+    <span class="s1">'#value'</span> <span class="o">=&gt;</span> <span class="s1">'Search People'</span><span class="p">,</span>
+  <span class="p">);</span>
+
+  <span class="k">return</span> <span class="nv">$form</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+  </div>
+
+  <div class="date-author">
+    Written on November 26, 2013 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+      <div class="kwallcompany-mark"><a class="canonical-link" href="http://www.kwallcompany.com/blog/creating-auto-submitting-forms-drupals-form-api">Creating Auto Submitting Forms with Drupal's Form API was originally posted on kwallcompany.com</a>. Written while working for Kwall</div>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

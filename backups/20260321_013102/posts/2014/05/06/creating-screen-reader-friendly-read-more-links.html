@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Creating screen-reader friendly read more  links – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more-links.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Creating screen-reader friendly read more  links</h1>
+
+  <div class="entry">
+    <p>Over the course of my career I have worked on more than a fair share of higher-eduation sites. When dealing with a universities website there are many challenges. One of the biggest challenges is in dealing with the accessibility standards. I am writing about <a href="http://www.w3.org/TR/WCAG20/">WCAG</a>. The WebCAG, or Web Content Accessibility Guidelines, is a detailed list for how accessibility should be done on the web.</p>
+
+<p>I might write about the problems with WebCAG at some point, but this article is about strictly an incompatability between what the designer/UX people want and what the WebCAG says about &quot;READ MORE&quot; links. <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html">Specifically WCAG 2.0 SC 2.4.4</a>. this states that any link needs to have context.</p>
+
+<p>The issue with this is even though the standard says:</p>
+
+<p><q>A Web page contains a collection of news articles. The main page lists the first few sentences of each article, followed by a &quot;Read more&quot; link. A screen reader command to read the current paragraph provides the context to interpret the purpose of the link.</q></p>
+
+<p>This is incorect. A screen reader will list all the links on a page. If two links have the same text bug go to different places it will get confused becaseu there could be 20 or more links that all go to different places but still say &quot;Read More.&quot;</p>
+
+<p>My sollution? Use css to hide the full title text (or better yet something more relevant, however, content editors usually cannot be bothered) for the read more link and use more css to show Read More in its place.</p>
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.read-more</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+
+  <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">11px</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">"READ MORE"</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nd">:hover:after</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So here (example is in scss) you can see that we are using a simple technique, borrowed from image replacements to make the text invisible but still seen by screen readers to hide the text. After that, we just replace it with the after pseudo selector <code>:after</code> to show whatever text we want to display for &quot;READ MORE.&quot;</p>
+
+<h2>What about multilagual sites?!?!</h2>
+
+<p>Just add a body class for each language and then adjust the content rule accordingly.</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.en</span> <span class="nc">.read-more</span><span class="nd">:after</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"READ MORE"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.es</span> <span class="nc">.read-more</span><span class="nd">:after</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"leer más"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.cn</span> <span class="nc">.read-more</span><span class="nd">:after</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"阅读更多"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.klingon</span> <span class="nc">.read-more</span><span class="nd">:after</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">"latlh laD"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Thanks to <a href="https://translate.google.com/">Google Translator</a> for the Spanish and Simplified Chinese translations. Thanks to (Bing translator for the Klingon)[https://www.bing.com/translator/].</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on May  6, 2014 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

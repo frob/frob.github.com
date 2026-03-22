@@ -1,0 +1,786 @@
+[
+  
+    {
+      "title"    : "How to play gloom with a 52 card deck",
+      "url"     : "/posts/2018/03/30/gloom-with-52-card-deck.html",
+      "date"     : "March 30, 2018",
+      "path"     : "api/v01/posts/2018-03-30-gloom-with-52-card-deck.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "tutorials"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "frontpage"
+        ,
+         "tutorials"
+        
+        
+        ],
+      
+      
+      "description"  : "I played the Edward Gorey insired card game Gloom the other day. The game and mechanics are fun, but if the dark humor of the game isn&#39;t for you then try these rules on a standard 52 card deck."
+    } ,
+
+    {
+      "title"    : "Why DrupalCon",
+      "url"     : "/posts/2018/02/20/why-drupalcon.html",
+      "date"     : "February 20, 2018",
+      "path"     : "api/v01/posts/2018-02-20-why-drupalcon.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "quarzack13"
+        ,
+         "drupal"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "frontpage"
+        ,
+         "quarzack13"
+        ,
+         "drupal"
+        
+        
+        ],
+      
+      
+      "description"  : "Contributing to Drupal allows us to ensure Drupal remains the best and most flexible general purpose Content Management System. Contributing to Drupal is the job of the Drupal Community."
+    } ,
+
+    {
+      "title"    : "Rearchitecting for Drupal 8; a DrupalCon Session",
+      "url"     : "/posts/2018/02/15/rearchitecting-for-drupal8.html",
+      "date"     : "February 15, 2018",
+      "path"     : "api/v01/posts/2018-02-15-rearchitecting-for-drupal8.json",
+       "tags"  : [
+         "rants"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "rants"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+      "description"  : "This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effor possible was put into trascribing it from presentation format to a web page."
+    } ,
+
+    {
+      "title"    : "Switching to Celsius from Fahrenheit for normal people",
+      "url"     : "/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people.html",
+      "date"     : "April 23, 2017",
+      "path"     : "api/v01/posts/2017-04-23-switching-to-celsius-from-fahrenheit-for-normal-people.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "tutorial"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know."
+    } ,
+
+    {
+      "title"    : "My Dilemma; What Technology to Pursue",
+      "url"     : "/posts/2016/11/21/my-dilemma-what-technology-to-pursue.html",
+      "date"     : "November 21, 2016",
+      "path"     : "api/v01/posts/2016-11-21-my-dilemma--what-technology-to-pursue.json",
+       "tags"  : [
+         "web development"
+        ,
+         "rant"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "I need to know what to study, not that I am board or have lots of time. I just need a new tool in my belt."
+    } ,
+
+    {
+      "title"    : "Lets take a look at webVR with AFrame",
+      "url"     : "/posts/2016/10/24/lets-take-a-look-at-webvr-with-aframe.html",
+      "date"     : "October 24, 2016",
+      "path"     : "api/v01/posts/2016-10-24-lets-take-a-look-at-webvr-with--aframe.json",
+       "tags"  : [
+        
+        ],
+      
+      
+       "categories"  : [
+         "frontpage"
+        
+        
+        ],
+      
+      
+      "description"  : "I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame."
+    } ,
+
+    {
+      "title"    : "a new simple reading rogue like",
+      "url"     : "/posts/2016/09/30/a-new-simple-reading-rogue-like.html",
+      "date"     : "September 30, 2016",
+      "path"     : "api/v01/posts/2016-09-30-a-new-simple-reading-rogue-like.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "gaming"
+        ,
+         "parenting"
+        ,
+         "rouge-like"
+        ,
+         "rogue-lite"
+        ,
+         "machine generating book"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "frontpage"
+        ,
+         "gaming"
+        ,
+         "parenting"
+        
+        
+        ],
+      
+      
+      "description"  : "With everyone&#39;s kids being so smart it is a wonder that we don&#39;t have machine generated children&#39;s book already. This sounds like an oversight to me because computers are already raising our kids."
+    } ,
+
+    {
+      "title"    : "Basic Hello World with composer and php",
+      "url"     : "/posts/2016/08/16/basic-hello-world-with-composer-and-php.html",
+      "date"     : "August 16, 2016",
+      "path"     : "api/v01/posts/2016-08-16-basic-hello-world-with-composer-and-php.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "drupal"
+        ,
+         "tutorial"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "frontpage"
+        ,
+         "drupal"
+        ,
+         "tutorial"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+      "description"  : "A Hello World style introduction to Composer."
+    } ,
+
+    {
+      "title"    : "Semantic Git",
+      "url"     : "/posts/2016/05/27/semantic-git.html",
+      "date"     : "May 27, 2016",
+      "path"     : "api/v01/posts/2016-05-26-semantic-git.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "git"
+        ,
+         "tutorial"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "frontpage"
+        ,
+         "git"
+        ,
+         "tutorial"
+        
+        
+        ],
+      
+      
+      "description"  : "Using git-flow as a workflow for semantic versioning. This is a circular dependency that is good."
+    } ,
+
+    {
+      "title"    : "Simplify Drupal 8 field value calls",
+      "url"     : "/posts/2016/03/28/simplify-drupal-8-field-value-calls.html",
+      "date"     : "March 28, 2016",
+      "path"     : "api/v01/posts/2016-03-28-simplify-drupal-8-field-value-calls.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "drupal"
+        ,
+         "tutorial"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "tutorial"
+        ,
+         "drupal"
+        ,
+         "frontpage"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+      "description"  : "Explore a bit of field fetching with Drupal 8"
+    } ,
+
+    {
+      "title"    : "Lets plan a new Arduino based video game console",
+      "url"     : "/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console.html",
+      "date"     : "December 22, 2015",
+      "path"     : "api/v01/posts/2015-12-22-lets-plan-a-new-arduino-based-video-game-console.json",
+       "tags"  : [
+        
+        ],
+      
+      
+       "categories"  : [
+         "rant"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+      "description"  : "Why do we need a new game system? Because everything made today does too much."
+    } ,
+
+    {
+      "title"    : "Altering Entity Field Querys for JOINS ORs and Profit",
+      "url"     : "/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit.html",
+      "date"     : "November 11, 2015",
+      "path"     : "api/v01/posts/2015-11-11-altering-entity-field-querys-for-joins-ors-and-profit.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "drupal"
+        ,
+         "tutorial"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "tutorial"
+        ,
+         "drupal"
+        ,
+         "frontpage"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+      "description"  : "EntityFieldQueries are one of the most useful things in Drupal 7, using tags we can get around some of the limitations of using them."
+    } ,
+
+    {
+      "title"    : "Add an API to Your Jekyll Blog",
+      "url"     : "/posts/2015/10/25/add-an-api-to-your-jekyll-blog.html",
+      "date"     : "October 25, 2015",
+      "path"     : "api/v01/posts/2015-10-25-add-an-api-to-your-jekyll-blog.json",
+       "tags"  : [
+         "tutorial"
+        ,
+         "jekyll"
+        ,
+         "rest"
+        ,
+         "reactjs"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "tutorial"
+        ,
+         "jekyll"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+      "description"  : "Without adding any non-Github pages approved plugins, build a RESTfull api for your blog by adding a json endpoint."
+    } ,
+
+    {
+      "title"    : "Reflecting on Elixir and Phoenix",
+      "url"     : "/posts/2015/10/09/reflecting-on-elixir-and-phoenix.html",
+      "date"     : "October 09, 2015",
+      "path"     : "api/v01/posts/2015-10-03-reflecting-on-elixir-and-phoenix.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "elixir"
+        ,
+         "jekyll"
+        ,
+         "frontpage"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "I reflect on what I have seen at ElixirConf 2015, what does this mean for Drupal, and Why use Elixir or Phoenix instead of Drupal or Jekyll."
+    } ,
+
+    {
+      "title"    : "Modern Drupal7 Site Building Tools",
+      "url"     : "/posts/2015/09/22/modern-drupal7-site-building-tools.html",
+      "date"     : "September 22, 2015",
+      "path"     : "api/v01/posts/2015-09-18-modern-drupal7-site-building-tools.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "frontpage"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "Add Some Style to Your JavaScript Log",
+      "url"     : "/posts/2015/09/10/add-some-style-to-your-javascript-log.html",
+      "date"     : "September 10, 2015",
+      "path"     : "api/v01/posts/2015-09-10-add-some-style-to-your-javascript-log.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "tutorials"
+        ,
+         "browsers"
+        ,
+         "debug"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "Style can be passes as a parameter to the console.log function."
+    } ,
+
+    {
+      "title"    : "Step One on replacing Jekyll, make yaml work",
+      "url"     : "/posts/2015/07/26/step-one-on-replacing-jekyll-make-yaml-work.html",
+      "date"     : "July 26, 2015",
+      "path"     : "api/v01/posts/2015-07-26-step-one-on-replacing-jekyll--make-yaml-work.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "rant"
+        ,
+         "cms"
+        ,
+         "gulp"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "I like Jekyll, but is it necessary?",
+      "url"     : "/posts/2015/06/15/i-like-jekyll-but-is-it-necessary.html",
+      "date"     : "June 15, 2015",
+      "path"     : "api/v01/posts/2015-06-15-i-like-jekyll--but-is-it-necessary.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "rant"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "Need a join in an EntityFieldQuery, how about a subquery?",
+      "url"     : "/posts/2015/06/10/need-a-join-in-an-entityfieldquery-how-about-a-subquery.html",
+      "date"     : "June 10, 2015",
+      "path"     : "api/v01/posts/2015-06-10-need-a-join-in-an-entityfieldquery--how-about-a-subquery.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "tutorial"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "drupal"
+        ,
+         "tutorial"
+        
+        
+        ],
+      
+      
+      "description"  : "Did you know that EntityFieldQueries can have subqueries? They can."
+    } ,
+
+    {
+      "title"    : "Setting Up Jenkins on 12.04",
+      "url"     : "/posts/2015/05/19/setting-up-jenkins-on-1204.html",
+      "date"     : "May 19, 2015",
+      "path"     : "api/v01/posts/2015-05-19-setting-up-jenkins-on-1204.json",
+       "tags"  : [
+         "frontpage"
+        ,
+         "tutorial"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "In this post Frank walks through the basics of setting up Jenkins to run on Ubuntu. This is a simple step by step with links to more information."
+    } ,
+
+    {
+      "title"    : "Back from DrupalConLA (A postmortem)",
+      "url"     : "/posts/2015/05/18/back-from-drupalconla.html",
+      "date"     : "May 18, 2015",
+      "path"     : "api/v01/posts/2015-05-18-back-from-drupalconla.json",
+       "tags"  : [
+         "drupalcon"
+        ,
+         "public transportation"
+        ,
+         "rant"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "drupalcon"
+        
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "Setting a default value for a link or url field in Drupal 7",
+      "url"     : "/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7.html",
+      "date"     : "May 04, 2015",
+      "path"     : "api/v01/posts/2015-05-04-setting-a-default-value-for-a-link-or-url-field-in-drupal-7.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "tutorial"
+        ,
+         "frontpage"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "Sometimes the best solution is to do something hacky. I am not saying this is the best way to make Drupal forms autosubmit. I am only saying that this is one way."
+    } ,
+
+    {
+      "title"    : "Drupal or Wordpress? Why not Jekyll.",
+      "url"     : "/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html",
+      "date"     : "January 27, 2015",
+      "path"     : "api/v01/posts/2015-01-27-drupal-or-wordpress-why-not-jekyll.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "wordpress"
+        ,
+         "jekyll"
+        ,
+         "kwallcompany"
+        ,
+         "tutorial"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "Are you fedup with the offerings of Drupal, Wordpress, and other big CMS&#39;s? Then maybe a return to roots is in order. Let look at Jekyll"
+    } ,
+
+    {
+      "title"    : "WebGL with three.js",
+      "url"     : "/posts/2014/11/15/WebGL-with-threejs.html",
+      "date"     : "November 15, 2014",
+      "path"     : "api/v01/posts/2014-11-15-WebGL-with-threejs.json",
+       "tags"  : [
+         "threejs"
+        ,
+         "kwallcompany"
+        ,
+         "tutorial"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+         "New Web"
+        
+        
+        ],
+      
+      
+      "description"  : "Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then."
+    } ,
+
+    {
+      "title"    : "Creating screen-reader friendly read more  links",
+      "url"     : "/posts/2014/05/06/creating-screen-reader-friendly-read-more-links.html",
+      "date"     : "May 06, 2014",
+      "path"     : "api/v01/posts/2014-05-06-creating-screen-reader-friendly-read-more--links.json",
+       "tags"  : [
+         "tutorial"
+        ,
+         "css"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "Utilizing Front End CSS Design Paradigms In Drupal",
+      "url"     : "/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal.html",
+      "date"     : "January 24, 2014",
+      "path"     : "api/v01/posts/2014-01-24-utilizing-front-end-css-design-paradigms-in-drupal.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "kwallcompany"
+        ,
+         "tutorial"
+        ,
+         "drupalcamp"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "Creating Auto Submitting Forms with Drupal's Form API",
+      "url"     : "/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api.html",
+      "date"     : "November 26, 2013",
+      "path"     : "api/v01/posts/2013-11-26-creating-auto-submitting-forms-with-drupal-s-form-api.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "kwallcompany"
+        ,
+         "tutorial"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "css less sass oocss drycss bem front end css design paradigm smacss down",
+      "url"     : "/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down.html",
+      "date"     : "November 21, 2013",
+      "path"     : "api/v01/posts/2013-11-21-css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down.json",
+       "tags"  : [
+         "drupal"
+        ,
+         "kwallcompany"
+        ,
+         "quarzack13"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : ""
+    } ,
+
+    {
+      "title"    : "Support should not be based on Marketshare",
+      "url"     : "/posts/2013/10/06/support-should-not-be-based-on-marketshare.html",
+      "date"     : "October 06, 2013",
+      "path"     : "api/v01/posts/2013-10-06-support-should-not-be-based-on-marketshare.json",
+       "tags"  : [
+         "web development"
+        ,
+         "rant"
+        ,
+         "frontpage"
+        
+        
+        ],
+      
+      
+       "categories"  : [
+        
+        ],
+      
+      
+      "description"  : "Some general thoughts on the how and why of Graceful Degradation and Progressive Enhancement. No tutorials here, more philosophical than functional"
+    } 
+
+
+]

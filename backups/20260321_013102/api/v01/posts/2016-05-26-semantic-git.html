@@ -1,0 +1,145 @@
+[
+  {
+  "title"    : "Semantic Git",
+  "url"     : "/api/v01/posts/2016-05-26-semantic-git",
+  "permalink": "/posts/2016/May/27/2016-05-26-semantic-git.html",
+  "date"     : "May 27, 2016",
+   "tags"  : [
+     "frontpage"
+    ,
+     "git"
+    ,
+     "tutorial"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;p&gt;Git is a great tool for managing source control. Git flow is a great workflow for working with git branches and tags. Semantic versioning is a great way for labeling and cataloging version dependence. If we put them together then we will have a dependency system that is reenforced by workflow that is reenforced by a dependency system. This is a circular dependency that is good.&lt;/p&gt;
+
+&lt;h1&gt;Semantic git-flow&lt;/h1&gt;
+
+&lt;h2&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;#tldr&quot;&gt;skip TLDR;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Sematic Versioning&lt;/h3&gt;
+
+&lt;p&gt;At a high-level Semantic Versioning aims to solve dependency issues by creating a standard versioning system that allows anyone to understand what has changed in a new version.&lt;/p&gt;
+
+&lt;h4&gt;Example&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;1.2.3&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;em&gt;Major&lt;/em&gt;&lt;/em&gt;.&lt;em&gt;&lt;em&gt;Minor&lt;/em&gt;&lt;/em&gt;.&lt;em&gt;&lt;em&gt;Patch&lt;/em&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Major
+: Changing this is mandatory in the case of a backwards incompatible api change.&lt;/p&gt;
+
+&lt;p&gt;Minor
+: Changing this is mandatory in the case of a backwards compatible api change or addition of new features.&lt;/p&gt;
+
+&lt;p&gt;Patch
+: Changing this is mandatory in the case of any other change, that is not adding functionality or breaking backwards compatibility.&lt;/p&gt;
+
+&lt;h3&gt;Git Flow&lt;/h3&gt;
+
+&lt;p&gt;A git workflow that dictates what branches to make and why. A typical git-flow workflow will include 3+ branches:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;stable&lt;/em&gt;
+: the current stable branch&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;master&lt;/em&gt;
+: the current development or HEAD&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;master-feature&lt;/em&gt;
+: where the work is actually accomplished&lt;/p&gt;
+
+&lt;p&gt;The git flow workflow is designed so that:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;hot-fixing the stable product is always possible&lt;/li&gt;
+&lt;li&gt;new features can be added to the stable product by merging in the feature branch&lt;/li&gt;
+&lt;li&gt;git history remains linear to that it doesn&amp;#39;t become git branch spaghetti&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Semantic git &lt;a name=&quot;tldr&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;By merging these two ideas we can make it clear what is in development on any branch at any time and what that means to the product.&lt;/p&gt;
+
+&lt;h3&gt;Stable&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;1.2.3&lt;/em&gt;
+: By utilizing semantic versioning we can always keep it clear what our stable code is by using tags to snapshot stable code. In this way &lt;em&gt;stable&lt;/em&gt; wouldn&amp;#39;t be a branch but rather a tag. Since the &lt;em&gt;patch&lt;/em&gt; number should increment any time there is a new stable release this should be a sane mechanism for it.&lt;/p&gt;
+
+&lt;h3&gt;master&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;1.2.x&lt;/em&gt;
+: There could me multiple master branches, one of any supported major.minor version combination. No work should be done directly on the master branches.&lt;/p&gt;
+
+&lt;h3&gt;master-feature&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;1.2.x-feature&lt;/em&gt;
+: It is obvious what is being worked on in the branch and what master version it is based on.&lt;/p&gt;
+
+&lt;h2&gt;Workflow&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Initialize git and create master branch&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout -b 1.0.x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin 1.0.x&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create new branch for &amp;quot;Checkout Widget&amp;quot; feature development&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git checkout -b 1.2.x-checkout-widget&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Work on project&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git fetch&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git pull --rebase origin 1.2.x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin 1.2.x-checkout-widget&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create merge request in Gitlab or a pull request in github (shown here is what happens on the command line)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git checkout 1.2.x-checkout-widget&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git pull --rebase 1.2.x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;test and peer review&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout 1.2.x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git merge 1.2.x-checkout-widget&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This is also handy if you are working on your own sub-feature branches that do not require further peer review.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create release tag and publish new release&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Patch release&lt;/em&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git tag 1.2.4&lt;/code&gt; &lt;em&gt;Assumes the current release is 1.2.3&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin 1.2.4&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Minor release&lt;/em&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git tag 1.2.0&lt;/code&gt; &lt;em&gt;Assumes the current release is 1.1.&amp;lt;any-number&amp;gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin 1.2.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout -b 1.3.x&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push -u origin 1.3.x&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Notice the new Minor Release comes from the branch of the same name. Same is true of Major Releases. As soon as it is known that backwards compatibility will be broken, then new Major Release branch should be made. Before work is started on a new feature, a new Minor Release branch should be made.&lt;/p&gt;
+&lt;/blockquote&gt;
+"
+}
+
+]

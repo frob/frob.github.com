@@ -1,0 +1,59 @@
+[
+  {
+  "title"    : "I like Jekyll, but is it necessary?",
+  "url"     : "/api/v01/posts/2015-06-15-i-like-jekyll--but-is-it-necessary",
+  "permalink": "/posts/2015/June/15/2015-06-15-i-like-jekyll--but-is-it-necessary.html",
+  "date"     : "June 15, 2015",
+   "tags"  : [
+     "frontpage"
+    ,
+     "rant"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;p&gt;One of the first &amp;quot;Content Management Systems&amp;quot; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&amp;#39;t extremely useful to me. It was more of an academic experience &amp;ndash; especially because, at the time, I wasn&amp;#39;t a professional web developer.&lt;/p&gt;
+
+&lt;p&gt;For the past 8 or so years I have been working primarily in &lt;a href=&quot;https://www.drupal.org&quot;&gt;Drupal&lt;/a&gt;. I have seen other CMS&amp;#39;s &lt;a href=&quot;http://www.joomla.com&quot;&gt;come and go and comeback&lt;/a&gt;. I have seen forks and communities fall apart due to in fighting. I have seen major versions of projects that where worked on for years &lt;a href=&quot;http://www.exult.sf.net&quot;&gt;get shelved and ultimately abandoned&lt;/a&gt;. I have seen much of this in the 8 or so years that I have been working with Drupal.&lt;/p&gt;
+
+&lt;p&gt;Drupal has been rock solid. However, every-time I have tried to launch by blog on Drupal I would get stuck in the weeds. I have re-built wordpress 3 times with Drupal. Each time getting the blog to a different 80% mark before other work or obligations would take me away. So this time I launched my blog on Jekyll. I gathered together as much old content as I could find and consolidated here, using the Jekyll Quickstart repo.&lt;/p&gt;
+
+&lt;p&gt;I also built the WAPRO meetup website in Jekyll using github pages and the same Jekyll Quickstart fork. It takes 5 minutes (10 if the internet connection is slow). Just fork the quickstart repo, change the _config.yml and you&amp;#39;re up and running. All that is left after that is writing content. Also, github is hosting your site for free. If you want &lt;a href=&quot;/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html&quot;&gt;to learn more about Jekyll read my post on Jekyll&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Everything is rainbows. But I am not someone who can just sit back and let a rainbow be a rainbow. (Remember the bit on re-building Wordpress in Drupal over and over?) So I made Jenkins watch my github pages repo and publish my blog on my server every-time I committed and pushed the repository. Easy right? No, that is not enough. I needed a simple way of working with by blog so I started writing some Grunt commands to do things like add a new draft or start Jekyll serve.&lt;/p&gt;
+
+&lt;p&gt;Grunt, led me to Gulp. So I have gotten to know Gulp. I like Gulp more than I expected to. When you boil it down Gulp provides an intelligent extraction from disk io. You say Gulp get these files &lt;code&gt;gulp.src(*.js)&lt;/code&gt; and Gulp gets them and asks you what you want to do with them. Oh Gulp, process them and write those files right over there &lt;code&gt;gulp.dest(&amp;#39;build&amp;#39;)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Awesome!&lt;/h2&gt;
+
+&lt;p&gt;So, Gulp looks for all my files, processes them and then writes them. Why do I need Jekyll now? Personally I like to stream line my dependencies. Ruby is just another dependency now. Currently I am using SASS, but that is only because Jekyll uses Ruby. I can do everything with Less that I need SASS to do (really I can). So I really don&amp;#39;t need Ruby for this. Let&amp;#39;s see what does it take to make Jekyll with Gulp.&lt;/p&gt;
+
+&lt;h2&gt;What Does Jekyll give us?&lt;/h2&gt;
+
+&lt;p&gt;We have established [&lt;a href=&quot;/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html&quot;&gt;in another post&lt;/a&gt; that Jekyll gives us these things.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Centralized configuration and globals &lt;strong&gt;_config.yml&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Templates &lt;strong&gt;Liquid Templates&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Markdown Parsing&lt;/li&gt;
+&lt;li&gt;YAML Front matter&lt;/li&gt;
+&lt;li&gt;Plug-in input Processing&lt;/li&gt;
+&lt;li&gt;Bonus Points
+
+&lt;ul&gt;
+&lt;li&gt;Build Management&lt;/li&gt;
+&lt;li&gt;Drafts&lt;/li&gt;
+&lt;li&gt;Test Web Server&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;The plan&lt;/h2&gt;
+
+&lt;p&gt;I already know that there are gulp plug-ins that say they do, liquid templates, markdown parsing, and yaml parsing. The issue with relying on Gulp is that it is still a relatively new technology. This means that plug-ins sometimes say they do something or they don&amp;#39;t do something fully or they are simply empty repositories that show where something was once going to be built. I am going to attempt this. But &lt;strong&gt;no promises&lt;/strong&gt;. &lt;em&gt;This&lt;/em&gt; is for me. As I complete something I will post a link in the list above.&lt;/p&gt;
+"
+}
+
+]

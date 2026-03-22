@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Lets plan a new Arduino based video game console – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="Why do we need a new game system? Because everything made today does too much.">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Lets plan a new Arduino based video game console</h1>
+
+  <div class="entry">
+    <h2>WHY make an new old video game system!?!</h2>
+
+<p>I saw this video.</p>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/6kJV-BdsUWs" frameborder="0" allowfullscreen></iframe>
+
+<p>These videos beg the question; How do I stop my kids from being like this?</p>
+
+<p>When it&#39;s easier to build something in Minecraft than in the real world. How can I keep my kids interested in the physical world when everything is becoming digital.</p>
+
+<p>This got me thinking about how the older generation used to talk about the <a href="http://www.seattletimes.com/nation-world/is-push-button-age-producing-a-generation-of-simpletons/">&quot;push button&quot; generation</a>. And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today (hardware or software) is about as easy as it can be. Usually nothing more than a single &quot;GO&quot; button.</p>
+
+<p>In general this is a good thing, except I consider this to be a bad thing when it stops us from figuring out how things work. It&#39;s easy for physical tools to be re-imaginged and used for other purposes than they&#39;re intended; such as using a screw driver to pry up a staple, or some channel locks to pull out a finishing nail. The same thing is true of command line tools. It&#39;s the heart of the way *nix systems work. One purpose built command being piped into another to achieve something possibly unintended. This isn&#39;t quite so easy when the system only allows one type of input and the only way to use it is to tap on the giant start button.</p>
+
+<p><a href="http://www.slideshare.net/chesterbr/atari-2600programming">Creativity strives in constraints</a>. We need constraints, even if the constrains are contrived.</p>
+
+<p>There are two things that are universal with children. Education and Games. Games are considered fun and Education (mostly) is considered not fun. So how do we solve this with games?</p>
+
+<h3>How do we stop this? Games!</h3>
+
+<p>Games and open source everything. Kids like to build things (just look at legos), kids like to learn things, and kids like to play games. We used to have cartridge based video games. In other words, we used to have to work for our video games.</p>
+
+<p>Today the only video games systems are ones built for maximum convenience; they all work off of downloadable games. I think this is key. We need cartridges, kids need something that they can control and is physically obvious how it works. We need to put the kids back in control of making things happen.</p>
+
+<h1>What I want to do</h1>
+
+<p>A cartridge based open source video game system. I would like this to be around the 16-bit (SNES, Genesis, and Turbo Graphics 16) era of difficulty. I think those consoles gave us a good mix of game-play, game-difficulty and ease-of-use.</p>
+
+<h2>How I think this will work</h2>
+
+<h3>Disclaimer</h3>
+
+<p>I have not done this before. I have lots of experience programming, but little experience with digital electronics. My hope is that I get something useable working that inspires people that know more about what they are doing to stay within the vision and this becomes its own project.</p>
+
+<h3>Goals</h3>
+
+<ul>
+<li>Cheap off-the-shelf parts (read easy to access)</li>
+<li>Games read from cartridge</li>
+<li>Simple (possibly already existing) Controller</li>
+<li>Open source</li>
+</ul>
+
+<h3>My plan</h3>
+
+<p>This is my current plan, this will change as I attempt to do things and fail at them.</p>
+
+<p>I like the Arduino because it&#39;s open source and easy to access. These are available everywhere and it isn&#39;t too powerful. I do wonder if it isn&#39;t powerful enough, but seeing what people have done with them: <a href="https://www.arduboy.com/">Arduboy</a>, <a href="http://apcmag.com/arduino-project-7-build-a-retro-gamebox.htm/">space invaders</a>, <a href="http://nootropicdesign.com/hackvision/games.html#asteroids">asteroids</a>, etc; I think the Arduino will be good for a processor.</p>
+
+<p>My biggest worry so far is the display, I don&#39;t want to use so much of the Arduino&#39;s limited power to drive a display. My current plan for this is to use two Arduinos. One for actual processing and another for driving the display. The central processor will feed a frame buffer and the other Arduino will read the frame-buffer and drive the display. My goal is to have several modes for the frame-buffer to pass the info to the Arduino. For example, allow a program to pass a diffed frame-buffer raster and some other info to allow for different special effects.</p>
+
+<p>I still have no real plans for sound, other than the quality I want to aim for is a mix of Sound Blaster 16, SNES, and NES. Input was just going to be handled with the io on the Arduino.</p>
+
+<h3>How am I going to do this</h3>
+
+<p>As I said before my plan is to get this far enough along with proof of concepts that other people (that might know more about what they are doing) will gain interest and take care of more of the fine points. I will need to learn a lot about the Arduino in-order-to pull this off. Here is my factored list so far (I will link to new posts from here, and I expect this list to grow as I find out more things I don&#39;t know).</p>
+
+<ul>
+<li>Two Arduinos talking to each other</li>
+<li>An Arduino writing/reading from some type of RAM</li>
+<li>An Arduino reading a program from some type of ROM</li>
+<li>An Arduino displaying stuff on a TV/Monitor</li>
+<li>An Arduino getting input from an off the shelf game Controller</li>
+</ul>
+
+<p>I have seen articles where people have done each of these things independently with an Arduino. I hope to pull all this together.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on December 22, 2015 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

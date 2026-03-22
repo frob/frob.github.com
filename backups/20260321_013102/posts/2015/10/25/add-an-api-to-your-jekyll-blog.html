@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Add an API to Your Jekyll Blog – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="Without adding any non-Github pages approved plugins, build a RESTfull api for your blog by adding a json endpoint.">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Add an API to Your Jekyll Blog</h1>
+
+  <div class="entry">
+    <p>I really like <a href="https://pages.github.com/">github pages</a>. I <a href="https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">built my blog on it</a>, even though <a href="https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html">I host it myself</a>. When friends and family ask for me to build them a site <a href="http://wapro.lbtech.org/">I will point them to github pages</a>. Markdown is so easy, liquid is so easy. What isn&#39;t easy is dynamic lists of content. A simple list of related content isn&#39;t as easy. Sure there are ways, but I want to learn <a href="https://facebook.github.io/react/">Reactjs</a> --so I will build it with that. That will require a RESTful API for my content.</p>
+
+<h2>The easy way</h2>
+
+<p>To be clear I didn&#39;t write this <a href="http://jekyllsnippets.com/excluding-jsonify-your-site/">snippit</a> --but only because someone else did. And working code wins.</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">
+    </span><span class="err">---</span><span class="w">
+    </span><span class="err">layout:</span><span class="w"> </span><span class="err">nil</span><span class="w">
+    </span><span class="err">---</span><span class="w">
+
+    </span><span class="p">[</span><span class="w">
+
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"title"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.title }}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"url"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.url }}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.date | date: "</span><span class="err">%B</span><span class="w"> </span><span class="err">%d</span><span class="p">,</span><span class="w"> </span><span class="err">%Y</span><span class="s2">" }}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.content | escape }}"</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">}{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">},</span><span class="err">\</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+<p>With this snippit (added for convenience) we get most of the way there. My plan is to modify it a bit.</p>
+
+<h2>What I would do, or the not so easy way</h2>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">
+    </span><span class="err">---</span><span class="w">
+    </span><span class="err">layout:</span><span class="w"> </span><span class="err">nil</span><span class="w">
+    </span><span class="err">---</span><span class="w">
+
+    </span><span class="p">[</span><span class="w">
+
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"title"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.title }}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"url"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.url }}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"date"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.date | date: "</span><span class="err">%B</span><span class="w"> </span><span class="err">%d</span><span class="p">,</span><span class="w"> </span><span class="err">%Y</span><span class="s2">" }}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tags"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="err">post.tags</span><span class="w"> </span><span class="p">}},</span><span class="w">
+          </span><span class="nl">"categories"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="err">post.categories</span><span class="w"> </span><span class="p">}},</span><span class="w">
+          </span><span class="nl">"description"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.description | escape }}"</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">}{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">},{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+
+    </span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+<p>From here you should see the change that I made. I changed the content to description and added tags and categories to the listing. This will provide a good everything list for the blog api. (This should all be in the <code>/api/v01/list.json</code> file).</p>
+
+<p>Hmmmm, that isn&#39;t working as expected. Instead of giving me a list of categories and tags it is concatenating them into a single string. So it looks like another modification is necessary.</p>
+
+<blockquote>
+<p>I also added a check incase there isn&#39;t anything in tags or categories.</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">---</span><span class="w">
+</span><span class="err">layout:</span><span class="w"> </span><span class="err">nil</span><span class="w">
+</span><span class="err">---</span><span class="w">
+
+</span><span class="p">[</span><span class="w">
+
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">post</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.posts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.title }}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.url }}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.date | date: "</span><span class="err">%B</span><span class="w"> </span><span class="err">%d</span><span class="p">,</span><span class="w"> </span><span class="err">%Y</span><span class="s2">" }}"</span><span class="p">,</span><span class="w">
+      </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">post.tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"tags"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">tag</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">post.tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="s2">"{{ tag }}"</span><span class="w">
+        </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">}{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">},{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+      </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+      </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">post.tags</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">nil</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"tags"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+      </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">post.categories</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"categories"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">category</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">post.categories</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="s2">"{{ category }}"</span><span class="w">
+        </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">}{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">},{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+        </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+      </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+      </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">post.categories</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">nil</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"categories"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+      </span><span class="nl">"description"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ post.description | escape }}"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">}{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">},{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre></div>
+<p>This gives me a single listing page. Now we need posts.</p>
+
+<blockquote>
+<p>Aside note. Jekyll is having a really hard time with this post. It keeps wanting to parse the liquid in the code examples. Thankfully <a href="http://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags">Jekyll Liquid now has a proper escaping system</a>. Use <code>liquid{% raw %}</code>.</p>
+</blockquote>
+
+<h2>Building the posts. NPM to the rescue (maybe)</h2>
+
+<p>Not npm exactly, Gulp instead saved the day. Ever since I moved my utility functions to Gulp I have been a fan. It is very well suited for building small repeatable tasks. So I add a new Gulp task to the gulpfule.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">gulp build-api
+</code></pre></div>
+<p>With this command I duplicate the content in the _post directory over to the api/[version]/v01/posts directory. Thow in a little gulp piping to do a string replace (this is to change the layout template from html to json. This is the whole gulp command.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">build-api</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">_posts/*</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/layout</span><span class="se">\:</span><span class="sr"> post/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">layout: json</span><span class="dl">'</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">vfs</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">api/v01/posts</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">overwrite</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}));</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>It is simple enough, ignore the vfs.dest part (I am using vinyl directly so I can use the overwrite option).</p>
+
+<p>All that is left is to add a unique identifier, I figure the post url should work for that. I do that with the json template.</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">---</span><span class="w">
+</span><span class="err">layout:</span><span class="w"> </span><span class="err">json_default</span><span class="w">
+</span><span class="err">---</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+
+  </span><span class="nl">"title"</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.title }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"url"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.url }}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"permalink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/posts/{{ page.date | date: "</span><span class="err">%Y/%B/%d</span><span class="s2">" }}/{{ page.path | replace: 'api/v01/posts/', '' | replace: '.md', '' }}.html"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date"</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ page.date | date: "</span><span class="err">%B</span><span class="w"> </span><span class="err">%d</span><span class="p">,</span><span class="w"> </span><span class="err">%Y</span><span class="s2">" }}"</span><span class="p">,</span><span class="w">
+  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page.tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"tags"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">tag</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">page.tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="s2">"{{ tag }}"</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">}{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">},{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page.tags</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">nil</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"tags"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page.categories</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"categories"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">category</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">page.categories</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="s2">"{{ category }}"</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">forloop.last</span><span class="w"> </span><span class="err">%</span><span class="p">}{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">},{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page.categories</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">nil</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w"> </span><span class="nl">"categories"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  </span><span class="nl">"content"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{ content | escape }}"</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h2>Footnotes</h2>
+
+<p>Jekyll complains about using <code>ruby nill</code> for a layout type. It doesn&#39;t break, but I also create two layout templates json_default.json and json.json. Now that it is working, I will rename the templates to something abit more meaningful:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">default.json
+post.json
+</code></pre></div>
+<p>I think these are better names.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on October 25, 2015 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

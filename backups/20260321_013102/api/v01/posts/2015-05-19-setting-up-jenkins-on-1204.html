@@ -1,0 +1,56 @@
+[
+  {
+  "title"    : "Setting Up Jenkins on 12.04",
+  "url"     : "/api/v01/posts/2015-05-19-setting-up-jenkins-on-1204",
+  "permalink": "/posts/2015/May/19/2015-05-19-setting-up-jenkins-on-1204.html",
+  "date"     : "May 19, 2015",
+   "tags"  : [
+     "frontpage"
+    ,
+     "tutorial"
+    
+    
+    ],
+  
+  
+  
+   "categories"  : [],  
+  "content"  : "&lt;p&gt;What I have noticed, is that every step by step for installing Jenkins on Ubuntu 12.04 is currently wrong. It is wrong because Jenkins recently began to require Java 1.7 instead of 1.6.&lt;/p&gt;
+
+&lt;p&gt;I was able to find one saving grace. This site gave a great &lt;a href=&quot;http://www.whiteboardcoder.com/2014/01/install-jenkins-ubuntu.html&quot;&gt;step by step on installing Jenkins&lt;/a&gt; --which I am going to condense for you all here.&lt;/p&gt;
+
+&lt;h2&gt;Install the correct JAVA RTE&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get purge openjdk*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get install python-software-properties&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo add-apt-repository ppa:webupd8team/java&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get install oracle-java7-installer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;java -version&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The output of the last command will say something like &lt;code&gt;Java version 1.7.blah blah blah&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;Install Jenkins&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo sh -c &amp;#39;echo deb http://pkg.jenkins-ci.org/debian binary/ &amp;gt; /etc/apt/sources.list.d/jenkins.list&amp;#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get update&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get install jenkins&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;By default Jenkins listens to port 8080. All you need to do is go to example.com:8080 and ...&lt;/p&gt;
+
+&lt;h2&gt;Setup Jenkins&lt;/h2&gt;
+
+&lt;p&gt;I am not going to cover setting up Jenkins. If this is your first time installing Jenkins I recommend doing at least what is has here in the post install portion (&lt;a href=&quot;http://www.whiteboardcoder.com/2014/01/install-jenkins-ubuntu.html&quot;&gt;Securing Jenkins&lt;/a&gt;). It goes over how to do the bare minimum in a secure install.&lt;/p&gt;
+
+&lt;h3&gt;Bonus&lt;/h3&gt;
+
+&lt;p&gt;If you don&amp;#39;t like how Jenkins is listening only to port 8080, you can set up Jenkins to listen on port 80, or &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-and-use-jenkins-on-ubuntu-12-04&quot;&gt;just have nginx do all the hard work&lt;/a&gt;.&lt;/p&gt;
+"
+}
+
+]

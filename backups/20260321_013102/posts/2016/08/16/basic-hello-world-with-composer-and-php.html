@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Basic Hello World with composer and php – Frank Robert Anderson – I am a Developer who does web good and likes to do other stuff good too.</title>
+    
+      <link rel="canonical" href="http://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php.html" />  
+
+    <meta name="author" content="Frank Robert Anderson" />
+    
+    <meta name="description" content="A Hello World style introduction to Composer.">
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script>
+        var host = 'frob.github.io';
+        var host2 = 'www.frobiovox.com';
+        if ((window.location.host == host || window.location.host == host2) && window.location.protocol != 'https:') {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|VT323|Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Frank Robert Anderson - I am a Developer who does web good and likes to do other stuff good too." href="/feed.xml" />
+
+    <script src="/assets/js/links.js"></script>
+
+    
+      
+        <script src=""></script>
+      
+    
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead not-footer">
+      <header class="masthead clearfix">
+        <div class="container">
+          <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+            <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+          </div>
+        </div>
+
+        <nav>
+          <div class="container">
+            <a href="/">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/rants.html">Rants</a>
+            <a href="/river.html">Everything</a>
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- <div id="debug"> {"js"=>[nil], "css"=>[nil]} </div> -->
+
+    <div id="main" role="main" class="not-footer"><div class="container">
+      <article class="post">
+  <h1>Basic Hello World with composer and php</h1>
+
+  <div class="entry">
+    <h1>Getting started with composer</h1>
+
+<p>I want this to be an introduction to using <a href="https://getcomposer.org">Composer</a>. If you are looking for more information about using <a href="https://www.drupal.org">Drupal</a> with <a href="https://getcomposer.org">Composer</a> then you should checkout the <a href="https://www.drupal.org/node/2718229">official composer facade doc page</a> on drupal.org.</p>
+
+<p>I will <em>not</em> be talking about publishing to <a href="https://packagist.org">Packagist</a>. My php is nearly always for <a href="https://www.drupal.org">Drupal</a>, and as such, if I publish anything it will most likely be to a project on <a href="https://www.drupal.org">drupal.org</a>. In the end I will philosophize about <a href="https://www.drupal.org">Drupal</a> and <a href="https://getcomposer.org">Composer</a>, but we will start with the <a href="https://getcomposer.org">composer</a> basics.</p>
+
+<p><strong>Lets get started!</strong></p>
+
+<p>When dealing with any package managed project, I like to start with initializing the project. This goes for <a href="https://www.npmjs.com/">npm</a> or <a href="https://getcomposer.org">composer</a>. True, it isn&#39;t 100% necessary, but it is a good way to keep it all organized from the beginning.</p>
+
+<h2>Initialize our package</h2>
+
+<p>After installing composer, run this command in your project&#39;s directory.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>composer init
+</code></pre></div>
+<p>This will run you through a bunch of questions: <em>name</em>, <em>description</em>, <em>license</em>, etc. These are the prompts (at the time of this writing) and my responses to the prompts.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">
+
+  Welcome to the Composer config generator
+
+
+
+This <span class="nb">command </span>will guide you through creating your composer.json config.
+
+Package name <span class="o">(</span>&lt;vendor&gt;/&lt;name&gt;<span class="o">)</span> <span class="o">[</span>fanderson/composer]: frob/greetings
+Description <span class="o">[]</span>: This is a simple hello world example.
+Author <span class="o">[</span>Frank Anderson &lt;frob@249517.no-reply.drupal.org&gt;, n to skip]:
+Minimum Stability <span class="o">[]</span>: dev
+Package Type <span class="o">(</span>e.g. library, project, metapackage, composer-plugin<span class="o">)</span> <span class="o">[]</span>:
+License <span class="o">[]</span>:
+
+Define your dependencies.
+
+Would you like to define your dependencies <span class="o">(</span>require<span class="o">)</span> interactively <span class="o">[</span><span class="nb">yes</span><span class="o">]</span>? n
+Would you like to define your dev dependencies <span class="o">(</span>require-dev<span class="o">)</span> interactively <span class="o">[</span><span class="nb">yes</span><span class="o">]</span>? n
+</code></pre></div>
+<p>Most of these should be easy enough to figure out and I will not go over all of them here. If you want to know what all this stuff really means, then go <a href="https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup">read the composer docs</a>.</p>
+
+<h2>Write some code</h2>
+
+<p>I will start coding by creating the file <code>greetings.php</code> in the <code>src/HelloWorld</code> directory:</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kn">namespace</span> <span class="nn">HelloWorld</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Greetings</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">sayHelloWorld</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">'Hello World'</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Add some basic dependencies</h3>
+
+<p>Now we have created our class, but we still have to tell composer about it. To do that we need to make some changes to our <code>composer.json</code> file.</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frob/greetings"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a simple hello world example."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frank Anderson"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frob@249517.no-reply.drupal.org"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"minimum-stability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=5.5.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"psr-0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"HelloWorld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"src/"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The new stuff starts in the <code>&quot;require&quot;</code> part. My changes are some simple ones, first, I have php 5.5.24 installed locally. Thus I add compatibility to anything greater than 5.5.</p>
+
+<blockquote>
+<p>Notice: I am not doing it here, but you need to be careful with open ended requirements. I have no idea if this code will work on php 9, but I don&#39;t care so I didn&#39;t bother adding the <code>|| &lt;9.0</code> or whatever to the <a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions">required php version</a>.</p>
+</blockquote>
+
+<p>The second change is adding <a href="http://www.php-fig.org/psr/psr-0/">PSR-0 autoloading</a> of my HelloWorld namespace. This will become important soon.</p>
+
+<h2>Install dependencies</h2>
+
+<p>Now we get to run <code>composer install</code> and see all the magic happen.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>composer <span class="nb">install</span>
+</code></pre></div>
+<p>This does three important things:</p>
+
+<h3><em>Updating dependencies (including require-dev)</em></h3>
+
+<p>This project has no dependencies other than php version 5.5 or higher. But if it did then they would be installed. By default they are installed in the <code>vendor</code> directory. Unlike npm there are plugins that can change where vendor code is installed.</p>
+
+<h3><em>Writing lock file</em></h3>
+
+<p>If we look at our directory tree after running <code>composer install</code> it looks like this:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">composer.json
+composer.lock
+src/
+  greetings.php
+vendor/
+  autoload.php
+  composer/
+</code></pre></div>
+<p>Notice the <code>composer.lock</code> file. That file needs to be added to the repository.</p>
+
+<p>When executing builds for production the lock file will be used to ensure that the same versions of things that worked for you in development are going to be installed in production. That way you don&#39;t have to worry about mysterious dependency versions breaking things in deploy.</p>
+
+<h3><em>Generating autoload files</em></h3>
+
+<p>This is the really cool part of composer. It generates an <code>autoload.php</code> file. This file is used by composer to automatically load files based on the <a href="http://www.php-fig.org/psr/psr-0/">PSR-0 spec</a> we stated earlier (see, I told you it would be important).</p>
+
+<p>This is also why composer installs itself into the vendor directory --composer is what handles the autoloading. This is huge, and also a big reason to use composer.</p>
+
+<p>Now so long as we handle the namespaces correctly and we follow the <a href="http://www.php-fig.org/psr/">PSR</a> (in this case PSR-0) then we can just load the autoloader and composer will make sure we have what we need when we need it.</p>
+
+<h2>Lets use it</h2>
+
+<p>Right now we have some potential energy. All this code, but nothing is using it. Kind of like the strength with OOP is also its weakness -- encapsulated code doesn&#39;t do anything by itself. Thus, we need to write some <em>cough</em> procedural code that uses this object.</p>
+
+<blockquote>
+<p>Fun fact, I really did cough when I wrote that.</p>
+</blockquote>
+
+<p>So then, lets write some tests. Create a <code>tests</code> directory and add a file <code>test.php</code> to it with the following contents.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="c1">// Autoload files using the Composer autoloader.</span>
+<span class="k">require_once</span> <span class="k">__DIR__</span> <span class="o">.</span> <span class="s1">'/../vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">HelloWorld\Greetings</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nx">Greetings</span><span class="o">::</span><span class="na">sayHelloWorld</span><span class="p">();</span>
+</code></pre></div>
+<p>Like I said before, autoloading and composer give us the handy <code>use</code> and <code>namespace</code> keywords. It is beyond the scope of this article to discus <a href="http://phpenthusiast.com/blog/how-to-autoload-with-composer">how the autoloader works</a>, just that it does and how to use it.</p>
+
+<p>Remember the directory stucture <code>src/HelloWorld</code> and the require statement in the <code>composer.json</code> file? In our <code>composer.json</code> we told the autoloader to expect a psr-0 directory structure and that our code would be in <code>src</code>. Then we declared the <code>namespace HelloWorld;</code> in our <code>greetings.php</code> file.</p>
+
+<p>Now in our <code>test.php</code> file we are <em>using</em> (with the <code>use</code> keyword) the <code>HelloWorld\Greetings</code> namespace and object in our test to call the <code>Greetings::sayHelloWorld();</code> static method.</p>
+
+<h2>Lets commit</h2>
+
+<p>At this point lets commit our code. The begs the question, what is our code? For now that is only the src and tests directory and the composer.php file. Lets initialize and commit those.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git init
+git add src tests composer.json
+git commit <span class="nt">-m</span> <span class="s2">"initial commit"</span>
+</code></pre></div>
+<p>We should also setup a <code>.gitignore</code> file so git stops barking at us about the vendor and <code>composer.lock</code> file.</p>
+
+<blockquote>
+<p>If this was a project I would be leaving the composer.lock in file the repository. We have set this up more like utility library than an actual project. It is only valuable for deployment and it be ignored by composer when this is used as a library anyway.</p>
+</blockquote>
+
+<p>So run this from the command line:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"vendor"</span> <span class="o">&gt;&gt;</span> .gitignore
+<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"composer.lock"</span> <span class="o">&gt;&gt;</span> .gitignore
+</code></pre></div>
+<p>This will append both <code>vendor</code> and <code>composer.lock</code> to the <code>.gitignore</code> file (or create it if it doesn&#39;t exist) thus it&#39;s contents will look like this.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">vendor
+composer.lock
+</code></pre></div>
+<h2>Bonus points, something borrowed</h2>
+
+<p>I was going to stop here, but after reading that I think it is missing something. The other real power from composer. Using someone else&#39;s code.</p>
+
+<p>I still want to keep this simple so I am adding something simple and <em>maybe</em> useful: a timer <a href="https://packagist.org/packages/phpunit/php-timer"><strong>phpunit/php-timer</strong></a>.</p>
+
+<p>To add 3rd party packages to your package you run the <code>composer require</code> command. In order to add the php-timer we run:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>composer require phpunit/php-timer
+</code></pre></div>
+<p>Unlike npm we do not need to specify the <code>--save</code> argument. Composer assumes the save. Here is another awesome thing that composer does for us. Composer will <strong>&quot;solve&quot;</strong> our dependency tree for us. What that means is that the packages will tell composer what versions of dependencies they support and composer will figure out what the latest version that fits that requirement.</p>
+
+<p>For example if dependency <strong>foo</strong> can use version <strong>5</strong> and above of the <strong>php-timer</strong> package, but dependency <strong>bar</strong> doesn&#39;t work with version <strong>7</strong> or version <strong>5</strong>, but does work with version <strong>6</strong>. Then composer knows that only the latest release of version <strong>6</strong> is supported by your application.</p>
+
+<blockquote>
+<p>If there are lots of dependencies and sub-dependencies then solving this issue takes time. Also, composer will tell you if it cannot be solved. If two packages are not compatible then composer will tell you right away.</p>
+</blockquote>
+
+<p>After we run that command we will see <code>&quot;phpunit/php-timer&quot;: &quot;^1.0&quot;</code> was added as a requirement. We can tell composer to only use some versions, but I will let you read the docs on that.</p>
+
+<p>There is one more thing that we need to do before we can use the <em>PHP_Timer</em> class in our project. We will need to edit the <code>composer.json</code> file to tell our autoloader about our new class.</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"psr-0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"HelloWorld"</span><span class="p">:</span><span class="w"> </span><span class="s2">"src/"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"classname"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"PHP_Timer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"src/"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Here we are adding the <code>classname</code> keyword and then listing the &quot;PHP<em>Timer&quot; class as member with &quot;src/&quot; as the value. I got this value because inside the <code>vendor/php-timer</code> directory is the *PHP</em>Timer* class, without any <code>namespace</code> keyword. Due to the lack of a namespace we just have to tell the autoloader that when we declare <code>use PHP_Timer;</code> in our php file that we need the <em>PHP_Timer</em> class loaded.</p>
+
+<blockquote>
+<p>I fingured out what to do by looking at packages that used PHP_Timer. It can be confusing, <a href="https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/">Read composer namespaces in five minutes to learn more about how composer uses namespaces</a>.</p>
+</blockquote>
+
+<p>Now that we have added the classname to the composer file we can start to use it in our greetings.php file. Lets add the some use of the php-timer class to the <em>Greetings</em> class.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="kn">namespace</span> <span class="nn">HelloWorld</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">PHP_Timer</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Greetings</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">sayHelloWorld</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$timer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PHP_Timer</span><span class="p">();</span>
+    <span class="nv">$timer</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
+    <span class="k">return</span> <span class="s2">"Hello World</span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="nv">$timer</span><span class="o">-&gt;</span><span class="na">resourceUsage</span><span class="p">()</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now when we run the test it will print:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>php tests/test.php
+Hello World
+Time: 1 ms, Memory: 0.50MB
+</code></pre></div>
+<h2>Scripts, scripts, and scripts</h2>
+
+<p>Currently, to test our command we need to run <code>php tests/test.php</code> from the command line. That is about as simple as it gets. But what about if we want to run a <a href="https://packagist.org/packages/squizlabs/php_codesniffer">linter</a> or some <a href="https://packagist.org/packages/phpunit/phpunit">real tests</a>? This is where the <em>scripts</em> member in the <code>composer.json</code> file comes into play.</p>
+
+<p>Lets add a <em>scripts</em> definition to the end of our <code>composer.json</code> file:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"php tests/test.php"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Now we only need to run the command <code>composer test</code> or <code>composer run test</code> from the command line in order to run our tests. The value of the <em>scripts</em> member is a list of key value pairs where the key is the name of the command and the value is the command that is run. The value can even be an array of commands that composer will run.</p>
+
+<p>If we change that to:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"php tests/test.php"</span><span class="p">,</span><span class="w"> </span><span class="s2">"echo Hello"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Then composer will run both the commands.</p>
+
+<blockquote>
+<p><code>composer run</code> is shorthand for <code>composer run-script</code></p>
+</blockquote>
+
+<p>There are a whole slew of <a href="https://getcomposer.org/doc/articles/scripts.md#command-events">pre-defined commands</a> that we can add to our <code>composer.json</code> file. For example, using the key <code>post-update-cmd</code> will run the scripts after the <code>update</code> and before the <code>install</code> commands.</p>
+
+<p>Download my <a href="https://github.com/frob/greetings/tree/composer">Hello World Greetings composer project</a> from github.</p>
+
+<h2>Composer and Drupal</h2>
+
+<p>As my professional life goes, 99% of my php work is Drupal -- and it has been since release of Drupal 6. I have done work in other languages and I have used other frameworks; but when it comes to me getting paid to write php, it is almost always Drupal.</p>
+
+<p>As I said, I got started with Drupal seriously with Drupal 6, but now, as is the Drupal way, Drupal 6 is dead and Drupal 8 is new. Drupal 8 was a nearly complete re-architecture of Drupal.</p>
+
+<p>Drupal was special, it was special because when we (Drupal Developers) needed something we built it. Our issue was that we built it for us. Now the needs of Drupal aren&#39;t unique. We build drush, but every project seems to have a cli now-a-days.</p>
+
+<p>Drush has make functionality. It can handle bundling our projects together with a build process. It also gives us the ability to download and install modules or change/modify our configuration. We can start temporary web-servers with Drush and do simple development work or test patches. The issue is that Drush was our tool and no one else&#39;s.</p>
+
+<p>With Drupal 8 we are leaving the island and seeing how others have solved problems. We don&#39;t have to do it all ourselves and sometimes it is better not to even try. There is a whole slew of functionality out there that we can now incorporate into our modules. Composer is the key in all of that.</p>
+
+  </div>
+
+  <div class="date-author">
+    Written on August 16, 2016 by <a class="author-link" href="http://frankrobertanderson.com">Frank Robert (frob) Anderson</a>
+    
+  </div>
+
+  
+<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+    
+	    var disqus_shortname = 'frobiovox'; 
+
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+</article>
+
+    </div></div>
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="social-icons">
+            <h2>Social Networks</h2>
+            
+
+
+
+<a href="http://github.com/frob"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="http://twitter.com/frobdfas"><i class="svg-icon twitter"></i></a>
+
+
+          </div>
+          <div class="blogroll">
+            <h2>Blogroll</h2>
+            
+            <a class="blogroll-item" href="http://btmash.com">BTMash's blob of contradictions</a><br />
+            
+            <a class="blogroll-item" href="https://lagraffiti.wordpress.com/">LA Grafitti</a><br />
+            
+            <a class="blogroll-item" href="http://icodealot.com/">Justin Biard's icodealot</a><br />
+            
+          </div>
+          <div class="copyright"> Copyright Frank Robert Anderson 2020 </div>
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-11010946-5', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>
