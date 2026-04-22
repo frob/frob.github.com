@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Debug on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/debug/</link><description>Recent content in Debug on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://www.frobiovox.com/tags/debug/feed.xml" rel="self" type="application/rss+xml"/><item><title>Add Some Style to Your JavaScript Log</title><link>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</link><pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid><description>&lt;p&gt;&lt;a href="#howitdo"&gt;Skip the fluff&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="backstory"&gt;Backstory&lt;/h2&gt;
-&lt;p&gt;Anytime I want to show off what the web can do with a simple blog I have to pull up &lt;a href="http://acko.net"&gt;this awesome site&lt;/a&gt;. I was on &lt;a href="http://acko.net/"&gt;A Very Cool Site about Hackery, Math &amp;amp; Design&lt;/a&gt;, and the question was asked &amp;ldquo;how did he do that?&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;So it was time to open my console. This is what I found.&lt;/p&gt;
-&lt;img class="image-center" src="https://www.frobiovox.com/images/2015091005.png" /&gt;
-&lt;p&gt;Which lead to the question &amp;ldquo;how did he do that?&amp;rdquo;&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debug on Frank Robert Anderson</title>
+    <link>https://www.frobiovox.com/tags/debug/</link>
+    <description>Recent content in Debug on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.frobiovox.com/tags/debug/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add Some Style to Your JavaScript Log</title>
+      <link>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</link>
+      <pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;#howitdo&#34;&gt;Skip the fluff&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;backstory&#34;&gt;Backstory&lt;/h2&gt;&#xA;&lt;p&gt;Anytime I want to show off what the web can do with a simple blog I have to pull up &lt;a href=&#34;http://acko.net&#34;&gt;this awesome site&lt;/a&gt;. I was on &lt;a href=&#34;http://acko.net/&#34;&gt;A Very Cool Site about Hackery, Math &amp;amp; Design&lt;/a&gt;, and the question was asked &amp;ldquo;how did he do that?&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;So it was time to open my console. This is what I found.&lt;/p&gt;&#xA;&lt;img class=&#34;image-center&#34; src=&#34;https://www.frobiovox.com/images/2015091005.png&#34; /&gt;&#xA;&lt;p&gt;Which lead to the question &amp;ldquo;how did he do that?&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
