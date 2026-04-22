@@ -6,16 +6,13 @@ slug: working-with-case-sensitive-files-in-a-case-insensitive-world
 tags:
     - frontpage
     - tutorial
-draft: true
 ---
 
-# How to work with case sensitive files on a file system that is case insensitive?
-
-TLDR; Create a disk image that has a case sensitive file system. Then mount the disk image and work from it.
+TL;DR: Create a disk image that has a case sensitive file system. Then mount the disk image and work from it.
 
 > Bonus points if you also symlink the mount to your normal working directory so that you do not have to change your workflow.
 
-## Working with case sensitive files on a file system that is case insensitive.
+## The Problem
 
 On our servers the file systems are case-sensitive, however, on our local development machines (MacOS/OSX) we have case-insensitive file systems. This means files can exist on the server that, when we spin up a local copy, cannot exist on our local systems. If these files are version controlled, svn or git will try its best to resolve these issues but they will generally do a poor job.
 
@@ -30,7 +27,7 @@ By doing this I don't need to worry about changing my workflow and I don't have 
 On MacOS/OSX we can use Disk Utility to create a disk image and mount it as a volume. This can be done with [hdiutil on the command line](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/hdiutil.1.html):
 
 ```bash
-hdiutil create  -size 10m  -fs "Case-sensitive HFS+" -volname Test Test.dmg
+hdiutil create -size 10m -fs "Case-sensitive HFS+" -volname Test Test.dmg
 ```
 
 Or using Disk Utility in the GUI:
@@ -52,3 +49,5 @@ $ ln -s /Volumes/Disk\\ Image/project-folder local-project-folder
 ```
 
 This will create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link) (that looks like a local directory) to our mounted volume in our current directory.
+
+With this setup you get the best of both worlds: a case-sensitive file system for your project and a workflow that looks and feels exactly like working from your normal directory. No more surprises when deploying files to a case-sensitive server.
