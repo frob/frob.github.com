@@ -20,3 +20,14 @@ tasks:
     desc: Build the site for production (minified)
     dir: hugo
     cmd: hugo --minify
+
+  deploy:
+    desc: Build and deploy the site to S3
+    vars:
+      TIMESTAMP:
+        sh: date +%Y%m%d_%H%M%S
+      PROFILE: '{{.PROFILE | default "default"}}'
+    cmds:
+      - task: build:prod
+      - aws s3 sync s3://www.frobiovox.com/ backups/{{.TIMESTAMP}}/ --profile {{.PROFILE}}
+      - aws s3 sync hugo/public/ s3://www.frobiovox.com/ --delete --acl public-read --profile {{.PROFILE}}
