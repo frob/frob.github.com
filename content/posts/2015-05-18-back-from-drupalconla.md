@@ -1,5 +1,6 @@
 ---
 title: Back from DrupalConLA (A postmortem)
+date: "2015-05-18"
 slug: back-from-drupalconla
 tags:
     - drupalcon
