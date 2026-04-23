@@ -1,7 +1,7 @@
 ---
 title: My Dilemma; What Technology to Pursue
 date: "2016-11-21"
-description: I need to know what to study, not that I am board or have lots of time. I just need a new tool in my belt.
+description: I need to know what to study, not that I am bored or have lots of time. I just need a new tool in my belt.
 slug: my-dilemma--what-technology-to-pursue
 tags:
     - web development
@@ -23,7 +23,7 @@ I have been looking at Elixir for around 2 years now (I even went to ElixirCon i
 
 ## Python
 
-Python is an old language that I was really turned off by when I first used it. It is a utility, most of what I would normally consider using python for I can more easily accomplish with a shell script. Python is all the things that Peal wasn't.
+Python is an old language that I was really turned off by when I first used it. It is a utility, most of what I would normally consider using python for I can more easily accomplish with a shell script. Python is all the things that Perl wasn't.
 
 Python has a syntax that is clean and purposeful. Unlike C syntax derivatives, it uses whitespace that matters to organize the code. This self enforces a code style that I like.
 

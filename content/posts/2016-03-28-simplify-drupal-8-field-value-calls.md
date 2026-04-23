@@ -16,7 +16,7 @@ In semantic versioned frameworks every new major version brings new api and disc
 
 # Get the title of a node
 
-Let load a node and return the title.
+Let's load a node and return the title.
 
 ## Drupal 7
 
@@ -41,7 +41,7 @@ Wow, look at all those words.
 
 Lets take a look at what is happening here. First, we load the node, that is what all that ```\Drupal\node\Entity\Node::load()``` business is doing. Second, We load the title field (that is correct titles are fields in Drupal 8) this is done with the ```get``` method. Third, we have to get the value from that field that we got with a call to the ```value``` member.
 
-So much work just to get the title. Clearly things where easier in Drupal 7.
+So much work just to get the title. Clearly things were easier in Drupal 7.
 
 Well, not so fast. What if the site is multi-lingual? Or what if we need more than just the title. Remember, Drupal 7 didn't use objects so it was impossible to get those values in a "normal" way. That is unless you consider ```$node->field_name[0][LANGUAGE_NONE]['value']``` normal. This isn't a stab at Drupal 7's brilliant architecture. Drupal 7's architecture gave us an awe inspiring amount of freedom within an engine to build nearly anything we wanted. However, the api's (or lack there of) have not aged well.
 
@@ -49,7 +49,7 @@ The point of all that is, there is just this one getter to get a value from a fi
 
 ## Simplify
 
-Now that we are past all that, let us see how we can improve upon that getter snippit.
+Now that we are past all that, let us see how we can improve upon that getter snippet.
 
 ### use
 

@@ -165,7 +165,7 @@ This is when I started to make progress. There was a requirement that was unknow
 
 I run everything in containers. The last thing I want is a random interpreter running on my system. I work in PHP, Go, Javascript, various DB, Python, and more. It all runs in containers. I compile Go using containers. I write Python using containers. Even my personal Godot projects are built/exported with containers. Why would I have node installed?
 
-At this point I didn't even follow any of the steps layed out by the AI. I just installed Node.
+At this point I didn't even follow any of the steps laid out by the AI. I just installed Node.
 
 > **User:** I am getting this error in zed "process exited before debugger attached."
 
@@ -247,7 +247,7 @@ pwd
 
 ## Testing the Connection
 
-This is more good suggestions form Claude. I used `netstat` to see if the port was being listened to and I installed `telnet` on the container to verify that it communication was open both directions.
+This is more good suggestions from Claude. I used `netstat` to see if the port was being listened to and I installed `telnet` on the container to verify that communication was open both directions.
 
 > **User:** I don't see anything in zed's debug panel
 
@@ -383,8 +383,8 @@ Here I lamented a bit and the LLM responded with some advice that might be usefu
 
 --- 
 
-Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is InteliJ based --which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.
+Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based --which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.
 
-Lately, PhpStorm has begun it's, somewhat, clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed --it is far more AI first. Zed allows us to use AI's from many sources, including Ollama based local AIs.
+Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed --it is far more AI first. Zed allows us to use AI's from many sources, including Ollama based local AIs.
 
 I look forward to using Zed, more, now that Xdebug is working.

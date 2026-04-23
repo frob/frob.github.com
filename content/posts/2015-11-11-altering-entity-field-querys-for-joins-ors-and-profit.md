@@ -1,5 +1,5 @@
 ---
-title: Altering Entity Field Querys for JOINS ORs and Profit
+title: Altering Entity Field Queries for JOINS ORs and Profit
 date: "2015-11-11"
 description: EntityFieldQueries are one of the most useful things in Drupal 7, using tags we can get around some of the limitations of using them.
 slug: altering-entity-field-querys-for-joins-ors-and-profit

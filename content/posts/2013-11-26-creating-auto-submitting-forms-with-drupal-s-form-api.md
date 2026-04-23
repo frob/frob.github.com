@@ -39,7 +39,7 @@ $form['form_element'] = array(
 );
 ```
 
-It is pretty verbose, requires a php callback, and can be a bit of overkill for auto-submitting a form. In the days of pure HTML forms, we would simply add the form submit straight to the form input. As it turns out we can do the same thing to our form by exploiting the fact that the form API uses render arrays. All we have to do is attach this code snipit to our form element.
+It is pretty verbose, requires a php callback, and can be a bit of overkill for auto-submitting a form. In the days of pure HTML forms, we would simply add the form submit straight to the form input. As it turns out we can do the same thing to our form by exploiting the fact that the form API uses render arrays. All we have to do is attach this code snippet to our form element.
 
 ```php
 '#attributes' => array('onChange' => 'document.getElementById("people-filter-form").submit();')
@@ -54,18 +54,18 @@ Below is the full form definition.
 /**
  * Custom Report User Filter Form
  */
-function people_filter_form($form, &amp;$form_state) {
+function people_filter_form($form, &$form_state) {
   $form['person'] = array(
     '#type' => 'select',
     '#options' => array(
       '' => 'Select a Person',
     ),
     '#default_value' => empty($_GET['person']) ? '' : check_plain($_GET['person']),
-    '#attributes' => array('onChange' =>; 'document.getElementById("iris-app-people-filter-form").submit();'),
+    '#attributes' => array('onChange' => 'document.getElementById("iris-app-people-filter-form").submit();'),
   );
   $people = _get_select_list_data('person');
   foreach ($people as $person) {
-    $form['person']['#options'][$person->uid] =  $person-&gt;name;
+    $form['person']['#options'][$person->uid] = $person->name;
   }
 
   $form['submit'] = array(

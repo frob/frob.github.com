@@ -9,7 +9,7 @@ tags:
 ---
 
 
-## WHY make an new old video game system!?!
+## WHY make a new old video game system!?!
 
 I saw this video.
 
@@ -21,9 +21,9 @@ These videos beg the question; How do I stop my kids from being like this?
 
 This got me thinking about how the older generation used to talk about the ["push button" generation](http://www.seattletimes.com/nation-world/is-push-button-age-producing-a-generation-of-simpletons/). And it got me thinking about my kids, a generation behind the generation that has every user interface purpose built for ease of use. Everything I see built today (hardware or software) is about as easy as it can be. Usually nothing more than a single "GO" button.
 
-In general this is a good thing, except I consider this to be a bad thing when it stops us from figuring out how things work. It's easy for physical tools to be re-imaginged and used for other purposes than they're intended; such as using a screw driver to pry up a staple, or some channel locks to pull out a finishing nail. The same thing is true of command line tools. It's the heart of the way \*nix systems work. One purpose built command being piped into another to achieve something possibly unintended. This isn't quite so easy when the system only allows one type of input and the only way to use it is to tap on the giant start button.
+In general this is a good thing, except I consider this to be a bad thing when it stops us from figuring out how things work. It's easy for physical tools to be reimagined and used for other purposes than they're intended; such as using a screw driver to pry up a staple, or some channel locks to pull out a finishing nail. The same thing is true of command line tools. It's the heart of the way \*nix systems work. One purpose built command being piped into another to achieve something possibly unintended. This isn't quite so easy when the system only allows one type of input and the only way to use it is to tap on the giant start button.
 
-[Creativity strives in constraints](http://www.slideshare.net/chesterbr/atari-2600programming). We need constraints, even if the constrains are contrived.
+[Creativity thrives in constraints](http://www.slideshare.net/chesterbr/atari-2600programming). We need constraints, even if the constraints are contrived.
 
 There are two things that are universal with children. Education and Games. Games are considered fun and Education (mostly) is considered not fun. So how do we solve this with games?
 

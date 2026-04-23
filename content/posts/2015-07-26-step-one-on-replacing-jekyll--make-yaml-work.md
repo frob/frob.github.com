@@ -38,7 +38,7 @@ Error: JS-YAML: end of the stream or a document separator is expected at line 12
      ... ">Written on {{ post.date | date: "%B %e, %Y" }}</aside>
 ```
 
-Hmmm, It looks like the YAML Front matter will be a bit more dificult.
+Hmmm, It looks like the YAML Front matter will be a bit more difficult.
 
 First I tried [yaml-front-matter](https://www.npmjs.com/package/yaml-front-matter), which wasn't what I wanted. It works with node but I was hoping to find a gulp plugin. So I found [gulp-front-matter](https://github.com/lmtm/gulp-front-matter) which looks promising. This one is a gulp plugin and it looks like it will work, but it isn't well documented. Looks like I have some code to read.
 
@@ -57,4 +57,4 @@ https://github.com/lmtm/gulp-front-matter/issues/8 talks about exposing the fron
 My conclusion is that front-matter shouldn't be handled with gulp, but instead it should be handled by node. In this case the the front-matter will control the flow of the steam and thus it shouldn't be considered when reading the stream. The gulp-front-matter plugin will do one thing really well for me. It will strip the front-matter from my source and allow me to parse it with liquid or with markdown or whatever.
 
 ## Bad plug-ins
-So, here it is. The liquid plugin just didn't work. I don't have the time to waist on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.
+So, here it is. The liquid plugin just didn't work. I don't have the time to waste on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.
