@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -76,7 +76,7 @@
             
         </div>
          <h2 id="why-build-a-site-with-drupal-7">Why build a site with Drupal 7</h2>
-<p>Drupal8 is nearly out making Drupal 7 look like it isn&rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conviences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.</p>
+<p>Drupal8 is nearly out making Drupal 7 look like it isn&rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.</p>
 <h1 id="the-modules">The Modules</h1>
 <p>I know, I know, many of these modules are not new and this isn&rsquo;t a list of everything someone will need to build a site (<a href="http://lmgtfy.com/?q=top+50+drupal+modules">that subject has been done to death</a>); this is a list of modules that allow site builders and someone with some front-end skill to build complicated sites with little to no custom module code.</p>
 <h2 id="title"><a href="https://www.drupal.org/project/title">Title</a></h2>
@@ -98,15 +98,15 @@
 <h2 id="block-class"><a href="https://www.drupal.org/project/block_class">Block Class</a></h2>
 <p>Very simple, put classes on blocks.</p>
 <h2 id="menu-attributes"><a href="https://www.drupal.org/project/menu_attributes">Menu Attributes</a></h2>
-<p>This modules adds attributes to menu items and menu links. This means that there is no more needing to write css rules that are based on Drupal&rsquo;s mlid based class.</p>
+<p>This module adds attributes to menu items and menu links. This means that there is no more needing to write css rules that are based on Drupal&rsquo;s mlid based class.</p>
 <aside class="inline">Why is theming off of a system generated mlid based class bad. Because this can change from install to install. Just like theming off of node id, theming off of menu link id is a bad idea.</aside>
 <h2 id="view-field"><a href="https://www.drupal.org/project/viewfield">View Field</a></h2>
-<p>Not to be confused with <a href="https://www.drupal.org/project/views_field">Views Field</a>, the <a href="https://www.drupal.org/project/viewfield">View Field</a> Module allows site-builders to add fields to entities that allow the content editor to display views in fields. These views are set per piece of content. This means there can be a basic page content type that can have all the things that a page shoule have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing displayed.</p>
+<p>Not to be confused with <a href="https://www.drupal.org/project/views_field">Views Field</a>, the <a href="https://www.drupal.org/project/viewfield">View Field</a> Module allows site-builders to add fields to entities that allow the content editor to display views in fields. These views are set per piece of content. This means there can be a basic page content type that can have all the things that a page should have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing displayed.</p>
 <h2 id="entity-views-attach"><a href="https://www.drupal.org/project/eva">Entity Views Attach</a></h2>
 <p>Unlike <a href="https://www.drupal.org/project/viewfield">View Field</a>, this module is all about the same view as a field on an entity. This module allows the site-builders to configure a view to act like a field on an entity bundle. For example, we want to have a list of all the content that a user has flagged on the user&rsquo;s profile page, and the design has that list in the middle of the rest of the fields. With this module the listing can be configured to be a pseudo field on the users entity that is then free to be positioned along with the rest of the user fields.</p>
 <h2 id="bean"><a href="https://www.drupal.org/project/bean">Bean</a></h2>
 <p>Bean stands for <q>Block Entities Aren&rsquo;t Nodes.</q> This is a stab at the <a href="https://www.drupal.org/project/nodeblock">other way of doing this</a>.</p>
-<p>Block&rsquo;s are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features &ndash;because blocks are&rsquo;nt entities and don&rsquo;t have fields.</p>
+<p>Block&rsquo;s are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features &ndash;because blocks aren&rsquo;t entities and don&rsquo;t have fields.</p>
 <p>Beans can have fields, because a Bean is a new type of entity, a block entity. This also gives us a better experience for content editors that will be building blocks. Content editors are given revisions, and a block listing page that works just like the content listing page. This means we can have views of blocks too.</p>
 <h2 id="entity-view-mode"><a href="https://www.drupal.org/project/entity_view_mode">Entity View Mode</a></h2>
 <p>Personally, I like code, and I like to write my view modes with code. But this module works too. This module allows the site-builder to add view modes to any bundle on any entity. There is one large drawback, all this stuff is stored in one big variable. That means when a features is exported with the strongarm module it will get all the settings for all the bundles on all content types. There is movement in the issue queue to make this less all-or-nothing but for now, this is how it is.</p>
@@ -118,16 +118,16 @@
 <p>This module does a really cool thing. It ties Drupal&rsquo;s css attaching with a less compiler. This less compiler can be php based, such as the old Lefo php less compiler, or the new less.php compiler. It can even be the lessjs node plugin that is installed on the server. I works with css aggregation and it works with the autoprefixing node postCSS plugin as well. This means that you never need to put compiled css into the repository.</p>
 <p><strong>Notice</strong> there is a sass Drupal module that works with the old Lefo sass library. However, both the php lib and the Drupal module are not well supported.</p>
 <h2 id="bootstrap-theme"><a href="https://www.drupal.org/project/bootstrap">Bootstrap Theme</a></h2>
-<p>Bootstap is a fine front-end framework, and if you are building a site for boostrap developers then this is the place to go. I like to use <a href="https://www.drupal.org/project/bootstrap_library">Bootstrap Library</a> for actually adding the Boostrap code.</p>
+<p>Bootstrap is a fine front-end framework, and if you are building a site for Bootstrap developers then this is the place to go. I like to use <a href="https://www.drupal.org/project/bootstrap_library">Bootstrap Library</a> for actually adding the Boostrap code.</p>
 <h2 id="jquery-update"><a href="https://www.drupal.org/project/jquery_update">jQuery Update</a></h2>
-<p>Drupal 7 is not the new hotness. It is the old standard. As such the libraries that where once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.</p>
+<p>Drupal 7 is not the new hotness. It is the old standard. As such the libraries that were once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.</p>
 <p>To this end, I use jQuery update. It is simple, it allows the site-builder to pick a version of jQuery to use with a theme. It also facilitates loading that version from a CDN and the loading of the jQuery migrate module.</p>
 <p><strong>Notice</strong> If using the CDN, pick it before starting with theming. Not every CDN will have the same code for the same versions of jQuery.</p>
 <h2 id="ember"><a href="https://www.drupal.org/project/ember">Ember</a></h2>
 <p>This is the new admin theme hotness from Aquia. It is semantic and accessible and it follows the Aquia&rsquo;s style guidelines. Ember is still in development so expect some glitches.</p>
 <p>I recommend creating a sub-theme of this theme so that further customization can be done without having to hack at ember.</p>
 <h2 id="ember-support"><a href="https://www.drupal.org/project/ember_support">Ember Support</a></h2>
-<p>Does some stuff that ember cannot due in the theme space.</p>
+<p>Does some stuff that ember cannot do in the theme space.</p>
 <h2 id="coffee"><a href="https://www.drupal.org/project/coffee">Coffee</a></h2>
 <p>Toolbar was based somewhat on the admin menu module. Admin module persisted because toolbar doesn&rsquo;t next things. None of that matters anymore because coffee isn&rsquo;t a toolbar. Coffee works like Unity for Ubuntu or Spotlight search for Mac, or the Start Menu in Windows. Just start typing and a list of options will be presented. Pick the option and it will take you there.</p>
 <h2 id="speedboxes"><a href="https://www.drupal.org/project/speedboxes">Speedboxes</a></h2>
@@ -138,7 +138,7 @@
 <p>To install these modules just type:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drush dl context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drush en context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
-</span></span></code></pre></div><p>If you do not what to have to confirm over and over again, then you will probably want to pass the <code>-y</code> flag to the drush command.</p>
+</span></span></code></pre></div><p>If you do not want to have to confirm over and over again, then you will probably want to pass the <code>-y</code> flag to the drush command.</p>
 <p>Play with these modules before installing on production. :P</p>
 
     </article>

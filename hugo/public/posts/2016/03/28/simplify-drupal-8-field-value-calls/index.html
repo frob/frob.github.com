@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -80,7 +80,7 @@
          <p>Things change, it&rsquo;s a fact of life; even more so it&rsquo;s a fact of a web developer&rsquo;s life.</p>
 <p>In semantic versioned frameworks every new major version brings new api and discards the old apis. Like ripping off a band-aid, this is an excruciatingly painful experience that will eventually bring forward a less painful future. Thus, it has been with the change from Drupal 7 to Drupal 8.x.</p>
 <h1 id="get-the-title-of-a-node">Get the title of a node</h1>
-<p>Let load a node and return the title.</p>
+<p>Let&rsquo;s load a node and return the title.</p>
 <h2 id="drupal-7">Drupal 7</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$node <span style="color:#f92672">=</span> <span style="color:#a6e22e">node_load</span>($nid);
 </span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> $node<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span>;
@@ -92,11 +92,11 @@
 </span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> $title_field<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>;
 </span></span></code></pre></div><p>Wow, look at all those words.</p>
 <p>Lets take a look at what is happening here. First, we load the node, that is what all that <code>\Drupal\node\Entity\Node::load()</code> business is doing. Second, We load the title field (that is correct titles are fields in Drupal 8) this is done with the <code>get</code> method. Third, we have to get the value from that field that we got with a call to the <code>value</code> member.</p>
-<p>So much work just to get the title. Clearly things where easier in Drupal 7.</p>
+<p>So much work just to get the title. Clearly things were easier in Drupal 7.</p>
 <p>Well, not so fast. What if the site is multi-lingual? Or what if we need more than just the title. Remember, Drupal 7 didn&rsquo;t use objects so it was impossible to get those values in a &ldquo;normal&rdquo; way. That is unless you consider <code>$node-&gt;field_name[0][LANGUAGE_NONE]['value']</code> normal. This isn&rsquo;t a stab at Drupal 7&rsquo;s brilliant architecture. Drupal 7&rsquo;s architecture gave us an awe inspiring amount of freedom within an engine to build nearly anything we wanted. However, the api&rsquo;s (or lack there of) have not aged well.</p>
 <p>The point of all that is, there is just this one getter to get a value from a field. No longer do we need to <code>dpm</code> a value and see what is there and then pull the right value with the correct delta, for the correct language, from the correct &ldquo;value.&rdquo; Now we just <code>get()</code> the field, and pull the <code>value</code>.</p>
 <h2 id="simplify">Simplify</h2>
-<p>Now that we are past all that, let us see how we can improve upon that getter snippit.</p>
+<p>Now that we are past all that, let us see how we can improve upon that getter snippet.</p>
 <h3 id="use">use</h3>
 <p>First we can utilize the use keyword so the Node static object will be directly accessible inside our namespace. This will be the only thing that I mention in this post that increase the number of lines.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Drupal\node\Entity\Node</span>

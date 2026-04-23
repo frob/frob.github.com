@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
-    <meta name="description" content="Style can be passes as a parameter to the console.log function.">
+    <meta name="description" content="Style can be passed as a parameter to the console.log function.">
     
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Cutive+Mono&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
@@ -87,7 +87,7 @@
 <p>Which lead to the question &ldquo;how did he do that?&rdquo;</p>
 <aside class="inline">The that in question is the stylish console message. From the image one can see colors and drop shadows. Neat!</aside>
 <h1 id="how-that-is-done">How <span title="The colorful console message"><strong><em>that</em></strong></span> is done.</h1>
-<p>I you are not aware already, there are quite a few methods available in the global <code>console</code> object. If you are not familure I recommend the <a href="https://developer.mozilla.org/en-US/docs/Web/API/consol">Mozilla Developer Network pages on <code>console</code></a>. Some methods of importance are:</p>
+<p>I you are not aware already, there are quite a few methods available in the global <code>console</code> object. If you are not familiar I recommend the <a href="https://developer.mozilla.org/en-US/docs/Web/API/consol">Mozilla Developer Network pages on <code>console</code></a>. Some methods of importance are:</p>
 <ul>
 <li>log (<em>duh</em>)</li>
 <li>assert</li>
@@ -95,7 +95,7 @@
 <li>error</li>
 <li>count</li>
 </ul>
-<p>These are old news and I wont go into them in detail here. Just look them up on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/consol">MDN docs</a>.</p>
+<p>These are old news and I won&rsquo;t go into them in detail here. Just look them up on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/consol">MDN docs</a>.</p>
 <p><a id="howitdo"></a></p>
 <h2 id="so-then-how-was-it-done">So then how was it done?</h2>
 <p>Scroll ahead to the <q><a href="https://developer.mozilla.org/en-US/docs/Web/API/console#Outputting_text_to_the_console">Outputting Text to the console</a></q> portion of the MDN doc and you will see that <code>console.log</code> will take in its first parameter some string wrappers. <code>%f</code> for float, <code>%s</code> for string, and so on. At the very bottom of the page you will see the <code>%c</code>, which wrapps the remaining text in some style as the second parameter.</p>

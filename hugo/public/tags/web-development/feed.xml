@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web Development on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/web-development/</link>
+    <link>http://localhost:1313/tags/web-development/</link>
     <description>Recent content in Web Development on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Nov 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/web-development/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/web-development/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Dilemma; What Technology to Pursue</title>
-      <link>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link>
+      <link>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link>
       <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid>
+      <guid>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid>
       <description>&lt;p&gt;Be warned, this is a rant.&lt;/p&gt;&#xA;&lt;p&gt;I have a Dilemma about what to focus on learning. I will always explore technology. I will always study, this is my nature. As God has built us, I will always work. This is not a question of what tech I will use here and there. Or what tech I will dabble in as an aside. I need another focus, I have been doing Drupal and php for a long time &amp;ndash;now is not time to move on, just time to hedge my speciality.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Support should not be based on Marketshare</title>
-      <link>https://www.frobiovox.com/posts/2013/10/06/support-should-not-be-based-on-marketshare/</link>
+      <link>http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/</link>
       <pubDate>Sun, 06 Oct 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2013/10/06/support-should-not-be-based-on-marketshare/</guid>
+      <guid>http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/</guid>
       <description>&lt;p&gt;In web development IE has been the bane of front-end developers everywhere. For a long time it was IE6, and now it is IE8/9 that give the most grief. Every browser has its little issues here and there. Little quirks that make us developers need to test in every conceivable situation. Specifically it is that browsers do things their own way (for better or worse); they may or may not conform to standards and they may do somethings that are completely non-standard.&lt;/p&gt;</description>
     </item>
   </channel>

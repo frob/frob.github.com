@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -97,7 +97,7 @@
 </span></span><span style="display:flex;"><span>            ^
 </span></span><span style="display:flex;"><span>Error: JS-YAML: end of the stream or a document separator is expected at line 12, column 64:
 </span></span><span style="display:flex;"><span>     ... <span style="color:#e6db74">&#34;&gt;Written on {{ post.date | date: &#34;</span>%B %e, %Y<span style="color:#e6db74">&#34; }}&lt;/aside&gt;
-</span></span></span></code></pre></div><p>Hmmm, It looks like the YAML Front matter will be a bit more dificult.</p>
+</span></span></span></code></pre></div><p>Hmmm, It looks like the YAML Front matter will be a bit more difficult.</p>
 <p>First I tried <a href="https://www.npmjs.com/package/yaml-front-matter">yaml-front-matter</a>, which wasn&rsquo;t what I wanted. It works with node but I was hoping to find a gulp plugin. So I found <a href="https://github.com/lmtm/gulp-front-matter">gulp-front-matter</a> which looks promising. This one is a gulp plugin and it looks like it will work, but it isn&rsquo;t well documented. Looks like I have some code to read.</p>
 <h2 id="bad-documentation">Bad documentation</h2>
 <p>I read the code and the only hint looks to be here on line 40</p>
@@ -107,7 +107,7 @@
 <p><a href="https://github.com/lmtm/gulp-front-matter/issues/8">https://github.com/lmtm/gulp-front-matter/issues/8</a> talks about exposing the frontmatter or just better documentation in general as it seems to be a large issue with this package.</p>
 <p>My conclusion is that front-matter shouldn&rsquo;t be handled with gulp, but instead it should be handled by node. In this case the the front-matter will control the flow of the steam and thus it shouldn&rsquo;t be considered when reading the stream. The gulp-front-matter plugin will do one thing really well for me. It will strip the front-matter from my source and allow me to parse it with liquid or with markdown or whatever.</p>
 <h2 id="bad-plug-ins">Bad plug-ins</h2>
-<p>So, here it is. The liquid plugin just didn&rsquo;t work. I don&rsquo;t have the time to waist on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.</p>
+<p>So, here it is. The liquid plugin just didn&rsquo;t work. I don&rsquo;t have the time to waste on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.</p>
 
     </article>
 </div>
