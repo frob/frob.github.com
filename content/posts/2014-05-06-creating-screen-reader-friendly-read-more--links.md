@@ -61,3 +61,5 @@ Just add a body class for each language and then adjust the content rule accordi
 ```
 
 Thanks to [Google Translator](https://translate.google.com/) for the Spanish and Simplified Chinese translations. Thanks to [Bing translator for the Klingon](https://www.bing.com/translator/).
+
+The technique is simple: hide the real link text with ```font-size: 0```, replace it visually with a ```:after``` pseudo element, and let screen readers see the original accessible text. It is a small amount of CSS that makes a real difference for users who navigate by link list. If your site has "Read More" links, this is worth the five minutes it takes to implement.

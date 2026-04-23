@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gulp on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/gulp/</link>
+    <link>https://www.frobiovox.com/tags/gulp/</link>
     <description>Recent content in Gulp on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Jul 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/gulp/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.frobiovox.com/tags/gulp/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Step One on replacing Jekyll, make yaml work</title>
-      <link>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link>
+      <link>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid>
+      <guid>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid>
       <description>&lt;p&gt;As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.&lt;/p&gt;&#xA;&lt;h1 id=&#34;yaml-parsing&#34;&gt;YAML Parsing&lt;/h1&gt;&#xA;&lt;p&gt;First am trying to use &lt;a href=&#34;https://www.npmjs.com/package/gulp-yaml&#34;&gt;npm-yaml&lt;/a&gt;. Simple installation, &lt;code&gt;npm install --save-dev npm-yaml&lt;/code&gt;. And it works great with the _config file that holds general site information. So I try it with the html.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;task&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;test-index&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./index.html&amp;#39;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;pipe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;yaml&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;space&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; }))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;pipe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;dest&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./gulp-dist/&amp;#39;&lt;/span&gt;))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With that I get a big fat &amp;hellip;&lt;/p&gt;</description>
     </item>
   </channel>

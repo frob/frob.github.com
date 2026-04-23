@@ -58,3 +58,5 @@ My conclusion is that front-matter shouldn't be handled with gulp, but instead i
 
 ## Bad plug-ins
 So, here it is. The liquid plugin just didn't work. I don't have the time to waste on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.
+
+The lesson here is that Gulp is great at file transformation but the ecosystem is not ready to replace a purpose-built static site generator. YAML parsing works, front-matter stripping works, but the Liquid template plugin is not there yet. Sometimes the right call is to recognize when a dependency is not mature enough and come back later. Jekyll stays for now.

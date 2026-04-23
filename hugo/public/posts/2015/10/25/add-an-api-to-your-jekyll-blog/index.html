@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -79,7 +79,8 @@
             <span class="badge">frontpage</span>
             
         </div>
-         <p>I really like <a href="https://pages.github.com/">github pages</a>. I <a href="https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">built my blog on it</a>, even though <a href="https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html">I host it myself</a>. When friends and family ask for me to build them a site <a href="http://wapro.lbtech.org/">I will point them to github pages</a>. Markdown is so easy, liquid is so easy. What isn&rsquo;t easy is dynamic lists of content. A simple list of related content isn&rsquo;t as easy. Sure there are ways, but I want to learn <a href="https://facebook.github.io/react/">Reactjs</a> &ndash;so I will build it with that. That will require a RESTful API for my content.</p>
+         <p>Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML &ndash; no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.</p>
+<p>I really like <a href="https://pages.github.com/">github pages</a>. I <a href="https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">built my blog on it</a>, even though <a href="https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html">I host it myself</a>. Markdown is so easy, liquid is so easy. What isn&rsquo;t easy is dynamic lists of content. I want to learn <a href="https://facebook.github.io/react/">Reactjs</a> &ndash;so I will build a content listing with that. That will require a RESTful API for my content.</p>
 <h2 id="the-easy-way">The easy way</h2>
 <p>To be clear I didn&rsquo;t write this <a href="http://jekyllsnippets.com/excluding-jsonify-your-site/">snippet</a> &ndash;but only because someone else did. And working code wins.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>
@@ -202,6 +203,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>default.json
 </span></span><span style="display:flex;"><span>post.json
 </span></span></code></pre></div><p>I think these are better names.</p>
+<p>With this setup, any Jekyll blog now has a JSON listing endpoint and individual JSON post endpoints &ndash; all generated at build time with no plugins and no server-side dependencies. From here, building a React or vanilla JS front-end that consumes this API is straightforward. The content stays in markdown, the API stays in Liquid, and GitHub Pages serves it all for free.</p>
 
     </article>
 </div>

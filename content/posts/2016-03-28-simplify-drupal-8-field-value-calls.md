@@ -10,9 +10,7 @@ tags:
     - quarzack13
 ---
 
-Things change, it's a fact of life; even more so it's a fact of a web developer's life.
-
-In semantic versioned frameworks every new major version brings new api and discards the old apis. Like ripping off a band-aid, this is an excruciatingly painful experience that will eventually bring forward a less painful future. Thus, it has been with the change from Drupal 7 to Drupal 8.x.
+Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.
 
 # Get the title of a node
 
@@ -111,3 +109,5 @@ Xss::filter($title)
 It's important to remember that when dealing with a new version it's tempting to say, "This used to be easy and now it is hard."
 
 It only used to be easy because we knew how to do things without having to do too much research. Now things are hard --but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.
+
+The good news is that once you internalize the ```->get('field')->value``` pattern, it becomes second nature. One getter, one consistent API, regardless of field type or language. That is a real improvement over Drupal 7's ```$node->field_name[0][LANGUAGE_NONE]['value']``` guessing game.

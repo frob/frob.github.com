@@ -11,7 +11,9 @@ tags:
     - frontpage
 ---
 
-I really like [github pages](https://pages.github.com/). I [built my blog on it](https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html), even though [I host it myself](https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html). When friends and family ask for me to build them a site [I will point them to github pages](http://wapro.lbtech.org/). Markdown is so easy, liquid is so easy. What isn't easy is dynamic lists of content. A simple list of related content isn't as easy. Sure there are ways, but I want to learn [Reactjs](https://facebook.github.io/react/) --so I will build it with that. That will require a RESTful API for my content.
+Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML -- no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.
+
+I really like [github pages](https://pages.github.com/). I [built my blog on it](https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html), even though [I host it myself](https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html). Markdown is so easy, liquid is so easy. What isn't easy is dynamic lists of content. I want to learn [Reactjs](https://facebook.github.io/react/) --so I will build a content listing with that. That will require a RESTful API for my content.
 
 ## The easy way
 
@@ -171,3 +173,5 @@ post.json
 ```
 
 I think these are better names.
+
+With this setup, any Jekyll blog now has a JSON listing endpoint and individual JSON post endpoints -- all generated at build time with no plugins and no server-side dependencies. From here, building a React or vanilla JS front-end that consumes this API is straightforward. The content stays in markdown, the API stays in Liquid, and GitHub Pages serves it all for free.

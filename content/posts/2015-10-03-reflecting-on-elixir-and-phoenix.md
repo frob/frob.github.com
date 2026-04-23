@@ -13,9 +13,11 @@ snarktitle: The future is now
 ---
 
 
+Every developer eventually asks the question: what should I be learning next? I just got back from [ElixirConf](http://www.elixirconf.com), and this post is my attempt to answer that question for myself -- by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.
+
 ## The New Hotness
 
-I read a post recently that had the click bait title "Is Drupal Dying?" Ironically I read this while attending [ElixirConf](http://www.elixirconf.com). The basis of that post was clients asking for the <q>next</q> thing --expecting Drupal to be old and busted in five years.
+I read a post recently that had the click bait title "Is Drupal Dying?" Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the <q>next</q> thing --expecting Drupal to be old and busted in five years.
 
 I am at ElixirConf because I see great potential in Elixir, Erlang, and [Phoenix](http://www.phoenixframework.com). I expect it to be the next big thing and for it to help provide a scalable platform for highly available, highly scalable, and interactive / dynamic websites.
 
@@ -190,3 +192,7 @@ My opinion is that Drupal's biggest strength (and the root of its staying power)
 Drupal 8, from all I can see, *gives us more tools out of the box than any other site building platform*. This is a good time.
 
 For the longest time I thought Drupal's biggest problem was PHP --and I mostly still think that. The difference between now and 5 years ago is that PHP's development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real potential. PHP has always been really fast and it is still really fast. Big pipe is the <q>new thing</q> for PHP and it can work, things are possible. All of this gives me hope. It gives me hope for Drupal.
+
+## So where does this leave me?
+
+Elixir and Phoenix are worth learning. The benchmarks speak for themselves, the developer experience is excellent, and the fault-tolerance story is unlike anything in the PHP world. But Drupal is not dying -- it is adapting. For now, Phoenix earns a place in my toolbox for the kinds of problems it was built to solve: real-time, highly concurrent, connection-heavy applications. For content management, Drupal is still the answer. The best tools are the ones you pick for the right job.

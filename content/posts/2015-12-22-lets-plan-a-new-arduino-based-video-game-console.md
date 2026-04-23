@@ -9,6 +9,8 @@ tags:
 ---
 
 
+Modern game consoles are marvels of engineering, but they are also black boxes. You download a game, you press a button, it plays. There is nothing to open, nothing to tinker with, nothing for a kid to look at and say "I could build that." I want to change that -- with an open source, cartridge-based video game console built from Arduinos.
+
 ## WHY make a new old video game system!?!
 
 I saw this video.
@@ -70,4 +72,4 @@ As I said before my plan is to get this far enough along with proof of concepts 
  - An Arduino displaying stuff on a TV/Monitor
  - An Arduino getting input from an off the shelf game Controller
 
-I have seen articles where people have done each of these things independently with an Arduino. I hope to pull all this together.
+I have seen articles where people have done each of these things independently with an Arduino. The pieces exist. The challenge is pulling them together into something a kid can hold in their hands, load a cartridge into, and play. That is the project. If I get far enough along, maybe someone who knows more about digital electronics than I do will see this and want to help make it real.

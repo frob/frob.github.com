@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -73,7 +73,8 @@
             <span class="badge">frontpage</span>
             
         </div>
-         <p>Do you remember that time when you tried to find a Javascript library only to find the wrong Javascript library with the same name. Well that happened when I was looking for <a href="https://aframe.io">A-Frame</a>. Just so you know we are not talking about the slightly older MVC Javascript framework named AFrame; today, we are going to be talking about <a href="https://aframe.io">Mozilla&rsquo;s WebVR library A-Frame</a>.</p>
+         <p>What if you could build a VR experience with nothing but HTML tags? No game engine, no compiled binaries, no 30-minute tutorial before you see a cube on screen. That is what <a href="https://aframe.io">A-Frame</a> promises, and in this post I am going to put it through its paces &ndash; converting my old Three.js demo, loading 3D models, and building billboard sprites, all with markup and minimal JavaScript.</p>
+<p>Just so you know we are not talking about the slightly older MVC Javascript framework also named AFrame; today, we are going to be talking about <a href="https://aframe.io">Mozilla&rsquo;s WebVR library A-Frame</a>.</p>
 <h1 id="what-is-a-frame">What is <a href="https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-%E2%80%9Ca-frame%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D-or-%E2%80%9Caframevr%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D">A-Frame</a></h1>
 <p>A-Frame is an open-source web framework for building virtual reality experiences on the web. We can use A-Frame to build VR web page using only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and extensible, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.</p>
 <h2 id="how-to-use-a-frame">How to use A Frame</h2>
@@ -204,6 +205,8 @@
 <p>The usability of this cool new tech is all about what we do with it. I have given talks on A-Frame and the question is normally framed like this &ldquo;What can we do with it?&rdquo; And I respond I just showed you what it was meant to do. I bring this up to say, lets not parallax WebVR. It&rsquo;s cool, but if we don&rsquo;t use it the right way it will suck.</p>
 <h3 id="can-i-use-it">Can I use it?</h3>
 <p>Go checkout caniuse for WebGL and WebVR the browser support for A-Frame and the browser support for threejs.</p>
+<h2 id="wrap-up">Wrap up</h2>
+<p>A-Frame makes WebVR approachable. My 30-line Three.js example became 9 lines of custom HTML. Models, skyboxes, billboards, and animations all work with attributes instead of API calls. The entity-component-system architecture means it is extensible when markup is not enough. It is not a replacement for a full game engine, but for bringing VR to the web &ndash; especially for content creators who are more comfortable with HTML than with JavaScript &ndash; it is hard to beat. Build something, put it on a page, and hand someone a phone with a cardboard headset. That is the pitch, and it works.</p>
 
     </article>
 </div>

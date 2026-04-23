@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Frank Robert Anderson</title>
+    <link>https://www.frobiovox.com/tags/hugo/</link>
+    <description>Recent content in Hugo on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.frobiovox.com/tags/hugo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add a JSON API to Any Static Site Generator</title>
+      <link>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid>
+      <description>&lt;p&gt;Back in 2015 I wrote about &lt;a href=&#34;https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/&#34;&gt;adding a JSON API to my Jekyll blog&lt;/a&gt;. The idea was that if Jekyll can spit out HTML from Liquid templates, it can spit out JSON too. I got it working, but it involved manually comma-separating arrays with &lt;code&gt;forloop.last&lt;/code&gt; checks, nil guards for empty tags, and a Gulp task to copy posts into a separate API directory. It worked but it wasn&amp;rsquo;t pretty.&lt;/p&gt;&#xA;&lt;p&gt;This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

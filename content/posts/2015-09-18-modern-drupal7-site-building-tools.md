@@ -9,9 +9,11 @@ tags:
 ---
 
 
+With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don't. The module ecosystem for Drupal 7 is mature, battle-tested, and -- for site builders specifically -- more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.
+
 ## Why build a site with Drupal 7
 
-Drupal8 is nearly out making Drupal 7 look like it isn't an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.
+Drupal 8 is nearly out making Drupal 7 look like it isn't an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.
 
 # The Modules
 
@@ -140,4 +142,8 @@ drush en context views eva block_class field_formatter_class fences elements vie
 ```
 If you do not want to have to confirm over and over again, then you will probably want to pass the ```-y``` flag to the drush command.
 
-Play with these modules before installing on production. :P
+Play with these modules before installing on production.
+
+## Final thoughts
+
+No single module on this list is revolutionary. The power comes from combining them. Title and Fences give you semantic markup. Field Group and Display Suite give you layout control. Context gives you conditional logic. Bean gives you fieldable blocks. Stack them together and you have a site-building toolkit that can handle complex designs without writing a single line of custom module code. Drupal 7 is not the new hotness, but it is a platform where the tools have had time to mature -- and that maturity counts for a lot.

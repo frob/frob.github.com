@@ -2,7 +2,6 @@
 title: css less sass oocss drycss bem front end css design paradigm smacss down
 date: "2013-11-21"
 slug: css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down
-canonical: http://www.kwallcompany.com/blog/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down
 tags:
     - drupal
     - kwallcompany
@@ -102,4 +101,4 @@ tags:
 <p>Keeping with the spirit of DRY I will not go into great detail about it. The reason is that it follows nearly the exact same principles as the above SMACSS and OOCSS. The only difference is that ID selectors are fine and naming convention should be based on content.</p>
 <h2>Who Wins?</h2>
 <p>SMACSS.</p>
-<p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. What does this mean for Drupal development today? I will write another article explaining how to apply SMACSS to Drupal 7 Development soon.</p>
+<p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>

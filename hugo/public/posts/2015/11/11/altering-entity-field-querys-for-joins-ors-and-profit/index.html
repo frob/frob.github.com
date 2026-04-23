@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -77,7 +77,8 @@
             <span class="badge">quarzack13</span>
             
         </div>
-         <p>One of my favorite features from Drupal 7 is the <a href="https://api.drupal.org/api/drupal/includes!entity.inc/class/EntityFieldQuery/7">EntityFieldQuery</a>. The <a href="https://www.phase2technology.com/blog/building-energy-gov-without-views/">power of the EntityFieldQuery</a> is a well known thing, and I a have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&rsquo;s hook and alter architecture.</p>
+         <p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
+<p>I have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&rsquo;s hook and alter architecture.</p>
 <h2 id="simple-entityfieldquery">Simple EntityFieldQuery</h2>
 <p>For our example we will start with a simple EntityFieldQuery for getting a list of nodes.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
@@ -118,7 +119,8 @@
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">condition</span>($or);
 </span></span></code></pre></div><p>There, we are done, right? Nope. We may think that we are, however, if we ran that code we would get a PDO exception. Why? Because we are not doing any propertyConditions on the original EntityFieldQuery. Drupal is smart enough to know that if it isn&rsquo;t using the node table in the EFQ that it doesn&rsquo;t need to <code>JOIN</code> it.</p>
-<p>To fix this, go back up to the original EntityFieldQuery and add this line <code>$query-&gt;propertyCondition('status', 1);</code>. Awesome, now our code will execute and everything is sun shine and rainbows.</p>
+<p>To fix this, go back up to the original EntityFieldQuery and add this line <code>$query-&gt;propertyCondition('status', 1);</code>. This forces the node table into the query so our alter hook can reference <code>node.title</code>.</p>
+<p>To recap: tag your EntityFieldQuery, attach metadata with <code>addMetaData()</code>, implement <code>hook_query_TAG_alter()</code> to add your <code>OR</code> conditions, and make sure the base table is joined by including at least one <code>propertyCondition</code>. It is not obvious, but once you know the pattern it opens up EntityFieldQuery for nearly any query you need to build.</p>
 
     </article>
 </div>

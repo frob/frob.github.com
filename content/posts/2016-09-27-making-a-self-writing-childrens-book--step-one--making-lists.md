@@ -132,23 +132,3 @@ Now that we have our story structure defined we can organize our BNF table.
 | Bodypart  | Noun (from list of body parts)                        |
 
 I left the generic sentence in the BNF table because it might be useful later as a filler sentence definition.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div></div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -82,9 +82,9 @@
             <span class="badge">quarzack13</span>
             
         </div>
-         <p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>.</p>
-<p>I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
-<p>My use case was a semi-typical one: have the input from one select list affect the options in another select list. Here is my wireframe: [insert wireframe here]</p>
+         <p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
+<p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
+<p>My use case was a semi-typical one: have the input from one select list affect the options in another select list.</p>
 <p>This could be done in any number of ways including:</p>
 <ul>
 <li>ahah (or ajax)</li>
@@ -132,7 +132,8 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $form;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>That is all there is to it. By adding a single <code>onChange</code> attribute through the form API&rsquo;s <code>#attributes</code> array, we get auto-submission without the overhead of <code>#ajax</code>. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.</p>
+
     </article>
 </div>
 

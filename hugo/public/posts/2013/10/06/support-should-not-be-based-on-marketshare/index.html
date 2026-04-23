@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -75,9 +75,11 @@
             <span class="badge">frontpage</span>
             
         </div>
-         <p>In web development IE has been the bane of front-end developers everywhere. For a long time it was IE6, and now it is IE8/9 that give the most grief. Every browser has its little issues here and there. Little quirks that make us developers need to test in every conceivable situation. Specifically it is that browsers do things their own way (for better or worse); they may or may not conform to standards and they may do somethings that are completely non-standard.</p>
+         <p>The question &ldquo;which browsers do we support?&rdquo; comes up on every project, and the answer is almost always based on market share. I think that is the wrong approach. Here is why.</p>
+<p>In web development IE has been the bane of front-end developers everywhere. For a long time it was IE6, and now it is IE8/9 that give the most grief. Every browser has its little issues here and there. Little quirks that make us developers need to test in every conceivable situation. Specifically it is that browsers do things their own way (for better or worse); they may or may not conform to standards and they may do somethings that are completely non-standard.</p>
 <p>As web developers we have no control over how anything we ship will be consumed. It could be viewed on a large Apple Cinema display or on an iPhone or any number of thousand Android devices &ndash;or heaven forbid a screen reader. So if a site is consumed across four browsers (IE, Firefox, Safari, and Chrome) and we have to support multiple versions of those browsers (IE7/8/9/10/11, Firefox Latest, Safari OSX-7/8/iOS-7-8, Firefox Latest, Chrome Latest and Mobile) and you add in the default of 4 breakpoints per. That means that fully testing these devices would mean QA across: 12 environments on 4 breakpoints and at least 4 OSs (Windows, OSX, Android, iOS) (and yes I know that not all these browsers work on all the OSs) that would make no less than 12 * 4 * 4 = 192 testable environments at launch. This means two things are important, graceful degradation  of features and graceful degradation of design (my PM told me not to call it Graceful Degradation but rather Progressive Enhancement). The way web browsers (and other web enabled devices) work is they make their best effort to display content in the way that it was intended. The problem is that some web portals are more effective at this than others.</p>
 <p>So what is “<del>graceful degradation</del> Progressive Enhancement?” This is attempting to control the degradation in a meaningful way. The largest part of this in the management of expectations of the client. The current model of &ldquo;we fully support these browsers based solely on market share&rdquo; is a bad idea. Some things are so cost prohibitive that they are basically impossible on some browsers and that shouldn&rsquo;t mean that we shouldn&rsquo;t do them on the browsers that do support it. There are tools that help but all come at a cost. Usually a cost of performance. Sure this makes a site look more like the Photoshop/Fireworks/Sketch design, but it takes a toll and normally it will add small delays and make a site feel sluggish.</p>
+<p>The bottom line: support should be based on what features a browser can handle, not on how many people use it. Build for capability, enhance progressively, and let the browsers do what they were designed to do &ndash; their best.</p>
 
     </article>
 </div>
