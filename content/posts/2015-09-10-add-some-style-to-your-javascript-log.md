@@ -1,7 +1,7 @@
 ---
 title: Add Some Style to Your JavaScript Log
 date: "2015-09-10"
-description: Style can be passes as a parameter to the console.log function.
+description: Style can be passed as a parameter to the console.log function.
 slug: add-some-style-to-your-javascript-log
 tags:
     - frontpage
@@ -28,7 +28,7 @@ Which lead to the question "how did he do that?"
 
 # How <span title="The colorful console message">**_that_**</span> is done.
 
-I you are not aware already, there are quite a few methods available in the global ```console``` object. If you are not familure I recommend the [Mozilla Developer Network pages on ```console```](https://developer.mozilla.org/en-US/docs/Web/API/consol). Some methods of importance are:
+I you are not aware already, there are quite a few methods available in the global ```console``` object. If you are not familiar I recommend the [Mozilla Developer Network pages on ```console```](https://developer.mozilla.org/en-US/docs/Web/API/consol). Some methods of importance are:
 
  - log (_duh_)
  - assert
@@ -36,7 +36,7 @@ I you are not aware already, there are quite a few methods available in the glob
  - error
  - count
 
- These are old news and I wont go into them in detail here. Just look them up on the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/consol).
+ These are old news and I won't go into them in detail here. Just look them up on the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/consol).
 
 <a id="howitdo"></a>
 

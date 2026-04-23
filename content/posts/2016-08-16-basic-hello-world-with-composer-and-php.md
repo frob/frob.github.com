@@ -161,9 +161,9 @@ use HelloWorld\Greetings;
 echo Greetings::sayHelloWorld();
 ```
 
-Like I said before, autoloading and composer give us the handy ```use``` and ```namespace``` keywords. It is beyond the scope of this article to discus [how the autoloader works](http://phpenthusiast.com/blog/how-to-autoload-with-composer), just that it does and how to use it.
+Like I said before, autoloading and composer give us the handy ```use``` and ```namespace``` keywords. It is beyond the scope of this article to discuss [how the autoloader works](http://phpenthusiast.com/blog/how-to-autoload-with-composer), just that it does and how to use it.
 
-Remember the directory stucture ```src/HelloWorld``` and the require statement in the ```composer.json``` file? In our ```composer.json``` we told the autoloader to expect a psr-0 directory structure and that our code would be in ```src```. Then we declared the ```namespace HelloWorld;``` in our ```greetings.php``` file.
+Remember the directory structure ```src/HelloWorld``` and the require statement in the ```composer.json``` file? In our ```composer.json``` we told the autoloader to expect a psr-0 directory structure and that our code would be in ```src```. Then we declared the ```namespace HelloWorld;``` in our ```greetings.php``` file.
 
 Now in our ```test.php``` file we are *using* (with the ```use``` keyword) the ```HelloWorld\Greetings``` namespace and object in our test to call the ```Greetings::sayHelloWorld();``` static method.
 
@@ -230,7 +230,7 @@ There is one more thing that we need to do before we can use the *PHP_Timer* cla
 
 Here we are adding the ```classname``` keyword and then listing the "PHP_Timer" class as member with "src/" as the value. I got this value because inside the ```vendor/php-timer``` directory is the *PHP_Timer* class, without any ```namespace``` keyword. Due to the lack of a namespace we just have to tell the autoloader that when we declare ```use PHP_Timer;``` in our php file that we need the *PHP_Timer* class loaded.
 
-> I fingured out what to do by looking at packages that used PHP_Timer. It can be confusing, [Read composer namespaces in five minutes to learn more about how composer uses namespaces](https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/).
+> I figured out what to do by looking at packages that used PHP_Timer. It can be confusing, [Read composer namespaces in five minutes to learn more about how composer uses namespaces](https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/).
 
 Now that we have added the classname to the composer file we can start to use it in our greetings.php file. Lets add the some use of the php-timer class to the *Greetings* class.
 

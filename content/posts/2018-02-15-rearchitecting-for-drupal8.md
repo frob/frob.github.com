@@ -1,7 +1,7 @@
 ---
 title: Rearchitecting for Drupal 8; a DrupalCon Session
 date: "2018-02-15"
-description: This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effor possible was put into trascribing it from presentation format to a web page.
+description: This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.
 slug: rearchitecting-for-drupal8
 tags:
     - rant
@@ -10,7 +10,7 @@ tags:
 
 # Rearchitecting for Drupal 8
 
-This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effor possible was put into trascribing it from presentation format to a web page.
+This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.
 
 ## In case you are wondering
 
@@ -37,12 +37,12 @@ We develop solutions for our clients including strategic consulting,
     solutions such as apps, web apps, and websites to help improve the
     process and practice of teaching and learning.
 
-One such site is a custom LMS for our clien New Perspectives Online.
+One such site is a custom LMS for our client New Perspectives Online.
 
 ![New Perspectives Online
 Screenshot](/images/p2s2-screens/screenshot.png)
 
-## Why do [Drupal 8 Exparamentation]?
+## Why do [Drupal 8 Experimentation]?
 
 -   The big question is D8 or D7, this is a question that I have to ask
     myself every time I am asked to do an estimate.
@@ -133,7 +133,7 @@ Entities are things in Drupal; things do not have to be nodes.
 
 -   Entities are things in Drupal, starting in drupal 7 we got content
     entities.
--   In Drupal 6 custom things where typically nodes or totally custom
+-   In Drupal 6 custom things were typically nodes or totally custom
 -   In Drupal 7 the entity-field system brought the CCK into core
     without making everything a node
 -   Drupal 8 has a fully fledged entity api which is derived from the
@@ -330,7 +330,7 @@ Arguably, the most important part of a site.
 #### 13 paragraphs types and 1 content type
 
 In the end our site had 13 paragraphs item bundles for 1 content
-    type and three where interactive.
+    type and three were interactive.
 
 -   Text response
 -   Checkbox list
@@ -354,8 +354,8 @@ Everything can be *combined* to form larger whole components.
 
 ![](/images/p2s2-screens/dinn-7-drag-2.gif "A seriries of components with a saving and sharing text response box at the end.")
 
--   Four where used for custom inter and intra module navigation
--   The rest where videos, image, and text.
+-   Four were used for custom inter and intra module navigation
+-   The rest were videos, image, and text.
 -   all can be combined to form larger whole components.
 
 #### Linking the EntityForm Submission to the Paragraph item
@@ -373,9 +373,9 @@ Linking the EntityForm Submission to the Paragraph item, each
 
 We put this all together, using Drupal's ingenious render array
         system that doesn't care if it is displaying a form, or
-        content, or anything themable, we where able to HULK smash the
+        content, or anything themable, we were able to HULK smash the
         entityforms into the paragraphs item displays and save any users
-        response and know what they where responding to and who was
+        response and know what they were responding to and who was
         responding to it.
 
 #### Evaluation
@@ -395,7 +395,7 @@ Our initial expectation was that we would have to build out all the
     content in a spreadsheet and at one point I was building a migration
     to import all the content from a CSV. Choosing the Paragraphs module
     gave our content editors an interface that allowed them to build the
-    content in the site as we where adding functionality.
+    content in the site as we were adding functionality.
 
 ### Custom Development
 
@@ -525,7 +525,7 @@ Blocks still have an Achilles heel in that they are both content
     and configuration. The content lives in the database and isn't
     easy to export and sync and the placement of the block is
     configuration and is easy to sync. This can lead to embarrassing
-    deployment gaffs. Where the placement of a block that doesn't
+    deployment gaffes. Where the placement of a block that doesn't
     exist is possible. [Here is a good article about avoiding that](http://valuebound.com/resources/blog/how-to-sync-blocks-between-different-environments-a-drupal-8-website).
 
 #### Display Modes
@@ -613,7 +613,7 @@ room](http://68.media.tumblr.com/06a363a56c82b78b55dd9dc52df72174/tumblr_o2k1xwm
 
 **Big problem with my re-architecture exercise.**
 
-EntityForm is not supported on Drupal 8.There is a discussion about whither or not this module is necessary. I of corse believe the module is necessary. However, this doesn't make the module stable today. The module works well enough for this experiment, but if this where a full client project we would have to explore some options.
+EntityForm is not supported on Drupal 8.There is a discussion about whether or not this module is necessary. I of course believe the module is necessary. However, this doesn't make the module stable today. The module works well enough for this experiment, but if this were a full client project we would have to explore some options.
 
 -   Find an alternative
   -   Custom Entities are an option
@@ -692,10 +692,10 @@ So we do have an elephant, but it is just a baby elephant.
 
 ## Custom Development
 
-This is where the largest changes where made.
+This is where the largest changes were made.
 
 -   Custom development
--   This is where the largest changes where made, but maybe not where it
+-   This is where the largest changes were made, but maybe not where it
     was expected.
 
 ### Not Much
@@ -734,7 +734,7 @@ But all good!
     form builder from the entity forms module in order to display entity
     forms programatically. This was likely due to the incomplete nature
     of the entity api in Drupal 7.
--   In Drupal 8 the entity api is far more flushed out. We still use
+-   In Drupal 8 the entity api is far more fleshed out. We still use
     Entity Field Queries to get the EntityForm Submission for the
     current user and the current paragraph revision, but this time
     Drupal has an api for creating the empty EntityForm submission

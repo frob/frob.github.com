@@ -31,7 +31,7 @@ Procedural conversation generation is hard and it can have unforeseen results. E
 
 ## Book structure
 
-The structure of these book is basically all the same (with some out-layers that we will ignore for now). Here is a sample book that I have just pulled out of my <span title="With the subject matter being children's book">(censored)</span>.
+The structure of these book is basically all the same (with some outliers that we will ignore for now). Here is a sample book that I have just pulled out of my <span title="With the subject matter being children's book">(censored)</span>.
 
 1. This is Tom.
 1. Tom has a hat.

@@ -9,7 +9,7 @@ tags:
     - tutorial
 ---
 
-Git is a great tool for managing source control. Git flow is a great workflow for working with git branches and tags. Semantic versioning is a great way for labeling and cataloging version dependence. If we put them together then we will have a dependency system that is reenforced by workflow that is reenforced by a dependency system. This is a circular dependency that is good.
+Git is a great tool for managing source control. Git flow is a great workflow for working with git branches and tags. Semantic versioning is a great way for labeling and cataloging version dependence. If we put them together then we will have a dependency system that is reinforced by workflow that is reinforced by a dependency system. This is a circular dependency that is good.
 
 # Semantic git-flow
 
@@ -17,7 +17,7 @@ Git is a great tool for managing source control. Git flow is a great workflow fo
 
 [skip TLDR;](#tldr)
 
-### Sematic Versioning
+### Semantic Versioning
 
 At a high-level Semantic Versioning aims to solve dependency issues by creating a standard versioning system that allows anyone to understand what has changed in a new version.
 

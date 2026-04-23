@@ -101,7 +101,7 @@ This is much easier than having to sync up textures and position on 5 separate q
 
 ### Billboards and custom components
 
-Unfortunately, A-Frame doesn't support billboard components out-of-the-box. But it is built on an [enitty-component-system pattern](https://aframe.io/docs/0.3.0/docs/core) (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a [random billboard component from github](https://github.com/blairmacintyre/aframe-look-at-billboard-component).
+Unfortunately, A-Frame doesn't support billboard components out-of-the-box. But it is built on an [entity-component-system pattern](https://aframe.io/docs/0.3.0/docs/core) (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a [random billboard component from github](https://github.com/blairmacintyre/aframe-look-at-billboard-component).
 
 I am not going to go through how to create new components or even include the source code here. Take a look for yourself, it is only 165 lines and it really isn't all that complicated. Maybe if I ever need to write a new custom component I will do a writeup about it.
 
@@ -123,13 +123,13 @@ Here is the important part.
 <a-entity billboard id="ninja1" position="0 1 0" geometry="primitive: plane; height: 1.5; width:1;" material="src: #scorpion;opacity:.8" ></a-entity>
 ```
 
-[Full bullboard example code](https://www.github.com/frob/aframeexamples/master/example-billboard.html).
+[Full billboard example code](https://www.github.com/frob/aframeexamples/master/example-billboard.html).
 
 The billboard custom component allows us to create a normal entity and just use an attribute ```billboard``` to tell A-Frame that this entity is a billboard. There are many custom A-Frame components, links are available on the A-Frame component docs page.
 
 #### Assets
 
-This is as good a time as any to talk about asset management in A-Frame (you might have noticed the ```a-asset``` tag in the last example). Simple scenes can handle assets in a simple manner --with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then [A-Frame's asset management system](https://aframe.io/docs/0.3.0/core/asset-management-system.html) comes in very handy. Here is an example of both ways of [loading assets ripped ripped straight from the docs](https://aframe.io/docs/0.3.0/primitives/a-image.html).
+This is as good a time as any to talk about asset management in A-Frame (you might have noticed the ```a-asset``` tag in the last example). Simple scenes can handle assets in a simple manner --with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then [A-Frame's asset management system](https://aframe.io/docs/0.3.0/core/asset-management-system.html) comes in very handy. Here is an example of both ways of [loading assets ripped straight from the docs](https://aframe.io/docs/0.3.0/primitives/a-image.html).
 
 ```html
 <a-assets>

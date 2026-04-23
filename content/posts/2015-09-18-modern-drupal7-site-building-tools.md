@@ -11,7 +11,7 @@ tags:
 
 ## Why build a site with Drupal 7
 
-Drupal8 is nearly out making Drupal 7 look like it isn't an appealing choice. However, Drupal 7 is still a contender for the conviences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.
+Drupal8 is nearly out making Drupal 7 look like it isn't an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.
 
 # The Modules
 
@@ -55,13 +55,13 @@ Very simple, put classes on blocks.
 
 ## [Menu Attributes](https://www.drupal.org/project/menu_attributes)
 
-This modules adds attributes to menu items and menu links. This means that there is no more needing to write css rules that are based on Drupal's mlid based class.
+This module adds attributes to menu items and menu links. This means that there is no more needing to write css rules that are based on Drupal's mlid based class.
 
 <aside class="inline">Why is theming off of a system generated mlid based class bad. Because this can change from install to install. Just like theming off of node id, theming off of menu link id is a bad idea.</aside>
 
 ## [View Field](https://www.drupal.org/project/viewfield)
 
-Not to be confused with [Views Field](https://www.drupal.org/project/views_field), the [View Field](https://www.drupal.org/project/viewfield) Module allows site-builders to add fields to entities that allow the content editor to display views in fields. These views are set per piece of content. This means there can be a basic page content type that can have all the things that a page shoule have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing displayed.
+Not to be confused with [Views Field](https://www.drupal.org/project/views_field), the [View Field](https://www.drupal.org/project/viewfield) Module allows site-builders to add fields to entities that allow the content editor to display views in fields. These views are set per piece of content. This means there can be a basic page content type that can have all the things that a page should have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing displayed.
 
 ## [Entity Views Attach](https://www.drupal.org/project/eva)
 
@@ -71,7 +71,7 @@ Unlike [View Field](https://www.drupal.org/project/viewfield), this module is al
 
 Bean stands for <q>Block Entities Aren't Nodes.</q> This is a stab at the [other way of doing this](https://www.drupal.org/project/nodeblock).
 
-Block's are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features --because blocks are'nt entities and don't have fields.
+Block's are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features --because blocks aren't entities and don't have fields.
 
 Beans can have fields, because a Bean is a new type of entity, a block entity. This also gives us a better experience for content editors that will be building blocks. Content editors are given revisions, and a block listing page that works just like the content listing page. This means we can have views of blocks too.
 
@@ -95,11 +95,11 @@ This module does a really cool thing. It ties Drupal's css attaching with a less
 
 ## [Bootstrap Theme](https://www.drupal.org/project/bootstrap)
 
-Bootstap is a fine front-end framework, and if you are building a site for boostrap developers then this is the place to go. I like to use [Bootstrap Library](https://www.drupal.org/project/bootstrap_library) for actually adding the Boostrap code.
+Bootstrap is a fine front-end framework, and if you are building a site for Bootstrap developers then this is the place to go. I like to use [Bootstrap Library](https://www.drupal.org/project/bootstrap_library) for actually adding the Boostrap code.
 
 ## [jQuery Update](https://www.drupal.org/project/jquery_update)
 
-Drupal 7 is not the new hotness. It is the old standard. As such the libraries that where once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.
+Drupal 7 is not the new hotness. It is the old standard. As such the libraries that were once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.
 
 To this end, I use jQuery update. It is simple, it allows the site-builder to pick a version of jQuery to use with a theme. It also facilitates loading that version from a CDN and the loading of the jQuery migrate module.
 
@@ -113,7 +113,7 @@ I recommend creating a sub-theme of this theme so that further customization can
 
 ## [Ember Support](https://www.drupal.org/project/ember_support)
 
-Does some stuff that ember cannot due in the theme space.
+Does some stuff that ember cannot do in the theme space.
 
 ## [Coffee](https://www.drupal.org/project/coffee)
 
@@ -138,6 +138,6 @@ drush dl context views eva block_class field_formatter_class fences elements vie
 ```bash
 drush en context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
 ```
-If you do not what to have to confirm over and over again, then you will probably want to pass the ```-y``` flag to the drush command.
+If you do not want to have to confirm over and over again, then you will probably want to pass the ```-y``` flag to the drush command.
 
 Play with these modules before installing on production. :P

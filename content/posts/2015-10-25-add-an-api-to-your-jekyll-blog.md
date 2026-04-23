@@ -15,7 +15,7 @@ I really like [github pages](https://pages.github.com/). I [built my blog on it]
 
 ## The easy way
 
-To be clear I didn't write this [snippit](http://jekyllsnippets.com/excluding-jsonify-your-site/) --but only because someone else did. And working code wins.
+To be clear I didn't write this [snippet](http://jekyllsnippets.com/excluding-jsonify-your-site/) --but only because someone else did. And working code wins.
 
 ```json
 
@@ -38,7 +38,7 @@ To be clear I didn't write this [snippit](http://jekyllsnippets.com/excluding-js
 
 ```
 
-With this snippit (added for convenience) we get most of the way there. My plan is to modify it a bit.
+With this snippet (added for convenience) we get most of the way there. My plan is to modify it a bit.
 
 ## What I would do, or the not so easy way
 
@@ -111,13 +111,13 @@ This gives me a single listing page. Now we need posts.
 
 ## Building the posts. NPM to the rescue (maybe)
 
-Not npm exactly, Gulp instead saved the day. Ever since I moved my utility functions to Gulp I have been a fan. It is very well suited for building small repeatable tasks. So I add a new Gulp task to the gulpfule.
+Not npm exactly, Gulp instead saved the day. Ever since I moved my utility functions to Gulp I have been a fan. It is very well suited for building small repeatable tasks. So I add a new Gulp task to the gulpfile.
 
 ```bash
 gulp build-api
 ```
 
-With this command I duplicate the content in the _post directory over to the api/[version]/v01/posts directory. Thow in a little gulp piping to do a string replace (this is to change the layout template from html to json. This is the whole gulp command.
+With this command I duplicate the content in the _post directory over to the api/[version]/v01/posts directory. Throw in a little gulp piping to do a string replace (this is to change the layout template from html to json. This is the whole gulp command.
 
 ```javascript
 gulp.task('build-api', function() {
@@ -163,7 +163,7 @@ layout: json_default
 
 ## Footnotes
 
-Jekyll complains about using ```ruby nill``` for a layout type. It doesn't break, but I also create two layout templates json_default.json and json.json. Now that it is working, I will rename the templates to something abit more meaningful:
+Jekyll complains about using ```ruby nill``` for a layout type. It doesn't break, but I also create two layout templates json_default.json and json.json. Now that it is working, I will rename the templates to something a bit more meaningful:
 
 ```bash
 default.json

@@ -1,7 +1,7 @@
 ---
 title: A Suggested Order for Watching TOS with Your Kids
 date: "2019-12-16"
-description: Thirteen essential episodes of Star Trek: The Original Series, picked and ordered by a coworker who knows his Trek. A curated list for introducing your kids to the franchise.
+description: "Thirteen essential episodes of Star Trek: The Original Series, picked and ordered by a coworker who knows his Trek. A curated list for introducing your kids to the franchise."
 slug: startrek-tos-order
 ---
 
