@@ -2,7 +2,6 @@
 title: Creating Auto Submitting Forms with Drupal's Form API
 date: "2013-11-26"
 slug: creating-auto-submitting-forms-with-drupal-s-form-api
-canonical: http://www.kwallcompany.com/blog/creating-auto-submitting-forms-drupals-form-api
 tags:
     - drupal
     - kwallcompany
@@ -10,11 +9,11 @@ tags:
     - quarzack13
 ---
 
-If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>.
+Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an ```#ajax``` handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.
 
-I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.
+If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.
 
-My use case was a semi-typical one: have the input from one select list affect the options in another select list. Here is my wireframe: [insert wireframe here]
+My use case was a semi-typical one: have the input from one select list affect the options in another select list.
 
 This could be done in any number of ways including:
 
@@ -76,3 +75,5 @@ function people_filter_form($form, &$form_state) {
   return $form;
 }
 ```
+
+That is all there is to it. By adding a single ```onChange``` attribute through the form API's ```#attributes``` array, we get auto-submission without the overhead of ```#ajax```. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.

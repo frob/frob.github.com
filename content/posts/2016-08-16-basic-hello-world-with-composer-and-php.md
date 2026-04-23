@@ -12,7 +12,9 @@ tags:
 
 # Getting started with composer
 
-I want this to be an introduction to using [Composer][3]. If you are looking for more information about using [Drupal][1] with [Composer][3] then you should checkout the [official composer facade doc page](https://www.drupal.org/node/2718229) on drupal.org.
+If you write PHP and you are not using [Composer][3], you are managing dependencies by hand -- and that means you are doing more work than you need to. Composer handles autoloading, dependency resolution, and versioning so you do not have to. This post walks through a complete Hello World project from ```composer init``` to running tests, so you can see how all the pieces fit together.
+
+If you are looking for more information about using [Drupal][1] with [Composer][3] then you should checkout the [official composer facade doc page](https://www.drupal.org/node/2718229) on drupal.org.
 
 I will *not* be talking about publishing to [Packagist][2]. My php is nearly always for [Drupal][1], and as such, if I publish anything it will most likely be to a project on [drupal.org][1]. In the end I will philosophize about [Drupal][1] and [Composer][3], but we will start with the [composer][3] basics.
 

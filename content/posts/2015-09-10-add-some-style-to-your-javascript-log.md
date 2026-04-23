@@ -13,7 +13,10 @@ assets:
         - /assets/js/2015-09-10-colorfulllog.js
 ---
 
-<a href="#howitdo">Skip the fluff</a>
+Did you know that ```console.log``` can render styled text? Colors, drop shadows, custom fonts -- all in your browser's developer console. This post shows you how it is done and what it looks like across browsers.
+
+<a href="#howitdo">Skip to the how-to</a>
+
 ## Backstory
 
 Anytime I want to show off what the web can do with a simple blog I have to pull up [this awesome site](http://acko.net). I was on [A Very Cool Site about Hackery, Math &amp; Design](http://acko.net/), and the question was asked "how did he do that?"
@@ -70,3 +73,5 @@ In the console. From the screen shots below you will see that this works will al
 
 #### Appendix
 This doesn't work in Edge.
+
+Styled console output is a small thing, but it is useful for making important debug messages stand out in a noisy log. Library authors use it to brand their console output, and you can use it to highlight warnings or status messages during development. The ```%c``` format specifier is the key -- everything after it gets the CSS you pass as the next argument.

@@ -3,7 +3,6 @@ title: WebGL with three.js
 date: "2014-11-15"
 description: Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then.
 slug: WebGL-with-threejs
-canonical: http://www.kwallcompany.com/blog/webgl-threejs
 tags:
     - threejs
     - kwallcompany
@@ -15,7 +14,9 @@ assets:
         - //cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js
         - /assets/js/2014-11-15-webgl.js
 ---
-Everything is moving away from the compiled native app and over to a more naturally cross platform ehh, platform: the web browser. While this has the advantage of (those not using IE) to have the same experience no matter what platform the site (henceforth to be known as the webapp) is running on. This does still have some limitations. One relatively new api that has come out of this is WebGL
+There is a spinning green cube somewhere on this page. It is not a video, it is not a gif -- it is being rendered in real-time by your browser's GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.
+
+Everything is moving away from the compiled native app and over to the web browser. This has the advantage of giving users (those not using IE) the same experience no matter what platform the webapp is running on. One relatively new api that has come out of this shift is WebGL.
 
 <div id="screen-wrapper"></div>
 
@@ -150,3 +151,7 @@ Once everything is defined then we simply add everything to the scene. Fog is a 
 ## One more thing
 
 One more thing is required to make the scene update. If the scene had no movement then there would be no point in making it use realtime hardware processing. By creating the render function and then calling that function with requestAnimationFrame and renderer.render we are creating the game loop and allowing updates to occur. This is why the cube is spinning.
+
+## Where to go from here
+
+That is all it takes to get a 3D scene running in a browser. A scene, a camera, a renderer, some geometry with a material, a light or two, and a render loop. Three.js handles the boilerplate so you can focus on what you want to build. From here, try swapping in different geometries, adding textures, or loading a real model. The [Three.js documentation](http://threejs.org/docs/) and [examples page](http://threejs.org/examples/) are the best next steps.

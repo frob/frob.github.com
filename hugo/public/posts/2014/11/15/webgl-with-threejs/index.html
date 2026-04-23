@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -84,7 +84,8 @@
             <span class="badge">frontpage</span>
             
         </div>
-         <p>Everything is moving away from the compiled native app and over to a more naturally cross platform ehh, platform: the web browser. While this has the advantage of (those not using IE) to have the same experience no matter what platform the site (henceforth to be known as the webapp) is running on. This does still have some limitations. One relatively new api that has come out of this is WebGL</p>
+         <p>There is a spinning green cube somewhere on this page. It is not a video, it is not a gif &ndash; it is being rendered in real-time by your browser&rsquo;s GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.</p>
+<p>Everything is moving away from the compiled native app and over to the web browser. This has the advantage of giving users (those not using IE) the same experience no matter what platform the webapp is running on. One relatively new api that has come out of this shift is WebGL.</p>
 <div id="screen-wrapper"></div>
 <p><a href="http://www.khronos.org/webgl/wiki/Main_Page" target="_blank">WebGL </a>is a way for web developers to directly access the <a href="http://www.opengl.org/" target="_blank">OpenGL </a>apis. WebGL has shown some remarkable adoption over the past few years and I have to think this is due to it being based on the very stable open apis from OpenGL. If you have used OpenGL (or any 3D programming) there is a lot to do before anything can be rendered to the screen. I am not talking about art assets either, I am talking about templated boilerplate code that makes this stuff very tedious to start with. Luckily there are lots of Javascript people writing libraries so I don&rsquo;t have to rewrite the same boiler-plate code over and over again.</p>
 <h2 id="enter-threejs">Enter Three.js</h2>
@@ -192,6 +193,8 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>();
 </span></span></code></pre></div><h2 id="one-more-thing">One more thing</h2>
 <p>One more thing is required to make the scene update. If the scene had no movement then there would be no point in making it use realtime hardware processing. By creating the render function and then calling that function with requestAnimationFrame and renderer.render we are creating the game loop and allowing updates to occur. This is why the cube is spinning.</p>
+<h2 id="where-to-go-from-here">Where to go from here</h2>
+<p>That is all it takes to get a 3D scene running in a browser. A scene, a camera, a renderer, some geometry with a material, a light or two, and a render loop. Three.js handles the boilerplate so you can focus on what you want to build. From here, try swapping in different geometries, adding textures, or loading a real model. The <a href="http://threejs.org/docs/">Three.js documentation</a> and <a href="http://threejs.org/examples/">examples page</a> are the best next steps.</p>
 
     </article>
 </div>

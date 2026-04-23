@@ -12,7 +12,9 @@ tags:
 
 
 
-One of my favorite features from Drupal 7 is the [EntityFieldQuery](https://api.drupal.org/api/drupal/includes!entity.inc/class/EntityFieldQuery/7). The [power of the EntityFieldQuery](https://www.phase2technology.com/blog/building-energy-gov-without-views/) is a well known thing, and I a have written about [extending EntityFieldQueries with subqueries](https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html) before. This time I will go into extending the query as a query object, using Drupal's hook and alter architecture.
+EntityFieldQuery is powerful, but it has a well-known limitation: no ```OR``` conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck -- unless you know about query tags and ```hook_query_TAG_alter()```. This post shows how to break out of EntityFieldQuery's constraints by altering the underlying database query directly.
+
+I have written about [extending EntityFieldQueries with subqueries](https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html) before. This time I will go into extending the query as a query object, using Drupal's hook and alter architecture.
 
 ## Simple EntityFieldQuery
 
@@ -83,4 +85,6 @@ $query->condition($or);
 
 There, we are done, right? Nope. We may think that we are, however, if we ran that code we would get a PDO exception. Why? Because we are not doing any propertyConditions on the original EntityFieldQuery. Drupal is smart enough to know that if it isn't using the node table in the EFQ that it doesn't need to ```JOIN``` it.
 
-To fix this, go back up to the original EntityFieldQuery and add this line ```$query->propertyCondition('status', 1);```. Awesome, now our code will execute and everything is sun shine and rainbows.
+To fix this, go back up to the original EntityFieldQuery and add this line ```$query->propertyCondition('status', 1);```. This forces the node table into the query so our alter hook can reference ```node.title```.
+
+To recap: tag your EntityFieldQuery, attach metadata with ```addMetaData()```, implement ```hook_query_TAG_alter()``` to add your ```OR``` conditions, and make sure the base table is joined by including at least one ```propertyCondition```. It is not obvious, but once you know the pattern it opens up EntityFieldQuery for nearly any query you need to build.

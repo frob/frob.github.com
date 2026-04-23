@@ -3,7 +3,6 @@ title: Drupal or Wordpress? Why not Jekyll.
 date: "2015-01-27"
 description: Are you fed up with the offerings of Drupal, Wordpress, and other big CMSs? Then maybe a return to roots is in order. Let's look at Jekyll
 slug: drupal-or-wordpress-why-not-jekyll
-canonical: http://www.kwallcompany.com/blog/wordpress-or-drupal-why-not-jekyll
 tags:
     - drupal
     - wordpress

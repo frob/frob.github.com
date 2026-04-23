@@ -10,7 +10,9 @@ assets:
         - //cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js
 ---
 
-Do you remember that time when you tried to find a Javascript library only to find the wrong Javascript library with the same name. Well that happened when I was looking for [A-Frame](https://aframe.io). Just so you know we are not talking about the slightly older MVC Javascript framework named AFrame; today, we are going to be talking about [Mozilla's WebVR library A-Frame](https://aframe.io).
+What if you could build a VR experience with nothing but HTML tags? No game engine, no compiled binaries, no 30-minute tutorial before you see a cube on screen. That is what [A-Frame](https://aframe.io) promises, and in this post I am going to put it through its paces -- converting my old Three.js demo, loading 3D models, and building billboard sprites, all with markup and minimal JavaScript.
+
+Just so you know we are not talking about the slightly older MVC Javascript framework also named AFrame; today, we are going to be talking about [Mozilla's WebVR library A-Frame](https://aframe.io).
 
 # What is [A-Frame](https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-“a-frame”-or-“aframe”-or-“aframevr”-or-“aframe”)
 
@@ -203,3 +205,7 @@ The usability of this cool new tech is all about what we do with it. I have give
 ### Can I use it?
 
 Go checkout caniuse for WebGL and WebVR the browser support for A-Frame and the browser support for threejs.
+
+## Wrap up
+
+A-Frame makes WebVR approachable. My 30-line Three.js example became 9 lines of custom HTML. Models, skyboxes, billboards, and animations all work with attributes instead of API calls. The entity-component-system architecture means it is extensible when markup is not enough. It is not a replacement for a full game engine, but for bringing VR to the web -- especially for content creators who are more comfortable with HTML than with JavaScript -- it is hard to beat. Build something, put it on a page, and hand someone a phone with a cardboard headset. That is the pitch, and it works.

@@ -74,3 +74,5 @@ This begs the bigger question, what is a game? I am not going to attempt to answ
  - The levels are procedurally generated.
 
 There is the possibility of a sequel. In the sequel the game complexity could scale to the player/user (maybe later). I have thought about this, but it is too early to consider this a feature.
+
+The goal is a book that never runs out of new pages. If I can get the template system right, a child will never be able to memorize their way through it -- they will have to actually read. That is the game, and it is one worth building.

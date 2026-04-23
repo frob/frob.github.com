@@ -37,4 +37,6 @@ Elixir holds some fantastic opportunities, but only if the market supports it. I
 
 ## Time to learn the old war horse
 
-I have done some preliminary study to learn Python, but without a project I am not sure how much I will retain. I have learned many fundamentals that I will need to reenforce through repetition of work. I have little interest in building another search engine as it seems like is the "Hello World" first project for getting started with Python. I also have no interest in building a site in DJango. So then, what am I left with? I am not sure, but I want to figure it out soon. Maybe find a way to incorporate Python with cross platform app development. I really dunno.
+I have done some preliminary study to learn Python, but without a project I am not sure how much I will retain. I have learned many fundamentals that I will need to reinforce through repetition of work. I have little interest in building another search engine as it seems like the "Hello World" first project for getting started with Python. I also have no interest in building a site in Django. So then, what am I left with? I am not sure, but I want to figure it out soon. Maybe find a way to incorporate Python with cross platform app development.
+
+The heart of this dilemma is not really about Python versus Elixir. It is about finding a project that justifies the investment. A language without a purpose is just syntax. I am going with Python because the ecosystem demands it, but the real work starts when I find the right problem to solve with it.

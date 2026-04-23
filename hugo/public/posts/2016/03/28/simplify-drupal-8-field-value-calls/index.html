@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -77,8 +77,7 @@
             <span class="badge">quarzack13</span>
             
         </div>
-         <p>Things change, it&rsquo;s a fact of life; even more so it&rsquo;s a fact of a web developer&rsquo;s life.</p>
-<p>In semantic versioned frameworks every new major version brings new api and discards the old apis. Like ripping off a band-aid, this is an excruciatingly painful experience that will eventually bring forward a less painful future. Thus, it has been with the change from Drupal 7 to Drupal 8.x.</p>
+         <p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
 <h1 id="get-the-title-of-a-node">Get the title of a node</h1>
 <p>Let&rsquo;s load a node and return the title.</p>
 <h2 id="drupal-7">Drupal 7</h2>
@@ -129,6 +128,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Xss</span><span style="color:#f92672">::</span><span style="color:#a6e22e">filter</span>($title)
 </span></span></code></pre></div><p>It&rsquo;s important to remember that when dealing with a new version it&rsquo;s tempting to say, &ldquo;This used to be easy and now it is hard.&rdquo;</p>
 <p>It only used to be easy because we knew how to do things without having to do too much research. Now things are hard &ndash;but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.</p>
+<p>The good news is that once you internalize the <code>-&gt;get('field')-&gt;value</code> pattern, it becomes second nature. One getter, one consistent API, regardless of field type or language. That is a real improvement over Drupal 7&rsquo;s <code>$node-&gt;field_name[0][LANGUAGE_NONE]['value']</code> guessing game.</p>
 
     </article>
 </div>

@@ -9,7 +9,7 @@ tags:
     - tutorial
 ---
 
-Git is a great tool for managing source control. Git flow is a great workflow for working with git branches and tags. Semantic versioning is a great way for labeling and cataloging version dependence. If we put them together then we will have a dependency system that is reinforced by workflow that is reinforced by a dependency system. This is a circular dependency that is good.
+Ever looked at a git branch name and had no idea what version of the product it belonged to? Or tagged a release and wondered if it should be a minor bump or a patch? This post is about eliminating that ambiguity by combining two things that already work well on their own -- git-flow and semantic versioning -- into a single workflow where each reinforces the other.
 
 # Semantic git-flow
 
@@ -108,3 +108,7 @@ By merging these two ideas we can make it clear what is in development on any br
       1. ```git push -u origin 1.3.x```
 
   > Notice the new Minor Release comes from the branch of the same name. Same is true of Major Releases. As soon as it is known that backwards compatibility will be broken, then new Major Release branch should be made. Before work is started on a new feature, a new Minor Release branch should be made.
+
+## Why this works
+
+The naming convention does the heavy lifting. Anyone on the team can look at a branch name like ```1.2.x-checkout-widget``` and immediately know what version it targets and what feature is being built. Tags become the single source of truth for what is stable. There is no guessing, no spreadsheet of version numbers, and no ambiguity about what is in production. The workflow enforces the versioning and the versioning gives the workflow meaning.
