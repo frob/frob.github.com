@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -103,7 +103,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;effect&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fade&#39;</span>,
 </span></span><span style="display:flex;"><span>  ),
 </span></span><span style="display:flex;"><span>);
-</span></span></code></pre></div><p>It is pretty verbose, requires a php callback, and can be a bit of overkill for auto-submitting a form. In the days of pure HTML forms, we would simply add the form submit straight to the form input. As it turns out we can do the same thing to our form by exploiting the fact that the form API uses render arrays. All we have to do is attach this code snipit to our form element.</p>
+</span></span></code></pre></div><p>It is pretty verbose, requires a php callback, and can be a bit of overkill for auto-submitting a form. In the days of pure HTML forms, we would simply add the form submit straight to the form input. As it turns out we can do the same thing to our form by exploiting the fact that the form API uses render arrays. All we have to do is attach this code snippet to our form element.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#e6db74">&#39;#attributes&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;onChange&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;people-filter-form&#34;).submit();&#39;</span>)
 </span></span></code></pre></div><p>Notice what is happening here. We are adding attributes to the form element. This is the same way that we would attach classes, only this time we are adding the attribute <tt>onChange=&rsquo;&lt;some js to execute&gt;&rsquo;.</tt></p>
 <p>Below is the full form definition.</p>
@@ -111,18 +111,18 @@
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * Custom Report User Filter Form
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">people_filter_form</span>($form, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;$form_state) {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">people_filter_form</span>($form, <span style="color:#f92672">&amp;</span>$form_state) {
 </span></span><span style="display:flex;"><span>  $form[<span style="color:#e6db74">&#39;person&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;select&#39;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#options&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
 </span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Select a Person&#39;</span>,
 </span></span><span style="display:flex;"><span>    ),
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#default_value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">empty</span>($_GET[<span style="color:#e6db74">&#39;person&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">check_plain</span>($_GET[<span style="color:#e6db74">&#39;person&#39;</span>]),
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#attributes&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;onChange&#39;</span> <span style="color:#f92672">=&gt;</span>; <span style="color:#e6db74">&#39;document.getElementById(&#34;iris-app-people-filter-form&#34;).submit();&#39;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#attributes&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;onChange&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;iris-app-people-filter-form&#34;).submit();&#39;</span>),
 </span></span><span style="display:flex;"><span>  );
 </span></span><span style="display:flex;"><span>  $people <span style="color:#f92672">=</span> <span style="color:#a6e22e">_get_select_list_data</span>(<span style="color:#e6db74">&#39;person&#39;</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">foreach</span> ($people <span style="color:#66d9ef">as</span> $person) {
-</span></span><span style="display:flex;"><span>    $form[<span style="color:#e6db74">&#39;person&#39;</span>][<span style="color:#e6db74">&#39;#options&#39;</span>][$person<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">uid</span>] <span style="color:#f92672">=</span>  $person<span style="color:#f92672">-&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>    $form[<span style="color:#e6db74">&#39;person&#39;</span>][<span style="color:#e6db74">&#39;#options&#39;</span>][$person<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">uid</span>] <span style="color:#f92672">=</span> $person<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  $form[<span style="color:#e6db74">&#39;submit&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -81,7 +81,7 @@
         </div>
          <p>I really like <a href="https://pages.github.com/">github pages</a>. I <a href="https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">built my blog on it</a>, even though <a href="https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html">I host it myself</a>. When friends and family ask for me to build them a site <a href="http://wapro.lbtech.org/">I will point them to github pages</a>. Markdown is so easy, liquid is so easy. What isn&rsquo;t easy is dynamic lists of content. A simple list of related content isn&rsquo;t as easy. Sure there are ways, but I want to learn <a href="https://facebook.github.io/react/">Reactjs</a> &ndash;so I will build it with that. That will require a RESTful API for my content.</p>
 <h2 id="the-easy-way">The easy way</h2>
-<p>To be clear I didn&rsquo;t write this <a href="http://jekyllsnippets.com/excluding-jsonify-your-site/">snippit</a> &ndash;but only because someone else did. And working code wins.</p>
+<p>To be clear I didn&rsquo;t write this <a href="http://jekyllsnippets.com/excluding-jsonify-your-site/">snippet</a> &ndash;but only because someone else did. And working code wins.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">---</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">layout:</span> <span style="color:#960050;background-color:#1e0010">nil</span>
@@ -99,7 +99,7 @@
 </span></span><span style="display:flex;"><span>    {<span style="color:#960050;background-color:#1e0010">%</span> <span style="color:#960050;background-color:#1e0010">endfor</span> <span style="color:#960050;background-color:#1e0010">%</span>}
 </span></span><span style="display:flex;"><span>    {<span style="color:#960050;background-color:#1e0010">%</span> <span style="color:#960050;background-color:#1e0010">endraw</span> <span style="color:#960050;background-color:#1e0010">%</span>}
 </span></span><span style="display:flex;"><span>    ]
-</span></span></code></pre></div><p>With this snippit (added for convenience) we get most of the way there. My plan is to modify it a bit.</p>
+</span></span></code></pre></div><p>With this snippet (added for convenience) we get most of the way there. My plan is to modify it a bit.</p>
 <h2 id="what-i-would-do-or-the-not-so-easy-way">What I would do, or the not so easy way</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">---</span>
@@ -160,9 +160,9 @@
 <p>Aside note. Jekyll is having a really hard time with this post. It keeps wanting to parse the liquid in the code examples. Thankfully <a href="http://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags">Jekyll Liquid now has a proper escaping system</a>. Use <code>liquid{% raw %}{% raw %}{% endraw %}</code>.</p>
 </blockquote>
 <h2 id="building-the-posts-npm-to-the-rescue-maybe">Building the posts. NPM to the rescue (maybe)</h2>
-<p>Not npm exactly, Gulp instead saved the day. Ever since I moved my utility functions to Gulp I have been a fan. It is very well suited for building small repeatable tasks. So I add a new Gulp task to the gulpfule.</p>
+<p>Not npm exactly, Gulp instead saved the day. Ever since I moved my utility functions to Gulp I have been a fan. It is very well suited for building small repeatable tasks. So I add a new Gulp task to the gulpfile.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gulp build-api
-</span></span></code></pre></div><p>With this command I duplicate the content in the _post directory over to the api/[version]/v01/posts directory. Thow in a little gulp piping to do a string replace (this is to change the layout template from html to json. This is the whole gulp command.</p>
+</span></span></code></pre></div><p>With this command I duplicate the content in the _post directory over to the api/[version]/v01/posts directory. Throw in a little gulp piping to do a string replace (this is to change the layout template from html to json. This is the whole gulp command.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;build-api&#39;</span>, <span style="color:#66d9ef">function</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;_posts/*&#39;</span>)
 </span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/layout\: post/</span>, <span style="color:#e6db74">&#39;layout: json&#39;</span>))
@@ -198,7 +198,7 @@
 </span></span><span style="display:flex;"><span>  {<span style="color:#960050;background-color:#1e0010">%</span> <span style="color:#960050;background-color:#1e0010">endraw</span> <span style="color:#960050;background-color:#1e0010">%</span>}
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
 </span></span></code></pre></div><h2 id="footnotes">Footnotes</h2>
-<p>Jekyll complains about using <code>ruby nill</code> for a layout type. It doesn&rsquo;t break, but I also create two layout templates json_default.json and json.json. Now that it is working, I will rename the templates to something abit more meaningful:</p>
+<p>Jekyll complains about using <code>ruby nill</code> for a layout type. It doesn&rsquo;t break, but I also create two layout templates json_default.json and json.json. Now that it is working, I will rename the templates to something a bit more meaningful:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>default.json
 </span></span><span style="display:flex;"><span>post.json
 </span></span></code></pre></div><p>I think these are better names.</p>

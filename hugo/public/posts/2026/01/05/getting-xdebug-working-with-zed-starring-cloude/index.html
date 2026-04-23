@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -246,7 +246,7 @@
 <h2 id="error-process-exited-before-debugger-attached">Error: &ldquo;process exited before debugger attached&rdquo;</h2>
 <p>This is when I started to make progress. There was a requirement that was unknown to me. Maybe I should have known that nodejs was a dependency but I didn&rsquo;t.</p>
 <p>I run everything in containers. The last thing I want is a random interpreter running on my system. I work in PHP, Go, Javascript, various DB, Python, and more. It all runs in containers. I compile Go using containers. I write Python using containers. Even my personal Godot projects are built/exported with containers. Why would I have node installed?</p>
-<p>At this point I didn&rsquo;t even follow any of the steps layed out by the AI. I just installed Node.</p>
+<p>At this point I didn&rsquo;t even follow any of the steps laid out by the AI. I just installed Node.</p>
 <blockquote>
 <p><strong>User:</strong> I am getting this error in zed &ldquo;process exited before debugger attached.&rdquo;</p>
 </blockquote>
@@ -325,7 +325,7 @@ Start with the absolute minimum configuration:</p>
 </span></span><span style="display:flex;"><span>]
 </span></span></code></pre></div><hr>
 <h2 id="testing-the-connection">Testing the Connection</h2>
-<p>This is more good suggestions form Claude. I used <code>netstat</code> to see if the port was being listened to and I installed <code>telnet</code> on the container to verify that it communication was open both directions.</p>
+<p>This is more good suggestions from Claude. I used <code>netstat</code> to see if the port was being listened to and I installed <code>telnet</code> on the container to verify that communication was open both directions.</p>
 <blockquote>
 <p><strong>User:</strong> I don&rsquo;t see anything in zed&rsquo;s debug panel</p>
 </blockquote>
@@ -468,8 +468,8 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
 </ul>
 </blockquote>
 <hr>
-<p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is InteliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
-<p>Lately, PhpStorm has begun it&rsquo;s, somewhat, clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
+<p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
+<p>Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
 <p>I look forward to using Zed, more, now that Xdebug is working.</p>
 
     </article>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -136,7 +136,7 @@
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-sky</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#sky&#34;</span>&gt;&lt;/<span style="color:#f92672">a-sky</span>&gt;
 </span></span></code></pre></div><p>This is much easier than having to sync up textures and position on 5 separate quads or having to define an inner texture for a cube and keeping the position up-to-date with the camera position.</p>
 <h3 id="billboards-and-custom-components">Billboards and custom components</h3>
-<p>Unfortunately, A-Frame doesn&rsquo;t support billboard components out-of-the-box. But it is built on an <a href="https://aframe.io/docs/0.3.0/docs/core">enitty-component-system pattern</a> (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a <a href="https://github.com/blairmacintyre/aframe-look-at-billboard-component">random billboard component from github</a>.</p>
+<p>Unfortunately, A-Frame doesn&rsquo;t support billboard components out-of-the-box. But it is built on an <a href="https://aframe.io/docs/0.3.0/docs/core">entity-component-system pattern</a> (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a <a href="https://github.com/blairmacintyre/aframe-look-at-billboard-component">random billboard component from github</a>.</p>
 <p>I am not going to go through how to create new components or even include the source code here. Take a look for yourself, it is only 165 lines and it really isn&rsquo;t all that complicated. Maybe if I ever need to write a new custom component I will do a writeup about it.</p>
 <blockquote>
 <p>A <a href="http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/billboards/">billboard</a> is a 3D primitive that usually consists of two triangles that make up a rectangle face that is always pointed at the camera.</p>
@@ -152,10 +152,10 @@
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-assets</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">billboard</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ninja1&#34;</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 1 0&#34;</span> <span style="color:#a6e22e">geometry</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primitive: plane; height: 1.5; width:1;&#34;</span> <span style="color:#a6e22e">material</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src: #scorpion;opacity:.8&#34;</span> &gt;&lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span></code></pre></div><p><a href="https://www.github.com/frob/aframeexamples/master/example-billboard.html">Full bullboard example code</a>.</p>
+</span></span></code></pre></div><p><a href="https://www.github.com/frob/aframeexamples/master/example-billboard.html">Full billboard example code</a>.</p>
 <p>The billboard custom component allows us to create a normal entity and just use an attribute <code>billboard</code> to tell A-Frame that this entity is a billboard. There are many custom A-Frame components, links are available on the A-Frame component docs page.</p>
 <h4 id="assets">Assets</h4>
-<p>This is as good a time as any to talk about asset management in A-Frame (you might have noticed the <code>a-asset</code> tag in the last example). Simple scenes can handle assets in a simple manner &ndash;with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then <a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html">A-Frame&rsquo;s asset management system</a> comes in very handy. Here is an example of both ways of <a href="https://aframe.io/docs/0.3.0/primitives/a-image.html">loading assets ripped ripped straight from the docs</a>.</p>
+<p>This is as good a time as any to talk about asset management in A-Frame (you might have noticed the <code>a-asset</code> tag in the last example). Simple scenes can handle assets in a simple manner &ndash;with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then <a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html">A-Frame&rsquo;s asset management system</a> comes in very handy. Here is an example of both ways of <a href="https://aframe.io/docs/0.3.0/primitives/a-image.html">loading assets ripped straight from the docs</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-assets</span>&gt;
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-image&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image.png&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-assets</span>&gt;

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frank Robert Anderson</title>
@@ -178,8 +178,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">HelloWorld\Greetings</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">Greetings</span><span style="color:#f92672">::</span><span style="color:#a6e22e">sayHelloWorld</span>();
-</span></span></code></pre></div><p>Like I said before, autoloading and composer give us the handy <code>use</code> and <code>namespace</code> keywords. It is beyond the scope of this article to discus <a href="http://phpenthusiast.com/blog/how-to-autoload-with-composer">how the autoloader works</a>, just that it does and how to use it.</p>
-<p>Remember the directory stucture <code>src/HelloWorld</code> and the require statement in the <code>composer.json</code> file? In our <code>composer.json</code> we told the autoloader to expect a psr-0 directory structure and that our code would be in <code>src</code>. Then we declared the <code>namespace HelloWorld;</code> in our <code>greetings.php</code> file.</p>
+</span></span></code></pre></div><p>Like I said before, autoloading and composer give us the handy <code>use</code> and <code>namespace</code> keywords. It is beyond the scope of this article to discuss <a href="http://phpenthusiast.com/blog/how-to-autoload-with-composer">how the autoloader works</a>, just that it does and how to use it.</p>
+<p>Remember the directory structure <code>src/HelloWorld</code> and the require statement in the <code>composer.json</code> file? In our <code>composer.json</code> we told the autoloader to expect a psr-0 directory structure and that our code would be in <code>src</code>. Then we declared the <code>namespace HelloWorld;</code> in our <code>greetings.php</code> file.</p>
 <p>Now in our <code>test.php</code> file we are <em>using</em> (with the <code>use</code> keyword) the <code>HelloWorld\Greetings</code> namespace and object in our test to call the <code>Greetings::sayHelloWorld();</code> static method.</p>
 <h2 id="lets-commit">Lets commit</h2>
 <p>At this point lets commit our code. The begs the question, what is our code? For now that is only the src and tests directory and the composer.php file. Lets initialize and commit those.</p>
@@ -218,7 +218,7 @@ composer.lock
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Here we are adding the <code>classname</code> keyword and then listing the &ldquo;PHP_Timer&rdquo; class as member with &ldquo;src/&rdquo; as the value. I got this value because inside the <code>vendor/php-timer</code> directory is the <em>PHP_Timer</em> class, without any <code>namespace</code> keyword. Due to the lack of a namespace we just have to tell the autoloader that when we declare <code>use PHP_Timer;</code> in our php file that we need the <em>PHP_Timer</em> class loaded.</p>
 <blockquote>
-<p>I fingured out what to do by looking at packages that used PHP_Timer. It can be confusing, <a href="https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/">Read composer namespaces in five minutes to learn more about how composer uses namespaces</a>.</p>
+<p>I figured out what to do by looking at packages that used PHP_Timer. It can be confusing, <a href="https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/">Read composer namespaces in five minutes to learn more about how composer uses namespaces</a>.</p>
 </blockquote>
 <p>Now that we have added the classname to the composer file we can start to use it in our greetings.php file. Lets add the some use of the php-timer class to the <em>Greetings</em> class.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>

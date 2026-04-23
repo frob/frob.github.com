@@ -2,199 +2,199 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frontpage</title>
-      <link>https://www.frobiovox.com/tags/frontpage/</link>
+      <link>http://localhost:1313/tags/frontpage/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/frontpage/</guid>
+      <guid>http://localhost:1313/tags/frontpage/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial</title>
-      <link>https://www.frobiovox.com/tags/tutorial/</link>
+      <link>http://localhost:1313/tags/tutorial/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/tutorial/</guid>
+      <guid>http://localhost:1313/tags/tutorial/</guid>
       <description></description>
     </item>
     <item>
       <title>Drupal</title>
-      <link>https://www.frobiovox.com/tags/drupal/</link>
+      <link>http://localhost:1313/tags/drupal/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/drupal/</guid>
+      <guid>http://localhost:1313/tags/drupal/</guid>
       <description></description>
     </item>
     <item>
       <title>Quarzack13</title>
-      <link>https://www.frobiovox.com/tags/quarzack13/</link>
+      <link>http://localhost:1313/tags/quarzack13/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/quarzack13/</guid>
+      <guid>http://localhost:1313/tags/quarzack13/</guid>
       <description></description>
     </item>
     <item>
       <title>Rant</title>
-      <link>https://www.frobiovox.com/tags/rant/</link>
+      <link>http://localhost:1313/tags/rant/</link>
       <pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/rant/</guid>
+      <guid>http://localhost:1313/tags/rant/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Development</title>
-      <link>https://www.frobiovox.com/tags/web-development/</link>
+      <link>http://localhost:1313/tags/web-development/</link>
       <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/web-development/</guid>
+      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Gaming</title>
-      <link>https://www.frobiovox.com/tags/gaming/</link>
+      <link>http://localhost:1313/tags/gaming/</link>
       <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/gaming/</guid>
+      <guid>http://localhost:1313/tags/gaming/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine Generating Book</title>
-      <link>https://www.frobiovox.com/tags/machine-generating-book/</link>
+      <link>http://localhost:1313/tags/machine-generating-book/</link>
       <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/machine-generating-book/</guid>
+      <guid>http://localhost:1313/tags/machine-generating-book/</guid>
       <description></description>
     </item>
     <item>
       <title>Parenting</title>
-      <link>https://www.frobiovox.com/tags/parenting/</link>
+      <link>http://localhost:1313/tags/parenting/</link>
       <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/parenting/</guid>
+      <guid>http://localhost:1313/tags/parenting/</guid>
       <description></description>
     </item>
     <item>
       <title>Rogue-Lite</title>
-      <link>https://www.frobiovox.com/tags/rogue-lite/</link>
+      <link>http://localhost:1313/tags/rogue-lite/</link>
       <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/rogue-lite/</guid>
+      <guid>http://localhost:1313/tags/rogue-lite/</guid>
       <description></description>
     </item>
     <item>
       <title>Rouge-Like</title>
-      <link>https://www.frobiovox.com/tags/rouge-like/</link>
+      <link>http://localhost:1313/tags/rouge-like/</link>
       <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/rouge-like/</guid>
+      <guid>http://localhost:1313/tags/rouge-like/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://www.frobiovox.com/tags/git/</link>
+      <link>http://localhost:1313/tags/git/</link>
       <pubDate>Fri, 27 May 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/git/</guid>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Jekyll</title>
-      <link>https://www.frobiovox.com/tags/jekyll/</link>
+      <link>http://localhost:1313/tags/jekyll/</link>
       <pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/jekyll/</guid>
+      <guid>http://localhost:1313/tags/jekyll/</guid>
       <description></description>
     </item>
     <item>
       <title>Reactjs</title>
-      <link>https://www.frobiovox.com/tags/reactjs/</link>
+      <link>http://localhost:1313/tags/reactjs/</link>
       <pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/reactjs/</guid>
+      <guid>http://localhost:1313/tags/reactjs/</guid>
       <description></description>
     </item>
     <item>
       <title>Rest</title>
-      <link>https://www.frobiovox.com/tags/rest/</link>
+      <link>http://localhost:1313/tags/rest/</link>
       <pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/rest/</guid>
+      <guid>http://localhost:1313/tags/rest/</guid>
       <description></description>
     </item>
     <item>
       <title>Elixir</title>
-      <link>https://www.frobiovox.com/tags/elixir/</link>
+      <link>http://localhost:1313/tags/elixir/</link>
       <pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/elixir/</guid>
+      <guid>http://localhost:1313/tags/elixir/</guid>
       <description></description>
     </item>
     <item>
       <title>Browsers</title>
-      <link>https://www.frobiovox.com/tags/browsers/</link>
+      <link>http://localhost:1313/tags/browsers/</link>
       <pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/browsers/</guid>
+      <guid>http://localhost:1313/tags/browsers/</guid>
       <description></description>
     </item>
     <item>
       <title>Debug</title>
-      <link>https://www.frobiovox.com/tags/debug/</link>
+      <link>http://localhost:1313/tags/debug/</link>
       <pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/debug/</guid>
+      <guid>http://localhost:1313/tags/debug/</guid>
       <description></description>
     </item>
     <item>
       <title>Cms</title>
-      <link>https://www.frobiovox.com/tags/cms/</link>
+      <link>http://localhost:1313/tags/cms/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/cms/</guid>
+      <guid>http://localhost:1313/tags/cms/</guid>
       <description></description>
     </item>
     <item>
       <title>Gulp</title>
-      <link>https://www.frobiovox.com/tags/gulp/</link>
+      <link>http://localhost:1313/tags/gulp/</link>
       <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/gulp/</guid>
+      <guid>http://localhost:1313/tags/gulp/</guid>
       <description></description>
     </item>
     <item>
       <title>Drupalcon</title>
-      <link>https://www.frobiovox.com/tags/drupalcon/</link>
+      <link>http://localhost:1313/tags/drupalcon/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/drupalcon/</guid>
+      <guid>http://localhost:1313/tags/drupalcon/</guid>
       <description></description>
     </item>
     <item>
       <title>Public Transportation</title>
-      <link>https://www.frobiovox.com/tags/public-transportation/</link>
+      <link>http://localhost:1313/tags/public-transportation/</link>
       <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/public-transportation/</guid>
+      <guid>http://localhost:1313/tags/public-transportation/</guid>
       <description></description>
     </item>
     <item>
       <title>Kwallcompany</title>
-      <link>https://www.frobiovox.com/tags/kwallcompany/</link>
+      <link>http://localhost:1313/tags/kwallcompany/</link>
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/kwallcompany/</guid>
+      <guid>http://localhost:1313/tags/kwallcompany/</guid>
       <description></description>
     </item>
     <item>
       <title>Wordpress</title>
-      <link>https://www.frobiovox.com/tags/wordpress/</link>
+      <link>http://localhost:1313/tags/wordpress/</link>
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/wordpress/</guid>
+      <guid>http://localhost:1313/tags/wordpress/</guid>
       <description></description>
     </item>
     <item>
       <title>Threejs</title>
-      <link>https://www.frobiovox.com/tags/threejs/</link>
+      <link>http://localhost:1313/tags/threejs/</link>
       <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/threejs/</guid>
+      <guid>http://localhost:1313/tags/threejs/</guid>
       <description></description>
     </item>
     <item>
       <title>Css</title>
-      <link>https://www.frobiovox.com/tags/css/</link>
+      <link>http://localhost:1313/tags/css/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/css/</guid>
+      <guid>http://localhost:1313/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Drupalcamp</title>
-      <link>https://www.frobiovox.com/tags/drupalcamp/</link>
+      <link>http://localhost:1313/tags/drupalcamp/</link>
       <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/tags/drupalcamp/</guid>
+      <guid>http://localhost:1313/tags/drupalcamp/</guid>
       <description></description>
     </item>
   </channel>
