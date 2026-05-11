@@ -1,0 +1,25 @@
+{{- /* llms-full.txt — full corpus dump, raw markdown */ -}}
+# {{ .Site.Title }}
+
+{{ .Site.Params.description }}
+
+{{ range .Site.RegularPages }}
+---
+url: {{ .Permalink }}
+title: {{ .Title }}
+{{- with .Date }}
+date: {{ .Format "2006-01-02" }}
+{{- end }}
+{{- with .Params.category }}
+category: {{ . }}
+{{- end }}
+{{- with .Params.tags }}
+tags: {{ delimit . ", " }}
+{{- end }}
+{{- with .Description }}
+description: {{ . }}
+{{- end }}
+---
+
+{{ .RawContent }}
+{{ end }}

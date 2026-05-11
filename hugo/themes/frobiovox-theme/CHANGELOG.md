@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Vite config with Docker-based build tasks (`task install`, `task css:build`, `task css:dev`)
 - `task build` now depends on `task css:build`
 - `.gitignore` covering `node_modules/` and backstop test bitmaps
+- LLM-friendly site outputs: `llms.txt` and `llms-full.txt` at site root ([llmstxt.org](https://llmstxt.org)), per-page `index.md` markdown companions on every page and section, and `<link rel="alternate" type="text/markdown">` discovery in `<head>`
+- JSON-LD (`schema.org`) in `<head>` of every page: `BlogPosting` for posts, `AboutPage` for `about`, `Blog` on the home page, `CollectionPage` for section/taxonomy lists
+- `[params.author]` site-config block (per-post `author` frontmatter overrides the default)
+- `task verify:llm` to verify the LLM-friendly artifacts in `exampleSite/public`
 
 ### Fixed
 

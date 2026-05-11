@@ -19,6 +19,14 @@ tasks:
     cmds:
       - hugo --themesDir ../..
 
+  verify:llm:
+    desc: Verify LLM-friendly outputs (llms.txt, index.md companions, JSON-LD)
+    cmds:
+      - docker run --rm -v $(pwd):/w -w /w python:3-alpine python3 scripts/verify_llm.py
+    preconditions:
+      - sh: test -d exampleSite/public
+        msg: "exampleSite/public not found — run 'task build' first."
+
   clean:
     desc: Clean generated files
     cmds:

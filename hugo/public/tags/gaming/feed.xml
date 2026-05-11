@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gaming on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/gaming/</link><description>Recent content in Gaming on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.frobiovox.com/tags/gaming/feed.xml" rel="self" type="application/rss+xml"/><item><title>How to play gloom with a 52 card deck</title><link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</link><pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</guid><description>&lt;p&gt;I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&amp;rsquo;t for you then try these rules on a standard 52 card deck.&lt;/p&gt;
-&lt;h2 id="rules"&gt;Rules&lt;/h2&gt;
-&lt;p&gt;Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.&lt;/p&gt;</description></item><item><title>a new simple reading rogue like</title><link>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</link><pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</guid><description>&lt;h2 id="my-kid-is-smart"&gt;My kid is smart™&lt;/h2&gt;
-&lt;p&gt;I am going to say what every parent says, my kid is smart™. We read to her all the time and she loves it. We have been reading to her all her life. Now it&amp;rsquo;s time for her to start to learn to read, and we are struggling. She isn&amp;rsquo;t struggling, we (her parents) are struggling. This is because of the limited amount of material there is in this space. My daughter has a memory that is amazing; she &amp;ldquo;reads&amp;rdquo; her Arthur books to us word for word. This is because she has them memorized. Normally this happens after a single reading. Now that we are having her read she is doing the same thing. After one time through she is no longer reading &amp;ndash;she is reciting.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gaming on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/gaming/</link>
+    <description>Recent content in Gaming on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gaming/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to play gloom with a 52 card deck</title>
+      <link>http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/</guid>
+      <description>&lt;p&gt;I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&amp;rsquo;t for you then try these rules on a standard 52 card deck.&lt;/p&gt;&#xA;&lt;h2 id=&#34;rules&#34;&gt;Rules&lt;/h2&gt;&#xA;&lt;p&gt;Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>a new simple reading rogue like</title>
+      <link>http://localhost:1313/posts/2016/09/30/a-new-simple-reading-rogue-like/</link>
+      <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/09/30/a-new-simple-reading-rogue-like/</guid>
+      <description>&lt;h2 id=&#34;my-kid-is-smart&#34;&gt;My kid is smart™&lt;/h2&gt;&#xA;&lt;p&gt;I am going to say what every parent says, my kid is smart™. We read to her all the time and she loves it. We have been reading to her all her life. Now it&amp;rsquo;s time for her to start to learn to read, and we are struggling. She isn&amp;rsquo;t struggling, we (her parents) are struggling. This is because of the limited amount of material there is in this space. My daughter has a memory that is amazing; she &amp;ldquo;reads&amp;rdquo; her Arthur books to us word for word. This is because she has them memorized. Normally this happens after a single reading. Now that we are having her read she is doing the same thing. After one time through she is no longer reading &amp;ndash;she is reciting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

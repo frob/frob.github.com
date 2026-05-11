@@ -11,6 +11,7 @@ A Hugo theme based on the design of [www.frobiovox.com](https://www.frobiovox.co
 - "Read More" buttons on post listings
 - Social media links and blogroll in footer
 - External links automatically open in new tabs
+- LLM-friendly outputs: `llms.txt` / `llms-full.txt`, per-page markdown companions, and `schema.org` JSON-LD in `<head>`
 
 ## Requirements
 
@@ -36,6 +37,8 @@ Run these in separate terminals:
 task css:dev    # Watch and rebuild CSS/JS with Vite
 task dev        # Hugo development server at http://localhost:1313
 ```
+
+The `exampleSite/` directory contains a working Hugo site for local development and testing.
 
 ### Building
 
@@ -76,11 +79,18 @@ languageCode = "en-us"
 title = "My Hugo Site"
 theme = "frobiovox"
 
+[permalinks]
+  posts = "/posts/:year/:month/:day/:slug/"
+
 [params]
   description = "Your site description"
   avatar = "/images/avatar.png"
   github = "yourusername"
   twitter = "yourusername"
+
+  [params.author]
+    name = "Your Name"
+    url = ""
 
   [[params.blogroll]]
     name = "Example Blog"
@@ -95,6 +105,47 @@ theme = "frobiovox"
   name = "About"
   url = "/about/"
   weight = 2
+```
+
+### LLM-friendly outputs
+
+The theme ships three custom Hugo output formats (`LLMS`, `LLMSFULL`, `MARKDOWN`) and a JSON-LD partial. These need matching entries in your site config:
+
+```toml
+[outputFormats]
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.LLMSFULL]
+    mediaType = "text/plain"
+    baseName = "llms-full"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.MARKDOWN]
+    mediaType = "text/markdown"
+    baseName = "index"
+    isPlainText = true
+
+[outputs]
+  home    = ["HTML", "RSS", "LLMS", "LLMSFULL"]
+  section = ["HTML", "RSS", "MARKDOWN"]
+  page    = ["HTML", "MARKDOWN"]
+```
+
+This produces:
+
+- `/llms.txt` and `/llms-full.txt` at the site root ([llmstxt.org](https://llmstxt.org) format)
+- `index.md` markdown companion alongside every `index.html`, advertised via `<link rel="alternate" type="text/markdown">`
+- `schema.org` JSON-LD (`BlogPosting`, `Blog`, `AboutPage`, `CollectionPage`) in `<head>`
+
+`hugo server` does not hot-reload changes to custom output formats — restart it after editing this config.
+
+### Verification
+
+```bash
+task verify:llm   # runs scripts/verify_llm.py in a python:3-alpine container
 ```
 
 ## License
