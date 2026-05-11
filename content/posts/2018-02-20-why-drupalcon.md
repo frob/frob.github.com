@@ -8,6 +8,7 @@ tags:
     - frontpage
     - quarzack13
     - drupal
+    - drupalcon
 ---
 
 # Collaboration and Contribution at DrupalCon

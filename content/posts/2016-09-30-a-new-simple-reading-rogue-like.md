@@ -7,9 +7,8 @@ tags:
     - frontpage
     - gaming
     - parenting
-    - rouge-like
+    - rogue-like
     - rogue-lite
-    - machine generating book
 ---
 
 ## My kid is smart&trade;

@@ -5,6 +5,9 @@ description: The Zed editor is one of the more interesting new projects in a lon
 slug: getting-xdebug-working-with-zed-starring-cloude
 tags:
     - frontpage
+    - tutorial
+    - debug
+    - ai
 ---
 # Zed IDE and Xdebug 
 
