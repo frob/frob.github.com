@@ -6,6 +6,7 @@ slug: gloom-with-52-card-deck
 tags:
     - frontpage
     - tutorial
+    - gaming
 ---
 
 I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn't for you then try these rules on a standard 52 card deck.

@@ -5,6 +5,8 @@ slug: i-like-jekyll--but-is-it-necessary
 tags:
     - frontpage
     - rant
+    - jekyll
+    - cms
 ---
 
 Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.

@@ -5,6 +5,8 @@ description: I should continue my series on Machine Generated text or Composer o
 slug: lets-take-a-look-at-webvr-with--aframe
 tags:
     - frontpage
+    - tutorial
+    - web development
 assets:
     js:
         - //cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js

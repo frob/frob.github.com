@@ -7,6 +7,7 @@ tags:
     - web development
     - rant
     - frontpage
+    - elixir
 ---
 
 Be warned, this is a rant.
