@@ -1,7 +1,233 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Frank Robert Anderson</title><meta name=description content="I am a Developer who does web good and likes to do other stuff good too."><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Cutive+Mono&family=VT323&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.css></head><body><div class=not-footer><div class=wrapper-masthead><div class=container><header class="masthead clearfix"><a href=/ class=site-avatar><img src=/images/top.png></a><div class=site-info><h1 class=site-name><a href=/>Frank Robert Anderson</a></h1><p class=site-description>I am a Developer who does web good and likes to do other stuff good too.</p></div></header></div><nav class=navigation-menu><ul class="navigation-menu-list container"><li class=navigation-menu-item><a class=navigation-menu-link href=/>Blog</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/tutorial/>Tutorials</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/rant/>Rants</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/posts/>Everything</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=http://www.frankrobertanderson.com>Back to My Site</a></li></ul></nav></div><main><div class=container><article class=post><h1>Modern Drupal7 Site Building Tools</h1><div class=date>September 22, 2015</div><div class="flex flex-wrap gap-1 mb-2"><span class=badge>drupal</span>
-<span class=badge>frontpage</span>
-<span class=badge>quarzack13</span></div><p>With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &ndash; for site builders specifically &ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.</p><h2 id=why-build-a-site-with-drupal-7>Why build a site with Drupal 7</h2><p>Drupal 8 is nearly out making Drupal 7 look like it isn&rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.</p><h1 id=the-modules>The Modules</h1><p>I know, I know, many of these modules are not new and this isn&rsquo;t a list of everything someone will need to build a site (<a href="http://lmgtfy.com/?q=top+50+drupal+modules">that subject has been done to death</a>); this is a list of modules that allow site builders and someone with some front-end skill to build complicated sites with little to no custom module code.</p><h2 id=title><a href=https://www.drupal.org/project/title>Title</a></h2><p>Originally designed to make up for the short coming of Drupal 7 keeping the title as a property (not a field) and what that meant for entity translations. This is a module that I use for every site for one reason. It makes the title into a field. This allows it to be placed in a view mode like any other field. Used in conjunction with Fences and this allow for semantic and accessible markup in any view mode with a wide variety of layouts.</p><h2 id=field-group><a href=https://www.drupal.org/project/field_group>Field Group</a></h2><p>Seriously, why isn&rsquo;t this in core? This is what a module should be; it allows users to put the fields in groups, both in the form display and in the view mode display. This module also allows for the use of vertical tabs, jquery ui tabs for horizontal tabs, and collapsible groups.</p><h2 id=fences><a href=https://www.drupal.org/project/fences>Fences</a></h2><p>Drupal, out-of-the-box, puts classes on everything with wrappers on wrappers on wrappers in an attempt to do all things for all use-cases. As is shown over and over again throughout history, if something attempts to do all things it will inevitably <a href=https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II>do all things poorly</a>. This is one of those things that, arguably, Drupal does poorly.</p><p><a href=https://www.drupal.org/project/fences>Fences</a> attempts to tame this problem on the field level by making the wrappers for fields configurable. This has drawbacks: One of the cleanest options is to have no wrapper, and while this sounds like a good idea, it is not. This can lead one field to run into the next and can really just make things more difficult to target with css; Also, this module forces fields to be wrapped on a per field bases instead of a per display basis. This might sound like it is forcing the site-builder to think semantically about the content, however, semantics can change based on display so this is to be used with a bit of caution. On this note: the Fences module might be <a href=https://www.drupal.org/node/1888224#comment-10364825>changing this stance</a> on this.</p><h2 id=elements><a href=https://www.drupal.org/project/elements>Elements</a></h2><p>This is an old module based on the idea that new things happen and it isn&rsquo;t always the core team that should have to deal with new things. Today this module allows for more modern form api elements to be rendered. Check the project page for specific details.</p><h2 id=field-formatter-class><a href=https://www.drupal.org/project/field_formatter_class>Field Formatter Class</a></h2><p>Simple, put classes on field wrappers. Notice I said wrappers. This doesn&rsquo;t put the class on the field, so using this in conjunction with the <a href=https://www.drupal.org/project/fences>Fences</a> Module&rsquo;s no wrapper option can lead to confusing results &ndash;no class will be rendered because no wrapper is rendered.</p><h2 id=context><a href=https://www.drupal.org/project/context>Context</a></h2><p>Really it is Context and all the modules that support Context, such as <a href=https://www.drupal.org/project/context_entity_field>Context Entity Field</a>. Context is sort of like the <a href=https://www.drupal.org/project/rules>Rules</a> Module and core&rsquo;s block placement had a baby. It is based on the idea that, if &rsquo;thing&rsquo; is true (condition) then (reaction) will happen.</p><p>At first this module was thought of as an alternative to <span title="the devil">Panels</span>. However, it does much more than place blocks. With it (and the before mentioned helper module) a site-builder can add a select list to a node and have that select list add classes to the page body or add template suggestions to that node based on the content editor&rsquo;s input &ndash;all without code.</p><h2 id=node-class><a href=https://www.drupal.org/project/node_class>Node Class</a></h2><p>I love modules that put classes on things. Content people or site-builders then do not have to call the developers to add a class. This is one of those modules. It allows the content editor to put classes on nodes.</p><h2 id=block-class><a href=https://www.drupal.org/project/block_class>Block Class</a></h2><p>Very simple, put classes on blocks.</p><h2 id=menu-attributes><a href=https://www.drupal.org/project/menu_attributes>Menu Attributes</a></h2><p>This module adds attributes to menu items and menu links. This means that there is no more needing to write css rules that are based on Drupal&rsquo;s mlid based class.</p><aside class=inline>Why is theming off of a system generated mlid based class bad. Because this can change from install to install. Just like theming off of node id, theming off of menu link id is a bad idea.</aside><h2 id=view-field><a href=https://www.drupal.org/project/viewfield>View Field</a></h2><p>Not to be confused with <a href=https://www.drupal.org/project/views_field>Views Field</a>, the <a href=https://www.drupal.org/project/viewfield>View Field</a> Module allows site-builders to add fields to entities that allow the content editor to display views in fields. These views are set per piece of content. This means there can be a basic page content type that can have all the things that a page should have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing displayed.</p><h2 id=entity-views-attach><a href=https://www.drupal.org/project/eva>Entity Views Attach</a></h2><p>Unlike <a href=https://www.drupal.org/project/viewfield>View Field</a>, this module is all about the same view as a field on an entity. This module allows the site-builders to configure a view to act like a field on an entity bundle. For example, we want to have a list of all the content that a user has flagged on the user&rsquo;s profile page, and the design has that list in the middle of the rest of the fields. With this module the listing can be configured to be a pseudo field on the users entity that is then free to be positioned along with the rest of the user fields.</p><h2 id=bean><a href=https://www.drupal.org/project/bean>Bean</a></h2><p>Bean stands for <q>Block Entities Aren&rsquo;t Nodes.</q> This is a stab at the <a href=https://www.drupal.org/project/nodeblock>other way of doing this</a>.</p><p>Block&rsquo;s are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features &ndash;because blocks aren&rsquo;t entities and don&rsquo;t have fields.</p><p>Beans can have fields, because a Bean is a new type of entity, a block entity. This also gives us a better experience for content editors that will be building blocks. Content editors are given revisions, and a block listing page that works just like the content listing page. This means we can have views of blocks too.</p><h2 id=entity-view-mode><a href=https://www.drupal.org/project/entity_view_mode>Entity View Mode</a></h2><p>Personally, I like code, and I like to write my view modes with code. But this module works too. This module allows the site-builder to add view modes to any bundle on any entity. There is one large drawback, all this stuff is stored in one big variable. That means when a features is exported with the strongarm module it will get all the settings for all the bundles on all content types. There is movement in the issue queue to make this less all-or-nothing but for now, this is how it is.</p><h2 id=display-suite><a href=https://www.drupal.org/project/ds>Display Suite</a></h2><p>If I had one major complaint about Display Suite, it would be that it does too much (even though it does everything pretty well). With this module a site-builder can: override/layout entity forms, add view modes to bundles, add/remove fields from display, wrap fields in wrappers, and much much more. Read the project description and watch some tutorial videos for more.</p><h2 id=less><a href=https://www.drupal.org/project/less>Less</a></h2><p>Less!?!, I thought everyone used sass now and less was gone. Nope, less is awesome. It is just as awesome as sass and there is nothing that can be done with one that cannot be done with the other.</p><p>Once the flame war dies down, continue reading.</p><p>This module does a really cool thing. It ties Drupal&rsquo;s css attaching with a less compiler. This less compiler can be php based, such as the old Lefo php less compiler, or the new less.php compiler. It can even be the lessjs node plugin that is installed on the server. I works with css aggregation and it works with the autoprefixing node postCSS plugin as well. This means that you never need to put compiled css into the repository.</p><p><strong>Notice</strong> there is a sass Drupal module that works with the old Lefo sass library. However, both the php lib and the Drupal module are not well supported.</p><h2 id=bootstrap-theme><a href=https://www.drupal.org/project/bootstrap>Bootstrap Theme</a></h2><p>Bootstrap is a fine front-end framework, and if you are building a site for Bootstrap developers then this is the place to go. I like to use <a href=https://www.drupal.org/project/bootstrap_library>Bootstrap Library</a> for actually adding the Boostrap code.</p><h2 id=jquery-update><a href=https://www.drupal.org/project/jquery_update>jQuery Update</a></h2><p>Drupal 7 is not the new hotness. It is the old standard. As such the libraries that were once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.</p><p>To this end, I use jQuery update. It is simple, it allows the site-builder to pick a version of jQuery to use with a theme. It also facilitates loading that version from a CDN and the loading of the jQuery migrate module.</p><p><strong>Notice</strong> If using the CDN, pick it before starting with theming. Not every CDN will have the same code for the same versions of jQuery.</p><h2 id=ember><a href=https://www.drupal.org/project/ember>Ember</a></h2><p>This is the new admin theme hotness from Aquia. It is semantic and accessible and it follows the Aquia&rsquo;s style guidelines. Ember is still in development so expect some glitches.</p><p>I recommend creating a sub-theme of this theme so that further customization can be done without having to hack at ember.</p><h2 id=ember-support><a href=https://www.drupal.org/project/ember_support>Ember Support</a></h2><p>Does some stuff that ember cannot do in the theme space.</p><h2 id=coffee><a href=https://www.drupal.org/project/coffee>Coffee</a></h2><p>Toolbar was based somewhat on the admin menu module. Admin module persisted because toolbar doesn&rsquo;t next things. None of that matters anymore because coffee isn&rsquo;t a toolbar. Coffee works like Unity for Ubuntu or Spotlight search for Mac, or the Start Menu in Windows. Just start typing and a list of options will be presented. Pick the option and it will take you there.</p><h2 id=speedboxes><a href=https://www.drupal.org/project/speedboxes>Speedboxes</a></h2><p>This is a module that truly must be seen to be believed; it is one of those modules that makes new Drupal developers go <q>hmmmm</q> and makes seasoned Drupal developers crap their pants.</p><p>What it does is allow the site-builder to draw a rectangular area around check boxes and then check/uncheck/toggle all the selected checkboxes. This makes configuring the user permission page so much easier.</p><p>The down side to this module used to be that did this on every page or forced the user to use a bookmarklet as a toggle. I recently took over maintainership of this module and I have changed it so that the library responsible only loads on the permissions page and the organic groups permissions page.</p><h2 id=installation>Installation</h2><p>To install these modules just type:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>drush dl context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>drush en context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
-</span></span></code></pre></div><p>If you do not want to have to confirm over and over again, then you will probably want to pass the <code>-y</code> flag to the drush command.</p><p>Play with these modules before installing on production.</p><h2 id=final-thoughts>Final thoughts</h2><p>No single module on this list is revolutionary. The power comes from combining them. Title and Fences give you semantic markup. Field Group and Display Suite give you layout control. Context gives you conditional logic. Bean gives you fieldable blocks. Stack them together and you have a site-building toolkit that can handle complex designs without writing a single line of custom module code. Drupal 7 is not the new hotness, but it is a platform where the tools have had time to mature &ndash; and that maturity counts for a lot.</p></article></div></main></div><div class=wrapper-footer><div class=container><footer><h2 class=sr-only>Footer</h2><div class=social-icons><h3>Social Networks</h3><a href=https://github.com/frob aria-label=GitHub><svg class="svg-icon" viewBox="0 0 16 16" fill="#000"><path d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-</a><a href=https://twitter.com/frobiovox aria-label=Twitter><svg class="svg-icon" viewBox="0 0 16 16" fill="#1DA1F2"><path d="M5.026 15c6.038.0 9.341-5.003 9.341-9.334.0-.14.0-.282-.006-.422A6.685 6.685.0 0016 3.542a6.658 6.658.0 01-1.889.518 3.301 3.301.0 001.447-1.817 6.533 6.533.0 01-2.087.793A3.286 3.286.0 007.875 6.03 9.325 9.325.0 011.108 2.601a3.289 3.289.0 001.018 4.382A3.323 3.323.0 01.64 6.575v.045a3.288 3.288.0 002.632 3.218 3.203 3.203.0 01-.865.115 3.23 3.23.0 01-.614-.057 3.283 3.283.0 003.067 2.277A6.588 6.588.0 01.78 13.58 6.32 6.32.0 010 13.535 9.344 9.344.0 005.026 15z"/></svg>
-</a><a href=/index.xml aria-label=RSS><svg class="svg-icon" viewBox="0 0 16 16" fill="#f26522"><path d="M2 0A2 2 0 000 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm1.5 2.5c5.523.0 10 4.477 10 10a1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 010-2zm0 4a6 6 0 016 6 1 1 0 11-2 0 4 4 0 00-4-4 1 1 0 010-2zm.5 7a1.5 1.5.0 110-3 1.5 1.5.0 010 3z"/></svg></a></div><div class=blogroll><h3>Blogroll</h3><a href=https://www.btmash.com/>Blob of contradictions</a><br><a href=https://icodealot.com/>iCodealot</a><br></div><div class=copyright><p>&copy; 2026 Frank Robert Anderson</p></div></footer></div></div><script src=/js/links.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Robert Anderson</title>
+    <meta name="description" content="I am a Developer who does web good and likes to do other stuff good too.">
+    
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Frank Robert Anderson",
+    "sameAs": [
+      "https://github.com/frob",
+      "https://twitter.com/frobiovox"
+    ]
+  },
+  "dateModified": "2015-09-22T00:00:00Z",
+  "datePublished": "2015-09-22T00:00:00Z",
+  "headline": "Modern Drupal7 Site Building Tools",
+  "image": "/images/top.png",
+  "keywords": "drupal, frontpage, quarzack13",
+  "mainEntityOfPage": "http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/",
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/top.png"
+    },
+    "name": "Frank Robert Anderson"
+  },
+  "url": "http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/"
+}
+</script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Cutive+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+    
+</head>
+<body>
+    <div class="not-footer">
+        <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            
+            <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+            
+
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+                
+                <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+                
+            </div>
+        </header>
+    </div>
+
+    <nav class="navigation-menu">
+        <ul class="navigation-menu-list container">
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/">Blog</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/tutorial/">Tutorials</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/rant/">Rants</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/posts/">Everything</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="http://www.frankrobertanderson.com">Back to My Site</a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+        <main>
+            
+<div class="container">
+    <article class="post">
+        <h1>Modern Drupal7 Site Building Tools</h1>
+        <div class="date">September 22, 2015</div>
+
+        
+         
+        <div class="flex flex-wrap gap-1 mb-2">
+            
+            <span class="badge">drupal</span>
+            
+            <span class="badge">frontpage</span>
+            
+            <span class="badge">quarzack13</span>
+            
+        </div>
+         <p>With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &ndash; for site builders specifically &ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.</p>
+<h2 id="why-build-a-site-with-drupal-7">Why build a site with Drupal 7</h2>
+<p>Drupal 8 is nearly out making Drupal 7 look like it isn&rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.</p>
+<h1 id="the-modules">The Modules</h1>
+<p>I know, I know, many of these modules are not new and this isn&rsquo;t a list of everything someone will need to build a site (<a href="http://lmgtfy.com/?q=top+50+drupal+modules">that subject has been done to death</a>); this is a list of modules that allow site builders and someone with some front-end skill to build complicated sites with little to no custom module code.</p>
+<h2 id="title"><a href="https://www.drupal.org/project/title">Title</a></h2>
+<p>Originally designed to make up for the short coming of Drupal 7 keeping the title as a property (not a field) and what that meant for entity translations. This is a module that I use for every site for one reason. It makes the title into a field. This allows it to be placed in a view mode like any other field. Used in conjunction with Fences and this allow for semantic and accessible markup in any view mode with a wide variety of layouts.</p>
+<h2 id="field-group"><a href="https://www.drupal.org/project/field_group">Field Group</a></h2>
+<p>Seriously, why isn&rsquo;t this in core? This is what a module should be; it allows users to put the fields in groups, both in the form display and in the view mode display. This module also allows for the use of vertical tabs, jquery ui tabs for horizontal tabs, and collapsible groups.</p>
+<h2 id="fences"><a href="https://www.drupal.org/project/fences">Fences</a></h2>
+<p>Drupal, out-of-the-box, puts classes on everything with wrappers on wrappers on wrappers in an attempt to do all things for all use-cases. As is shown over and over again throughout history, if something attempts to do all things it will inevitably <a href="https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II">do all things poorly</a>. This is one of those things that, arguably, Drupal does poorly.</p>
+<p><a href="https://www.drupal.org/project/fences">Fences</a> attempts to tame this problem on the field level by making the wrappers for fields configurable. This has drawbacks: One of the cleanest options is to have no wrapper, and while this sounds like a good idea, it is not. This can lead one field to run into the next and can really just make things more difficult to target with css; Also, this module forces fields to be wrapped on a per field bases instead of a per display basis. This might sound like it is forcing the site-builder to think semantically about the content, however, semantics can change based on display so this is to be used with a bit of caution. On this note: the Fences module might be <a href="https://www.drupal.org/node/1888224#comment-10364825">changing this stance</a> on this.</p>
+<h2 id="elements"><a href="https://www.drupal.org/project/elements">Elements</a></h2>
+<p>This is an old module based on the idea that new things happen and it isn&rsquo;t always the core team that should have to deal with new things. Today this module allows for more modern form api elements to be rendered. Check the project page for specific details.</p>
+<h2 id="field-formatter-class"><a href="https://www.drupal.org/project/field_formatter_class">Field Formatter Class</a></h2>
+<p>Simple, put classes on field wrappers. Notice I said wrappers. This doesn&rsquo;t put the class on the field, so using this in conjunction with the <a href="https://www.drupal.org/project/fences">Fences</a> Module&rsquo;s no wrapper option can lead to confusing results &ndash;no class will be rendered because no wrapper is rendered.</p>
+<h2 id="context"><a href="https://www.drupal.org/project/context">Context</a></h2>
+<p>Really it is Context and all the modules that support Context, such as <a href="https://www.drupal.org/project/context_entity_field">Context Entity Field</a>. Context is sort of like the <a href="https://www.drupal.org/project/rules">Rules</a> Module and core&rsquo;s block placement had a baby. It is based on the idea that, if &rsquo;thing&rsquo; is true (condition) then (reaction) will happen.</p>
+<p>At first this module was thought of as an alternative to <span title="the devil">Panels</span>. However, it does much more than place blocks. With it (and the before mentioned helper module) a site-builder can add a select list to a node and have that select list add classes to the page body or add template suggestions to that node based on the content editor&rsquo;s input &ndash;all without code.</p>
+<h2 id="node-class"><a href="https://www.drupal.org/project/node_class">Node Class</a></h2>
+<p>I love modules that put classes on things. Content people or site-builders then do not have to call the developers to add a class. This is one of those modules. It allows the content editor to put classes on nodes.</p>
+<h2 id="block-class"><a href="https://www.drupal.org/project/block_class">Block Class</a></h2>
+<p>Very simple, put classes on blocks.</p>
+<h2 id="menu-attributes"><a href="https://www.drupal.org/project/menu_attributes">Menu Attributes</a></h2>
+<p>This module adds attributes to menu items and menu links. This means that there is no more needing to write css rules that are based on Drupal&rsquo;s mlid based class.</p>
+<aside class="inline">Why is theming off of a system generated mlid based class bad. Because this can change from install to install. Just like theming off of node id, theming off of menu link id is a bad idea.</aside>
+<h2 id="view-field"><a href="https://www.drupal.org/project/viewfield">View Field</a></h2>
+<p>Not to be confused with <a href="https://www.drupal.org/project/views_field">Views Field</a>, the <a href="https://www.drupal.org/project/viewfield">View Field</a> Module allows site-builders to add fields to entities that allow the content editor to display views in fields. These views are set per piece of content. This means there can be a basic page content type that can have all the things that a page should have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing displayed.</p>
+<h2 id="entity-views-attach"><a href="https://www.drupal.org/project/eva">Entity Views Attach</a></h2>
+<p>Unlike <a href="https://www.drupal.org/project/viewfield">View Field</a>, this module is all about the same view as a field on an entity. This module allows the site-builders to configure a view to act like a field on an entity bundle. For example, we want to have a list of all the content that a user has flagged on the user&rsquo;s profile page, and the design has that list in the middle of the rest of the fields. With this module the listing can be configured to be a pseudo field on the users entity that is then free to be positioned along with the rest of the user fields.</p>
+<h2 id="bean"><a href="https://www.drupal.org/project/bean">Bean</a></h2>
+<p>Bean stands for <q>Block Entities Aren&rsquo;t Nodes.</q> This is a stab at the <a href="https://www.drupal.org/project/nodeblock">other way of doing this</a>.</p>
+<p>Block&rsquo;s are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features &ndash;because blocks aren&rsquo;t entities and don&rsquo;t have fields.</p>
+<p>Beans can have fields, because a Bean is a new type of entity, a block entity. This also gives us a better experience for content editors that will be building blocks. Content editors are given revisions, and a block listing page that works just like the content listing page. This means we can have views of blocks too.</p>
+<h2 id="entity-view-mode"><a href="https://www.drupal.org/project/entity_view_mode">Entity View Mode</a></h2>
+<p>Personally, I like code, and I like to write my view modes with code. But this module works too. This module allows the site-builder to add view modes to any bundle on any entity. There is one large drawback, all this stuff is stored in one big variable. That means when a features is exported with the strongarm module it will get all the settings for all the bundles on all content types. There is movement in the issue queue to make this less all-or-nothing but for now, this is how it is.</p>
+<h2 id="display-suite"><a href="https://www.drupal.org/project/ds">Display Suite</a></h2>
+<p>If I had one major complaint about Display Suite, it would be that it does too much (even though it does everything pretty well). With this module a site-builder can: override/layout entity forms, add view modes to bundles, add/remove fields from display, wrap fields in wrappers, and much much more. Read the project description and watch some tutorial videos for more.</p>
+<h2 id="less"><a href="https://www.drupal.org/project/less">Less</a></h2>
+<p>Less!?!, I thought everyone used sass now and less was gone. Nope, less is awesome. It is just as awesome as sass and there is nothing that can be done with one that cannot be done with the other.</p>
+<p>Once the flame war dies down, continue reading.</p>
+<p>This module does a really cool thing. It ties Drupal&rsquo;s css attaching with a less compiler. This less compiler can be php based, such as the old Lefo php less compiler, or the new less.php compiler. It can even be the lessjs node plugin that is installed on the server. I works with css aggregation and it works with the autoprefixing node postCSS plugin as well. This means that you never need to put compiled css into the repository.</p>
+<p><strong>Notice</strong> there is a sass Drupal module that works with the old Lefo sass library. However, both the php lib and the Drupal module are not well supported.</p>
+<h2 id="bootstrap-theme"><a href="https://www.drupal.org/project/bootstrap">Bootstrap Theme</a></h2>
+<p>Bootstrap is a fine front-end framework, and if you are building a site for Bootstrap developers then this is the place to go. I like to use <a href="https://www.drupal.org/project/bootstrap_library">Bootstrap Library</a> for actually adding the Boostrap code.</p>
+<h2 id="jquery-update"><a href="https://www.drupal.org/project/jquery_update">jQuery Update</a></h2>
+<p>Drupal 7 is not the new hotness. It is the old standard. As such the libraries that were once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.</p>
+<p>To this end, I use jQuery update. It is simple, it allows the site-builder to pick a version of jQuery to use with a theme. It also facilitates loading that version from a CDN and the loading of the jQuery migrate module.</p>
+<p><strong>Notice</strong> If using the CDN, pick it before starting with theming. Not every CDN will have the same code for the same versions of jQuery.</p>
+<h2 id="ember"><a href="https://www.drupal.org/project/ember">Ember</a></h2>
+<p>This is the new admin theme hotness from Aquia. It is semantic and accessible and it follows the Aquia&rsquo;s style guidelines. Ember is still in development so expect some glitches.</p>
+<p>I recommend creating a sub-theme of this theme so that further customization can be done without having to hack at ember.</p>
+<h2 id="ember-support"><a href="https://www.drupal.org/project/ember_support">Ember Support</a></h2>
+<p>Does some stuff that ember cannot do in the theme space.</p>
+<h2 id="coffee"><a href="https://www.drupal.org/project/coffee">Coffee</a></h2>
+<p>Toolbar was based somewhat on the admin menu module. Admin module persisted because toolbar doesn&rsquo;t next things. None of that matters anymore because coffee isn&rsquo;t a toolbar. Coffee works like Unity for Ubuntu or Spotlight search for Mac, or the Start Menu in Windows. Just start typing and a list of options will be presented. Pick the option and it will take you there.</p>
+<h2 id="speedboxes"><a href="https://www.drupal.org/project/speedboxes">Speedboxes</a></h2>
+<p>This is a module that truly must be seen to be believed; it is one of those modules that makes new Drupal developers go <q>hmmmm</q> and makes seasoned Drupal developers crap their pants.</p>
+<p>What it does is allow the site-builder to draw a rectangular area around check boxes and then check/uncheck/toggle all the selected checkboxes. This makes configuring the user permission page so much easier.</p>
+<p>The down side to this module used to be that did this on every page or forced the user to use a bookmarklet as a toggle. I recently took over maintainership of this module and I have changed it so that the library responsible only loads on the permissions page and the organic groups permissions page.</p>
+<h2 id="installation">Installation</h2>
+<p>To install these modules just type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drush dl context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drush en context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
+</span></span></code></pre></div><p>If you do not want to have to confirm over and over again, then you will probably want to pass the <code>-y</code> flag to the drush command.</p>
+<p>Play with these modules before installing on production.</p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>No single module on this list is revolutionary. The power comes from combining them. Title and Fences give you semantic markup. Field Group and Display Suite give you layout control. Context gives you conditional logic. Bean gives you fieldable blocks. Stack them together and you have a site-building toolkit that can handle complex designs without writing a single line of custom module code. Drupal 7 is not the new hotness, but it is a platform where the tools have had time to mature &ndash; and that maturity counts for a lot.</p>
+
+    </article>
+</div>
+
+        </main>
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer>
+            <h2 class="sr-only">Footer</h2>
+            <div class="social-icons">
+                <h3>Social Networks</h3>
+                
+                <a href="https://github.com/frob" aria-label="GitHub">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#000000">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+                
+                
+                <a href="https://twitter.com/frobiovox" aria-label="Twitter">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#1DA1F2">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0016 3.542a6.658 6.658 0 01-1.889.518 3.301 3.301 0 001.447-1.817 6.533 6.533 0 01-2.087.793A3.286 3.286 0 007.875 6.03a9.325 9.325 0 01-6.767-3.429 3.289 3.289 0 001.018 4.382A3.323 3.323 0 01.64 6.575v.045a3.288 3.288 0 002.632 3.218 3.203 3.203 0 01-.865.115 3.23 3.23 0 01-.614-.057 3.283 3.283 0 003.067 2.277A6.588 6.588 0 01.78 13.58a6.32 6.32 0 01-.78-.045A9.344 9.344 0 005.026 15z"/>
+                    </svg>
+                </a>
+                
+                <a href="/index.xml" aria-label="RSS">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#f26522">
+                        <path d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 010-2zm0 4a6 6 0 016 6 1 1 0 11-2 0 4 4 0 00-4-4 1 1 0 010-2zm.5 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+                    </svg>
+                </a>
+            </div>
+
+            
+            <div class="blogroll">
+                <h3>Blogroll</h3>
+                
+                <a href="https://www.btmash.com/">Blob of contradictions</a><br>
+                
+                <a href="https://icodealot.com/">iCodealot</a><br>
+                
+            </div>
+            
+
+            <div class="copyright">
+                <p>&copy; 2026 Frank Robert Anderson</p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+    <script src="/js/links.js"></script>
+
+    
+    
+</body>
+</html>

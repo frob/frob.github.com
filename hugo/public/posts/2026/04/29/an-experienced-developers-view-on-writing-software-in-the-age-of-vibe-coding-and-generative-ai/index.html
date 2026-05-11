@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Robert Anderson</title>
+    <meta name="description" content="AI agents can build a full-stack app in an afternoon, but should it. The right workflow depends on your experience level. A guide to using generative AI effectively whether you&#39;re a seasoned engineer or just starting out.">
+    
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Frank Robert Anderson",
+    "sameAs": [
+      "https://github.com/frob",
+      "https://twitter.com/frobiovox"
+    ]
+  },
+  "dateModified": "2026-04-29T00:00:00Z",
+  "datePublished": "2026-04-29T00:00:00Z",
+  "description": "AI agents can build a full-stack app in an afternoon, but should it. The right workflow depends on your experience level. A guide to using generative AI effectively whether you're a seasoned engineer or just starting out.",
+  "headline": "An experienced developers view on writing software in the age of vibe coding and generative ai",
+  "image": "/images/top.png",
+  "keywords": "frontpage, rant, web development, ai",
+  "mainEntityOfPage": "http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/",
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/top.png"
+    },
+    "name": "Frank Robert Anderson"
+  },
+  "url": "http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/"
+}
+</script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Cutive+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+    
+</head>
+<body>
+    <div class="not-footer">
+        <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            
+            <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+            
+
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+                
+                <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+                
+            </div>
+        </header>
+    </div>
+
+    <nav class="navigation-menu">
+        <ul class="navigation-menu-list container">
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/">Blog</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/tutorial/">Tutorials</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/rant/">Rants</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/posts/">Everything</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="http://www.frankrobertanderson.com">Back to My Site</a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+        <main>
+            
+<div class="container">
+    <article class="post">
+        <h1>An experienced developers view on writing software in the age of vibe coding and generative ai</h1>
+        <div class="date">April 29, 2026</div>
+
+        
+         
+        <div class="flex flex-wrap gap-1 mb-2">
+            
+            <span class="badge">frontpage</span>
+            
+            <span class="badge">rant</span>
+            
+            <span class="badge">web development</span>
+            
+            <span class="badge">ai</span>
+            
+        </div>
+         <h2 id="i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks">I have spent many tokens building with AI in many different ways and using different stacks</h2>
+<p>I have seen a recent trend revived among software developers. This is the belief that the productivity of a Software Engineer should (or can be) measured in lines of code per week. This is a metric that was, largely, discarded by Software Engineers 50 years ago. The truth of the matter is that every line of code is a liability. This liability used to be mitigated by the time it took skilled and experienced people to plan, design, and write the code. These were people who had accumulated enough <strong>passive knowledge</strong> to instinctively recognize when something was wrong, and enough <strong>active knowledge</strong> to make deliberate, informed decisions.</p>
+<p>Generative AI has changed everything and now non-skilled people who have never written a line of code before in their lives are starting to write complicated 10,000+ line applications. The dirty secret is that they still don&rsquo;t know what they are doing. If you are one of those people, I do not mean to offend you. It is you who, most of all, needs to read this post.</p>
+<h3 id="tldr">TL;DR</h3>
+<p>AI coding agents can generate a full-stack app in an afternoon, but whether that&rsquo;s a superpower or a liability depends on your experience. Senior devs have accumulated deep <strong>passive knowledge</strong> from years of shipping and debugging production systems; they can safely use agents as force multipliers and trust their instincts to catch bad output. Mid-level devs are still building <strong>active knowledge</strong> in areas like security and architecture; they should treat the agent as a collaborative partner and resist accepting suggestions they can&rsquo;t evaluate. Junior devs should flip the relationship entirely: use the agent as a tutor, not a generator, or risk shipping working code they can&rsquo;t explain, debug, or extend. The right workflow for each level is covered below.</p>
+<hr>
+<h2 id="vibe-coding-a-full-stack-app-how-your-experience-level-should-change-your-workflow">Vibe Coding a Full-Stack App: How Your Experience Level Should Change Your Workflow</h2>
+<p>AI agents can build a full-stack application in an afternoon. A database schema, auth system, API layer, and polished frontend, all generated from a few prompts. It feels like a superpower, and in many ways it is. But the right workflow for wielding that power depends entirely on what you already know.</p>
+<p>Getting this wrong has different consequences at different levels. Senior devs waste time untangling inconsistent generated code. Mid-level devs accumulate technical debt they don&rsquo;t realize is there. And junior devs face the most insidious risk of all: learning nothing while believing they&rsquo;ve learned everything.</p>
+<p>This post walks through a recommended workflow for using AI agents to plan and build a production full-stack application (one with user accounts, a web interface, and an authenticated API) and then shows how that workflow should change based on where you are in your career.</p>
+<hr>
+<h2 id="the-universal-foundation">The Universal Foundation</h2>
+<p>Regardless of experience level, a few principles hold:</p>
+<p><strong>Spec first, always.</strong> A mediocre agent with a great spec beats a great agent with a vague spec every time. Before any code is generated, you should have a written document covering your data model, API routes, auth flows, and key technical decisions. The spec is the single highest-leverage artifact in the entire process.</p>
+<p><strong>Commit before every agent session.</strong> Version control is your undo button. If a session goes sideways, <code>git reset --hard</code> and try again with better instructions. This sounds obvious, but it fundamentally changes your risk tolerance. You can let the agent take bigger swings when you know you can revert cleanly.</p>
+<p><strong>Be willing to throw away generated code.</strong> The sunk cost fallacy hits hard when an agent has produced 500 lines and you realize the approach is wrong. Throw it away. Rewrite the prompt. Try again. The code was cheap to produce and it&rsquo;s cheap to replace.</p>
+<p>The shared workflow skeleton looks like this: <strong>spec → scaffold → feature loop → testing and hardening → deployment.</strong> What changes across experience levels is how you move through each phase, how much you delegate, and where you apply scrutiny.</p>
+<hr>
+<h2 id="the-senior-dev-20-years">The Senior Dev (20+ Years)</h2>
+<p>At this level, the agent is a <strong>force multiplier on existing expertise</strong>. You already know what good code looks like, what production systems require, and where the sharp edges are. You have built, through experience shipping production software and, more importantly, you&rsquo;ve been there when production goes down. Maybe, you&rsquo;ve led a team of Juniors. An experienced engineer has built up enough <strong>passive knowledge</strong> to build software in nearly any stack with or without Generative AI. For an experienced developer the workflow is about directing the agent&rsquo;s output and maintaining quality at volume.</p>
+<h3 id="spec-phase">Spec Phase</h3>
+<p>You write the spec. Use the agent conversationally to sanity-check your decisions: rubber-duck your database schema, talk through auth strategies (JWT vs. session, OAuth provider choices), and pressure-test your API design. But the decisions are yours. You have the context the agent doesn&rsquo;t: your team&rsquo;s capabilities, your infrastructure constraints, your product timeline.</p>
+<h3 id="scaffolding">Scaffolding</h3>
+<p>Use one focused agent session to generate the entire project skeleton: ORM models, migration files, auth middleware, representative API routes, and the frontend shell with auth pages. Generate the skeleton of the whole app in one shot rather than building feature-by-feature. This lets the agent establish consistent patterns (error handling conventions, response envelope shapes, middleware chains, component structure) that it can follow in later sessions.</p>
+<p><strong>Review this output ruthlessly.</strong> Patterns established in the scaffold propagate everywhere. If the agent picks a weird error-handling convention or an inconsistent response shape, fix it now. Fixing patterns in the foundation is 100x cheaper than fixing them after fifty features are built on top.</p>
+<h3 id="feature-development">Feature Development</h3>
+<p>One feature per agent session. Each session gets context that includes the spec, the relevant slice of the codebase, and a clear description of the feature. The agent writes the migration, API routes, service logic, and frontend components. You review, test, and iterate within the session, then commit when it&rsquo;s solid.</p>
+<p>Keep sessions focused. If you find yourself saying &ldquo;now let&rsquo;s also add X,&rdquo; start a new session instead. Long sessions with lots of context-switching produce worse code.</p>
+<h3 id="where-to-apply-extra-scrutiny">Where to Apply Extra Scrutiny</h3>
+<p><strong>Auth and security.</strong> Use a battle-tested auth library (Auth.js for Next.js, Django&rsquo;s built-in auth, FastAPI-Users). The agent will happily write a custom JWT flow, but you&rsquo;ll spend more time auditing it than you save. Even with a library, manually verify token expiry, refresh flows, CORS configuration, CSRF protection, rate limiting on auth endpoints, and password hashing algorithms.</p>
+<p><strong>Cross-boundary refactoring.</strong> Agents are great at refactoring within a file or module. Refactoring across the API boundary, specifically changing response shapes that affect both frontend and backend, tends to produce subtle breakage. Do those manually or in very focused sessions with explicit instructions.</p>
+<p><strong>Testing.</strong> Use agents to generate test scaffolding, but drive what gets tested and review the assertions. Agents love to write tests that pass but don&rsquo;t actually verify meaningful behavior.</p>
+<h3 id="where-to-let-the-agent-rip">Where to Let the Agent Rip</h3>
+<p>CRUD routes, form validation, data transformation functions, migration files, Docker configs, CI/CD pipelines, infrastructure-as-code. The boring parts are where the ROI is highest. Let the agent handle the volume work and save your attention for the parts that require judgment.</p>
+<hr>
+<h2 id="the-mid-level-dev-510-years">The Mid-Level Dev (5–10 Years)</h2>
+<p>At this level, the agent shifts from force multiplier to <strong>collaborative partner</strong>. You have strong opinions about some parts of the architecture but genuine uncertainty about others. Maybe you&rsquo;ve built APIs but never designed an auth system from scratch, or you&rsquo;ve done frontend work but never thought hard about database indexing.</p>
+<p>The core risk at this level is <strong>hidden technical debt from decisions you couldn&rsquo;t evaluate</strong>. The agent will confidently fill in your knowledge gaps with plausible-sounding choices, and if you can&rsquo;t distinguish a good decision from a merely reasonable one, those choices accumulate silently. Question everything and don&rsquo;t ask the agent; instead look things up the old-fashioned way. If you lack the <strong>active knowledge</strong> to finish a task then you probably shouldn&rsquo;t just go along with whatever the GenAI has suggested.</p>
+<h3 id="spec-phase-1">Spec Phase</h3>
+<p>Instead of &ldquo;write me a spec,&rdquo; the workflow becomes &ldquo;explain the tradeoffs, then let me decide.&rdquo; For every architectural choice you&rsquo;re unsure about, ask the agent to lay out the options the way a tech lead would in a design review: what are the alternatives, what are the tradeoffs, what would you recommend for this specific use case and why. Then you make the call. This is slower, but it means you actually understand your own system. This would be a good time to phone a friend or ask for a more experienced set of eyes to look at what is being suggested.</p>
+<h3 id="scaffolding-1">Scaffolding</h3>
+<p>Same approach as the senior dev, but add a dedicated review step after generation. Before building any features, ask the agent to describe the patterns it established: &ldquo;What&rsquo;s the error-handling strategy? What&rsquo;s the API response envelope? How is auth middleware applied?&rdquo; If it describes something you don&rsquo;t recognize from the code, that&rsquo;s a red flag &ndash; the patterns aren&rsquo;t consistent even within the scaffold.</p>
+<h3 id="feature-development-1">Feature Development</h3>
+<p>Add a walkthrough step to the feature loop. After the agent generates a feature, ask it to walk you through the code before you review it yourself. Not because you can&rsquo;t read code, but because agents sometimes use patterns or libraries you haven&rsquo;t encountered, and understanding the intent before reading the implementation makes review dramatically more effective.</p>
+<h3 id="auth">Auth</h3>
+<p>Use a library and follow its official documentation exactly. Resist the temptation to customize the auth flow based on agent suggestions. Agents will happily add &ldquo;convenient&rdquo; shortcuts (disabling CSRF for API routes, storing tokens in localStorage) and if you don&rsquo;t have the security background to smell that something&rsquo;s off, you&rsquo;ll ship it. If the agent produces auth code that deviates from the library&rsquo;s documented patterns, ask it to explain why. If the explanation involves the word &ldquo;simpler,&rdquo; be skeptical.</p>
+<h3 id="testing-as-a-substitute-for-intuition">Testing as a Substitute for Intuition</h3>
+<p>Lean on testing more aggressively than a senior dev would. Not because you&rsquo;ll write better tests, but because tests are how you discover that something is wrong when you lack the intuition to sense it. Ask the agent to write integration tests for every API route, including unhappy paths: expired tokens, malformed input, unauthorized access to other users&rsquo; data. Run them and read the failures carefully. A failing test you don&rsquo;t understand is a learning opportunity about your own system.</p>
+<h3 id="the-learning-log">The Learning Log</h3>
+<p>Keep a running document of things the agent did that you didn&rsquo;t understand, decisions it made that you had to ask about, and patterns it used that were new to you. This serves two purposes: it&rsquo;s a reference for future decisions, and it&rsquo;s a forcing function to make sure you&rsquo;re understanding what&rsquo;s being generated rather than just accepting it.</p>
+<hr>
+<h2 id="the-intern--new-dev">The Intern / New Dev</h2>
+<p>This is where the recommendations change fundamentally, not just in emphasis but in kind. Because the core risk is completely different.</p>
+<p>For the senior dev, the risk is wasted time. For the mid-level dev, the risk is hidden technical debt. For the intern, the risk is <strong>learning nothing while believing you&rsquo;ve learned everything.</strong> An agent will happily build your entire app while you watch, and you&rsquo;ll feel productive the whole time, and at the end you&rsquo;ll have a working application you can&rsquo;t debug, can&rsquo;t extend, and can&rsquo;t explain in an interview.</p>
+<h3 id="dont-start-with-the-full-stack">Don&rsquo;t Start with the Full Stack</h3>
+<p>The workflow described above assumes you can read generated code and evaluate whether it&rsquo;s good. If you&rsquo;ve never shipped production code, you can&rsquo;t do that yet &ndash; not because you&rsquo;re not smart enough, but because you don&rsquo;t have the reference points. You don&rsquo;t know what &ldquo;normal&rdquo; looks like, so you can&rsquo;t spot &ldquo;weird.&rdquo;</p>
+<p>Start with a single layer.</p>
+<p><strong>Weeks 1–2: Build the API with no frontend.</strong> Use the agent to help, but change the workflow dramatically. Instead of asking the agent to generate a feature, ask it to explain what you need to build, then try writing it yourself, then use the agent to review what you wrote. The loop is: <strong>understand → attempt → compare → learn.</strong></p>
+<p>Use Postman or curl to test your API manually. This teaches you something critical: the API is the real application. The frontend is just one client. Starting full-stack tends to produce the misconception that the API exists to serve the React app, which leads to architectural instincts that take years to unlearn.</p>
+<p><strong>Weeks 3–4: Add the frontend.</strong> Now you have an API you understand because you built it. Add the frontend as a separate layer that talks to your existing API. Again, agent as collaborator, not generator.</p>
+<h3 id="use-managed-auth-not-a-library">Use Managed Auth, Not a Library</h3>
+<p>For the senior dev, the recommendation is &ldquo;use a library and audit the integration.&rdquo; For the mid-level dev, &ldquo;use a library and follow the docs exactly.&rdquo; For you: <strong>use a fully managed auth service</strong> like Clerk, Auth0, or Supabase Auth.</p>
+<p>Not because auth is conceptually beyond you, but because auth fails silently. A broken API route throws an error. A broken React component shows a blank screen. A broken auth system looks like it works perfectly until someone&rsquo;s account gets compromised. You need security intuition to evaluate auth code, and that takes time to develop. Use a service, learn how auth works conceptually on the side, and revisit the decision when you have more experience.</p>
+<h3 id="flip-the-agent-relationship">Flip the Agent Relationship</h3>
+<p>For experienced devs, the agent is a code generator you review. For you, flip that entirely. The agent is a <strong>tutor that occasionally writes code.</strong></p>
+<p>An experienced dev prompts: <em>&ldquo;Build me a paginated endpoint for listing users with role-based filtering.&rdquo;</em></p>
+<p>You, instead: <em>&ldquo;I need to build a paginated endpoint for listing users. Before writing any code, explain what pagination strategies exist, which one you&rsquo;d recommend for this use case, and what the SQL query would look like. Then I&rsquo;ll try implementing it.&rdquo;</em></p>
+<p>After your attempt: <em>&ldquo;Here&rsquo;s my implementation. Review it, tell me what I got wrong, and explain why it&rsquo;s wrong &ndash; not just how to fix it.&rdquo;</em></p>
+<p>This is radically different from vibe coding. It&rsquo;s more like pair programming with a very patient senior engineer. It&rsquo;s slower by a factor of maybe 5x. But you actually learn.</p>
+<h3 id="concepts-that-will-trip-you-up">Concepts That Will Trip You Up</h3>
+<p>There are things experienced devs handle unconsciously that you&rsquo;ll need to engage with explicitly:</p>
+<p><strong>Environment variables and secrets.</strong> Ask the agent to explain the difference between hardcoding a database URL, using a <code>.env</code> file, and using a secrets manager, and why each matters. If you don&rsquo;t understand this, you will eventually commit a secret to git, and that&rsquo;s a genuinely bad day.</p>
+<p><strong>Database migrations.</strong> The concept of schema changes as versioned, sequential operations is likely new. Don&rsquo;t let the agent just generate migrations silently. Ask it to explain what each migration does and why migrations exist at all, as opposed to just editing the schema directly.</p>
+<p><strong>Error handling as an API contract.</strong> You probably catch errors to prevent crashes. You don&rsquo;t yet think about error handling as a contract with the frontend developers consuming your API. Ask the agent to explain HTTP status codes, error response shapes, and why consistency here matters for everyone downstream.</p>
+<h3 id="the-learning-log-mandatory-version">The Learning Log (Mandatory Version)</h3>
+<p>The learning log from the mid-level section becomes non-negotiable here, but changes form. Don&rsquo;t just log things you didn&rsquo;t understand; log things you thought you understood but got wrong. Every time the agent corrects you, write down what you assumed, what was actually true, and why. After a few weeks, review the log. You&rsquo;ll start seeing patterns in your misconceptions, and those patterns tell you exactly what to study next.</p>
+<h3 id="resist-the-demo-trap">Resist the Demo Trap</h3>
+<p>You&rsquo;re going to have moments where the agent produces something impressive (a beautiful dashboard, a working auth flow, a real-time feature) and you&rsquo;ll want to show it off or ship it. The temptation is enormous because the gap between &ldquo;thing I could build alone&rdquo; and &ldquo;thing the agent built while I nodded along&rdquo; is massive at your level.</p>
+<p>But shipping code you can&rsquo;t explain is a career liability, not an asset. When your manager asks &ldquo;why did you implement it this way?&rdquo; or &ldquo;this broke in production, can you fix it?&rdquo; you need an answer beyond &ldquo;the AI did it.&rdquo;</p>
+<hr>
+<h2 id="the-common-thread">The Common Thread</h2>
+<p>Across all three levels, a few truths hold:</p>
+<p><strong>The spec is always the highest-leverage artifact.</strong> Whether you write it yourself, collaborate on it, or use it as a learning exercise, the spec shapes everything downstream. Time invested here pays compound returns.</p>
+<p><strong>Auth deserves more caution than you think.</strong> At every level, the recommendation is some version of &ldquo;don&rsquo;t hand-roll this, and be more careful than your instincts suggest.&rdquo; The severity of auth failures is disproportionate to how mundane the code looks.</p>
+<p><strong>The agent&rsquo;s willingness to help is not evidence that you should accept the help.</strong> Agents are infinitely willing. They&rsquo;ll generate anything you ask for, with confidence, whether or not it&rsquo;s a good idea. The judgment about when to accept generated code, when to push back, and when to write it yourself &ndash; that&rsquo;s on you at every level.</p>
+<p><strong>These levels aren&rsquo;t fixed.</strong> The whole point of having different workflows is that you&rsquo;re supposed to graduate from one to the next. The intern who follows the tutoring workflow rigorously will build the intuition to work at the mid-level workflow within months, not years. The mid-level dev who takes the learning log seriously will develop the architectural instincts that make the senior workflow effective. The agent accelerates that progression, but only if you&rsquo;re actually engaging with the work, not just outsourcing it.</p>
+<hr>
+<h2 id="closing-thought">Closing Thought</h2>
+<p>The best use of AI agents isn&rsquo;t building software faster. It&rsquo;s building software at the appropriate speed for your current level of understanding (your mix of <strong>active</strong> and <strong>passive knowledge</strong>) with a deliberate ramp toward building it faster as you grow. The agent meets you where you are, but you have to be honest about where that is.</p>
+
+    </article>
+</div>
+
+        </main>
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer>
+            <h2 class="sr-only">Footer</h2>
+            <div class="social-icons">
+                <h3>Social Networks</h3>
+                
+                <a href="https://github.com/frob" aria-label="GitHub">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#000000">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+                
+                
+                <a href="https://twitter.com/frobiovox" aria-label="Twitter">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#1DA1F2">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0016 3.542a6.658 6.658 0 01-1.889.518 3.301 3.301 0 001.447-1.817 6.533 6.533 0 01-2.087.793A3.286 3.286 0 007.875 6.03a9.325 9.325 0 01-6.767-3.429 3.289 3.289 0 001.018 4.382A3.323 3.323 0 01.64 6.575v.045a3.288 3.288 0 002.632 3.218 3.203 3.203 0 01-.865.115 3.23 3.23 0 01-.614-.057 3.283 3.283 0 003.067 2.277A6.588 6.588 0 01.78 13.58a6.32 6.32 0 01-.78-.045A9.344 9.344 0 005.026 15z"/>
+                    </svg>
+                </a>
+                
+                <a href="/index.xml" aria-label="RSS">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#f26522">
+                        <path d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 010-2zm0 4a6 6 0 016 6 1 1 0 11-2 0 4 4 0 00-4-4 1 1 0 010-2zm.5 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+                    </svg>
+                </a>
+            </div>
+
+            
+            <div class="blogroll">
+                <h3>Blogroll</h3>
+                
+                <a href="https://www.btmash.com/">Blob of contradictions</a><br>
+                
+                <a href="https://icodealot.com/">iCodealot</a><br>
+                
+            </div>
+            
+
+            <div class="copyright">
+                <p>&copy; 2026 Frank Robert Anderson</p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+    <script src="/js/links.js"></script>
+
+    
+    
+</body>
+</html>

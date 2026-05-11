@@ -1,0 +1,16 @@
+{{- /* llms.txt — https://llmstxt.org index for LLM crawlers */ -}}
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+## Pages
+
+{{- range where .Site.RegularPages "Kind" "page" }}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}
+{{- end }}
+
+## Sections
+
+{{- range .Site.Sections }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{- end }}

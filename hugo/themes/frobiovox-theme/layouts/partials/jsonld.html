@@ -1,0 +1,112 @@
+{{- /* JSON-LD partial. Emits the most specific schema.org type per Kind/Section. */ -}}
+{{- $site := .Site -}}
+{{- $siteURL := $site.BaseURL -}}
+
+{{- /* Resolve author: page frontmatter overrides site params.author */ -}}
+{{- $authorName := "" -}}
+{{- $authorURL := "" -}}
+{{- with .Params.author -}}
+  {{- if reflect.IsMap . -}}
+    {{- $authorName = .name -}}
+    {{- $authorURL = .url -}}
+  {{- else -}}
+    {{- $authorName = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $authorName -}}
+  {{- with $site.Params.author -}}
+    {{- if reflect.IsMap . -}}
+      {{- $authorName = .name -}}
+      {{- $authorURL = .url -}}
+    {{- else -}}
+      {{- $authorName = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $sameAs := slice -}}
+{{- with $site.Params.github -}}{{- $sameAs = $sameAs | append (printf "https://github.com/%s" .) -}}{{- end -}}
+{{- with $site.Params.twitter -}}{{- $sameAs = $sameAs | append (printf "https://twitter.com/%s" .) -}}{{- end -}}
+
+{{- $author := dict "@type" "Person" "name" $authorName -}}
+{{- with $authorURL }}{{- $author = merge $author (dict "url" .) -}}{{- end -}}
+{{- if gt (len $sameAs) 0 }}{{- $author = merge $author (dict "sameAs" $sameAs) -}}{{- end -}}
+
+{{- $logo := dict "@type" "ImageObject" "url" (printf "%s%s" (strings.TrimRight "/" $siteURL) ($site.Params.avatar | default "")) -}}
+{{- $publisher := dict "@type" "Organization" "name" $site.Title "logo" $logo -}}
+
+{{- $obj := dict -}}
+
+{{- if .IsHome -}}
+  {{- $posts := slice -}}
+  {{- range first 20 (where $site.RegularPages "Section" "posts") -}}
+    {{- $posts = $posts | append (dict "@type" "BlogPosting" "headline" .Title "url" .Permalink) -}}
+  {{- end -}}
+  {{- $obj = dict
+    "@context" "https://schema.org"
+    "@type" "Blog"
+    "name" $site.Title
+    "url" .Permalink
+    "description" $site.Params.description
+    "publisher" $publisher
+    "blogPost" $posts
+  -}}
+{{- else if eq .Kind "page" -}}
+  {{- if eq .File.BaseFileName "about" -}}
+    {{- $obj = dict
+      "@context" "https://schema.org"
+      "@type" "AboutPage"
+      "name" .Title
+      "url" .Permalink
+      "description" (.Description | default $site.Params.description)
+      "publisher" $publisher
+    -}}
+  {{- else -}}
+    {{- $img := "" -}}
+    {{- with .Params.image -}}{{- $img = . -}}{{- end -}}
+    {{- if not $img -}}{{- $img = $site.Params.avatar -}}{{- end -}}
+    {{- $bp := dict
+      "@context" "https://schema.org"
+      "@type" "BlogPosting"
+      "headline" .Title
+      "mainEntityOfPage" .Permalink
+      "url" .Permalink
+      "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+      "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+      "author" $author
+      "publisher" $publisher
+    -}}
+    {{- with .Description }}{{- $bp = merge $bp (dict "description" .) -}}{{- end -}}
+    {{- with $img }}{{- $bp = merge $bp (dict "image" .) -}}{{- end -}}
+    {{- with .Params.category }}{{- $bp = merge $bp (dict "articleSection" .) -}}{{- end -}}
+    {{- with .Params.tags }}{{- $bp = merge $bp (dict "keywords" (delimit . ", ")) -}}{{- end -}}
+    {{- with .Params.canonical }}{{- $bp = merge $bp (dict "sameAs" (slice .)) -}}{{- end -}}
+    {{- $obj = $bp -}}
+  {{- end -}}
+{{- else if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- $items := slice -}}
+  {{- range $i, $p := first 50 .Pages -}}
+    {{- $items = $items | append (dict
+      "@type" "ListItem"
+      "position" (add $i 1)
+      "url" $p.Permalink
+      "name" $p.Title
+    ) -}}
+  {{- end -}}
+  {{- $obj = dict
+    "@context" "https://schema.org"
+    "@type" "CollectionPage"
+    "name" .Title
+    "url" .Permalink
+    "mainEntity" (dict
+      "@type" "ItemList"
+      "itemListElement" $items
+    )
+  -}}
+{{- end -}}
+
+{{- if $obj }}
+<script type="application/ld+json">
+{{ $obj | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- end -}}
