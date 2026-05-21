@@ -1,0 +1,1728 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frank Robert Anderson</title><link>https://www.frobiovox.com/</link><description>Recent content on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/rss.xml" rel="self" type="application/rss+xml"/><item><title>Add a JSON API to Any Static Site Generator</title><link>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link><pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid><description>&lt;p&gt;Back in 2015, I wrote about &lt;a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/"&gt;adding a JSON API to a Jekyll blog&lt;/a&gt;. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.&lt;/p&gt;
+&lt;p&gt;That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.&lt;/p&gt;
+&lt;h2 id="the-idea-again"&gt;The idea, again&lt;/h2&gt;
+&lt;p&gt;A static site generator takes your markdown and pushes it through templates to make HTML files. There is nothing special about HTML here &amp;ndash;it is just the output format. If you write a template that outputs JSON instead of HTML, you get &lt;code&gt;.json&lt;/code&gt; files. Your web server doesn&amp;rsquo;t care, it serves them the same way and JavaScript on the client side can fetch them.&lt;/p&gt;
+&lt;h2 id="hugos-output-formats"&gt;Hugo&amp;rsquo;s output formats&lt;/h2&gt;
+&lt;p&gt;Hugo has this thing called &lt;a href="https://gohugo.io/templates/output-formats/"&gt;custom output formats&lt;/a&gt;. Instead of hacking JSON into a regular HTML template like I had to do with Jekyll, I defined a new output format and gave it its own templates. Hugo generates both the HTML and the JSON for you in the same build.&lt;/p&gt;
+&lt;h3 id="config"&gt;Config&lt;/h3&gt;
+&lt;p&gt;First, tell Hugo about the JSON format. In &lt;code&gt;hugo.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[&lt;span style="color:#a6e22e"&gt;outputFormats&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;JSON&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;mediaType&lt;/span&gt; = &lt;span style="color:#e6db74"&gt;&amp;#34;application/json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;baseName&lt;/span&gt; = &lt;span style="color:#e6db74"&gt;&amp;#34;index&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[&lt;span style="color:#a6e22e"&gt;outputs&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;home&lt;/span&gt; = [&lt;span style="color:#e6db74"&gt;&amp;#34;HTML&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;RSS&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;JSON&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;section&lt;/span&gt; = [&lt;span style="color:#e6db74"&gt;&amp;#34;HTML&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;JSON&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;page&lt;/span&gt; = [&lt;span style="color:#e6db74"&gt;&amp;#34;HTML&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;JSON&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;outputs&lt;/code&gt; section is where you decide what gets a JSON version. If you only want a listing endpoint and don&amp;rsquo;t need individual post JSON, just leave &lt;code&gt;page&lt;/code&gt; off.&lt;/p&gt;
+&lt;h3 id="the-list-template"&gt;The list template&lt;/h3&gt;
+&lt;p&gt;Hugo will look for a template called &lt;code&gt;list.json.json&lt;/code&gt; for sections and the homepage. Create it at &lt;code&gt;layouts/_default/list.json.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;range&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;$index,&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;$page&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;:=&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Pages&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;if&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;$index&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,{&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;end&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Title&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }},
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.RelPermalink&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;date&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Date.Format&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;2006-01-02&amp;#34;&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Params.description&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;default&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Params.tags&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;default&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;slice&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;end&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;See that &lt;code&gt;jsonify&lt;/code&gt; function? That is doing all the heavy lifting. It handles escaping, it handles arrays, it handles nil values. In the &lt;a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/"&gt;Jekyll version&lt;/a&gt; I had to loop through tags one at a time and build the JSON array by hand. Here I just pipe to &lt;code&gt;jsonify&lt;/code&gt; and Hugo figures it out.&lt;/p&gt;
+&lt;h3 id="the-single-post-template"&gt;The single post template&lt;/h3&gt;
+&lt;p&gt;For individual posts, create &lt;code&gt;layouts/_default/single.json.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Title&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }}&lt;span style="color:#960050;background-color:#1e0010"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.RelPermalink&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;date&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Date.Format&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;2006-01-02&amp;#34;&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Params.description&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;default&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Params.tags&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;default&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;slice&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Content&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="build-it"&gt;Build it&lt;/h3&gt;
+&lt;p&gt;Run &lt;code&gt;hugo&lt;/code&gt; and check the output. For every page that has JSON in its output list, there will be an &lt;code&gt;index.json&lt;/code&gt; sitting right next to the &lt;code&gt;index.html&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/posts/index.json&lt;/code&gt; &amp;ndash; all your posts&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/posts/2026/04/23/some-post/index.json&lt;/code&gt; &amp;ndash; one post&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/index.json&lt;/code&gt; &amp;ndash; homepage listing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is simpler with Hugo. No Gulp task, no separate build step, no copying files around. But this same idea is possible in nearly any Static Site Generator.&lt;/p&gt;
+&lt;h2 id="the-homepage-template"&gt;The homepage template&lt;/h2&gt;
+&lt;p&gt;My homepage template is different from my default list template. It uses &lt;code&gt;.Site.RegularPages&lt;/code&gt; instead of &lt;code&gt;.Pages&lt;/code&gt; and limits to 50 posts. If yours is the same, you might want a separate &lt;code&gt;index.json.json&lt;/code&gt; in your layouts root:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;range&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;$index,&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;$page&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;:=&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;first&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;50&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Site.RegularPages&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;if&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;$index&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,{&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;end&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Title&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }},
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;url&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.RelPermalink&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;date&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Date.Format&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;2006-01-02&amp;#34;&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Params.description&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;default&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;&lt;span style="color:#960050;background-color:#1e0010"&gt;:&lt;/span&gt; {&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;.Params.tags&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;default&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;slice&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;|&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;jsonify&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{&lt;span style="color:#960050;background-color:#1e0010"&gt;{&lt;/span&gt; &lt;span style="color:#960050;background-color:#1e0010"&gt;end&lt;/span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="what-hugo-gives-you-for-free"&gt;What Hugo gives you for free&lt;/h2&gt;
+&lt;p&gt;Comparing this to what I went through with Jekyll:&lt;/p&gt;
+&lt;p&gt;In Jekyll, I had to loop through tags and categories and manually comma-separate them with &lt;code&gt;forloop.last&lt;/code&gt; checks. I had to add nil guards for when tags or categories were empty. I used Liquid&amp;rsquo;s &lt;code&gt;escape&lt;/code&gt; filter on content and hoped for the best. And I had a whole Gulp task that duplicated the posts from &lt;code&gt;_posts&lt;/code&gt; into an &lt;code&gt;api/v01/posts&lt;/code&gt; directory and swapped the layout from html to json.&lt;/p&gt;
+&lt;p&gt;With Hugo, I write a template, add three lines to my config, and it just works. The &lt;code&gt;jsonify&lt;/code&gt; function handles arrays, escaping, and nil values. The output format system handles the file generation. No Gulp task, no extra build step.&lt;/p&gt;
+&lt;h2 id="this-isnt-just-a-hugo-thing"&gt;This isn&amp;rsquo;t just a Hugo thing&lt;/h2&gt;
+&lt;p&gt;The core trick works anywhere. If your static site generator has templates, you can make it output JSON. Hugo happens to have first-class support for it, but the pattern is the same whether you are using 11ty, Astro, or even Jekyll like I was in 2015. Write a template, output JSON, let the build generate the files.&lt;/p&gt;
+&lt;p&gt;I use it for client-side filtering. Fetch the listing endpoint, match on tags in JavaScript, render a related posts section without a page reload. It is not a replacement for a real API &amp;ndash;there is no auth, no pagination, no writes. But for read-only content that is already public on your site, it is free and it ships with every build.&lt;/p&gt;</description></item><item><title>Getting XDebug working with the Zed editor, starring Claude</title><link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid><description>&lt;h1 id="zed-ide-and-xdebug"&gt;Zed IDE and Xdebug&lt;/h1&gt;
+&lt;p&gt;Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.&lt;/p&gt;
+&lt;h2 id="why-zed"&gt;Why Zed&lt;/h2&gt;
+&lt;p&gt;The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.&lt;/p&gt;
+&lt;p&gt;Zed is from the creators of Atom and is written in Rust. It is crazy fast. But, Zed isn&amp;rsquo;t perfect.&lt;/p&gt;
+&lt;p&gt;The main problem is me. I mostly work in PHP and Zed sucks at PHP. One thing that sucks is Xdebug support. I have finally gotten Xdebug working. What follows is my conversation with Claude Sonnet 4.5 to get Xdebug working.&lt;/p&gt;
+&lt;h2 id="initial-question-best-ai-enabled-ide-for-php"&gt;Initial Question: Best AI-Enabled IDE for PHP&lt;/h2&gt;
+&lt;p&gt;I started out asking about AI enabled IDEs. I wasn&amp;rsquo;t originally planning on asking about Xdebug.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; What is the best AI enabled IDE for PHP&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; For PHP development with AI assistance, here are the strongest options:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;PhpStorm with AI Assistant&lt;/strong&gt; is probably your best bet. It&amp;rsquo;s the most PHP-focused IDE and JetBrains recently added their AI Assistant plugin, which provides context-aware code completion, refactoring suggestions, and chat-based coding help. PhpStorm already has excellent PHP-specific features like deep framework integration (Laravel, Symfony), advanced refactoring, and debugging tools.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Cursor&lt;/strong&gt; is gaining a lot of traction as an AI-first IDE. It&amp;rsquo;s built on VS Code but designed from the ground up for AI pair programming. You get inline AI suggestions, the ability to chat with your codebase, and AI that understands your project context. For PHP specifically, you&amp;rsquo;d pair it with PHP extensions, but the AI capabilities are quite powerful.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;VS Code with GitHub Copilot&lt;/strong&gt; is a solid middle ground - it&amp;rsquo;s free (VS Code itself), lightweight, and Copilot works well for PHP. You can add extensions like PHP Intelephense for language support. This combination is popular because it&amp;rsquo;s familiar and the AI assistance is reliable.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Windsurf&lt;/strong&gt; is a newer AI-native IDE worth mentioning - it&amp;rsquo;s similar to Cursor but with some different approaches to AI interaction.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The choice really depends on whether you want the best PHP-specific tooling (PhpStorm) or the most advanced AI capabilities (Cursor/Windsurf). If you&amp;rsquo;re heavily invested in PHP and work with frameworks daily, PhpStorm with AI Assistant gives you both excellent PHP support and good AI features. If you want cutting-edge AI assistance and don&amp;rsquo;t mind configuring PHP support yourself, Cursor might be more exciting.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="why-zed-wasnt-initially-recommended"&gt;Why Zed Wasn&amp;rsquo;t Initially Recommended&lt;/h2&gt;
+&lt;p&gt;The initial response didn&amp;rsquo;t even have Zed in the running.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; Why don&amp;rsquo;t you recommend zed&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; You&amp;rsquo;re right to bring up Zed! I should have mentioned it - it&amp;rsquo;s a legitimate option, especially since it has built-in AI features and is gaining momentum.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Zed&lt;/strong&gt; is a fast, modern code editor built by some of the Atom creators. It has native AI assistant integration and is designed for speed and collaboration. For PHP specifically, it has language support through extensions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I didn&amp;rsquo;t lead with Zed for a few reasons:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;PHP ecosystem maturity&lt;/strong&gt; - PhpStorm and VS Code have much deeper PHP tooling, framework integrations, and debugger support that PHP developers often rely on. Zed is still building out its extension ecosystem.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;&lt;strong&gt;Market adoption for PHP&lt;/strong&gt; - Most PHP developers I&amp;rsquo;m aware of use PhpStorm or VS Code, so there&amp;rsquo;s more community support, tutorials, and shared configurations for those tools.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;&lt;strong&gt;AI feature maturity&lt;/strong&gt; - While Zed has AI built in, tools like Cursor have more established AI pair-programming workflows at this point.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;That said, Zed has real advantages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&amp;rsquo;s extremely fast (written in Rust)&lt;/li&gt;
+&lt;li&gt;Clean, minimal interface&lt;/li&gt;
+&lt;li&gt;Built-in collaboration features&lt;/li&gt;
+&lt;li&gt;Native AI integration without plugins&lt;/li&gt;
+&lt;li&gt;Completely free and open source&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="xdebug-integration-with-zed"&gt;Xdebug Integration with Zed&lt;/h2&gt;
+&lt;p&gt;This made me think about why I don&amp;rsquo;t use Zed so much for PHP. I use Drupal for most PHP projects and Xdebug has been a necessity of Drupal development since the release of Drupal 8. PhpStorm has a really good Xdebug integration and I haven&amp;rsquo;t been able to find a suitable replacement.&lt;/p&gt;
+&lt;p&gt;I have tried VSCode but it has similar issues with Xdebug as Zed and it isn&amp;rsquo;t all that much faster. My primary problem with PhpStorm is the speed, but the latest version also integrates AI and I will just come out and say it. The PhpStorm AI sucks. 90% of the time is is auto completing things I don&amp;rsquo;t want. When it gets it right, it can be like magic. But having to repair 90% of auto completed code is really annoying. I have had better results with Zed.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; how do I integrate zed with XDebug?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; Great news - Zed actually has built-in Xdebug support through its PHP extension! Here&amp;rsquo;s how to set it up:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id="basic-setup"&gt;Basic Setup&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Install the PHP extension&lt;/strong&gt; in Zed (if you haven&amp;rsquo;t already)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;&lt;strong&gt;Configure Xdebug in your PHP.ini&lt;/strong&gt; file:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;zend_extension&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;xdebug.so
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; xdebug.mode=debug
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; xdebug.start_with_request=yes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; xdebug.client_port=9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;&lt;strong&gt;Create a debug configuration&lt;/strong&gt; in Zed by creating a &lt;code&gt;.zed/debug.json&lt;/code&gt; file in your project root:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;label&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;PHP: Listen to Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;adapter&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;&lt;strong&gt;Set breakpoints&lt;/strong&gt; by clicking next to line numbers in the gutter&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;&lt;strong&gt;Start debugging&lt;/strong&gt; by opening the debug panel and selecting your &amp;ldquo;PHP: Listen to Xdebug&amp;rdquo; configuration&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id="for-ddev-or-docker-setups"&gt;For DDEV or Docker setups&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you&amp;rsquo;re using DDEV or Docker, you&amp;rsquo;ll need to add path mappings:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;label&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;PHP: Listen to Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;adapter&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;pathMappings&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;/app&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;$ZED_WORKTREE_ROOT&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="troubleshooting-container-connection-issues"&gt;Troubleshooting Container Connection Issues&lt;/h2&gt;
+&lt;p&gt;This is back to the normal issues. I had already gotten to this point before. All set up with no connection for unknown reasons.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; Looks like the debugger cannot connect. I am getting this error in the PHP container &amp;ldquo;Could not connect to debugging client. Tried: localhost:9003&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; This is a common issue with Docker/container setups. The problem is that &lt;code&gt;localhost&lt;/code&gt; from inside the container refers to the container itself, not your host machine where Zed is running.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id="fix-the-xdebug-configuration"&gt;Fix the Xdebug Configuration&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You need to tell Xdebug to connect to your &lt;strong&gt;host machine&lt;/strong&gt; instead of localhost. Update your Xdebug configuration in PHP.ini:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;zend_extension&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;xdebug.so&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.mode&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;debug&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.start_with_request&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;yes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.client_host&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;host.docker.internal # For Docker Desktop&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.client_port&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;h3 id="platform-specific-solutions"&gt;Platform-specific solutions:&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;For Docker Desktop (Mac/Windows):&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.client_host&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;host.docker.internal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;For Linux Docker or if the above doesn&amp;rsquo;t work:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.client_host&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;172.17.0.1 # Default Docker bridge IP&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Or dynamically discover it:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.discover_client_host&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="error-process-exited-before-debugger-attached"&gt;Error: &amp;ldquo;process exited before debugger attached&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;This is when I started to make progress. There was a requirement that was unknown to me. Maybe I should have known that nodejs was a dependency but I didn&amp;rsquo;t.&lt;/p&gt;
+&lt;p&gt;I run everything in containers. The last thing I want is a random interpreter running on my system. I work in PHP, Go, Javascript, various DB, Python, and more. It all runs in containers. I compile Go using containers. I write Python using containers. Even my personal Godot projects are built/exported with containers. Why would I have node installed?&lt;/p&gt;
+&lt;p&gt;At this point I didn&amp;rsquo;t even follow any of the steps laid out by the AI. I just installed Node.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; I am getting this error in zed &amp;ldquo;process exited before debugger attached.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; This error means the debug adapter (the bridge between Zed and Xdebug) is crashing before it can start listening. This is a known issue with Zed&amp;rsquo;s Xdebug integration.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id="quick-fixes"&gt;Quick Fixes:&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;1. Ensure Node.js is installed:&lt;/strong&gt;
+Zed&amp;rsquo;s Xdebug adapter requires Node.js to run. Install it if you haven&amp;rsquo;t:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Check if you have it&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;node --version
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# If not, install it&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Mac&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install node
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Linux (Ubuntu/Debian)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt install nodejs npm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;2. Simplify your debug.json:&lt;/strong&gt;
+Start with the absolute minimum configuration:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;label&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;PHP: Listen to Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;adapter&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="breakpoints-not-working"&gt;Breakpoints Not Working&lt;/h2&gt;
+&lt;p&gt;Now, it looks like it is going to work. All that is left is a little debugging. Here Claude did a great job of walking me through some of the debugging steps. I already had the logs setup so I was able to jump straight to the debugging.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; I no longer get the error, but it still wont break at my breakpoint.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; Good progress! Now we need to figure out why Xdebug isn&amp;rsquo;t triggering the breakpoints. This is usually a path mapping issue or Xdebug not connecting properly.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id="debugging-steps"&gt;Debugging Steps:&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;1. Verify Xdebug is actually connecting to Zed:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Add this to your PHP.ini to get detailed logs:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.log&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;/tmp/xdebug.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.log_level&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;2. Check the exact container paths:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Find out where your code actually lives in the container:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Inside your container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;pwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Then update your &lt;code&gt;.zed/debug.json&lt;/code&gt; with the correct mapping:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;label&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;PHP: Listen to Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;adapter&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;pathMappings&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;/var/www/html&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;/Users/yourname/projects/yourproject&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="testing-the-connection"&gt;Testing the Connection&lt;/h2&gt;
+&lt;p&gt;This is more good suggestions from Claude. I used &lt;code&gt;netstat&lt;/code&gt; to see if the port was being listened to and I installed &lt;code&gt;telnet&lt;/code&gt; on the container to verify that communication was open both directions.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; I don&amp;rsquo;t see anything in zed&amp;rsquo;s debug panel&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; If nothing shows up in Zed&amp;rsquo;s debug panel, then Xdebug isn&amp;rsquo;t successfully connecting to Zed at all. Let&amp;rsquo;s verify the connection path:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id="test-the-connection-manually"&gt;Test the connection manually:&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;From your host machine (not the container), test if Zed is listening:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# On your host machine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;netstat -an | grep &lt;span style="color:#ae81ff"&gt;9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# or&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;lsof -i :9003
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Test connection FROM the container:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Start Zed&amp;rsquo;s debugger, then from inside your container:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# This should connect if everything is working&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;telnet host.docker.internal &lt;span style="color:#ae81ff"&gt;9003&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="connection-success-but-still-not-breaking"&gt;Connection Success but Still Not Breaking&lt;/h2&gt;
+&lt;p&gt;I have to be honest here. I don&amp;rsquo;t think I have used &lt;code&gt;telnet&lt;/code&gt; since playing Tradewars in college. I definitely wouldn&amp;rsquo;t have tried it as a debugging tool here without the prompt. That said, I don&amp;rsquo;t think it saved time. It did instill confidence that everything could communicate.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; When I ran telnet, it said &amp;ldquo;Escape character is &amp;lsquo;^&amp;rsquo;&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; Perfect! That &amp;ldquo;Escape character is &amp;lsquo;^]&amp;rsquo;&amp;rdquo; message means the telnet connection &lt;strong&gt;succeeded&lt;/strong&gt; - your container CAN reach Zed&amp;rsquo;s debugger. So the network path is working.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The problem is likely a &lt;strong&gt;Path Mapping Issue&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When Xdebug connects, it sends file paths from inside the container (like &lt;code&gt;/var/www/html/index.php&lt;/code&gt;). If Zed doesn&amp;rsquo;t know how to map that to your host path, it won&amp;rsquo;t trigger breakpoints.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id="enable-xdebug-logging-to-see-whats-happening"&gt;Enable Xdebug logging to see what&amp;rsquo;s happening:&lt;/h3&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In your container&amp;rsquo;s PHP.ini:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-ini" data-lang="ini"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.log&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;/tmp/xdebug.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xdebug.log_level&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Then check the log for file paths being sent and any errors.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="finding-the-root-cause"&gt;Finding the Root Cause&lt;/h2&gt;
+&lt;p&gt;For a while here things go a bit off the rails with the LLM. Things are tried, I know the path mapping is what isn&amp;rsquo;t working but I don&amp;rsquo;t know why it isn&amp;rsquo;t working and the LLM has stopped giving useful results. It seemed like it was stuck in a loop. However, I did notice something while going through the Xdebug logs.&lt;/p&gt;
+&lt;p&gt;The error from the logs was that the file with the breakpoints didn&amp;rsquo;t exist. The kicker is that it didn&amp;rsquo;t matter what I changed the &lt;code&gt;pathMappings&lt;/code&gt; to &amp;ndash;it always gave the same result. The file didn&amp;rsquo;t exist. This also explains why the LLM got into the loop. Zed wasn&amp;rsquo;t reloading the Xdebug configuration when I made changes or when I stopped and started the debugger.&lt;/p&gt;
+&lt;p&gt;In order to get the debugger to reload the settings after I changed them, I needed to restart Zed. So I began to make a change, then stop Zed, start Zed back up again, and retest.&lt;/p&gt;
+&lt;p&gt;For anyone who is following along at home, the correct &lt;code&gt;pathMappings&lt;/code&gt; is a &lt;code&gt;json&lt;/code&gt; object with the key as the absolute path in the container and the value as the absolute path on the host.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;label&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Listen for Xdebug remote&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;adapter&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Xdebug&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;pathMappings&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;/var/www/html&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;/home/frob/repos/client/project&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;port&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;9003&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="resolution-settings-not-being-applied"&gt;Resolution: Settings Not Being Applied&lt;/h2&gt;
+&lt;p&gt;This is one of those things that I still have a hard time getting over when dealing with LLMs. It&amp;rsquo;s the uncanny valley with these interactions. They are so polite. It also sounds like a coworker that is unable to admit fault. As though it&amp;rsquo;s saying &amp;ldquo;I would have figured it out eventually&amp;rdquo; in the nicest possible way.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; You didn&amp;rsquo;t have it backwards. It was correct. My settings weren&amp;rsquo;t being applied. I had to restart zed to get the settings to apply correctly.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; Ah, that makes sense! Zed doesn&amp;rsquo;t always hot-reload debug configuration changes. Good catch on the restart - that&amp;rsquo;s a common gotcha that&amp;rsquo;s easy to miss.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is actually good to know for future reference. Unlike some settings that apply immediately, changes to &lt;code&gt;.zed/debug.json&lt;/code&gt; seem to require either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Restarting Zed entirely, or&lt;/li&gt;
+&lt;li&gt;Stopping and restarting the debug session (which might not always be enough)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="nodejs-dependency-discussion"&gt;Node.js Dependency Discussion&lt;/h2&gt;
+&lt;p&gt;I asked the LLM if it knew why node had to be installed. It is some good insight into how Zed uses the VSCode bridge to get the connection with minimal effort. This also makes sense, given the related pedigree of zed and vs-code.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; Is there any way to get around having node as a requirement?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; Unfortunately, no - Node.js is a hard requirement for Zed&amp;rsquo;s Xdebug integration. Here&amp;rsquo;s why:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The technical reason:&lt;/strong&gt;
+Zed&amp;rsquo;s Xdebug support uses the &lt;code&gt;vscode-php-debug&lt;/code&gt; adapter (the same one VS Code uses), which is written in TypeScript/JavaScript and runs on Node.js. Zed downloads this adapter and runs it as a bridge between the editor and Xdebug&amp;rsquo;s DBGp protocol.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Why Zed made this choice:&lt;/strong&gt;
+Rather than reimplementing every debug adapter from scratch in Rust, Zed leverages existing Debug Adapter Protocol (DAP) implementations from the VS Code ecosystem. This lets them support many languages quickly, but means inheriting the runtime dependencies of those adapters.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="alternative-debugging-approaches-without-node"&gt;Alternative Debugging Approaches Without Node&lt;/h2&gt;
+&lt;p&gt;Here I lamented a bit and the LLM responded with some advice that might be useful if you&amp;rsquo;re in the same boat that I was in; zed&amp;rsquo;s debugger wasn&amp;rsquo;t working but you&amp;rsquo;d like to use it for more day to day tasks.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;User:&lt;/strong&gt; I&amp;rsquo;d rather not have node installed if I can avoid it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Assistant:&lt;/strong&gt; That&amp;rsquo;s totally fair - avoiding unnecessary dependencies is a reasonable stance. Given that, here are your practical options:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;1. Use PhpStorm or VS Code just for debugging&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep Zed for your daily coding/editing (which you clearly prefer)&lt;/li&gt;
+&lt;li&gt;When you need to debug, open the project in PhpStorm/VS Code&lt;/li&gt;
+&lt;li&gt;PhpStorm has native Xdebug support without Node (it&amp;rsquo;s all Java-based)&lt;/li&gt;
+&lt;li&gt;This is actually what many developers do - use lightweight editors for most work, heavier IDEs only when needed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;2. Xdebug command-line debugging&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;xdebug_break()&lt;/code&gt; in your code as manual breakpoints&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;var_dump()&lt;/code&gt; or error logging strategically&lt;/li&gt;
+&lt;li&gt;Use Xdebug&amp;rsquo;s trace/profiling features to write execution logs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;3. Browser-based Xdebug clients&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There are web-based Xdebug clients like DBGp Client&lt;/li&gt;
+&lt;li&gt;They&amp;rsquo;re clunky compared to IDE integration but don&amp;rsquo;t require Node&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;4. Wait for Zed&amp;rsquo;s ecosystem to mature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;As Zed grows, someone might build a native Rust-based Xdebug adapter&lt;/li&gt;
+&lt;li&gt;Or Zed might add native DBGp protocol support&lt;/li&gt;
+&lt;li&gt;But this could be years away&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &amp;ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.&lt;/p&gt;
+&lt;p&gt;Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &amp;ndash;it is far more AI first. Zed allows us to use AI&amp;rsquo;s from many sources, including Ollama based local AIs.&lt;/p&gt;
+&lt;p&gt;I look forward to using Zed, more, now that Xdebug is working.&lt;/p&gt;</description></item><item><title>A Suggested Order for Watching TOS with Your Kids</title><link>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</link><pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</guid><description>&lt;p&gt;When I started at Clarity Innovations, the company culture interview question was &amp;ldquo;Star Trek or Star Wars?&amp;rdquo; Until recently I had leaned more toward Star Wars, but having grown up watching &lt;em&gt;The Next Generation&lt;/em&gt; and the Star Trek movies, I was very much also a Star Trek fan.&lt;/p&gt;
+&lt;p&gt;So naturally, my answer was &amp;ldquo;they are not mutually exclusive because one happens in this galaxy and in the future and the other happened a long time ago in a galaxy far far away.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;I wanted to start watching &lt;em&gt;Star Trek: The Next Generation&lt;/em&gt; with my kids, as that is my favorite series, but first, I wanted to give them a good canon of The Original Series so they could have a better appreciation of Star Trek as a whole. Knowing the best resource for this would likely be my own coworkers, I asked some folks at Clarity about the best order to watch TOS.&lt;/p&gt;
+&lt;p&gt;I got a fantastic, well-thought-out response from Dale:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In general, I would rank the initial three seasons of ST: TOS in the following way: Season 2, Season 1, and Season 3. Season 1 has some wonderfully written episodes based on intriguing scenarios, but Season 2 is where the cast was really &amp;ldquo;owning&amp;rdquo; their characters. Season 3 has some good episodes, but got pretty silly at times.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The following is the list of episodes and the order in which he recommended they be watched.&lt;/p&gt;
+&lt;h2 id="the-agreed-upon-order"&gt;The agreed-upon order&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#the-doomsday-machine"&gt;The Doomsday Machine&lt;/a&gt; (s02e06)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#city-on-the-edge-of-forever"&gt;City on the Edge of Forever&lt;/a&gt; (s01e28)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-enterprise-incident"&gt;The Enterprise Incident&lt;/a&gt; (s03e02)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#amok-time"&gt;Amok Time&lt;/a&gt; (s02e01)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mirror-mirror"&gt;Mirror, Mirror&lt;/a&gt; (s02e04)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#balance-of-terror"&gt;Balance of Terror&lt;/a&gt; (s01e14)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#devil-in-the-dark"&gt;Devil in the Dark&lt;/a&gt; (s01e25)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#arena"&gt;Arena&lt;/a&gt; (s01e18)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#journey-to-babel"&gt;Journey to Babel&lt;/a&gt; (s02e10)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#space-seed"&gt;Space Seed&lt;/a&gt; (s01e22)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-tholian-web"&gt;The Tholian Web&lt;/a&gt; (s03e09)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#a-piece-of-the-action"&gt;A Piece of the Action&lt;/a&gt; (s02e17)&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-trouble-with-tribbles"&gt;The Trouble with Tribbles&lt;/a&gt; (s02e15)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="the-list-in-detail"&gt;The list, in detail&lt;/h2&gt;
+&lt;h3 id="the-doomsday-machine"&gt;The Doomsday Machine&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248338"&gt;s02e06 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A giant alien weapon &amp;ndash; think a massive cone that eats planets &amp;ndash; is cutting a path of destruction through Federation space. The Enterprise finds a sister ship adrift with its crew dead and its commodore barely alive and completely broken. That commodore then steals a shuttle and flies it straight into the machine. It&amp;rsquo;s a tense, well-paced episode that feels like a submarine thriller.&lt;/p&gt;
+&lt;h3 id="city-on-the-edge-of-forever"&gt;City on the Edge of Forever&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248331"&gt;s01e28 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This one is widely considered the best episode of TOS, and it earns it. McCoy accidentally injects himself with a stimulant, goes a little crazy, and jumps through a time portal back to 1930s Depression-era New York. Kirk and Spock follow to fix the timeline. Kirk falls in love. It doesn&amp;rsquo;t end well. Harlan Ellison wrote it and fought with the studio over it for decades.&lt;/p&gt;
+&lt;h3 id="the-enterprise-incident"&gt;The Enterprise Incident&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248360"&gt;s03e02 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Kirk suddenly orders the Enterprise into Romulan space and then appears to lose his mind. It turns out to be a covert mission to steal a Romulan cloaking device. Spock has to charm a Romulan commander to buy time, which he does very effectively. There&amp;rsquo;s a fun bit of spy tradecraft in this episode that you don&amp;rsquo;t usually get in TOS. Season 3 gets a bad reputation but this one holds up.&lt;/p&gt;
+&lt;h3 id="amok-time"&gt;Amok Time&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248333"&gt;s02e01 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spock is acting strange. Turns out Vulcans go through a mating cycle every seven years called pon farr, and if he doesn&amp;rsquo;t get to Vulcan, and have sex, he&amp;rsquo;ll die. Kirk takes the ship to Vulcan against direct orders. Once there, Spock&amp;rsquo;s betrothed pulls a legal maneuver that puts Kirk and Spock in a fight to the death. This episode introduced Vulcan culture and the iconic fight music.&lt;/p&gt;
+&lt;h3 id="mirror-mirror"&gt;Mirror, Mirror&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248336"&gt;s02e04 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A transporter accident during an ion storm swaps Kirk, McCoy, Scotty, and Uhura into a parallel universe where the Federation is a brutal empire and everyone has a dark streak. Evil Spock has a goatee. It&amp;rsquo;s a fun, well-constructed episode &amp;ndash; you get the evil versions of the crew while the real crew deals with their evil counterparts back on the regular Enterprise.&lt;/p&gt;
+&lt;h3 id="balance-of-terror"&gt;Balance of Terror&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248317"&gt;s01e14 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The first appearance of the Romulans. A Romulan ship with a cloaking device has been destroying Federation outposts along the Neutral Zone, and Kirk has to hunt it down. It plays out like a submarine cat-and-mouse story and it&amp;rsquo;s one of the most tightly written episodes in the series. There&amp;rsquo;s also a subplot about a crew member who distrusts Spock because Romulans look like Vulcans, which the episode handles well.&lt;/p&gt;
+&lt;h3 id="devil-in-the-dark"&gt;Devil in the Dark&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248328"&gt;s01e25 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Miners on a remote planet are being killed by something that can move through solid rock. The creature turns out to be a silicon-based lifeform called a Horta. It&amp;rsquo;s been destroying equipment because the miners were unknowingly destroying its eggs. Spock mind-melds with it and relays its distress. It sounds absurd written out like that, but this is one of those episodes that does exactly what good science fiction is supposed to do &amp;ndash; it makes you reconsider what counts as a monster. &amp;ldquo;It&amp;rsquo;s life Jim, but not as we know it!&amp;rdquo;&lt;/p&gt;
+&lt;h3 id="arena"&gt;Arena&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248321"&gt;s01e18 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Enterprise chases a ship that attacked a Federation colony. An alien species called the Metrons stops them both and drops Kirk and the Gorn captain on a barren planet to fight it out. Kirk makes a cannon from raw materials he finds on the ground. It&amp;rsquo;s a ridiculous setup that&amp;rsquo;s also completely earnest and somehow works. The Gorn has become one of the more iconic images from TOS. This episode must be watched to fully appreciate one of the best lines from &lt;em&gt;Galaxy Quest&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="journey-to-babel"&gt;Journey to Babel&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248342"&gt;s02e10 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Enterprise is ferrying a bunch of Federation ambassadors to a conference, including Spock&amp;rsquo;s father Sarek. Sarek and Spock haven&amp;rsquo;t spoken in years. Then someone on the ship gets murdered, an Orion spy ship starts tailing them, and Sarek has a heart attack. Spock refuses to leave the bridge to donate blood for his father&amp;rsquo;s surgery because Kirk is hurt and Spock is in command. It&amp;rsquo;s a good family drama wrapped around a solid mystery.&lt;/p&gt;
+&lt;h3 id="space-seed"&gt;Space Seed&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248325"&gt;s01e22 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Enterprise picks up a 200-year-old ship adrift in space carrying a crew of genetically engineered humans in suspended animation from Earth&amp;rsquo;s eugenics wars. Their leader is Khan Noonien Singh. He wakes up, immediately starts taking over the ship, and has to be stopped. Kirk understands him and takes pity on him. Instead of putting him in prison, he maroons him on a planet to give him the opportunity to build his own civilization. This sets up what is considered to be the best of the TOS movies, &lt;em&gt;Wrath of Khan&lt;/em&gt;, which you should watch after you&amp;rsquo;ve done this list.&lt;/p&gt;
+&lt;h3 id="the-tholian-web"&gt;The Tholian Web&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248367"&gt;s03e09 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Kirk gets trapped in an interphase between dimensions while investigating a dead ship, and starts flickering in and out of visibility. The Tholians, aliens who do not negotiate, start spinning an energy web around the Enterprise to trap it. Meanwhile Spock and McCoy have to figure out how to get Kirk back while managing a crew that&amp;rsquo;s slowly losing their minds from the dimensional stress. It&amp;rsquo;s a good episode where Kirk is mostly absent, which forces the rest of the cast to carry it.&lt;/p&gt;
+&lt;h3 id="a-piece-of-the-action"&gt;A Piece of the Action&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248349"&gt;s02e17 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A Federation ship visited this planet a hundred years ago and accidentally left behind a book about 1920s Chicago gangsters. The whole planet built its culture around it. Kirk and Spock have to negotiate with mob bosses and eventually decide the best approach is to just out-mob them. It&amp;rsquo;s deliberately comedic and it works. There&amp;rsquo;s a scene where Kirk tries to drive a stick shift car that&amp;rsquo;s worth watching just for that.&lt;/p&gt;
+&lt;h3 id="the-trouble-with-tribbles"&gt;The Trouble with Tribbles&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://thetvdb.com/series/star-trek/episodes/248347"&gt;s02e15 on TVDB&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tribbles are small, round, warm, and purr when you hold them. They also breed fast enough to become a serious problem. The Enterprise stops at a space station where a shipment of grain bound for a disputed planet is stored. Klingons show up, tribbles multiply, and eventually the tribbles do what the Enterprise crew couldn&amp;rsquo;t and sniff out a Klingon agent. It&amp;rsquo;s a ridiculous but fun episode. There&amp;rsquo;s a reason it&amp;rsquo;s the one everyone remembers.&lt;/p&gt;
+&lt;h2 id="the-verdict"&gt;The verdict&lt;/h2&gt;
+&lt;p&gt;After watching these, I have to say, it is a good order. I don&amp;rsquo;t have the Trek expertise to argue with any of Dale&amp;rsquo;s picks, but I can say the list worked. My family got a solid foundation in what Star Trek is, and we&amp;rsquo;ve since been able to jump into the movies and &lt;em&gt;The Next Generation&lt;/em&gt; without anyone feeling lost. And when my kids are old enough, they&amp;rsquo;ll have all the context they need to enjoy &lt;em&gt;Galaxy Quest&lt;/em&gt; with my wife and me.&lt;/p&gt;</description></item><item><title>How to play gloom with a 52 card deck</title><link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</link><pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</guid><description>&lt;p&gt;I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&amp;rsquo;t for you then try these rules on a standard 52 card deck.&lt;/p&gt;
+&lt;h2 id="rules"&gt;Rules&lt;/h2&gt;
+&lt;p&gt;Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.&lt;/p&gt;
+&lt;h3 id="requirements"&gt;Requirements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Players: 2-4&lt;/li&gt;
+&lt;li&gt;Materials: 1 complete 52 card poker deck.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="setup"&gt;Setup&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Set aside all face cards: Ace, King, Queen, and Jack.&lt;/li&gt;
+&lt;li&gt;Set aside Aces and organize remaining face cards by suit.&lt;/li&gt;
+&lt;li&gt;Each player gets a set of face cards.&lt;/li&gt;
+&lt;li&gt;Each player puts their face cards face up in front of them.&lt;/li&gt;
+&lt;li&gt;Shuffle Aces back into the deck. (These will be the kill cards)
+Even if there are not four players all four sets of face cards (minus aces) are set reserved and not shuffled back into the deck.&lt;/li&gt;
+&lt;li&gt;Shuffle deck thoroughly.&lt;/li&gt;
+&lt;li&gt;Deal each player 5 cards.&lt;/li&gt;
+&lt;li&gt;First player is:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Dark side: The player which most recently went to a funeral.&lt;/li&gt;
+&lt;li&gt;Light side: The player which most recently went to a birth (or baby shower).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="game-play"&gt;Game play&lt;/h3&gt;
+&lt;p&gt;Game play is setup into three phases.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Action Phase 1: play any card in your hand on any live face card. Remember Aces are kill cards and can only be played this phase.&lt;/li&gt;
+&lt;li&gt;Action Phase 2: play any number card on any live face card. Aces cannot be played on this round.&lt;/li&gt;
+&lt;li&gt;Draw as many cards as is needed to get to 5 card in your hand.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="end-game"&gt;End Game&lt;/h3&gt;
+&lt;p&gt;The game is over when all four Aces have been played or when all of one players face cards are killed.&lt;/p&gt;
+&lt;h3 id="scoring"&gt;Scoring&lt;/h3&gt;
+&lt;p&gt;Scoring is simple. Each played card is worth its face value. Black cards are scored positively and Red cards are scored negatively. Aces played on the same suit are scored with a positive 11 points &amp;ndash;otherwise Aces hold no value.&lt;/p&gt;
+&lt;h4 id="house-rules"&gt;House rules&lt;/h4&gt;
+&lt;p&gt;Please create some house rules that will increase the enjoyment of the game. Some house rules that I considered are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Playing the same number twice gives the player an additional play (including aces) (no more than four cards played at once).&lt;/li&gt;
+&lt;li&gt;Play with the above rule and instead of limiting to four cards add the end game condition of if a player plays all their cards the game is over.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;House rules should be agreed to before the start of the game. Or if your hosting the game it is your house and your rules. :)&lt;/p&gt;</description></item><item><title>Why DrupalCon</title><link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</guid><description>&lt;h1 id="collaboration-and-contribution-at-drupalcon"&gt;Collaboration and Contribution at DrupalCon&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.drupal.org/"&gt;Drupal&lt;/a&gt; is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal advocates and aficionados convene to teach and learn from each other. What better way to do that than at DrupalCon?&lt;/p&gt;
+&lt;h2 id="what-is-drupalcon"&gt;What is DrupalCon?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://events.drupal.org/vienna2017"&gt;DrupalCon&lt;/a&gt; is a conference where the Drupal Community can meet each other and exchange information in real life. The North American DrupalCon bounces around the Continental US, yet DrupalCon also happens in Europe, Asia, and South America.&lt;/p&gt;
+&lt;p&gt;The conference spans multiple days starting with paid training. Throughout the week there are community contributed sessions,  a vendor exposition hall, and it all ends in community-driven project sprints.&lt;/p&gt;
+&lt;h2 id="why-go-to-drupalcon"&gt;Why go to DrupalCon?&lt;/h2&gt;
+&lt;p&gt;At its core, DrupalCon is a technology conference, so a big part of going to DrupalCon is keeping up with the current trends in technology. These may not be just be specific to Drupal, but may feature trends within the php programming language and technology as a whole.&lt;/p&gt;
+&lt;p&gt;Besides having structured, focused sessions, simple hallway conversations are a great way to keep up with current trends. I missed quite a few session while hanging out in the halls talking to people, yet this isn&amp;rsquo;t a source of stress because all of the &lt;a href="https://www.youtube.com/playlist?list=PLpeDXSh4nHjRbDdwHEBRHItfnjrJ8kEDK"&gt;DrupalCon sessions are posted to YouTube&lt;/a&gt; by the association. Additionally, much of their information can be learned from reading blog posts online, attending local DUGs (Drupal User Groups), or &lt;a href="https://www.drupal.org/irc"&gt;conversations on Drupal&amp;rsquo;s IRC channels&lt;/a&gt;, but it&amp;rsquo;s important to get fully immersed by congregating for a few days with community members that are not local. The point of attending the conference is the people, the networking, and those conversations in the hallway.&lt;/p&gt;
+&lt;h3 id="open-source-contribution"&gt;Open Source Contribution&lt;/h3&gt;
+&lt;p&gt;A large part of getting together is working together. Much of the work on an open source project happens remotely. This is difficult with many core maintainers being spread all over the globe in different timezones. At DrupalCon, we have the remarkable ability to be in the same room. This allows for many opportunities for collaboration. Code sprints occur all week with Friday being reserved as a sprint day. There are no sessions or talks on Friday, leaving the whole day for contribution, typically in a room with round tables organized by topic: migration, twig, install-systems, etc. This is also a good place to work on contributed modules. While at the Baltimore DrupalCon, I wrote the &lt;a href="https://www.drupal.org/project/speedboxes"&gt;Drupal 8 version of the Speedboxes module&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="exploring-and-getting-familiar-with-drupal-8"&gt;Exploring and getting familiar with Drupal 8&lt;/h3&gt;
+&lt;p&gt;Any software project that is under active development will be a moving target, and as users of this software, it is important to stay on top of the latest versions. In an effort to do this, I submitted a session for Baltimore DrupalCon about exploring and evaluating Drupal 8 by &lt;a href="https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html"&gt;re-architecting a Custom Learning Management System&lt;/a&gt; we had built for New Perspectives Online. By doing this session, I was able to both get more experience with a new product without having to learn on a high-stakes client project, and I also had the opportunity to share those experiences with others in the Drupal Community. Below is a video of my presentation.&lt;/p&gt;
+&lt;iframe src="https://www.youtube.com/embed/en-nC4ZjdXo" frameborder="0" width="560" height="315"&gt;&lt;/iframe&gt;
+&lt;p&gt;Contribution isn&amp;rsquo;t always about code. Contribution is possible regardless of skillset. Everything including bug reports, documentation, design, code, or even just attending DrupalCon is a worthwhile contribution.&lt;/p&gt;</description></item><item><title>Rearchitecting for Drupal 8; a DrupalCon Session</title><link>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</link><pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</guid><description>&lt;h1 id="rearchitecting-for-drupal-8"&gt;Rearchitecting for Drupal 8&lt;/h1&gt;
+&lt;p&gt;This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.&lt;/p&gt;
+&lt;h2 id="in-case-you-are-wondering"&gt;In case you are wondering&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://nicspaull.files.wordpress.com/2013/10/you-are-here.jpg" alt="You are here in the
+galaxy" title="You are here in the galaxy"&gt;&lt;/p&gt;
+&lt;h2 id="hello-my-name-is-frank"&gt;Hello My Name Is Frank&lt;/h2&gt;
+&lt;p&gt;I am a Christian, Father, and Technology Enthusiast.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Online my name is&lt;/em&gt; &lt;strong&gt;frob&lt;/strong&gt; (IRC, &lt;a href="https://drupal.org/u/frob"&gt;d.o&lt;/a&gt;, github)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;On Twitter I am&lt;/em&gt; &lt;strong&gt;&lt;a href="https://twitter.com/frobdfas"&gt;@frobdfas&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;My Blog is&lt;/em&gt; &lt;a href="https://www.frobiovox.com"&gt;www.frobiovox.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;I work for&lt;/em&gt; &lt;a href="https://www.clarity-innovations.com"&gt;Clarity Innovations Inc&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="/images/cilogo.jpg" alt="Clarity Innovations Logo"&gt;&lt;/p&gt;
+&lt;p&gt;Clarity Innovations is a professional services firm based in
+Portland, Oregon focused on providing K-12 and higher education
+technology consulting to non-profits, schools, and corporations.&lt;/p&gt;
+&lt;p&gt;We develop solutions for our clients including strategic consulting,
+professional development and content creation, and engineering
+solutions such as apps, web apps, and websites to help improve the
+process and practice of teaching and learning.&lt;/p&gt;
+&lt;p&gt;One such site is a custom LMS for our client New Perspectives Online.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/screenshot.png" alt="New Perspectives Online
+Screenshot"&gt;&lt;/p&gt;
+&lt;h2 id="why-do-drupal-8-experimentation"&gt;Why do [Drupal 8 Experimentation]?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The big question is D8 or D7, this is a question that I have to ask
+myself every time I am asked to do an estimate.&lt;/li&gt;
+&lt;li&gt;How do we pick which version of Drupal to use?&lt;/li&gt;
+&lt;li&gt;Let me &lt;strong&gt;GET THIS OUT THE WAY&lt;/strong&gt; I will not be going over hard
+numbers for building with one version over the other. I will give
+you the only answer that I can give knowing what I know about your
+project&amp;rsquo;s requirements. IT DEPENDS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="bottom-line"&gt;Bottom line&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;I create with Drupal 7.&lt;/li&gt;
+&lt;li&gt;I want to create with Drupal 8.&lt;/li&gt;
+&lt;li&gt;I want to know the differences between creating with Drupal 7 vs 8.&lt;/li&gt;
+&lt;li&gt;I would like to know how I can leverage the new features of Drupal 8
+in complicated information systems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="lets-go-from"&gt;Lets go from:&lt;/h3&gt;
+&lt;p&gt;&lt;img src="/images/ring.jpg" alt="Frame from LOTR - I will take the ring to
+Mordor" title="I will take the ring to Mordor, Though I do not know the way."&gt;&lt;/p&gt;
+&lt;h4 id="to"&gt;To:&lt;/h4&gt;
+&lt;p&gt;&lt;img src="http://i3.kym-cdn.com/entries/icons/original/000/013/208/a.jpg" alt="Frame from the movie the hobbit - I am going on an
+adventure" title="I'm going on an adventure"&gt;&lt;/p&gt;
+&lt;h2 id="custom-lms-architecture"&gt;Custom LMS Architecture&lt;/h2&gt;
+&lt;h3 id="learning-management-system"&gt;Learning Management System&lt;/h3&gt;
+&lt;p&gt;An LMS is software that allows for the organization and delivery of
+courses or training programs.&lt;/p&gt;
+&lt;h4 id="lms-architecture"&gt;LMS Architecture&lt;/h4&gt;
+&lt;p&gt;Need to deal with some prerequisite information so we all understand
+the goals of the project that I used as my test bed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is an LMS? An LMS is a Learning Management System.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is software that allows for the organization and delivery of
+courses or training programs. If you have used buildamodule.com or
+drupalize.me then you have used a LMS.&lt;/p&gt;
+&lt;h3 id="traditional-lms"&gt;Traditional LMS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Curriculum or Lesson plan&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Unit or Module
+&lt;ul&gt;
+&lt;li&gt;Lesson/Project/Assessment/Mini-lessons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Traditional LMS is based on a traditional course or lesson plan&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Curriculum or Lesson plan
+&lt;ul&gt;
+&lt;li&gt;Collection of Units or Modules
+&lt;ul&gt;
+&lt;li&gt;Collection of Lesson/Project/Assessment/Mini-lessons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="our-custom-lms-is-structured"&gt;Our custom LMS is structured&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Module -&amp;gt; Menu&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Segments -&amp;gt; Nodes or Content Type
+&lt;ul&gt;
+&lt;li&gt;Components -&amp;gt; Paragraphs Items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Our custom LMS is structured as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Module -&amp;gt; Menu
+&lt;ul&gt;
+&lt;li&gt;Segments -&amp;gt; Nodes
+&lt;ul&gt;
+&lt;li&gt;Components -&amp;gt; Paragraphs Items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Lesson plan equivalents are built with select fields on the
+segment nodes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="basic-drupal-architecture"&gt;Basic Drupal Architecture&lt;/h2&gt;
+&lt;p&gt;&lt;img src="http://static.tvtropes.org/pmwiki/pub/images/forcedtutorial_1678.png" alt="Forced
+tutorial"&gt;&lt;/p&gt;
+&lt;p&gt;In order to make sure we are all on the same page moving forward I
+need to talk about some basic Drupal Architecture. If this is review
+for some of you, I am sorry for the unskippable tutorial level.&lt;/p&gt;
+&lt;h2 id="basic-drupal-content-architecture"&gt;Basic Drupal Content Architecture&lt;/h2&gt;
+&lt;p&gt;Don&amp;rsquo;t worry I will mostly just be talking about Entities, Fields,
+and Variables.&lt;/p&gt;
+&lt;h3 id="entities"&gt;Entities&lt;/h3&gt;
+&lt;p&gt;Entities are things in Drupal; things do not have to be nodes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entities are things in Drupal, starting in drupal 7 we got content
+entities.&lt;/li&gt;
+&lt;li&gt;In Drupal 6 custom things were typically nodes or totally custom&lt;/li&gt;
+&lt;li&gt;In Drupal 7 the entity-field system brought the CCK into core
+without making everything a node&lt;/li&gt;
+&lt;li&gt;Drupal 8 has a fully fledged entity api which is derived from the
+capabilities of the contrib entity api module for drupal 7.&lt;/li&gt;
+&lt;li&gt;Users, Taxonomy Terms, and Nodes, are all Entities&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="bundles-and-fields"&gt;Bundles and Fields&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;A bundle is a collection of fields instances on an Entity&lt;/li&gt;
+&lt;li&gt;A field instance is a place for complex data in a Entity Bundle&lt;/li&gt;
+&lt;li&gt;A property is simple storage for Entity level data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;An Entity can have Bundles to allow for multiple collections of
+fields instances on a single type of entity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Field instances are unique to that bundle.&lt;/li&gt;
+&lt;li&gt;An Entity has properties which span all bundles.
+&lt;ul&gt;
+&lt;li&gt;created date&lt;/li&gt;
+&lt;li&gt;node status&lt;/li&gt;
+&lt;li&gt;who created are all properties&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;A field instance is a place for complex data in a Entity Bundle&lt;/li&gt;
+&lt;li&gt;A property is simple storage for Entity level data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="properties"&gt;Properties&lt;/h4&gt;
+&lt;p&gt;Properties are linked to an Entity, such as Node. Fields are linked to
+the Bundle, such as Content Type.&lt;/p&gt;
+&lt;p&gt;Properties are stored on the entity&amp;rsquo;s table and fields are stored in
+their own table.&lt;/p&gt;
+&lt;h4 id="variables"&gt;Variables&lt;/h4&gt;
+&lt;p&gt;Variables are what Drupal 7 provides for configuration --when it isn&amp;rsquo;t
+a custom table.&lt;/p&gt;
+&lt;h3 id="lms-features"&gt;LMS Features&lt;/h3&gt;
+&lt;p&gt;Support Backwards Design philosophy&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Site Features&lt;/li&gt;
+&lt;li&gt;Traditional LMS
+&lt;ul&gt;
+&lt;li&gt;Collection of Curriculum or Lesson plans
+&lt;ul&gt;
+&lt;li&gt;Collection of Unit or Module
+&lt;ul&gt;
+&lt;li&gt;Collection of Lesson/Project/Assessment/Mini-lessons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Curriculum Designer will often use a Backwards Design philosophy&lt;/li&gt;
+&lt;li&gt;Starts Standards/Topical they with to teach&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="goals-of-lesson-planning"&gt;Goals of lesson planning&lt;/h4&gt;
+&lt;p&gt;Using the 5 e&amp;rsquo;s as the goals of lesson planning.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Engage&lt;/li&gt;
+&lt;li&gt;Explore&lt;/li&gt;
+&lt;li&gt;Explain&lt;/li&gt;
+&lt;li&gt;Elaborate&lt;/li&gt;
+&lt;li&gt;Evaluate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="lms-lesson-goals"&gt;LMS Lesson Goals&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Teaching&lt;/li&gt;
+&lt;li&gt;Application&lt;/li&gt;
+&lt;li&gt;Assessment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus Goals for Lesson Plan Features.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Activate Prior knowledge&lt;/li&gt;
+&lt;li&gt;Modeling or Teaching&lt;/li&gt;
+&lt;li&gt;Practice&lt;/li&gt;
+&lt;li&gt;Application&lt;/li&gt;
+&lt;li&gt;Assessment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our custom LMS is structured as&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- module -&amp;gt; menu
+- segments -&amp;gt; nodes
+- components -&amp;gt; paragraphs items
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="drupal-7-modules-used"&gt;Drupal 7 Modules Used&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href="https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools.html"&gt;Frank&amp;rsquo;s list of modern site building
+tools&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I gave a talk on modern Drupal 7 development at a meetup in Portland
+last year, and I am not going to go into great detail here. I wrote
+a blog post about it and if you would like more details I suggest
+you look there.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I will go over the modules that this site used (in its core
+functionality), what they do.&lt;/li&gt;
+&lt;li&gt;Later I will go over how they relate to Drupal 8.&lt;/li&gt;
+&lt;li&gt;Remember when building a site that the output that drupal give us is
+always a suggestion. The important part of site building is giving
+the content team everything they need, you can leave it up to the
+developers and themers to make sure that the content gets displayed
+properly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="paragraphs"&gt;&lt;a href="https://www.drupal.org/project/paragraphs"&gt;Paragraphs&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Paragraphs allows us to create collections of fields. Each collection
+type is its own bundle and can have its own fields.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Paragraphs -- If you are familiar with field collection then this
+module functions very similarly, with the main exception of the user
+being able to pick the bundle or paragraph type when creating
+content.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="entity-form"&gt;&lt;a href="https://www.drupal.org/project/eform"&gt;Entity Form&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Named eForm in Drupal 8. Allows the use of the field api to create
+webform and have the submissions be entities.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entity Form -- In Drupal 8 this module was renamed to eform. The
+cool part of this module is that it allows us to use the field api
+to create webforms. Unlike the webform module, the form submissions
+are entities. This gives us flexibility use in views or displaying
+them with multiple view modes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="eva"&gt;&lt;a href="https://www.drupal.org/project/eva"&gt;Eva&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Solves the problem of putting views into entities as pseudo-fields.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EVA -- Entity View Attachment. Allows us to embed views into
+fields. Handy for things like Taxonomy term views or anywhere an ID
+can be used as an argument in a view.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="flag"&gt;&lt;a href="https://www.drupal.org/project/flag"&gt;Flag&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This module allow users to flag things. Largest use is probably the
+&amp;ldquo;Flag this as inappropriate&amp;rdquo; functionality.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Flags -- This module allow users to flag entities. Largest use is
+probably the &amp;ldquo;Flag this as inappropriate&amp;rdquo; functionality.&lt;/li&gt;
+&lt;li&gt;The last two modules don&amp;rsquo;t have much to do with this site per-se
+but they are fantastic modules that will really help a site-builder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="coffee"&gt;&lt;a href="https://www.drupal.org/project/coffee"&gt;Coffee&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/coffee.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Coffee works like Unity for Ubuntu or Spotlight search for Mac, or the
+Start Menu in Windows. Just start typing and a list of options will be
+presented. Pick the option and it will take you there.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Coffee -- Speed up your Drupal navigation by typing where you want
+to go. Much like unity for Ubuntu or Spotlight for Mac or Start for
+Windows, this module allows us to zip around our site&amp;rsquo;s admin
+interface with ease.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="speedboxes"&gt;&lt;a href="https://www.drupal.org/project/speedboxes"&gt;Speedboxes&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/speedboxes.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Check more than one box with a click and drag mechanic.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Speedboxes -- Allows us to check multiple checkboxes at the same
+time. Super useful for setting up permissions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="a-word-on-blocks"&gt;A word on Blocks&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.drupal.org/project/bean"&gt;Bean&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Bean is an acronym that stands for:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;B&lt;/strong&gt;lock &lt;strong&gt;E&lt;/strong&gt;ntities &lt;strong&gt;A&lt;/strong&gt;ren&amp;rsquo;t &lt;strong&gt;N&lt;/strong&gt;odes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This is not a block heavy site&lt;/li&gt;
+&lt;li&gt;It works mostly as an app with the blocks only really being used to
+place active menus on the screen.&lt;/li&gt;
+&lt;li&gt;This is mainly because there are not many reusable pieces to the
+site. If it isn&amp;rsquo;t a page level thing then it really isn&amp;rsquo;t a part
+of this site.&lt;/li&gt;
+&lt;li&gt;This site doesn&amp;rsquo;t use blocks, but when I use blocks I build them
+with BEAN.&lt;/li&gt;
+&lt;li&gt;Bean gives us all the functionality of building content types with
+nodes except with blocks instead.&lt;/li&gt;
+&lt;li&gt;I normally add a content view for beans at /admin/content/blocks and
+I disable the default drupal block management stuff, with the
+exception of block placement. because that is still necessary.&lt;/li&gt;
+&lt;li&gt;But again, this site didn&amp;rsquo;t make heavy use of blocks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://pbs.twimg.com/profile_images/1325797300/2804546757_5d034c1d29.jpg" alt="I don&amp;rsquo;t always use blocks, but when I do I use the bean
+module"&gt;&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t always use blocks, but when I do I use the bean module&lt;/p&gt;
+&lt;h3 id="lms-content-strategy"&gt;LMS Content Strategy&lt;/h3&gt;
+&lt;p&gt;Arguably, the most important part of a site.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Content Strategy&lt;/li&gt;
+&lt;li&gt;Now thats out of the way we can talk about the site&amp;rsquo;s content
+strategy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="13-paragraphs-types-and-1-content-type"&gt;13 paragraphs types and 1 content type&lt;/h4&gt;
+&lt;p&gt;In the end our site had 13 paragraphs item bundles for 1 content
+type and three were interactive.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Text response&lt;/li&gt;
+&lt;li&gt;Checkbox list&lt;/li&gt;
+&lt;li&gt;Drag and Drop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id="text-response"&gt;Text response&lt;/h5&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/text-response.gif" alt="" title="Text response in action."&gt;&lt;/p&gt;
+&lt;h5 id="checkbox-list"&gt;Checkbox list&lt;/h5&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/checkbox.gif" alt="" title="Checkbox list in action."&gt;&lt;/p&gt;
+&lt;h5 id="drag-and-drop"&gt;Drag and Drop&lt;/h5&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/dragndrop.gif" alt="" title="Drag and Drop in action."&gt;&lt;/p&gt;
+&lt;h4 id="the-rest-are-multimediacontent"&gt;The rest are multimedia/content.&lt;/h4&gt;
+&lt;p&gt;Everything can be &lt;em&gt;combined&lt;/em&gt; to form larger whole components.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/dinn-7-drag-2.gif" alt="" title="A seriries of components with a saving and sharing text response box at the end."&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Four were used for custom inter and intra module navigation&lt;/li&gt;
+&lt;li&gt;The rest were videos, image, and text.&lt;/li&gt;
+&lt;li&gt;all can be combined to form larger whole components.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="linking-the-entityform-submission-to-the-paragraph-item"&gt;Linking the EntityForm Submission to the Paragraph item&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Entity&lt;/th&gt;
+&lt;th&gt;Machine Name&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Paragraph Type&lt;/td&gt;
+&lt;td&gt;text_response&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;EntityForm Type&lt;/td&gt;
+&lt;td&gt;text_response&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Linking the EntityForm Submission to the Paragraph item, each
+interactive paragraphs item had a corresponding entity form with an
+entity reference back to the paragraphs item that displayed the
+form. We used the paragraphs item&amp;rsquo;s bundle machine name to pick the
+bundle of the EntityForm to display.&lt;/p&gt;
+&lt;p&gt;We put this all together, using Drupal&amp;rsquo;s ingenious render array
+system that doesn&amp;rsquo;t care if it is displaying a form, or
+content, or anything themable, we were able to HULK smash the
+entityforms into the paragraphs item displays and save any users
+response and know what they were responding to and who was
+responding to it.&lt;/p&gt;
+&lt;h4 id="evaluation"&gt;Evaluation&lt;/h4&gt;
+&lt;p&gt;Sharing via Flags on the paragraphs items&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/p2s2-screens/textandshare.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;We also had to allow for self evaluation. Our client wanted users to
+be able to share their responses and learn from the responses of
+others. So we used flags that let the users share their responses,
+in turn if they share their response then they see their peer&amp;rsquo;s
+responses and then they can edit their old response and save a new
+one.&lt;/p&gt;
+&lt;p&gt;Our initial expectation was that we would have to build out all the
+content in a spreadsheet and at one point I was building a migration
+to import all the content from a CSV. Choosing the Paragraphs module
+gave our content editors an interface that allowed them to build the
+content in the site as we were adding functionality.&lt;/p&gt;
+&lt;h3 id="custom-development"&gt;Custom Development&lt;/h3&gt;
+&lt;p&gt;The meat of how we are putting this together is in the
+hook_entity_view_alter implementation and the hook_form_alter
+implementation.&lt;/p&gt;
+&lt;h4 id="pass-the-build-to-custom-function"&gt;Pass the build to custom function&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;?&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#f92672"&gt;!&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;empty&lt;/span&gt;($build[&lt;span style="color:#e6db74"&gt;&amp;#39;#bundle&amp;#39;&lt;/span&gt;])) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $bundle &lt;span style="color:#f92672"&gt;=&lt;/span&gt; $build[&lt;span style="color:#e6db74"&gt;&amp;#39;#bundle&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;function_exists&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;_component_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;$bundle&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;_alter&amp;#34;&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// We need to pass build in an array in order to trick call user func
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// into passing the build by reference.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;call_user_func&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;_component_&lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;$bundle&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;_alter&amp;#34;&lt;/span&gt;, &lt;span style="color:#66d9ef"&gt;array&lt;/span&gt;(&lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt;$build));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Remember we used the bundle type machine names to add the correct
+entity form types? We do that with call_user_func which calls a
+function based on the name we give it. We check beforehand if the
+function exists, this way it is extensible without having to modify
+too much existing code. So if we want to add another interactive
+element we can do so without modifying anything to do with our
+current interactive elements.&lt;/p&gt;
+&lt;h4 id="text-response-callback"&gt;Text response callback&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;?&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; * Implements custom _component_TYPE_alter().
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;_component_text_response_alter&lt;/span&gt;(&lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt;$build) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; (&lt;span style="color:#a6e22e"&gt;isset&lt;/span&gt;($build[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;#entity&amp;#39;&lt;/span&gt;]) &lt;span style="color:#f92672"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style="color:#f92672"&gt;!&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;empty&lt;/span&gt;($build[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;#entity&amp;#39;&lt;/span&gt;]&lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;item_id&lt;/span&gt;)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;module_load_include&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;inc&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;entityform&amp;#39;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#39;entityform.admin&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $entity_form_name &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;text_submissions&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $component_id &lt;span style="color:#f92672"&gt;=&lt;/span&gt; $build[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;#entity&amp;#39;&lt;/span&gt;]&lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;item_id&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $entity &lt;span style="color:#f92672"&gt;=&lt;/span&gt; $build[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;#entity&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $form &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;_get_entityform&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;entityform_empty_load&lt;/span&gt;($entity_form_name), &lt;span style="color:#66d9ef"&gt;array&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;component_id&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; $component_id, &lt;span style="color:#e6db74"&gt;&amp;#39;entity&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; $entity));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $form[&lt;span style="color:#e6db74"&gt;&amp;#39;field_component_submission&amp;#39;&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;#attributes&amp;#39;&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;][] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;element-invisible&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// ... Other Stuff ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $form[&lt;span style="color:#e6db74"&gt;&amp;#39;field_text_response_submission&amp;#39;&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;#attributes&amp;#39;&lt;/span&gt;][&lt;span style="color:#e6db74"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;][] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;component-input-no-label&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $form_rendered &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;drupal_render&lt;/span&gt;($form);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $build[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;][] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;array&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;#type&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;markup&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;#markup&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; $form_rendered,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;#prefix&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;lt;div class=&amp;#34;component-text-response&amp;#34;&amp;gt;&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;#suffix&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;&amp;lt;/div&amp;gt;&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;#weight&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; );
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the case of the text response this checks for a valid callback
+and runs this code to include the entity form.&lt;/p&gt;
+&lt;p&gt;Then in the form_alter we change the actual form options or the
+text area label to use the correct text.&lt;/p&gt;
+&lt;p&gt;Things get complicated at this point, because ajax. We have to ajaxify each of the paragraph items. I&amp;rsquo;m not going
+to go into code here because that would just be boring, and it
+is better documented elsewhere.&lt;/p&gt;
+&lt;p&gt;An interesting thing about saving a response is, only after it
+is saved can we make the paragraphs item sharable. Then after it
+is shared only then can we make show the shared responses. All
+of these things required heavy development for Drupal 7, and
+will likely also require lots of custom work for Drupal 8 too.&lt;/p&gt;
+&lt;h2 id="considerations-building-a-lms-with-drupal-8"&gt;Considerations Building a LMS with Drupal 8&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Architectural differences&lt;/li&gt;
+&lt;li&gt;UI Changes&lt;/li&gt;
+&lt;li&gt;Module availability&lt;/li&gt;
+&lt;li&gt;Specifically What needs to change
+&lt;ul&gt;
+&lt;li&gt;Architecture
+&lt;ul&gt;
+&lt;li&gt;Custom Development
+&lt;ul&gt;
+&lt;li&gt;Content strategy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="general-drupal-8-considerations"&gt;General Drupal 8 Considerations&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;devel kint debugging DO NOT USE KUMO it doesn&amp;rsquo;t work on real
+objects&lt;/li&gt;
+&lt;li&gt;no longer cache clear now cache rebuilding&lt;/li&gt;
+&lt;li&gt;No more module disable, uninstall or die&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.drupal.org/node/2598914"&gt;Enable developer mode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nice thing is that there is lots of information available
+already for Drupal8 the problem is that there is lots of bad
+information available for Drupal 8. Check your sources and do
+not expect everything you read to actually work. Even d.o
+documentation can be out of date. poll module example.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="architectural-differences"&gt;Architectural Differences&lt;/h3&gt;
+&lt;p&gt;I am not going to give you an exhaustive list of new Drupal 8
+features and in the end I will just give you a list of things to
+google.&lt;/p&gt;
+&lt;h4 id="configuration-entities"&gt;Configuration Entities&lt;/h4&gt;
+&lt;p&gt;I am not going into detail about them other than to say
+generally that the configuration management initiative changed
+so much with regard to developing and deploying Drupal. All for
+the better. If you are committed to stick with the db-sync
+workflow, it still works with Drupal 8 but really learn as much
+as you can about configuration entities and what you can do with
+them. Really this could be a talk or two on this, and I don&amp;rsquo;t
+have the time in this talk to do them justice.&lt;/p&gt;
+&lt;p&gt;I will say that configuration entities gives drupal a place
+other than a random variable to store configuration and keeps
+developers from having to manage a bunch of tables if they
+needed something more complex than a simple variable could
+offer.&lt;/p&gt;
+&lt;h4 id="blocks"&gt;Blocks&lt;/h4&gt;
+&lt;p&gt;Blocks now function much like nodes insofar as they are full
+fledged entities with bundles and fields.&lt;/p&gt;
+&lt;p&gt;Blocks still have an Achilles heel in that they are both content
+and configuration. The content lives in the database and isn&amp;rsquo;t
+easy to export and sync and the placement of the block is
+configuration and is easy to sync. This can lead to embarrassing
+deployment gaffes. Where the placement of a block that doesn&amp;rsquo;t
+exist is possible. &lt;a href="http://valuebound.com/resources/blog/how-to-sync-blocks-between-different-environments-a-drupal-8-website"&gt;Here is a good article about avoiding that&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id="display-modes"&gt;Display Modes&lt;/h4&gt;
+&lt;h5 id="content-view-modes"&gt;Content View Modes&lt;/h5&gt;
+&lt;p&gt;If you used the entity view modes modules or display suite
+to provide view modes for content types and such, then you
+should already be familiar with this. If you don&amp;rsquo;t know
+what view modes are, they are ways for providing different
+ways to display the same content. So for a node we could
+have a teaser or a full view mode or a grid view mode.
+Basically anything that the design called for. These existed
+for content in Drupal 7 but they required a contrib module
+such as entity view modes or the display suite module to
+configure them without code. Drupal 8 gave a full fledged UI
+to work with.&lt;/p&gt;
+&lt;h5 id="form-view-modes"&gt;Form View Modes&lt;/h5&gt;
+&lt;p&gt;All that stuff I said about being able to display content in
+different configurable ways now also applies to forms with
+Drupal 8. So, as an example, let say you have a very
+complicated user registration form because your client wants
+to collect a bunch of information about the user, but none
+of it is required. Now you can create a new simplified form
+for adding users. You can do this in the UI in Drupal 8.&lt;/p&gt;
+&lt;h3 id="things-to-google-many-have-been-backported-to-drupal-7"&gt;Things to google (many have been backported to Drupal 7)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Composer support&lt;/li&gt;
+&lt;li&gt;Toolbar update (Navbar in Drupal 7)&lt;/li&gt;
+&lt;li&gt;Responsive Image Styles (Picture Module in Drupal 7)&lt;/li&gt;
+&lt;li&gt;File Entities&lt;/li&gt;
+&lt;li&gt;RESTful api&lt;/li&gt;
+&lt;li&gt;Experimental Core Modules&lt;/li&gt;
+&lt;li&gt;Content Moderation&lt;/li&gt;
+&lt;li&gt;etc...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="ui-changes"&gt;UI Changes&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Good News!&lt;/strong&gt; Not much has changed significantly in the UI. I guess
+that could be bad new too.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This is going to be brief, mainly because the UI changes are
+minimal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="operations"&gt;Operations&lt;/h4&gt;
+&lt;p&gt;&lt;img src="/images/opdropdown.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;New Drop down thingy for selecting what we are doing to a thing. One change is Operations now go in a drop down with the maybe most
+common one first? Really I don&amp;rsquo;t know how that was chosen so if
+someone here does know please tell me afterward.&lt;/p&gt;
+&lt;h4 id="form-display-settings"&gt;Form Display Settings&lt;/h4&gt;
+&lt;p&gt;Multiple entity form settings on the Manage form display page, this
+includes field widget settings.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/manageformdisplay.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Another change you will find between D7 and D8 I have already hinted
+at with the Form View. If you have a alternate node form then you
+will find the option for editing that form view in &amp;ldquo;Manage Form
+Display&amp;rdquo; section. This also means that controls for the form
+widgets are configured on the form view display settings and not the
+&amp;ldquo;Manage Fields&amp;rdquo; page. Mange Fields is now entirely about the field
+and its storage.&lt;/p&gt;
+&lt;h4 id="good-news-about-learning-curves"&gt;Good news about learning curves&lt;/h4&gt;
+&lt;p&gt;&lt;img src="http://www.freshform.com/blog/wp-content/uploads/2013/02/learning-curve.png" alt="The Drupal learning
+curve"&gt;&lt;/p&gt;
+&lt;p&gt;Good news, there are fewer changes for site builders who are coming
+from Drupal 7 to worry about. Bad news is for someone coming from
+not Drupal the perceived Drupal learning curve could be
+intimidating.&lt;/p&gt;
+&lt;h3 id="module-availability"&gt;Module Availability&lt;/h3&gt;
+&lt;p&gt;&lt;img src="http://68.media.tumblr.com/06a363a56c82b78b55dd9dc52df72174/tumblr_o2k1xwmoN91ritmyro1_500.jpg" alt="elephant in the
+room" title="Lets acknowledge the elephant in the room"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Big problem with my re-architecture exercise.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;EntityForm is not supported on Drupal 8.There is a discussion about whether or not this module is necessary. I of course believe the module is necessary. However, this doesn&amp;rsquo;t make the module stable today. The module works well enough for this experiment, but if this were a full client project we would have to explore some options.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Find an alternative&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Custom Entities are an option&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Comment module&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Contact module extras&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Relation module&lt;/p&gt;
+&lt;p&gt;Didn&amp;rsquo;t bring this module up in the modules used because we didn&amp;rsquo;t use it, but this is a really cool module. This module has the ability to supplant the functionality of flag and organic groups. It adds the concept of entity endpoints which allow us to make fieldable relations between entities. In the example of this LMS that entity would have all the fields for the response, an endpoint for the paragraphs item (renamed paragraph revision for Drupal 8), and an endpoint for the user.&lt;/p&gt;
+&lt;p&gt;I have used this module for saving user state in js apps and for keeping track of users completion status for resources in custom Professional Development portals.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fund the development of a stable release.&lt;/p&gt;
+&lt;p&gt;While I do encourage finding alternatives, at this state in Drupal 8 development I would encourage us to choose the final option because, frankly, aside from the comment module none of the above options are any more stable than eform and more importantly Drupal 8 needs more stability in contrib.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Second problem&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Paragraphs doesn&amp;rsquo;t want me to reference paragraphs&lt;/li&gt;
+&lt;li&gt;It is possible, but requires use of the EXPERIMENTAL field
+widget. The main reason this is EXPERIMENTAL is that the
+paragraphs modules is not mean to be used to reuse content, that
+is more of a function of blocks. I spent more time on this than
+I would have liked, due to some of Drupal 8&amp;rsquo;s UI changes that I
+didn&amp;rsquo;t fully understand. But it turned out to be a non-problem.&lt;/li&gt;
+&lt;li&gt;In this case the problem wasn&amp;rsquo;t the module but my own
+unfamiliarity and over confidence. The answer was staring me in
+the face.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="/images/babyele.gif" alt="Baby Elephant"&gt;&lt;/p&gt;
+&lt;p&gt;So we do have an elephant, but it is just a baby elephant.&lt;/p&gt;
+&lt;h3 id="specifically-what-needs-to-change"&gt;Specifically What needs to change&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Not Much&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This site works more like a an app than a traditional site, this
+means we have slightly different expectations when choosing a
+Framework.&lt;/li&gt;
+&lt;li&gt;Drupal was chosen for its scaleability, strong user centric or
+permissions based content model, high quality contrib space, and
+familiarity. As I said before I have been doing drupal
+professionally for close to 10 years, so I am very familiar with the
+project, community, and workflow. However, I am constantly looking
+into other technology and I have built things with other tech when
+Drupal isn&amp;rsquo;t the best choice, so this isn&amp;rsquo;t a statement coming
+from the island.&lt;/li&gt;
+&lt;li&gt;Drupal 8 has lots of new Features but the biggest advances have been
+in underlying architecture (with the content/config entity system)
+and development workflow (with the switch to Semantic Versioning).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="architecture--content-strategy"&gt;Architecture &amp;amp; Content Strategy&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Mostly the same&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Same Features&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Same Modules&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Same Architecture&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Same Strategy&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Architecturally the site remains the same&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The site has the same features and the same modules are
+available to provide us with the same architecture and content
+strategy.&lt;/li&gt;
+&lt;li&gt;It won&amp;rsquo;t always be like this. But if you put the work into
+making sure you have a good content strategy in the first place
+it will be less likely that you will have to completely
+re-architect a site when you move platforms. This is why content
+strategy is important.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="custom-development-1"&gt;Custom Development&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Biggest Changes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The largest change is the addition of developing a stable release
+for whatever we use for the response saving.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="custom-development-2"&gt;Custom Development&lt;/h2&gt;
+&lt;p&gt;This is where the largest changes were made.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Custom development&lt;/li&gt;
+&lt;li&gt;This is where the largest changes were made, but maybe not where it
+was expected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="not-much"&gt;Not Much&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;We still use hook_entity_view_alter&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We still use hook_form_alter&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In Drupal 7 we accomplished the HULK SMASH part, where we smash the
+form from the entity form into the display of the paragraphs item,
+with a hook_entity_view_alter implementation coupled with a
+hook_form_alter implementation. In Drupal 8 with its Object
+Oriented Architecture I was able to accomplish it in the exact same
+way.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/vj1IG.gif" alt="Incoming Transmission"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;But Wait&amp;rdquo; you say, &amp;ldquo;Drupal 8 is OOP we aren&amp;rsquo;t supposed to put
+stuff into the .module file anymore. That is just there for
+decoration!&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Oh no, the joy of modifying aspects of the program with hooks is not
+gone in D8. Hooks are good things, and even though Drupal is want to
+change things with new version and add modern development practices
+to Drupal, Drupal also isn&amp;rsquo;t going to ditch what is likely the most
+flexible pattern of php development just because it stepped in some
+OOP.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="okay-really-lots"&gt;Okay, really lots&lt;/h3&gt;
+&lt;p&gt;But all good!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Object Oriented Architecture is designed to make common things
+easier.&lt;/li&gt;
+&lt;li&gt;For example.&lt;/li&gt;
+&lt;li&gt;When building this with Drupal 7, we had to reimplement parts of the
+form builder from the entity forms module in order to display entity
+forms programatically. This was likely due to the incomplete nature
+of the entity api in Drupal 7.&lt;/li&gt;
+&lt;li&gt;In Drupal 8 the entity api is far more fleshed out. We still use
+Entity Field Queries to get the EntityForm Submission for the
+current user and the current paragraph revision, but this time
+Drupal has an api for creating the empty EntityForm submission
+object if the user has never submitted. And it has an interface for
+building forms for Entities, new or old. Thus we can get a form for
+a new entity in the same way we get the form for the old entity,
+with all the right fields filled in.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Drupal 8 version&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// This creates a new eform submission.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $eform_submission &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;\Drupal&lt;/span&gt;&lt;span style="color:#f92672"&gt;::&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;entityTypeManager&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;getStorage&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;eform_submission&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;create&lt;/span&gt;([&lt;span style="color:#e6db74"&gt;&amp;#39;type&amp;#39;&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&amp;gt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;multiple_choice_question&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// This loads an existing eform submission.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $submitted_eform &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;\Drupal&lt;/span&gt;&lt;span style="color:#f92672"&gt;::&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;entityTypeManager&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;getStorage&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;eform_submission&amp;#39;&lt;/span&gt;)&lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;load&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Either way we build the form with a call to the entity.form_builder service.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $form &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;\Drupal&lt;/span&gt;&lt;span style="color:#f92672"&gt;::&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;service&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#39;entity.form_builder&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;getForm&lt;/span&gt;($submitted_eform);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Then we append it to the render array.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; $build[] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; $form;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;To build a new entity, this could be a node, eform_submission, or
+comment, We user the Drupal::entityTypeManager class and call the
+create method or to load an existing one we use the same class with
+the load method and the entity id.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then we user the entity form builder service to build the form for
+the entity. I tested this with nodes as well. It is the same generic
+interface for all content entities.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No more Drupal 7 non-existent entity api&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Drupal 8 has intelligent use of OOP that makes site building easier&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Over 100 lines of code is reduced to under 10&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="http://i.imgur.com/KP6cR.gif" alt="Incoming Rainbow"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No more Drupal 7 non-existent entity api&lt;/li&gt;
+&lt;li&gt;Drupal 8 has intelligent use of OOP that makes site building easier&lt;/li&gt;
+&lt;li&gt;Over 100 lines of code is reduced to under 10&lt;/li&gt;
+&lt;li&gt;Mind Blown&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The End&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://nicspaull.files.wordpress.com/2013/10/you-are-here.jpg" alt="Don&amp;rsquo;t take things so seriously
+" title="You are here in the galaxy"&gt;&lt;/p&gt;
+&lt;h2 id="when-are-sprints"&gt;When are sprints?&lt;/h2&gt;
+&lt;p&gt;April 24-27: Sprint Lounge at Baltimore Convention Center&lt;/p&gt;
+&lt;p&gt;April 28: &lt;strong&gt;Sprint Day&lt;/strong&gt; - General Sprints, Mentored Core Sprint,
+&lt;strong&gt;First-Time Sprinter&lt;/strong&gt; Workshop at Baltimore Convention Center&lt;/p&gt;
+&lt;p&gt;We also provide a 24-hour Sprinter Lounge that opens on April 24th at
+7:00pm and will close on Thursday, April 27th at midnight. The Sprinter
+Lounge will be located at the &lt;strong&gt;Hilton Baltimore (401 West Pratt Street)
+in room Peale A-C&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Based on community feedback and input from the Sprint Leads, we
+understand the need for &amp;lsquo;shorter sprints with greater support&amp;rsquo;, and as
+a result will &lt;strong&gt;not&lt;/strong&gt; be hosting Extended Weekend Sprints at this
+DrupalCon.&lt;/p&gt;</description></item><item><title>Switching to Celsius from Fahrenheit for normal people</title><link>https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</link><pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</guid><description>&lt;p&gt;TLDR;&lt;/p&gt;
+&lt;p&gt;For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know.&lt;/p&gt;
+&lt;p&gt;[](This comment is here to try and keep the liquid template engine that my blog runs on from truncating in the middle of the next table and thus breaking the layout of my river pages. Please disregard this text, liquid has a limitation in that it doesn&amp;rsquo;t have a fix html or any html stipping that isn&amp;rsquo;t as heavy handed as remove everything. I want to keep some of my styling so I am adding this)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="center"&gt;Celsius&lt;/th&gt;
+&lt;th align="left"&gt;Action to take&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;Below 0 °C&lt;/td&gt;
+&lt;td align="left"&gt;It is frozen, wear a jacket and possibly thermals. The further below 0 °C the more warm clothes you need to wear.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;0 °C to 10 °C&lt;/td&gt;
+&lt;td align="left"&gt;It's cold, but not freezing. Wear a jacket.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;10 °C to 20 °C&lt;/td&gt;
+&lt;td align="left"&gt;There is a chill, a shirt is fine if you're into colder weather.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;20 °C to 25 °C&lt;/td&gt;
+&lt;td align="left"&gt;The temperature is ideal for human beings.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;25 °C to 30 °C&lt;/td&gt;
+&lt;td align="left"&gt;It is warm but not hot.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;30 °C to 40 °C&lt;/td&gt;
+&lt;td align="left"&gt;It is hot, unless necessary don't go outside or in the sun.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;over 40 °C&lt;/td&gt;
+&lt;td align="left"&gt;These places exist on earth, but I have no idea why anyone would live there.&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id="what-is-fahrenheit"&gt;What is Fahrenheit&lt;/h2&gt;
+&lt;p&gt;Fahrenheit was a scale that (to the best of our knowledge) was derived by 0 °F being a stable solution of ice, water, and ammonium chloride, and the temperature of a healthy human being 96 °F. In the final standard of the scale the healthy human ended up being 98.6 °F and freezing water at sea level was 32 °F.&lt;/p&gt;
+&lt;p&gt;In short, this was a scale created in 1724 based on some faulty assumptions. If you would like to read more about it then I suggest you read the &lt;a href="https://en.wikipedia.org/wiki/Fahrenheit"&gt;Wikipeida Article on Fahrenheit&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="what-is-celsius"&gt;What is Celsius&lt;/h2&gt;
+&lt;p&gt;Celsius (also called centigrade) is a scale of temperature that is based on water at sea level. In Celsius, 100 °C is boiling and 0 °C is freezing. If you would like more information on Celsius, read the &lt;a href="https://en.wikipedia.org/wiki/Celsius"&gt;wikipedia article on Celsius&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Celsius went under some revisions and refinement as the scale centigrade, but in 1948 it was officially renamed Celsius to honor the person who originally thought of it in 1742.&lt;/p&gt;
+&lt;h2 id="why-switch"&gt;Why switch&lt;/h2&gt;
+&lt;p&gt;Conformity is a good argument, but it isn&amp;rsquo;t the argument I would use for this. Even though the vast majority of the world uses Celsius, I would say the reason to switch is because it makes more sense and it is easier to see whether or not it is comfortable outside. Refer to the table at the beginning. If it&amp;rsquo;s over 30 °C it&amp;rsquo;s too hot, if it is under 10 °C then it&amp;rsquo;s too cold.&lt;/p&gt;
+&lt;h2 id="fahrenheit-to-celsius-math-conversion"&gt;Fahrenheit to Celsius Math conversion&lt;/h2&gt;
+&lt;p&gt;This conversion is why I say, just switch outright. Don&amp;rsquo;t worry about converting. Nearly everything that tells you the temperature can be set to the unit of your choice. If you want to convert this is the official accurate calculation: [°F] = [°C] ×  9⁄5 + 32&lt;/p&gt;
+&lt;p&gt;If you want something that might be easier to do in your head then this about will get you within 5 °F: Double the °C then add 30. [°F] = 2[°C] + 30&lt;/p&gt;
+&lt;p&gt;Or don&amp;rsquo;t bother converting. Refer to the following table.&lt;/p&gt;
+&lt;h2 id="fahrenheit-to-celsius-table"&gt;Fahrenheit to Celsius Table&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="center"&gt;Fahrenheit&lt;/th&gt;
+&lt;th align="center"&gt;Celsius&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;-22.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;-30 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;-4.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;-20 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;14.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;-10 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;15.8 °F&lt;/td&gt;
+&lt;td align="center"&gt;-9 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;17.6 °F&lt;/td&gt;
+&lt;td align="center"&gt;-8 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;19.4 °F&lt;/td&gt;
+&lt;td align="center"&gt;-7 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;21.2 °F&lt;/td&gt;
+&lt;td align="center"&gt;-6 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;23.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;-5 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;24.8 °F&lt;/td&gt;
+&lt;td align="center"&gt;-4 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;26.6 °F&lt;/td&gt;
+&lt;td align="center"&gt;-3 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;28.4 °F&lt;/td&gt;
+&lt;td align="center"&gt;-2 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;30.2 °F&lt;/td&gt;
+&lt;td align="center"&gt;-1 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;32.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;0 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;33.8 °F&lt;/td&gt;
+&lt;td align="center"&gt;1 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;35.6 °F&lt;/td&gt;
+&lt;td align="center"&gt;2 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;37.4 °F&lt;/td&gt;
+&lt;td align="center"&gt;3 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;39.2 °F&lt;/td&gt;
+&lt;td align="center"&gt;4 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;41.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;5 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;42.8 °F&lt;/td&gt;
+&lt;td align="center"&gt;6 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;44.6 °F&lt;/td&gt;
+&lt;td align="center"&gt;7 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;46.4 °F&lt;/td&gt;
+&lt;td align="center"&gt;8 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;48.2 °F&lt;/td&gt;
+&lt;td align="center"&gt;9 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;50.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;10 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;68.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;20 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;86.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;30 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;104.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;40 °C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="center"&gt;122.0 °F&lt;/td&gt;
+&lt;td align="center"&gt;50 °C&lt;/td&gt;
+&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;That&amp;rsquo;s it, empower yourself. Celsius is easy. Just do it!&lt;/p&gt;</description></item><item><title>My Dilemma; What Technology to Pursue</title><link>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link><pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid><description>&lt;p&gt;Be warned, this is a rant.&lt;/p&gt;
+&lt;p&gt;I have a Dilemma about what to focus on learning. I will always explore technology. I will always study, this is my nature. As God has built us, I will always work. This is not a question of what tech I will use here and there. Or what tech I will dabble in as an aside. I need another focus, I have been doing Drupal and php for a long time &amp;ndash;now is not time to move on, just time to hedge my speciality.&lt;/p&gt;
+&lt;h1 id="my-dilemma"&gt;My dilemma&lt;/h1&gt;
+&lt;p&gt;If this was a question that didn&amp;rsquo;t involve programming, it would have an easier solution. Perhaps I should have been a carpenter. I need to choose to focus between Elixir and Python. Neither are really new languages, yet both are a bit of the new hotness at the moment. Not that I am basing this on popularity or a trending topics feed.&lt;/p&gt;
+&lt;h2 id="elixir"&gt;Elixir&lt;/h2&gt;
+&lt;p&gt;I have been looking at Elixir for around 2 years now (I even went to ElixirCon in 2015). It is a meta-language built atop Erlang. It focuses on hiding the nuts and bolts from the developer so he/she can focus on writing the functional working pieces that make up the program. It is elegant, with an exciting syntax that is somewhat reminiscent of ruby.&lt;/p&gt;
+&lt;h2 id="python"&gt;Python&lt;/h2&gt;
+&lt;p&gt;Python is an old language that I was really turned off by when I first used it. It is a utility, most of what I would normally consider using python for I can more easily accomplish with a shell script. Python is all the things that Perl wasn&amp;rsquo;t.&lt;/p&gt;
+&lt;p&gt;Python has a syntax that is clean and purposeful. Unlike C syntax derivatives, it uses whitespace that matters to organize the code. This self enforces a code style that I like.&lt;/p&gt;
+&lt;h2 id="which-one"&gt;Which one?&lt;/h2&gt;
+&lt;p&gt;I know exactly which I need to pick and why &amp;ndash;only I don&amp;rsquo;t want to pick it.&lt;/p&gt;
+&lt;p&gt;Python is what all the cool new stuff is built with. From Tensor Flow to FPGA boards. Python is established and still being used for new things. It is also a bit of a given. I should know Python &amp;ndash;I have used Python. I have used many tools built on Python. I know that it will work and it is that stability that makes it seem stale.&lt;/p&gt;
+&lt;p&gt;Elixir holds some fantastic opportunities, but only if the market supports it. I did some tests with Elixir, and it can handle just about anything. I expect the next twitter to be built on it. Unfortunately, I doubt that will happen any time soon. Elixir is somewhat overpowered, and a little bit critical. It needs another year or two for the market to stabilize and for developer support to be in place.&lt;/p&gt;
+&lt;h2 id="time-to-learn-the-old-war-horse"&gt;Time to learn the old war horse&lt;/h2&gt;
+&lt;p&gt;I have done some preliminary study to learn Python, but without a project I am not sure how much I will retain. I have learned many fundamentals that I will need to reinforce through repetition of work. I have little interest in building another search engine as it seems like the &amp;ldquo;Hello World&amp;rdquo; first project for getting started with Python. I also have no interest in building a site in Django. So then, what am I left with? I am not sure, but I want to figure it out soon. Maybe find a way to incorporate Python with cross platform app development.&lt;/p&gt;
+&lt;p&gt;The heart of this dilemma is not really about Python versus Elixir. It is about finding a project that justifies the investment. A language without a purpose is just syntax. I am going with Python because the ecosystem demands it, but the real work starts when I find the right problem to solve with it.&lt;/p&gt;</description></item><item><title>Lets take a look at webVR with AFrame</title><link>https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/</link><pubDate>Mon, 24 Oct 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/</guid><description>&lt;p&gt;What if you could build a VR experience with nothing but HTML tags? No game engine, no compiled binaries, no 30-minute tutorial before you see a cube on screen. That is what &lt;a href="https://aframe.io"&gt;A-Frame&lt;/a&gt; promises, and in this post I am going to put it through its paces &amp;ndash; converting my old Three.js demo, loading 3D models, and building billboard sprites, all with markup and minimal JavaScript.&lt;/p&gt;
+&lt;p&gt;Just so you know we are not talking about the slightly older MVC Javascript framework also named AFrame; today, we are going to be talking about &lt;a href="https://aframe.io"&gt;Mozilla&amp;rsquo;s WebVR library A-Frame&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="what-is-a-frame"&gt;What is &lt;a href="https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-%E2%80%9Ca-frame%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D-or-%E2%80%9Caframevr%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D"&gt;A-Frame&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;A-Frame is an open-source web framework for building virtual reality experiences on the web. We can use A-Frame to build VR web page using only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and extensible, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.&lt;/p&gt;
+&lt;h2 id="how-to-use-a-frame"&gt;How to use A Frame&lt;/h2&gt;
+&lt;p&gt;Remember when you read my &lt;a href="https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html"&gt;introduction to Threejs&lt;/a&gt; (because you are an avid reader of my blog)? If you know how to use threejs then you already know how to extend A-Frame. That is because A-Frame uses threejs behind the scenes to manage the webgl. Let&amp;rsquo;s take a look at the example from my threejs post.&lt;/p&gt;
+&lt;iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/" &gt;&lt;/iframe&gt;
+&lt;p&gt;My old example converts easily to A-Frame. While the threejs example is around 30 lines of Javascript, the A-Frame example converts to about 9 lines of custom html tags with no custom JS. It doesn&amp;rsquo;t even use custom js for the animation. I am not the kind of person that considers code to be harder than markup, but in this case it makes more sense to use markup and the majority of the information that is lost is the boilerplate code. All we have to do to setup a scene is use the &lt;code&gt;&amp;lt;a-scene&amp;gt;&amp;lt;/a-scene&amp;gt;&lt;/code&gt; tags. All the parts of the scene go inside.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://frob.github.io/aframeexamples"&gt;A-Frame example: threejs port&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-HTML" data-lang="HTML"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-scene&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;fog&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;type: linear; color: #000; near: 1; far: 5&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;black&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-box&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 1.5 0&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;rotation&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 45 0&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;width&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;height&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;depth&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#00ff00&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-animation&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;attribute&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;rotation&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;dur&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;9500&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;easing&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;linear&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 45 0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;to&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;-360 405 0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;repeat&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;indefinite&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-animation&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a-box&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#000&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;light&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;type: ambient; color: #101030&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;light&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;type: directional; color: #ffffff; intensity: 0.5&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 1 0&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 0 2&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-camera&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-camera&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-scene&lt;/span&gt;&amp;gt;~
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To recreate my Threejs example I used these components and primitives:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aframe.io/docs/0.3.0/core/scene.html"&gt;scene&lt;/a&gt;
+&lt;strong&gt;a-scene&lt;/strong&gt; This is the container that holds the other components and primitives. There should only be one on a page. This is also where several global properties should be defined; this is where the &lt;em&gt;fog&lt;/em&gt; got defined in my example reboot. If you want more scenes on a page, then use iframes.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aframe.io/docs/0.3.0/primitives/a-box.html"&gt;box&lt;/a&gt;
+&lt;strong&gt;a-box&lt;/strong&gt; A-Frame provides several simple primitives, this is one of them. Read the docs to find them all. Models are also allowed.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aframe.io/docs/0.3.0/core/animations.html"&gt;animation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aframe.io/docs/0.3.0/primitives/a-sky.html"&gt;sky&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aframe.io/docs/0.3.0/core/entity.html"&gt;entity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aframe.io/docs/0.3.0/components/camera.html"&gt;camera&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In order to have multiple examples on this page we need to use iframes, so I will provide links to the &lt;a href="https://github.com/frob/aframeexamples"&gt;A-Frame examples used on this page&lt;/a&gt; and the &lt;a href="https://github.com/aframevr/aframe/blob/master/examples"&gt;official A-Frame examples&lt;/a&gt; after each example.&lt;/p&gt;
+&lt;h3 id="3d-primitives"&gt;3D primitives&lt;/h3&gt;
+&lt;p&gt;According to &lt;a href="https://github.com/aframevr/aframe/blob/master/examples/boilerplate/hello-world/index.html"&gt;AFrame&amp;rsquo;s Hello World example&lt;/a&gt;, just insert some simple invalid html and the lib will take care of the rest.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-scene&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-sphere&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 1.25 -1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;radius&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1.25&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#EF2D5E&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-sphere&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-box&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;-1 0.5 1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;rotation&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 45 0&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;width&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;height&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;depth&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#4CC3D9&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-box&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-cylinder&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1 0.75 1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;radius&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0.5&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;height&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;1.5&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#FFC65D&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-cylinder&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-plane&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;rotation&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;-90 0 0&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;width&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;4&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;height&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;4&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#7BC8A4&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-plane&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#ECECEC&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 0 3.8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-camera&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-camera&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-scene&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The best example of primitives is on the &lt;a href="https://aframe.io/examples/showcase/helloworld/"&gt;A-Frame homepage&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="skybox"&gt;Skybox&lt;/h3&gt;
+&lt;p&gt;If you read the above carefully you will notice that a skybox is just a primitive in A-Frame. This can be just a color or an asset, such as an &lt;a href="https://www.flickr.com/groups/equirectangular/"&gt;equirectangular image&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#ECECEC&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;img&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;sky&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;sky.png&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#sky&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is much easier than having to sync up textures and position on 5 separate quads or having to define an inner texture for a cube and keeping the position up-to-date with the camera position.&lt;/p&gt;
+&lt;h3 id="billboards-and-custom-components"&gt;Billboards and custom components&lt;/h3&gt;
+&lt;p&gt;Unfortunately, A-Frame doesn&amp;rsquo;t support billboard components out-of-the-box. But it is built on an &lt;a href="https://aframe.io/docs/0.3.0/docs/core"&gt;entity-component-system pattern&lt;/a&gt; (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a &lt;a href="https://github.com/blairmacintyre/aframe-look-at-billboard-component"&gt;random billboard component from github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am not going to go through how to create new components or even include the source code here. Take a look for yourself, it is only 165 lines and it really isn&amp;rsquo;t all that complicated. Maybe if I ever need to write a new custom component I will do a writeup about it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A &lt;a href="http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/billboards/"&gt;billboard&lt;/a&gt; is a 3D primitive that usually consists of two triangles that make up a rectangle face that is always pointed at the camera.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Using the above billboard component we can get a scene like this (&lt;a href="https://frob.github.io/aframeexamples/example-billboard.html"&gt;billboard example&lt;/a&gt;):&lt;/p&gt;
+&lt;iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-billboard.html" &gt;&lt;/iframe&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note that this billboard example will only work if the ad blockers are turned off. They don&amp;rsquo;t like that this library has the word billboard in it. In case you are wondering, billboard is the name of an ad. Just to avoid confusion. So that no one is confused. I really, really, really hope that you are not confused.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here is the important part.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;img&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;scorpion&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;images/8bitninja.gif&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;billboard&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;ninja1&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 1 0&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;geometry&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;primitive: plane; height: 1.5; width:1;&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;material&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;src: #scorpion;opacity:.8&amp;#34;&lt;/span&gt; &amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://www.github.com/frob/aframeexamples/master/example-billboard.html"&gt;Full billboard example code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The billboard custom component allows us to create a normal entity and just use an attribute &lt;code&gt;billboard&lt;/code&gt; to tell A-Frame that this entity is a billboard. There are many custom A-Frame components, links are available on the A-Frame component docs page.&lt;/p&gt;
+&lt;h4 id="assets"&gt;Assets&lt;/h4&gt;
+&lt;p&gt;This is as good a time as any to talk about asset management in A-Frame (you might have noticed the &lt;code&gt;a-asset&lt;/code&gt; tag in the last example). Simple scenes can handle assets in a simple manner &amp;ndash;with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then &lt;a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html"&gt;A-Frame&amp;rsquo;s asset management system&lt;/a&gt; comes in very handy. Here is an example of both ways of &lt;a href="https://aframe.io/docs/0.3.0/primitives/a-image.html"&gt;loading assets ripped straight from the docs&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;img&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;my-image&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;image.png&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!-- Using the asset management system. --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-image&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#my-image&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-image&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!-- Defining the URL inline. Not recommended but more comfortable for web developers. --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-image&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;another-image.png&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-image&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Non-multimedia assets have the default behavior of blocking the rendering of the scene until all assets have loaded &amp;ndash;this is configurable on a per asset basis. This simplifies the preloading of assets. There are more &lt;a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html"&gt;asset controls in the docs&lt;/a&gt;, such as having a timeout that the scene will begin loading even if the assets don&amp;rsquo;t load in time or dealing with asset &lt;strong&gt;loaded&lt;/strong&gt; events.&lt;/p&gt;
+&lt;h3 id="models"&gt;Models&lt;/h3&gt;
+&lt;p&gt;Primitives are nice for simple things, but aside from A-Frame demos I doubt they will be used too often in a real application. Luckily A-Frame has a simple way to load mesh objects. To demo this I will demo the same model or mesh that every 3D demo uses &amp;ndash;the &lt;a href="https://en.wikipedia.org/wiki/Utah_teapot"&gt;Utah Teapot&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-model.html" &gt;&lt;/iframe&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;a-scene&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;fog&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;type: linear; color: #000; near: 1; far: 5&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;black&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-asset-item&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;teapot&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;src&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;models/teapot.obj&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-asset-item&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a-assets&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;obj-model&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;obj: #teapot&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;green&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 0 -2.5&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-animation&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;attribute&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;rotation&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;dur&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;9500&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;easing&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;linear&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;from&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 45 0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;to&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 405 0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;repeat&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;indefinite&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a-animation&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;color&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;#000&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-sky&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;light&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;type: ambient; color: #101030&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;light&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;type: directional; color: #ffffff; intensity: 0.5&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 1 0&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;position&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;0 0 2&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;a-camera&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-camera&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;a-entity&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;a-scene&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id="meshes-materials-and-shaders-oh-my"&gt;Meshes Materials and Shaders oh my!&lt;/h4&gt;
+&lt;p&gt;You will notice that the above demo has a rather bland looking teapot. This is because it only uses a mesh object and has no material. If you are not familiar with 3D, something that is seen on the screen is normally a combination of three different things. There is the Mesh (or Model) that defines the geometry of the object, there is the Material that defines the textures used to show definition in the object, and there is the Shader that is the part that says how to put all three things together. Shaders are very powerful things and can be extremely complicated, so I will not go into how to write them in this article. They can give the 3D artist a huge amount of visual flexibility even with very simple meshes. I will go into more depth on shaders in a moment, but please checkout this video on shaders, they are awesome.&lt;/p&gt;
+&lt;h3 id="shaders"&gt;Shaders&lt;/h3&gt;
+&lt;p&gt;As said before shaders are how the computer knows what to display. A-Frame has some basic default shaders built in, but it also supports custom shaders.&lt;/p&gt;
+&lt;p&gt;Generally speaking there are two types of Shaders: Vertex Shaders and Pixel Shaders. Vertex Shaders act on the geometry of an object and the Pixel Shaders affect the image on a pixel by pixel basis.&lt;/p&gt;
+&lt;p&gt;A common use of the Vertex Shaders is to provide a smoothly effect on a mesh (it is impossible to have a truly smooth mesh, a Vertex Shader can make a dodecahedron appear to be smooth in the middle). A common use of a Pixel Shader is provide a bump map or normal map effect. This can provide seemingly complex depth on a very simple model. Another common use of a Pixel Shader is to produce a post processing effect on the whole image &amp;ndash;think of an instagram filter.&lt;/p&gt;
+&lt;h3 id="composite"&gt;Composite&lt;/h3&gt;
+&lt;p&gt;One of the downsides to the way A-Frame is built is that on an A-Frame page there can be no other content. Okay, this isn&amp;rsquo;t completely true. Some html can be layered outside the A-Frame &lt;code&gt;a-scene&lt;/code&gt; tags. But the results are inconsistent and mostly undesirable. The recommended way to include text in a scene is to bake the text into a texture and apply that texture to a quad (or plane).&lt;/p&gt;
+&lt;p&gt;There also exists the &lt;em&gt;HTML Shader&lt;/em&gt;, which is a custom shader that takes HTML from the dom and places it in a scene. My experience with the HTML Shader has not been favorable, and I question how portable and scalable it is and how well if reacts to events.&lt;/p&gt;
+&lt;h2 id="is-it-cool"&gt;Is it cool?&lt;/h2&gt;
+&lt;p&gt;This seems like the biggest question more Javascript developers ask when adopting a new library. The short answer is yes but the longer answer is it depends.&lt;/p&gt;
+&lt;h3 id="it-depends"&gt;It depends?&lt;/h3&gt;
+&lt;p&gt;The usability of this cool new tech is all about what we do with it. I have given talks on A-Frame and the question is normally framed like this &amp;ldquo;What can we do with it?&amp;rdquo; And I respond I just showed you what it was meant to do. I bring this up to say, lets not parallax WebVR. It&amp;rsquo;s cool, but if we don&amp;rsquo;t use it the right way it will suck.&lt;/p&gt;
+&lt;h3 id="can-i-use-it"&gt;Can I use it?&lt;/h3&gt;
+&lt;p&gt;Go checkout caniuse for WebGL and WebVR the browser support for A-Frame and the browser support for threejs.&lt;/p&gt;
+&lt;h2 id="wrap-up"&gt;Wrap up&lt;/h2&gt;
+&lt;p&gt;A-Frame makes WebVR approachable. My 30-line Three.js example became 9 lines of custom HTML. Models, skyboxes, billboards, and animations all work with attributes instead of API calls. The entity-component-system architecture means it is extensible when markup is not enough. It is not a replacement for a full game engine, but for bringing VR to the web &amp;ndash; especially for content creators who are more comfortable with HTML than with JavaScript &amp;ndash; it is hard to beat. Build something, put it on a page, and hand someone a phone with a cardboard headset. That is the pitch, and it works.&lt;/p&gt;</description></item><item><title>a new simple reading rogue like</title><link>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</link><pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</guid><description>&lt;h2 id="my-kid-is-smart"&gt;My kid is smart™&lt;/h2&gt;
+&lt;p&gt;I am going to say what every parent says, my kid is smart™. We read to her all the time and she loves it. We have been reading to her all her life. Now it&amp;rsquo;s time for her to start to learn to read, and we are struggling. She isn&amp;rsquo;t struggling, we (her parents) are struggling. This is because of the limited amount of material there is in this space. My daughter has a memory that is amazing; she &amp;ldquo;reads&amp;rdquo; her Arthur books to us word for word. This is because she has them memorized. Normally this happens after a single reading. Now that we are having her read she is doing the same thing. After one time through she is no longer reading &amp;ndash;she is reciting.&lt;/p&gt;
+&lt;h2 id="what-about-a-book-that-writes-itself"&gt;What about a book that writes itself&lt;/h2&gt;
+&lt;p&gt;Inside every computer there is a book just waiting to be generated &amp;ndash;or something like that. The solution to this problem is to have a book that writes itself. Easy right, write a program that writes children&amp;rsquo;s books.&lt;/p&gt;
+&lt;h2 id="procedural-conversation-is-hard"&gt;Procedural conversation is hard&lt;/h2&gt;
+&lt;p&gt;Just like we just saw with &lt;a href="https://en.wikipedia.org/wiki/Tay_(bot)"&gt;Microsoft&amp;rsquo;s Tay bot&lt;/a&gt; gone &lt;a href="https://twitter.com/geraldmellor/status/712880710328139776"&gt;nazi sympathizer&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;&amp;quot;Tay&amp;quot; went from &amp;quot;humans are super cool&amp;quot; to full nazi in &amp;lt;24 hrs and I&amp;#39;m not at all concerned about the future of AI &lt;a href="https://t.co/xuGi1u9S1A"&gt;pic.twitter.com/xuGi1u9S1A&lt;/a&gt;&lt;/p&gt;&amp;mdash; Gerry (@geraldmellor) &lt;a href="https://twitter.com/geraldmellor/status/712880710328139776"&gt;March 24, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+&lt;p&gt;Procedural conversation generation is hard and it can have unforeseen results. Even with the &lt;a href="https://dev.botframework.com/"&gt;bot API&amp;rsquo;s MS announced&lt;/a&gt; at &lt;a href="https://build.microsoft.com/"&gt;BUILD&lt;/a&gt;. Thankfully, these book need to be simple. They have to be simple so that children can learn to read by reading them. If I keep the structure down to as simple a structure as possible and also template that structure so that it can must build sentences that match the template then I think we will be in a good place in both complexity and safety. This will be just slightly more complicated than a &lt;a href="https://en.wikipedia.org/wiki/Mad_Libs"&gt;madlib&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="book-structure"&gt;Book structure&lt;/h2&gt;
+&lt;p&gt;The structure of these book is basically all the same (with some outliers that we will ignore for now). Here is a sample book that I have just pulled out of my &lt;span title="With the subject matter being children's book"&gt;(censored)&lt;/span&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;This is Tom.&lt;/li&gt;
+&lt;li&gt;Tom has a hat.&lt;/li&gt;
+&lt;li&gt;Tom&amp;rsquo;s hat is on his head.&lt;/li&gt;
+&lt;li&gt;Tom has a cat.&lt;/li&gt;
+&lt;li&gt;Tom&amp;rsquo;s cat is wearing a hat.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So the book&amp;rsquo;s structure as follows should be:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introduction&lt;/li&gt;
+&lt;li&gt;Possession&lt;/li&gt;
+&lt;li&gt;Information&lt;/li&gt;
+&lt;li&gt;Dependent Introduction&lt;/li&gt;
+&lt;li&gt;Dependent Possession&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We can add some more variety later, for now we will focus on this.&lt;/p&gt;
+&lt;h2 id="things-needed"&gt;Things needed&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked="" disabled="" type="checkbox"&gt; a &lt;a href="https://gist.github.com/frob/0628417b66c543f169c5056ea53dfdfe"&gt;list of names&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; a list of things&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; a list of (age appropriate) body parts&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; a list of possessive words&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; a list of nouns&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; a template system&lt;/li&gt;
+&lt;li&gt;&lt;input disabled="" type="checkbox"&gt; a list of templates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once we have these things we can build this out just like a &lt;a href="https://en.wikipedia.org/wiki/Mad_Libs"&gt;madlib&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="how-is-this-a-game"&gt;How is this a game&lt;/h2&gt;
+&lt;p&gt;This begs the bigger question, what is a game? I am not going to attempt to answer that right now. This post is already long enough. The mechanics of it are as follows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The gameplay is the reading.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The level is the sentence.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The game is the book.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The levels are procedurally generated.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is the possibility of a sequel. In the sequel the game complexity could scale to the player/user (maybe later). I have thought about this, but it is too early to consider this a feature.&lt;/p&gt;
+&lt;p&gt;The goal is a book that never runs out of new pages. If I can get the template system right, a child will never be able to memorize their way through it &amp;ndash; they will have to actually read. That is the game, and it is one worth building.&lt;/p&gt;</description></item></channel></rss>
