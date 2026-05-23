@@ -6,26 +6,53 @@ tasks:
     cmds:
       - task --list
 
-  dev:
-    desc: Run Hugo development server with the example site
-    dir: exampleSite
+  start:
+    desc: Start the Hugo dev server in a detached Docker container on :1313
     cmds:
-      - hugo server --themesDir ../.. --buildDrafts --buildFuture
+      - docker network create frobiovox-net 2>/dev/null || true
+      - >-
+        docker run --rm -d --name frobiovox-dev --network frobiovox-net
+        -p 1313:1313
+        -v $(pwd):/workspace/frobiovox
+        -w /workspace/frobiovox/exampleSite
+        hugomods/hugo:exts-0.154.3
+        hugo server --bind 0.0.0.0 --themesDir ../.. --buildDrafts --buildFuture
+
+  stop:
+    desc: Stop the Hugo dev server container
+    cmds:
+      - docker stop frobiovox-dev
 
   build:
-    desc: Build the example site
-    deps: [css:build]
-    dir: exampleSite
+    desc: Build the example site (CSS + Hugo)
+    deps: [build:css]
     cmds:
-      - hugo --themesDir ../..
+      - >-
+        docker run --rm -v $(pwd):/workspace/frobiovox
+        -w /workspace/frobiovox/exampleSite
+        hugomods/hugo:exts-0.154.3
+        hugo --themesDir ../..
 
-  verify:llm:
-    desc: Verify LLM-friendly outputs (llms.txt, index.md companions, JSON-LD)
+  build:css:
+    desc: Build CSS and JS with Vite via Docker
+    deps: [install]
     cmds:
-      - docker run --rm -v $(pwd):/w -w /w python:3-alpine python3 scripts/verify_llm.py
-    preconditions:
-      - sh: test -d exampleSite/public
-        msg: "exampleSite/public not found — run 'task build' first."
+      - docker run --rm -v $(pwd):/app -w /app node:lts npx vite build
+
+  build:hugo:
+    desc: Rebuild the Hugo site only (skip CSS — use when only content/layouts changed)
+    cmds:
+      - >-
+        docker run --rm -v $(pwd):/workspace/frobiovox
+        -w /workspace/frobiovox/exampleSite
+        hugomods/hugo:exts-0.154.3
+        hugo --themesDir ../..
+
+  watch:css:
+    desc: Watch and rebuild CSS/JS with Vite via Docker
+    deps: [install]
+    cmds:
+      - docker run --rm -it -v $(pwd):/app -w /app node:lts npx vite build --watch
 
   clean:
     desc: Clean generated files
@@ -33,11 +60,14 @@ tasks:
       - rm -rf exampleSite/public
       - rm -rf exampleSite/resources
 
-  new:
-    desc: Create a new post (usage - task new POST=my-post-title)
-    dir: exampleSite
+  new:post:
+    desc: Create a new post (usage - task new:post POST=my-post-title)
     cmds:
-      - hugo new posts/{{.POST}}.md --themesDir ../..
+      - >-
+        docker run --rm -v $(pwd):/workspace/frobiovox
+        -w /workspace/frobiovox/exampleSite
+        hugomods/hugo:exts-0.154.3
+        hugo new posts/{{.POST}}.md --themesDir ../..
     requires:
       vars: [POST]
 
@@ -50,7 +80,7 @@ tasks:
       - sh: test -d exampleSite/public
         msg: "Public directory doesn't exist. Run 'task build' first."
 
-  serve:stop:
+  stop:serve:
     desc: Stop the nginx container and clean up network
     cmds:
       - docker stop frobiovox-nginx
@@ -64,19 +94,15 @@ tasks:
       - test -f node_modules/.bin/vite
       - test -d node_modules/tw-animate-css
 
-  css:build:
-    desc: Build CSS and JS with Vite via Docker
-    deps: [install]
+  verify:llm:
+    desc: Verify LLM-friendly outputs (llms.txt, index.md companions, JSON-LD)
     cmds:
-      - docker run --rm -v $(pwd):/app -w /app node:lts npx vite build
+      - docker run --rm -v $(pwd):/w -w /w python:3-alpine python3 scripts/verify_llm.py
+    preconditions:
+      - sh: test -d exampleSite/public
+        msg: "exampleSite/public not found — run 'task build' first."
 
-  css:dev:
-    desc: Watch and rebuild CSS/JS with Vite via Docker
-    deps: [install]
-    cmds:
-      - docker run --rm -it -v $(pwd):/app -w /app node:lts npx vite build --watch
-
-  backstop:init:
+  init:backstop:
     desc: Initialize BackstopJS configuration
     cmds:
       - docker run --rm -v $(pwd):/src backstopjs/backstopjs init
@@ -84,7 +110,7 @@ tasks:
       - sh: "! test -f backstop.json"
         msg: "backstop.json already exists. Remove it first if you want to reinitialize."
 
-  backstop:reference:
+  reference:backstop:
     desc: Create reference screenshots
     cmds:
       - docker run --rm --network frobiovox-net -v $(pwd):/src backstopjs/backstopjs reference
@@ -92,9 +118,9 @@ tasks:
       - sh: docker ps -q --filter name=frobiovox-nginx | grep -q .
         msg: "Nginx server is not running. Start it with 'task serve' first."
       - sh: test -f backstop.json
-        msg: "backstop.json not found. Run 'task backstop:init' first."
+        msg: "backstop.json not found. Run 'task init:backstop' first."
 
-  backstop:test:
+  test:backstop:
     desc: Run visual regression tests
     cmds:
       - docker run --rm --network frobiovox-net -v $(pwd):/src backstopjs/backstopjs test
@@ -102,14 +128,14 @@ tasks:
       - sh: docker ps -q --filter name=frobiovox-nginx | grep -q .
         msg: "Nginx server is not running. Start it with 'task serve' first."
       - sh: test -f backstop.json
-        msg: "backstop.json not found. Run 'task backstop:init' first."
+        msg: "backstop.json not found. Run 'task init:backstop' first."
 
-  backstop:approve:
+  approve:backstop:
     desc: Approve current test results as new reference
     cmds:
       - docker run --rm -v $(pwd):/src backstopjs/backstopjs approve
 
-  backstop:openReport:
+  open:backstop-report:
     desc: Open the BackstopJS HTML report
     cmds:
       - open backstop_data/html_report/index.html

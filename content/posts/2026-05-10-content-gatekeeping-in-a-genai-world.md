@@ -9,11 +9,19 @@ tags:
     - frontpage
 ---
 
-# The training data fight is over. The access fight is just starting.
+Let me start with a bit of history. It might seem like a hard thing for today's generation to understand, but content used to cost money. Especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.
+
+It was during this time that the foundations of the World Wide Web were being laid in the internet protocols that would become HTTP — the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for "Payment Required" responses that has gone unused for 30 years.
+
+HTTP, the communication layer of the web, was designed with the expectation that content would cost money. Instead, the web became a mostly ad-based platform. But those days might be coming to an end. As the browser stops being a destination platform, more and more people are getting their content through means that don't show them ads. Worse yet, they are getting the content directly. As more and more people access content through GenAI services — Claude, Gemini, ChatGPT, DeepSeek, Copilot — they are no longer reading from a single source but rather a distillation of many. In that world, who should be paid, and do ads even make sense?
+
+There is actually way more to it than that. We haven't even talked about training data.
+
+## The training data fight is over. The access fight is just starting.
 
 For two years now the conversation about AI and content has been stuck on one question: who gets paid for what was already used to train the models? It is a real question with billion-dollar answers, but it is also a question about the past. Meanwhile a different question has been quietly assembling itself in the background — who gets paid when a model goes to fetch something *right now* — and almost nobody is talking about it, even though the plumbing is already getting installed.
 
-So let me lay out the two paradigms next to each other, because I think the second one is where things actually get interesting.
+There are two sides to the content payment coin: paying for training and paying for inference. So let me lay out the two paradigms next to each other, because I think the second one is where things actually get interesting.
 
 ## Paradigm one: licensing the training corpus
 
@@ -25,7 +33,11 @@ It is a bad position to negotiate from. And it is fundamentally a *retrospective
 
 Which brings me to the other paradigm. The one where the question gets reframed entirely.
 
-## Paradigm two: MCP and the runtime fetch
+## Paradigm two: paying for content access 
+
+The shift here is simple to state and surprisingly hard to see when you are stuck inside the training-data conversation: instead of paying once for what is already in a model's weights, you pay at the moment an agent fetches something. The content never leaves the publisher's control, the transaction happens at inference time, and the publisher's existing access controls do the enforcement. Two pieces of infrastructure make this possible — one handles authorization and integration, the other handles payment and rights declaration.
+
+### MCP and the runtime fetch
 
 [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro) is an open standard Anthropic shipped in November 2024 and donated to the Linux Foundation a year later. The pitch is boring on its surface — it is a JSON-RPC protocol for letting AI applications talk to external tools and data sources in a standardized way. USB-C for AI, as the docs like to put it. The N×M integration problem solved by making every client and every server speak one protocol.
 
@@ -39,7 +51,7 @@ The political shift is significant. In the licensing world, publishers are selli
 
 MCP does not solve everything, though. It assumes the user already has an account. It does not help a stranger find your content and pay for it on the spot. For that you need the next layer.
 
-## Paradigm three: x402 and RSL — the missing payment and rights layers
+### x402 and RSL — the missing payment and rights layers
 
 This is the part I think will look obvious in retrospect.
 

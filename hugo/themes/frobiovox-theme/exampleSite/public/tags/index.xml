@@ -6,13 +6,69 @@
     <description>Recent content in Tags on My Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jan 2024 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 11:30:00 +0000</lastBuildDate>
     <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://example.org/tags/go/</link>
+      <pubDate>Wed, 22 Apr 2026 11:30:00 +0000</pubDate>
+      <guid>https://example.org/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Patterns</title>
+      <link>https://example.org/tags/patterns/</link>
+      <pubDate>Wed, 22 Apr 2026 11:30:00 +0000</pubDate>
+      <guid>https://example.org/tags/patterns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>https://example.org/tags/tutorial/</link>
+      <pubDate>Wed, 22 Apr 2026 11:30:00 +0000</pubDate>
+      <guid>https://example.org/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Css</title>
+      <link>https://example.org/tags/css/</link>
+      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/css/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Frontpage</title>
       <link>https://example.org/tags/frontpage/</link>
-      <pubDate>Thu, 25 Jan 2024 10:00:00 +0000</pubDate>
+      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
       <guid>https://example.org/tags/frontpage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://example.org/tags/hugo/</link>
+      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tooling</title>
+      <link>https://example.org/tags/tooling/</link>
+      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/tooling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Opinion</title>
+      <link>https://example.org/tags/opinion/</link>
+      <pubDate>Tue, 03 Feb 2026 09:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/opinion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writing</title>
+      <link>https://example.org/tags/writing/</link>
+      <pubDate>Tue, 03 Feb 2026 09:00:00 +0000</pubDate>
+      <guid>https://example.org/tags/writing/</guid>
       <description></description>
     </item>
     <item>
@@ -27,13 +83,6 @@
       <link>https://example.org/tags/threejs/</link>
       <pubDate>Thu, 25 Jan 2024 10:00:00 +0000</pubDate>
       <guid>https://example.org/tags/threejs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorial</title>
-      <link>https://example.org/tags/tutorial/</link>
-      <pubDate>Thu, 25 Jan 2024 10:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/tutorial/</guid>
       <description></description>
     </item>
   </channel>

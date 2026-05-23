@@ -5,7 +5,7 @@ A Hugo theme based on the design of [www.frobiovox.com](https://www.frobiovox.co
 ## Features
 
 - Clean, minimal design with responsive layout
-- Custom fonts: VT323, Cutive Mono, and Raleway
+- Custom fonts: VT323 (h1 / display), IBM Plex Sans (h2–h6), and Raleway (body)
 - Tailwind CSS v4 with shadcn design tokens
 - Syntax highlighting with Solarized color scheme
 - "Read More" buttons on post listings
@@ -31,11 +31,15 @@ task install    # Install Node dependencies (via Docker)
 
 ### Local development
 
-Run these in separate terminals:
+```bash
+task start      # Start the Hugo dev server (detached Docker container) at http://localhost:1313
+task stop       # Stop the dev server container
+```
+
+For live CSS rebuilds while developing, run this in a separate terminal:
 
 ```bash
-task css:dev    # Watch and rebuild CSS/JS with Vite
-task dev        # Hugo development server at http://localhost:1313
+task watch:css  # Watch and rebuild CSS/JS with Vite
 ```
 
 The `exampleSite/` directory contains a working Hugo site for local development and testing.
@@ -46,7 +50,7 @@ The `exampleSite/` directory contains a working Hugo site for local development 
 task build      # Builds CSS then Hugo site
 ```
 
-`task build` automatically runs `task css:build` first.
+`task build` automatically runs `task build:css` first. For fast iteration on layouts/content only, use `task build:hugo` to skip the CSS rebuild.
 
 ### Visual regression testing
 
@@ -55,9 +59,9 @@ Requires the site to be built and served first:
 ```bash
 task build
 task serve               # Serve built site via nginx on http://localhost:8088
-task backstop:test       # Run visual regression tests
-task backstop:approve    # Approve current results as new reference
-task serve:stop          # Stop the nginx container
+task test:backstop       # Run visual regression tests
+task approve:backstop    # Approve current results as new reference
+task stop:serve          # Stop the nginx container
 ```
 
 ## Installation in Your Hugo Site

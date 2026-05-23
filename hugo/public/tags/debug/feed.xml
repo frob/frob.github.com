@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debug on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/debug/</link>
+    <link>https://www.frobiovox.com/tags/debug/</link>
     <description>Recent content in Debug on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/debug/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.frobiovox.com/tags/debug/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting XDebug working with the Zed editor, starring Claude</title>
-      <link>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
+      <link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
+      <guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
       <description>&lt;h1 id=&#34;zed-ide-and-xdebug&#34;&gt;Zed IDE and Xdebug&lt;/h1&gt;&#xA;&lt;p&gt;Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-zed&#34;&gt;Why Zed&lt;/h2&gt;&#xA;&lt;p&gt;The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Add Some Style to Your JavaScript Log</title>
-      <link>http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/</link>
+      <link>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</link>
       <pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid>
+      <guid>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid>
       <description>&lt;p&gt;Did you know that &lt;code&gt;console.log&lt;/code&gt; can render styled text? Colors, drop shadows, custom fonts &amp;ndash; all in your browser&amp;rsquo;s developer console. This post shows you how it is done and what it looks like across browsers.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#howitdo&#34;&gt;Skip to the how-to&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;backstory&#34;&gt;Backstory&lt;/h2&gt;&#xA;&lt;p&gt;Anytime I want to show off what the web can do with a simple blog I have to pull up &lt;a href=&#34;http://acko.net&#34;&gt;this awesome site&lt;/a&gt;. I was on &lt;a href=&#34;http://acko.net/&#34;&gt;A Very Cool Site about Hackery, Math &amp;amp; Design&lt;/a&gt;, and the question was asked &amp;ldquo;how did he do that?&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>

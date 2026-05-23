@@ -2,12 +2,28 @@ baseURL = "https://example.org/"
 languageCode = "en-us"
 title = "My Hugo Site"
 theme = "frobiovox"
+enableRobotsTXT = true
 
 [permalinks]
   posts = "/posts/:year/:month/:day/:slug/"
 
 [params]
   description = "A blog using the Frobiovox theme"
+  descriptions = [
+    "A blog using the Frobiovox theme",
+    "Notes from the terminal",
+    "Quietly building things",
+    "Static site, dynamic mind",
+    "Where the cursor still blinks",
+    "Long-form for short attention spans",
+    "Compile, commit, caffeinate, repeat",
+    "Words about code, mostly",
+    "Reading the docs so you don't have to",
+    "A few opinions, lightly held",
+    "Hand-rolled, no batteries included",
+    "Postcards from production",
+  ]
+  description_rotation_ms = 19000
   avatar = "/images/avatar.png"
   github = "yourusername"
   twitter = "yourusername"
@@ -52,3 +68,8 @@ theme = "frobiovox"
   name = "About"
   url = "/about/"
   weight = 2
+
+[[menu.main]]
+  name = "Style Guide"
+  url = "/styleguide/"
+  weight = 3

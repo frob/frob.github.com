@@ -18,6 +18,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - JSON-LD (`schema.org`) in `<head>` of every page: `BlogPosting` for posts, `AboutPage` for `about`, `Blog` on the home page, `CollectionPage` for section/taxonomy lists
 - `[params.author]` site-config block (per-post `author` frontmatter overrides the default)
 - `task verify:llm` to verify the LLM-friendly artifacts in `exampleSite/public`
+- Style-guide page at `/styleguide/` demonstrating every component, font, and color in the system; linked from the main menu
+- `task start` / `task stop` to run the Hugo dev server as a detached Docker container (`hugomods/hugo:exts-0.154.3`)
+- `task build:hugo` for fast Hugo-only rebuilds that skip the CSS pipeline
+
+### Changed
+
+- Typography overhaul: `h1` and post-listing titles now render in **VT323** at 40 px (`font-weight: normal`, 1 px letter-spacing); `h2`–`h6` now render in **IBM Plex Sans**; Cutive Mono dropped from the font load
+- Pixel-font crispness: `-webkit-font-smoothing: none` / `font-smooth: never` applied to every VT323 element so the pixel grid stays sharp
+- Taskfile renamed to verb:subject convention (e.g. `css:build` → `build:css`, `css:dev` → `watch:css`, `serve:stop` → `stop:serve`, `backstop:*` → `*:backstop`, `new` → `new:post`)
+- Footer RSS icon now reuses the site mark from `avatar.svg` instead of the standard orange RSS glyph
 
 ### Fixed
 

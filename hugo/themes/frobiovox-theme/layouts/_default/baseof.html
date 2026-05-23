@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+    <link rel="canonical" href="{{ with .Params.canonical }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}">
     {{ with .OutputFormats.Get "MARKDOWN" }}<link rel="alternate" type="text/markdown" href="{{ .Permalink }}">{{ end }}
+    {{ partial "opengraph.html" . }}
     {{ partial "jsonld.html" . }}
     {{ block "head" . }}{{ end }}
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Cutive+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 
     <!-- Page-specific CSS from frontmatter assets -->
@@ -29,6 +31,7 @@
     </div>
     {{ partial "footer.html" . }}
     <script src="{{ "js/links.js" | relURL }}"></script>
+    <script src="{{ "js/site-description.js" | relURL }}"></script>
 
     <!-- Page-specific JS from frontmatter assets -->
     {{ if .Params.assets }}

@@ -3,14 +3,25 @@
 
 > {{ .Site.Params.description }}
 
+{{ range .Site.Sections }}
+## {{ .Title }}
+{{ with .Description }}
+> {{ . }}
+{{ end }}
+{{- range .Pages }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Date }} ({{ .Format "2006-01-02" }}){{ end }}: {{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}
+{{- end }}
+{{ end }}
+{{- $standalone := where .Site.RegularPages "Section" "" -}}
+{{- if $standalone }}
 ## Pages
-
-{{- range where .Site.RegularPages "Kind" "page" }}
+{{ range $standalone }}
 - [{{ .Title }}]({{ .Permalink }}): {{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}
 {{- end }}
-
-## Sections
-
-{{- range .Site.Sections }}
-- [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+{{ end }}
+{{- with .Site.Taxonomies.tags }}
+## Tags
+{{ range $name, $taxonomy := . }}
+- [{{ $name }}]({{ $taxonomy.Page.Permalink }}) ({{ len $taxonomy.Pages }})
 {{- end }}
+{{ end }}

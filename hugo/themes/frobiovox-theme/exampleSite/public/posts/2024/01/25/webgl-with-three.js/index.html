@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Hugo Site</title>
     <meta name="description" content="Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then.">
+    <link rel="canonical" href="http://www.kwallcompany.com/blog/webgl-threejs">
     <link rel="alternate" type="text/markdown" href="https://example.org/posts/2024/01/25/webgl-with-three.js/index.md">
+    
+<meta property="og:title" content="WebGL with three.js | My Hugo Site">
+<meta property="og:description" content="Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://example.org/posts/2024/01/25/webgl-with-three.js/">
+<meta property="og:site_name" content="My Hugo Site">
+<meta property="og:image" content="https://example.org/images/avatar.png">
+<meta property="article:published_time" content="2024-01-25T10:00:00Z">
+<meta property="article:modified_time" content="2024-01-25T10:00:00Z">
+<meta property="article:tag" content="threejs">
+<meta property="article:tag" content="kwallcompany">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="frontpage">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WebGL with three.js | My Hugo Site">
+<meta name="twitter:description" content="Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then.">
+<meta name="twitter:image" content="https://example.org/images/avatar.png">
+<meta name="twitter:site" content="@yourusername">
+<meta name="twitter:creator" content="@yourusername">
+
     
 <script type="application/ld+json">
 {
@@ -38,11 +59,38 @@
   "sameAs": [
     "http://www.kwallcompany.com/blog/webgl-threejs"
   ],
-  "url": "https://example.org/posts/2024/01/25/webgl-with-three.js/"
+  "timeRequired": "PT1M",
+  "url": "https://example.org/posts/2024/01/25/webgl-with-three.js/",
+  "wordCount": 133
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "https://example.org/",
+      "name": "Home",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://example.org/posts/",
+      "name": "Posts",
+      "position": 2
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://example.org/posts/2024/01/25/webgl-with-three.js/",
+      "name": "WebGL with three.js",
+      "position": 3
+    }
+  ]
 }
 </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Cutive+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
 
     
@@ -62,7 +110,8 @@
             <div class="site-info">
                 <h1 class="site-name"><a href="/">My Hugo Site</a></h1>
                 
-                <p class="site-description">A blog using the Frobiovox theme</p>
+                <p class="site-description sr-only">A blog using the Frobiovox theme</p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;A blog using the Frobiovox theme&#34;,&#34;Notes from the terminal&#34;,&#34;Quietly building things&#34;,&#34;Static site, dynamic mind&#34;,&#34;Where the cursor still blinks&#34;,&#34;Long-form for short attention spans&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Words about code, mostly&#34;,&#34;Reading the docs so you don&#39;t have to&#34;,&#34;A few opinions, lightly held&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;]" data-interval="19000" aria-hidden="true"></p>
                 
             </div>
         </header>
@@ -79,6 +128,10 @@
                 <a class="navigation-menu-link" href="/about/">About</a>
             </li>
             
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/styleguide/">Style Guide</a>
+            </li>
+            
         </ul>
     </nav>
 </div>
@@ -88,7 +141,10 @@
 <div class="container">
     <article class="post">
         <h1>WebGL with three.js</h1>
-        <div class="date">January 25, 2024</div>
+        <div class="date">
+            <time datetime="2024-01-25T10:00:00Z">January 25, 2024</time>
+            
+        </div>
 
         
         <div class="canonical sr-only">
@@ -161,8 +217,27 @@
                 </a>
                 
                 <a href="/index.xml" aria-label="RSS">
-                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#f26522">
-                        <path d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 010-2zm0 4a6 6 0 016 6 1 1 0 11-2 0 4 4 0 00-4-4 1 1 0 010-2zm.5 7a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 78" preserveAspectRatio="xMidYMid meet" fill="#000000">
+                        <g transform="translate(0,78) scale(0.1,-0.1)" stroke="none">
+                            <path d="M710 705 l0 -75 85 0 85 0 0 75 0 75 -85 0 -85 0 0 -75z"/>
+                            <path d="M748 613 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
+                            <path d="M748 563 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
+                            <path d="M758 543 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M758 493 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M748 473 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
+                            <path d="M748 423 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
+                            <path d="M758 403 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M758 373 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M748 353 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
+                            <path d="M748 303 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
+                            <path d="M758 283 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M758 253 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M758 233 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M758 213 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M758 183 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
+                            <path d="M748 163 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
+                            <path d="M710 75 l0 -75 85 0 85 0 0 75 0 75 -85 0 -85 0 0 -75z"/>
+                        </g>
                     </svg>
                 </a>
             </div>
@@ -184,6 +259,7 @@
 </div>
 
     <script src="/js/links.js"></script>
+    <script src="/js/site-description.js"></script>
 
     
     
