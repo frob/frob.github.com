@@ -1,397 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frank Robert Anderson</title>
-    <meta name="description" content="I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame.">
-    <link rel="canonical" href="http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/">
-    
-    
-<meta property="og:title" content="Lets take a look at webVR with AFrame | Frank Robert Anderson">
-<meta property="og:description" content="I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/">
-<meta property="og:site_name" content="Frank Robert Anderson">
-<meta property="og:image" content="http://localhost:1313/images/top.png">
-<meta property="article:published_time" content="2016-10-24T00:00:00Z">
-<meta property="article:modified_time" content="2016-10-24T00:00:00Z">
-<meta property="article:tag" content="frontpage">
-<meta property="article:tag" content="tutorial">
-<meta property="article:tag" content="web development">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lets take a look at webVR with AFrame | Frank Robert Anderson">
-<meta name="twitter:description" content="I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame.">
-<meta name="twitter:image" content="http://localhost:1313/images/top.png">
-<meta name="twitter:site" content="@frobiovox">
-<meta name="twitter:creator" content="@frobiovox">
-
-    
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "author": {
-    "@type": "Person",
-    "name": "Frank Robert Anderson",
-    "sameAs": [
-      "https://github.com/frob",
-      "https://twitter.com/frobiovox"
-    ]
-  },
-  "dateModified": "2016-10-24T00:00:00Z",
-  "datePublished": "2016-10-24T00:00:00Z",
-  "description": "I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame.",
-  "headline": "Lets take a look at webVR with AFrame",
-  "image": "/images/top.png",
-  "keywords": "frontpage, tutorial, web development",
-  "mainEntityOfPage": "http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/",
-  "publisher": {
-    "@type": "Organization",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/images/top.png"
-    },
-    "name": "Frank Robert Anderson"
-  },
-  "timeRequired": "PT9M",
-  "url": "http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/",
-  "wordCount": 1909
-}
-</script><script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "item": "http://localhost:1313/",
-      "name": "Home",
-      "position": 1
-    },
-    {
-      "@type": "ListItem",
-      "item": "http://localhost:1313/posts/",
-      "name": "Posts",
-      "position": 2
-    },
-    {
-      "@type": "ListItem",
-      "item": "http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/",
-      "name": "Lets take a look at webVR with AFrame",
-      "position": 3
-    }
-  ]
-}
-</script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
-
-    
-    
-        
-    
-</head>
-<body>
-    <div class="not-footer">
-        <div class="wrapper-masthead">
-    <div class="container">
-        <header class="masthead clearfix">
-            
-            <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
-            
-
-            <div class="site-info">
-                <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
-                
-                
-                <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
-                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
-                
-            </div>
-        </header>
-    </div>
-
-    <nav class="navigation-menu">
-        <ul class="navigation-menu-list container">
-            
-            <li class="navigation-menu-item">
-                <a class="navigation-menu-link" href="/">Blog</a>
-            </li>
-            
-            <li class="navigation-menu-item">
-                <a class="navigation-menu-link" href="/tags/tutorial/">Tutorials</a>
-            </li>
-            
-            <li class="navigation-menu-item">
-                <a class="navigation-menu-link" href="/tags/rant/">Rants</a>
-            </li>
-            
-            <li class="navigation-menu-item">
-                <a class="navigation-menu-link" href="/posts/">Everything</a>
-            </li>
-            
-            <li class="navigation-menu-item">
-                <a class="navigation-menu-link" href="http://www.frankrobertanderson.com">Back to My Site</a>
-            </li>
-            
-        </ul>
-    </nav>
-</div>
-
-        <main>
-            
-<div class="container">
-    <article class="post">
-        
-        <h1>Lets take a look at webVR with AFrame</h1>
-        <div class="date">
-            <time datetime="2016-10-24T00:00:00Z">October 24, 2016</time>
-            
-        </div>
-         
-        <div class="flex flex-wrap gap-1 mb-2">
-            
-            <span class="badge">frontpage</span>
-            
-            <span class="badge">tutorial</span>
-            
-            <span class="badge">web development</span>
-            
-        </div>
-        
-        
-
-        <p>What if you could build a VR experience with nothing but HTML tags? No game engine, no compiled binaries, no 30-minute tutorial before you see a cube on screen. That is what <a href="https://aframe.io">A-Frame</a> promises, and in this post I am going to put it through its paces &ndash; converting my old Three.js demo, loading 3D models, and building billboard sprites, all with markup and minimal JavaScript.</p>
-            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
-    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
-    <ul class="ai-summarize-pills">
-        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target="_blank" rel="noopener">ChatGPT</a></li>
-        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target="_blank" rel="noopener">Google AI</a></li>
-        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target="_blank" rel="noopener">Perplexity</a></li>
-        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target="_blank" rel="noopener">Grok</a></li>
-    </ul>
-    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
-        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
-    </ul>
-</aside>
-
-            
-<p>Just so you know we are not talking about the slightly older MVC Javascript framework also named AFrame; today, we are going to be talking about <a href="https://aframe.io">Mozilla&rsquo;s WebVR library A-Frame</a>.</p>
-<h1 id="what-is-a-frame">What is <a href="https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-%E2%80%9Ca-frame%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D-or-%E2%80%9Caframevr%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D">A-Frame</a></h1>
-<p>A-Frame is an open-source web framework for building virtual reality experiences on the web. We can use A-Frame to build VR web page using only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and extensible, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.</p>
-<h2 id="how-to-use-a-frame">How to use A Frame</h2>
-<p>Remember when you read my <a href="https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html">introduction to Threejs</a> (because you are an avid reader of my blog)? If you know how to use threejs then you already know how to extend A-Frame. That is because A-Frame uses threejs behind the scenes to manage the webgl. Let&rsquo;s take a look at the example from my threejs post.</p>
-<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/" ></iframe>
-<p>My old example converts easily to A-Frame. While the threejs example is around 30 lines of Javascript, the A-Frame example converts to about 9 lines of custom html tags with no custom JS. It doesn&rsquo;t even use custom js for the animation. I am not the kind of person that considers code to be harder than markup, but in this case it makes more sense to use markup and the majority of the information that is lost is the boilerplate code. All we have to do to setup a scene is use the <code>&lt;a-scene&gt;&lt;/a-scene&gt;</code> tags. All the parts of the scene go inside.</p>
-<p><a href="https://frob.github.io/aframeexamples">A-Frame example: threejs port</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-scene</span> <span style="color:#a6e22e">fog</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;type: linear; color: #000; near: 1; far: 5&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-box</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 1.5 0&#34;</span> <span style="color:#a6e22e">rotation</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 45 0&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">depth</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#00ff00&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a-animation</span> <span style="color:#a6e22e">attribute</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rotation&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">dur</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9500&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">easing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;linear&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">from</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 45 0&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-360 405 0&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;indefinite&#34;</span>&gt;&lt;/<span style="color:#f92672">a-animation</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">a-box</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-sky</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#000&#34;</span>&gt;&lt;/<span style="color:#f92672">a-sky</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">light</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;type: ambient; color: #101030&#34;</span>&gt;&lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">light</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;type: directional; color: #ffffff; intensity: 0.5&#34;</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 1 0&#34;</span>&gt;&lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 2&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a-camera</span>&gt;&lt;/<span style="color:#f92672">a-camera</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-scene</span>&gt;~
-</span></span></code></pre></div><p>To recreate my Threejs example I used these components and primitives:</p>
-<ul>
-<li><a href="https://aframe.io/docs/0.3.0/core/scene.html">scene</a>
-<strong>a-scene</strong> This is the container that holds the other components and primitives. There should only be one on a page. This is also where several global properties should be defined; this is where the <em>fog</em> got defined in my example reboot. If you want more scenes on a page, then use iframes.</li>
-<li><a href="https://aframe.io/docs/0.3.0/primitives/a-box.html">box</a>
-<strong>a-box</strong> A-Frame provides several simple primitives, this is one of them. Read the docs to find them all. Models are also allowed.</li>
-<li><a href="https://aframe.io/docs/0.3.0/core/animations.html">animation</a></li>
-<li><a href="https://aframe.io/docs/0.3.0/primitives/a-sky.html">sky</a></li>
-<li><a href="https://aframe.io/docs/0.3.0/core/entity.html">entity</a></li>
-<li><a href="https://aframe.io/docs/0.3.0/components/camera.html">camera</a></li>
-</ul>
-<p>In order to have multiple examples on this page we need to use iframes, so I will provide links to the <a href="https://github.com/frob/aframeexamples">A-Frame examples used on this page</a> and the <a href="https://github.com/aframevr/aframe/blob/master/examples">official A-Frame examples</a> after each example.</p>
-<h3 id="3d-primitives">3D primitives</h3>
-<p>According to <a href="https://github.com/aframevr/aframe/blob/master/examples/boilerplate/hello-world/index.html">AFrame&rsquo;s Hello World example</a>, just insert some simple invalid html and the lib will take care of the rest.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-scene</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-sphere</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 1.25 -1&#34;</span> <span style="color:#a6e22e">radius</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.25&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#EF2D5E&#34;</span>&gt;&lt;/<span style="color:#f92672">a-sphere</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-box</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-1 0.5 1&#34;</span> <span style="color:#a6e22e">rotation</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 45 0&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">depth</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>  <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#4CC3D9&#34;</span>&gt;&lt;/<span style="color:#f92672">a-box</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-cylinder</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1 0.75 1&#34;</span> <span style="color:#a6e22e">radius</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.5&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1.5&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#FFC65D&#34;</span>&gt;&lt;/<span style="color:#f92672">a-cylinder</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-plane</span> <span style="color:#a6e22e">rotation</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-90 0 0&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#7BC8A4&#34;</span>&gt;&lt;/<span style="color:#f92672">a-plane</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-sky</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#ECECEC&#34;</span>&gt;&lt;/<span style="color:#f92672">a-sky</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 3.8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a-camera</span>&gt;&lt;/<span style="color:#f92672">a-camera</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-scene</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>The best example of primitives is on the <a href="https://aframe.io/examples/showcase/helloworld/">A-Frame homepage</a>.</p>
-<h3 id="skybox">Skybox</h3>
-<p>If you read the above carefully you will notice that a skybox is just a primitive in A-Frame. This can be just a color or an asset, such as an <a href="https://www.flickr.com/groups/equirectangular/">equirectangular image</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-sky</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#ECECEC&#34;</span>&gt;&lt;/<span style="color:#f92672">a-sky</span>&gt;
-</span></span></code></pre></div><p>or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sky&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sky.png&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-sky</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#sky&#34;</span>&gt;&lt;/<span style="color:#f92672">a-sky</span>&gt;
-</span></span></code></pre></div><p>This is much easier than having to sync up textures and position on 5 separate quads or having to define an inner texture for a cube and keeping the position up-to-date with the camera position.</p>
-<h3 id="billboards-and-custom-components">Billboards and custom components</h3>
-<p>Unfortunately, A-Frame doesn&rsquo;t support billboard components out-of-the-box. But it is built on an <a href="https://aframe.io/docs/0.3.0/docs/core">entity-component-system pattern</a> (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a <a href="https://github.com/blairmacintyre/aframe-look-at-billboard-component">random billboard component from github</a>.</p>
-<p>I am not going to go through how to create new components or even include the source code here. Take a look for yourself, it is only 165 lines and it really isn&rsquo;t all that complicated. Maybe if I ever need to write a new custom component I will do a writeup about it.</p>
-<blockquote>
-<p>A <a href="http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/billboards/">billboard</a> is a 3D primitive that usually consists of two triangles that make up a rectangle face that is always pointed at the camera.</p>
-</blockquote>
-<p>Using the above billboard component we can get a scene like this (<a href="https://frob.github.io/aframeexamples/example-billboard.html">billboard example</a>):</p>
-<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-billboard.html" ></iframe>
-<blockquote>
-<p>Note that this billboard example will only work if the ad blockers are turned off. They don&rsquo;t like that this library has the word billboard in it. In case you are wondering, billboard is the name of an ad. Just to avoid confusion. So that no one is confused. I really, really, really hope that you are not confused.</p>
-</blockquote>
-<p>Here is the important part.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;scorpion&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/8bitninja.gif&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">billboard</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ninja1&#34;</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 1 0&#34;</span> <span style="color:#a6e22e">geometry</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;primitive: plane; height: 1.5; width:1;&#34;</span> <span style="color:#a6e22e">material</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src: #scorpion;opacity:.8&#34;</span> &gt;&lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span></code></pre></div><p><a href="https://www.github.com/frob/aframeexamples/master/example-billboard.html">Full billboard example code</a>.</p>
-<p>The billboard custom component allows us to create a normal entity and just use an attribute <code>billboard</code> to tell A-Frame that this entity is a billboard. There are many custom A-Frame components, links are available on the A-Frame component docs page.</p>
-<h4 id="assets">Assets</h4>
-<p>This is as good a time as any to talk about asset management in A-Frame (you might have noticed the <code>a-asset</code> tag in the last example). Simple scenes can handle assets in a simple manner &ndash;with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then <a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html">A-Frame&rsquo;s asset management system</a> comes in very handy. Here is an example of both ways of <a href="https://aframe.io/docs/0.3.0/primitives/a-image.html">loading assets ripped straight from the docs</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;my-image&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image.png&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Using the asset management system. --&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-image</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#my-image&#34;</span>&gt;&lt;/<span style="color:#f92672">a-image</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Defining the URL inline. Not recommended but more comfortable for web developers. --&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-image</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;another-image.png&#34;</span>&gt;&lt;/<span style="color:#f92672">a-image</span>&gt;
-</span></span></code></pre></div><p>Non-multimedia assets have the default behavior of blocking the rendering of the scene until all assets have loaded &ndash;this is configurable on a per asset basis. This simplifies the preloading of assets. There are more <a href="https://aframe.io/docs/0.3.0/core/asset-management-system.html">asset controls in the docs</a>, such as having a timeout that the scene will begin loading even if the assets don&rsquo;t load in time or dealing with asset <strong>loaded</strong> events.</p>
-<h3 id="models">Models</h3>
-<p>Primitives are nice for simple things, but aside from A-Frame demos I doubt they will be used too often in a real application. Luckily A-Frame has a simple way to load mesh objects. To demo this I will demo the same model or mesh that every 3D demo uses &ndash;the <a href="https://en.wikipedia.org/wiki/Utah_teapot">Utah Teapot</a>.</p>
-<iframe width="640" height="480" allowfullscreen src="https://frob.github.io/aframeexamples/example-model.html" ></iframe>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a-scene</span> <span style="color:#a6e22e">fog</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;type: linear; color: #000; near: 1; far: 5&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a-asset-item</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;teapot&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;models/teapot.obj&#34;</span>&gt;&lt;/<span style="color:#f92672">a-asset-item</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">a-assets</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">obj-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;obj: #teapot&#34;</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;green&#34;</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 -2.5&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a-animation</span> <span style="color:#a6e22e">attribute</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rotation&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">dur</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9500&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">easing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;linear&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">from</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 45 0&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 405 0&#34;</span>
-</span></span><span style="display:flex;"><span>                 <span style="color:#a6e22e">repeat</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;indefinite&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">a-animation</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-sky</span> <span style="color:#a6e22e">color</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#000&#34;</span>&gt;&lt;/<span style="color:#f92672">a-sky</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">light</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;type: ambient; color: #101030&#34;</span>&gt;&lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">light</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;type: directional; color: #ffffff; intensity: 0.5&#34;</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 1 0&#34;</span>&gt;&lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a-entity</span> <span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 2&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a-camera</span>&gt;&lt;/<span style="color:#f92672">a-camera</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">a-entity</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a-scene</span>&gt;
-</span></span></code></pre></div><h4 id="meshes-materials-and-shaders-oh-my">Meshes Materials and Shaders oh my!</h4>
-<p>You will notice that the above demo has a rather bland looking teapot. This is because it only uses a mesh object and has no material. If you are not familiar with 3D, something that is seen on the screen is normally a combination of three different things. There is the Mesh (or Model) that defines the geometry of the object, there is the Material that defines the textures used to show definition in the object, and there is the Shader that is the part that says how to put all three things together. Shaders are very powerful things and can be extremely complicated, so I will not go into how to write them in this article. They can give the 3D artist a huge amount of visual flexibility even with very simple meshes. I will go into more depth on shaders in a moment, but please checkout this video on shaders, they are awesome.</p>
-<h3 id="shaders">Shaders</h3>
-<p>As said before shaders are how the computer knows what to display. A-Frame has some basic default shaders built in, but it also supports custom shaders.</p>
-<p>Generally speaking there are two types of Shaders: Vertex Shaders and Pixel Shaders. Vertex Shaders act on the geometry of an object and the Pixel Shaders affect the image on a pixel by pixel basis.</p>
-<p>A common use of the Vertex Shaders is to provide a smoothly effect on a mesh (it is impossible to have a truly smooth mesh, a Vertex Shader can make a dodecahedron appear to be smooth in the middle). A common use of a Pixel Shader is provide a bump map or normal map effect. This can provide seemingly complex depth on a very simple model. Another common use of a Pixel Shader is to produce a post processing effect on the whole image &ndash;think of an instagram filter.</p>
-<h3 id="composite">Composite</h3>
-<p>One of the downsides to the way A-Frame is built is that on an A-Frame page there can be no other content. Okay, this isn&rsquo;t completely true. Some html can be layered outside the A-Frame <code>a-scene</code> tags. But the results are inconsistent and mostly undesirable. The recommended way to include text in a scene is to bake the text into a texture and apply that texture to a quad (or plane).</p>
-<p>There also exists the <em>HTML Shader</em>, which is a custom shader that takes HTML from the dom and places it in a scene. My experience with the HTML Shader has not been favorable, and I question how portable and scalable it is and how well if reacts to events.</p>
-<h2 id="is-it-cool">Is it cool?</h2>
-<p>This seems like the biggest question more Javascript developers ask when adopting a new library. The short answer is yes but the longer answer is it depends.</p>
-<h3 id="it-depends">It depends?</h3>
-<p>The usability of this cool new tech is all about what we do with it. I have given talks on A-Frame and the question is normally framed like this &ldquo;What can we do with it?&rdquo; And I respond I just showed you what it was meant to do. I bring this up to say, lets not parallax WebVR. It&rsquo;s cool, but if we don&rsquo;t use it the right way it will suck.</p>
-<h3 id="can-i-use-it">Can I use it?</h3>
-<p>Go checkout caniuse for WebGL and WebVR the browser support for A-Frame and the browser support for threejs.</p>
-<h2 id="wrap-up">Wrap up</h2>
-<p>A-Frame makes WebVR approachable. My 30-line Three.js example became 9 lines of custom HTML. Models, skyboxes, billboards, and animations all work with attributes instead of API calls. The entity-component-system architecture means it is extensible when markup is not enough. It is not a replacement for a full game engine, but for bringing VR to the web &ndash; especially for content creators who are more comfortable with HTML than with JavaScript &ndash; it is hard to beat. Build something, put it on a page, and hand someone a phone with a cardboard headset. That is the pitch, and it works.</p>
-
-    </article>
-</div>
-
-        </main>
-    </div>
-    <div class="wrapper-footer">
-    <div class="container">
-        <footer>
-            <h2 class="sr-only">Footer</h2>
-            <div class="social-icons">
-                <h3>Social Networks</h3>
-                
-                <a href="https://github.com/frob" aria-label="GitHub">
-                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#000000">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                </a>
-                
-                
-                <a href="https://twitter.com/frobiovox" aria-label="Twitter">
-                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#1DA1F2">
-                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0016 3.542a6.658 6.658 0 01-1.889.518 3.301 3.301 0 001.447-1.817 6.533 6.533 0 01-2.087.793A3.286 3.286 0 007.875 6.03a9.325 9.325 0 01-6.767-3.429 3.289 3.289 0 001.018 4.382A3.323 3.323 0 01.64 6.575v.045a3.288 3.288 0 002.632 3.218 3.203 3.203 0 01-.865.115 3.23 3.23 0 01-.614-.057 3.283 3.283 0 003.067 2.277A6.588 6.588 0 01.78 13.58a6.32 6.32 0 01-.78-.045A9.344 9.344 0 005.026 15z"/>
-                    </svg>
-                </a>
-                
-                <a href="/index.xml" aria-label="RSS">
-                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 78" preserveAspectRatio="xMidYMid meet" fill="#000000">
-                        <g transform="translate(0,78) scale(0.1,-0.1)" stroke="none">
-                            <path d="M710 705 l0 -75 85 0 85 0 0 75 0 75 -85 0 -85 0 0 -75z"/>
-                            <path d="M748 613 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
-                            <path d="M748 563 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
-                            <path d="M758 543 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M758 493 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M748 473 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
-                            <path d="M748 423 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
-                            <path d="M758 403 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M758 373 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M748 353 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
-                            <path d="M748 303 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
-                            <path d="M758 283 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M758 253 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M758 233 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M758 213 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M758 183 c23 -2 59 -2 80 0 20 2 1 4 -43 4 -44 0 -61 -2 -37 -4z"/>
-                            <path d="M748 163 c23 -2 61 -2 85 0 23 2 4 4 -43 4 -47 0 -66 -2 -42 -4z"/>
-                            <path d="M710 75 l0 -75 85 0 85 0 0 75 0 75 -85 0 -85 0 0 -75z"/>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-
-            
-            <div class="blogroll">
-                <h3>Blogroll</h3>
-                
-                <a href="https://www.btmash.com/">Blob of contradictions</a><br>
-                
-                <a href="https://icodealot.com/">iCodealot</a><br>
-                
-            </div>
-            
-
-            <div class="copyright">
-                <p>&copy; 2026 Frank Robert Anderson</p>
-            </div>
-        </footer>
-    </div>
-</div>
-
-    <script src="/js/links.js"></script>
-    <script src="/js/site-description.js"></script>
-    
-
-    
-    
-        
-            
-            <script src="//cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js"></script>
-            
-        
-    
-</body>
-</html>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Frank Robert Anderson</title><meta name=description content="I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame."><link rel=canonical href=https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/><meta property="og:title" content="Lets take a look at webVR with AFrame | Frank Robert Anderson"><meta property="og:description" content="I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame."><meta property="og:type" content="article"><meta property="og:url" content="https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/"><meta property="og:site_name" content="Frank Robert Anderson"><meta property="og:image" content="https://www.frobiovox.com/images/top.png"><meta property="article:published_time" content="2016-10-24T00:00:00Z"><meta property="article:modified_time" content="2016-10-24T00:00:00Z"><meta property="article:tag" content="frontpage"><meta property="article:tag" content="tutorial"><meta property="article:tag" content="web development"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Lets take a look at webVR with AFrame | Frank Robert Anderson"><meta name=twitter:description content="I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame."><meta name=twitter:image content="https://www.frobiovox.com/images/top.png"><meta name=twitter:site content="@frobiovox"><meta name=twitter:creator content="@frobiovox"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Frank Robert Anderson","sameAs":["https://github.com/frob","https://twitter.com/frobiovox"]},"dateModified":"2016-10-24T00:00:00Z","datePublished":"2016-10-24T00:00:00Z","description":"I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame.","headline":"Lets take a look at webVR with AFrame","image":"/images/top.png","keywords":"frontpage, tutorial, web development","mainEntityOfPage":"https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.frobiovox.com/images/top.png"},"name":"Frank Robert Anderson"},"timeRequired":"PT9M","url":"https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/","wordCount":1909}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.frobiovox.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://www.frobiovox.com/posts/","name":"Posts","position":2},{"@type":"ListItem","item":"https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/","name":"Lets take a look at webVR with AFrame","position":3}]}</script><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.css></head><body><div class=not-footer><div class=wrapper-masthead><div class=container><header class="masthead clearfix"><a href=/ class=site-avatar><img src=/images/top.png></a><div class=site-info><h1 class=site-name><a href=/>Frank Robert Anderson</a></h1><p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p><p class="site-description site-description-rotating" data-rotate='["Quietly building things","Where the cursor still blinks","Compile, commit, caffeinate, repeat","Yes, I have an oppinion about that","Hand-rolled, no batteries included","Postcards from production","I used to write code, now I write text and it auto-completes to code"]' data-interval=19000 aria-hidden=true></p></div></header></div><nav class=navigation-menu><ul class="navigation-menu-list container"><li class=navigation-menu-item><a class=navigation-menu-link href=/>Blog</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/tutorial/>Tutorials</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/rant/>Rants</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/posts/>Everything</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=http://www.frankrobertanderson.com>Back to My Site</a></li></ul></nav></div><main><div class=container><article class=post><h1>Lets take a look at webVR with AFrame</h1><div class=date><time datetime=2016-10-24T00:00:00Z>October 24, 2016</time></div><div class="flex flex-wrap gap-1 mb-2"><span class=badge>frontpage</span>
+<span class=badge>tutorial</span>
+<span class=badge>web development</span></div><p>What if you could build a VR experience with nothing but HTML tags? No game engine, no compiled binaries, no 30-minute tutorial before you see a cube on screen. That is what <a href=https://aframe.io>A-Frame</a> promises, and in this post I am going to put it through its paces &ndash; converting my old Three.js demo, loading 3D models, and building billboard sprites, all with markup and minimal JavaScript.</p><aside class=ai-summarize aria-label="Summarize this post on an AI assistant"><div class=ai-summarize-heading>Summarize & save this content on:</div><ul class=ai-summarize-pills><li><a class=ai-pill href="https://chatgpt.com/?hints=search&amp;q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target=_blank rel=noopener>ChatGPT</a></li><li><a class=ai-pill href="https://www.google.com/search?udm=50&amp;q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target=_blank rel=noopener>Google AI</a></li><li><a class=ai-pill href="https://www.perplexity.ai/?q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target=_blank rel=noopener>Perplexity</a></li><li><a class=ai-pill href="https://grok.com/?q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2016%2F10%2F24%2Flets-take-a-look-at-webvr-with--aframe%2F" target=_blank rel=noopener>Grok</a></li></ul><ul class="ai-summarize-pills ai-summarize-pills-secondary"><li><a class=ai-pill href="https://www.google.com/preferences/source?hl=en" target=_blank rel=noopener>Add us as a trusted Google Source</a></li></ul></aside><p>Just so you know we are not talking about the slightly older MVC Javascript framework also named AFrame; today, we are going to be talking about <a href=https://aframe.io>Mozilla&rsquo;s WebVR library A-Frame</a>.</p><h1 id=what-is-a-frame>What is <a href=https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-%E2%80%9Ca-frame%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D-or-%E2%80%9Caframevr%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D>A-Frame</a></h1><p>A-Frame is an open-source web framework for building virtual reality experiences on the web. We can use A-Frame to build VR web page using only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and extensible, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.</p><h2 id=how-to-use-a-frame>How to use A Frame</h2><p>Remember when you read my <a href=https://www.frobiovox.com/posts/2014/11/15/WebGL-with-threejs.html>introduction to Threejs</a> (because you are an avid reader of my blog)? If you know how to use threejs then you already know how to extend A-Frame. That is because A-Frame uses threejs behind the scenes to manage the webgl. Let&rsquo;s take a look at the example from my threejs post.</p><iframe width=640 height=480 allowfullscreen src=https://frob.github.io/aframeexamples/></iframe><p>My old example converts easily to A-Frame. While the threejs example is around 30 lines of Javascript, the A-Frame example converts to about 9 lines of custom html tags with no custom JS. It doesn&rsquo;t even use custom js for the animation. I am not the kind of person that considers code to be harder than markup, but in this case it makes more sense to use markup and the majority of the information that is lost is the boilerplate code. All we have to do to setup a scene is use the <code>&lt;a-scene>&lt;/a-scene></code> tags. All the parts of the scene go inside.</p><p><a href=https://frob.github.io/aframeexamples>A-Frame example: threejs port</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-HTML data-lang=HTML><span style=display:flex><span>&lt;<span style=color:#f92672>a-scene</span> <span style=color:#a6e22e>fog</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;type: linear; color: #000; near: 1; far: 5&#34;</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;black&#34;</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-box</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 1.5 0&#34;</span> <span style=color:#a6e22e>rotation</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 45 0&#34;</span> <span style=color:#a6e22e>width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1&#34;</span> <span style=color:#a6e22e>height</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1&#34;</span> <span style=color:#a6e22e>depth</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1&#34;</span>  <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#00ff00&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>a-animation</span> <span style=color:#a6e22e>attribute</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;rotation&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>dur</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;9500&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>easing</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;linear&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>from</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 45 0&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>to</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-360 405 0&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>repeat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;indefinite&#34;</span>&gt;&lt;/<span style=color:#f92672>a-animation</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>a-box</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-sky</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#000&#34;</span>&gt;&lt;/<span style=color:#f92672>a-sky</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>light</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;type: ambient; color: #101030&#34;</span>&gt;&lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>light</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;type: directional; color: #ffffff; intensity: 0.5&#34;</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 1 0&#34;</span>&gt;&lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 0 2&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>a-camera</span>&gt;&lt;/<span style=color:#f92672>a-camera</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a-scene</span>&gt;~
+</span></span></code></pre></div><p>To recreate my Threejs example I used these components and primitives:</p><ul><li><a href=https://aframe.io/docs/0.3.0/core/scene.html>scene</a>
+<strong>a-scene</strong> This is the container that holds the other components and primitives. There should only be one on a page. This is also where several global properties should be defined; this is where the <em>fog</em> got defined in my example reboot. If you want more scenes on a page, then use iframes.</li><li><a href=https://aframe.io/docs/0.3.0/primitives/a-box.html>box</a>
+<strong>a-box</strong> A-Frame provides several simple primitives, this is one of them. Read the docs to find them all. Models are also allowed.</li><li><a href=https://aframe.io/docs/0.3.0/core/animations.html>animation</a></li><li><a href=https://aframe.io/docs/0.3.0/primitives/a-sky.html>sky</a></li><li><a href=https://aframe.io/docs/0.3.0/core/entity.html>entity</a></li><li><a href=https://aframe.io/docs/0.3.0/components/camera.html>camera</a></li></ul><p>In order to have multiple examples on this page we need to use iframes, so I will provide links to the <a href=https://github.com/frob/aframeexamples>A-Frame examples used on this page</a> and the <a href=https://github.com/aframevr/aframe/blob/master/examples>official A-Frame examples</a> after each example.</p><h3 id=3d-primitives>3D primitives</h3><p>According to <a href=https://github.com/aframevr/aframe/blob/master/examples/boilerplate/hello-world/index.html>AFrame&rsquo;s Hello World example</a>, just insert some simple invalid html and the lib will take care of the rest.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a-scene</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-sphere</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 1.25 -1&#34;</span> <span style=color:#a6e22e>radius</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1.25&#34;</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#EF2D5E&#34;</span>&gt;&lt;/<span style=color:#f92672>a-sphere</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-box</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-1 0.5 1&#34;</span> <span style=color:#a6e22e>rotation</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 45 0&#34;</span> <span style=color:#a6e22e>width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1&#34;</span> <span style=color:#a6e22e>height</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1&#34;</span> <span style=color:#a6e22e>depth</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1&#34;</span>  <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#4CC3D9&#34;</span>&gt;&lt;/<span style=color:#f92672>a-box</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-cylinder</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1 0.75 1&#34;</span> <span style=color:#a6e22e>radius</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0.5&#34;</span> <span style=color:#a6e22e>height</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1.5&#34;</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#FFC65D&#34;</span>&gt;&lt;/<span style=color:#f92672>a-cylinder</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-plane</span> <span style=color:#a6e22e>rotation</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-90 0 0&#34;</span> <span style=color:#a6e22e>width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;4&#34;</span> <span style=color:#a6e22e>height</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;4&#34;</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#7BC8A4&#34;</span>&gt;&lt;/<span style=color:#f92672>a-plane</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-sky</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#ECECEC&#34;</span>&gt;&lt;/<span style=color:#f92672>a-sky</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 0 3.8&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>a-camera</span>&gt;&lt;/<span style=color:#f92672>a-camera</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a-scene</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><p>The best example of primitives is on the <a href=https://aframe.io/examples/showcase/helloworld/>A-Frame homepage</a>.</p><h3 id=skybox>Skybox</h3><p>If you read the above carefully you will notice that a skybox is just a primitive in A-Frame. This can be just a color or an asset, such as an <a href=https://www.flickr.com/groups/equirectangular/>equirectangular image</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>a-sky</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#ECECEC&#34;</span>&gt;&lt;/<span style=color:#f92672>a-sky</span>&gt;
+</span></span></code></pre></div><p>or</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>img</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sky&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;sky.png&#34;</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a-sky</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#sky&#34;</span>&gt;&lt;/<span style=color:#f92672>a-sky</span>&gt;
+</span></span></code></pre></div><p>This is much easier than having to sync up textures and position on 5 separate quads or having to define an inner texture for a cube and keeping the position up-to-date with the camera position.</p><h3 id=billboards-and-custom-components>Billboards and custom components</h3><p>Unfortunately, A-Frame doesn&rsquo;t support billboard components out-of-the-box. But it is built on an <a href=https://aframe.io/docs/0.3.0/docs/core>entity-component-system pattern</a> (which they repeat all over their FAQ page). So adding a component type is somewhat trivial. Take a look at a <a href=https://github.com/blairmacintyre/aframe-look-at-billboard-component>random billboard component from github</a>.</p><p>I am not going to go through how to create new components or even include the source code here. Take a look for yourself, it is only 165 lines and it really isn&rsquo;t all that complicated. Maybe if I ever need to write a new custom component I will do a writeup about it.</p><blockquote><p>A <a href=http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/billboards/>billboard</a> is a 3D primitive that usually consists of two triangles that make up a rectangle face that is always pointed at the camera.</p></blockquote><p>Using the above billboard component we can get a scene like this (<a href=https://frob.github.io/aframeexamples/example-billboard.html>billboard example</a>):</p><iframe width=640 height=480 allowfullscreen src=https://frob.github.io/aframeexamples/example-billboard.html></iframe><blockquote><p>Note that this billboard example will only work if the ad blockers are turned off. They don&rsquo;t like that this library has the word billboard in it. In case you are wondering, billboard is the name of an ad. Just to avoid confusion. So that no one is confused. I really, really, really hope that you are not confused.</p></blockquote><p>Here is the important part.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>img</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;scorpion&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;images/8bitninja.gif&#34;</span> /&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>billboard</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ninja1&#34;</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 1 0&#34;</span> <span style=color:#a6e22e>geometry</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;primitive: plane; height: 1.5; width:1;&#34;</span> <span style=color:#a6e22e>material</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;src: #scorpion;opacity:.8&#34;</span> &gt;&lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span></code></pre></div><p><a href=https://www.github.com/frob/aframeexamples/master/example-billboard.html>Full billboard example code</a>.</p><p>The billboard custom component allows us to create a normal entity and just use an attribute <code>billboard</code> to tell A-Frame that this entity is a billboard. There are many custom A-Frame components, links are available on the A-Frame component docs page.</p><h4 id=assets>Assets</h4><p>This is as good a time as any to talk about asset management in A-Frame (you might have noticed the <code>a-asset</code> tag in the last example). Simple scenes can handle assets in a simple manner &ndash;with an inline attribute. However, when things get more complicated, or as in my (still simple) example where we have three billboards all using the same asset, then <a href=https://aframe.io/docs/0.3.0/core/asset-management-system.html>A-Frame&rsquo;s asset management system</a> comes in very handy. Here is an example of both ways of <a href=https://aframe.io/docs/0.3.0/primitives/a-image.html>loading assets ripped straight from the docs</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>img</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;my-image&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;image.png&#34;</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- Using the asset management system. --&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a-image</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#my-image&#34;</span>&gt;&lt;/<span style=color:#f92672>a-image</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- Defining the URL inline. Not recommended but more comfortable for web developers. --&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>a-image</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;another-image.png&#34;</span>&gt;&lt;/<span style=color:#f92672>a-image</span>&gt;
+</span></span></code></pre></div><p>Non-multimedia assets have the default behavior of blocking the rendering of the scene until all assets have loaded &ndash;this is configurable on a per asset basis. This simplifies the preloading of assets. There are more <a href=https://aframe.io/docs/0.3.0/core/asset-management-system.html>asset controls in the docs</a>, such as having a timeout that the scene will begin loading even if the assets don&rsquo;t load in time or dealing with asset <strong>loaded</strong> events.</p><h3 id=models>Models</h3><p>Primitives are nice for simple things, but aside from A-Frame demos I doubt they will be used too often in a real application. Luckily A-Frame has a simple way to load mesh objects. To demo this I will demo the same model or mesh that every 3D demo uses &ndash;the <a href=https://en.wikipedia.org/wiki/Utah_teapot>Utah Teapot</a>.</p><iframe width=640 height=480 allowfullscreen src=https://frob.github.io/aframeexamples/example-model.html></iframe><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>a-scene</span> <span style=color:#a6e22e>fog</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;type: linear; color: #000; near: 1; far: 5&#34;</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;black&#34;</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>a-asset-item</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;teapot&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;models/teapot.obj&#34;</span>&gt;&lt;/<span style=color:#f92672>a-asset-item</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>a-assets</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>obj-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;obj: #teapot&#34;</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;green&#34;</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 0 -2.5&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>a-animation</span> <span style=color:#a6e22e>attribute</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;rotation&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>dur</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;9500&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>easing</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;linear&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>from</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 45 0&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>to</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 405 0&#34;</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>repeat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;indefinite&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>a-animation</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-sky</span> <span style=color:#a6e22e>color</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;#000&#34;</span>&gt;&lt;/<span style=color:#f92672>a-sky</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>light</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;type: ambient; color: #101030&#34;</span>&gt;&lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>light</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;type: directional; color: #ffffff; intensity: 0.5&#34;</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 1 0&#34;</span>&gt;&lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>a-entity</span> <span style=color:#a6e22e>position</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0 0 2&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>a-camera</span>&gt;&lt;/<span style=color:#f92672>a-camera</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>a-entity</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>a-scene</span>&gt;
+</span></span></code></pre></div><h4 id=meshes-materials-and-shaders-oh-my>Meshes Materials and Shaders oh my!</h4><p>You will notice that the above demo has a rather bland looking teapot. This is because it only uses a mesh object and has no material. If you are not familiar with 3D, something that is seen on the screen is normally a combination of three different things. There is the Mesh (or Model) that defines the geometry of the object, there is the Material that defines the textures used to show definition in the object, and there is the Shader that is the part that says how to put all three things together. Shaders are very powerful things and can be extremely complicated, so I will not go into how to write them in this article. They can give the 3D artist a huge amount of visual flexibility even with very simple meshes. I will go into more depth on shaders in a moment, but please checkout this video on shaders, they are awesome.</p><h3 id=shaders>Shaders</h3><p>As said before shaders are how the computer knows what to display. A-Frame has some basic default shaders built in, but it also supports custom shaders.</p><p>Generally speaking there are two types of Shaders: Vertex Shaders and Pixel Shaders. Vertex Shaders act on the geometry of an object and the Pixel Shaders affect the image on a pixel by pixel basis.</p><p>A common use of the Vertex Shaders is to provide a smoothly effect on a mesh (it is impossible to have a truly smooth mesh, a Vertex Shader can make a dodecahedron appear to be smooth in the middle). A common use of a Pixel Shader is provide a bump map or normal map effect. This can provide seemingly complex depth on a very simple model. Another common use of a Pixel Shader is to produce a post processing effect on the whole image &ndash;think of an instagram filter.</p><h3 id=composite>Composite</h3><p>One of the downsides to the way A-Frame is built is that on an A-Frame page there can be no other content. Okay, this isn&rsquo;t completely true. Some html can be layered outside the A-Frame <code>a-scene</code> tags. But the results are inconsistent and mostly undesirable. The recommended way to include text in a scene is to bake the text into a texture and apply that texture to a quad (or plane).</p><p>There also exists the <em>HTML Shader</em>, which is a custom shader that takes HTML from the dom and places it in a scene. My experience with the HTML Shader has not been favorable, and I question how portable and scalable it is and how well if reacts to events.</p><h2 id=is-it-cool>Is it cool?</h2><p>This seems like the biggest question more Javascript developers ask when adopting a new library. The short answer is yes but the longer answer is it depends.</p><h3 id=it-depends>It depends?</h3><p>The usability of this cool new tech is all about what we do with it. I have given talks on A-Frame and the question is normally framed like this &ldquo;What can we do with it?&rdquo; And I respond I just showed you what it was meant to do. I bring this up to say, lets not parallax WebVR. It&rsquo;s cool, but if we don&rsquo;t use it the right way it will suck.</p><h3 id=can-i-use-it>Can I use it?</h3><p>Go checkout caniuse for WebGL and WebVR the browser support for A-Frame and the browser support for threejs.</p><h2 id=wrap-up>Wrap up</h2><p>A-Frame makes WebVR approachable. My 30-line Three.js example became 9 lines of custom HTML. Models, skyboxes, billboards, and animations all work with attributes instead of API calls. The entity-component-system architecture means it is extensible when markup is not enough. It is not a replacement for a full game engine, but for bringing VR to the web &ndash; especially for content creators who are more comfortable with HTML than with JavaScript &ndash; it is hard to beat. Build something, put it on a page, and hand someone a phone with a cardboard headset. That is the pitch, and it works.</p></article></div></main></div><div class=wrapper-footer><div class=container><footer><h2 class=sr-only>Footer</h2><div class=social-icons><h3>Social Networks</h3><a href=https://github.com/frob aria-label=GitHub><svg class="svg-icon" viewBox="0 0 16 16" fill="#000"><path d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+</a><a href=https://twitter.com/frobiovox aria-label=Twitter><svg class="svg-icon" viewBox="0 0 16 16" fill="#1DA1F2"><path d="M5.026 15c6.038.0 9.341-5.003 9.341-9.334.0-.14.0-.282-.006-.422A6.685 6.685.0 0016 3.542a6.658 6.658.0 01-1.889.518 3.301 3.301.0 001.447-1.817 6.533 6.533.0 01-2.087.793A3.286 3.286.0 007.875 6.03 9.325 9.325.0 011.108 2.601a3.289 3.289.0 001.018 4.382A3.323 3.323.0 01.64 6.575v.045a3.288 3.288.0 002.632 3.218 3.203 3.203.0 01-.865.115 3.23 3.23.0 01-.614-.057 3.283 3.283.0 003.067 2.277A6.588 6.588.0 01.78 13.58 6.32 6.32.0 010 13.535 9.344 9.344.0 005.026 15z"/></svg>
+</a><a href=/index.xml aria-label=RSS><svg class="svg-icon" viewBox="0 0 100 78" fill="#000"><g transform="translate(0,78) scale(0.1,-0.1)" stroke="none"><path d="M710 705v-75h85 85v75 75h-85-85v-75z"/><path d="M748 613c23-2 61-2 85 0 23 2 4 4-43 4s-66-2-42-4z"/><path d="M748 563c23-2 61-2 85 0 23 2 4 4-43 4s-66-2-42-4z"/><path d="M758 543c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M758 493c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M748 473c23-2 61-2 85 0 23 2 4 4-43 4s-66-2-42-4z"/><path d="M748 423c23-2 61-2 85 0 23 2 4 4-43 4s-66-2-42-4z"/><path d="M758 403c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M758 373c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M748 353c23-2 61-2 85 0 23 2 4 4-43 4s-66-2-42-4z"/><path d="M748 303c23-2 61-2 85 0 23 2 4 4-43 4s-66-2-42-4z"/><path d="M758 283c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M758 253c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M758 233c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M758 213c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M758 183c23-2 59-2 80 0 20 2 1 4-43 4s-61-2-37-4z"/><path d="M748 163c23-2 61-2 85 0 23 2 4 4-43 4s-66-2-42-4z"/><path d="M710 75V0h85 85v75 75h-85-85V75z"/></g></svg></a></div><div class=blogroll><h3>Blogroll</h3><a href=https://www.btmash.com/>Blob of contradictions</a><br><a href=https://icodealot.com/>iCodealot</a><br></div><div class=copyright><p>&copy; 2026 Frank Robert Anderson</p></div></footer></div></div><script src=/js/links.js></script><script src=/js/site-description.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/aframe/0.3.2/aframe.js></script></body></html>

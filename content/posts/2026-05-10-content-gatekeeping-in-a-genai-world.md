@@ -55,11 +55,35 @@ This is the part I think will look obvious in retrospect.
 
 HTTP 402 has been sitting in the spec since the 1990s. It means "Payment Required." It was never implemented. [x402 is a payment standard built around that status code](https://developers.cloudflare.com/agents/agentic-payments/x402/), and Cloudflare has been pushing it hard. The flow is dead simple: agent requests a resource, server returns 402 with a price, agent authorizes a stablecoin payment, server delivers the resource. One round trip. No human in the loop. No API key a human had to configure in a billing dashboard ahead of time.
 
+{{< mermaid >}}
+sequenceDiagram
+    participant A as Agent
+    participant S as Publisher Server
+    A->>S: GET /article
+    S-->>A: 402 Payment Required (price, asset)
+    A->>S: GET /article (X-PAYMENT: signed stablecoin tx)
+    S-->>A: 200 OK (article body)
+{{< /mermaid >}}
+
 Cloudflare's [pay-per-crawl marketplace](https://blog.cloudflare.com/introducing-pay-per-crawl/) sits on top of this, and the numbers are wild. [Cloudflare's network is processing a billion HTTP 402 responses per day](https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help). AI scrapers visit a site at tens-of-thousands to one relative to the human traffic they send back, compared to a 2-to-1 ratio a decade ago. The unit economics of the open web finally, structurally, support charging.
 
 And then there is [RSL -- Really Simple Licensing](https://willscott.me/2025/10/04/ai-licensing-deals-search-visibility-in-2025/) -- which is robots.txt grown up. Instead of "allowed/disallowed," sites declare *terms* in machine-readable form: pay-per-crawl, pay-per-inference, flat subscription, or free with attribution. Reddit and Medium are early backers. Crawlers and agents can negotiate against the terms before they fetch.
 
-The really interesting part is what happens when you combine these. AWS just shipped [Bedrock AgentCore Payments](https://singhajit.com/dev-weekly/2026/may-4-10/anthropic-spacex-cloudflare-layoffs-cursor-33-aws-agent-payments/) -- agents pay over x402 with stablecoins, and Coinbase runs an x402 Bazaar MCP server with over 10,000 paid endpoints agents can discover. So now MCP gives you the integration and authorization layer, x402 gives you the payment layer, RSL gives you the rights-declaration layer, and the agent traverses all three without ever pausing the user's workflow. The cost shows up on a session budget. That is the whole thing.
+The really interesting part is what happens when you combine these. AWS just shipped [Bedrock AgentCore Payments](https://singhajit.com/dev-weekly/2026/may-4-10/anthropic-spacex-cloudflare-layoffs-cursor-33-aws-agent-payments/) -- agents pay over x402 with stablecoins, and Coinbase runs an x402 Bazaar MCP server with over 10,000 paid endpoints agents can discover. So now MCP gives you the integration and authorization layer, x402 gives you the payment layer, RSL gives you the rights-declaration layer, and the agent traverses all three without ever pausing the user's workflow. The cost shows up on a session budget.
+
+{{< mermaid >}}
+flowchart LR
+    U[Human user] --> AG[AI agent]
+    AG -->|1. discover terms| RSL[(RSL<br/>rights & pricing)]
+    AG -->|2. authenticate / call tool| MCP[(MCP server<br/>scoped access)]
+    AG -->|3. settle payment| X402[(x402<br/>stablecoin rail)]
+    MCP --> PUB[(Publisher content)]
+    X402 --> PUB
+    PUB --> AG
+    AG --> U
+{{< /mermaid >}}
+
+That is the whole thing.
 
 ## Wrap up
 
