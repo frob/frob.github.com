@@ -32,6 +32,9 @@
     {{ partial "footer.html" . }}
     <script src="{{ "js/links.js" | relURL }}"></script>
     <script src="{{ "js/site-description.js" | relURL }}"></script>
+    {{ if .Store.Get "hasMermaid" }}
+    <script type="module" src="{{ "js/mermaid.js" | relURL }}"></script>
+    {{ end }}
 
     <!-- Page-specific JS from frontmatter assets -->
     {{ if .Params.assets }}

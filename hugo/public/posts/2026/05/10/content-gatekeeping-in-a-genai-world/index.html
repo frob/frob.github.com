@@ -55,7 +55,7 @@
   },
   "timeRequired": "PT8M",
   "url": "http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/",
-  "wordCount": 1604
+  "wordCount": 1677
 }
 </script><script type="application/ld+json">
 {
@@ -104,7 +104,7 @@
                 
                 
                 <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
-                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="3000" aria-hidden="true"></p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
                 
             </div>
         </header>
@@ -141,13 +141,12 @@
             
 <div class="container">
     <article class="post">
+        
         <h1>Content gatekeeping in a GenAI world</h1>
         <div class="date">
             <time datetime="2026-05-10T00:00:00Z">May 10, 2026</time>
             
         </div>
-
-        
          
         <div class="flex flex-wrap gap-1 mb-2">
             
@@ -158,7 +157,24 @@
             <span class="badge">frontpage</span>
             
         </div>
-         <p>Let me start with a bit of history. It might seem like a hard thing for today&rsquo;s generation to understand, but content used to cost money &ndash; especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.</p>
+        
+        
+
+        <p>Let me start with a bit of history. It might seem like a hard thing for today&rsquo;s generation to understand, but content used to cost money &ndash; especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.</p>
+            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F05%2F10%2Fcontent-gatekeeping-in-a-genai-world%2F" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F05%2F10%2Fcontent-gatekeeping-in-a-genai-world%2F" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F05%2F10%2Fcontent-gatekeeping-in-a-genai-world%2F" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F05%2F10%2Fcontent-gatekeeping-in-a-genai-world%2F" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>
+
+            
 <p>It was in this time that the foundations of the World Wide Web were being laid in the internet protocol that would become http &ndash; the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for &ldquo;Payment Required&rdquo; responses that has gone unused for 30 years.</p>
 <p>HTTP, the communication layer of the web, was designed with the expectation that content would cost money. Instead, the web became a mostly ad-based platform. But those days might be coming to an end. As the browser stops being a destination platform, more and more people are getting fed the content from means that don&rsquo;t feed them ads. Worse yet, they are even getting the direct content. As more and more people access content through Gen AI services, such as Claude, Gemini, ChatGPT, DeepSeek, or Copilot, they are no longer reading content from a single source, but rather a distillation of many sources. In that world, who should be paid, and do ads make sense?</p>
 <p>There is actually way more to it than that. We haven&rsquo;t even talked about training data.</p>
@@ -181,9 +197,68 @@
 <h3 id="x402-and-rsl--the-missing-payment-and-rights-layers">x402 and RSL &ndash; the missing payment and rights layers</h3>
 <p>This is the part I think will look obvious in retrospect.</p>
 <p>HTTP 402 has been sitting in the spec since the 1990s. It means &ldquo;Payment Required.&rdquo; It was never implemented. <a href="https://developers.cloudflare.com/agents/agentic-payments/x402/">x402 is a payment standard built around that status code</a>, and Cloudflare has been pushing it hard. The flow is dead simple: agent requests a resource, server returns 402 with a price, agent authorizes a stablecoin payment, server delivers the resource. One round trip. No human in the loop. No API key a human had to configure in a billing dashboard ahead of time.</p>
+<div class="mermaid-wrap"><pre class="mermaid">
+sequenceDiagram
+    participant A as Agent
+    participant S as Publisher Server
+    A->>S: GET /article
+    S-->>A: 402 Payment Required (price, asset)
+    A->>S: GET /article (X-PAYMENT: signed stablecoin tx)
+    S-->>A: 200 OK (article body)
+</pre></div><style>
+.mermaid-wrap{max-width:100%;margin:2rem auto;text-align:center;overflow-x:auto}
+.mermaid-wrap pre.mermaid{background:transparent;padding:0;margin:0;white-space:normal;font-family:inherit}
+</style>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'base',
+  themeVariables: {
+    background: '#eee',
+    primaryColor: '#222',
+    primaryTextColor: '#eee',
+    primaryBorderColor: '#000',
+    secondaryColor: '#fff',
+    secondaryTextColor: '#222',
+    secondaryBorderColor: '#222',
+    tertiaryColor: '#eee',
+    tertiaryTextColor: '#333',
+    lineColor: '#666',
+    textColor: '#333',
+    fontFamily: '"Raleway", Helvetica, Arial, sans-serif',
+    fontSize: '15px',
+    actorBkg: '#222',
+    actorTextColor: '#eee',
+    actorBorder: '#000',
+    actorLineColor: '#666',
+    actorFontFamily: '"VT323", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    actorFontSize: '18px',
+    signalColor: '#333',
+    signalTextColor: '#333',
+    labelBoxBkgColor: '#fff',
+    labelBoxBorderColor: '#222',
+    noteBkgColor: '#fff',
+    noteTextColor: '#333',
+    noteBorderColor: '#666'
+  }
+});
+</script>
 <p>Cloudflare&rsquo;s <a href="https://blog.cloudflare.com/introducing-pay-per-crawl/">pay-per-crawl marketplace</a> sits on top of this, and the numbers are wild. <a href="https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help">Cloudflare&rsquo;s network is processing a billion HTTP 402 responses per day</a>. AI scrapers visit a site at tens-of-thousands to one relative to the human traffic they send back, compared to a 2-to-1 ratio a decade ago. The unit economics of the open web finally, structurally, support charging.</p>
 <p>And then there is <a href="https://willscott.me/2025/10/04/ai-licensing-deals-search-visibility-in-2025/">RSL &ndash; Really Simple Licensing</a> &ndash; which is robots.txt grown up. Instead of &ldquo;allowed/disallowed,&rdquo; sites declare <em>terms</em> in machine-readable form: pay-per-crawl, pay-per-inference, flat subscription, or free with attribution. Reddit and Medium are early backers. Crawlers and agents can negotiate against the terms before they fetch.</p>
-<p>The really interesting part is what happens when you combine these. AWS just shipped <a href="https://singhajit.com/dev-weekly/2026/may-4-10/anthropic-spacex-cloudflare-layoffs-cursor-33-aws-agent-payments/">Bedrock AgentCore Payments</a> &ndash; agents pay over x402 with stablecoins, and Coinbase runs an x402 Bazaar MCP server with over 10,000 paid endpoints agents can discover. So now MCP gives you the integration and authorization layer, x402 gives you the payment layer, RSL gives you the rights-declaration layer, and the agent traverses all three without ever pausing the user&rsquo;s workflow. The cost shows up on a session budget. That is the whole thing.</p>
+<p>The really interesting part is what happens when you combine these. AWS just shipped <a href="https://singhajit.com/dev-weekly/2026/may-4-10/anthropic-spacex-cloudflare-layoffs-cursor-33-aws-agent-payments/">Bedrock AgentCore Payments</a> &ndash; agents pay over x402 with stablecoins, and Coinbase runs an x402 Bazaar MCP server with over 10,000 paid endpoints agents can discover. So now MCP gives you the integration and authorization layer, x402 gives you the payment layer, RSL gives you the rights-declaration layer, and the agent traverses all three without ever pausing the user&rsquo;s workflow. The cost shows up on a session budget.</p>
+<div class="mermaid-wrap"><pre class="mermaid">
+flowchart LR
+    U[Human user] --> AG[AI agent]
+    AG -->|1. discover terms| RSL[(RSL<br/>rights & pricing)]
+    AG -->|2. authenticate / call tool| MCP[(MCP server<br/>scoped access)]
+    AG -->|3. settle payment| X402[(x402<br/>stablecoin rail)]
+    MCP --> PUB[(Publisher content)]
+    X402 --> PUB
+    PUB --> AG
+    AG --> U
+</pre></div>
+<p>That is the whole thing.</p>
 <h2 id="wrap-up">Wrap up</h2>
 <p>The licensing deals are a one-time settlement of the old web. They matter, the numbers are large, and they will keep happening &ndash; but the leverage curve is wrong and everyone in the business knows it. MCP plus x402 plus RSL is the architecture of the next web, where the unit of commerce is not &ldquo;human visits page, sees ad&rdquo; but &ldquo;agent fetches resource, settles micropayment, returns answer to a human.&rdquo; It is the architecture where my original instinct &ndash; content paywalled, AI pays to access &ndash; actually becomes mechanically possible, because the payment and the auth and the access all happen at the moment of use rather than once-ever at training time.</p>
 <p>I should be honest about the caveat. Most of this is still early. On-chain x402 volume was <a href="https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help">around $28,000 per day in March</a>, which is rounding error. MCP server quality is uneven. RSL is more aspiration than adoption. Nobody has settled the question of whether crypto rails win or fiat rails do &ndash; Visa and Mastercard have their own Trusted Agent Protocol pushing the same direction from the other side. The technical pieces exist; the market structure does not yet.</p>
@@ -260,6 +335,9 @@
 
     <script src="/js/links.js"></script>
     <script src="/js/site-description.js"></script>
+    
+    <script type="module" src="/js/mermaid.js"></script>
+    
 
     
     

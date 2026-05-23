@@ -23,6 +23,36 @@ Body copy is set in **Raleway** at 18px / 1.7 line-height. The point of this par
 
 Inline `code` snippets render in the default monospace, no background tint. For fenced code blocks see the Code section below.
 
+## Hero banner
+
+When a post sets `hero` in frontmatter, the title, date, category, and tags are overlaid on the image with a bottom-anchored gradient scrim. The scrim keeps the text legible regardless of the image behind it.
+
+<div class="post-hero-wrap">
+  <img class="post-hero" src="https://placecats.com/1200/420" alt="Hero banner demo">
+  <div class="post-hero-overlay">
+    <h1 class="post-hero-title">An Example Post Title</h1>
+    <div class="post-hero-meta">
+      <time datetime="2026-05-23">May 23, 2026</time> · Updated <time datetime="2026-05-24">May 24, 2026</time>
+    </div>
+    <div class="post-hero-badges">
+      <span class="badge badge-outline">Field Notes</span>
+    </div>
+    <div class="post-hero-badges flex flex-wrap gap-1">
+      <span class="badge">cats</span>
+      <span class="badge">photography</span>
+      <span class="badge">lorem</span>
+    </div>
+  </div>
+</div>
+
+Frontmatter:
+
+```yaml
+hero: "https://placecats.com/1200/420"
+hero_alt: "A cat stretched across a sunlit windowsill"
+hero_caption: "Optional caption — sits below the image in muted italic."
+```
+
 ## Color
 
 The palette is small on purpose. If you find yourself reaching for a color outside this list, stop and reconsider.
@@ -128,6 +158,67 @@ animate();
 task verify:llm
 ```
 
+## Images
+
+Four image roles are supported. All cat photos below are Creative Commons placeholders served from [placecats.com](https://placecats.com).
+
+### Hero banner
+
+Set via post frontmatter (`hero`, optional `hero_alt`, optional `hero_caption`). Rendered at the top of a single-post page, above the title. On desktop it bleeds wider than the 740 px column for emphasis.
+
+```yaml
+hero: "https://placecats.com/1200/420"
+hero_alt: "A cat lounging across a sunlit windowsill"
+hero_caption: "Optional caption sits below the image in muted italic."
+```
+
+See [The Quiet Tao of Cat Naps](/posts/the-quiet-tao-of-cat-naps/) for a live example.
+
+### List thumbnail (optional)
+
+Set via post frontmatter (`thumbnail`, optional `thumbnail_alt`). Rendered next to the post entry on list pages. Floats right on desktop, stacks on mobile.
+
+```yaml
+thumbnail: "https://placecats.com/300/200"
+thumbnail_alt: "A tabby kitten mid-pounce"
+```
+
+### Full-width block image
+
+For images that interrupt the prose between paragraphs. Use `class="image-full"` on a plain `<img>`, or wrap in `<figure class="image-full">` to add a caption. On desktop, full-width images extend beyond the column for visual rhythm.
+
+<img class="image-full" src="https://placecats.com/900/500" alt="A black cat staring directly into the camera">
+
+<figure class="image-full">
+  <img src="https://placecats.com/g/900/500" alt="A grey tabby curled up on a stack of books">
+  <figcaption>A figcaption sits below the image, centered, in muted italic.</figcaption>
+</figure>
+
+### Inline (left- or right-aligned)
+
+For smaller images that paragraphs flow around. Use `class="image-inline-left"` or `class="image-inline-right"`. They stack above the paragraph on mobile.
+
+<img class="image-inline-left" src="https://placecats.com/300/300" alt="A ginger cat sitting upright">
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<img class="image-inline-right" src="https://placecats.com/g/300/300" alt="A white kitten peeking over a blanket">
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+## Diagrams
+
+Mermaid fenced code blocks render as inline SVG. The Mermaid runtime is only loaded on pages that contain a diagram.
+
+```mermaid
+flowchart LR
+    A[Write post] --> B{Has diagram?}
+    B -- yes --> C[Render via Mermaid]
+    B -- no --> D[Skip runtime]
+    C --> E[Ship]
+    D --> E
+```
+
 ## Tables
 
 | Token            | Value      | Use                         |
@@ -136,6 +227,21 @@ task verify:llm
 | Content surface  | `#fff`     | `.not-footer` content sheet |
 | Ink              | `#333`     | Body text                   |
 | Link             | `#4183c4`  | All links, hover affordances |
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+| Token              | Value                   | Surface           | Used by                                    | Notes                                                                  |
+| ------------------ | ----------------------- | ----------------- | ------------------------------------------ | ---------------------------------------------------------------------- |
+| Page background    | `#eee`                  | Page chrome       | `body`, footer, asides, code-pill hover    | The "outside the sheet" color. Never use behind body copy.            |
+| Content surface    | `#fff`                  | Reading area      | `.not-footer` content sheet, cards         | Always paired with `#333` ink for AA contrast at body size.           |
+| Ink                | `#333`                  | Text              | Body copy, list items, table cells         | Soft black — avoids the hard-bordered feel of pure `#000`.            |
+| Heading            | `#222`                  | Text              | All `h1`–`h6`                              | One step darker than ink so headings hold the page rhythm.            |
+| Muted              | `#666`                  | Text, borders     | `h4`, dates, captions, blockquote text     | Reach for this before lightening ink — keeps the palette small.       |
+| Border             | `#ddd`                  | Lines             | Card borders, summarize pill outlines      | Single hairline weight; combined with `1px` only.                     |
+| Link               | `#4183c4`               | Interactive       | All links, hover affordances               | The only saturated color in the system. Use it sparingly.             |
+| Nav strip          | `#000`                  | Nav background    | Site nav bar, author byline pill           | The one place pure black is allowed — sets a hard typographic edge.   |
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 
 ## Icons
 

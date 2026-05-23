@@ -2,87 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on My Hugo Site</title>
-    <link>https://example.org/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on My Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Apr 2026 11:30:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 May 2026 09:30:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Go</title>
-      <link>https://example.org/tags/go/</link>
-      <pubDate>Wed, 22 Apr 2026 11:30:00 +0000</pubDate>
-      <guid>https://example.org/tags/go/</guid>
+      <title>Cats</title>
+      <link>http://localhost:1313/tags/cats/</link>
+      <pubDate>Sat, 23 May 2026 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cats/</guid>
       <description></description>
     </item>
     <item>
-      <title>Patterns</title>
-      <link>https://example.org/tags/patterns/</link>
-      <pubDate>Wed, 22 Apr 2026 11:30:00 +0000</pubDate>
-      <guid>https://example.org/tags/patterns/</guid>
+      <title>Lorem</title>
+      <link>http://localhost:1313/tags/lorem/</link>
+      <pubDate>Sat, 23 May 2026 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/lorem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photography</title>
+      <link>http://localhost:1313/tags/photography/</link>
+      <pubDate>Sat, 23 May 2026 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/photography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Diagrams</title>
+      <link>http://localhost:1313/tags/diagrams/</link>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/diagrams/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mermaid</title>
+      <link>http://localhost:1313/tags/mermaid/</link>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mermaid/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial</title>
-      <link>https://example.org/tags/tutorial/</link>
+      <link>http://localhost:1313/tags/tutorial/</link>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>http://localhost:1313/tags/go/</link>
       <pubDate>Wed, 22 Apr 2026 11:30:00 +0000</pubDate>
-      <guid>https://example.org/tags/tutorial/</guid>
+      <guid>http://localhost:1313/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Patterns</title>
+      <link>http://localhost:1313/tags/patterns/</link>
+      <pubDate>Wed, 22 Apr 2026 11:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/patterns/</guid>
       <description></description>
     </item>
     <item>
       <title>Css</title>
-      <link>https://example.org/tags/css/</link>
+      <link>http://localhost:1313/tags/css/</link>
       <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/css/</guid>
+      <guid>http://localhost:1313/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Frontpage</title>
-      <link>https://example.org/tags/frontpage/</link>
+      <link>http://localhost:1313/tags/frontpage/</link>
       <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/frontpage/</guid>
+      <guid>http://localhost:1313/tags/frontpage/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://example.org/tags/hugo/</link>
+      <link>http://localhost:1313/tags/hugo/</link>
       <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/hugo/</guid>
+      <guid>http://localhost:1313/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Tooling</title>
-      <link>https://example.org/tags/tooling/</link>
+      <link>http://localhost:1313/tags/tooling/</link>
       <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/tooling/</guid>
+      <guid>http://localhost:1313/tags/tooling/</guid>
       <description></description>
     </item>
     <item>
       <title>Opinion</title>
-      <link>https://example.org/tags/opinion/</link>
+      <link>http://localhost:1313/tags/opinion/</link>
       <pubDate>Tue, 03 Feb 2026 09:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/opinion/</guid>
+      <guid>http://localhost:1313/tags/opinion/</guid>
       <description></description>
     </item>
     <item>
       <title>Writing</title>
-      <link>https://example.org/tags/writing/</link>
+      <link>http://localhost:1313/tags/writing/</link>
       <pubDate>Tue, 03 Feb 2026 09:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/writing/</guid>
+      <guid>http://localhost:1313/tags/writing/</guid>
       <description></description>
     </item>
     <item>
       <title>Kwallcompany</title>
-      <link>https://example.org/tags/kwallcompany/</link>
+      <link>http://localhost:1313/tags/kwallcompany/</link>
       <pubDate>Thu, 25 Jan 2024 10:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/kwallcompany/</guid>
+      <guid>http://localhost:1313/tags/kwallcompany/</guid>
       <description></description>
     </item>
     <item>
       <title>Threejs</title>
-      <link>https://example.org/tags/threejs/</link>
+      <link>http://localhost:1313/tags/threejs/</link>
       <pubDate>Thu, 25 Jan 2024 10:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/threejs/</guid>
+      <guid>http://localhost:1313/tags/threejs/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://example.org/about/ |
+| url | http://localhost:1313/about/ |
 | date | 2024-01-10 |
 
 

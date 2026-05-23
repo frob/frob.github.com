@@ -106,7 +106,7 @@
                 
                 
                 <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
-                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="3000" aria-hidden="true"></p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
                 
             </div>
         </header>
@@ -143,13 +143,12 @@
             
 <div class="container">
     <article class="post">
+        
         <h1>Add a JSON API to Any Static Site Generator</h1>
         <div class="date">
             <time datetime="2026-04-23T00:00:00Z">April 23, 2026</time>
             
         </div>
-
-        
          
         <div class="flex flex-wrap gap-1 mb-2">
             
@@ -162,7 +161,24 @@
             <span class="badge">frontpage</span>
             
         </div>
-         <p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
+        
+        
+
+        <p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
+            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>
+
+            
 <p>That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.</p>
 <h2 id="the-idea-again">The idea, again</h2>
 <p>A static site generator takes your markdown and pushes it through templates to make HTML files. There is nothing special about HTML here &ndash;it is just the output format. If you write a template that outputs JSON instead of HTML, you get <code>.json</code> files. Your web server doesn&rsquo;t care, it serves them the same way and JavaScript on the client side can fetch them.</p>
@@ -305,6 +321,7 @@
 
     <script src="/js/links.js"></script>
     <script src="/js/site-description.js"></script>
+    
 
     
     

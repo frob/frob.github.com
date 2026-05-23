@@ -2,72 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/</loc>
+    <loc>http://localhost:1313/tags/cats/</loc>
+    <lastmod>2026-05-23T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-05-23T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/lorem/</loc>
+    <lastmod>2026-05-23T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/photography/</loc>
+    <lastmod>2026-05-23T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-05-23T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-05-23T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2026/05/23/the-quiet-tao-of-cat-naps/</loc>
+    <lastmod>2026-05-23T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/diagrams/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2026/05/23/diagrams-with-mermaid/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mermaid/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tutorial/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/styleguide/</loc>
     <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/styleguide/</loc>
-    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.org/posts/2026/04/22/a-tiny-state-machine-in-go/</loc>
+    <loc>http://localhost:1313/posts/2026/04/22/a-tiny-state-machine-in-go/</loc>
     <lastmod>2026-04-22T11:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/go/</loc>
+    <loc>http://localhost:1313/tags/go/</loc>
     <lastmod>2026-04-22T11:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/patterns/</loc>
+    <loc>http://localhost:1313/tags/patterns/</loc>
     <lastmod>2026-04-22T11:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/</loc>
-    <lastmod>2026-04-22T11:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.org/tags/</loc>
-    <lastmod>2026-04-22T11:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.org/tags/tutorial/</loc>
-    <lastmod>2026-04-22T11:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.org/tags/css/</loc>
+    <loc>http://localhost:1313/tags/css/</loc>
     <lastmod>2026-03-18T16:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/frontpage/</loc>
+    <loc>http://localhost:1313/tags/frontpage/</loc>
     <lastmod>2026-03-18T16:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/hugo/</loc>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2026-03-18T16:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/2026/03/18/things-i-learned-this-week/</loc>
+    <loc>http://localhost:1313/posts/2026/03/18/things-i-learned-this-week/</loc>
     <lastmod>2026-03-18T16:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/tooling/</loc>
+    <loc>http://localhost:1313/tags/tooling/</loc>
     <lastmod>2026-03-18T16:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/2026/02/03/a-short-note-on-naming-things/</loc>
+    <loc>http://localhost:1313/posts/2026/02/03/a-short-note-on-naming-things/</loc>
     <lastmod>2026-02-03T09:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/opinion/</loc>
+    <loc>http://localhost:1313/tags/opinion/</loc>
     <lastmod>2026-02-03T09:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/writing/</loc>
+    <loc>http://localhost:1313/tags/writing/</loc>
     <lastmod>2026-02-03T09:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/kwallcompany/</loc>
+    <loc>http://localhost:1313/tags/kwallcompany/</loc>
     <lastmod>2024-01-25T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/threejs/</loc>
+    <loc>http://localhost:1313/tags/threejs/</loc>
     <lastmod>2024-01-25T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/2024/01/25/webgl-with-three.js/</loc>
+    <loc>http://localhost:1313/posts/2024/01/25/webgl-with-three.js/</loc>
     <lastmod>2024-01-25T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/2024/01/20/typography-fonts-and-why-monospace-headings-work-so-well-for-developer-blogs/</loc>
+    <loc>http://localhost:1313/posts/2024/01/20/typography-fonts-and-why-monospace-headings-work-so-well-for-developer-blogs/</loc>
     <lastmod>2024-01-20T14:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/2024/01/15/getting-started-with-the-frobiovox-theme-for-hugo-static-sites/</loc>
+    <loc>http://localhost:1313/posts/2024/01/15/getting-started-with-the-frobiovox-theme-for-hugo-static-sites/</loc>
     <lastmod>2024-01-15T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2024-01-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

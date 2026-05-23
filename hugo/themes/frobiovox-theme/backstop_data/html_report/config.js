@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Homepage_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Homepage_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Homepage_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Homepage_0_document_0_phone.png",
         "label": "Homepage",
@@ -28,7 +28,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Homepage_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Homepage_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Homepage_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Homepage_0_document_1_tablet.png",
         "label": "Homepage",
@@ -52,7 +52,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_About_Page_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_About_Page_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_About_Page_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_About_Page_0_document_0_phone.png",
         "label": "About Page",
@@ -76,7 +76,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_About_Page_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_About_Page_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_About_Page_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_About_Page_0_document_1_tablet.png",
         "label": "About Page",
@@ -100,7 +100,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Posts_List_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Posts_List_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Posts_List_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Posts_List_0_document_0_phone.png",
         "label": "Posts List",
@@ -124,7 +124,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Posts_List_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Posts_List_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Posts_List_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Posts_List_0_document_1_tablet.png",
         "label": "Posts List",
@@ -148,7 +148,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Post_-_First_Post_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Post_-_First_Post_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_First_Post_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Post_-_First_Post_0_document_0_phone.png",
         "label": "Post - First Post",
@@ -172,7 +172,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Post_-_First_Post_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Post_-_First_Post_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_First_Post_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Post_-_First_Post_0_document_1_tablet.png",
         "label": "Post - First Post",
@@ -196,7 +196,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Post_-_Second_Post_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Post_-_Second_Post_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_Second_Post_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Post_-_Second_Post_0_document_0_phone.png",
         "label": "Post - Second Post",
@@ -220,7 +220,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Post_-_Second_Post_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Post_-_Second_Post_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_Second_Post_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Post_-_Second_Post_0_document_1_tablet.png",
         "label": "Post - Second Post",
@@ -244,7 +244,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Post_-_WebGL_Example_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Post_-_WebGL_Example_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_WebGL_Example_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Post_-_WebGL_Example_0_document_0_phone.png",
         "label": "Post - WebGL Example",
@@ -268,7 +268,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Post_-_WebGL_Example_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Post_-_WebGL_Example_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_WebGL_Example_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Post_-_WebGL_Example_0_document_1_tablet.png",
         "label": "Post - WebGL Example",
@@ -292,7 +292,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Tags_List_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Tags_List_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Tags_List_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Tags_List_0_document_0_phone.png",
         "label": "Tags List",
@@ -316,7 +316,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Tags_List_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Tags_List_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Tags_List_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Tags_List_0_document_1_tablet.png",
         "label": "Tags List",
@@ -340,7 +340,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Tag_-_Tutorial_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Tag_-_Tutorial_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Tag_-_Tutorial_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Tag_-_Tutorial_0_document_0_phone.png",
         "label": "Tag - Tutorial",
@@ -364,7 +364,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Tag_-_Tutorial_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Tag_-_Tutorial_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Tag_-_Tutorial_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Tag_-_Tutorial_0_document_1_tablet.png",
         "label": "Tag - Tutorial",
@@ -387,8 +387,104 @@ report({
     },
     {
       "pair": {
+        "reference": "../bitmaps_reference/backstop_default_Style_Guide_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Style_Guide_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "backstop_default_Style_Guide_0_document_0_phone.png",
+        "label": "Style Guide",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://frobiovox-nginx/styleguide/",
+        "referenceUrl": "",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_Style_Guide_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Style_Guide_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "backstop_default_Style_Guide_0_document_1_tablet.png",
+        "label": "Style Guide",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://frobiovox-nginx/styleguide/",
+        "referenceUrl": "",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_Post_-_Diagrams_with_Mermaid_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_Diagrams_with_Mermaid_0_document_0_phone.png",
+        "selector": "document",
+        "fileName": "backstop_default_Post_-_Diagrams_with_Mermaid_0_document_0_phone.png",
+        "label": "Post - Diagrams with Mermaid",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://frobiovox-nginx/posts/2026/05/23/diagrams-with-mermaid/",
+        "referenceUrl": "",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_Post_-_Diagrams_with_Mermaid_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Post_-_Diagrams_with_Mermaid_0_document_1_tablet.png",
+        "selector": "document",
+        "fileName": "backstop_default_Post_-_Diagrams_with_Mermaid_0_document_1_tablet.png",
+        "label": "Post - Diagrams with Mermaid",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "http://frobiovox-nginx/posts/2026/05/23/diagrams-with-mermaid/",
+        "referenceUrl": "",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "misMatchPercentage": "0.00"
+        }
+      },
+      "status": "pass"
+    },
+    {
+      "pair": {
         "reference": "../bitmaps_reference/backstop_default_Categories_List_0_document_0_phone.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Categories_List_0_document_0_phone.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Categories_List_0_document_0_phone.png",
         "selector": "document",
         "fileName": "backstop_default_Categories_List_0_document_0_phone.png",
         "label": "Categories List",
@@ -412,7 +508,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/backstop_default_Categories_List_0_document_1_tablet.png",
-        "test": "../bitmaps_test/20260523-072622/backstop_default_Categories_List_0_document_1_tablet.png",
+        "test": "../bitmaps_test/20260523-220925/backstop_default_Categories_List_0_document_1_tablet.png",
         "selector": "document",
         "fileName": "backstop_default_Categories_List_0_document_1_tablet.png",
         "label": "Categories List",

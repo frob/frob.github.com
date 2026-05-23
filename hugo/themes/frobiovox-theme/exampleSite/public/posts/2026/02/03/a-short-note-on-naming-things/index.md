@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://example.org/posts/2026/02/03/a-short-note-on-naming-things/ |
+| url | http://localhost:1313/posts/2026/02/03/a-short-note-on-naming-things/ |
 | date | 2026-02-03 |
 | category | Notes |
 | tags | writing, opinion, frontpage |

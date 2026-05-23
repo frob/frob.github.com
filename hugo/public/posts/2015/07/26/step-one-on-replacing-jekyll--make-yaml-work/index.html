@@ -105,7 +105,7 @@
                 
                 
                 <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
-                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="3000" aria-hidden="true"></p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
                 
             </div>
         </header>
@@ -142,13 +142,12 @@
             
 <div class="container">
     <article class="post">
+        
         <h1>Step One on replacing Jekyll, make yaml work</h1>
         <div class="date">
             <time datetime="2015-07-26T00:00:00Z">July 26, 2015</time>
             
         </div>
-
-        
          
         <div class="flex flex-wrap gap-1 mb-2">
             
@@ -161,7 +160,24 @@
             <span class="badge">gulp</span>
             
         </div>
-         <p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
+        
+        
+
+        <p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
+            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F07%2F26%2Fstep-one-on-replacing-jekyll--make-yaml-work%2F" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F07%2F26%2Fstep-one-on-replacing-jekyll--make-yaml-work%2F" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F07%2F26%2Fstep-one-on-replacing-jekyll--make-yaml-work%2F" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F07%2F26%2Fstep-one-on-replacing-jekyll--make-yaml-work%2F" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>
+
+            
 <h1 id="yaml-parsing">YAML Parsing</h1>
 <p>First am trying to use <a href="https://www.npmjs.com/package/gulp-yaml">npm-yaml</a>. Simple installation, <code>npm install --save-dev npm-yaml</code>. And it works great with the _config file that holds general site information. So I try it with the html.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;test-index&#39;</span>, <span style="color:#66d9ef">function</span>() {
@@ -265,6 +281,7 @@
 
     <script src="/js/links.js"></script>
     <script src="/js/site-description.js"></script>
+    
 
     
     

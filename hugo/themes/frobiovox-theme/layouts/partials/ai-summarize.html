@@ -1,0 +1,17 @@
+{{- $q := printf "Summarize %s" .Permalink | urlquery -}}
+{{- $chatgpt := printf "https://chatgpt.com/?hints=search&q=%s" $q | safeURL -}}
+{{- $googleai := printf "https://www.google.com/search?udm=50&q=%s" $q | safeURL -}}
+{{- $perplexity := printf "https://www.perplexity.ai/?q=%s" $q | safeURL -}}
+{{- $grok := printf "https://grok.com/?q=%s" $q | safeURL -}}
+<aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="{{ $chatgpt }}" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="{{ $googleai }}" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="{{ $perplexity }}" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="{{ $grok }}" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://example.org/posts/2024/01/15/getting-started-with-the-frobiovox-theme-for-hugo-static-sites/ |
+| url | http://localhost:1313/posts/2024/01/15/getting-started-with-the-frobiovox-theme-for-hugo-static-sites/ |
 | date | 2024-01-15 |
 
 

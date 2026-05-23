@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://example.org/posts/2026/04/22/a-tiny-state-machine-in-go/ |
+| url | http://localhost:1313/posts/2026/04/22/a-tiny-state-machine-in-go/ |
 | date | 2026-04-22 |
 | category | Code |
 | tags | go, patterns, tutorial |

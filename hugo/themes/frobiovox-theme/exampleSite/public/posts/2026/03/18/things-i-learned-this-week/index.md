@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://example.org/posts/2026/03/18/things-i-learned-this-week/ |
+| url | http://localhost:1313/posts/2026/03/18/things-i-learned-this-week/ |
 | date | 2026-03-18 |
 | category | Field notes |
 | tags | hugo, css, tooling, frontpage |

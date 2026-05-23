@@ -104,7 +104,7 @@
                 
                 
                 <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
-                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="3000" aria-hidden="true"></p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
                 
             </div>
         </header>
@@ -141,13 +141,12 @@
             
 <div class="container">
     <article class="post">
+        
         <h1>Need a join in an EntityFieldQuery, how about a subquery?</h1>
         <div class="date">
             <time datetime="2015-06-10T00:00:00Z">June 10, 2015</time>
             
         </div>
-
-        
          
         <div class="flex flex-wrap gap-1 mb-2">
             
@@ -156,7 +155,24 @@
             <span class="badge">tutorial</span>
             
         </div>
-         <p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it.</p>
+        
+        
+
+        <p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it.</p>
+            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F06%2F10%2Fneed-a-join-in-an-entityfieldquery--how-about-a-subquery%2F" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F06%2F10%2Fneed-a-join-in-an-entityfieldquery--how-about-a-subquery%2F" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F06%2F10%2Fneed-a-join-in-an-entityfieldquery--how-about-a-subquery%2F" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F06%2F10%2Fneed-a-join-in-an-entityfieldquery--how-about-a-subquery%2F" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>
+
+            
 <p><em><strong>Shaddap and give me the code:</strong></em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EntityFieldQuery</span>();
 </span></span><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">entityCondition</span>(<span style="color:#e6db74">&#39;entity_type&#39;</span>, <span style="color:#e6db74">&#39;user&#39;</span>);
@@ -263,6 +279,7 @@
 
     <script src="/js/links.js"></script>
     <script src="/js/site-description.js"></script>
+    
 
     
     

@@ -35,9 +35,68 @@
 &lt;h3 id=&#34;x402-and-rsl--the-missing-payment-and-rights-layers&#34;&gt;x402 and RSL &amp;ndash; the missing payment and rights layers&lt;/h3&gt;
 &lt;p&gt;This is the part I think will look obvious in retrospect.&lt;/p&gt;
 &lt;p&gt;HTTP 402 has been sitting in the spec since the 1990s. It means &amp;ldquo;Payment Required.&amp;rdquo; It was never implemented. &lt;a href=&#34;https://developers.cloudflare.com/agents/agentic-payments/x402/&#34;&gt;x402 is a payment standard built around that status code&lt;/a&gt;, and Cloudflare has been pushing it hard. The flow is dead simple: agent requests a resource, server returns 402 with a price, agent authorizes a stablecoin payment, server delivers the resource. One round trip. No human in the loop. No API key a human had to configure in a billing dashboard ahead of time.&lt;/p&gt;
+&lt;div class=&#34;mermaid-wrap&#34;&gt;&lt;pre class=&#34;mermaid&#34;&gt;
+sequenceDiagram
+    participant A as Agent
+    participant S as Publisher Server
+    A-&gt;&gt;S: GET /article
+    S--&gt;&gt;A: 402 Payment Required (price, asset)
+    A-&gt;&gt;S: GET /article (X-PAYMENT: signed stablecoin tx)
+    S--&gt;&gt;A: 200 OK (article body)
+&lt;/pre&gt;&lt;/div&gt;&lt;style&gt;
+.mermaid-wrap{max-width:100%;margin:2rem auto;text-align:center;overflow-x:auto}
+.mermaid-wrap pre.mermaid{background:transparent;padding:0;margin:0;white-space:normal;font-family:inherit}
+&lt;/style&gt;
+&lt;script type=&#34;module&#34;&gt;
+import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs&#39;;
+mermaid.initialize({
+  startOnLoad: true,
+  theme: &#39;base&#39;,
+  themeVariables: {
+    background: &#39;#eee&#39;,
+    primaryColor: &#39;#222&#39;,
+    primaryTextColor: &#39;#eee&#39;,
+    primaryBorderColor: &#39;#000&#39;,
+    secondaryColor: &#39;#fff&#39;,
+    secondaryTextColor: &#39;#222&#39;,
+    secondaryBorderColor: &#39;#222&#39;,
+    tertiaryColor: &#39;#eee&#39;,
+    tertiaryTextColor: &#39;#333&#39;,
+    lineColor: &#39;#666&#39;,
+    textColor: &#39;#333&#39;,
+    fontFamily: &#39;&#34;Raleway&#34;, Helvetica, Arial, sans-serif&#39;,
+    fontSize: &#39;15px&#39;,
+    actorBkg: &#39;#222&#39;,
+    actorTextColor: &#39;#eee&#39;,
+    actorBorder: &#39;#000&#39;,
+    actorLineColor: &#39;#666&#39;,
+    actorFontFamily: &#39;&#34;VT323&#34;, &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif&#39;,
+    actorFontSize: &#39;18px&#39;,
+    signalColor: &#39;#333&#39;,
+    signalTextColor: &#39;#333&#39;,
+    labelBoxBkgColor: &#39;#fff&#39;,
+    labelBoxBorderColor: &#39;#222&#39;,
+    noteBkgColor: &#39;#fff&#39;,
+    noteTextColor: &#39;#333&#39;,
+    noteBorderColor: &#39;#666&#39;
+  }
+});
+&lt;/script&gt;
 &lt;p&gt;Cloudflare&amp;rsquo;s &lt;a href=&#34;https://blog.cloudflare.com/introducing-pay-per-crawl/&#34;&gt;pay-per-crawl marketplace&lt;/a&gt; sits on top of this, and the numbers are wild. &lt;a href=&#34;https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help&#34;&gt;Cloudflare&amp;rsquo;s network is processing a billion HTTP 402 responses per day&lt;/a&gt;. AI scrapers visit a site at tens-of-thousands to one relative to the human traffic they send back, compared to a 2-to-1 ratio a decade ago. The unit economics of the open web finally, structurally, support charging.&lt;/p&gt;
 &lt;p&gt;And then there is &lt;a href=&#34;https://willscott.me/2025/10/04/ai-licensing-deals-search-visibility-in-2025/&#34;&gt;RSL &amp;ndash; Really Simple Licensing&lt;/a&gt; &amp;ndash; which is robots.txt grown up. Instead of &amp;ldquo;allowed/disallowed,&amp;rdquo; sites declare &lt;em&gt;terms&lt;/em&gt; in machine-readable form: pay-per-crawl, pay-per-inference, flat subscription, or free with attribution. Reddit and Medium are early backers. Crawlers and agents can negotiate against the terms before they fetch.&lt;/p&gt;
-&lt;p&gt;The really interesting part is what happens when you combine these. AWS just shipped &lt;a href=&#34;https://singhajit.com/dev-weekly/2026/may-4-10/anthropic-spacex-cloudflare-layoffs-cursor-33-aws-agent-payments/&#34;&gt;Bedrock AgentCore Payments&lt;/a&gt; &amp;ndash; agents pay over x402 with stablecoins, and Coinbase runs an x402 Bazaar MCP server with over 10,000 paid endpoints agents can discover. So now MCP gives you the integration and authorization layer, x402 gives you the payment layer, RSL gives you the rights-declaration layer, and the agent traverses all three without ever pausing the user&amp;rsquo;s workflow. The cost shows up on a session budget. That is the whole thing.&lt;/p&gt;
+&lt;p&gt;The really interesting part is what happens when you combine these. AWS just shipped &lt;a href=&#34;https://singhajit.com/dev-weekly/2026/may-4-10/anthropic-spacex-cloudflare-layoffs-cursor-33-aws-agent-payments/&#34;&gt;Bedrock AgentCore Payments&lt;/a&gt; &amp;ndash; agents pay over x402 with stablecoins, and Coinbase runs an x402 Bazaar MCP server with over 10,000 paid endpoints agents can discover. So now MCP gives you the integration and authorization layer, x402 gives you the payment layer, RSL gives you the rights-declaration layer, and the agent traverses all three without ever pausing the user&amp;rsquo;s workflow. The cost shows up on a session budget.&lt;/p&gt;
+&lt;div class=&#34;mermaid-wrap&#34;&gt;&lt;pre class=&#34;mermaid&#34;&gt;
+flowchart LR
+    U[Human user] --&gt; AG[AI agent]
+    AG --&gt;|1. discover terms| RSL[(RSL&lt;br/&gt;rights &amp; pricing)]
+    AG --&gt;|2. authenticate / call tool| MCP[(MCP server&lt;br/&gt;scoped access)]
+    AG --&gt;|3. settle payment| X402[(x402&lt;br/&gt;stablecoin rail)]
+    MCP --&gt; PUB[(Publisher content)]
+    X402 --&gt; PUB
+    PUB --&gt; AG
+    AG --&gt; U
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That is the whole thing.&lt;/p&gt;
 &lt;h2 id=&#34;wrap-up&#34;&gt;Wrap up&lt;/h2&gt;
 &lt;p&gt;The licensing deals are a one-time settlement of the old web. They matter, the numbers are large, and they will keep happening &amp;ndash; but the leverage curve is wrong and everyone in the business knows it. MCP plus x402 plus RSL is the architecture of the next web, where the unit of commerce is not &amp;ldquo;human visits page, sees ad&amp;rdquo; but &amp;ldquo;agent fetches resource, settles micropayment, returns answer to a human.&amp;rdquo; It is the architecture where my original instinct &amp;ndash; content paywalled, AI pays to access &amp;ndash; actually becomes mechanically possible, because the payment and the auth and the access all happen at the moment of use rather than once-ever at training time.&lt;/p&gt;
 &lt;p&gt;I should be honest about the caveat. Most of this is still early. On-chain x402 volume was &lt;a href=&#34;https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help&#34;&gt;around $28,000 per day in March&lt;/a&gt;, which is rounding error. MCP server quality is uneven. RSL is more aspiration than adoption. Nobody has settled the question of whether crypto rails win or fiat rails do &amp;ndash; Visa and Mastercard have their own Trusted Agent Protocol pushing the same direction from the other side. The technical pieces exist; the market structure does not yet.&lt;/p&gt;

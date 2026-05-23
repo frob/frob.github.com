@@ -7,7 +7,10 @@ export default defineConfig({
     outDir: 'static',
     emptyOutDir: false,
     rollupOptions: {
-      input: 'src/main.js',
+      input: {
+        main: 'src/main.js',
+        mermaid: 'src/mermaid.js',
+      },
       output: {
         entryFileNames: 'js/[name].js',
         assetFileNames: (assetInfo) => {
