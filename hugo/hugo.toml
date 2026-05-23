@@ -6,7 +6,17 @@ googleAnalytics = 'G-Y3P20PDQ91'
 title = 'Frank Robert Anderson'
 
 [params]
-  description = 'I am a Developer who does web good and likes to do other stuff good too.'
+  description = 'Prestigious operator of commplicated auto-complete.'
+  descriptions = [
+    "Quietly building things",
+    "Where the cursor still blinks",
+    "Compile, commit, caffeinate, repeat",
+    "Yes, I have an oppinion about that",
+    "Hand-rolled, no batteries included",
+    "Postcards from production",
+    "I used to write code, now I write text and it auto-completes to code"
+  ]
+  description_rotation_ms = 19000
   author = 'Frank Robert Anderson'
   avatar = '/images/top.png'
   github = 'frob'

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/css/</link>
+    <link>http://localhost:1313/tags/css/</link>
     <description>Recent content in Css on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 May 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/css/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/css/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Creating screen-reader friendly read more  links</title>
-      <link>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</link>
+      <link>http://localhost:1313/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</link>
       <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</guid>
+      <guid>http://localhost:1313/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</guid>
       <description>&lt;p&gt;Over the course of my career I have worked on more than a fair share of higher-education sites. When dealing with a universities website there are many challenges. One of the biggest challenges is in dealing with the accessibility standards. I am writing about &lt;a href=&#34;http://www.w3.org/TR/WCAG20/&#34;&gt;WCAG&lt;/a&gt;. The WCAG, or Web Content Accessibility Guidelines, is a detailed list for how accessibility should be done on the web.&lt;/p&gt;&#xA;&lt;p&gt;I might write about the problems with WCAG at some point, but this article is about strictly an incompatibility between what the designer/UX people want and what the WCAG says about &amp;ldquo;READ MORE&amp;rdquo; links. &lt;a href=&#34;http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html&#34;&gt;Specifically WCAG 2.0 SC 2.4.4&lt;/a&gt;. This states that any link needs to have context.&lt;/p&gt;</description>
     </item>
     <item>
       <title>css less sass oocss drycss bem front end css design paradigm smacss down</title>
-      <link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
+      <link>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
       <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
+      <guid>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
       <description>&lt;p&gt;Front End CSS Design Paradigms have been a very hot topic lately and &lt;a href=&#34;http://xkcd.com/927/&#34; target=&#34;_blank&#34;&gt;many people are attempting to solve the problem&lt;/a&gt; of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.&lt;/p&gt;&#xA;&lt;h2&gt;Object Oriented CSS&lt;/h2&gt;&#xA;&lt;p&gt;OOCSS has several principles that it is built upon.&lt;/p&gt;</description>
     </item>
   </channel>

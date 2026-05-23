@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://www.frobiovox.com/rss.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/rss.xml" rel="self" type="application/rss&#43;xml" />
     <item>
       <title>Content gatekeeping in a GenAI world</title>
-      <link>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</link>
+      <link>http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</link>
       <pubDate>Sun, 10 May 2026 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</guid>
-      <description>&lt;p&gt;Let me start with a bit of history. It might seem like a hard thing for today&amp;rsquo;s generation to understand, but content used to cost money. Especially, novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to Journals or Magazines. An Encyclopedia set was an expensive necessity before the age when, most, all writen content became free.&lt;/p&gt;
-&lt;p&gt;It was in this time that the foundation of the World Wide Web where being layed in the internet protocol that would become http &amp;ndash;the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for &amp;ldquo;Payment Required&amp;rdquo; responses that has gone unused for 30 years.&lt;/p&gt;
-&lt;p&gt;HTTP, the communication layer of web, was designed with the expectation that content would cost money. Instead, the web became a, most, ad based platform. But those days might be coming to an end. As the browser stops being a destination platform, more and more people are getting fed the content from means that don&amp;rsquo;t feed them ads. Worse yet, they are even getting the direct content. As more and more people access content through Gen AI services, such as Claude, Gemini, ChatGPT, DeepSeek, or CoPilot they are no longer reading content from a single source, but rather a distilation of many sources. In that world, who should be paid, and do ads make sense?&lt;/p&gt;
+      <guid>http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</guid>
+      <description>&lt;p&gt;Let me start with a bit of history. It might seem like a hard thing for today&amp;rsquo;s generation to understand, but content used to cost money &amp;ndash; especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.&lt;/p&gt;
+&lt;p&gt;It was in this time that the foundations of the World Wide Web were being laid in the internet protocol that would become http &amp;ndash; the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for &amp;ldquo;Payment Required&amp;rdquo; responses that has gone unused for 30 years.&lt;/p&gt;
+&lt;p&gt;HTTP, the communication layer of the web, was designed with the expectation that content would cost money. Instead, the web became a mostly ad-based platform. But those days might be coming to an end. As the browser stops being a destination platform, more and more people are getting fed the content from means that don&amp;rsquo;t feed them ads. Worse yet, they are even getting the direct content. As more and more people access content through Gen AI services, such as Claude, Gemini, ChatGPT, DeepSeek, or Copilot, they are no longer reading content from a single source, but rather a distillation of many sources. In that world, who should be paid, and do ads make sense?&lt;/p&gt;
 &lt;p&gt;There is actually way more to it than that. We haven&amp;rsquo;t even talked about training data.&lt;/p&gt;
 &lt;h2 id=&#34;the-training-data-fight-is-over-the-access-fight-is-just-starting&#34;&gt;The training data fight is over. The access fight is just starting.&lt;/h2&gt;
 &lt;p&gt;For two years now the conversation about AI and content has been stuck on one question: who gets paid for what was already used to train the models? It is a real question with billion-dollar answers, but it is also a question about the past. Meanwhile a different question has been quietly assembling itself in the background &amp;ndash; who gets paid when a model goes to fetch something &lt;em&gt;right now&lt;/em&gt; &amp;ndash; and almost nobody is talking about it, even though the plumbing is already getting installed.&lt;/p&gt;
@@ -46,9 +46,9 @@
     </item>
     <item>
       <title>An experienced developers view on writing software in the age of vibe coding and generative ai</title>
-      <link>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link>
+      <link>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link>
       <pubDate>Wed, 29 Apr 2026 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid>
+      <guid>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid>
       <description>&lt;h2 id=&#34;i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks&#34;&gt;I have spent many tokens building with AI in many different ways and using different stacks&lt;/h2&gt;
 &lt;p&gt;I have seen a recent trend revived among software developers. This is the belief that the productivity of a Software Engineer should (or can be) measured in lines of code per week. This is a metric that was, largely, discarded by Software Engineers 50 years ago. The truth of the matter is that every line of code is a liability. This liability used to be mitigated by the time it took skilled and experienced people to plan, design, and write the code. These were people who had accumulated enough &lt;strong&gt;passive knowledge&lt;/strong&gt; to instinctively recognize when something was wrong, and enough &lt;strong&gt;active knowledge&lt;/strong&gt; to make deliberate, informed decisions.&lt;/p&gt;
 &lt;p&gt;Generative AI has changed everything and now non-skilled people who have never written a line of code before in their lives are starting to write complicated 10,000+ line applications. The dirty secret is that they still don&amp;rsquo;t know what they are doing. If you are one of those people, I do not mean to offend you. It is you who, most of all, needs to read this post.&lt;/p&gt;
@@ -142,9 +142,9 @@
     </item>
     <item>
       <title>Add a JSON API to Any Static Site Generator</title>
-      <link>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link>
+      <link>http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link>
       <pubDate>Thu, 23 Apr 2026 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid>
+      <guid>http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid>
       <description>&lt;p&gt;Back in 2015, I wrote about &lt;a href=&#34;/posts/2015/10/25/add-an-api-to-your-jekyll-blog/&#34;&gt;adding a JSON API to a Jekyll blog&lt;/a&gt;. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.&lt;/p&gt;
 &lt;p&gt;That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.&lt;/p&gt;
 &lt;h2 id=&#34;the-idea-again&#34;&gt;The idea, again&lt;/h2&gt;
@@ -220,9 +220,9 @@
     </item>
     <item>
       <title>Getting XDebug working with the Zed editor, starring Claude</title>
-      <link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
+      <link>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
+      <guid>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
       <description>&lt;h1 id=&#34;zed-ide-and-xdebug&#34;&gt;Zed IDE and Xdebug&lt;/h1&gt;
 &lt;p&gt;Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.&lt;/p&gt;
 &lt;h2 id=&#34;why-zed&#34;&gt;Why Zed&lt;/h2&gt;
@@ -627,9 +627,9 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
     </item>
     <item>
       <title>A Suggested Order for Watching TOS with Your Kids</title>
-      <link>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</link>
+      <link>http://localhost:1313/posts/2019/12/16/startrek-tos-order/</link>
       <pubDate>Mon, 16 Dec 2019 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</guid>
+      <guid>http://localhost:1313/posts/2019/12/16/startrek-tos-order/</guid>
       <description>&lt;p&gt;When I started at Clarity Innovations, the company culture interview question was &amp;ldquo;Star Trek or Star Wars?&amp;rdquo; Until recently I had leaned more toward Star Wars, but having grown up watching &lt;em&gt;The Next Generation&lt;/em&gt; and the Star Trek movies, I was very much also a Star Trek fan.&lt;/p&gt;
 &lt;p&gt;So naturally, my answer was &amp;ldquo;they are not mutually exclusive because one happens in this galaxy and in the future and the other happened a long time ago in a galaxy far far away.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;I wanted to start watching &lt;em&gt;Star Trek: The Next Generation&lt;/em&gt; with my kids, as that is my favorite series, but first, I wanted to give them a good canon of The Original Series so they could have a better appreciation of Star Trek as a whole. Knowing the best resource for this would likely be my own coworkers, I asked some folks at Clarity about the best order to watch TOS.&lt;/p&gt;
@@ -701,9 +701,9 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
     </item>
     <item>
       <title>How to play gloom with a 52 card deck</title>
-      <link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</link>
+      <link>http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</guid>
+      <guid>http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/</guid>
       <description>&lt;p&gt;I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&amp;rsquo;t for you then try these rules on a standard 52 card deck.&lt;/p&gt;
 &lt;h2 id=&#34;rules&#34;&gt;Rules&lt;/h2&gt;
 &lt;p&gt;Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.&lt;/p&gt;
@@ -750,9 +750,9 @@ Even if there are not four players all four sets of face cards (minus aces) are 
     </item>
     <item>
       <title>Why DrupalCon</title>
-      <link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</link>
+      <link>http://localhost:1313/posts/2018/02/20/why-drupalcon/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</guid>
+      <guid>http://localhost:1313/posts/2018/02/20/why-drupalcon/</guid>
       <description>&lt;h1 id=&#34;collaboration-and-contribution-at-drupalcon&#34;&gt;Collaboration and Contribution at DrupalCon&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.drupal.org/&#34;&gt;Drupal&lt;/a&gt; is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal advocates and aficionados convene to teach and learn from each other. What better way to do that than at DrupalCon?&lt;/p&gt;
 &lt;h2 id=&#34;what-is-drupalcon&#34;&gt;What is DrupalCon?&lt;/h2&gt;
@@ -771,9 +771,9 @@ Even if there are not four players all four sets of face cards (minus aces) are 
     </item>
     <item>
       <title>Rearchitecting for Drupal 8; a DrupalCon Session</title>
-      <link>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</link>
+      <link>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</link>
       <pubDate>Thu, 15 Feb 2018 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</guid>
+      <guid>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</guid>
       <description>&lt;h1 id=&#34;rearchitecting-for-drupal-8&#34;&gt;Rearchitecting for Drupal 8&lt;/h1&gt;
 &lt;p&gt;This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.&lt;/p&gt;
 &lt;h2 id=&#34;in-case-you-are-wondering&#34;&gt;In case you are wondering&lt;/h2&gt;
@@ -1546,9 +1546,9 @@ DrupalCon.&lt;/p&gt;
     </item>
     <item>
       <title>Switching to Celsius from Fahrenheit for normal people</title>
-      <link>https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</link>
+      <link>http://localhost:1313/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</link>
       <pubDate>Sun, 23 Apr 2017 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</guid>
+      <guid>http://localhost:1313/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</guid>
       <description>&lt;p&gt;TLDR;&lt;/p&gt;
 &lt;p&gt;For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know.&lt;/p&gt;
 &lt;p&gt;[](This comment is here to try and keep the liquid template engine that my blog runs on from truncating in the middle of the next table and thus breaking the layout of my river pages. Please disregard this text, liquid has a limitation in that it doesn&amp;rsquo;t have a fix html or any html stipping that isn&amp;rsquo;t as heavy handed as remove everything. I want to keep some of my styling so I am adding this)&lt;/p&gt;
@@ -1722,9 +1722,9 @@ DrupalCon.&lt;/p&gt;
     </item>
     <item>
       <title>My Dilemma; What Technology to Pursue</title>
-      <link>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link>
+      <link>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link>
       <pubDate>Mon, 21 Nov 2016 00:00:00 &#43;0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid>
+      <guid>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid>
       <description>&lt;p&gt;Be warned, this is a rant.&lt;/p&gt;
 &lt;p&gt;I have a Dilemma about what to focus on learning. I will always explore technology. I will always study, this is my nature. As God has built us, I will always work. This is not a question of what tech I will use here and there. Or what tech I will dabble in as an aside. I need another focus, I have been doing Drupal and php for a long time &amp;ndash;now is not time to move on, just time to hedge my speciality.&lt;/p&gt;
 &lt;h1 id=&#34;my-dilemma&#34;&gt;My dilemma&lt;/h1&gt;
