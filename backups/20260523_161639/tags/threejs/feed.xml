@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Threejs on Frank Robert Anderson</title>
+    <link>https://www.frobiovox.com/tags/threejs/</link>
+    <description>Recent content in Threejs on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Nov 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.frobiovox.com/tags/threejs/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebGL with three.js</title>
+      <link>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</link>
+      <pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</guid>
+      <description>&lt;p&gt;There is a spinning green cube somewhere on this page. It is not a video, it is not a gif &amp;ndash; it is being rendered in real-time by your browser&amp;rsquo;s GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.&lt;/p&gt;&#xA;&lt;p&gt;Everything is moving away from the compiled native app and over to the web browser. This has the advantage of giving users (those not using IE) the same experience no matter what platform the webapp is running on. One relatively new api that has come out of this shift is WebGL.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

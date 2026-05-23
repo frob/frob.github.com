@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Robert Anderson</title>
+    <meta name="description" content="Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Cutive+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+    
+        
+    
+</head>
+<body>
+    <div class="not-footer">
+        <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            
+            <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+            
+
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+                
+                <p class="site-description">I am a Developer who does web good and likes to do other stuff good too.</p>
+                
+            </div>
+        </header>
+
+        <nav>
+            
+            <a href="/">Blog</a>
+            
+            <a href="/tags/tutorial/">Tutorials</a>
+            
+            <a href="/tags/rant/">Rants</a>
+            
+            <a href="/posts/">Everything</a>
+            
+            <a href="http://www.frankrobertanderson.com">Back to My Site</a>
+            
+        </nav>
+    </div>
+</div>
+
+        <main>
+            
+<div class="container">
+    <article class="post">
+        <h1>WebGL with three.js</h1>
+        <div class="date">November 15, 2014</div>
+
+        
+        <div class="description">Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then.</div>
+         
+        <div class="canonical">
+            Originally published at:
+            <a href="http://www.kwallcompany.com/blog/webgl-threejs">http://www.kwallcompany.com/blog/webgl-threejs</a>
+        </div>
+          
+        <div class="flex flex-wrap gap-1 mb-2">
+            
+            <span class="badge">threejs</span>
+            
+            <span class="badge">kwallcompany</span>
+            
+            <span class="badge">tutorial</span>
+            
+            <span class="badge">frontpage</span>
+            
+        </div>
+         <p>Everything is moving away from the compiled native app and over to a more naturally cross platform ehh, platform: the web browser. While this has the advantage of (those not using IE) to have the same experience no matter what platform the site (hence to forth to be known as the webapp) is running on. This does still have some limitations. One relitively new api that has come out of this is WebGL</p>
+<div id="screen-wrapper"></div>
+<p><a href="http://www.khronos.org/webgl/wiki/Main_Page" target="_blank">WebGL </a>is a way for web developers to directly access the <a href="http://www.opengl.org/" target="_blank">OpenGL </a>apis. WebGL has shown some remarkable adoption over the past few years and I have to think this is due to it being based on the very stable open apis from OpenGL. If you have used OpenGL (or any 3D programming) there is alot to do before anything can be rendered to the screen. I am not talking about art assets either, I am talking about templated boilerplate code that makes this stuff very tedios to start with. Luckily there are lots of Javascript people writing libraries so I don&rsquo;t have to rewrite the same boiler-plate code over and over again.</p>
+<p>##Enter Three.js</p>
+<p><a href="http://threejs.org/" target="_blank">Three.js is a boiler-plate framework for building WebGL</a> applications. It takes care of much of the work that normally comes from building 3D apps and you can get up and running with a few lines of code.</p>
+<p>The code below is used to draw the spinning cube you see above.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js&#34;</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">gt</span>;<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#960050;background-color:#1e0010">/script&amp;gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#a6e22e">script</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">gt</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scene</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Scene</span>();
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">camera</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">PerspectiveCamera</span>(<span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">640</span><span style="color:#f92672">/</span><span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">renderer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">WebGLRenderer</span>();
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">setSize</span>(<span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">480</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">setClearColor</span>(<span style="color:#ae81ff">0x000000</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">domElement</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body canvas&#34;</span>).<span style="color:#a6e22e">css</span>( {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;margin&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1em auto&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;display&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;block&#34;</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">geometry</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">BoxGeometry</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">material</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">MeshLambertMaterial</span>({<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0x00ff00</span>});
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cube</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Mesh</span>(<span style="color:#a6e22e">geometry</span>, <span style="color:#a6e22e">material</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Fog</span>(<span style="color:#ae81ff">0x000000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ambient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">AmbientLight</span>( <span style="color:#ae81ff">0x101030</span> );
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">directionalLight</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">DirectionalLight</span>( <span style="color:#ae81ff">0xffffff</span>, <span style="color:#ae81ff">0.5</span> );
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">directionalLight</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">set</span>( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">cube</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fog</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">ambient</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">directionalLight</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">camera</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">render</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">render</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">scene</span>, <span style="color:#a6e22e">camera</span>);
+</span></span><span style="display:flex;"><span>   };
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">render</span>();
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>;<span style="color:#960050;background-color:#1e0010">/script&amp;gt;</span>
+</span></span></code></pre></div><p>##Lets dive into the code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>This first line just loads the current release of three.js from a cdn.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scene</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Scene</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">camera</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">PerspectiveCamera</span>(<span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">640</span><span style="color:#f92672">/</span><span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">renderer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">WebGLRenderer</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">setSize</span>(<span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">480</span>);
+</span></span></code></pre></div><p>##Initialize!!</p>
+<p>First thing we do to initialize the scene, camera, and renderer.</p>
+<ul>
+<li><em>scene</em>
+<ul>
+<li>The scene is an object that controls the 3D space that is rendered.</li>
+</ul>
+</li>
+<li><em>camera</em>
+<ul>
+<li>The cammera controls how the scene is rendered. Options include:
+<ul>
+<li><strong>OrthographicCamera</strong> (no perspective, isometric view)</li>
+<li><strong>PerspectiveCamera</strong> (camera with perspective projection)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>renderer</em>
+<ul>
+<li>The renderer controls what is drawn on the screen and how. CanvasRenderer should be used in the case where WebGLRenderer is not supported. CanvasRenderer draws the scene as best as it can without GPU acceleration.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">domElement</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body canvas&#34;</span>).<span style="color:#a6e22e">css</span>( {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;margin&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1em auto&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;display&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;block&#34;</span>
+</span></span><span style="display:flex;"><span>  });
+</span></span></code></pre></div><p>The renderer will create a canvas DOM object to use to draw the scene to the browser window. However, you still have to add the canvas to the page or alternatively you can pass the canvas ellement to the renderer contructor. In this case we are using jQuery to prepend the canvas ellement into the body field of this article. We are also assigning some style to the canvas ellement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">geometry</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">BoxGeometry</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">material</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">MeshLambertMaterial</span>({<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0x00ff00</span>});
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cube</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Mesh</span>(<span style="color:#a6e22e">geometry</span>, <span style="color:#a6e22e">material</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Fog</span>(<span style="color:#ae81ff">0x000000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ambient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">AmbientLight</span>( <span style="color:#ae81ff">0x101030</span> );
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">directionalLight</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">DirectionalLight</span>( <span style="color:#ae81ff">0xffffff</span>, <span style="color:#ae81ff">0.5</span> );
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">directionalLight</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">set</span>( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span> );
+</span></span></code></pre></div><p>##geometry, material, and cube</p>
+<p>Geometry and matierials are used to define a renderable object in 3D space. The geometry defines the actual mesh of the object. The material defines how the object is seen. These two things are brought together to define the cube.</p>
+<p>Geomety is farily simple, the material is where things get interesting. Polygon count doesn&rsquo;t mean nearly as much as it used to; far more impresive things are made with shaders and materials are what define how the shader interacts with the object (in this case the cube). For this simple demo I used the MeshLamertMaterial. All that means is that the object will interact with lights. There are many different things that a tallented artist can do with lights and shaders on a simple two poly plane. That however, if far beyond the scope of this post. For more on the power of shaders watch this<a href="https://www.youtube.com/watch?v=GNO_CYUjMK8" target="_blank"> talk from JSConfUS on Shaders</a>.</p>
+<p>##fog, ambient, and directionalLight</p>
+<p>These are all made to make the visual more apealing. Fog creates a gradually increasing shadow (which cannot even be noticed on my cube), ambient is the natrual ambient lighting, and directionalLight is light that comes in from a set point. Light without direction has no shadows so this is important to the scene.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">cube</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fog</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">ambient</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">directionalLight</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">camera</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span></code></pre></div><p>##Add it all up</p>
+<p>Once everything is defined then we simply add everything to the scene. Fog is a property of the scene so it isn&rsquo;t added in the same way. Once everything is complete we set the cammera distance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">render</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">render</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">scene</span>, <span style="color:#a6e22e">camera</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>();
+</span></span></code></pre></div><p>##One more thing</p>
+<p>One more thing is required to make the scene update. If the scene had no movement then there would be no point in making it use realtime hardware processing. By creating the render function and then calling that function wth requestAnimationFrame and renderer.render we are creating the game loop and allowing updates to occur. This is why the cube is spinning.</p>
+
+    </article>
+</div>
+
+        </main>
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer>
+            <div class="social-icons">
+                <h3>Social Networks</h3>
+                
+                
+                <a href="/index.xml">RSS</a>
+            </div>
+
+            
+
+            <div class="copyright">
+                <p>&copy; 2026 Frank Robert Anderson</p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+    <script src="/js/links.js"></script>
+
+    
+    
+        
+            
+            <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+            
+            <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+            
+            <script src="/assets/js/2014-11-15-webgl.js"></script>
+            
+        
+    
+</body>
+</html>
