@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/ai/</link>
+    <link>http://localhost:1313/tags/ai/</link>
     <description>Recent content in Ai on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/ai/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ai/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Content gatekeeping in a GenAI world</title>
-      <link>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</link>
+      <link>http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</link>
       <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</guid>
-      <description>&lt;p&gt;Let me start with a bit of history. It might seem like a hard thing for today&amp;rsquo;s generation to understand, but content used to cost money. Especially, novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to Journals or Magazines. An Encyclopedia set was an expensive necessity before the age when, most, all writen content became free.&lt;/p&gt;&#xA;&lt;p&gt;It was in this time that the foundation of the World Wide Web where being layed in the internet protocol that would become http &amp;ndash;the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for &amp;ldquo;Payment Required&amp;rdquo; responses that has gone unused for 30 years.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</guid>
+      <description>&lt;p&gt;Let me start with a bit of history. It might seem like a hard thing for today&amp;rsquo;s generation to understand, but content used to cost money &amp;ndash; especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.&lt;/p&gt;&#xA;&lt;p&gt;It was in this time that the foundations of the World Wide Web were being laid in the internet protocol that would become http &amp;ndash; the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for &amp;ldquo;Payment Required&amp;rdquo; responses that has gone unused for 30 years.&lt;/p&gt;</description>
     </item>
     <item>
       <title>An experienced developers view on writing software in the age of vibe coding and generative ai</title>
-      <link>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link>
+      <link>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid>
+      <guid>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid>
       <description>&lt;h2 id=&#34;i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks&#34;&gt;I have spent many tokens building with AI in many different ways and using different stacks&lt;/h2&gt;&#xA;&lt;p&gt;I have seen a recent trend revived among software developers. This is the belief that the productivity of a Software Engineer should (or can be) measured in lines of code per week. This is a metric that was, largely, discarded by Software Engineers 50 years ago. The truth of the matter is that every line of code is a liability. This liability used to be mitigated by the time it took skilled and experienced people to plan, design, and write the code. These were people who had accumulated enough &lt;strong&gt;passive knowledge&lt;/strong&gt; to instinctively recognize when something was wrong, and enough &lt;strong&gt;active knowledge&lt;/strong&gt; to make deliberate, informed decisions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting XDebug working with the Zed editor, starring Claude</title>
-      <link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
+      <link>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
+      <guid>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
       <description>&lt;h1 id=&#34;zed-ide-and-xdebug&#34;&gt;Zed IDE and Xdebug&lt;/h1&gt;&#xA;&lt;p&gt;Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-zed&#34;&gt;Why Zed&lt;/h2&gt;&#xA;&lt;p&gt;The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.&lt;/p&gt;</description>
     </item>
   </channel>
