@@ -4,6 +4,11 @@ title = "My Hugo Site"
 theme = "frobiovox"
 enableRobotsTXT = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [permalinks]
   posts = "/posts/:year/:month/:day/:slug/"
 

@@ -106,7 +106,7 @@
                 
                 
                 <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
-                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="3000" aria-hidden="true"></p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
                 
             </div>
         </header>
@@ -143,13 +143,12 @@
             
 <div class="container">
     <article class="post">
+        
         <h1>Altering Entity Field Queries for JOINS ORs and Profit</h1>
         <div class="date">
             <time datetime="2015-11-11T00:00:00Z">November 11, 2015</time>
             
         </div>
-
-        
          
         <div class="flex flex-wrap gap-1 mb-2">
             
@@ -162,7 +161,24 @@
             <span class="badge">quarzack13</span>
             
         </div>
-         <p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
+        
+        
+
+        <p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
+            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F11%2F11%2Faltering-entity-field-querys-for-joins-ors-and-profit%2F" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F11%2F11%2Faltering-entity-field-querys-for-joins-ors-and-profit%2F" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F11%2F11%2Faltering-entity-field-querys-for-joins-ors-and-profit%2F" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2015%2F11%2F11%2Faltering-entity-field-querys-for-joins-ors-and-profit%2F" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>
+
+            
 <p>I have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&rsquo;s hook and alter architecture.</p>
 <h2 id="simple-entityfieldquery">Simple EntityFieldQuery</h2>
 <p>For our example we will start with a simple EntityFieldQuery for getting a list of nodes.</p>
@@ -278,6 +294,7 @@
 
     <script src="/js/links.js"></script>
     <script src="/js/site-description.js"></script>
+    
 
     
     

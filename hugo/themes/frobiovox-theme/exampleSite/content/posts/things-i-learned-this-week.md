@@ -9,6 +9,8 @@ tags:
   - css
   - tooling
   - frontpage
+thumbnail: "https://placecats.com/300/200"
+thumbnail_alt: "A curious cat poking its head into the frame"
 ---
 
 Every week I keep a running list of "huh, didn't know that" moments. Most of them are small. Here's this week's, in the order I bumped into them.

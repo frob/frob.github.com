@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Hugo Site</title>
     <meta name="description" content="Living reference for every component and type style in the Frobiovox theme.">
-    <link rel="canonical" href="https://example.org/styleguide/">
-    <link rel="alternate" type="text/markdown" href="https://example.org/styleguide/index.md">
+    <link rel="canonical" href="http://localhost:1313/styleguide/">
+    <link rel="alternate" type="text/markdown" href="http://localhost:1313/styleguide/index.md">
     
 <meta property="og:title" content="Style Guide | My Hugo Site">
 <meta property="og:description" content="Living reference for every component and type style in the Frobiovox theme.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://example.org/styleguide/">
+<meta property="og:url" content="http://localhost:1313/styleguide/">
 <meta property="og:site_name" content="My Hugo Site">
-<meta property="og:image" content="https://example.org/images/avatar.png">
+<meta property="og:image" content="http://localhost:1313/images/avatar.png">
 <meta property="article:published_time" content="2026-05-12T00:00:00Z">
 <meta property="article:modified_time" content="2026-05-12T00:00:00Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Style Guide | My Hugo Site">
 <meta name="twitter:description" content="Living reference for every component and type style in the Frobiovox theme.">
-<meta name="twitter:image" content="https://example.org/images/avatar.png">
+<meta name="twitter:image" content="http://localhost:1313/images/avatar.png">
 <meta name="twitter:site" content="@yourusername">
 <meta name="twitter:creator" content="@yourusername">
 
@@ -41,18 +41,18 @@
   "description": "Living reference for every component and type style in the Frobiovox theme.",
   "headline": "Style Guide",
   "image": "/images/avatar.png",
-  "mainEntityOfPage": "https://example.org/styleguide/",
+  "mainEntityOfPage": "http://localhost:1313/styleguide/",
   "publisher": {
     "@type": "Organization",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://example.org/images/avatar.png"
+      "url": "http://localhost:1313/images/avatar.png"
     },
     "name": "My Hugo Site"
   },
-  "timeRequired": "PT3M",
-  "url": "https://example.org/styleguide/",
-  "wordCount": 478
+  "timeRequired": "PT6M",
+  "url": "http://localhost:1313/styleguide/",
+  "wordCount": 1256
 }
 </script><script type="application/ld+json">
 {
@@ -61,13 +61,13 @@
   "itemListElement": [
     {
       "@type": "ListItem",
-      "item": "https://example.org/",
+      "item": "http://localhost:1313/",
       "name": "Home",
       "position": 1
     },
     {
       "@type": "ListItem",
-      "item": "https://example.org/styleguide/",
+      "item": "http://localhost:1313/styleguide/",
       "name": "Style Guide",
       "position": 2
     }
@@ -123,14 +123,16 @@
             
 <div class="container">
     <article class="post">
+        
         <h1>Style Guide</h1>
         <div class="date">
             <time datetime="2026-05-12T00:00:00Z">May 12, 2026</time>
             
         </div>
-
+         
         
-          <p>This page demonstrates every visual element defined in <code>DESIGN.md</code>. If you change a token or a component, check this page renders correctly before merging.</p>
+
+        <p>This page demonstrates every visual element defined in <code>DESIGN.md</code>. If you change a token or a component, check this page renders correctly before merging.</p>
 <h2 id="typography">Typography</h2>
 <h1 id="heading-1--vt323-40px">Heading 1 — VT323, 40px</h1>
 <h2 id="heading-2--ibm-plex-sans-24px">Heading 2 — IBM Plex Sans, 24px</h2>
@@ -141,22 +143,78 @@
 <p>A blockquote sits inside the column with a 2px rule on the left, italic, and a slightly larger size. Use it for pulled quotes, not for asides or callouts.</p>
 </blockquote>
 <p>Inline <code>code</code> snippets render in the default monospace, no background tint. For fenced code blocks see the Code section below.</p>
-<h2 id="color">Color</h2>
+<h2 id="hero-banner">Hero banner</h2>
+<p>When a post sets <code>hero</code> in frontmatter, the title, date, category, and tags are overlaid on the image with a bottom-anchored gradient scrim. The scrim keeps the text legible regardless of the image behind it.</p>
+<div class="post-hero-wrap">
+  <img class="post-hero" src="https://placecats.com/1200/420" alt="Hero banner demo">
+  <div class="post-hero-overlay">
+    <h1 class="post-hero-title">An Example Post Title</h1>
+    <div class="post-hero-meta">
+      <time datetime="2026-05-23">May 23, 2026</time> · Updated <time datetime="2026-05-24">May 24, 2026</time>
+    </div>
+    <div class="post-hero-badges">
+      <span class="badge badge-outline">Field Notes</span>
+    </div>
+    <div class="post-hero-badges flex flex-wrap gap-1">
+      <span class="badge">cats</span>
+      <span class="badge">photography</span>
+      <span class="badge">lorem</span>
+    </div>
+  </div>
+</div>
+<p>Frontmatter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">hero</span>: <span style="color:#e6db74">&#34;https://placecats.com/1200/420&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hero_alt</span>: <span style="color:#e6db74">&#34;A cat stretched across a sunlit windowsill&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hero_caption</span>: <span style="color:#e6db74">&#34;Optional caption — sits below the image in muted italic.&#34;</span>
+</span></span></code></pre></div><h2 id="color">Color</h2>
 <p>The palette is small on purpose. If you find yourself reaching for a color outside this list, stop and reconsider.</p>
-<!-- raw HTML omitted -->
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 1em 0;">
+  <div style="background:#eee; padding:1em; text-align:center; color:#333; border:1px solid #ddd;">#eee<br><small>page bg</small></div>
+  <div style="background:#fff; padding:1em; text-align:center; color:#333; border:1px solid #ddd;">#fff<br><small>content</small></div>
+  <div style="background:#333; padding:1em; text-align:center; color:#fff;">#333<br><small>ink</small></div>
+  <div style="background:#222; padding:1em; text-align:center; color:#fff;">#222<br><small>heading</small></div>
+  <div style="background:#666; padding:1em; text-align:center; color:#fff;">#666<br><small>muted</small></div>
+  <div style="background:#ddd; padding:1em; text-align:center; color:#333;">#ddd<br><small>border</small></div>
+  <div style="background:#4183c4; padding:1em; text-align:center; color:#fff;">#4183c4<br><small>link</small></div>
+  <div style="background:#000; padding:1em; text-align:center; color:#fff;">#000<br><small>nav strip</small></div>
+</div>
 <h2 id="badges">Badges</h2>
 <p>Used for categories and tags on post pages and listing cards.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div class="flex flex-wrap gap-1 mb-2">
+  <span class="badge">default</span>
+  <span class="badge">threejs</span>
+  <span class="badge">tutorial</span>
+  <span class="badge">frontpage</span>
+</div>
+<div class="mb-2">
+  <span class="badge badge-outline">Outline / category</span>
+</div>
 <h2 id="cards">Cards</h2>
 <p>Cards are how posts surface on list pages. The whole card is the affordance; the title is the link.</p>
-<!-- raw HTML omitted -->
+<div class="card" style="max-width: 100%; margin: 1em 0;">
+  <div class="card-header">
+    <div class="card-title"><a href="#">Example post title goes right here</a></div>
+    <div class="card-description">A one-line description sits in muted-foreground so the title stays dominant.</div>
+  </div>
+  <div class="card-content">
+    <div class="date">January 12, 2026</div>
+    <div class="mb-2 mt-2">
+      <span class="badge badge-outline">New Web</span>
+    </div>
+    <div class="flex flex-wrap gap-1 mb-2">
+      <span class="badge">threejs</span>
+      <span class="badge">tutorial</span>
+    </div>
+  </div>
+</div>
 <h2 id="author-byline">Author byline</h2>
 <p>VT323 on a dark block — same visual contract as the read-more button.</p>
-<p><!-- raw HTML omitted -->posted by frobiovox<!-- raw HTML omitted --></p>
+<p><span class="author-info">posted by frobiovox</span></p>
 <h2 id="inline-aside">Inline aside</h2>
 <p>A terminal-prompt-styled aside. Use sparingly for editorial notes inline with prose.</p>
-<!-- raw HTML omitted -->
+<aside class="inline">
+This is what an inline aside looks like — a muted block flagged with a giant <code>&gt;</code> prompt glyph on the left. It is for short editorial notes that interrupt the main read without breaking it.
+</aside>
 <h2 id="lists">Lists</h2>
 <p>Unordered:</p>
 <ul>
@@ -191,7 +249,40 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">animate</span>();
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># task verify:llm — runs the JSON-LD / llms.txt sanity checks in a container</span>
 </span></span><span style="display:flex;"><span>task verify:llm
-</span></span></code></pre></div><h2 id="tables">Tables</h2>
+</span></span></code></pre></div><h2 id="images">Images</h2>
+<p>Four image roles are supported. All cat photos below are Creative Commons placeholders served from <a href="https://placecats.com">placecats.com</a>.</p>
+<h3 id="hero-banner-1">Hero banner</h3>
+<p>Set via post frontmatter (<code>hero</code>, optional <code>hero_alt</code>, optional <code>hero_caption</code>). Rendered at the top of a single-post page, above the title. On desktop it bleeds wider than the 740 px column for emphasis.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">hero</span>: <span style="color:#e6db74">&#34;https://placecats.com/1200/420&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hero_alt</span>: <span style="color:#e6db74">&#34;A cat lounging across a sunlit windowsill&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">hero_caption</span>: <span style="color:#e6db74">&#34;Optional caption sits below the image in muted italic.&#34;</span>
+</span></span></code></pre></div><p>See <a href="/posts/the-quiet-tao-of-cat-naps/">The Quiet Tao of Cat Naps</a> for a live example.</p>
+<h3 id="list-thumbnail-optional">List thumbnail (optional)</h3>
+<p>Set via post frontmatter (<code>thumbnail</code>, optional <code>thumbnail_alt</code>). Rendered next to the post entry on list pages. Floats right on desktop, stacks on mobile.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">thumbnail</span>: <span style="color:#e6db74">&#34;https://placecats.com/300/200&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">thumbnail_alt</span>: <span style="color:#e6db74">&#34;A tabby kitten mid-pounce&#34;</span>
+</span></span></code></pre></div><h3 id="full-width-block-image">Full-width block image</h3>
+<p>For images that interrupt the prose between paragraphs. Use <code>class=&quot;image-full&quot;</code> on a plain <code>&lt;img&gt;</code>, or wrap in <code>&lt;figure class=&quot;image-full&quot;&gt;</code> to add a caption. On desktop, full-width images extend beyond the column for visual rhythm.</p>
+<img class="image-full" src="https://placecats.com/900/500" alt="A black cat staring directly into the camera">
+<figure class="image-full">
+  <img src="https://placecats.com/g/900/500" alt="A grey tabby curled up on a stack of books">
+  <figcaption>A figcaption sits below the image, centered, in muted italic.</figcaption>
+</figure>
+<h3 id="inline-left--or-right-aligned">Inline (left- or right-aligned)</h3>
+<p>For smaller images that paragraphs flow around. Use <code>class=&quot;image-inline-left&quot;</code> or <code>class=&quot;image-inline-right&quot;</code>. They stack above the paragraph on mobile.</p>
+<img class="image-inline-left" src="https://placecats.com/300/300" alt="A ginger cat sitting upright">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<img class="image-inline-right" src="https://placecats.com/g/300/300" alt="A white kitten peeking over a blanket">
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<h2 id="diagrams">Diagrams</h2>
+<p>Mermaid fenced code blocks render as inline SVG. The Mermaid runtime is only loaded on pages that contain a diagram.</p>
+<pre class="mermaid">flowchart LR
+    A[Write post] --&gt; B{Has diagram?}
+    B -- yes --&gt; C[Render via Mermaid]
+    B -- no --&gt; D[Skip runtime]
+    C --&gt; E[Ship]
+    D --&gt; E</pre>
+<h2 id="tables">Tables</h2>
 <table>
   <thead>
       <tr>
@@ -223,6 +314,77 @@
       </tr>
   </tbody>
 </table>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Token</th>
+          <th>Value</th>
+          <th>Surface</th>
+          <th>Used by</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Page background</td>
+          <td><code>#eee</code></td>
+          <td>Page chrome</td>
+          <td><code>body</code>, footer, asides, code-pill hover</td>
+          <td>The &ldquo;outside the sheet&rdquo; color. Never use behind body copy.</td>
+      </tr>
+      <tr>
+          <td>Content surface</td>
+          <td><code>#fff</code></td>
+          <td>Reading area</td>
+          <td><code>.not-footer</code> content sheet, cards</td>
+          <td>Always paired with <code>#333</code> ink for AA contrast at body size.</td>
+      </tr>
+      <tr>
+          <td>Ink</td>
+          <td><code>#333</code></td>
+          <td>Text</td>
+          <td>Body copy, list items, table cells</td>
+          <td>Soft black — avoids the hard-bordered feel of pure <code>#000</code>.</td>
+      </tr>
+      <tr>
+          <td>Heading</td>
+          <td><code>#222</code></td>
+          <td>Text</td>
+          <td>All <code>h1</code>–<code>h6</code></td>
+          <td>One step darker than ink so headings hold the page rhythm.</td>
+      </tr>
+      <tr>
+          <td>Muted</td>
+          <td><code>#666</code></td>
+          <td>Text, borders</td>
+          <td><code>h4</code>, dates, captions, blockquote text</td>
+          <td>Reach for this before lightening ink — keeps the palette small.</td>
+      </tr>
+      <tr>
+          <td>Border</td>
+          <td><code>#ddd</code></td>
+          <td>Lines</td>
+          <td>Card borders, summarize pill outlines</td>
+          <td>Single hairline weight; combined with <code>1px</code> only.</td>
+      </tr>
+      <tr>
+          <td>Link</td>
+          <td><code>#4183c4</code></td>
+          <td>Interactive</td>
+          <td>All links, hover affordances</td>
+          <td>The only saturated color in the system. Use it sparingly.</td>
+      </tr>
+      <tr>
+          <td>Nav strip</td>
+          <td><code>#000</code></td>
+          <td>Nav background</td>
+          <td>Site nav bar, author byline pill</td>
+          <td>The one place pure black is allowed — sets a hard typographic edge.</td>
+      </tr>
+  </tbody>
+</table>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
 <h2 id="icons">Icons</h2>
 <p>The footer carries three icons at 40×40. The RSS icon reuses the site mark rather than the standard orange RSS glyph — the site&rsquo;s identity <em>is</em> its feed.</p>
 <p>See the footer of this page for the rendered set.</p>
@@ -298,6 +460,9 @@
 
     <script src="/js/links.js"></script>
     <script src="/js/site-description.js"></script>
+    
+    <script type="module" src="/js/mermaid.js"></script>
+    
 
     
     

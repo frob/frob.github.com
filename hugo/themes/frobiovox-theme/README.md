@@ -12,6 +12,7 @@ A Hugo theme based on the design of [www.frobiovox.com](https://www.frobiovox.co
 - Social media links and blogroll in footer
 - External links automatically open in new tabs
 - LLM-friendly outputs: `llms.txt` / `llms-full.txt`, per-page markdown companions, and `schema.org` JSON-LD in `<head>`
+- Four image roles for posts: hero banner, list thumbnail, full-width block (with optional caption), and inline left/right floats. Hero, full-width, and Mermaid diagrams bleed wider than the 740 px column on desktop (≥1024 px) for vertical interest.
 
 ## Requirements
 
@@ -151,6 +152,23 @@ This produces:
 ```bash
 task verify:llm   # runs scripts/verify_llm.py in a python:3-alpine container
 ```
+
+## Images in posts
+
+Posts support four image roles. See the [Style Guide](exampleSite/content/styleguide.md) and the example post `exampleSite/content/posts/the-quiet-tao-of-cat-naps.md` for live demos.
+
+| Role | How to set | Where it renders |
+| ---- | ---------- | ---------------- |
+| **Hero banner** | `hero` (+ optional `hero_alt`, `hero_caption`) in post frontmatter | Above the title on the single-post page |
+| **List thumbnail** | `thumbnail` (+ optional `thumbnail_alt`) in post frontmatter | Floated next to the entry on list pages |
+| **Full-width block** | `<img class="image-full">` or `<figure class="image-full">…<figcaption>…</figcaption></figure>` in Markdown | Between paragraphs, bleeds wide on desktop |
+| **Inline float** | `<img class="image-inline-left">` or `<img class="image-inline-right">` | Paragraphs wrap around it; stacks on mobile |
+
+Raw HTML in Markdown requires `markup.goldmark.renderer.unsafe = true` in your site config — the `exampleSite` config has this enabled.
+
+## Image credits
+
+The cat photos used in `exampleSite/` (style guide and example posts) are Creative Commons placeholders served from [placecats.com](https://placecats.com), a free service in the spirit of the original placekitten.com. Photos are contributed by the placecats community under Creative Commons licenses. Swap the URLs for your own assets before publishing.
 
 ## License
 

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://example.org/posts/2024/01/25/webgl-with-three.js/ |
+| url | http://localhost:1313/posts/2024/01/25/webgl-with-three.js/ |
 | date | 2024-01-25 |
 | category | New Web |
 | tags | threejs, kwallcompany, tutorial, frontpage |

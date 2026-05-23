@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://example.org/posts/2024/01/20/typography-fonts-and-why-monospace-headings-work-so-well-for-developer-blogs/ |
+| url | http://localhost:1313/posts/2024/01/20/typography-fonts-and-why-monospace-headings-work-so-well-for-developer-blogs/ |
 | date | 2024-01-20 |
 
 

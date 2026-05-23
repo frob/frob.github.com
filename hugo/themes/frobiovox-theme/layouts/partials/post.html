@@ -1,4 +1,7 @@
 <article class="post">
+    {{ with .Params.thumbnail }}
+    <a href="{{ $.RelPermalink }}"><img class="post-thumbnail" src="{{ . }}" alt="{{ default $.Title $.Params.thumbnail_alt }}" loading="lazy"></a>
+    {{ end }}
     <h2 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <p class="author-info">Written on {{ .Date.Format "January 2, 2006" }}</p>
     {{ if .Params.description }}
