@@ -75,6 +75,8 @@
       "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
       "author" $author
       "publisher" $publisher
+      "wordCount" .WordCount
+      "timeRequired" (printf "PT%dM" .ReadingTime)
     -}}
     {{- with .Description }}{{- $bp = merge $bp (dict "description" .) -}}{{- end -}}
     {{- with $img }}{{- $bp = merge $bp (dict "image" .) -}}{{- end -}}
@@ -108,5 +110,31 @@
 {{- if $obj }}
 <script type="application/ld+json">
 {{ $obj | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- end -}}
+
+{{- /* BreadcrumbList — emitted for non-home pages. */ -}}
+{{- if not .IsHome -}}
+  {{- $crumbs := slice (dict "name" "Home" "url" (strings.TrimRight "/" $siteURL | printf "%s/")) -}}
+  {{- if eq .Kind "page" -}}
+    {{- with .CurrentSection -}}{{- if not .IsHome -}}
+      {{- $crumbs = $crumbs | append (dict "name" .Title "url" .Permalink) -}}
+    {{- end -}}{{- end -}}
+    {{- $crumbs = $crumbs | append (dict "name" .Title "url" .Permalink) -}}
+  {{- else if eq .Kind "term" -}}
+    {{- with .Parent -}}
+      {{- $crumbs = $crumbs | append (dict "name" .Title "url" .Permalink) -}}
+    {{- end -}}
+    {{- $crumbs = $crumbs | append (dict "name" .Title "url" .Permalink) -}}
+  {{- else -}}
+    {{- $crumbs = $crumbs | append (dict "name" .Title "url" .Permalink) -}}
+  {{- end -}}
+  {{- $items := slice -}}
+  {{- range $i, $c := $crumbs -}}
+    {{- $items = $items | append (dict "@type" "ListItem" "position" (add $i 1) "name" $c.name "item" $c.url) -}}
+  {{- end -}}
+  {{- $bc := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items -}}
+<script type="application/ld+json">
+{{ $bc | jsonify (dict "indent" "  ") | safeJS }}
 </script>
 {{- end -}}

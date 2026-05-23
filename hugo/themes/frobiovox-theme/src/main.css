@@ -171,7 +171,6 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: "Cutive Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #222;
         font-weight: bolder;
         line-height: 1.4;
@@ -183,9 +182,16 @@
         }
     }
 
+    h2, h3, h4, h5, h6 {
+        font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
     h1 {
-        font-size: 30px;
+        font-family: "VT323", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 40px;
+        font-weight: normal;
         line-height: 1.1em;
+        letter-spacing: 1px;
 
         & a { color: inherit; }
     }
@@ -242,7 +248,10 @@
 }
 
 .post .title {
-    font-size: 30px;
+    font-family: "VT323", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 1px;
     color: #000;
     margin-bottom: 0.35em;
 
@@ -518,4 +527,16 @@ aside.inline:before {
     width: 40px;
     height: 40px;
     display: inline-block;
+}
+
+/* Pixel-font crispness: disable antialiasing on elements that render in VT323 */
+h1,
+.post .title,
+.site-name,
+.navigation-menu,
+.post .author-info,
+.post .read-more {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    font-smooth: never;
 }

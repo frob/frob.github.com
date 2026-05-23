@@ -75,7 +75,7 @@
     {
       "label": "Post - First Post",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://frobiovox-nginx/posts/first-post/",
+      "url": "http://frobiovox-nginx/posts/2024/01/15/getting-started-with-the-frobiovox-theme-for-hugo-static-sites/",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
@@ -94,7 +94,7 @@
     {
       "label": "Post - Second Post",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://frobiovox-nginx/posts/second-post/",
+      "url": "http://frobiovox-nginx/posts/2024/01/20/typography-fonts-and-why-monospace-headings-work-so-well-for-developer-blogs/",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
@@ -113,7 +113,7 @@
     {
       "label": "Post - WebGL Example",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://frobiovox-nginx/posts/webgl-example/",
+      "url": "http://frobiovox-nginx/posts/2024/01/25/webgl-with-three.js/",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",

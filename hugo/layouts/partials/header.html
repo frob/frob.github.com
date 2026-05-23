@@ -1,0 +1,32 @@
+<div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            {{ with .Site.Params.avatar }}
+            <a href="{{ "/" | relURL }}" class="site-avatar"><img src="{{ . }}" /></a>
+            {{ end }}
+
+            <div class="site-info">
+                <h1 class="site-name"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+                {{ $descriptions := .Site.Params.descriptions | default slice }}
+                {{ if gt (len $descriptions) 1 }}
+                <p class="site-description sr-only">{{ .Site.Params.description }}</p>
+                <p class="site-description site-description-rotating" data-rotate="{{ $descriptions | jsonify }}" data-interval="{{ .Site.Params.description_rotation_ms | default 3000 }}" aria-hidden="true"></p>
+                {{ else }}
+                {{ with .Site.Params.description }}
+                <p class="site-description">{{ . }}</p>
+                {{ end }}
+                {{ end }}
+            </div>
+        </header>
+    </div>
+
+    <nav class="navigation-menu">
+        <ul class="navigation-menu-list container">
+            {{ range .Site.Menus.main }}
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+</div>

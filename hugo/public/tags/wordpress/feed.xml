@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/wordpress/</link>
+    <link>https://www.frobiovox.com/tags/wordpress/</link>
     <description>Recent content in Wordpress on Frank Robert Anderson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 27 Jan 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/wordpress/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.frobiovox.com/tags/wordpress/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Drupal or Wordpress? Why not Jekyll.</title>
-      <link>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
+      <link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
       <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
+      <guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
       <description>&lt;p&gt;If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&amp;rsquo;t call Jekyll a Content Management System.&lt;/p&gt;&#xA;&lt;p&gt;So if Jekyll isn&amp;rsquo;t a CMS then what is it? Jekyll is a &amp;ldquo;blog aware&amp;rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.&lt;/p&gt;</description>
     </item>
   </channel>

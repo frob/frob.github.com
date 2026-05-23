@@ -1,12 +1,13 @@
 name = "Frobiovox"
 license = "MIT"
-licenselink = "https://github.com/yourusername/frobiovox-theme/blob/main/LICENSE"
+licenselink = "https://gitlab.com/frob/frobiovox-theme/blob/main/LICENSE"
 description = "A Hugo theme"
-homepage = "https://github.com/yourusername/frobiovox-theme"
+descriptions = ["one", "two"]
+homepage = "https://gitlab.com/frob/frobiovox-theme"
 tags = ["blog", "responsive", "minimal"]
 features = ["responsive", "clean design"]
 min_version = "0.120.0"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Frank Anderson"
+  homepage = "www.frankrobertanderson.com"

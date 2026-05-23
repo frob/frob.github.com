@@ -7,8 +7,13 @@
 
             <div class="site-info">
                 <h1 class="site-name"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+                {{ if and .Site.Params.descriptions (gt (len .Site.Params.descriptions) 1) }}
+                <p class="site-description sr-only">{{ .Site.Params.description }}</p>
+                <p class="site-description site-description-rotating" data-rotate="{{ .Site.Params.descriptions | jsonify }}" data-interval="{{ .Site.Params.description_rotation_ms | default 3000 }}" aria-hidden="true"></p>
+                {{ else }}
                 {{ with .Site.Params.description }}
                 <p class="site-description">{{ . }}</p>
+                {{ end }}
                 {{ end }}
             </div>
         </header>
