@@ -42,6 +42,10 @@ enableRobotsTXT = true
     url = "https://example.com"
 
 [outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "feed"
+    rel = "alternate"
   [outputFormats.LLMS]
     mediaType = "text/plain"
     baseName = "llms"

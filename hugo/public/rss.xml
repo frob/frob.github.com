@@ -32,6 +32,7 @@ S--&gt;&gt;A: 200 OK (article body)
 &lt;/pre&gt;&lt;/div&gt;&lt;style&gt;
 .mermaid-wrap{max-width:100%;margin:2rem auto;text-align:center;overflow-x:auto}
 .mermaid-wrap pre.mermaid{background:transparent;padding:0;margin:0;white-space:normal;font-family:inherit}
+.mermaid-wrap pre.mermaid svg{max-width:100% !important;height:auto !important}
 &lt;/style&gt;
 &lt;p&gt;Cloudflare&amp;rsquo;s &lt;a href="https://blog.cloudflare.com/introducing-pay-per-crawl/"&gt;pay-per-crawl marketplace&lt;/a&gt; sits on top of this, and the numbers are wild. &lt;a href="https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help"&gt;Cloudflare&amp;rsquo;s network is processing a billion HTTP 402 responses per day&lt;/a&gt;. AI scrapers visit a site at tens-of-thousands to one relative to the human traffic they send back, compared to a 2-to-1 ratio a decade ago. The unit economics of the open web finally, structurally, support charging.&lt;/p&gt;
 &lt;p&gt;And then there is &lt;a href="https://willscott.me/2025/10/04/ai-licensing-deals-search-visibility-in-2025/"&gt;RSL &amp;ndash; Really Simple Licensing&lt;/a&gt; &amp;ndash; which is robots.txt grown up. Instead of &amp;ldquo;allowed/disallowed,&amp;rdquo; sites declare &lt;em&gt;terms&lt;/em&gt; in machine-readable form: pay-per-crawl, pay-per-inference, flat subscription, or free with attribution. Reddit and Medium are early backers. Crawlers and agents can negotiate against the terms before they fetch.&lt;/p&gt;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on My Hugo Site</title>
+    <link>http://localhost:1313/tags/writing/</link>
+    <description>Recent content in Writing on My Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Feb 2026 09:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/writing/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A short note on naming things</title>
+      <link>http://localhost:1313/posts/2026/02/03/a-short-note-on-naming-things/</link>
+      <pubDate>Tue, 03 Feb 2026 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/02/03/a-short-note-on-naming-things/</guid>
+      <description>&lt;p&gt;The longer I write code, the more I think the best names are the ones nobody will quote at a conference. &lt;code&gt;count&lt;/code&gt;, &lt;code&gt;result&lt;/code&gt;, &lt;code&gt;item&lt;/code&gt;. Short, accurate, forgettable. The reader&amp;rsquo;s attention is finite, and every clever name spends some of it.&lt;/p&gt;&#xA;&lt;p&gt;Save the inventive names for the places where the concept is genuinely new — a module, a public function, a domain term. Inside a function, you almost never need a thesaurus. You need a noun and a context, and the context is the function itself.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

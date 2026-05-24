@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kwallcompany on My Hugo Site</title>
+    <link>http://localhost:1313/tags/kwallcompany/</link>
+    <description>Recent content in Kwallcompany on My Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jan 2024 10:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kwallcompany/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebGL with three.js</title>
+      <link>http://localhost:1313/posts/2024/01/25/webgl-with-three.js/</link>
+      <pubDate>Thu, 25 Jan 2024 10:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2024/01/25/webgl-with-three.js/</guid>
+      <description>&lt;p&gt;This is an example post demonstrating the new frontmatter structure compatible with Jekyll posts.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features-demonstrated&#34;&gt;Features Demonstrated&lt;/h2&gt;&#xA;&lt;p&gt;This post shows how the Hugo theme now supports:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;description&lt;/strong&gt;: A description field that appears in both the post and listings&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;canonical&lt;/strong&gt;: Link to the original publication URL&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;category&lt;/strong&gt;: Post categorization&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;tags&lt;/strong&gt;: Multiple tags for organizing content&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;assets&lt;/strong&gt;: Arrays for page-specific CSS and JavaScript files&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;assets-array&#34;&gt;Assets Array&lt;/h2&gt;&#xA;&lt;p&gt;The assets array allows you to include additional CSS and JavaScript files on a per-post basis:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

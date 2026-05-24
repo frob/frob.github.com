@@ -12,7 +12,9 @@ A Hugo theme based on the design of [www.frobiovox.com](https://www.frobiovox.co
 - Social media links and blogroll in footer
 - External links automatically open in new tabs
 - LLM-friendly outputs: `llms.txt` / `llms-full.txt`, per-page markdown companions, and `schema.org` JSON-LD in `<head>`
-- Four image roles for posts: hero banner, list thumbnail, full-width block (with optional caption), and inline left/right floats. Hero, full-width, and Mermaid diagrams bleed wider than the 740 px column on desktop (≥1024 px) for vertical interest.
+- Four image roles for posts: hero banner (with title/date/tags overlaid on a translucent scrim), list thumbnail, full-width block (with optional caption), and inline left/right floats
+- Golden-ratio breakout grid on desktop (≥1024 px): hero/full-width images, Mermaid, codeblocks, tables, headings, and inline floats step outside the 740 px reading column by φ-related amounts for vertical rhythm
+- Styled post tables with dark VT323 header bar, zebra rows, and content-sized centered layout that can grow to the full-width image width on desktop
 
 ## Requirements
 
@@ -159,12 +161,24 @@ Posts support four image roles. See the [Style Guide](exampleSite/content/styleg
 
 | Role | How to set | Where it renders |
 | ---- | ---------- | ---------------- |
-| **Hero banner** | `hero` (+ optional `hero_alt`, `hero_caption`) in post frontmatter | Above the title on the single-post page |
+| **Hero banner** | `hero` (+ optional `hero_alt`, `hero_caption`) in post frontmatter | Above the article on the single-post page; title, date, category, and tags are overlaid on the image with a bottom-anchored gradient scrim |
 | **List thumbnail** | `thumbnail` (+ optional `thumbnail_alt`) in post frontmatter | Floated next to the entry on list pages |
 | **Full-width block** | `<img class="image-full">` or `<figure class="image-full">…<figcaption>…</figcaption></figure>` in Markdown | Between paragraphs, bleeds wide on desktop |
 | **Inline float** | `<img class="image-inline-left">` or `<img class="image-inline-right">` | Paragraphs wrap around it; stacks on mobile |
 
 Raw HTML in Markdown requires `markup.goldmark.renderer.unsafe = true` in your site config — the `exampleSite` config has this enabled.
+
+### Desktop breakout (golden-ratio grid)
+
+On viewports ≥1024 px, several elements step outside the 740 px reading column for visual rhythm. Each step is one division by φ² (≈0.382) of the one above:
+
+| Element | Bleed per side |
+| ------- | -------------- |
+| Hero banner, full-width images, Mermaid diagrams, max-width of post tables | 180 px |
+| Codeblocks, inline `image-inline-left` / `image-inline-right` (outer edge only) | 69 px |
+| Headings (`h1`–`h6`, post titles) outdent | 26 px |
+
+Tables size to their content (`width: max-content`) and center via transform, so a small table stays compact while a wider one can spread to the full-width image width.
 
 ## Image credits
 
