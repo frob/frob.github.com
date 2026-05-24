@@ -1,5 +1,5 @@
 ['git@gitlab.com:frob/frobiovox-theme.git']
 url = 'git@gitlab.com:frob/frobiovox-theme.git'
 ref = '0.0.x'
-commit = 'c158f4a13a8b76cfac0d3f9e045ce8c271d0cf6d'
+commit = 'd0b29bbda2560331ddb849b0dcefc65b709454f4'
 path = 'hugo/themes/frobiovox-theme'

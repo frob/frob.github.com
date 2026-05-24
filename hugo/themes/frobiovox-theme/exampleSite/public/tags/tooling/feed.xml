@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tooling on My Hugo Site</title>
+    <link>http://localhost:1313/tags/tooling/</link>
+    <description>Recent content in Tooling on My Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Mar 2026 16:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tooling/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Things I learned this week</title>
+      <link>http://localhost:1313/posts/2026/03/18/things-i-learned-this-week/</link>
+      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/03/18/things-i-learned-this-week/</guid>
+      <description>&lt;p&gt;Every week I keep a running list of &amp;ldquo;huh, didn&amp;rsquo;t know that&amp;rdquo; moments. Most of them are small. Here&amp;rsquo;s this week&amp;rsquo;s, in the order I bumped into them.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hugo-output-formats-dont-hot-reload&#34;&gt;Hugo output formats don&amp;rsquo;t hot-reload&lt;/h2&gt;&#xA;&lt;p&gt;If you add a new output format to &lt;code&gt;hugo.toml&lt;/code&gt;, the dev server won&amp;rsquo;t pick it up live. You have to restart &lt;code&gt;hugo server&lt;/code&gt;. I spent fifteen minutes wondering why &lt;code&gt;/llms.txt&lt;/code&gt; was 404ing before I remembered that.&lt;/p&gt;&#xA;&lt;h2 id=&#34;safejs-is-required-for-json-ld&#34;&gt;&lt;code&gt;safeJS&lt;/code&gt; is required for JSON-LD&lt;/h2&gt;&#xA;&lt;p&gt;Go&amp;rsquo;s &lt;code&gt;html/template&lt;/code&gt; will happily JS-escape the JSON you put inside a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag, turning your object into a quoted string. You have to pipe through &lt;code&gt;safeJS&lt;/code&gt; after &lt;code&gt;jsonify&lt;/code&gt; so the runtime treats the output as already-safe JavaScript.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

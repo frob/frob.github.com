@@ -245,7 +245,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 
 ## Icons
 
-The footer carries three icons at 40×40. The RSS icon reuses the site mark rather than the standard orange RSS glyph — the site's identity *is* its feed.
+The footer carries three icons at 40×40, all monochrome except the brand-blue Twitter mark.
 
 See the footer of this page for the rendered set.
 

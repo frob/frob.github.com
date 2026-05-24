@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diagrams on My Hugo Site</title>
+    <link>http://localhost:1313/tags/diagrams/</link>
+    <description>Recent content in Diagrams on My Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/diagrams/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diagrams with Mermaid</title>
+      <link>http://localhost:1313/posts/2026/05/23/diagrams-with-mermaid/</link>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/05/23/diagrams-with-mermaid/</guid>
+      <description>&lt;p&gt;Most of the diagrams I want in a blog post are small — a flow, a sequence, the shape of a state machine. Reaching for Figma or draw.io for these is overkill. Mermaid lets me write them in the same fenced code blocks I already use for code.&lt;/p&gt;&#xA;&lt;h2 id=&#34;flowchart&#34;&gt;Flowchart&lt;/h2&gt;&#xA;&lt;p&gt;The publish path for a post in this repo:&lt;/p&gt;&#xA;&lt;pre class=&#34;mermaid&#34;&gt;flowchart LR&#xA;    Draft[Draft in Markdown] --&amp;gt; Commit[git commit]&#xA;    Commit --&amp;gt; Build[task build]&#xA;    Build --&amp;gt; Backstop{Backstop diff?}&#xA;    Backstop -- clean --&amp;gt; Deploy[Deploy]&#xA;    Backstop -- regression --&amp;gt; Fix[Fix and re-run]&#xA;    Fix --&amp;gt; Build&lt;/pre&gt;&#xA;&lt;h2 id=&#34;sequence&#34;&gt;Sequence&lt;/h2&gt;&#xA;&lt;p&gt;A request through the dev stack:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
