@@ -55,8 +55,27 @@ title = 'Frank Robert Anderson'
   baseName = "drupal"
   rel = "alternate"
 
+[outputFormats.LLMS]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  rel = "alternate"
+
+[outputFormats.LLMSFULL]
+  mediaType = "text/plain"
+  baseName = "llms-full"
+  isPlainText = true
+  rel = "alternate"
+
+[outputFormats.Markdown]
+  mediaType = "text/markdown"
+  isPlainText = true
+  rel = "alternate"
+
 [outputs]
-  home = ["HTML", "RSS", "RSSAlt", "DrupalRSS"]
+  home = ["HTML", "RSS", "RSSAlt", "DrupalRSS", "LLMS", "LLMSFULL"]
+  section = ["HTML", "RSS", "Markdown"]
+  page = ["HTML", "Markdown"]
 
 [[menus.main]]
   name = 'Blog'
