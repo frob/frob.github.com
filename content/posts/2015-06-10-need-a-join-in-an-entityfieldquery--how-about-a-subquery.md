@@ -8,7 +8,7 @@ tags:
     - tutorial
 ---
 
-I saw this over at [stackexchange](http://drupal.stackexchange.com/a/153695/17227) and I had to write about it.
+I saw this over at [stackexchange](http://drupal.stackexchange.com/a/153695/17227) and I had to write about it. EntityFieldQuery is the Drupal 7 way to fetch entities without writing raw SQL, but it has a well-known limitation: you cannot do arbitrary `JOIN`s the way you would with a normal `db_select()` query. That comes up the moment you try to filter users by role, since role assignments live in their own table rather than on the user entity itself. It turns out there is a clean way around this using a subquery, and it is worth knowing about because the same trick applies any time you need to filter an EntityFieldQuery against data that lives in another table.
 
 _**Shaddap and give me the code:**_
 
