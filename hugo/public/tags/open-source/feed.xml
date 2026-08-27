@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on Frank Robert Anderson</title>
+    <link>https://www.frobiovox.com/tags/open-source/</link>
+    <description>Recent content in Open Source on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.frobiovox.com/tags/open-source/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The pfSense Upgrade That Broke Everything: A Post-Mortem, and Why I&#39;m Moving to OPNsense</title>
+      <link>https://www.frobiovox.com/posts/2026/07/06/pfsense-upgrade-broke-everything/</link>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2026/07/06/pfsense-upgrade-broke-everything/</guid>
+      <description>&lt;p&gt;A point release upgrade should be boring. You click the button, you wait ten minutes, you go back to your life. Instead, upgrading pfSense from 2.7.2 to 2.8.1 turned into a multi-day rescue operation involving a half-dead firewall, a hand-configured recovery network, an emergency router purchase, and a single orphaned config file that turned out to be the root of everything. Here&amp;rsquo;s how it went, what actually broke, and why this experience is the last straw for me and pfSense.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

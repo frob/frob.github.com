@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Elixir on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/elixir/</link><description>Recent content in Elixir on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 21 Nov 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://www.frobiovox.com/tags/elixir/feed.xml" rel="self" type="application/rss+xml"/><item><title>My Dilemma; What Technology to Pursue</title><link>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link><pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid><description>&lt;p&gt;Be warned, this is a rant.&lt;/p&gt;
-&lt;p&gt;I have a Dilemma about what to focus on learning. I will always explore technology. I will always study, this is my nature. As God has built us, I will always work. This is not a question of what tech I will use here and there. Or what tech I will dabble in as an aside. I need another focus, I have been doing Drupal and php for a long time &amp;ndash;now is not time to move on, just time to hedge my speciality.&lt;/p&gt;</description></item><item><title>Reflecting on Elixir and Phoenix</title><link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link><pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid><description>&lt;p&gt;Every developer eventually asks the question: what should I be learning next? I just got back from &lt;a href="http://www.elixirconf.com"&gt;ElixirConf&lt;/a&gt;, and this post is my attempt to answer that question for myself &amp;ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.&lt;/p&gt;
-&lt;h2 id="the-new-hotness"&gt;The New Hotness&lt;/h2&gt;
-&lt;p&gt;I read a post recently that had the click bait title &amp;ldquo;Is Drupal Dying?&amp;rdquo; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the &lt;q&gt;next&lt;/q&gt; thing &amp;ndash;expecting Drupal to be old and busted in five years.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elixir on Frank Robert Anderson</title>
+    <link>https://www.frobiovox.com/tags/elixir/</link>
+    <description>Recent content in Elixir on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Nov 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.frobiovox.com/tags/elixir/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Dilemma; What Technology to Pursue</title>
+      <link>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid>
+      <description>&lt;p&gt;Be warned, this is a rant.&lt;/p&gt;&#xA;&lt;p&gt;I have a Dilemma about what to focus on learning. I will always explore technology. I will always study, this is my nature. As God has built us, I will always work. This is not a question of what tech I will use here and there. Or what tech I will dabble in as an aside. I need another focus, I have been doing Drupal and php for a long time &amp;ndash;now is not time to move on, just time to hedge my speciality.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reflecting on Elixir and Phoenix</title>
+      <link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link>
+      <pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid>
+      <description>&lt;p&gt;Every developer eventually asks the question: what should I be learning next? I just got back from &lt;a href=&#34;http://www.elixirconf.com&#34;&gt;ElixirConf&lt;/a&gt;, and this post is my attempt to answer that question for myself &amp;ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-new-hotness&#34;&gt;The New Hotness&lt;/h2&gt;&#xA;&lt;p&gt;I read a post recently that had the click bait title &amp;ldquo;Is Drupal Dying?&amp;rdquo; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the &lt;q&gt;next&lt;/q&gt; thing &amp;ndash;expecting Drupal to be old and busted in five years.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
