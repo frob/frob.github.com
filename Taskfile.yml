@@ -1,33 +1,187 @@
 version: "3"
 
+vars:
+  HUGO_IMAGE: hugomods/hugo:exts-0.154.3
+  NODE_IMAGE: node:lts
+  NGINX_IMAGE: nginx:alpine
+  AWS_IMAGE: amazon/aws-cli:latest
+  THEME_DIR: hugo/themes/frobiovox-theme
+  BUCKET: www.frobiovox.com
+  NETWORK: frobiovox-net
+  DEV_CONTAINER: frobiovox-site-dev
+  PREVIEW_CONTAINER: frobiovox-site-preview
+  PREVIEW_PORT: 8088
+  UID:
+    sh: id -u
+  GID:
+    sh: id -g
+  # Repo root is mounted at /src; Hugo runs from /src/hugo because hugo.toml
+  # points contentDir at ../content.
+  HUGO_RUN: >-
+    docker run --rm
+    -u {{.UID}}:{{.GID}}
+    -e HUGO_CACHEDIR=/tmp/hugo_cache
+    -v {{.ROOT_DIR}}:/src
+    -w /src/hugo
+    {{.HUGO_IMAGE}}
+
 tasks:
-  serve:
-    desc: Start the Hugo development server
-    dir: hugo
-    cmd: hugo server
+  default:
+    desc: List all available tasks
+    cmds:
+      - task --list
 
-  serve:drafts:
-    desc: Start the Hugo development server with drafts visible
-    dir: hugo
-    cmd: hugo server --buildDrafts
+  deps:theme:
+    desc: Install the theme's Node dependencies (Tailwind, Vite, mermaid)
+    cmds:
+      - >-
+        docker run --rm -u {{.UID}}:{{.GID}}
+        -v {{.ROOT_DIR}}/{{.THEME_DIR}}:/app -w /app
+        {{.NODE_IMAGE}} npm install
+    status:
+      - test -x {{.THEME_DIR}}/node_modules/.bin/vite
 
-  build:
-    desc: Build the site to frob-hugo/public
-    dir: hugo
-    cmd: hugo
+  deps:all:
+    desc: Install every dependency the build needs
+    cmds:
+      - task: deps:theme
+
+  build:css:
+    desc: Build the theme's CSS and JS bundles with Vite
+    deps: [deps:theme]
+    cmds:
+      - >-
+        docker run --rm -u {{.UID}}:{{.GID}}
+        -v {{.ROOT_DIR}}/{{.THEME_DIR}}:/app -w /app
+        {{.NODE_IMAGE}} npx vite build
+
+  build:site:
+    desc: Build the site to hugo/public
+    cmds:
+      - "{{.HUGO_RUN}} hugo"
+
+  build:drafts:
+    desc: Build the site including drafts and future-dated posts
+    cmds:
+      - "{{.HUGO_RUN}} hugo --buildDrafts --buildFuture"
 
   build:prod:
     desc: Build the site for production (minified)
-    dir: hugo
-    cmd: hugo --minify
+    cmds:
+      - "{{.HUGO_RUN}} hugo --minify"
 
-  deploy:
-    desc: Build and deploy the site to S3
+  build:all:
+    desc: Build theme assets and the production site
+    cmds:
+      - task: build:css
+      - task: build:prod
+
+  new:post:
+    desc: Create a new post (usage - task new:post TITLE="My post title")
+    cmds:
+      - ./_tasks/post.sh {{.TITLE}}
+    requires:
+      vars: [TITLE]
+
+  start:server:
+    desc: Start the Hugo dev server on :1313 (detached)
+    cmds:
+      - docker network create {{.NETWORK}} 2>/dev/null || true
+      - >-
+        docker run --rm -d --name {{.DEV_CONTAINER}} --network {{.NETWORK}}
+        -p 1313:1313
+        -u {{.UID}}:{{.GID}}
+        -e HUGO_CACHEDIR=/tmp/hugo_cache
+        -v {{.ROOT_DIR}}:/src -w /src/hugo
+        {{.HUGO_IMAGE}}
+        hugo server --bind 0.0.0.0 --baseURL http://localhost:1313/ --appendPort=false
+      - echo "Dev server on http://localhost:1313 — 'task logs:server' to follow output"
+
+  start:drafts:
+    desc: Start the Hugo dev server on :1313 with drafts and future posts visible
+    cmds:
+      - docker network create {{.NETWORK}} 2>/dev/null || true
+      - >-
+        docker run --rm -d --name {{.DEV_CONTAINER}} --network {{.NETWORK}}
+        -p 1313:1313
+        -u {{.UID}}:{{.GID}}
+        -e HUGO_CACHEDIR=/tmp/hugo_cache
+        -v {{.ROOT_DIR}}:/src -w /src/hugo
+        {{.HUGO_IMAGE}}
+        hugo server --bind 0.0.0.0 --baseURL http://localhost:1313/ --appendPort=false
+        --buildDrafts --buildFuture
+      - echo "Dev server (drafts) on http://localhost:1313"
+
+  stop:server:
+    desc: Stop the Hugo dev server
+    cmds:
+      - docker stop {{.DEV_CONTAINER}} || true
+
+  start:preview:
+    desc: Serve the built hugo/public with nginx on :8088
+    deps: [build:site]
+    cmds:
+      - docker network create {{.NETWORK}} 2>/dev/null || true
+      - >-
+        docker run --rm -d --name {{.PREVIEW_CONTAINER}} --network {{.NETWORK}}
+        -p {{.PREVIEW_PORT}}:80
+        -v {{.ROOT_DIR}}/hugo/public:/usr/share/nginx/html:ro
+        {{.NGINX_IMAGE}}
+      - echo "Preview on http://localhost:{{.PREVIEW_PORT}}"
+
+  stop:preview:
+    desc: Stop the nginx preview server
+    cmds:
+      - docker stop {{.PREVIEW_CONTAINER}} || true
+
+  logs:server:
+    desc: Follow the Hugo dev server output
+    cmds:
+      - docker logs -f {{.DEV_CONTAINER}}
+
+  deploy:site:
+    desc: Build and deploy to S3, backing up the current bucket first
     vars:
       TIMESTAMP:
         sh: date +%Y%m%d_%H%M%S
-      PROFILE: '{{.PROFILE | default "default"}}'
     cmds:
-      - task: build:prod
-      - aws s3 sync s3://www.frobiovox.com/ backups/{{.TIMESTAMP}}/ --profile {{.PROFILE}}
-      - aws s3 sync hugo/public/ s3://www.frobiovox.com/ --delete --acl public-read --profile {{.PROFILE}}
+      - task: build:all
+      - >-
+        docker run --rm -u {{.UID}}:{{.GID}}
+        --env-file {{.ROOT_DIR}}/.env
+        -v {{.ROOT_DIR}}:/src -e HOME=/tmp -w /src
+        {{.AWS_IMAGE}}
+        s3 sync s3://{{.BUCKET}}/ backups/{{.TIMESTAMP}}/
+      - >-
+        docker run --rm -u {{.UID}}:{{.GID}}
+        --env-file {{.ROOT_DIR}}/.env
+        -v {{.ROOT_DIR}}:/src -e HOME=/tmp -w /src
+        {{.AWS_IMAGE}}
+        s3 sync hugo/public/ s3://{{.BUCKET}}/ --delete --acl public-read
+    preconditions:
+      - sh: test -f {{.ROOT_DIR}}/.env
+        msg: "No .env file — copy .env.example to .env and fill in your AWS credentials."
+
+  clean:build:
+    desc: Remove the built site and Hugo's resource cache
+    cmds:
+      - rm -rf hugo/public hugo/resources
+
+  clean:deps:
+    desc: Remove the theme's installed Node modules
+    cmds:
+      - rm -rf {{.THEME_DIR}}/node_modules
+
+  clean:containers:
+    desc: Stop any running dev or preview containers and remove the network
+    cmds:
+      - docker stop {{.DEV_CONTAINER}} 2>/dev/null || true
+      - docker stop {{.PREVIEW_CONTAINER}} 2>/dev/null || true
+      - docker network rm {{.NETWORK}} 2>/dev/null || true
+
+  clean:all:
+    desc: Remove build output, dependencies, and running containers
+    cmds:
+      - task: clean:containers
+      - task: clean:build
+      - task: clean:deps

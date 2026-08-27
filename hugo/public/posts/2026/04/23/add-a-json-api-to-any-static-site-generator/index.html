@@ -1,46 +1,310 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Frank Robert Anderson</title><meta name=description content="Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG."><link rel=canonical href=https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/><link rel=alternate type=text/markdown href=https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/index.md><meta property="og:title" content="Add a JSON API to Any Static Site Generator | Frank Robert Anderson"><meta property="og:description" content="Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG."><meta property="og:type" content="article"><meta property="og:url" content="https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/"><meta property="og:site_name" content="Frank Robert Anderson"><meta property="og:image" content="https://www.frobiovox.com/images/top.png"><meta property="article:published_time" content="2026-04-23T00:00:00Z"><meta property="article:modified_time" content="2026-04-23T00:00:00Z"><meta property="article:tag" content="tutorial"><meta property="article:tag" content="hugo"><meta property="article:tag" content="rest"><meta property="article:tag" content="frontpage"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Add a JSON API to Any Static Site Generator | Frank Robert Anderson"><meta name=twitter:description content="Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG."><meta name=twitter:image content="https://www.frobiovox.com/images/top.png"><meta name=twitter:site content="@frobiovox"><meta name=twitter:creator content="@frobiovox"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Frank Robert Anderson","sameAs":["https://github.com/frob","https://twitter.com/frobiovox"]},"dateModified":"2026-04-23T00:00:00Z","datePublished":"2026-04-23T00:00:00Z","description":"Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG.","headline":"Add a JSON API to Any Static Site Generator","image":"/images/top.png","keywords":"tutorial, hugo, rest, frontpage","mainEntityOfPage":"https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.frobiovox.com/images/top.png"},"name":"Frank Robert Anderson"},"timeRequired":"PT5M","url":"https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/","wordCount":881}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.frobiovox.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://www.frobiovox.com/posts/","name":"Posts","position":2},{"@type":"ListItem","item":"https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/","name":"Add a JSON API to Any Static Site Generator","position":3}]}</script><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.css></head><body><div class=not-footer><div class=wrapper-masthead><div class=container><header class="masthead clearfix"><a href=/ class=site-avatar><img src=/images/top.png></a><div class=site-info><h1 class=site-name><a href=/>Frank Robert Anderson</a></h1><p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p><p class="site-description site-description-rotating" data-rotate='["Quietly building things","Where the cursor still blinks","Compile, commit, caffeinate, repeat","Yes, I have an oppinion about that","Hand-rolled, no batteries included","Postcards from production","I used to write code, now I write text and it auto-completes to code"]' data-interval=19000 aria-hidden=true></p></div></header></div><nav class=navigation-menu><ul class="navigation-menu-list container"><li class=navigation-menu-item><a class=navigation-menu-link href=/>Blog</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/tutorial/>Tutorials</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/rant/>Rants</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/posts/>Everything</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=http://www.frankrobertanderson.com>Back to My Site</a></li></ul></nav></div><main><div class=container><article class=post><h1>Add a JSON API to Any Static Site Generator</h1><div class=date><time datetime=2026-04-23T00:00:00Z>April 23, 2026</time></div><div class="flex flex-wrap gap-1 mb-2"><span class=badge>tutorial</span>
-<span class=badge>hugo</span>
-<span class=badge>rest</span>
-<span class=badge>frontpage</span></div><p>Back in 2015, I wrote about <a href=/posts/2015/10/25/add-an-api-to-your-jekyll-blog/>adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p><aside class=ai-summarize aria-label="Summarize this post on an AI assistant"><div class=ai-summarize-heading>Summarize & save this content on:</div><ul class=ai-summarize-pills><li><a class=ai-pill href="https://chatgpt.com/?hints=search&amp;q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target=_blank rel=noopener>ChatGPT</a></li><li><a class=ai-pill href="https://www.google.com/search?udm=50&amp;q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target=_blank rel=noopener>Google AI</a></li><li><a class=ai-pill href="https://www.perplexity.ai/?q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target=_blank rel=noopener>Perplexity</a></li><li><a class=ai-pill href="https://grok.com/?q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target=_blank rel=noopener>Grok</a></li></ul><ul class="ai-summarize-pills ai-summarize-pills-secondary"><li><a class=ai-pill href="https://www.google.com/preferences/source?hl=en" target=_blank rel=noopener>Add us as a trusted Google Source</a></li></ul></aside><p>That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.</p><h2 id=the-idea-again>The idea, again</h2><p>A static site generator takes your markdown and pushes it through templates to make HTML files. There is nothing special about HTML here &ndash;it is just the output format. If you write a template that outputs JSON instead of HTML, you get <code>.json</code> files. Your web server doesn&rsquo;t care, it serves them the same way and JavaScript on the client side can fetch them.</p><h2 id=hugos-output-formats>Hugo&rsquo;s output formats</h2><p>Hugo has this thing called <a href=https://gohugo.io/templates/output-formats/>custom output formats</a>. Instead of hacking JSON into a regular HTML template like I had to do with Jekyll, I defined a new output format and gave it its own templates. Hugo generates both the HTML and the JSON for you in the same build.</p><h3 id=config>Config</h3><p>First, tell Hugo about the JSON format. In <code>hugo.toml</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml><span style=display:flex><span>[<span style=color:#a6e22e>outputFormats</span>.<span style=color:#a6e22e>JSON</span>]
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>mediaType</span> = <span style=color:#e6db74>&#34;application/json&#34;</span>
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>baseName</span> = <span style=color:#e6db74>&#34;index&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>[<span style=color:#a6e22e>outputs</span>]
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>home</span> = [<span style=color:#e6db74>&#34;HTML&#34;</span>, <span style=color:#e6db74>&#34;RSS&#34;</span>, <span style=color:#e6db74>&#34;JSON&#34;</span>]
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>section</span> = [<span style=color:#e6db74>&#34;HTML&#34;</span>, <span style=color:#e6db74>&#34;JSON&#34;</span>]
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>page</span> = [<span style=color:#e6db74>&#34;HTML&#34;</span>, <span style=color:#e6db74>&#34;JSON&#34;</span>]
-</span></span></code></pre></div><p>The <code>outputs</code> section is where you decide what gets a JSON version. If you only want a listing endpoint and don&rsquo;t need individual post JSON, just leave <code>page</code> off.</p><h3 id=the-list-template>The list template</h3><p>Hugo will look for a template called <code>list.json.json</code> for sections and the homepage. Create it at <code>layouts/_default/list.json.json</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
-</span></span><span style=display:flex><span>{<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>range</span> <span style=color:#960050;background-color:#1e0010>$index,</span> <span style=color:#960050;background-color:#1e0010>$page</span> <span style=color:#960050;background-color:#1e0010>:=</span> <span style=color:#960050;background-color:#1e0010>.Pages</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>  {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>if</span> <span style=color:#960050;background-color:#1e0010>$index</span> }<span style=color:#960050;background-color:#1e0010>}</span>,{<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>end</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>  {
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;title&#34;</span>: {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Title</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }},
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;url&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.RelPermalink</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>,
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;date&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Date.Format</span> <span style=color:#f92672>&#34;2006-01-02&#34;</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>,
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;description&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Params.description</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>default</span> <span style=color:#f92672>&#34;&#34;</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>,
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;tags&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Params.tags</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>default</span> <span style=color:#960050;background-color:#1e0010>slice</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>{<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>end</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>]
-</span></span></code></pre></div><p>See that <code>jsonify</code> function? That is doing all the heavy lifting. It handles escaping, it handles arrays, it handles nil values. In the <a href=/posts/2015/10/25/add-an-api-to-your-jekyll-blog/>Jekyll version</a> I had to loop through tags one at a time and build the JSON array by hand. Here I just pipe to <code>jsonify</code> and Hugo figures it out.</p><h3 id=the-single-post-template>The single post template</h3><p>For individual posts, create <code>layouts/_default/single.json.json</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;title&#34;</span>: {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Title</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }}<span style=color:#960050;background-color:#1e0010>,</span>
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;url&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.RelPermalink</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>},</span>
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;date&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Date.Format</span> <span style=color:#f92672>&#34;2006-01-02&#34;</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>},</span>
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;description&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Params.description</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>default</span> <span style=color:#f92672>&#34;&#34;</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>},</span>
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;tags&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Params.tags</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>default</span> <span style=color:#960050;background-color:#1e0010>slice</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>},</span>
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;content&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Content</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>}</span>
-</span></span></code></pre></div><h3 id=build-it>Build it</h3><p>Run <code>hugo</code> and check the output. For every page that has JSON in its output list, there will be an <code>index.json</code> sitting right next to the <code>index.html</code>:</p><ul><li><code>/posts/index.json</code> &ndash; all your posts</li><li><code>/posts/2026/04/23/some-post/index.json</code> &ndash; one post</li><li><code>/index.json</code> &ndash; homepage listing</li></ul><p>It is simpler with Hugo. No Gulp task, no separate build step, no copying files around. But this same idea is possible in nearly any Static Site Generator.</p><h2 id=the-homepage-template>The homepage template</h2><p>My homepage template is different from my default list template. It uses <code>.Site.RegularPages</code> instead of <code>.Pages</code> and limits to 50 posts. If yours is the same, you might want a separate <code>index.json.json</code> in your layouts root:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
-</span></span><span style=display:flex><span>{<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>range</span> <span style=color:#960050;background-color:#1e0010>$index,</span> <span style=color:#960050;background-color:#1e0010>$page</span> <span style=color:#960050;background-color:#1e0010>:=</span> <span style=color:#960050;background-color:#1e0010>first</span> <span style=color:#960050;background-color:#1e0010>50</span> <span style=color:#960050;background-color:#1e0010>.Site.RegularPages</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>  {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>if</span> <span style=color:#960050;background-color:#1e0010>$index</span> }<span style=color:#960050;background-color:#1e0010>}</span>,{<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>end</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>  {
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;title&#34;</span>: {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Title</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }},
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;url&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.RelPermalink</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>,
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;date&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Date.Format</span> <span style=color:#f92672>&#34;2006-01-02&#34;</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>,
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;description&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Params.description</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>default</span> <span style=color:#f92672>&#34;&#34;</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>,
-</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;tags&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>.Params.tags</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>default</span> <span style=color:#960050;background-color:#1e0010>slice</span> <span style=color:#960050;background-color:#1e0010>|</span> <span style=color:#960050;background-color:#1e0010>jsonify</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>{<span style=color:#960050;background-color:#1e0010>{</span> <span style=color:#960050;background-color:#1e0010>end</span> }<span style=color:#960050;background-color:#1e0010>}</span>
-</span></span><span style=display:flex><span>]
-</span></span></code></pre></div><h2 id=what-hugo-gives-you-for-free>What Hugo gives you for free</h2><p>Comparing this to what I went through with Jekyll:</p><p>In Jekyll, I had to loop through tags and categories and manually comma-separate them with <code>forloop.last</code> checks. I had to add nil guards for when tags or categories were empty. I used Liquid&rsquo;s <code>escape</code> filter on content and hoped for the best. And I had a whole Gulp task that duplicated the posts from <code>_posts</code> into an <code>api/v01/posts</code> directory and swapped the layout from html to json.</p><p>With Hugo, I write a template, add three lines to my config, and it just works. The <code>jsonify</code> function handles arrays, escaping, and nil values. The output format system handles the file generation. No Gulp task, no extra build step.</p><h2 id=this-isnt-just-a-hugo-thing>This isn&rsquo;t just a Hugo thing</h2><p>The core trick works anywhere. If your static site generator has templates, you can make it output JSON. Hugo happens to have first-class support for it, but the pattern is the same whether you are using 11ty, Astro, or even Jekyll like I was in 2015. Write a template, output JSON, let the build generate the files.</p><p>I use it for client-side filtering. Fetch the listing endpoint, match on tags in JavaScript, render a related posts section without a page reload. It is not a replacement for a real API &ndash;there is no auth, no pagination, no writes. But for read-only content that is already public on your site, it is free and it ships with every build.</p></article></div></main></div><div class=wrapper-footer><div class=container><footer><h2 class=sr-only>Footer</h2><div class=social-icons><h3>Social Networks</h3><a href=https://github.com/frob aria-label=GitHub><svg class="svg-icon" viewBox="0 0 16 16" fill="#000"><path d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-</a><a href=https://twitter.com/frobiovox aria-label=Twitter><svg class="svg-icon" viewBox="0 0 16 16" fill="#1DA1F2"><path d="M5.026 15c6.038.0 9.341-5.003 9.341-9.334.0-.14.0-.282-.006-.422A6.685 6.685.0 0016 3.542a6.658 6.658.0 01-1.889.518 3.301 3.301.0 001.447-1.817 6.533 6.533.0 01-2.087.793A3.286 3.286.0 007.875 6.03 9.325 9.325.0 011.108 2.601a3.289 3.289.0 001.018 4.382A3.323 3.323.0 01.64 6.575v.045a3.288 3.288.0 002.632 3.218 3.203 3.203.0 01-.865.115 3.23 3.23.0 01-.614-.057 3.283 3.283.0 003.067 2.277A6.588 6.588.0 01.78 13.58 6.32 6.32.0 010 13.535 9.344 9.344.0 005.026 15z"/></svg>
-</a><a href=/feed.xml aria-label=RSS><svg class="svg-icon" viewBox="0 0 16 16" fill="#000"><path d="M2 2v2.5c5.246.0 9.5 4.254 9.5 9.5H14C14 7.373 8.627 2 2 2zm0 4v2.5c3.038.0 5.5 2.462 5.5 5.5H10c0-4.418-3.582-8-8-8zm1.5 4.5a1.5 1.5.0 100 3 1.5 1.5.0 000-3z"/></svg></a></div><div class=blogroll><h3>Blogroll</h3><a href=https://www.btmash.com/>Blob of contradictions</a><br><a href=https://icodealot.com/>iCodealot</a><br></div><div class=copyright><p>&copy; 2026 Frank Robert Anderson</p></div></footer></div></div><script src=/js/links.js></script><script src=/js/site-description.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Robert Anderson</title>
+    <meta name="description" content="Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG.">
+    <link rel="canonical" href="https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/">
+    <link rel="alternate" type="text/markdown" href="https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/index.md">
+    
+<meta property="og:title" content="Add a JSON API to Any Static Site Generator | Frank Robert Anderson">
+<meta property="og:description" content="Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/">
+<meta property="og:site_name" content="Frank Robert Anderson">
+<meta property="og:image" content="https://www.frobiovox.com/images/top.png">
+<meta property="article:published_time" content="2026-04-23T00:00:00Z">
+<meta property="article:modified_time" content="2026-04-23T00:00:00Z">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="hugo">
+<meta property="article:tag" content="rest">
+<meta property="article:tag" content="frontpage">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Add a JSON API to Any Static Site Generator | Frank Robert Anderson">
+<meta name="twitter:description" content="Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG.">
+<meta name="twitter:image" content="https://www.frobiovox.com/images/top.png">
+<meta name="twitter:site" content="@frobiovox">
+<meta name="twitter:creator" content="@frobiovox">
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Frank Robert Anderson",
+    "sameAs": [
+      "https://github.com/frob",
+      "https://twitter.com/frobiovox"
+    ]
+  },
+  "dateModified": "2026-04-23T00:00:00Z",
+  "datePublished": "2026-04-23T00:00:00Z",
+  "description": "Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG.",
+  "headline": "Add a JSON API to Any Static Site Generator",
+  "image": "/images/top.png",
+  "keywords": "tutorial, hugo, rest, frontpage",
+  "mainEntityOfPage": "https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/",
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.frobiovox.com/images/top.png"
+    },
+    "name": "Frank Robert Anderson"
+  },
+  "timeRequired": "PT5M",
+  "url": "https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/",
+  "wordCount": 881
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "https://www.frobiovox.com/",
+      "name": "Home",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://www.frobiovox.com/posts/",
+      "name": "Posts",
+      "position": 2
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/",
+      "name": "Add a JSON API to Any Static Site Generator",
+      "position": 3
+    }
+  ]
+}
+</script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+    
+</head>
+<body>
+    <div class="not-footer">
+        <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            
+            <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+            
+
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+                
+                
+                <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
+                
+            </div>
+        </header>
+    </div>
+
+    <nav class="navigation-menu">
+        <ul class="navigation-menu-list container">
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/">Blog</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/tutorial/">Tutorials</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/rant/">Rants</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/posts/">Everything</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="http://www.frankrobertanderson.com">Back to My Site</a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+        <main>
+            
+<div class="container">
+    <article class="post">
+        
+        <h1>Add a JSON API to Any Static Site Generator</h1>
+        <div class="date">
+            <time datetime="2026-04-23T00:00:00Z">April 23, 2026</time>
+            
+        </div>
+         
+        <div class="flex flex-wrap gap-1 mb-2">
+            
+            <span class="badge">tutorial</span>
+            
+            <span class="badge">hugo</span>
+            
+            <span class="badge">rest</span>
+            
+            <span class="badge">frontpage</span>
+            
+        </div>
+        
+        
+
+        <p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
+            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2026%2F04%2F23%2Fadd-a-json-api-to-any-static-site-generator%2F" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>
+
+            
+<p>That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.</p>
+<h2 id="the-idea-again">The idea, again</h2>
+<p>A static site generator takes your markdown and pushes it through templates to make HTML files. There is nothing special about HTML here &ndash;it is just the output format. If you write a template that outputs JSON instead of HTML, you get <code>.json</code> files. Your web server doesn&rsquo;t care, it serves them the same way and JavaScript on the client side can fetch them.</p>
+<h2 id="hugos-output-formats">Hugo&rsquo;s output formats</h2>
+<p>Hugo has this thing called <a href="https://gohugo.io/templates/output-formats/">custom output formats</a>. Instead of hacking JSON into a regular HTML template like I had to do with Jekyll, I defined a new output format and gave it its own templates. Hugo generates both the HTML and the JSON for you in the same build.</p>
+<h3 id="config">Config</h3>
+<p>First, tell Hugo about the JSON format. In <code>hugo.toml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">outputFormats</span>.<span style="color:#a6e22e">JSON</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mediaType</span> = <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">baseName</span> = <span style="color:#e6db74">&#34;index&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">outputs</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">home</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;RSS&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">section</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">page</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</span></span></code></pre></div><p>The <code>outputs</code> section is where you decide what gets a JSON version. If you only want a listing endpoint and don&rsquo;t need individual post JSON, just leave <code>page</code> off.</p>
+<h3 id="the-list-template">The list template</h3>
+<p>Hugo will look for a template called <code>list.json.json</code> for sections and the homepage. Create it at <code>layouts/_default/list.json.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">range</span> <span style="color:#960050;background-color:#1e0010">$index,</span> <span style="color:#960050;background-color:#1e0010">$page</span> <span style="color:#960050;background-color:#1e0010">:=</span> <span style="color:#960050;background-color:#1e0010">.Pages</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">if</span> <span style="color:#960050;background-color:#1e0010">$index</span> }<span style="color:#960050;background-color:#1e0010">}</span>,{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;title&#34;</span>: {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Title</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }},
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.RelPermalink</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Date.Format</span> <span style="color:#f92672">&#34;2006-01-02&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.description</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#f92672">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.tags</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">slice</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>See that <code>jsonify</code> function? That is doing all the heavy lifting. It handles escaping, it handles arrays, it handles nil values. In the <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">Jekyll version</a> I had to loop through tags one at a time and build the JSON array by hand. Here I just pipe to <code>jsonify</code> and Hugo figures it out.</p>
+<h3 id="the-single-post-template">The single post template</h3>
+<p>For individual posts, create <code>layouts/_default/single.json.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;title&#34;</span>: {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Title</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }}<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.RelPermalink</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Date.Format</span> <span style="color:#f92672">&#34;2006-01-02&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.description</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#f92672">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.tags</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">slice</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;content&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Content</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span></code></pre></div><h3 id="build-it">Build it</h3>
+<p>Run <code>hugo</code> and check the output. For every page that has JSON in its output list, there will be an <code>index.json</code> sitting right next to the <code>index.html</code>:</p>
+<ul>
+<li><code>/posts/index.json</code> &ndash; all your posts</li>
+<li><code>/posts/2026/04/23/some-post/index.json</code> &ndash; one post</li>
+<li><code>/index.json</code> &ndash; homepage listing</li>
+</ul>
+<p>It is simpler with Hugo. No Gulp task, no separate build step, no copying files around. But this same idea is possible in nearly any Static Site Generator.</p>
+<h2 id="the-homepage-template">The homepage template</h2>
+<p>My homepage template is different from my default list template. It uses <code>.Site.RegularPages</code> instead of <code>.Pages</code> and limits to 50 posts. If yours is the same, you might want a separate <code>index.json.json</code> in your layouts root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">range</span> <span style="color:#960050;background-color:#1e0010">$index,</span> <span style="color:#960050;background-color:#1e0010">$page</span> <span style="color:#960050;background-color:#1e0010">:=</span> <span style="color:#960050;background-color:#1e0010">first</span> <span style="color:#960050;background-color:#1e0010">50</span> <span style="color:#960050;background-color:#1e0010">.Site.RegularPages</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">if</span> <span style="color:#960050;background-color:#1e0010">$index</span> }<span style="color:#960050;background-color:#1e0010">}</span>,{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;title&#34;</span>: {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Title</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }},
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.RelPermalink</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Date.Format</span> <span style="color:#f92672">&#34;2006-01-02&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.description</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#f92672">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.tags</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">slice</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h2 id="what-hugo-gives-you-for-free">What Hugo gives you for free</h2>
+<p>Comparing this to what I went through with Jekyll:</p>
+<p>In Jekyll, I had to loop through tags and categories and manually comma-separate them with <code>forloop.last</code> checks. I had to add nil guards for when tags or categories were empty. I used Liquid&rsquo;s <code>escape</code> filter on content and hoped for the best. And I had a whole Gulp task that duplicated the posts from <code>_posts</code> into an <code>api/v01/posts</code> directory and swapped the layout from html to json.</p>
+<p>With Hugo, I write a template, add three lines to my config, and it just works. The <code>jsonify</code> function handles arrays, escaping, and nil values. The output format system handles the file generation. No Gulp task, no extra build step.</p>
+<h2 id="this-isnt-just-a-hugo-thing">This isn&rsquo;t just a Hugo thing</h2>
+<p>The core trick works anywhere. If your static site generator has templates, you can make it output JSON. Hugo happens to have first-class support for it, but the pattern is the same whether you are using 11ty, Astro, or even Jekyll like I was in 2015. Write a template, output JSON, let the build generate the files.</p>
+<p>I use it for client-side filtering. Fetch the listing endpoint, match on tags in JavaScript, render a related posts section without a page reload. It is not a replacement for a real API &ndash;there is no auth, no pagination, no writes. But for read-only content that is already public on your site, it is free and it ships with every build.</p>
+
+    </article>
+</div>
+
+        </main>
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer>
+            <h2 class="sr-only">Footer</h2>
+            <div class="social-icons">
+                <h3>Social Networks</h3>
+                
+                <a href="https://github.com/frob" aria-label="GitHub">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#000000">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+                
+                
+                <a href="https://twitter.com/frobiovox" aria-label="Twitter">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#1DA1F2">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0016 3.542a6.658 6.658 0 01-1.889.518 3.301 3.301 0 001.447-1.817 6.533 6.533 0 01-2.087.793A3.286 3.286 0 007.875 6.03a9.325 9.325 0 01-6.767-3.429 3.289 3.289 0 001.018 4.382A3.323 3.323 0 01.64 6.575v.045a3.288 3.288 0 002.632 3.218 3.203 3.203 0 01-.865.115 3.23 3.23 0 01-.614-.057 3.283 3.283 0 003.067 2.277A6.588 6.588 0 01.78 13.58a6.32 6.32 0 01-.78-.045A9.344 9.344 0 005.026 15z"/>
+                    </svg>
+                </a>
+                
+                <a href="/feed.xml" aria-label="RSS">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#000000">
+                        <path d="M2 2v2.5c5.246 0 9.5 4.254 9.5 9.5H14C14 7.373 8.627 2 2 2zm0 4v2.5c3.038 0 5.5 2.462 5.5 5.5H10C10 9.582 6.418 6 2 6zm1.5 4.5A1.5 1.5 0 1 0 3.5 13.5 1.5 1.5 0 0 0 3.5 10.5z"/>
+                    </svg>
+                </a>
+            </div>
+
+            
+            <div class="blogroll">
+                <h3>Blogroll</h3>
+                
+                <a href="https://www.btmash.com/">Blob of contradictions</a><br>
+                
+                <a href="https://icodealot.com/">iCodealot</a><br>
+                
+            </div>
+            
+
+            <div class="copyright">
+                <p>&copy; 2026 Frank Robert Anderson</p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+    <script src="/js/links.js"></script>
+    <script src="/js/site-description.js"></script>
+    
+
+    
+    
+</body>
+</html>

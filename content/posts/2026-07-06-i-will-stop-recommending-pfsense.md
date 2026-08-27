@@ -1,4 +1,13 @@
-# The pfSense Upgrade That Broke Everything: A Post-Mortem, and Why I'm Moving to OPNsense
+---
+title: "The pfSense Upgrade That Broke Everything: A Post-Mortem, and Why I'm Moving to OPNsense"
+date: "2026-07-06"
+description:
+slug: pfsense-upgrade-broke-everything
+tags:
+    - routing
+    - open source
+draft: true
+---
 
 A point release upgrade should be boring. You click the button, you wait ten minutes, you go back to your life. Instead, upgrading pfSense from 2.7.2 to 2.8.1 turned into a multi-day rescue operation involving a half-dead firewall, a hand-configured recovery network, an emergency router purchase, and a single orphaned config file that turned out to be the root of everything. Here's how it went, what actually broke, and why this experience is the last straw for me and pfSense.
 

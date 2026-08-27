@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on Frank Robert Anderson</title>
+    <link>https://www.frobiovox.com/tags/testing/</link>
+    <description>Recent content in Testing on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.frobiovox.com/tags/testing/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The 80/20 of Testing: Why End-to-End Tests Cost the Most and Matter the Most</title>
+      <link>https://www.frobiovox.com/posts/2026/08/07/the-80-20-of-testing/</link>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2026/08/07/the-80-20-of-testing/</guid>
+      <description>&lt;p&gt;Most of the tests you write should be unit and integration tests. Call it 80% of the suite. The remaining 20% is end-to-end &amp;ndash; the tests that drive the real system the way a real user does. That 20% will eat 80% of your testing effort, and it is the part you can least afford to skip.&lt;/p&gt;&#xA;&lt;p&gt;That is not a failure of planning. It is the shape of the work.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

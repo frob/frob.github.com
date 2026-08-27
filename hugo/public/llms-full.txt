@@ -4,6 +4,140 @@ Prestigious operator of commplicated auto-complete.
 
 
 ---
+url: https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/
+title: Farewell to the burgundy
+date: 2026-08-27
+tags: drupal, web development, frontpage
+---
+
+
+Last week I [wrote a list]({{< ref "2026-08-18-moving-on.md" >}}) of everything I need to update. Second item: personal site. Here is what has been sitting at [www.frankrobertanderson.com](http://www.frankrobertanderson.com) this whole time.
+
+![The frankrobertanderson.com homepage: a dark burgundy background, olive header bar, and a typewriter-font nameplate](/images/2026/08/27/frankrobertanderson.png "Professional Drupal/Web Development, since 2009.")
+
+Look at that footer. *© Copyright 2009.*
+
+That site is old enough to drive. It was built on a version of Drupal that has been end-of-life for years, on a theme I wrote myself, in an era when a dark burgundy background and a typewriter-font nameplate read as *tasteful*. There is a "Socialize" tab in the nav. It links to services that in some cases no longer exist.
+
+And the tagline: "To Provide Complete Drupal Development Solutions." I remember writing that sentence. I remember being pleased with it. It is the voice of someone who thinks a personal site is a storefront and that the storefront needs signage.
+
+I have kept it alive out of something between loyalty and inattention. Every couple of years I would log in, apply a security update, look at the burgundy, think *I should really redo this*, and close the tab. It became a thing I maintained rather than a thing I used. The blog moved here years ago. The actual work moved to GitHub and GitLab. What remained was a nameplate over an empty shop.
+
+That drawing in the middle -- the figure hunched over a desk, seen from above -- I still like. That one is coming with me.
+
+The rest is going. Not because it is embarrassing, exactly. It is a genuine artifact of what web development looked like when I got serious about it, and I am not the sort of person who pretends the earlier versions did not happen. But a site that says 2009 in the footer is not telling anyone what I can do in 2026. It is telling them I stopped.
+
+So it gets replaced. Something static, something I can rebuild in an afternoon, something that says what I actually work on now instead of what I hoped to sell seventeen years ago.
+
+Seventeen years is a good run for a homepage. Longer than most jobs.
+
+
+---
+url: https://www.frobiovox.com/posts/2026/08/18/moving-on/
+title: Moving on
+date: 2026-08-18
+tags: career, frontpage
+---
+
+
+After more than ten years, my time at Clarity Innovations has come to an end. I was laid off.
+
+I want to say up front that I enjoyed working there. Ten years is a long time to spend anywhere, and I would not have spent it there if I had not wanted to.
+
+## Nobody's fault
+
+This was not my fault, and it was not theirs.
+
+An enormous amount of money was poured into education technology over the last decade. When that kind of money stops, things do not just go back to the way they were -- it leaves a vacuum. That is the economy we are in right now. A lot of good people are getting the same news I got, for the same reasons.
+
+I am not going into specifics, but what I will say about Clarity is that they care about their employees, and they showed it in the way they handled this. I had notice. I had time to say goodbye. That is not nothing -- plenty of people find out their access has been revoked before they find out they have been let go.
+
+## Missing the fellowship
+
+The hardest part is the people.
+
+Ten years is long enough that your coworkers stop being coworkers. You know whose kid is graduating high school. You know who to ping when a build breaks at 4:45 on a Friday and who will actually answer. You develop a shorthand that takes years to build.
+
+I will miss them. I expect to keep missing them for a while. That is the cost of having liked the job.
+
+## Gathering my strength
+
+The other thing the notice period gave me was time to remember what I can actually do.
+
+When you work somewhere long enough, your skills stop being visible to you. They just become the furniture. All of your expertise gets expressed as institutional memory.
+
+So I spent some of that time going back through ten years of work and reminding myself what was in it.
+
+> Your fingers would remember their old strength better, if they grasped your sword.
+
+They do, as it turns out. It just takes picking the thing back up. Though I will not be enumerating the past here -- I have too much to do.
+
+## Everything is out of date
+
+Here is the genuinely worst part of being laid off after a decade, and nobody warns you about it: *everything* is stale. Every artifact of your professional existence was last touched during an administration that has since ended.
+
+The list, as it currently stands:
+
+- Resume
+- Personal site
+- This blog
+- LinkedIn profile
+- Drupal, GitHub, and GitLab profiles
+
+None of it is hard. All of it is archaeology. Each one means sitting down and reconstructing what I actually did across ten years, which loops right back to the previous section -- the work of updating the resume *is* the work of remembering the strength.
+
+## Silver shores
+
+I am going to be fine. I know that.
+
+Ten years was a good long stay, and I am grateful for it, but the road does go ever on. There are worse things than finding yourself at the harbor with the sails already up.
+
+It is about time for another adventure.
+
+![A ship sailing out from the Grey Havens into the light](/images/2026/08/18/anotheradventure.png "The road goes ever on.")
+
+
+---
+url: https://www.frobiovox.com/posts/2026/06/24/project-space-game/
+title: Project Space Game: a ten-year-old idea finally has a build
+date: 2026-06-24
+tags: gamedev, godot, frontpage
+description: An early look at the space game I'm building — the question that started it a decade ago, what actually runs today, and where it's headed. Very much a work in progress.
+---
+
+
+About ten years ago I wrote down a question I couldn't shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called [*What if the bullets cost money?*](/posts/what-if-the-bullets-cost-money), and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — *what does this cost you?*
+
+Well. I finally started building the thing. It's called **Project Space Game**, and this is the first time I'm writing about it as something that actually exists and runs rather than something I daydream about.
+
+## The hook, ten years later
+
+The seed is exactly the one I planted back then: what if shooting the asteroids *cost you something*?
+
+Fuel is finite. Ammo has to be bought. The asteroids in your way are less of an arcade high-score machine and more of an economic problem to solve. Suddenly it isn't an arcade cabinet — it's a little world where you have to make decisions. Do I burn fuel to chase that scrap? Is this shot worth it? Can I make it home? *Space, but everything has a price* — that's still the whole pitch, and it turns out it holds up.
+
+## Where it is today
+
+I want to be upfront: this is a work in progress, and an early one. The version history so far reads like someone learning in public, because that's exactly what it is.
+
+The early releases were about getting the bones in place. A ship you can actually fly, with engines and fuel that drains as you burn it — run dry and you're stranded, paying through the nose for an emergency delivery. Asteroids that spawn around you and quiet down when they drift off screen so the whole thing doesn't melt your computer. A dashboard with little rotary gauges for your heading and your destination. Points of interest scattered out in the dark that you tow scrap home from to earn your keep. Money you can actually run out of — and a game-over when you do.
+
+By the more recent work I'd added the things that make it feel like a loop instead of a tech demo: weapons that cost ammo, sound when you fire and reload, a magazine to track your shots, and depots out in space where you can buy more. The economy and the action finally started talking to each other.
+
+Some of it is held together with tape. There are placeholder textures I'm embarrassed by, console errors I haven't chased down yet, and a to-do list considerably longer than the done list. That's fine. That's what an early build *is*.
+
+## Where it's going
+
+The aspiration is bigger than the current build, and I think that's how it should be.
+
+I want the space out there to feel less like random rubble and more like a place — asteroid fields generated with the care you'd give a dungeon, so navigating them is a puzzle worth solving. I want the world to react to you: music that shifts with the moment, ships that aren't just you, missions and levels that string the moment-to-moment flying into something with shape and stakes. I want depots in deep space where fuel is precious and the math gets genuinely scary. I want the ship, the asteroids, the home base to all look like they belong to the same hand-drawn universe instead of a programmer's scratch pad.
+
+None of that is done. Most of it is barely started. But the through-line from that ten-year-old question to a world where every shot and every drop of fuel is a choice you have to weigh: that part is real now, and it's already fun to fly around in.
+
+More to come. It only took me a decade to start.
+
+
+---
 url: https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/
 title: Content gatekeeping in a GenAI world
 date: 2026-05-10
@@ -2923,6 +3057,44 @@ $ ln -s /Volumes/Disk\\ Image/project-folder local-project-folder
 This will create a [symlink](https://en.wikipedia.org/wiki/Symbolic_link) (that looks like a local directory) to our mounted volume in our current directory.
 
 With this setup you get the best of both worlds: a case-sensitive file system for your project and a workflow that looks and feels exactly like working from your normal directory. No more surprises when deploying files to a case-sensitive server.
+
+
+---
+url: https://www.frobiovox.com/posts/2015/12/23/what-if-the-bullets-cost-money/
+title: What if the bullets cost money?
+date: 2015-12-23
+tags: rant, frontpage
+description: Every "learn to make games" tutorial hands you the same space shooter. I want to make a different one — built around a question instead of a high score.
+---
+
+
+I have been thinking about old video games again. (See [yesterday's post](/posts/lets-plan-a-new-arduino-based-video-game-console) — apparently this is a phase.)
+
+The whole medium starts in roughly the same place. The very first thing anyone ever made that was a *game* on a screen was [Spacewar!](https://en.wikipedia.org/wiki/Spacewar!) on the PDP-1 back in 1962 — two ships, a star with some gravity, and a handful of torpedoes. We have been making more or less that same thing ever since.
+
+## Everyone makes the space shooter
+
+Pick up any game engine, open any "learn to make games" tutorial, and I will bet you a cartridge that the first or second project is a space shooter. Dodge the asteroids. Shoot the asteroids. The rocks break into smaller rocks. You get a high score. It is the "Hello, World" of game development, and for good reason — it touches movement, collision, spawning, score, and a win/lose state in about a hundred lines.
+
+I have made that game. You have probably made that game. It is a perfectly good way to learn, but at the end you are left holding something that everyone else also has, and it does not actually say anything. You traced the drawing instead of drawing it.
+
+What I keep coming back to is that the genre never questions its own free lunch. In Asteroids, the bullets are *free*. Infinite. You hold the button down and the universe comes apart for you at no cost. That is fine for an arcade machine whose whole job is to eat quarters in the lobby, not in the fiction. But it has always struck me as the least interesting possible answer to the most interesting question a game can ask, which is: *what does this cost you?*
+
+## The question I actually want to make a game about
+
+So here is the seed, and I am writing it down mostly so I stop losing it:
+
+**What if the bullets cost money?**
+
+What if every shot drew down something finite. What if fuel was a resource you could genuinely run out of, alone, in the dark, a long way from home. What if the asteroids in your way were not a high-score machine but an *economic* problem — is this rock worth the fuel to reach it, worth the ammo to break it, worth the burn to haul the scrap back? Suddenly it stops being an arcade cabinet and turns into a little world with scarcity in it, and scarcity is where decisions live.
+
+This is the same thing I keep banging on about with [the console idea](/posts/lets-plan-a-new-arduino-based-video-game-console): [creativity thrives in constraints](http://www.slideshare.net/chesterbr/atari-2600programming). Free bullets are the absence of a constraint. Add a price tag and the whole design has to reorganize itself around the cost, and *that* is the part I want to go explore.
+
+## Disclaimer, same as always
+
+I have not built this. I have built the tutorial version, like everyone, and then closed the laptop. This is a note-to-self disguised as a blog post: when I finally have the time and the right tools, the game I want to make is the one where shooting the asteroid is a choice you have to weigh, not a button you hold down.
+
+Maybe I get to it next year. Maybe it takes ten. Either way, I know exactly what game I want to make.
 
 
 ---

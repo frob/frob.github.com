@@ -7,6 +7,9 @@
 ## Pages
 
 
+- [Farewell to the burgundy](https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/) — 2026-08-27
+- [Moving on](https://www.frobiovox.com/posts/2026/08/18/moving-on/) — 2026-08-18
+- [Project Space Game: a ten-year-old idea finally has a build](https://www.frobiovox.com/posts/2026/06/24/project-space-game/) — 2026-06-24: An early look at the space game I'm building — the question that started it a decade ago, what actually runs today, and where it's headed. Very much a work in progress.
 - [Content gatekeeping in a GenAI world](https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/) — 2026-05-10
 - [An experienced developers view on writing software in the age of vibe coding and generative ai](https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/) — 2026-04-29: AI agents can build a full-stack app in an afternoon, but should it. The right workflow depends on your experience level. A guide to using generative AI effectively whether you're a seasoned engineer or just starting out.
 - [Add a JSON API to Any Static Site Generator](https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/) — 2026-04-23: Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG.
@@ -23,6 +26,7 @@
 - [Semantic Git](https://www.frobiovox.com/posts/2016/05/27/semantic-git/) — 2016-05-27: Using git-flow as a workflow for semantic versioning. This is a circular dependency that is good.
 - [Simplify Drupal 8 field value calls](https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/) — 2016-03-28: Explore a bit of field fetching with Drupal 8
 - [Working with Case Sensitive Files in a Case Insensitive world](https://www.frobiovox.com/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/) — 2016-01-20: How to work with case sensitive files on a file system that is case insensitive
+- [What if the bullets cost money?](https://www.frobiovox.com/posts/2015/12/23/what-if-the-bullets-cost-money/) — 2015-12-23: Every "learn to make games" tutorial hands you the same space shooter. I want to make a different one — built around a question instead of a high score.
 - [Lets plan a new Arduino based video game console](https://www.frobiovox.com/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/) — 2015-12-22: Why do we need a new game system? Because everything made today does too much.
 - [Altering Entity Field Queries for JOINS ORs and Profit](https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/) — 2015-11-11: EntityFieldQueries are one of the most useful things in Drupal 7, using tags we can get around some of the limitations of using them.
 - [Add an API to Your Jekyll Blog](https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/) — 2015-10-25: Without adding any non-Github pages approved plugins, build a RESTfull api for your blog by adding a json endpoint.

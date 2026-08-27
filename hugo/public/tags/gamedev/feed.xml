@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gamedev on Frank Robert Anderson</title>
+    <link>https://www.frobiovox.com/tags/gamedev/</link>
+    <description>Recent content in Gamedev on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.frobiovox.com/tags/gamedev/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project Space Game: a ten-year-old idea finally has a build</title>
+      <link>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</link>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</guid>
+      <description>&lt;p&gt;About ten years ago I wrote down a question I couldn&amp;rsquo;t shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called &lt;a href=&#34;https://www.frobiovox.com/posts/what-if-the-bullets-cost-money&#34;&gt;&lt;em&gt;What if the bullets cost money?&lt;/em&gt;&lt;/a&gt;, and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — &lt;em&gt;what does this cost you?&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
