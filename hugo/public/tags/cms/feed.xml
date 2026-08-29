@@ -1,26 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Cms on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/cms/</link>
-    <description>Recent content in Cms on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jul 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/cms/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Step One on replacing Jekyll, make yaml work</title>
-      <link>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link>
-      <pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid>
-      <description>&lt;p&gt;As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.&lt;/p&gt;&#xA;&lt;h1 id=&#34;yaml-parsing&#34;&gt;YAML Parsing&lt;/h1&gt;&#xA;&lt;p&gt;First am trying to use &lt;a href=&#34;https://www.npmjs.com/package/gulp-yaml&#34;&gt;npm-yaml&lt;/a&gt;. Simple installation, &lt;code&gt;npm install --save-dev npm-yaml&lt;/code&gt;. And it works great with the _config file that holds general site information. So I try it with the html.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;task&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;test-index&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./index.html&amp;#39;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;pipe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;yaml&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;space&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; }))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;pipe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;gulp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;dest&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./gulp-dist/&amp;#39;&lt;/span&gt;))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With that I get a big fat &amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>I like Jekyll, but is it necessary?</title>
-      <link>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid>
-      <description>&lt;p&gt;Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.&lt;/p&gt;&#xA;&lt;p&gt;One of the first &amp;ldquo;Content Management Systems&amp;rdquo; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&amp;rsquo;t extremely useful to me. It was more of an academic experience – especially because, at the time, I wasn&amp;rsquo;t a professional web developer.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cms on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/cms/</link><description>Recent content in Cms on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/cms/feed.xml" rel="self" type="application/rss+xml"/><item><title>Step One on replacing Jekyll, make yaml work</title><link>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link><pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid><description><![CDATA[<p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
+<h1 id="yaml-parsing">YAML Parsing</h1>
+<p>First am trying to use <a href="https://www.npmjs.com/package/gulp-yaml">npm-yaml</a>. Simple installation, <code>npm install --save-dev npm-yaml</code>. And it works great with the _config file that holds general site information. So I try it with the html.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;test-index&#39;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">src</span>(<span style="color:#e6db74">&#39;./index.html&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">yaml</span>({ <span style="color:#a6e22e">space</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> }))
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">pipe</span>(<span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">dest</span>(<span style="color:#e6db74">&#39;./gulp-dist/&#39;</span>))
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><p>With that I get a big fat &hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>✔ ~/repos/self/frob.github.com <span style="color:#f92672">[</span>jekylless L|✚ 2…1<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>23:31 $ gulp test-index
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>23:33:37<span style="color:#f92672">]</span> Using gulpfile ~/repos/self/frob.github.com/gulpfile.js
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>23:33:37<span style="color:#f92672">]</span> Starting <span style="color:#e6db74">&#39;test-index&#39;</span>...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>23:33:37<span style="color:#f92672">]</span> Finished <span style="color:#e6db74">&#39;test-index&#39;</span> after 7.25 ms
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>events.js:85
+</span></span><span style="display:flex;"><span>      throw er; // Unhandled <span style="color:#e6db74">&#39;error&#39;</span> event
+</span></span><span style="display:flex;"><span>            ^
+</span></span><span style="display:flex;"><span>Error: JS-YAML: end of the stream or a document separator is expected at line 12, column 64:
+</span></span><span style="display:flex;"><span>     ... <span style="color:#e6db74">&#34;&gt;Written on {{ post.date | date: &#34;</span>%B %e, %Y<span style="color:#e6db74">&#34; }}&lt;/aside&gt;
+</span></span></span></code></pre></div><p>Hmmm, It looks like the YAML Front matter will be a bit more difficult.</p>
+<p>First I tried <a href="https://www.npmjs.com/package/yaml-front-matter">yaml-front-matter</a>, which wasn&rsquo;t what I wanted. It works with node but I was hoping to find a gulp plugin. So I found <a href="https://github.com/lmtm/gulp-front-matter">gulp-front-matter</a> which looks promising. This one is a gulp plugin and it looks like it will work, but it isn&rsquo;t well documented. Looks like I have some code to read.</p>
+<h2 id="bad-documentation">Bad documentation</h2>
+<p>I read the code and the only hint looks to be here on line 40</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">file</span>[<span style="color:#a6e22e">property</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">attributes</span>;
+</span></span></code></pre></div><p>Due to my inexperience with Gulp I have no idea how to get to the file object. There is a hint in the documentation <q>.pipe(…) // you may want to take a look at gulp-marked at this point</q>. That was still not much help. So to the issue queue.</p>
+<h3 id="issue-number-8-expose-frontmatter-or-not">Issue Number 8: Expose frontMatter, or not</h3>
+<p><a href="https://github.com/lmtm/gulp-front-matter/issues/8">https://github.com/lmtm/gulp-front-matter/issues/8</a> talks about exposing the frontmatter or just better documentation in general as it seems to be a large issue with this package.</p>
+<p>My conclusion is that front-matter shouldn&rsquo;t be handled with gulp, but instead it should be handled by node. In this case the the front-matter will control the flow of the steam and thus it shouldn&rsquo;t be considered when reading the stream. The gulp-front-matter plugin will do one thing really well for me. It will strip the front-matter from my source and allow me to parse it with liquid or with markdown or whatever.</p>
+<h2 id="bad-plug-ins">Bad plug-ins</h2>
+<p>So, here it is. The liquid plugin just didn&rsquo;t work. I don&rsquo;t have the time to waste on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.</p>
+<p>The lesson here is that Gulp is great at file transformation but the ecosystem is not ready to replace a purpose-built static site generator. YAML parsing works, front-matter stripping works, but the Liquid template plugin is not there yet. Sometimes the right call is to recognize when a dependency is not mature enough and come back later. Jekyll stays for now.</p>
+]]></description></item><item><title>I like Jekyll, but is it necessary?</title><link>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link><pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid><description><![CDATA[<p>Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.</p>
+<p>One of the first &ldquo;Content Management Systems&rdquo; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&rsquo;t extremely useful to me. It was more of an academic experience – especially because, at the time, I wasn&rsquo;t a professional web developer.</p>
+<p>For the past 8 or so years I have been working primarily in <a href="https://www.drupal.org">Drupal</a>. I have seen other CMS&rsquo;s <a href="http://www.joomla.com">come and go and comeback</a>. I have seen forks and communities fall apart due to in fighting. I have seen major versions of projects that were worked on for years <a href="http://www.exult.sf.net">get shelved and ultimately abandoned</a>. I have seen much of this in the 8 or so years that I have been working with Drupal.</p>
+<p>Drupal has been rock solid. However, every-time I have tried to launch by blog on Drupal I would get stuck in the weeds. I have re-built wordpress 3 times with Drupal. Each time getting the blog to a different 80% mark before other work or obligations would take me away. So this time I launched my blog on Jekyll. I gathered together as much old content as I could find and consolidated here, using the Jekyll Quickstart repo.</p>
+<p>I also built the WAPRO meetup website in Jekyll using github pages and the same Jekyll Quickstart fork. It takes 5 minutes (10 if the internet connection is slow). Just fork the quickstart repo, change the _config.yml and you&rsquo;re up and running. All that is left after that is writing content. Also, github is hosting your site for free. If you want <a href="/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">to learn more about Jekyll read my post on Jekyll</a>.</p>
+<p>Everything is rainbows. But I am not someone who can just sit back and let a rainbow be a rainbow. (Remember the bit on re-building Wordpress in Drupal over and over?) So I made Jenkins watch my github pages repo and publish my blog on my server every-time I committed and pushed the repository. Easy right? No, that is not enough. I needed a simple way of working with my blog so I started writing some Grunt commands to do things like add a new draft or start Jekyll serve.</p>
+<p>Grunt, led me to Gulp. So I have gotten to know Gulp. I like Gulp more than I expected to. When you boil it down Gulp provides an intelligent extraction from disk io. You say Gulp get these files <code>gulp.src(*.js)</code> and Gulp gets them and asks you what you want to do with them. Oh Gulp, process them and write those files right over there <code>gulp.dest('build')</code>.</p>
+<h2 id="awesome">Awesome!</h2>
+<p>So, Gulp looks for all my files, processes them and then writes them. Why do I need Jekyll now? Personally I like to stream line my dependencies. Ruby is just another dependency now. Currently I am using SASS, but that is only because Jekyll uses Ruby. I can do everything with Less that I need SASS to do (really I can). So I really don&rsquo;t need Ruby for this. Let&rsquo;s see what does it take to make Jekyll with Gulp.</p>
+<h2 id="what-does-jekyll-give-us">What Does Jekyll give us?</h2>
+<p>We have established [<a href="/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">in another post</a> that Jekyll gives us these things.</p>
+<ul>
+<li>Centralized configuration and globals <strong>_config.yml</strong></li>
+<li>Templates <strong>Liquid Templates</strong></li>
+<li>Markdown Parsing</li>
+<li>YAML Front matter</li>
+<li>Plug-in input Processing</li>
+<li>Bonus Points
+<ul>
+<li>Build Management</li>
+<li>Drafts</li>
+<li>Test Web Server</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-plan">The plan</h2>
+<p>I already know that there are gulp plug-ins that say they do, liquid templates, markdown parsing, and yaml parsing. The issue with relying on Gulp is that it is still a relatively new technology. This means that plug-ins sometimes say they do something or they don&rsquo;t do something fully or they are simply empty repositories that show where something was once going to be built. I am going to attempt this. But <strong>no promises</strong>. <em>This</em> is for me. As I complete something I will post a link in the list above.</p>
+]]></description></item></channel></rss>

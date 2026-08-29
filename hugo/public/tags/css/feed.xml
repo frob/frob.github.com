@@ -1,26 +1,132 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Css on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/css/</link>
-    <description>Recent content in Css on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 06 May 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/css/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Creating screen-reader friendly read more  links</title>
-      <link>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</link>
-      <pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</guid>
-      <description>&lt;p&gt;Over the course of my career I have worked on more than a fair share of higher-education sites. When dealing with a universities website there are many challenges. One of the biggest challenges is in dealing with the accessibility standards. I am writing about &lt;a href=&#34;http://www.w3.org/TR/WCAG20/&#34;&gt;WCAG&lt;/a&gt;. The WCAG, or Web Content Accessibility Guidelines, is a detailed list for how accessibility should be done on the web.&lt;/p&gt;&#xA;&lt;p&gt;I might write about the problems with WCAG at some point, but this article is about strictly an incompatibility between what the designer/UX people want and what the WCAG says about &amp;ldquo;READ MORE&amp;rdquo; links. &lt;a href=&#34;http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html&#34;&gt;Specifically WCAG 2.0 SC 2.4.4&lt;/a&gt;. This states that any link needs to have context.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>css less sass oocss drycss bem front end css design paradigm smacss down</title>
-      <link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
-      <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
-      <description>&lt;p&gt;Front End CSS Design Paradigms have been a very hot topic lately and &lt;a href=&#34;http://xkcd.com/927/&#34; target=&#34;_blank&#34;&gt;many people are attempting to solve the problem&lt;/a&gt; of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.&lt;/p&gt;&#xA;&lt;h2&gt;Object Oriented CSS&lt;/h2&gt;&#xA;&lt;p&gt;OOCSS has several principles that it is built upon.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Css on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/css/</link><description>Recent content in Css on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/css/feed.xml" rel="self" type="application/rss+xml"/><item><title>Creating screen-reader friendly read more links</title><link>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</link><pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</guid><description><![CDATA[<p>Over the course of my career I have worked on more than a fair share of higher-education sites. When dealing with a universities website there are many challenges. One of the biggest challenges is in dealing with the accessibility standards. I am writing about <a href="http://www.w3.org/TR/WCAG20/">WCAG</a>. The WCAG, or Web Content Accessibility Guidelines, is a detailed list for how accessibility should be done on the web.</p>
+<p>I might write about the problems with WCAG at some point, but this article is about strictly an incompatibility between what the designer/UX people want and what the WCAG says about &ldquo;READ MORE&rdquo; links. <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html">Specifically WCAG 2.0 SC 2.4.4</a>. This states that any link needs to have context.</p>
+<p>The issue with this is even though the standard says:</p>
+<p><q>A Web page contains a collection of news articles. The main page lists the first few sentences of each article, followed by a &ldquo;Read more&rdquo; link. A screen reader command to read the current paragraph provides the context to interpret the purpose of the link.</q></p>
+<p>This is incorrect. A screen reader will list all the links on a page. If two links have the same text but go to different places it will get confused because there could be 20 or more links that all go to different places but still say &ldquo;Read More.&rdquo;</p>
+<p>My solution? Use css to hide the full title text (or better yet something more relevant, however, content editors usually cannot be bothered) for the read more link and use more css to show Read More in its place.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#a6e22e">.read-more</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">font-size</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:after</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">text-transform</span><span style="color:#f92672">:</span> uppercase;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">font-size</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;READ MORE&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">:hover:after</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background-color</span><span style="color:#f92672">:</span> $blue;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So here (example is in scss) you can see that we are using a simple technique, borrowed from image replacements to make the text invisible but still seen by screen readers to hide the text. After that, we just replace it with the after pseudo selector <code>:after</code> to show whatever text we want to display for &ldquo;READ MORE.&rdquo;</p>
+<h2 id="what-about-multilingual-sites">What about multilingual sites?!?!</h2>
+<p>Just add a body class for each language and then adjust the content rule accordingly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">en</span> .<span style="color:#a6e22e">read-more</span>:<span style="color:#a6e22e">after</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;READ MORE&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">es</span> .<span style="color:#a6e22e">read-more</span>:<span style="color:#a6e22e">after</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;leer más&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">cn</span> .<span style="color:#a6e22e">read-more</span>:<span style="color:#a6e22e">after</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;阅读更多&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">klingon</span> .<span style="color:#a6e22e">read-more</span>:<span style="color:#a6e22e">after</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;latlh laD&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Thanks to <a href="https://translate.google.com/">Google Translator</a> for the Spanish and Simplified Chinese translations. Thanks to <a href="https://www.bing.com/translator/">Bing translator for the Klingon</a>.</p>
+<p>The technique is simple: hide the real link text with <code>font-size: 0</code>, replace it visually with a <code>:after</code> pseudo element, and let screen readers see the original accessible text. It is a small amount of CSS that makes a real difference for users who navigate by link list. If your site has &ldquo;Read More&rdquo; links, this is worth the five minutes it takes to implement.</p>
+]]></description></item><item><title>css less sass oocss drycss bem front end css design paradigm smacss down</title><link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link><pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid><description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
+<h2>Object Oriented CSS</h2>
+<p>OOCSS has several principles that it is built upon.</p>
+<ol><li>A style should be written once and only once.</li>
+<li>Separate <strong>Structure</strong> from <strong>Skin</strong> (or layout from style)</li>
+<li>Separate <strong>Content </strong>from <strong>Containers</strong></li>
+</ol><h3>A Style should be written once and only once</h3>
+<p>If you are declaring the same exact style rules over and over again then you are probably doing something wrong.<br>Take a look at this example.</p>
+<pre>#thumbnail {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+<p>#block {
+width: 400px;
+overflow: hidden;
+border: solid 1px #ccc;
+background: linear-gradient(#ccc, #222);
+box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</p>
+<p>#view {
+width: 500px;
+min-height: 200px;
+overflow: auto;
+border: solid 1px #ccc;
+background: linear-gradient(#ccc, #222);
+box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</pre><p>All of these above styles are unique; however, they are also repeating the same rules over and over again. These styles can be simplified if a class is added that absorbs these repeated rules. This class would then be applied to the html elements.</p></p>
+<pre>.thumbnail {
+  width: 200px;
+  height: 50px;
+}
+
+.block {
+  width: 400px;
+  overflow: hidden;
+}
+
+.view {
+  width: 500px;
+  min-height: 200px;
+  overflow: auto;
+}
+
+.box {
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</pre><p>This is much simpler with far fewer lines and if the global style changes the change only needs to be made once.</p>
+<h3>Separate Structure from Skin</h3>
+<p>In OOCSS the <em>Structure</em> is generally non-repeated style that works toward organization. This is what puts a sidebar on the left and the content in the middle. The concept of the <em>Skin </em>are the branding or theme of the site. Fonts, Colors, Gradients, Borders, and Rounded Corners are all a part of the skin.</p>
+<h3>Separate Content from Containers</h3>
+<p>All this means is that the style should not depend on a complex (or simple) html structure. Instead of writing a rule like this:</p>
+<pre>#sidebar-first h2, #content h2, #header h1 {
+  ...
+}
+</pre><p>Instead apply a new class to the h2 in the header, content area, and first sidebar. That way the repeated rule can be applied to that single class and then on those specific CSS elements we can overwrite the rule. In other words let the rules cascade and then overwrite them the way CSS was designed.</p>
+<h3>What OOCSS doesn't want you to do</h3>
+<ul><li>DO NOT use descendant selectors</li>
+<li>DO NOT use ID for styling elements</li>
+<li>DO NOT use class attachment for CSS selectors</li>
+<li>*Avoid unless absolutely necessary* the use of !important</li>
+</ul><h4>The Down side to OOCSS</h4>
+<p>This doesn't easily apply to Drupal very well. This is a good concept, and should be reviewed as a good way to keep CSS organized. However, unless a site is requiring an extreme amount of front end work (to the point of completely custom html --where the default Drupal output just will not work) then this system is nearly unusable because it requires additional classes to be written to the html in order to accomplish this.</p>
+<h2>SMACSS Scalable and Modular Architecture for CSS</h2>
+<p><span style="line-height: 1.5em;"><img alt="This is the one with the lumberjack." src="http://www.kwallcompany.com/sites/default/files/jack-head.png" style="width: 112px; height: 101px; float: left;">There are far more rules for SMACSS than I can put into this article. Here is the simple orbital overview: Just like with OOCSS we are encouraged to put everything into classes and distribute those classes out to the html as needed. The big differences are that SMACSS knows that there are times when using descendant selectors and IDs are necessary. Therefore SMACSS gives us guidelines for using them. Isn't that nice!</span></p>
+<p>There are five categories that components will fall into when writing SMACSS: Base, Layout, Module, State, and Theme.</p>
+<p>Each of these rules has a coding standard and class prefix. That is beyond the scope of this article --I suggest reading the <a href="http://smacss.com/" target="_blank">SMACSS website</a> for detailed information.</p>
+<h3>The guide for each of these categories are as follows:</h3>
+<ul><li><strong>Base </strong>- Normalization or style resetting</li>
+<li><strong>Layout</strong> - Positional Styling of structural elements on the page</li>
+<li><strong>Module </strong>- Modules are meant to be standalone stylistic elements. These are the parts that will be defined by classes and applied where necessary to the html.</li>
+<li><strong>State</strong> - Hover, Active and other state aware styles. If the style is dependent upon JavaScript then it is in the <em>State</em> category.</li>
+<li><strong>Theme </strong>- This is the unique, non-repeated overrides of the style. The generic stuff gets put into Modules and then the Theme overrides where necessary.</li>
+</ul><h4>The Downside to SMACSS</h4>
+<p>SMACSS is extremely strict. There are rules for everything. When implementing SMACSS you really need to know what you are doing or you could end up spending all your time worrying about implementing SMACSS and not writing good CSS.</p>
+<h2>Block Element Modifier</h2>
+<p><img alt="BEM seems to have a random logo." src="http://www.kwallcompany.com/sites/default/files/lq8e64g0ns6kzt-l3glbq-saabe.png" style="width: 112px; height: 91px; float: left;">In practice <em>BEM</em> is a simplified combination of <em>OOCSS</em> and <em>SMACSS</em>. Unlike the other two <em>BEM</em> stresses for quick development over style structure. In <em>BEM</em> there are three types of component: a block, an element and a modifier.</p>
+<ul><li><strong>Blocks</strong> are the largest independent container; Header, Footer, and Content would all be considered blocks.</li>
+<li><strong>Elements</strong> are the independent components inside the block.</li>
+<li><strong>Modifiers</strong> are added to both blocks and elements to allow for both style reuse and visually uniqueness.</li>
+</ul><p>BEM offers a way to think about CSS and front-end development and just like OOCSS and SMACSS it offers a strict set of guidelines around it. So strict that they offer tools that will lay it all out for you and enforce the BEM naming conventions and html structure.</p>
+<h4>The Downside to BEM</h4>
+<p><em>BEM</em> is an ideal solution and it seems to know it. The <a href="http://bem.info/method/" target="_blank">BEM Methodology page</a> is shorter than this article. On the surface, <em>BEM</em> is a simple methodology; however, that simplicity goes away very quickly. Once you get past the philosophical methodology page and into the actual guidelines it becomes clear that the guidelines are far more strict. This strictness rules over the html structure and the CSS. If you are comfortable working the html and class names that a <a href="http://www.drupal.org" target="_blank">CMS</a> will give you then you should feel right at home with <em>BEM</em>.</p>
+<h2>DRY Don't Repeat Yourself</h2>
+<p>Keeping with the spirit of DRY I will not go into great detail about it. The reason is that it follows nearly the exact same principles as the above SMACSS and OOCSS. The only difference is that ID selectors are fine and naming convention should be based on content.</p>
+<h2>Who Wins?</h2>
+<p>SMACSS.</p>
+<p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>
+]]></description></item></channel></rss>
