@@ -1,103 +1,833 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Drupal on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/drupal/</link>
-    <description>Recent content in Drupal on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/drupal/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Farewell to the burgundy</title>
-      <link>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</link>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</guid>
-      <description>&lt;p&gt;Last week I &lt;a href=&#34;https://www.frobiovox.com/posts/2026/08/18/moving-on/&#34;&gt;wrote a list&lt;/a&gt; of everything I need to update. Second item: personal site. Here is what has been sitting at &lt;a href=&#34;http://www.frankrobertanderson.com&#34;&gt;www.frankrobertanderson.com&lt;/a&gt; this whole time.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://www.frobiovox.com/images/2026/08/27/frankrobertanderson.png&#34; alt=&#34;The frankrobertanderson.com homepage: a dark burgundy background, olive header bar, and a typewriter-font nameplate&#34; title=&#34;Professional Drupal/Web Development, since 2009.&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Look at that footer. &lt;em&gt;© Copyright 2009.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;That site is old enough to drive. It was built on a version of Drupal that has been end-of-life for years, on a theme I wrote myself, in an era when a dark burgundy background and a typewriter-font nameplate read as &lt;em&gt;tasteful&lt;/em&gt;. There is a &amp;ldquo;Socialize&amp;rdquo; tab in the nav. It links to services that in some cases no longer exist.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Why DrupalCon</title>
-      <link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</link>
-      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</guid>
-      <description>&lt;h1 id=&#34;collaboration-and-contribution-at-drupalcon&#34;&gt;Collaboration and Contribution at DrupalCon&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.drupal.org/&#34;&gt;Drupal&lt;/a&gt; is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal advocates and aficionados convene to teach and learn from each other. What better way to do that than at DrupalCon?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Basic Hello World with composer and php</title>
-      <link>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link>
-      <pubDate>Tue, 16 Aug 2016 17:40:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid>
-      <description>&lt;h1 id=&#34;getting-started-with-composer&#34;&gt;Getting started with composer&lt;/h1&gt;&#xA;&lt;p&gt;If you write PHP and you are not using &lt;a href=&#34;https://getcomposer.org&#34;&gt;Composer&lt;/a&gt;, you are managing dependencies by hand &amp;ndash; and that means you are doing more work than you need to. Composer handles autoloading, dependency resolution, and versioning so you do not have to. This post walks through a complete Hello World project from &lt;code&gt;composer init&lt;/code&gt; to running tests, so you can see how all the pieces fit together.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Simplify Drupal 8 field value calls</title>
-      <link>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link>
-      <pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid>
-      <description>&lt;p&gt;Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.&lt;/p&gt;&#xA;&lt;h1 id=&#34;get-the-title-of-a-node&#34;&gt;Get the title of a node&lt;/h1&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s load a node and return the title.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Altering Entity Field Queries for JOINS ORs and Profit</title>
-      <link>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link>
-      <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid>
-      <description>&lt;p&gt;EntityFieldQuery is powerful, but it has a well-known limitation: no &lt;code&gt;OR&lt;/code&gt; conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &amp;ndash; unless you know about query tags and &lt;code&gt;hook_query_TAG_alter()&lt;/code&gt;. This post shows how to break out of EntityFieldQuery&amp;rsquo;s constraints by altering the underlying database query directly.&lt;/p&gt;&#xA;&lt;p&gt;I have written about &lt;a href=&#34;https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html&#34;&gt;extending EntityFieldQueries with subqueries&lt;/a&gt; before. This time I will go into extending the query as a query object, using Drupal&amp;rsquo;s hook and alter architecture.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Reflecting on Elixir and Phoenix</title>
-      <link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link>
-      <pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid>
-      <description>&lt;p&gt;Every developer eventually asks the question: what should I be learning next? I just got back from &lt;a href=&#34;http://www.elixirconf.com&#34;&gt;ElixirConf&lt;/a&gt;, and this post is my attempt to answer that question for myself &amp;ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-new-hotness&#34;&gt;The New Hotness&lt;/h2&gt;&#xA;&lt;p&gt;I read a post recently that had the click bait title &amp;ldquo;Is Drupal Dying?&amp;rdquo; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the &lt;q&gt;next&lt;/q&gt; thing &amp;ndash;expecting Drupal to be old and busted in five years.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Modern Drupal7 Site Building Tools</title>
-      <link>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</link>
-      <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</guid>
-      <description>&lt;p&gt;With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&amp;rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &amp;ndash; for site builders specifically &amp;ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-build-a-site-with-drupal-7&#34;&gt;Why build a site with Drupal 7&lt;/h2&gt;&#xA;&lt;p&gt;Drupal 8 is nearly out making Drupal 7 look like it isn&amp;rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Need a join in an EntityFieldQuery, how about a subquery?</title>
-      <link>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</link>
-      <pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</guid>
-      <description>&lt;p&gt;I saw this over at &lt;a href=&#34;http://drupal.stackexchange.com/a/153695/17227&#34;&gt;stackexchange&lt;/a&gt; and I had to write about it. EntityFieldQuery is the Drupal 7 way to fetch entities without writing raw SQL, but it has a well-known limitation: you cannot do arbitrary &lt;code&gt;JOIN&lt;/code&gt;s the way you would with a normal &lt;code&gt;db_select()&lt;/code&gt; query. That comes up the moment you try to filter users by role, since role assignments live in their own table rather than on the user entity itself. It turns out there is a clean way around this using a subquery, and it is worth knowing about because the same trick applies any time you need to filter an EntityFieldQuery against data that lives in another table.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Setting a default value for a link or url field in Drupal 7</title>
-      <link>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link>
-      <pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid>
-      <description>&lt;p&gt;So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.&lt;/p&gt;&#xA;&lt;p&gt;In case you don&amp;rsquo;t I suggest reading these pages first:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7&#34;&gt;The Drupal Form API&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://api.drupal.org/api/drupal/includes!module.inc/group/hooks/7&#34;&gt;The hook system&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_form_alter/7&#34;&gt;api.drupal.org&amp;rsquo;s hook_form_alter for Drupal7 doc page&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Normally these things are just all well and good, do something like.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;php&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/**&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; * Implements hook_form_alter().&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; */&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;some_modules_form_alter&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;$form, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;$form_state, $form_id) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $form[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;field_element&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#default_value&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;some value&amp;#34;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Easy right? Easy, this unless you find yourself altering a compound element. A compound element is a form element that could potentially have multiple fields. A very common one is the link field. The link field could have (optionally) several different form elements depending on the settings of the form field. (All of this is assuming this is an entity edit form that is generated by Drupal&amp;rsquo;s field system)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Drupal or Wordpress? Why not Jekyll.</title>
-      <link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
-      <pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
-      <description>&lt;p&gt;If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&amp;rsquo;t call Jekyll a Content Management System.&lt;/p&gt;&#xA;&lt;p&gt;So if Jekyll isn&amp;rsquo;t a CMS then what is it? Jekyll is a &amp;ldquo;blog aware&amp;rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Utilizing Front End CSS Design Paradigms In Drupal</title>
-      <link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link>
-      <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid>
-      <description>&lt;p&gt;At &lt;a href=&#34;http://www.sandcamp.org&#34; target=&#34;_blank&#34;&gt;SandCamp&lt;/a&gt; I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of&lt;a href=&#34;http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down&#34;&gt; the multitude of css paradigms&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&#34; target=&#34;_blank&#34;&gt;Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014&lt;/a&gt;&lt;/p&gt;&#xA;&lt;iframe allowfullscreen=&#34;true&#34; frameborder=&#34;0&#34; height=&#34;389&#34; mozallowfullscreen=&#34;true&#34; src=&#34;https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/embed?start=false&amp;amp;loop=false&amp;amp;delayms=3000&#34; webkitallowfullscreen=&#34;true&#34; width=&#34;480&#34;&gt;&lt;/iframe&gt;</description>
-    </item>
-    <item>
-      <title>Creating Auto Submitting Forms with Drupal&#39;s Form API</title>
-      <link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link>
-      <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid>
-      <description>&lt;p&gt;Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an &lt;code&gt;#ajax&lt;/code&gt; handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.&lt;/p&gt;&#xA;&lt;p&gt;If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the &lt;a href=&#34;http://www.kwallcompany.com/blog/details-formation-forms&#34;&gt;various options for building forms in Drupal&lt;/a&gt;. I will be focusing on forms built with &lt;a href=&#34;https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7&#34; target=&#34;_blank&#34;&gt;Drupal’s Form API (or fapi)&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>css less sass oocss drycss bem front end css design paradigm smacss down</title>
-      <link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
-      <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
-      <description>&lt;p&gt;Front End CSS Design Paradigms have been a very hot topic lately and &lt;a href=&#34;http://xkcd.com/927/&#34; target=&#34;_blank&#34;&gt;many people are attempting to solve the problem&lt;/a&gt; of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.&lt;/p&gt;&#xA;&lt;h2&gt;Object Oriented CSS&lt;/h2&gt;&#xA;&lt;p&gt;OOCSS has several principles that it is built upon.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Drupal on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/drupal/</link><description>Recent content in Drupal on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/drupal/feed.xml" rel="self" type="application/rss+xml"/><item><title>Farewell to the burgundy</title><link>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</link><pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</guid><description><![CDATA[<p>Last week I <a href="https://www.frobiovox.com/posts/2026/08/18/moving-on/">wrote a list</a> of everything I need to update. Second item: personal site. Here is what has been sitting at <a href="http://www.frankrobertanderson.com">www.frankrobertanderson.com</a> this whole time.</p>
+<p><img src="/images/2026/08/27/frankrobertanderson.png" alt="The frankrobertanderson.com homepage: a dark burgundy background, olive header bar, and a typewriter-font nameplate" title="Professional Drupal/Web Development, since 2009."></p>
+<p>Look at that footer. <em>© Copyright 2009.</em></p>
+<p>That site is old enough to drive. It was built on Drupal 6, with a theme I wrote myself. I still have a soft spot for the dark burgundy background and the typewriter-font nameplate. The contact link is broken &ndash; it is supposed to point at the contact form on my Drupal.org profile.</p>
+<p>This site was originally built when I was doing contract work for small and local businesses. I built the site in Drupal and I built most sites in Drupal. I have been using Drupal for almost twenty years, but it is no longer my only hammer. I used httrack to turn it from Drupal 6 to static HTML around the launch of Drupal 7 and I have never touched it since.</p>
+<p>That drawing in the middle. That the figure hunched over a pad of paper &ndash; I drew that. I had several versions: a blank page, a mixing console, and a computer. This one turned out the best but I was originally going to offer, UX, Development, and Audio Mixing services too.</p>
+<p>This site isn&rsquo;t exactly embarrassing, if looked at by the right people. If anything it is very obviously not AI slop. It is a genuine artifact of what web development looked like when I got serious about it, and I am not the sort of person who pretends the earlier versions did not happen. But a site that says 2009 in the footer is not telling anyone what I can do in 2026. It is telling them I stopped.</p>
+<p>So it gets replaced. Something static, something I can update in an afternoon, something that says what I actually work on now instead of what I hoped to sell seventeen years ago.</p>
+<p>Seventeen years is a good run for a homepage. Longer than most jobs. You can check out the new version <a href="https://www.frankrobertanderson.com">here</a>.</p>
+]]></description></item><item><title>Why DrupalCon</title><link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</guid><description><![CDATA[<h1 id="collaboration-and-contribution-at-drupalcon">Collaboration and Contribution at DrupalCon</h1>
+<p><a href="https://www.drupal.org/">Drupal</a> is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal advocates and aficionados convene to teach and learn from each other. What better way to do that than at DrupalCon?</p>
+<h2 id="what-is-drupalcon">What is DrupalCon?</h2>
+<p><a href="https://events.drupal.org/vienna2017">DrupalCon</a> is a conference where the Drupal Community can meet each other and exchange information in real life. The North American DrupalCon bounces around the Continental US, yet DrupalCon also happens in Europe, Asia, and South America.</p>
+<p>The conference spans multiple days starting with paid training. Throughout the week there are community contributed sessions,  a vendor exposition hall, and it all ends in community-driven project sprints.</p>
+<h2 id="why-go-to-drupalcon">Why go to DrupalCon?</h2>
+<p>At its core, DrupalCon is a technology conference, so a big part of going to DrupalCon is keeping up with the current trends in technology. These may not be just be specific to Drupal, but may feature trends within the php programming language and technology as a whole.</p>
+<p>Besides having structured, focused sessions, simple hallway conversations are a great way to keep up with current trends. I missed quite a few session while hanging out in the halls talking to people, yet this isn&rsquo;t a source of stress because all of the <a href="https://www.youtube.com/playlist?list=PLpeDXSh4nHjRbDdwHEBRHItfnjrJ8kEDK">DrupalCon sessions are posted to YouTube</a> by the association. Additionally, much of their information can be learned from reading blog posts online, attending local DUGs (Drupal User Groups), or <a href="https://www.drupal.org/irc">conversations on Drupal&rsquo;s IRC channels</a>, but it&rsquo;s important to get fully immersed by congregating for a few days with community members that are not local. The point of attending the conference is the people, the networking, and those conversations in the hallway.</p>
+<h3 id="open-source-contribution">Open Source Contribution</h3>
+<p>A large part of getting together is working together. Much of the work on an open source project happens remotely. This is difficult with many core maintainers being spread all over the globe in different timezones. At DrupalCon, we have the remarkable ability to be in the same room. This allows for many opportunities for collaboration. Code sprints occur all week with Friday being reserved as a sprint day. There are no sessions or talks on Friday, leaving the whole day for contribution, typically in a room with round tables organized by topic: migration, twig, install-systems, etc. This is also a good place to work on contributed modules. While at the Baltimore DrupalCon, I wrote the <a href="https://www.drupal.org/project/speedboxes">Drupal 8 version of the Speedboxes module</a>.</p>
+<h3 id="exploring-and-getting-familiar-with-drupal-8">Exploring and getting familiar with Drupal 8</h3>
+<p>Any software project that is under active development will be a moving target, and as users of this software, it is important to stay on top of the latest versions. In an effort to do this, I submitted a session for Baltimore DrupalCon about exploring and evaluating Drupal 8 by <a href="https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html">re-architecting a Custom Learning Management System</a> we had built for New Perspectives Online. By doing this session, I was able to both get more experience with a new product without having to learn on a high-stakes client project, and I also had the opportunity to share those experiences with others in the Drupal Community. Below is a video of my presentation.</p>
+<iframe src="https://www.youtube.com/embed/en-nC4ZjdXo" frameborder="0" width="560" height="315"></iframe>
+<p>Contribution isn&rsquo;t always about code. Contribution is possible regardless of skillset. Everything including bug reports, documentation, design, code, or even just attending DrupalCon is a worthwhile contribution.</p>
+]]></description></item><item><title>Basic Hello World with composer and php</title><link>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link><pubDate>Tue, 16 Aug 2016 17:40:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid><description><![CDATA[<h1 id="getting-started-with-composer">Getting started with composer</h1>
+<p>If you write PHP and you are not using <a href="https://getcomposer.org">Composer</a>, you are managing dependencies by hand &ndash; and that means you are doing more work than you need to. Composer handles autoloading, dependency resolution, and versioning so you do not have to. This post walks through a complete Hello World project from <code>composer init</code> to running tests, so you can see how all the pieces fit together.</p>
+<p>If you are looking for more information about using <a href="https://www.drupal.org">Drupal</a> with <a href="https://getcomposer.org">Composer</a> then you should checkout the <a href="https://www.drupal.org/node/2718229">official composer facade doc page</a> on drupal.org.</p>
+<p>I will <em>not</em> be talking about publishing to <a href="https://packagist.org">Packagist</a>. My php is nearly always for <a href="https://www.drupal.org">Drupal</a>, and as such, if I publish anything it will most likely be to a project on <a href="https://www.drupal.org">drupal.org</a>. In the end I will philosophize about <a href="https://www.drupal.org">Drupal</a> and <a href="https://getcomposer.org">Composer</a>, but we will start with the <a href="https://getcomposer.org">composer</a> basics.</p>
+<p><strong>Lets get started!</strong></p>
+<p>When dealing with any package managed project, I like to start with initializing the project. This goes for <a href="https://www.npmjs.com/">npm</a> or <a href="https://getcomposer.org">composer</a>. True, it isn&rsquo;t 100% necessary, but it is a good way to keep it all organized from the beginning.</p>
+<h2 id="initialize-our-package">Initialize our package</h2>
+<p>After installing composer, run this command in your project&rsquo;s directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ composer init
+</span></span></code></pre></div><p>This will run you through a bunch of questions: <em>name</em>, <em>description</em>, <em>license</em>, etc. These are the prompts (at the time of this writing) and my responses to the prompts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Welcome to the Composer config generator
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This command will guide you through creating your composer.json config.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Package name <span style="color:#f92672">(</span>&lt;vendor&gt;/&lt;name&gt;<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>fanderson/composer<span style="color:#f92672">]</span>: frob/greetings
+</span></span><span style="display:flex;"><span>Description <span style="color:#f92672">[]</span>: This is a simple hello world example.
+</span></span><span style="display:flex;"><span>Author <span style="color:#f92672">[</span>Frank Anderson &lt;frob@249517.no-reply.drupal.org&gt;, n to skip<span style="color:#f92672">]</span>:
+</span></span><span style="display:flex;"><span>Minimum Stability <span style="color:#f92672">[]</span>: dev
+</span></span><span style="display:flex;"><span>Package Type <span style="color:#f92672">(</span>e.g. library, project, metapackage, composer-plugin<span style="color:#f92672">)</span> <span style="color:#f92672">[]</span>:
+</span></span><span style="display:flex;"><span>License <span style="color:#f92672">[]</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Define your dependencies.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Would you like to define your dependencies <span style="color:#f92672">(</span>require<span style="color:#f92672">)</span> interactively <span style="color:#f92672">[</span>yes<span style="color:#f92672">]</span>? n
+</span></span><span style="display:flex;"><span>Would you like to define your dev dependencies <span style="color:#f92672">(</span>require-dev<span style="color:#f92672">)</span> interactively <span style="color:#f92672">[</span>yes<span style="color:#f92672">]</span>? n
+</span></span></code></pre></div><p>Most of these should be easy enough to figure out and I will not go over all of them here. If you want to know what all this stuff really means, then go <a href="https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup">read the composer docs</a>.</p>
+<h2 id="write-some-code">Write some code</h2>
+<p>I will start coding by creating the file <code>greetings.php</code> in the <code>src/HelloWorld</code> directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">HelloWorld</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Greetings</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayHelloWorld</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello World&#39;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="add-some-basic-dependencies">Add some basic dependencies</h3>
+<p>Now we have created our class, but we still have to tell composer about it. To do that we need to make some changes to our <code>composer.json</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;frob/greetings&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;This is a simple hello world example.&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;authors&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Frank Anderson&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;frob@249517.no-reply.drupal.org&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;minimum-stability&#34;</span>: <span style="color:#e6db74">&#34;dev&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;require&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;php&#34;</span>: <span style="color:#e6db74">&#34;&gt;=5.5.0&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;autoload&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;psr-0&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;HelloWorld&#34;</span>: <span style="color:#e6db74">&#34;src/&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The new stuff starts in the <code>&quot;require&quot;</code> part. My changes are some simple ones, first, I have php 5.5.24 installed locally. Thus I add compatibility to anything greater than 5.5.</p>
+<blockquote>
+<p>Notice: I am not doing it here, but you need to be careful with open ended requirements. I have no idea if this code will work on php 9, but I don&rsquo;t care so I didn&rsquo;t bother adding the <code> || &lt;9.0</code> or whatever to the <a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions">required php version</a>.</p>
+</blockquote>
+<p>The second change is adding <a href="http://www.php-fig.org/psr/psr-0/">PSR-0 autoloading</a> of my HelloWorld namespace. This will become important soon.</p>
+<h2 id="install-dependencies">Install dependencies</h2>
+<p>Now we get to run <code>composer install</code> and see all the magic happen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ composer install
+</span></span></code></pre></div><p>This does three important things:</p>
+<h3 id="updating-dependencies-including-require-dev"><em>Updating dependencies (including require-dev)</em></h3>
+<p>This project has no dependencies other than php version 5.5 or higher. But if it did then they would be installed. By default they are installed in the <code>vendor</code> directory. Unlike npm there are plugins that can change where vendor code is installed.</p>
+<h3 id="writing-lock-file"><em>Writing lock file</em></h3>
+<p>If we look at our directory tree after running <code>composer install</code> it looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>composer.json
+</span></span><span style="display:flex;"><span>composer.lock
+</span></span><span style="display:flex;"><span>src/
+</span></span><span style="display:flex;"><span>  greetings.php
+</span></span><span style="display:flex;"><span>vendor/
+</span></span><span style="display:flex;"><span>  autoload.php
+</span></span><span style="display:flex;"><span>  composer/
+</span></span></code></pre></div><p>Notice the <code>composer.lock</code> file. That file needs to be added to the repository.</p>
+<p>When executing builds for production the lock file will be used to ensure that the same versions of things that worked for you in development are going to be installed in production. That way you don&rsquo;t have to worry about mysterious dependency versions breaking things in deploy.</p>
+<h3 id="generating-autoload-files"><em>Generating autoload files</em></h3>
+<p>This is the really cool part of composer. It generates an <code>autoload.php</code> file. This file is used by composer to automatically load files based on the <a href="http://www.php-fig.org/psr/psr-0/">PSR-0 spec</a> we stated earlier (see, I told you it would be important).</p>
+<p>This is also why composer installs itself into the vendor directory &ndash;composer is what handles the autoloading. This is huge, and also a big reason to use composer.</p>
+<p>Now so long as we handle the namespaces correctly and we follow the <a href="http://www.php-fig.org/psr/">PSR</a> (in this case PSR-0) then we can just load the autoloader and composer will make sure we have what we need when we need it.</p>
+<h2 id="lets-use-it">Lets use it</h2>
+<p>Right now we have some potential energy. All this code, but nothing is using it. Kind of like the strength with OOP is also its weakness &ndash; encapsulated code doesn&rsquo;t do anything by itself. Thus, we need to write some <em>cough</em> procedural code that uses this object.</p>
+<blockquote>
+<p>Fun fact, I really did cough when I wrote that.</p>
+</blockquote>
+<p>So then, lets write some tests. Create a <code>tests</code> directory and add a file <code>test.php</code> to it with the following contents.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Autoload files using the Composer autoloader.
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">require_once</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/../vendor/autoload.php&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">HelloWorld\Greetings</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">Greetings</span><span style="color:#f92672">::</span><span style="color:#a6e22e">sayHelloWorld</span>();
+</span></span></code></pre></div><p>Like I said before, autoloading and composer give us the handy <code>use</code> and <code>namespace</code> keywords. It is beyond the scope of this article to discuss <a href="http://phpenthusiast.com/blog/how-to-autoload-with-composer">how the autoloader works</a>, just that it does and how to use it.</p>
+<p>Remember the directory structure <code>src/HelloWorld</code> and the require statement in the <code>composer.json</code> file? In our <code>composer.json</code> we told the autoloader to expect a psr-0 directory structure and that our code would be in <code>src</code>. Then we declared the <code>namespace HelloWorld;</code> in our <code>greetings.php</code> file.</p>
+<p>Now in our <code>test.php</code> file we are <em>using</em> (with the <code>use</code> keyword) the <code>HelloWorld\Greetings</code> namespace and object in our test to call the <code>Greetings::sayHelloWorld();</code> static method.</p>
+<h2 id="lets-commit">Lets commit</h2>
+<p>At this point lets commit our code. The begs the question, what is our code? For now that is only the src and tests directory and the composer.php file. Lets initialize and commit those.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add src tests composer.json
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;initial commit&#34;</span>
+</span></span></code></pre></div><p>We should also setup a <code>.gitignore</code> file so git stops barking at us about the vendor and <code>composer.lock</code> file.</p>
+<blockquote>
+<p>If this was a project I would be leaving the composer.lock in file the repository. We have set this up more like utility library than an actual project. It is only valuable for deployment and it be ignored by composer when this is used as a library anyway.</p>
+</blockquote>
+<p>So run this from the command line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;vendor&#34;</span> &gt;&gt; .gitignore
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;composer.lock&#34;</span> &gt;&gt; .gitignore
+</span></span></code></pre></div><p>This will append both <code>vendor</code> and <code>composer.lock</code> to the <code>.gitignore</code> file (or create it if it doesn&rsquo;t exist) thus it&rsquo;s contents will look like this.</p>
+<pre tabindex="0"><code>vendor
+composer.lock
+</code></pre><h2 id="bonus-points-something-borrowed">Bonus points, something borrowed</h2>
+<p>I was going to stop here, but after reading that I think it is missing something. The other real power from composer. Using someone else&rsquo;s code.</p>
+<p>I still want to keep this simple so I am adding something simple and <em>maybe</em> useful: a timer <a href="https://packagist.org/packages/phpunit/php-timer"><strong>phpunit/php-timer</strong></a>.</p>
+<p>To add 3rd party packages to your package you run the <code>composer require</code> command. In order to add the php-timer we run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ composer require phpunit/php-timer
+</span></span></code></pre></div><p>Unlike npm we do not need to specify the <code>--save</code> argument. Composer assumes the save. Here is another awesome thing that composer does for us. Composer will <strong>&ldquo;solve&rdquo;</strong> our dependency tree for us. What that means is that the packages will tell composer what versions of dependencies they support and composer will figure out what the latest version that fits that requirement.</p>
+<p>For example if dependency <strong>foo</strong> can use version <strong>5</strong> and above of the <strong>php-timer</strong> package, but dependency <strong>bar</strong> doesn&rsquo;t work with version <strong>7</strong> or version <strong>5</strong>, but does work with version <strong>6</strong>. Then composer knows that only the latest release of version <strong>6</strong> is supported by your application.</p>
+<blockquote>
+<p>If there are lots of dependencies and sub-dependencies then solving this issue takes time. Also, composer will tell you if it cannot be solved. If two packages are not compatible then composer will tell you right away.</p>
+</blockquote>
+<p>After we run that command we will see <code>&quot;phpunit/php-timer&quot;: &quot;^1.0&quot;</code> was added as a requirement. We can tell composer to only use some versions, but I will let you read the docs on that.</p>
+<p>There is one more thing that we need to do before we can use the <em>PHP_Timer</em> class in our project. We will need to edit the <code>composer.json</code> file to tell our autoloader about our new class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;autoload&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;psr-0&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;HelloWorld&#34;</span>: <span style="color:#e6db74">&#34;src/&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;classname&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;PHP_Timer&#34;</span>: <span style="color:#e6db74">&#34;src/&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here we are adding the <code>classname</code> keyword and then listing the &ldquo;PHP_Timer&rdquo; class as member with &ldquo;src/&rdquo; as the value. I got this value because inside the <code>vendor/php-timer</code> directory is the <em>PHP_Timer</em> class, without any <code>namespace</code> keyword. Due to the lack of a namespace we just have to tell the autoloader that when we declare <code>use PHP_Timer;</code> in our php file that we need the <em>PHP_Timer</em> class loaded.</p>
+<blockquote>
+<p>I figured out what to do by looking at packages that used PHP_Timer. It can be confusing, <a href="https://jtreminio.com/2012/10/composer-namespaces-in-5-minutes/">Read composer namespaces in five minutes to learn more about how composer uses namespaces</a>.</p>
+</blockquote>
+<p>Now that we have added the classname to the composer file we can start to use it in our greetings.php file. Lets add the some use of the php-timer class to the <em>Greetings</em> class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">HelloWorld</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">PHP_Timer</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Greetings</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayHelloWorld</span>() {
+</span></span><span style="display:flex;"><span>    $timer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PHP_Timer</span>();
+</span></span><span style="display:flex;"><span>    $timer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello World</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">.</span> $timer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">resourceUsage</span>() <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now when we run the test it will print:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ php tests/test.php
+</span></span><span style="display:flex;"><span>Hello World
+</span></span><span style="display:flex;"><span>Time: <span style="color:#ae81ff">1</span> ms, Memory: 0.50MB
+</span></span></code></pre></div><h2 id="scripts-scripts-and-scripts">Scripts, scripts, and scripts</h2>
+<p>Currently, to test our command we need to run <code>php tests/test.php</code> from the command line. That is about as simple as it gets. But what about if we want to run a <a href="https://packagist.org/packages/squizlabs/php_codesniffer">linter</a> or some <a href="https://packagist.org/packages/phpunit/phpunit">real tests</a>? This is where the <em>scripts</em> member in the <code>composer.json</code> file comes into play.</p>
+<p>Lets add a <em>scripts</em> definition to the end of our <code>composer.json</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;php tests/test.php&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now we only need to run the command <code>composer test</code> or <code>composer run test</code> from the command line in order to run our tests. The value of the <em>scripts</em> member is a list of key value pairs where the key is the name of the command and the value is the command that is run. The value can even be an array of commands that composer will run.</p>
+<p>If we change that to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;test&#34;</span>: [<span style="color:#e6db74">&#34;php tests/test.php&#34;</span>, <span style="color:#e6db74">&#34;echo Hello&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then composer will run both the commands.</p>
+<blockquote>
+<p><code>composer run</code> is shorthand for <code>composer run-script</code></p>
+</blockquote>
+<p>There are a whole slew of <a href="https://getcomposer.org/doc/articles/scripts.md#command-events">pre-defined commands</a> that we can add to our <code>composer.json</code> file. For example, using the key <code>post-update-cmd</code> will run the scripts after the <code>update</code> and before the <code>install</code> commands.</p>
+<p>Download my <a href="https://github.com/frob/greetings/tree/composer">Hello World Greetings composer project</a> from github.</p>
+<h2 id="composer-and-drupal">Composer and Drupal</h2>
+<p>As my professional life goes, 99% of my php work is Drupal &ndash; and it has been since release of Drupal 6. I have done work in other languages and I have used other frameworks; but when it comes to me getting paid to write php, it is almost always Drupal.</p>
+<p>As I said, I got started with Drupal seriously with Drupal 6, but now, as is the Drupal way, Drupal 6 is dead and Drupal 8 is new. Drupal 8 was a nearly complete re-architecture of Drupal.</p>
+<p>Drupal was special, it was special because when we (Drupal Developers) needed something we built it. Our issue was that we built it for us. Now the needs of Drupal aren&rsquo;t unique. We build drush, but every project seems to have a cli now-a-days.</p>
+<p>Drush has make functionality. It can handle bundling our projects together with a build process. It also gives us the ability to download and install modules or change/modify our configuration. We can start temporary web-servers with Drush and do simple development work or test patches. The issue is that Drush was our tool and no one else&rsquo;s.</p>
+<p>With Drupal 8 we are leaving the island and seeing how others have solved problems. We don&rsquo;t have to do it all ourselves and sometimes it is better not to even try. There is a whole slew of functionality out there that we can now incorporate into our modules. Composer is the key in all of that.</p>
+]]></description></item><item><title>Simplify Drupal 8 field value calls</title><link>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link><pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid><description><![CDATA[<p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
+<h1 id="get-the-title-of-a-node">Get the title of a node</h1>
+<p>Let&rsquo;s load a node and return the title.</p>
+<h2 id="drupal-7">Drupal 7</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$node <span style="color:#f92672">=</span> <span style="color:#a6e22e">node_load</span>($nid);
+</span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> $node<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span>;
+</span></span></code></pre></div><p>Easy right? Two lines, done!</p>
+<p>Now lets look at the Drupal 8 way.</p>
+<h2 id="drupal-8">Drupal 8</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$node <span style="color:#f92672">=</span> <span style="color:#a6e22e">\Drupal\node\Entity\Node</span><span style="color:#f92672">::</span><span style="color:#a6e22e">load</span>($nid);
+</span></span><span style="display:flex;"><span>$title_field <span style="color:#f92672">=</span> $node<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;title&#39;</span>);
+</span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> $title_field<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>;
+</span></span></code></pre></div><p>Wow, look at all those words.</p>
+<p>Lets take a look at what is happening here. First, we load the node, that is what all that <code>\Drupal\node\Entity\Node::load()</code> business is doing. Second, We load the title field (that is correct titles are fields in Drupal 8) this is done with the <code>get</code> method. Third, we have to get the value from that field that we got with a call to the <code>value</code> member.</p>
+<p>So much work just to get the title. Clearly things were easier in Drupal 7.</p>
+<p>Well, not so fast. What if the site is multi-lingual? Or what if we need more than just the title. Remember, Drupal 7 didn&rsquo;t use objects so it was impossible to get those values in a &ldquo;normal&rdquo; way. That is unless you consider <code>$node-&gt;field_name[0][LANGUAGE_NONE]['value']</code> normal. This isn&rsquo;t a stab at Drupal 7&rsquo;s brilliant architecture. Drupal 7&rsquo;s architecture gave us an awe inspiring amount of freedom within an engine to build nearly anything we wanted. However, the api&rsquo;s (or lack there of) have not aged well.</p>
+<p>The point of all that is, there is just this one getter to get a value from a field. No longer do we need to <code>dpm</code> a value and see what is there and then pull the right value with the correct delta, for the correct language, from the correct &ldquo;value.&rdquo; Now we just <code>get()</code> the field, and pull the <code>value</code>.</p>
+<h2 id="simplify">Simplify</h2>
+<p>Now that we are past all that, let us see how we can improve upon that getter snippet.</p>
+<h3 id="use">use</h3>
+<p>First we can utilize the use keyword so the Node static object will be directly accessible inside our namespace. This will be the only thing that I mention in this post that increase the number of lines.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Drupal\node\Entity\Node</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$node <span style="color:#f92672">=</span> <span style="color:#a6e22e">Node</span><span style="color:#f92672">::</span><span style="color:#a6e22e">load</span>($nid);
+</span></span><span style="display:flex;"><span>$title_field <span style="color:#f92672">=</span> $node<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;title&#39;</span>);
+</span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> $title_field<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>;
+</span></span></code></pre></div><h3 id="dont-split-the-get-and-value-calls">Don&rsquo;t split the <code>get()</code> and <code>value</code> calls</h3>
+<p>There is no need to separate the field getter from the value getter. We can eliminate the field variable and one line by concatenating those commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Drupal\node\Entity\Node</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$node <span style="color:#f92672">=</span> <span style="color:#a6e22e">Node</span><span style="color:#f92672">::</span><span style="color:#a6e22e">load</span>($nid);
+</span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> $node<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;title&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>;
+</span></span></code></pre></div><h3 id="dont-split-the-load-and-get-and-value-calls">Don&rsquo;t split the <code>load()</code> and <code>get()</code> and <code>value</code> calls</h3>
+<p>While we are at it we should just put it all on one line.</p>
+<p>If all we want is the title there is no reason to save the node to a variable. There isn&rsquo;t anything wrong with saving it to a variable, but it can be confusing to have all these variables laying around when you come back to this code after six months.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Drupal\node\Entity\Node</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> <span style="color:#a6e22e">Node</span><span style="color:#f92672">::</span><span style="color:#a6e22e">load</span>($nid)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;title&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>;
+</span></span></code></pre></div><h3 id="we-dont-really-need-to-call-get">We don&rsquo;t really need to call <code>get()</code></h3>
+<p>As pointed out by Dezső BICZÓ in the comments, get() is a magic method. Therefore, in this case we can call for <code>$node-&gt;title</code> directly. That can further simplify our example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Drupal\node\Entity\Node</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$title <span style="color:#f92672">=</span> <span style="color:#a6e22e">Node</span><span style="color:#f92672">::</span><span style="color:#a6e22e">load</span>($nid)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>;
+</span></span></code></pre></div><h2 id="things-to-remember">Things to remember</h2>
+<p>This isn&rsquo;t sanitary!</p>
+<p>If the title isn&rsquo;t being output through twig then remember to sanitize anything that comes from the db.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Drupal\Component\Utility\Xss</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Xss</span><span style="color:#f92672">::</span><span style="color:#a6e22e">filter</span>($title)
+</span></span></code></pre></div><p>It&rsquo;s important to remember that when dealing with a new version it&rsquo;s tempting to say, &ldquo;This used to be easy and now it is hard.&rdquo;</p>
+<p>It only used to be easy because we knew how to do things without having to do too much research. Now things are hard &ndash;but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.</p>
+<p>The good news is that once you internalize the <code>-&gt;get('field')-&gt;value</code> pattern, it becomes second nature. One getter, one consistent API, regardless of field type or language. That is a real improvement over Drupal 7&rsquo;s <code>$node-&gt;field_name[0][LANGUAGE_NONE]['value']</code> guessing game.</p>
+]]></description></item><item><title>Altering Entity Field Queries for JOINS ORs and Profit</title><link>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link><pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid><description><![CDATA[<p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
+<p>I have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&rsquo;s hook and alter architecture.</p>
+<h2 id="simple-entityfieldquery">Simple EntityFieldQuery</h2>
+<p>For our example we will start with a simple EntityFieldQuery for getting a list of nodes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $query <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EntityFieldQuery</span>();
+</span></span><span style="display:flex;"><span>  $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">entityCondition</span>(<span style="color:#e6db74">&#39;entity_type&#39;</span>, <span style="color:#e6db74">&#39;node&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">entityCondition</span>(<span style="color:#e6db74">&#39;bundle&#39;</span>, <span style="color:#e6db74">&#39;activity_set&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $result <span style="color:#f92672">=</span> $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">execute</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($result[<span style="color:#e6db74">&#39;node&#39;</span>])) {
+</span></span><span style="display:flex;"><span>    $activity_sets <span style="color:#f92672">=</span> <span style="color:#a6e22e">node_load_multiple</span>(<span style="color:#a6e22e">array_keys</span>($result[<span style="color:#e6db74">&#39;node&#39;</span>]));
+</span></span><span style="display:flex;"><span>    $activity_sets <span style="color:#f92672">=</span> <span style="color:#a6e22e">node_view_multiple</span>($activity_sets);
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>Now lets say that we want this list to be a keyword filtered list of title or taxonomy. But, we also want to filter this to exclusively show nodes with another taxonomy field&rsquo;s values. The one taxonomy field is an easy addition.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fieldCondition</span>(<span style="color:#e6db74">&#39;field_related_curriculum&#39;</span>, <span style="color:#e6db74">&#39;tid&#39;</span>, $structure_taxonomy, <span style="color:#e6db74">&#39;IN&#39;</span>);
+</span></span></code></pre></div><h2 id="how-entityfieldqueries-can-start-to-break-down">How EntityFieldQueries can start to break down</h2>
+<p>But how do we add an <code>OR</code> statement to also allow for the title keyword filter?</p>
+<p>EntityFieldQuery doesn&rsquo;t allow for <code>OR</code> out of the box. We could extend the EntityFieldQuery class and add some interface to it to try and handle this case. OR, we could just use Drupal&rsquo;s hook and alter system to alter the query before we execute the query.</p>
+<p>Before we can alter the query, we must know what query we want to alter. We will do this by tagging the query when we created the EntityFieldQuery.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addTag</span>(<span style="color:#e6db74">&#39;keyword&#39;</span>);
+</span></span></code></pre></div><p>While we are at it we will have to add our filter criteria as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addMetaData</span>(<span style="color:#e6db74">&#39;options&#39;</span>, $options);
+</span></span></code></pre></div><p>There now we have what we will need for our alter hook. To alter this query we will need to implement hook_query_TAG_alter().</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * Implements hook_query_TAG_alter().
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">module_name_query_keyword_alter</span>(<span style="color:#a6e22e">QueryAlterableInterface</span> $query) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// @TODO: make this do things.
+</span></span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>What we want is for any single word in the title to come back with a like. I did it this way. I realize that this can be done in a variety of different ways.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$keywords <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#39; &#39;</span>, $options[<span style="color:#e6db74">&#39;keywords&#39;</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$or <span style="color:#f92672">=</span> <span style="color:#a6e22e">db_or</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span>($keywords)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">foreach</span> ($keywords <span style="color:#66d9ef">as</span> $keyword) {
+</span></span><span style="display:flex;"><span>    $or<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">condition</span>(<span style="color:#e6db74">&#39;node.title&#39;</span>, <span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#f92672">.</span> $keyword <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;%&#39;</span>, <span style="color:#e6db74">&#39;LIKE&#39;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">condition</span>($or);
+</span></span></code></pre></div><p>There, we are done, right? Nope. We may think that we are, however, if we ran that code we would get a PDO exception. Why? Because we are not doing any propertyConditions on the original EntityFieldQuery. Drupal is smart enough to know that if it isn&rsquo;t using the node table in the EFQ that it doesn&rsquo;t need to <code>JOIN</code> it.</p>
+<p>To fix this, go back up to the original EntityFieldQuery and add this line <code>$query-&gt;propertyCondition('status', 1);</code>. This forces the node table into the query so our alter hook can reference <code>node.title</code>.</p>
+<p>To recap: tag your EntityFieldQuery, attach metadata with <code>addMetaData()</code>, implement <code>hook_query_TAG_alter()</code> to add your <code>OR</code> conditions, and make sure the base table is joined by including at least one <code>propertyCondition</code>. It is not obvious, but once you know the pattern it opens up EntityFieldQuery for nearly any query you need to build.</p>
+]]></description></item><item><title>Reflecting on Elixir and Phoenix</title><link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link><pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid><description><![CDATA[<p>Every developer eventually asks the question: what should I be learning next? I just got back from <a href="http://www.elixirconf.com">ElixirConf</a>, and this post is my attempt to answer that question for myself &ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.</p>
+<h2 id="the-new-hotness">The New Hotness</h2>
+<p>I read a post recently that had the click bait title &ldquo;Is Drupal Dying?&rdquo; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the <q>next</q> thing &ndash;expecting Drupal to be old and busted in five years.</p>
+<p>I am at ElixirConf because I see great potential in Elixir, Erlang, and <a href="http://www.phoenixframework.com">Phoenix</a>. I expect it to be the next big thing and for it to help provide a scalable platform for highly available, highly scalable, and interactive / dynamic websites.</p>
+<p>I consider myself a technologist. As such, I am always looking for the <q>next</q> thing. However, I would caution my clients against it.</p>
+<h1 id="what-is-elixir">What is Elixir?</h1>
+<p>Elixir is a functional language that compiles down to Erlang. Erlang was developed by Ericson to run their phone switches. It is a fault-tolerant language that is designed to handle connections. However, Erlang is a difficult language to work with. Here are some examples about <a href="http://elixir-lang.org/crash-course.html">how Elixir simplifies Erlang</a>.</p>
+<h1 id="what-is-phoenix">What is <a href="http://www.phoenixframework.com">Phoenix</a>?</h1>
+<p><a href="http://www.phoenixframework.com">Phoenix</a> is a Rails-like MVC framework that is written in Elixir. Phoenix makes good use of Elixir&rsquo;s tools (such as mix, plug, and ecto) and other Elixir components to create a highly scalable, fault-tolerant, and highly available web-application framework. This is still a very bare-bones and brand new framework. Phoenix 1.0.0 was just released. While I am very impressed, there are still some pieces that are missing. <em>Some of these piece are missing in Rails and other MVC based frameworks as well</em>. This is one reason I seldom use (or recommend) a MVC for back-end development.</p>
+<h2 id="phoenix-feature-overview">Phoenix feature overview?</h2>
+<p>The thing to remember is that phoenix is a bare metal type of framework. All it gives the developer out-of-the-box are: <strong>Endpoints</strong>, <strong>Routes</strong>, <strong>Plugs</strong>, <strong>Models</strong>, <strong>Views</strong>, and <strong>Controllers</strong>.</p>
+<ul>
+<li><strong>Endpoints</strong>
+<ul>
+<li>Where the client can connect; web-sockets and http.</li>
+</ul>
+</li>
+<li><strong>Routes</strong>
+<ul>
+<li>Paths to content, these can be dynamic.</li>
+</ul>
+</li>
+<li><strong>Plugs</strong>
+<ul>
+<li>Modules of additional functionality. The connections is pushed through the Plugs and the Plugs affect the connection.</li>
+</ul>
+</li>
+<li><strong>Models</strong>
+<ul>
+<li>Definition (schema) of data.</li>
+</ul>
+</li>
+<li><strong>Views</strong>
+<ul>
+<li>How the data is displayed</li>
+</ul>
+</li>
+<li><strong>Controllers</strong>
+<ul>
+<li>How the data can be manipulated.</li>
+</ul>
+</li>
+</ul>
+<p>The nice thing about Phoenix is that it uses many pieces of tech from Elixir but it is also built to play well with other technologies.</p>
+<h1 id="some-not-scientific-at-all--benchmarks">Some not-scientific-at-all ™ benchmarks.</h1>
+<p>I am testing with apache benchmark. Running 1000 requests with 100 concurrent users. I am not going to do a test of Drupal, I will only be comparing Phoenix to a site that was statically generated beforehand and delivered with NGINX. Tests were done with apache benchmark.</p>
+<aside class="inline">I am not testing Drupal, because it wouldn't be a fair comparison. Drupal does much more than Phoenix on each request. Really this is a far more apples&ndash;apples comparison.</aside>
+<h2 id="static-site-served-with-nginx">Static Site served with <strong>nginx</strong></h2>
+<p>This is a site that I have in production. It was Drupal, I retired the site and archived it to static html. The web-server is running nginx and it only serves static sites. Neither Phoenix or NGINX are being used in a completely optimized way. Remember, these are not-scientific-at-all™ benchmarks.</p>
+<pre tabindex="0"><code>01:18 $ ab -n 1000 -c 100 http://www.lnltowing.com/
+This is ApacheBench, Version 2.3 &lt;$Revision: 1663405 $&gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking www.lnltowing.com (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+Server Software:        nginx
+Server Hostname:        www.lnltowing.com
+Server Port:            80
+
+Document Path:          /
+Document Length:        3142 bytes
+
+Concurrency Level:      100
+Time taken for tests:   5.490 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      3392000 bytes
+HTML transferred:       3142000 bytes
+Requests per second:    182.15 [#/sec] (mean)
+Time per request:       549.001 [ms] (mean)
+Time per request:       5.490 [ms] (mean, across all concurrent requests)
+Transfer rate:          603.37 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:      100  237  58.8    244     665
+Processing:    70  251  80.5    232     777
+Waiting:       70  249  79.3    231     666
+Total:        170  488 113.0    476    1089
+
+Percentage of the requests served within a certain time (ms)
+  50%    476
+  66%    487
+  75%    497
+  80%    510
+  90%    581
+  95%    758
+  98%    875
+  99%    936
+ 100%   1089 (longest request)
+</code></pre><h2 id="dynamic-site-served-with-phoenix">Dynamic site served with <strong>Phoenix</strong></h2>
+<p>This is Phoenix running on my local machine in dev mode with live code reloading. I added a couple custom models and controllers, but otherwise it is basically vanilla Phoenix in development mode.</p>
+<pre tabindex="0"><code>01:16 $ ab -n 1000 -c 100 http://127.0.0.1:4000/admin/content
+This is ApacheBench, Version 2.3 &lt;$Revision: 1663405 $&gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+Server Software:
+Server Hostname:        127.0.0.1
+Server Port:            4000
+
+Document Path:          /admin/content
+Document Length:        41373 bytes
+
+Concurrency Level:      100
+Time taken for tests:   7.488 seconds
+Complete requests:      1000
+Failed requests:        0
+Non-2xx responses:      1000
+Total transferred:      41567000 bytes
+HTML transferred:       41373000 bytes
+Requests per second:    133.54 [#/sec] (mean)
+Time per request:       748.844 [ms] (mean)
+Time per request:       7.488 [ms] (mean, across all concurrent requests)
+Transfer rate:          5420.73 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   0.7      0       4
+Processing:    30  726 128.0    710    1168
+Waiting:       30  726 128.0    709    1168
+Total:         33  727 127.9    711    1168
+WARNING: The median and mean for the initial connection time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%    711
+  66%    752
+  75%    809
+  80%    828
+  90%    892
+  95%    953
+  98%   1022
+  99%   1073
+ 100%   1168 (longest request)
+</code></pre><p>All this test does is make me think Phoenix might be onto something. This isn&rsquo;t decisive, however, Phoenix was delivering dynamic pages to the browser nearly as fast as nginx was delivering static files.</p>
+<p>This definitely warrants further testing. My next test might be with some more complicated models and user access controls. However, my interest with Phoenix has more to do with the web-socket handling. These were the preliminary tests to see if Phoenix is even worth my limited time.</p>
+<p>It is.</p>
+<h1 id="drupals-heel">Drupal&rsquo;s heel</h1>
+<p>My opinion is that Drupal&rsquo;s biggest strength (and the root of its staying power) comes from our (as in the Drupal Community) acceptance that things change. Drupal 7 was a huge step forward from Drupal 6. Old apis were gone or changed in ways that were incompatible with Drupal 6. Remember that when Drupal 7 was released, no one was even developing on Drupal 6 anymore &ndash;everyone was using Pressflow.</p>
+<p>Drupal 8, from all I can see, <em>gives us more tools out of the box than any other site building platform</em>. This is a good time.</p>
+<p>For the longest time I thought Drupal&rsquo;s biggest problem was PHP &ndash;and I mostly still think that. The difference between now and 5 years ago is that PHP&rsquo;s development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real potential. PHP has always been really fast and it is still really fast. Big pipe is the <q>new thing</q> for PHP and it can work, things are possible. All of this gives me hope. It gives me hope for Drupal.</p>
+<h2 id="so-where-does-this-leave-me">So where does this leave me?</h2>
+<p>Elixir and Phoenix are worth learning. The benchmarks speak for themselves, the developer experience is excellent, and the fault-tolerance story is unlike anything in the PHP world. But Drupal is not dying &ndash; it is adapting. For now, Phoenix earns a place in my toolbox for the kinds of problems it was built to solve: real-time, highly concurrent, connection-heavy applications. For content management, Drupal is still the answer. The best tools are the ones you pick for the right job.</p>
+]]></description></item><item><title>Modern Drupal7 Site Building Tools</title><link>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</link><pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</guid><description><![CDATA[<p>With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &ndash; for site builders specifically &ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.</p>
+<h2 id="why-build-a-site-with-drupal-7">Why build a site with Drupal 7</h2>
+<p>Drupal 8 is nearly out making Drupal 7 look like it isn&rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.</p>
+<h1 id="the-modules">The Modules</h1>
+<p>I know, I know, many of these modules are not new and this isn&rsquo;t a list of everything someone will need to build a site (<a href="http://lmgtfy.com/?q=top+50+drupal+modules">that subject has been done to death</a>); this is a list of modules that allow site builders and someone with some front-end skill to build complicated sites with little to no custom module code.</p>
+<h2 id="title"><a href="https://www.drupal.org/project/title">Title</a></h2>
+<p>Originally designed to make up for the short coming of Drupal 7 keeping the title as a property (not a field) and what that meant for entity translations. This is a module that I use for every site for one reason. It makes the title into a field. This allows it to be placed in a view mode like any other field. Used in conjunction with Fences and this allow for semantic and accessible markup in any view mode with a wide variety of layouts.</p>
+<h2 id="field-group"><a href="https://www.drupal.org/project/field_group">Field Group</a></h2>
+<p>Seriously, why isn&rsquo;t this in core? This is what a module should be; it allows users to put the fields in groups, both in the form display and in the view mode display. This module also allows for the use of vertical tabs, jquery ui tabs for horizontal tabs, and collapsible groups.</p>
+<h2 id="fences"><a href="https://www.drupal.org/project/fences">Fences</a></h2>
+<p>Drupal, out-of-the-box, puts classes on everything with wrappers on wrappers on wrappers in an attempt to do all things for all use-cases. As is shown over and over again throughout history, if something attempts to do all things it will inevitably <a href="https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II">do all things poorly</a>. This is one of those things that, arguably, Drupal does poorly.</p>
+<p><a href="https://www.drupal.org/project/fences">Fences</a> attempts to tame this problem on the field level by making the wrappers for fields configurable. This has drawbacks: One of the cleanest options is to have no wrapper, and while this sounds like a good idea, it is not. This can lead one field to run into the next and can really just make things more difficult to target with css; Also, this module forces fields to be wrapped on a per field bases instead of a per display basis. This might sound like it is forcing the site-builder to think semantically about the content, however, semantics can change based on display so this is to be used with a bit of caution. On this note: the Fences module might be <a href="https://www.drupal.org/node/1888224#comment-10364825">changing this stance</a> on this.</p>
+<h2 id="elements"><a href="https://www.drupal.org/project/elements">Elements</a></h2>
+<p>This is an old module based on the idea that new things happen and it isn&rsquo;t always the core team that should have to deal with new things. Today this module allows for more modern form api elements to be rendered. Check the project page for specific details.</p>
+<h2 id="field-formatter-class"><a href="https://www.drupal.org/project/field_formatter_class">Field Formatter Class</a></h2>
+<p>Simple, put classes on field wrappers. Notice I said wrappers. This doesn&rsquo;t put the class on the field, so using this in conjunction with the <a href="https://www.drupal.org/project/fences">Fences</a> Module&rsquo;s no wrapper option can lead to confusing results &ndash;no class will be rendered because no wrapper is rendered.</p>
+<h2 id="context"><a href="https://www.drupal.org/project/context">Context</a></h2>
+<p>Really it is Context and all the modules that support Context, such as <a href="https://www.drupal.org/project/context_entity_field">Context Entity Field</a>. Context is sort of like the <a href="https://www.drupal.org/project/rules">Rules</a> Module and core&rsquo;s block placement had a baby. It is based on the idea that, if &rsquo;thing&rsquo; is true (condition) then (reaction) will happen.</p>
+<p>At first this module was thought of as an alternative to <span title="the devil">Panels</span>. However, it does much more than place blocks. With it (and the before mentioned helper module) a site-builder can add a select list to a node and have that select list add classes to the page body or add template suggestions to that node based on the content editor&rsquo;s input &ndash;all without code.</p>
+<h2 id="node-class"><a href="https://www.drupal.org/project/node_class">Node Class</a></h2>
+<p>I love modules that put classes on things. Content people or site-builders then do not have to call the developers to add a class. This is one of those modules. It allows the content editor to put classes on nodes.</p>
+<h2 id="block-class"><a href="https://www.drupal.org/project/block_class">Block Class</a></h2>
+<p>Very simple, put classes on blocks.</p>
+<h2 id="menu-attributes"><a href="https://www.drupal.org/project/menu_attributes">Menu Attributes</a></h2>
+<p>This module adds attributes to menu items and menu links. This means that there is no more needing to write css rules that are based on Drupal&rsquo;s mlid based class.</p>
+<aside class="inline">Why is theming off of a system generated mlid based class bad. Because this can change from install to install. Just like theming off of node id, theming off of menu link id is a bad idea.</aside>
+<h2 id="view-field"><a href="https://www.drupal.org/project/viewfield">View Field</a></h2>
+<p>Not to be confused with <a href="https://www.drupal.org/project/views_field">Views Field</a>, the <a href="https://www.drupal.org/project/viewfield">View Field</a> Module allows site-builders to add fields to entities that allow the content editor to display views in fields. These views are set per piece of content. This means there can be a basic page content type that can have all the things that a page should have (path, menu, xml sitemap rules, access rules, og configuration, workflows, meta-tags, etc) and still have a view based listing displayed.</p>
+<h2 id="entity-views-attach"><a href="https://www.drupal.org/project/eva">Entity Views Attach</a></h2>
+<p>Unlike <a href="https://www.drupal.org/project/viewfield">View Field</a>, this module is all about the same view as a field on an entity. This module allows the site-builders to configure a view to act like a field on an entity bundle. For example, we want to have a list of all the content that a user has flagged on the user&rsquo;s profile page, and the design has that list in the middle of the rest of the fields. With this module the listing can be configured to be a pseudo field on the users entity that is then free to be positioned along with the rest of the user fields.</p>
+<h2 id="bean"><a href="https://www.drupal.org/project/bean">Bean</a></h2>
+<p>Bean stands for <q>Block Entities Aren&rsquo;t Nodes.</q> This is a stab at the <a href="https://www.drupal.org/project/nodeblock">other way of doing this</a>.</p>
+<p>Block&rsquo;s are the things of which sites are made. One would expect that they would be fieldable, bundlable, entities. Alas, they are not. Blocks cannot have fields and those fields can not be stored in features &ndash;because blocks aren&rsquo;t entities and don&rsquo;t have fields.</p>
+<p>Beans can have fields, because a Bean is a new type of entity, a block entity. This also gives us a better experience for content editors that will be building blocks. Content editors are given revisions, and a block listing page that works just like the content listing page. This means we can have views of blocks too.</p>
+<h2 id="entity-view-mode"><a href="https://www.drupal.org/project/entity_view_mode">Entity View Mode</a></h2>
+<p>Personally, I like code, and I like to write my view modes with code. But this module works too. This module allows the site-builder to add view modes to any bundle on any entity. There is one large drawback, all this stuff is stored in one big variable. That means when a features is exported with the strongarm module it will get all the settings for all the bundles on all content types. There is movement in the issue queue to make this less all-or-nothing but for now, this is how it is.</p>
+<h2 id="display-suite"><a href="https://www.drupal.org/project/ds">Display Suite</a></h2>
+<p>If I had one major complaint about Display Suite, it would be that it does too much (even though it does everything pretty well). With this module a site-builder can: override/layout entity forms, add view modes to bundles, add/remove fields from display, wrap fields in wrappers, and much much more. Read the project description and watch some tutorial videos for more.</p>
+<h2 id="less"><a href="https://www.drupal.org/project/less">Less</a></h2>
+<p>Less!?!, I thought everyone used sass now and less was gone. Nope, less is awesome. It is just as awesome as sass and there is nothing that can be done with one that cannot be done with the other.</p>
+<p>Once the flame war dies down, continue reading.</p>
+<p>This module does a really cool thing. It ties Drupal&rsquo;s css attaching with a less compiler. This less compiler can be php based, such as the old Lefo php less compiler, or the new less.php compiler. It can even be the lessjs node plugin that is installed on the server. I works with css aggregation and it works with the autoprefixing node postCSS plugin as well. This means that you never need to put compiled css into the repository.</p>
+<p><strong>Notice</strong> there is a sass Drupal module that works with the old Lefo sass library. However, both the php lib and the Drupal module are not well supported.</p>
+<h2 id="bootstrap-theme"><a href="https://www.drupal.org/project/bootstrap">Bootstrap Theme</a></h2>
+<p>Bootstrap is a fine front-end framework, and if you are building a site for Bootstrap developers then this is the place to go. I like to use <a href="https://www.drupal.org/project/bootstrap_library">Bootstrap Library</a> for actually adding the Boostrap code.</p>
+<h2 id="jquery-update"><a href="https://www.drupal.org/project/jquery_update">jQuery Update</a></h2>
+<p>Drupal 7 is not the new hotness. It is the old standard. As such the libraries that were once newish when Drupal 7 was released are not so newish. They are in-fact very old indeed now. This will be an issue when attempting to use new js libraries and plugins that require new versions of jQuery.</p>
+<p>To this end, I use jQuery update. It is simple, it allows the site-builder to pick a version of jQuery to use with a theme. It also facilitates loading that version from a CDN and the loading of the jQuery migrate module.</p>
+<p><strong>Notice</strong> If using the CDN, pick it before starting with theming. Not every CDN will have the same code for the same versions of jQuery.</p>
+<h2 id="ember"><a href="https://www.drupal.org/project/ember">Ember</a></h2>
+<p>This is the new admin theme hotness from Aquia. It is semantic and accessible and it follows the Aquia&rsquo;s style guidelines. Ember is still in development so expect some glitches.</p>
+<p>I recommend creating a sub-theme of this theme so that further customization can be done without having to hack at ember.</p>
+<h2 id="ember-support"><a href="https://www.drupal.org/project/ember_support">Ember Support</a></h2>
+<p>Does some stuff that ember cannot do in the theme space.</p>
+<h2 id="coffee"><a href="https://www.drupal.org/project/coffee">Coffee</a></h2>
+<p>Toolbar was based somewhat on the admin menu module. Admin module persisted because toolbar doesn&rsquo;t next things. None of that matters anymore because coffee isn&rsquo;t a toolbar. Coffee works like Unity for Ubuntu or Spotlight search for Mac, or the Start Menu in Windows. Just start typing and a list of options will be presented. Pick the option and it will take you there.</p>
+<h2 id="speedboxes"><a href="https://www.drupal.org/project/speedboxes">Speedboxes</a></h2>
+<p>This is a module that truly must be seen to be believed; it is one of those modules that makes new Drupal developers go <q>hmmmm</q> and makes seasoned Drupal developers crap their pants.</p>
+<p>What it does is allow the site-builder to draw a rectangular area around check boxes and then check/uncheck/toggle all the selected checkboxes. This makes configuring the user permission page so much easier.</p>
+<p>The down side to this module used to be that did this on every page or forced the user to use a bookmarklet as a toggle. I recently took over maintainership of this module and I have changed it so that the library responsible only loads on the permissions page and the organic groups permissions page.</p>
+<h2 id="installation">Installation</h2>
+<p>To install these modules just type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drush dl context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drush en context views eva block_class field_formatter_class fences elements viewfield entity_view_mode node_class ds skinr less bootstrap bootstrap_library jquery_update ember ember_support menu_attributes field_group speedboxes title bean
+</span></span></code></pre></div><p>If you do not want to have to confirm over and over again, then you will probably want to pass the <code>-y</code> flag to the drush command.</p>
+<p>Play with these modules before installing on production.</p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>No single module on this list is revolutionary. The power comes from combining them. Title and Fences give you semantic markup. Field Group and Display Suite give you layout control. Context gives you conditional logic. Bean gives you fieldable blocks. Stack them together and you have a site-building toolkit that can handle complex designs without writing a single line of custom module code. Drupal 7 is not the new hotness, but it is a platform where the tools have had time to mature &ndash; and that maturity counts for a lot.</p>
+]]></description></item><item><title>Need a join in an EntityFieldQuery, how about a subquery?</title><link>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</link><pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</guid><description><![CDATA[<p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it. EntityFieldQuery is the Drupal 7 way to fetch entities without writing raw SQL, but it has a well-known limitation: you cannot do arbitrary <code>JOIN</code>s the way you would with a normal <code>db_select()</code> query. That comes up the moment you try to filter users by role, since role assignments live in their own table rather than on the user entity itself. It turns out there is a clean way around this using a subquery, and it is worth knowing about because the same trick applies any time you need to filter an EntityFieldQuery against data that lives in another table.</p>
+<p><em><strong>Shaddap and give me the code:</strong></em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EntityFieldQuery</span>();
+</span></span><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">entityCondition</span>(<span style="color:#e6db74">&#39;entity_type&#39;</span>, <span style="color:#e6db74">&#39;user&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$roles_subquery <span style="color:#f92672">=</span> <span style="color:#a6e22e">db_select</span>(<span style="color:#e6db74">&#39;users_roles&#39;</span>, <span style="color:#e6db74">&#39;ur&#39;</span>);
+</span></span><span style="display:flex;"><span>$roles_subquery<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fields</span>(<span style="color:#e6db74">&#39;ur&#39;</span>, <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;uid&#39;</span>));
+</span></span><span style="display:flex;"><span>$roles_subquery<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">condition</span>(<span style="color:#e6db74">&#39;rid&#39;</span>, $my_role_id);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">propertyCondition</span>(<span style="color:#e6db74">&#39;uid&#39;</span>, $roles_subquery, <span style="color:#e6db74">&#39;IN&#39;</span>);
+</span></span></code></pre></div><p>In case you do not want to click the link I put in the opening paragraph. That is the code.</p>
+<h2 id="what-was-the-problem">What was the problem?</h2>
+<p>This is the question.</p>
+<blockquote>
+<p>I thought this was an easy task, yet there does not seem to be a Drupal-method for this. I came as far as knowing I have to use EntityFieldQuery for this - because the API said conditions for user_load_multiple() are deprecated.</p>
+</blockquote>
+<blockquote>
+<p>So I tried this:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  $query <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EntityFieldQuery</span>;
+</span></span><span style="display:flex;"><span>  $query
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">entityCondition</span>(<span style="color:#e6db74">&#39;entity_type&#39;</span>, <span style="color:#e6db74">&#39;user&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">propertyCondition</span>(<span style="color:#e6db74">&#39;rid&#39;</span>,<span style="color:#66d9ef">array</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $result <span style="color:#f92672">=</span> $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">execute</span>();
+</span></span></code></pre></div><p>What this developer wants to do is a query to find all users of a certain role. The problem here is that propertyConditions will only allow querying based on the fields of the base table for the entity and role isn&rsquo;t in the user table. Further, role isn&rsquo;t even a field so fieldCondition wouldn&rsquo;t help either. Also, when doing an EntityFieldQuery we cannot do a typical <code>JOIN</code> as we normally would.</p>
+<h2 id="what-is-the-solution">What is the solution.</h2>
+<p>To get around this we need to limit the EntityFieldQuery based on the uid and not the role. That means we need to get a the list of all the uids from the <code>user_role</code> table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$roles_subquery <span style="color:#f92672">=</span> <span style="color:#a6e22e">db_select</span>(<span style="color:#e6db74">&#39;users_roles&#39;</span>, <span style="color:#e6db74">&#39;ur&#39;</span>);
+</span></span><span style="display:flex;"><span>$roles_subquery<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fields</span>(<span style="color:#e6db74">&#39;ur&#39;</span>, <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;uid&#39;</span>));
+</span></span><span style="display:flex;"><span>$roles_subquery<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">condition</span>(<span style="color:#e6db74">&#39;rid&#39;</span>, $my_role_id);
+</span></span></code></pre></div><p>This will give us a query that will return a list of all the user ids for a particular role. Then we can use that to do a propertyCondition on the EntityFieldQuery to limit it to those uids.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">propertyCondition</span>(<span style="color:#e6db74">&#39;uid&#39;</span>, $roles_subquery, <span style="color:#e6db74">&#39;IN&#39;</span>);
+</span></span></code></pre></div><p>The interesting thing about this is that this isn&rsquo;t an array of results being passed to the propertyCondition. Instead, this is passing the query object. Then, Drupal&rsquo;s query builder will build the query to include that.</p>
+<p>Seriously, well done with the whole DB layer in Drupal 7.</p>
+]]></description></item><item><title>Setting a default value for a link or url field in Drupal 7</title><link>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link><pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid><description><![CDATA[<p>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.</p>
+<p>In case you don&rsquo;t I suggest reading these pages first:</p>
+<ul>
+<li><a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7">The Drupal Form API</a></li>
+<li><a href="https://api.drupal.org/api/drupal/includes!module.inc/group/hooks/7">The hook system</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_form_alter/7">api.drupal.org&rsquo;s hook_form_alter for Drupal7 doc page</a></li>
+</ul>
+<p>Normally these things are just all well and good, do something like.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * Implements hook_form_alter().
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">some_modules_form_alter</span>(<span style="color:#f92672">&amp;</span>$form, <span style="color:#f92672">&amp;</span>$form_state, $form_id) {
+</span></span><span style="display:flex;"><span>  $form[<span style="color:#e6db74">&#39;field_element&#39;</span>][<span style="color:#e6db74">&#39;#default_value&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;some value&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Easy right? Easy, this unless you find yourself altering a compound element. A compound element is a form element that could potentially have multiple fields. A very common one is the link field. The link field could have (optionally) several different form elements depending on the settings of the form field. (All of this is assuming this is an entity edit form that is generated by Drupal&rsquo;s field system)</p>
+<p>If you were to run a dpm on the $form callback you would find several interesting array items.</p>
+<ul>
+<li>#default_value</li>
+<li>#columns</li>
+</ul>
+<h2 id="default_value">#default_value</h2>
+<p>This is simply the field that one would use to change the default value of the field. The issue is that sometimes it isn&rsquo;t as simple as changing this items value. Sometimes a field has more than one column and sometimes the value that you want to change isn&rsquo;t <code>value</code>. It could be <code>target_id</code> or something else.</p>
+<h2 id="columns">#columns</h2>
+<p>This is where the #columns item comes into play. Inside the #columns item there are sub-items that tell you what values you need to set inside of the #default_value item. Get all that?</p>
+<h3 id="for-example">For example:</h3>
+<p>The #columns element should look like this for a link field element.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$form[<span style="color:#e6db74">&#39;#columns&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;url&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;title&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;attributes&#39;</span>,
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Therefore, in-order to set the default value of a link field, one must set the <code>$form['field_link']['#default_value']['url']</code>. This is assuming that it is desired to change the url of the link field. It could be that the title needs to be set or one of the other optional attributes for the link field.</p>
+<p>This should hold true for all fields of all types. I noticed this when I stumbled upon this <a href="https://www.drupal.org/node/1782516#comment-7552205">Drupal.org issue where someone was asking how to set the default value of a link field.</a></p>
+<p>The issue didn&rsquo;t talk about this behavior of the #columns item. I just noticed it when digging through that. Cool eh?</p>
+]]></description></item><item><title>Drupal or Wordpress? Why not Jekyll.</title><link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link><pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid><description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
+<p>So if Jekyll isn&rsquo;t a CMS then what is it? Jekyll is a &ldquo;blog aware&rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.</p>
+<h2 id="what-are-the-advantages-to-static-site-generation">What are the advantages to static site generation?</h2>
+<p>The biggest advantage is simplified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necessary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.</p>
+<h3 id="another-advantage-is-simplicity-jekyll-has-a-very-logical-file-structure">Another Advantage is simplicity. Jekyll has a very logical file structure:</h3>
+<ul>
+<li>Configuration goes into the _config.yml file</li>
+<li>Posts go into _posts directory</li>
+<li>Layout Templates go into the _layouts directory</li>
+<li>Block Templates go into the _includes directory</li>
+</ul>
+<h2 id="basic-configuration">Basic Configuration</h2>
+<p>Inside the _config.yml you will find some basic configuration.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Name of your site (displayed in the header)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Name of the Site</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Short bio or description (displayed in the header)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#ae81ff">Web Developer from Somewhere</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># URL of your avatar or profile pic (you could use your GitHub profile pic)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">avatar</span>: <span style="color:#ae81ff">url to the logo</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Includes an icon in the footer for each username you enter</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">footer-links</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dribbble</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">email</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">facebook</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">flickr</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">github</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instagram</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">linkedin</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pinterest</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rss</span>: <span style="color:#75715e"># just type anything here for a working RSS icon, make sure you set the &#34;url&#34; above!</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">twitter</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">stackoverflow</span>: <span style="color:#75715e"># your stackoverflow profile, e.g. &#34;users/50476/bart-kiers&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Your disqus shortname, entering this will enable commenting on posts</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">disqus</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">google_analytics</span>:
+</span></span></code></pre></div><h2 id="plugins">Plugins</h2>
+<p>One of the cooler parts of Jekyll is that even though it is generating a static site it can have plugins that extend its functionality. Plugins will fall into one of four categories.</p>
+<ul>
+<li>Generators
+<ul>
+<li>Creating new content based on the existing content. Multilanguage sites, more content listings, etc..</li>
+</ul>
+</li>
+<li>Converters
+<ul>
+<li>Filtering content in some way. This could be adding tokens or just using something other than markdown.</li>
+</ul>
+</li>
+<li>Commands
+<ul>
+<li>These are commands that are outside of the content scope. For Drupal people think of this as drush commands for Jekyll.</li>
+</ul>
+</li>
+<li>Tags
+<ul>
+<li>Tags are taxonomy based functionality; categorization or linking of content.</li>
+</ul>
+</li>
+</ul>
+<h2 id="posts">Posts</h2>
+<p>As I said before the Jekyll system is blog aware. That means that aside from pages Jekyll expects there to be posts of content.</p>
+<p>All content is put into the _posts directory and has a specific naming convention including the date and expected url for the post. By default a post is written in markdown and it has a yaml header with some meta data about the post.</p>
+<h2 id="where-do-i-use-it">Where do I use it</h2>
+<h3 id="drupal-for-firebug-developer-blogapi-test">Drupal for Firebug Developer blog/api test</h3>
+<p>After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&rsquo;t want to ask the old maintainer to put the page back up and I didn&rsquo;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I decided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.</p>
+<h3 id="frobiovoxcom-or-frobgithubio">Frobiovox.com or frob.github.io</h3>
+<p>Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.</p>
+]]></description></item><item><title>Utilizing Front End CSS Design Paradigms In Drupal</title><link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link><pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid><description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
+<p><a href="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank">Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014</a></p>
+<iframe allowfullscreen="true" frameborder="0" height="389" mozallowfullscreen="true" src="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/embed?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="480"></iframe>
+]]></description></item><item><title>Creating Auto Submitting Forms with Drupal's Form API</title><link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link><pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid><description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
+<p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
+<p>My use case was a semi-typical one: have the input from one select list affect the options in another select list.</p>
+<p>This could be done in any number of ways including:</p>
+<ul>
+<li>ahah (or ajax)</li>
+<li>I could have javascript limit the options after selection without a server call</li>
+<li>Or, I could reload the page after the first selection is made</li>
+</ul>
+<p>I chose to reload the page after the first choice was made.</p>
+<p>Drupal has a built in handler for ajax like behavior in its form api aptly named “#ajax”. Using the ajax element in the Drupal’s form api looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>$form[<span style="color:#e6db74">&#39;form_element&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;#type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;submit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">‘</span><span style="color:#75715e">#value&#39; =&gt; t(&#39;Submit&#39;),
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">‘</span><span style="color:#75715e">#ajax&#39; =&gt; array(
+</span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;callback&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;callback_function&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;method&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;replace&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;effect&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fade&#39;</span>,
+</span></span><span style="display:flex;"><span>  ),
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>It is pretty verbose, requires a php callback, and can be a bit of overkill for auto-submitting a form. In the days of pure HTML forms, we would simply add the form submit straight to the form input. As it turns out we can do the same thing to our form by exploiting the fact that the form API uses render arrays. All we have to do is attach this code snippet to our form element.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#e6db74">&#39;#attributes&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;onChange&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;people-filter-form&#34;).submit();&#39;</span>)
+</span></span></code></pre></div><p>Notice what is happening here. We are adding attributes to the form element. This is the same way that we would attach classes, only this time we are adding the attribute <tt>onChange=&rsquo;&lt;some js to execute&gt;&rsquo;.</tt></p>
+<p>Below is the full form definition.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * Custom Report User Filter Form
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">people_filter_form</span>($form, <span style="color:#f92672">&amp;</span>$form_state) {
+</span></span><span style="display:flex;"><span>  $form[<span style="color:#e6db74">&#39;person&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;select&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#options&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Select a Person&#39;</span>,
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#default_value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">empty</span>($_GET[<span style="color:#e6db74">&#39;person&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">check_plain</span>($_GET[<span style="color:#e6db74">&#39;person&#39;</span>]),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#attributes&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;onChange&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;iris-app-people-filter-form&#34;).submit();&#39;</span>),
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>  $people <span style="color:#f92672">=</span> <span style="color:#a6e22e">_get_select_list_data</span>(<span style="color:#e6db74">&#39;person&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">foreach</span> ($people <span style="color:#66d9ef">as</span> $person) {
+</span></span><span style="display:flex;"><span>    $form[<span style="color:#e6db74">&#39;person&#39;</span>][<span style="color:#e6db74">&#39;#options&#39;</span>][$person<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">uid</span>] <span style="color:#f92672">=</span> $person<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $form[<span style="color:#e6db74">&#39;submit&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;submit&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Search People&#39;</span>,
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $form;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>That is all there is to it. By adding a single <code>onChange</code> attribute through the form API&rsquo;s <code>#attributes</code> array, we get auto-submission without the overhead of <code>#ajax</code>. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.</p>
+]]></description></item><item><title>css less sass oocss drycss bem front end css design paradigm smacss down</title><link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link><pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid><description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
+<h2>Object Oriented CSS</h2>
+<p>OOCSS has several principles that it is built upon.</p>
+<ol><li>A style should be written once and only once.</li>
+<li>Separate <strong>Structure</strong> from <strong>Skin</strong> (or layout from style)</li>
+<li>Separate <strong>Content </strong>from <strong>Containers</strong></li>
+</ol><h3>A Style should be written once and only once</h3>
+<p>If you are declaring the same exact style rules over and over again then you are probably doing something wrong.<br>Take a look at this example.</p>
+<pre>#thumbnail {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+<p>#block {
+width: 400px;
+overflow: hidden;
+border: solid 1px #ccc;
+background: linear-gradient(#ccc, #222);
+box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</p>
+<p>#view {
+width: 500px;
+min-height: 200px;
+overflow: auto;
+border: solid 1px #ccc;
+background: linear-gradient(#ccc, #222);
+box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</pre><p>All of these above styles are unique; however, they are also repeating the same rules over and over again. These styles can be simplified if a class is added that absorbs these repeated rules. This class would then be applied to the html elements.</p></p>
+<pre>.thumbnail {
+  width: 200px;
+  height: 50px;
+}
+
+.block {
+  width: 400px;
+  overflow: hidden;
+}
+
+.view {
+  width: 500px;
+  min-height: 200px;
+  overflow: auto;
+}
+
+.box {
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</pre><p>This is much simpler with far fewer lines and if the global style changes the change only needs to be made once.</p>
+<h3>Separate Structure from Skin</h3>
+<p>In OOCSS the <em>Structure</em> is generally non-repeated style that works toward organization. This is what puts a sidebar on the left and the content in the middle. The concept of the <em>Skin </em>are the branding or theme of the site. Fonts, Colors, Gradients, Borders, and Rounded Corners are all a part of the skin.</p>
+<h3>Separate Content from Containers</h3>
+<p>All this means is that the style should not depend on a complex (or simple) html structure. Instead of writing a rule like this:</p>
+<pre>#sidebar-first h2, #content h2, #header h1 {
+  ...
+}
+</pre><p>Instead apply a new class to the h2 in the header, content area, and first sidebar. That way the repeated rule can be applied to that single class and then on those specific CSS elements we can overwrite the rule. In other words let the rules cascade and then overwrite them the way CSS was designed.</p>
+<h3>What OOCSS doesn't want you to do</h3>
+<ul><li>DO NOT use descendant selectors</li>
+<li>DO NOT use ID for styling elements</li>
+<li>DO NOT use class attachment for CSS selectors</li>
+<li>*Avoid unless absolutely necessary* the use of !important</li>
+</ul><h4>The Down side to OOCSS</h4>
+<p>This doesn't easily apply to Drupal very well. This is a good concept, and should be reviewed as a good way to keep CSS organized. However, unless a site is requiring an extreme amount of front end work (to the point of completely custom html --where the default Drupal output just will not work) then this system is nearly unusable because it requires additional classes to be written to the html in order to accomplish this.</p>
+<h2>SMACSS Scalable and Modular Architecture for CSS</h2>
+<p><span style="line-height: 1.5em;"><img alt="This is the one with the lumberjack." src="http://www.kwallcompany.com/sites/default/files/jack-head.png" style="width: 112px; height: 101px; float: left;">There are far more rules for SMACSS than I can put into this article. Here is the simple orbital overview: Just like with OOCSS we are encouraged to put everything into classes and distribute those classes out to the html as needed. The big differences are that SMACSS knows that there are times when using descendant selectors and IDs are necessary. Therefore SMACSS gives us guidelines for using them. Isn't that nice!</span></p>
+<p>There are five categories that components will fall into when writing SMACSS: Base, Layout, Module, State, and Theme.</p>
+<p>Each of these rules has a coding standard and class prefix. That is beyond the scope of this article --I suggest reading the <a href="http://smacss.com/" target="_blank">SMACSS website</a> for detailed information.</p>
+<h3>The guide for each of these categories are as follows:</h3>
+<ul><li><strong>Base </strong>- Normalization or style resetting</li>
+<li><strong>Layout</strong> - Positional Styling of structural elements on the page</li>
+<li><strong>Module </strong>- Modules are meant to be standalone stylistic elements. These are the parts that will be defined by classes and applied where necessary to the html.</li>
+<li><strong>State</strong> - Hover, Active and other state aware styles. If the style is dependent upon JavaScript then it is in the <em>State</em> category.</li>
+<li><strong>Theme </strong>- This is the unique, non-repeated overrides of the style. The generic stuff gets put into Modules and then the Theme overrides where necessary.</li>
+</ul><h4>The Downside to SMACSS</h4>
+<p>SMACSS is extremely strict. There are rules for everything. When implementing SMACSS you really need to know what you are doing or you could end up spending all your time worrying about implementing SMACSS and not writing good CSS.</p>
+<h2>Block Element Modifier</h2>
+<p><img alt="BEM seems to have a random logo." src="http://www.kwallcompany.com/sites/default/files/lq8e64g0ns6kzt-l3glbq-saabe.png" style="width: 112px; height: 91px; float: left;">In practice <em>BEM</em> is a simplified combination of <em>OOCSS</em> and <em>SMACSS</em>. Unlike the other two <em>BEM</em> stresses for quick development over style structure. In <em>BEM</em> there are three types of component: a block, an element and a modifier.</p>
+<ul><li><strong>Blocks</strong> are the largest independent container; Header, Footer, and Content would all be considered blocks.</li>
+<li><strong>Elements</strong> are the independent components inside the block.</li>
+<li><strong>Modifiers</strong> are added to both blocks and elements to allow for both style reuse and visually uniqueness.</li>
+</ul><p>BEM offers a way to think about CSS and front-end development and just like OOCSS and SMACSS it offers a strict set of guidelines around it. So strict that they offer tools that will lay it all out for you and enforce the BEM naming conventions and html structure.</p>
+<h4>The Downside to BEM</h4>
+<p><em>BEM</em> is an ideal solution and it seems to know it. The <a href="http://bem.info/method/" target="_blank">BEM Methodology page</a> is shorter than this article. On the surface, <em>BEM</em> is a simple methodology; however, that simplicity goes away very quickly. Once you get past the philosophical methodology page and into the actual guidelines it becomes clear that the guidelines are far more strict. This strictness rules over the html structure and the CSS. If you are comfortable working the html and class names that a <a href="http://www.drupal.org" target="_blank">CMS</a> will give you then you should feel right at home with <em>BEM</em>.</p>
+<h2>DRY Don't Repeat Yourself</h2>
+<p>Keeping with the spirit of DRY I will not go into great detail about it. The reason is that it follows nearly the exact same principles as the above SMACSS and OOCSS. The only difference is that ID selectors are fine and naming convention should be based on content.</p>
+<h2>Who Wins?</h2>
+<p>SMACSS.</p>
+<p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>
+]]></description></item></channel></rss>

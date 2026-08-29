@@ -17,19 +17,17 @@ Last week I [wrote a list]({{< ref "2026-08-18-moving-on.md" >}}) of everything 
 
 Look at that footer. *© Copyright 2009.*
 
-That site is old enough to drive. It was built on a version of Drupal that has been end-of-life for years, on a theme I wrote myself, in an era when a dark burgundy background and a typewriter-font nameplate read as *tasteful*. There is a "Socialize" tab in the nav. It links to services that in some cases no longer exist.
+That site is old enough to drive. It was built on Drupal 6, with a theme I wrote myself. I still have a soft spot for the dark burgundy background and the typewriter-font nameplate. The contact link is broken -- it is supposed to point at the contact form on my Drupal.org profile.
 
-And the tagline: "To Provide Complete Drupal Development Solutions." I remember writing that sentence. I remember being pleased with it. It is the voice of someone who thinks a personal site is a storefront and that the storefront needs signage.
+This site was originally built when I was doing contract work for small and local businesses. I built the site in Drupal and I built most sites in Drupal. I have been using Drupal for almost twenty years, but it is no longer my only hammer. I used httrack to turn it from Drupal 6 to static HTML around the launch of Drupal 7 and I have never touched it since.
 
-I have kept it alive out of something between loyalty and inattention. Every couple of years I would log in, apply a security update, look at the burgundy, think *I should really redo this*, and close the tab. It became a thing I maintained rather than a thing I used. The blog moved here years ago. The actual work moved to GitHub and GitLab. What remained was a nameplate over an empty shop.
+That drawing in the middle. That the figure hunched over a pad of paper -- I drew that. I had several versions: a blank page, a mixing console, and a computer. This one turned out the best but I was originally going to offer, UX, Development, and Audio Mixing services too.
 
-That drawing in the middle -- the figure hunched over a desk, seen from above -- I still like. That one is coming with me.
+This site isn't exactly embarrassing, if looked at by the right people. If anything it is very obviously not AI slop. It is a genuine artifact of what web development looked like when I got serious about it, and I am not the sort of person who pretends the earlier versions did not happen. But a site that says 2009 in the footer is not telling anyone what I can do in 2026. It is telling them I stopped.
 
-The rest is going. Not because it is embarrassing, exactly. It is a genuine artifact of what web development looked like when I got serious about it, and I am not the sort of person who pretends the earlier versions did not happen. But a site that says 2009 in the footer is not telling anyone what I can do in 2026. It is telling them I stopped.
+So it gets replaced. Something static, something I can update in an afternoon, something that says what I actually work on now instead of what I hoped to sell seventeen years ago.
 
-So it gets replaced. Something static, something I can rebuild in an afternoon, something that says what I actually work on now instead of what I hoped to sell seventeen years ago.
-
-Seventeen years is a good run for a homepage. Longer than most jobs.
+Seventeen years is a good run for a homepage. Longer than most jobs. You can check out the new version [here](https://www.frankrobertanderson.com).
 
 
 ---

@@ -1,19 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Gamedev on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/gamedev/</link>
-    <description>Recent content in Gamedev on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/gamedev/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Project Space Game: a ten-year-old idea finally has a build</title>
-      <link>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</link>
-      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</guid>
-      <description>&lt;p&gt;About ten years ago I wrote down a question I couldn&amp;rsquo;t shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called &lt;a href=&#34;https://www.frobiovox.com/posts/what-if-the-bullets-cost-money&#34;&gt;&lt;em&gt;What if the bullets cost money?&lt;/em&gt;&lt;/a&gt;, and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — &lt;em&gt;what does this cost you?&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gamedev on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/gamedev/</link><description>Recent content in Gamedev on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/gamedev/feed.xml" rel="self" type="application/rss+xml"/><item><title>Project Space Game: a ten-year-old idea finally has a build</title><link>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</link><pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</guid><description><![CDATA[<p>About ten years ago I wrote down a question I couldn&rsquo;t shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called <a href="/posts/what-if-the-bullets-cost-money"><em>What if the bullets cost money?</em></a>, and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — <em>what does this cost you?</em></p>
+<p>Well. I finally started building the thing. It&rsquo;s called <strong>Project Space Game</strong>, and this is the first time I&rsquo;m writing about it as something that actually exists and runs rather than something I daydream about.</p>
+<h2 id="the-hook-ten-years-later">The hook, ten years later</h2>
+<p>The seed is exactly the one I planted back then: what if shooting the asteroids <em>cost you something</em>?</p>
+<p>Fuel is finite. Ammo has to be bought. The asteroids in your way are less of an arcade high-score machine and more of an economic problem to solve. Suddenly it isn&rsquo;t an arcade cabinet — it&rsquo;s a little world where you have to make decisions. Do I burn fuel to chase that scrap? Is this shot worth it? Can I make it home? <em>Space, but everything has a price</em> — that&rsquo;s still the whole pitch, and it turns out it holds up.</p>
+<h2 id="where-it-is-today">Where it is today</h2>
+<p>I want to be upfront: this is a work in progress, and an early one. The version history so far reads like someone learning in public, because that&rsquo;s exactly what it is.</p>
+<p>The early releases were about getting the bones in place. A ship you can actually fly, with engines and fuel that drains as you burn it — run dry and you&rsquo;re stranded, paying through the nose for an emergency delivery. Asteroids that spawn around you and quiet down when they drift off screen so the whole thing doesn&rsquo;t melt your computer. A dashboard with little rotary gauges for your heading and your destination. Points of interest scattered out in the dark that you tow scrap home from to earn your keep. Money you can actually run out of — and a game-over when you do.</p>
+<p>By the more recent work I&rsquo;d added the things that make it feel like a loop instead of a tech demo: weapons that cost ammo, sound when you fire and reload, a magazine to track your shots, and depots out in space where you can buy more. The economy and the action finally started talking to each other.</p>
+<p>Some of it is held together with tape. There are placeholder textures I&rsquo;m embarrassed by, console errors I haven&rsquo;t chased down yet, and a to-do list considerably longer than the done list. That&rsquo;s fine. That&rsquo;s what an early build <em>is</em>.</p>
+<h2 id="where-its-going">Where it&rsquo;s going</h2>
+<p>The aspiration is bigger than the current build, and I think that&rsquo;s how it should be.</p>
+<p>I want the space out there to feel less like random rubble and more like a place — asteroid fields generated with the care you&rsquo;d give a dungeon, so navigating them is a puzzle worth solving. I want the world to react to you: music that shifts with the moment, ships that aren&rsquo;t just you, missions and levels that string the moment-to-moment flying into something with shape and stakes. I want depots in deep space where fuel is precious and the math gets genuinely scary. I want the ship, the asteroids, the home base to all look like they belong to the same hand-drawn universe instead of a programmer&rsquo;s scratch pad.</p>
+<p>None of that is done. Most of it is barely started. But the through-line from that ten-year-old question to a world where every shot and every drop of fuel is a choice you have to weigh: that part is real now, and it&rsquo;s already fun to fly around in.</p>
+<p>More to come. It only took me a decade to start.</p>
+]]></description></item></channel></rss>

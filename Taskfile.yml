@@ -4,6 +4,7 @@ vars:
   HUGO_IMAGE: hugomods/hugo:exts-0.154.3
   NODE_IMAGE: node:lts
   NGINX_IMAGE: nginx:alpine
+  PYTHON_IMAGE: python:3-alpine
   AWS_IMAGE: amazon/aws-cli:latest
   THEME_DIR: hugo/themes/frobiovox-theme
   BUCKET: www.frobiovox.com
@@ -58,23 +59,37 @@ tasks:
   build:site:
     desc: Build the site to hugo/public
     cmds:
-      - "{{.HUGO_RUN}} hugo"
+      - "{{.HUGO_RUN}} hugo --cleanDestinationDir"
 
   build:drafts:
     desc: Build the site including drafts and future-dated posts
     cmds:
-      - "{{.HUGO_RUN}} hugo --buildDrafts --buildFuture"
+      - "{{.HUGO_RUN}} hugo --cleanDestinationDir --buildDrafts --buildFuture"
 
   build:prod:
     desc: Build the site for production (minified)
     cmds:
-      - "{{.HUGO_RUN}} hugo --minify"
+      - "{{.HUGO_RUN}} hugo --cleanDestinationDir --minify"
 
   build:all:
     desc: Build theme assets and the production site
     cmds:
       - task: build:css
       - task: build:prod
+
+  test:rss:
+    desc: Validate the production RSS feeds (well-formed, required elements, dates)
+    deps: [build:prod]
+    cmds:
+      - >-
+        docker run --rm -u {{.UID}}:{{.GID}}
+        -v {{.ROOT_DIR}}:/src -w /src
+        {{.PYTHON_IMAGE}} python3 scripts/validate_rss.py hugo/public
+
+  test:all:
+    desc: Run every check against the built site
+    cmds:
+      - task: test:rss
 
   new:post:
     desc: Create a new post (usage - task new:post TITLE="My post title")
@@ -145,7 +160,8 @@ tasks:
       TIMESTAMP:
         sh: date +%Y%m%d_%H%M%S
     cmds:
-      - task: build:all
+      - task: build:css
+      - task: test:rss
       - >-
         docker run --rm -u {{.UID}}:{{.GID}}
         --env-file {{.ROOT_DIR}}/.env
@@ -157,7 +173,7 @@ tasks:
         --env-file {{.ROOT_DIR}}/.env
         -v {{.ROOT_DIR}}:/src -e HOME=/tmp -w /src
         {{.AWS_IMAGE}}
-        s3 sync hugo/public/ s3://{{.BUCKET}}/ --delete --acl public-read
+        s3 sync hugo/public/ s3://{{.BUCKET}}/ --delete
     preconditions:
       - sh: test -f {{.ROOT_DIR}}/.env
         msg: "No .env file — copy .env.example to .env and fill in your AWS credentials."

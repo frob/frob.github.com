@@ -1,26 +1,99 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Gaming on Frank Robert Anderson</title>
-    <link>https://www.frobiovox.com/tags/gaming/</link>
-    <description>Recent content in Gaming on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.frobiovox.com/tags/gaming/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to play gloom with a 52 card deck</title>
-      <link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</link>
-      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</guid>
-      <description>&lt;p&gt;I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&amp;rsquo;t for you then try these rules on a standard 52 card deck.&lt;/p&gt;&#xA;&lt;h2 id=&#34;rules&#34;&gt;Rules&lt;/h2&gt;&#xA;&lt;p&gt;Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>a new simple reading rogue like</title>
-      <link>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</link>
-      <pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</guid>
-      <description>&lt;h2 id=&#34;my-kid-is-smart&#34;&gt;My kid is smart™&lt;/h2&gt;&#xA;&lt;p&gt;I am going to say what every parent says, my kid is smart™. We read to her all the time and she loves it. We have been reading to her all her life. Now it&amp;rsquo;s time for her to start to learn to read, and we are struggling. She isn&amp;rsquo;t struggling, we (her parents) are struggling. This is because of the limited amount of material there is in this space. My daughter has a memory that is amazing; she &amp;ldquo;reads&amp;rdquo; her Arthur books to us word for word. This is because she has them memorized. Normally this happens after a single reading. Now that we are having her read she is doing the same thing. After one time through she is no longer reading &amp;ndash;she is reciting.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gaming on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/gaming/</link><description>Recent content in Gaming on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/gaming/feed.xml" rel="self" type="application/rss+xml"/><item><title>How to play gloom with a 52 card deck</title><link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</link><pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</guid><description><![CDATA[<p>I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&rsquo;t for you then try these rules on a standard 52 card deck.</p>
+<h2 id="rules">Rules</h2>
+<p>Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Players: 2-4</li>
+<li>Materials: 1 complete 52 card poker deck.</li>
+</ul>
+<h3 id="setup">Setup</h3>
+<ol>
+<li>Set aside all face cards: Ace, King, Queen, and Jack.</li>
+<li>Set aside Aces and organize remaining face cards by suit.</li>
+<li>Each player gets a set of face cards.</li>
+<li>Each player puts their face cards face up in front of them.</li>
+<li>Shuffle Aces back into the deck. (These will be the kill cards)
+Even if there are not four players all four sets of face cards (minus aces) are set reserved and not shuffled back into the deck.</li>
+<li>Shuffle deck thoroughly.</li>
+<li>Deal each player 5 cards.</li>
+<li>First player is:</li>
+</ol>
+<ul>
+<li>Dark side: The player which most recently went to a funeral.</li>
+<li>Light side: The player which most recently went to a birth (or baby shower).</li>
+</ul>
+<h3 id="game-play">Game play</h3>
+<p>Game play is setup into three phases.</p>
+<ol>
+<li>Action Phase 1: play any card in your hand on any live face card. Remember Aces are kill cards and can only be played this phase.</li>
+<li>Action Phase 2: play any number card on any live face card. Aces cannot be played on this round.</li>
+<li>Draw as many cards as is needed to get to 5 card in your hand.</li>
+</ol>
+<h3 id="end-game">End Game</h3>
+<p>The game is over when all four Aces have been played or when all of one players face cards are killed.</p>
+<h3 id="scoring">Scoring</h3>
+<p>Scoring is simple. Each played card is worth its face value. Black cards are scored positively and Red cards are scored negatively. Aces played on the same suit are scored with a positive 11 points &ndash;otherwise Aces hold no value.</p>
+<h4 id="house-rules">House rules</h4>
+<p>Please create some house rules that will increase the enjoyment of the game. Some house rules that I considered are:</p>
+<ul>
+<li>Playing the same number twice gives the player an additional play (including aces) (no more than four cards played at once).</li>
+<li>Play with the above rule and instead of limiting to four cards add the end game condition of if a player plays all their cards the game is over.</li>
+</ul>
+<p>House rules should be agreed to before the start of the game. Or if your hosting the game it is your house and your rules. :)</p>
+]]></description></item><item><title>a new simple reading rogue like</title><link>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</link><pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</guid><description><![CDATA[<h2 id="my-kid-is-smart">My kid is smart™</h2>
+<p>I am going to say what every parent says, my kid is smart™. We read to her all the time and she loves it. We have been reading to her all her life. Now it&rsquo;s time for her to start to learn to read, and we are struggling. She isn&rsquo;t struggling, we (her parents) are struggling. This is because of the limited amount of material there is in this space. My daughter has a memory that is amazing; she &ldquo;reads&rdquo; her Arthur books to us word for word. This is because she has them memorized. Normally this happens after a single reading. Now that we are having her read she is doing the same thing. After one time through she is no longer reading &ndash;she is reciting.</p>
+<h2 id="what-about-a-book-that-writes-itself">What about a book that writes itself</h2>
+<p>Inside every computer there is a book just waiting to be generated &ndash;or something like that. The solution to this problem is to have a book that writes itself. Easy right, write a program that writes children&rsquo;s books.</p>
+<h2 id="procedural-conversation-is-hard">Procedural conversation is hard</h2>
+<p>Just like we just saw with <a href="https://en.wikipedia.org/wiki/Tay_(bot)">Microsoft&rsquo;s Tay bot</a> gone <a href="https://twitter.com/geraldmellor/status/712880710328139776">nazi sympathizer</a>.</p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;Tay&quot; went from &quot;humans are super cool&quot; to full nazi in &lt;24 hrs and I&#39;m not at all concerned about the future of AI <a href="https://t.co/xuGi1u9S1A">pic.twitter.com/xuGi1u9S1A</a></p>&mdash; Gerry (@geraldmellor) <a href="https://twitter.com/geraldmellor/status/712880710328139776">March 24, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Procedural conversation generation is hard and it can have unforeseen results. Even with the <a href="https://dev.botframework.com/">bot API&rsquo;s MS announced</a> at <a href="https://build.microsoft.com/">BUILD</a>. Thankfully, these book need to be simple. They have to be simple so that children can learn to read by reading them. If I keep the structure down to as simple a structure as possible and also template that structure so that it can must build sentences that match the template then I think we will be in a good place in both complexity and safety. This will be just slightly more complicated than a <a href="https://en.wikipedia.org/wiki/Mad_Libs">madlib</a>.</p>
+<h2 id="book-structure">Book structure</h2>
+<p>The structure of these book is basically all the same (with some outliers that we will ignore for now). Here is a sample book that I have just pulled out of my <span title="With the subject matter being children's book">(censored)</span>.</p>
+<ol>
+<li>This is Tom.</li>
+<li>Tom has a hat.</li>
+<li>Tom&rsquo;s hat is on his head.</li>
+<li>Tom has a cat.</li>
+<li>Tom&rsquo;s cat is wearing a hat.</li>
+</ol>
+<p>So the book&rsquo;s structure as follows should be:</p>
+<ol>
+<li>Introduction</li>
+<li>Possession</li>
+<li>Information</li>
+<li>Dependent Introduction</li>
+<li>Dependent Possession</li>
+</ol>
+<p>We can add some more variety later, for now we will focus on this.</p>
+<h2 id="things-needed">Things needed</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> a <a href="https://gist.github.com/frob/0628417b66c543f169c5056ea53dfdfe">list of names</a></li>
+<li><input disabled="" type="checkbox"> a list of things</li>
+<li><input disabled="" type="checkbox"> a list of (age appropriate) body parts</li>
+<li><input disabled="" type="checkbox"> a list of possessive words</li>
+<li><input disabled="" type="checkbox"> a list of nouns</li>
+<li><input disabled="" type="checkbox"> a template system</li>
+<li><input disabled="" type="checkbox"> a list of templates</li>
+</ul>
+<p>Once we have these things we can build this out just like a <a href="https://en.wikipedia.org/wiki/Mad_Libs">madlib</a>.</p>
+<h2 id="how-is-this-a-game">How is this a game</h2>
+<p>This begs the bigger question, what is a game? I am not going to attempt to answer that right now. This post is already long enough. The mechanics of it are as follows.</p>
+<ul>
+<li>
+<p>The gameplay is the reading.</p>
+</li>
+<li>
+<p>The level is the sentence.</p>
+</li>
+<li>
+<p>The game is the book.</p>
+</li>
+<li>
+<p>The levels are procedurally generated.</p>
+</li>
+</ul>
+<p>There is the possibility of a sequel. In the sequel the game complexity could scale to the player/user (maybe later). I have thought about this, but it is too early to consider this a feature.</p>
+<p>The goal is a book that never runs out of new pages. If I can get the template system right, a child will never be able to memorize their way through it &ndash; they will have to actually read. That is the game, and it is one worth building.</p>
+]]></description></item></channel></rss>
