@@ -17,7 +17,7 @@ This was not my fault, and it was not theirs.
 
 An enormous amount of money was poured into education technology over the last decade. When that kind of money stops, things do not just go back to the way they were -- it leaves a vacuum. That is the economy we are in right now. A lot of good people are getting the same news I got, for the same reasons.
 
-I am not going into specifics, but what I will say about Clarity is that they care about their employees, and they showed it in the way they handled this. I had notice. I had time to say goodbye. That is not nothing -- plenty of people find out their access has been revoked before they find out they have been let go.
+I am not going into specifics, but what I will say about Clarity is that they care about their employees, and they showed it in the way they handled this. I had notice. I had time to say goodbye. That is not nothing --plenty of people find out their access has been revoked before they find out they have been let go.
 
 ## Missing the fellowship
 
@@ -37,7 +37,7 @@ So I spent some of that time going back through ten years of work and reminding 
 
 > Your fingers would remember their old strength better, if they grasped your sword.
 
-They do, as it turns out. It just takes picking the thing back up. Though I will not be enumerating the past here -- I have too much to do.
+They do, as it turns out. It just takes picking the thing back up. Though I will not be enumerating the past here --I have too much to do.
 
 ## Everything is out of date
 

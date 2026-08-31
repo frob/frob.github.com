@@ -5,6 +5,7 @@
 
 ## Posts
 
+- [Introducing v; the easiest vendor utility](https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/) (2026-08-30): Sometimes you have to copy a library straight into your project. v records exactly which commit you copied and gives you one command to refresh it.
 - [Farewell to the burgundy](https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/) (2026-08-27): Last week I wrote a list of everything I need to update. Second item: personal site. Here is what has been sitting at www.frankrobertanderson.com this whole …
 - [Moving on](https://www.frobiovox.com/posts/2026/08/18/moving-on/) (2026-08-18): After more than ten years, my time at Clarity Innovations has come to an end. I was laid off.
 I want to say up front that I enjoyed working there. Ten years is …
@@ -60,15 +61,16 @@ I lived in Long Beach for around 7 years. Every time …
 - [drupalcamp](https://www.frobiovox.com/tags/drupalcamp/) (1)
 - [drupalcon](https://www.frobiovox.com/tags/drupalcon/) (2)
 - [elixir](https://www.frobiovox.com/tags/elixir/) (2)
-- [frontpage](https://www.frobiovox.com/tags/frontpage/) (32)
+- [frontpage](https://www.frobiovox.com/tags/frontpage/) (33)
 - [gamedev](https://www.frobiovox.com/tags/gamedev/) (1)
 - [gaming](https://www.frobiovox.com/tags/gaming/) (2)
-- [git](https://www.frobiovox.com/tags/git/) (1)
+- [git](https://www.frobiovox.com/tags/git/) (2)
 - [godot](https://www.frobiovox.com/tags/godot/) (1)
 - [gulp](https://www.frobiovox.com/tags/gulp/) (1)
 - [hugo](https://www.frobiovox.com/tags/hugo/) (1)
 - [jekyll](https://www.frobiovox.com/tags/jekyll/) (4)
 - [kwallcompany](https://www.frobiovox.com/tags/kwallcompany/) (5)
+- [open source](https://www.frobiovox.com/tags/open-source/) (1)
 - [parenting](https://www.frobiovox.com/tags/parenting/) (1)
 - [public transportation](https://www.frobiovox.com/tags/public-transportation/) (1)
 - [quarzack13](https://www.frobiovox.com/tags/quarzack13/) (11)
@@ -77,7 +79,7 @@ I lived in Long Beach for around 7 years. Every time …
 - [rest](https://www.frobiovox.com/tags/rest/) (2)
 - [rogue-like](https://www.frobiovox.com/tags/rogue-like/) (1)
 - [rogue-lite](https://www.frobiovox.com/tags/rogue-lite/) (1)
-- [tutorial](https://www.frobiovox.com/tags/tutorial/) (21)
+- [tutorial](https://www.frobiovox.com/tags/tutorial/) (22)
 - [web development](https://www.frobiovox.com/tags/web-development/) (7)
 - [wordpress](https://www.frobiovox.com/tags/wordpress/) (1)
 

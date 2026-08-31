@@ -7,6 +7,7 @@
 ## Pages
 
 
+- [Introducing v; the easiest vendor utility](https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/) — 2026-08-30: Sometimes you have to copy a library straight into your project. v records exactly which commit you copied and gives you one command to refresh it.
 - [Farewell to the burgundy](https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/) — 2026-08-27
 - [Moving on](https://www.frobiovox.com/posts/2026/08/18/moving-on/) — 2026-08-18
 - [Project Space Game: a ten-year-old idea finally has a build](https://www.frobiovox.com/posts/2026/06/24/project-space-game/) — 2026-06-24: An early look at the space game I'm building — the question that started it a decade ago, what actually runs today, and where it's headed. Very much a work in progress.
