@@ -1,0 +1,274 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Frank Robert Anderson</title><meta name=description content="This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page."><link rel=canonical href=https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/><link rel=alternate type=text/markdown href=https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/index.md><meta property="og:title" content="Rearchitecting for Drupal 8; a DrupalCon Session | Frank Robert Anderson"><meta property="og:description" content="This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page."><meta property="og:type" content="article"><meta property="og:url" content="https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/"><meta property="og:site_name" content="Frank Robert Anderson"><meta property="og:image" content="https://www.frobiovox.com/images/top.png"><meta property="article:published_time" content="2018-02-15T00:00:00Z"><meta property="article:modified_time" content="2018-02-15T00:00:00Z"><meta property="article:tag" content="rant"><meta property="article:tag" content="quarzack13"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Rearchitecting for Drupal 8; a DrupalCon Session | Frank Robert Anderson"><meta name=twitter:description content="This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page."><meta name=twitter:image content="https://www.frobiovox.com/images/top.png"><meta name=twitter:site content="@frobiovox"><meta name=twitter:creator content="@frobiovox"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Frank Robert Anderson","sameAs":["https://github.com/frob","https://twitter.com/frobiovox"]},"dateModified":"2018-02-15T00:00:00Z","datePublished":"2018-02-15T00:00:00Z","description":"This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.","headline":"Rearchitecting for Drupal 8; a DrupalCon Session","image":"/images/top.png","keywords":"rant, quarzack13","mainEntityOfPage":"https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.frobiovox.com/images/top.png"},"name":"Frank Robert Anderson"},"timeRequired":"PT20M","url":"https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/","wordCount":4233}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://www.frobiovox.com/","name":"Home","position":1},{"@type":"ListItem","item":"https://www.frobiovox.com/posts/","name":"Posts","position":2},{"@type":"ListItem","item":"https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/","name":"Rearchitecting for Drupal 8; a DrupalCon Session","position":3}]}</script><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.css></head><body><div class=not-footer><div class=wrapper-masthead><div class=container><header class="masthead clearfix"><a href=/ class=site-avatar><img src=/images/top.png></a><div class=site-info><h1 class=site-name><a href=/>Frank Robert Anderson</a></h1><p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p><p class="site-description site-description-rotating" data-rotate='["Quietly building things","Where the cursor still blinks","Compile, commit, caffeinate, repeat","Yes, I have an oppinion about that","Hand-rolled, no batteries included","Postcards from production","I used to write code, now I write text and it auto-completes to code"]' data-interval=19000 aria-hidden=true></p></div></header></div><nav class=navigation-menu><ul class="navigation-menu-list container"><li class=navigation-menu-item><a class=navigation-menu-link href=/>Blog</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/tutorial/>Tutorials</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/tags/rant/>Rants</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=/posts/>Everything</a></li><li class=navigation-menu-item><a class=navigation-menu-link href=http://www.frankrobertanderson.com>Back to My Site</a></li></ul></nav></div><main><div class=container><article class=post><h1>Rearchitecting for Drupal 8; a DrupalCon Session</h1><div class=date><time datetime=2018-02-15T00:00:00Z>February 15, 2018</time></div><div class="flex flex-wrap gap-1 mb-2"><span class=badge>rant</span>
+<span class=badge>quarzack13</span></div><h1 id=rearchitecting-for-drupal-8>Rearchitecting for Drupal 8</h1><p>This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.</p><aside class=ai-summarize aria-label="Summarize this post on an AI assistant"><div class=ai-summarize-heading>Summarize & save this content on:</div><ul class=ai-summarize-pills><li><a class=ai-pill href="https://chatgpt.com/?hints=search&amp;q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2018%2F02%2F15%2Frearchitecting-for-drupal8%2F" target=_blank rel=noopener>ChatGPT</a></li><li><a class=ai-pill href="https://www.google.com/search?udm=50&amp;q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2018%2F02%2F15%2Frearchitecting-for-drupal8%2F" target=_blank rel=noopener>Google AI</a></li><li><a class=ai-pill href="https://www.perplexity.ai/?q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2018%2F02%2F15%2Frearchitecting-for-drupal8%2F" target=_blank rel=noopener>Perplexity</a></li><li><a class=ai-pill href="https://grok.com/?q=Summarize+https%3A%2F%2Fwww.frobiovox.com%2Fposts%2F2018%2F02%2F15%2Frearchitecting-for-drupal8%2F" target=_blank rel=noopener>Grok</a></li></ul><ul class="ai-summarize-pills ai-summarize-pills-secondary"><li><a class=ai-pill href="https://www.google.com/preferences/source?hl=en" target=_blank rel=noopener>Add us as a trusted Google Source</a></li></ul></aside><h2 id=in-case-you-are-wondering>In case you are wondering</h2><p><img src=https://nicspaull.files.wordpress.com/2013/10/you-are-here.jpg alt="You are here in the
+galaxy" title="You are here in the galaxy"></p><h2 id=hello-my-name-is-frank>Hello My Name Is Frank</h2><p>I am a Christian, Father, and Technology Enthusiast.</p><ul><li><em>Online my name is</em> <strong>frob</strong> (IRC, <a href=https://drupal.org/u/frob>d.o</a>, github)</li><li><em>On Twitter I am</em> <strong><a href=https://twitter.com/frobdfas>@frobdfas</a></strong></li><li><em>My Blog is</em> <a href=https://www.frobiovox.com>www.frobiovox.com</a></li><li><em>I work for</em> <a href=https://www.clarity-innovations.com>Clarity Innovations Inc</a>.</li></ul><p><img src=/images/cilogo.jpg alt="Clarity Innovations Logo"></p><p>Clarity Innovations is a professional services firm based in
+Portland, Oregon focused on providing K-12 and higher education
+technology consulting to non-profits, schools, and corporations.</p><p>We develop solutions for our clients including strategic consulting,
+professional development and content creation, and engineering
+solutions such as apps, web apps, and websites to help improve the
+process and practice of teaching and learning.</p><p>One such site is a custom LMS for our client New Perspectives Online.</p><p><img src=/images/p2s2-screens/screenshot.png alt="New Perspectives Online
+Screenshot"></p><h2 id=why-do-drupal-8-experimentation>Why do [Drupal 8 Experimentation]?</h2><ul><li>The big question is D8 or D7, this is a question that I have to ask
+myself every time I am asked to do an estimate.</li><li>How do we pick which version of Drupal to use?</li><li>Let me <strong>GET THIS OUT THE WAY</strong> I will not be going over hard
+numbers for building with one version over the other. I will give
+you the only answer that I can give knowing what I know about your
+project&rsquo;s requirements. IT DEPENDS.</li></ul><h3 id=bottom-line>Bottom line</h3><ul><li>I create with Drupal 7.</li><li>I want to create with Drupal 8.</li><li>I want to know the differences between creating with Drupal 7 vs 8.</li><li>I would like to know how I can leverage the new features of Drupal 8
+in complicated information systems.</li></ul><h3 id=lets-go-from>Lets go from:</h3><p><img src=/images/ring.jpg alt="Frame from LOTR - I will take the ring to
+Mordor" title="I will take the ring to Mordor, Though I do not know the way."></p><h4 id=to>To:</h4><p><img src=http://i3.kym-cdn.com/entries/icons/original/000/013/208/a.jpg alt="Frame from the movie the hobbit - I am going on an
+adventure" title="I'm going on an adventure"></p><h2 id=custom-lms-architecture>Custom LMS Architecture</h2><h3 id=learning-management-system>Learning Management System</h3><p>An LMS is software that allows for the organization and delivery of
+courses or training programs.</p><h4 id=lms-architecture>LMS Architecture</h4><p>Need to deal with some prerequisite information so we all understand
+the goals of the project that I used as my test bed.</p><ul><li>What is an LMS? An LMS is a Learning Management System.</li></ul><p>It is software that allows for the organization and delivery of
+courses or training programs. If you have used buildamodule.com or
+drupalize.me then you have used a LMS.</p><h3 id=traditional-lms>Traditional LMS</h3><ul><li><p>Curriculum or Lesson plan</p><ul><li>Unit or Module<ul><li>Lesson/Project/Assessment/Mini-lessons</li></ul></li></ul></li><li><p>Traditional LMS is based on a traditional course or lesson plan</p><ul><li>Curriculum or Lesson plan<ul><li>Collection of Units or Modules<ul><li>Collection of Lesson/Project/Assessment/Mini-lessons</li></ul></li></ul></li></ul></li></ul><h3 id=our-custom-lms-is-structured>Our custom LMS is structured</h3><ul><li><p>Module -> Menu</p><ul><li>Segments -> Nodes or Content Type<ul><li>Components -> Paragraphs Items</li></ul></li></ul></li><li><p>Our custom LMS is structured as</p><ul><li>Module -> Menu<ul><li>Segments -> Nodes<ul><li>Components -> Paragraphs Items</li></ul></li></ul></li><li>Lesson plan equivalents are built with select fields on the
+segment nodes.</li></ul></li></ul><h2 id=basic-drupal-architecture>Basic Drupal Architecture</h2><p><img src=http://static.tvtropes.org/pmwiki/pub/images/forcedtutorial_1678.png alt="Forced
+tutorial"></p><p>In order to make sure we are all on the same page moving forward I
+need to talk about some basic Drupal Architecture. If this is review
+for some of you, I am sorry for the unskippable tutorial level.</p><h2 id=basic-drupal-content-architecture>Basic Drupal Content Architecture</h2><p>Don&rsquo;t worry I will mostly just be talking about Entities, Fields,
+and Variables.</p><h3 id=entities>Entities</h3><p>Entities are things in Drupal; things do not have to be nodes.</p><ul><li>Entities are things in Drupal, starting in drupal 7 we got content
+entities.</li><li>In Drupal 6 custom things were typically nodes or totally custom</li><li>In Drupal 7 the entity-field system brought the CCK into core
+without making everything a node</li><li>Drupal 8 has a fully fledged entity api which is derived from the
+capabilities of the contrib entity api module for drupal 7.</li><li>Users, Taxonomy Terms, and Nodes, are all Entities</li></ul><h4 id=bundles-and-fields>Bundles and Fields</h4><ul><li>A bundle is a collection of fields instances on an Entity</li><li>A field instance is a place for complex data in a Entity Bundle</li><li>A property is simple storage for Entity level data</li></ul><p>An Entity can have Bundles to allow for multiple collections of
+fields instances on a single type of entity.</p><ul><li>Field instances are unique to that bundle.</li><li>An Entity has properties which span all bundles.<ul><li>created date</li><li>node status</li><li>who created are all properties</li></ul></li><li>A field instance is a place for complex data in a Entity Bundle</li><li>A property is simple storage for Entity level data</li></ul><h4 id=properties>Properties</h4><p>Properties are linked to an Entity, such as Node. Fields are linked to
+the Bundle, such as Content Type.</p><p>Properties are stored on the entity&rsquo;s table and fields are stored in
+their own table.</p><h4 id=variables>Variables</h4><p>Variables are what Drupal 7 provides for configuration --when it isn&rsquo;t
+a custom table.</p><h3 id=lms-features>LMS Features</h3><p>Support Backwards Design philosophy</p><ul><li>Site Features</li><li>Traditional LMS<ul><li>Collection of Curriculum or Lesson plans<ul><li>Collection of Unit or Module<ul><li>Collection of Lesson/Project/Assessment/Mini-lessons</li></ul></li></ul></li></ul></li><li>Curriculum Designer will often use a Backwards Design philosophy</li><li>Starts Standards/Topical they with to teach</li></ul><h4 id=goals-of-lesson-planning>Goals of lesson planning</h4><p>Using the 5 e&rsquo;s as the goals of lesson planning.</p><ul><li>Engage</li><li>Explore</li><li>Explain</li><li>Elaborate</li><li>Evaluate</li></ul><h4 id=lms-lesson-goals>LMS Lesson Goals</h4><ul><li>Teaching</li><li>Application</li><li>Assessment</li></ul><p>Thus Goals for Lesson Plan Features.</p><ul><li>Activate Prior knowledge</li><li>Modeling or Teaching</li><li>Practice</li><li>Application</li><li>Assessment</li></ul><p>Our custom LMS is structured as</p><pre><code>-   module -&gt; menu
+    -   segments -&gt; nodes
+        -   components -&gt; paragraphs items
+</code></pre><h2 id=drupal-7-modules-used>Drupal 7 Modules Used</h2><p><em><a href=https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools.html>Frank&rsquo;s list of modern site building
+tools</a></em></p><p>I gave a talk on modern Drupal 7 development at a meetup in Portland
+last year, and I am not going to go into great detail here. I wrote
+a blog post about it and if you would like more details I suggest
+you look there.</p><ul><li>I will go over the modules that this site used (in its core
+functionality), what they do.</li><li>Later I will go over how they relate to Drupal 8.</li><li>Remember when building a site that the output that drupal give us is
+always a suggestion. The important part of site building is giving
+the content team everything they need, you can leave it up to the
+developers and themers to make sure that the content gets displayed
+properly.</li></ul><h3 id=paragraphs><a href=https://www.drupal.org/project/paragraphs>Paragraphs</a></h3><p>Paragraphs allows us to create collections of fields. Each collection
+type is its own bundle and can have its own fields.</p><ul><li>Paragraphs -- If you are familiar with field collection then this
+module functions very similarly, with the main exception of the user
+being able to pick the bundle or paragraph type when creating
+content.</li></ul><h3 id=entity-form><a href=https://www.drupal.org/project/eform>Entity Form</a></h3><p>Named eForm in Drupal 8. Allows the use of the field api to create
+webform and have the submissions be entities.</p><ul><li>Entity Form -- In Drupal 8 this module was renamed to eform. The
+cool part of this module is that it allows us to use the field api
+to create webforms. Unlike the webform module, the form submissions
+are entities. This gives us flexibility use in views or displaying
+them with multiple view modes.</li></ul><h3 id=eva><a href=https://www.drupal.org/project/eva>Eva</a></h3><p>Solves the problem of putting views into entities as pseudo-fields.</p><ul><li>EVA -- Entity View Attachment. Allows us to embed views into
+fields. Handy for things like Taxonomy term views or anywhere an ID
+can be used as an argument in a view.</li></ul><h3 id=flag><a href=https://www.drupal.org/project/flag>Flag</a></h3><p>This module allow users to flag things. Largest use is probably the
+&ldquo;Flag this as inappropriate&rdquo; functionality.</p><ul><li>Flags -- This module allow users to flag entities. Largest use is
+probably the &ldquo;Flag this as inappropriate&rdquo; functionality.</li><li>The last two modules don&rsquo;t have much to do with this site per-se
+but they are fantastic modules that will really help a site-builder.</li></ul><h3 id=coffee><a href=https://www.drupal.org/project/coffee>Coffee</a></h3><p><img src=/images/p2s2-screens/coffee.gif alt></p><p>Coffee works like Unity for Ubuntu or Spotlight search for Mac, or the
+Start Menu in Windows. Just start typing and a list of options will be
+presented. Pick the option and it will take you there.</p><ul><li>Coffee -- Speed up your Drupal navigation by typing where you want
+to go. Much like unity for Ubuntu or Spotlight for Mac or Start for
+Windows, this module allows us to zip around our site&rsquo;s admin
+interface with ease.</li></ul><h3 id=speedboxes><a href=https://www.drupal.org/project/speedboxes>Speedboxes</a></h3><p><img src=/images/p2s2-screens/speedboxes.gif alt></p><p>Check more than one box with a click and drag mechanic.</p><ul><li>Speedboxes -- Allows us to check multiple checkboxes at the same
+time. Super useful for setting up permissions.</li></ul><h3 id=a-word-on-blocks>A word on Blocks</h3><p><a href=https://www.drupal.org/project/bean>Bean</a></p><p>Bean is an acronym that stands for:</p><p><strong>B</strong>lock <strong>E</strong>ntities <strong>A</strong>ren&rsquo;t <strong>N</strong>odes.</p><ul><li>This is not a block heavy site</li><li>It works mostly as an app with the blocks only really being used to
+place active menus on the screen.</li><li>This is mainly because there are not many reusable pieces to the
+site. If it isn&rsquo;t a page level thing then it really isn&rsquo;t a part
+of this site.</li><li>This site doesn&rsquo;t use blocks, but when I use blocks I build them
+with BEAN.</li><li>Bean gives us all the functionality of building content types with
+nodes except with blocks instead.</li><li>I normally add a content view for beans at /admin/content/blocks and
+I disable the default drupal block management stuff, with the
+exception of block placement. because that is still necessary.</li><li>But again, this site didn&rsquo;t make heavy use of blocks.</li></ul><p><img src=https://pbs.twimg.com/profile_images/1325797300/2804546757_5d034c1d29.jpg alt="I don&rsquo;t always use blocks, but when I do I use the bean
+module"></p><p>I don&rsquo;t always use blocks, but when I do I use the bean module</p><h3 id=lms-content-strategy>LMS Content Strategy</h3><p>Arguably, the most important part of a site.</p><ul><li>Content Strategy</li><li>Now thats out of the way we can talk about the site&rsquo;s content
+strategy.</li></ul><h4 id=13-paragraphs-types-and-1-content-type>13 paragraphs types and 1 content type</h4><p>In the end our site had 13 paragraphs item bundles for 1 content
+type and three were interactive.</p><ul><li>Text response</li><li>Checkbox list</li><li>Drag and Drop</li></ul><h5 id=text-response>Text response</h5><p><img src=/images/p2s2-screens/text-response.gif alt title="Text response in action."></p><h5 id=checkbox-list>Checkbox list</h5><p><img src=/images/p2s2-screens/checkbox.gif alt title="Checkbox list in action."></p><h5 id=drag-and-drop>Drag and Drop</h5><p><img src=/images/p2s2-screens/dragndrop.gif alt title="Drag and Drop in action."></p><h4 id=the-rest-are-multimediacontent>The rest are multimedia/content.</h4><p>Everything can be <em>combined</em> to form larger whole components.</p><p><img src=/images/p2s2-screens/dinn-7-drag-2.gif alt title="A seriries of components with a saving and sharing text response box at the end."></p><ul><li>Four were used for custom inter and intra module navigation</li><li>The rest were videos, image, and text.</li><li>all can be combined to form larger whole components.</li></ul><h4 id=linking-the-entityform-submission-to-the-paragraph-item>Linking the EntityForm Submission to the Paragraph item</h4><table><thead><tr><th>Entity</th><th>Machine Name</th></tr></thead><tbody><tr><td>Paragraph Type</td><td>text_response</td></tr><tr><td>EntityForm Type</td><td>text_response</td></tr></tbody></table><p>Linking the EntityForm Submission to the Paragraph item, each
+interactive paragraphs item had a corresponding entity form with an
+entity reference back to the paragraphs item that displayed the
+form. We used the paragraphs item&rsquo;s bundle machine name to pick the
+bundle of the EntityForm to display.</p><p>We put this all together, using Drupal&rsquo;s ingenious render array
+system that doesn&rsquo;t care if it is displaying a form, or
+content, or anything themable, we were able to HULK smash the
+entityforms into the paragraphs item displays and save any users
+response and know what they were responding to and who was
+responding to it.</p><h4 id=evaluation>Evaluation</h4><p>Sharing via Flags on the paragraphs items</p><p><img src=/images/p2s2-screens/textandshare.png alt></p><p>We also had to allow for self evaluation. Our client wanted users to
+be able to share their responses and learn from the responses of
+others. So we used flags that let the users share their responses,
+in turn if they share their response then they see their peer&rsquo;s
+responses and then they can edit their old response and save a new
+one.</p><p>Our initial expectation was that we would have to build out all the
+content in a spreadsheet and at one point I was building a migration
+to import all the content from a CSV. Choosing the Paragraphs module
+gave our content editors an interface that allowed them to build the
+content in the site as we were adding functionality.</p><h3 id=custom-development>Custom Development</h3><p>The meat of how we are putting this together is in the
+hook_entity_view_alter implementation and the hook_form_alter
+implementation.</p><h4 id=pass-the-build-to-custom-function>Pass the build to custom function</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#66d9ef>empty</span>($build[<span style=color:#e6db74>&#39;#bundle&#39;</span>])) {
+</span></span><span style=display:flex><span>          $bundle <span style=color:#f92672>=</span> $build[<span style=color:#e6db74>&#39;#bundle&#39;</span>];
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>function_exists</span>(<span style=color:#e6db74>&#34;_component_</span><span style=color:#e6db74>{</span>$bundle<span style=color:#e6db74>}</span><span style=color:#e6db74>_alter&#34;</span>)) {
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// We need to pass build in an array in order to trick call user func
+</span></span></span><span style=display:flex><span>            <span style=color:#75715e>// into passing the build by reference.
+</span></span></span><span style=display:flex><span>            <span style=color:#a6e22e>call_user_func</span>(<span style=color:#e6db74>&#34;_component_</span><span style=color:#e6db74>{</span>$bundle<span style=color:#e6db74>}</span><span style=color:#e6db74>_alter&#34;</span>, <span style=color:#66d9ef>array</span>(<span style=color:#f92672>&amp;</span>$build));
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        }
+</span></span></code></pre></div><p>Remember we used the bundle type machine names to add the correct
+entity form types? We do that with call_user_func which calls a
+function based on the name we give it. We check beforehand if the
+function exists, this way it is extensible without having to modify
+too much existing code. So if we want to add another interactive
+element we can do so without modifying anything to do with our
+current interactive elements.</p><h4 id=text-response-callback>Text response callback</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>/**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>     * Implements custom _component_TYPE_alter().
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>_component_text_response_alter</span>(<span style=color:#f92672>&amp;</span>$build) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>isset</span>($build[<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;#entity&#39;</span>]) <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span><span style=color:#66d9ef>empty</span>($build[<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;#entity&#39;</span>]<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>item_id</span>)) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>module_load_include</span>(<span style=color:#e6db74>&#39;inc&#39;</span>, <span style=color:#e6db74>&#39;entityform&#39;</span>, <span style=color:#e6db74>&#39;entityform.admin&#39;</span>);
+</span></span><span style=display:flex><span>        $entity_form_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;text_submissions&#39;</span>;
+</span></span><span style=display:flex><span>        $component_id <span style=color:#f92672>=</span> $build[<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;#entity&#39;</span>]<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>item_id</span>;
+</span></span><span style=display:flex><span>        $entity <span style=color:#f92672>=</span> $build[<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;#entity&#39;</span>];
+</span></span><span style=display:flex><span>        $form <span style=color:#f92672>=</span> <span style=color:#a6e22e>_get_entityform</span>(<span style=color:#a6e22e>entityform_empty_load</span>($entity_form_name), <span style=color:#66d9ef>array</span>(<span style=color:#e6db74>&#39;component_id&#39;</span> <span style=color:#f92672>=&gt;</span> $component_id, <span style=color:#e6db74>&#39;entity&#39;</span> <span style=color:#f92672>=&gt;</span> $entity));
+</span></span><span style=display:flex><span>        $form[<span style=color:#e6db74>&#39;field_component_submission&#39;</span>][<span style=color:#e6db74>&#39;#attributes&#39;</span>][<span style=color:#e6db74>&#39;class&#39;</span>][] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;element-invisible&#39;</span>;
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// ... Other Stuff ...
+</span></span></span><span style=display:flex><span>        $form[<span style=color:#e6db74>&#39;field_text_response_submission&#39;</span>][<span style=color:#e6db74>&#39;#attributes&#39;</span>][<span style=color:#e6db74>&#39;class&#39;</span>][] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;component-input-no-label&#39;</span>;
+</span></span><span style=display:flex><span>        $form_rendered <span style=color:#f92672>=</span> <span style=color:#a6e22e>drupal_render</span>($form);
+</span></span><span style=display:flex><span>        $build[<span style=color:#ae81ff>0</span>][] <span style=color:#f92672>=</span> <span style=color:#66d9ef>array</span>(
+</span></span><span style=display:flex><span>          <span style=color:#e6db74>&#39;#type&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#e6db74>&#39;markup&#39;</span>,
+</span></span><span style=display:flex><span>          <span style=color:#e6db74>&#39;#markup&#39;</span> <span style=color:#f92672>=&gt;</span> $form_rendered,
+</span></span><span style=display:flex><span>          <span style=color:#e6db74>&#39;#prefix&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#e6db74>&#39;&lt;div class=&#34;component-text-response&#34;&gt;&#39;</span>,
+</span></span><span style=display:flex><span>          <span style=color:#e6db74>&#34;#suffix&#34;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#e6db74>&#39;&lt;/div&gt;&#39;</span>,
+</span></span><span style=display:flex><span>          <span style=color:#e6db74>&#34;#weight&#34;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#ae81ff>100</span>,
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span></code></pre></div><p>In the case of the text response this checks for a valid callback
+and runs this code to include the entity form.</p><p>Then in the form_alter we change the actual form options or the
+text area label to use the correct text.</p><p>Things get complicated at this point, because ajax. We have to ajaxify each of the paragraph items. I&rsquo;m not going
+to go into code here because that would just be boring, and it
+is better documented elsewhere.</p><p>An interesting thing about saving a response is, only after it
+is saved can we make the paragraphs item sharable. Then after it
+is shared only then can we make show the shared responses. All
+of these things required heavy development for Drupal 7, and
+will likely also require lots of custom work for Drupal 8 too.</p><h2 id=considerations-building-a-lms-with-drupal-8>Considerations Building a LMS with Drupal 8</h2><ul><li>Architectural differences</li><li>UI Changes</li><li>Module availability</li><li>Specifically What needs to change<ul><li>Architecture<ul><li>Custom Development<ul><li>Content strategy</li></ul></li></ul></li></ul></li></ul><h3 id=general-drupal-8-considerations>General Drupal 8 Considerations</h3><ul><li>devel kint debugging DO NOT USE KUMO it doesn&rsquo;t work on real
+objects</li><li>no longer cache clear now cache rebuilding</li><li>No more module disable, uninstall or die</li><li><a href=https://www.drupal.org/node/2598914>Enable developer mode</a></li><li>Nice thing is that there is lots of information available
+already for Drupal8 the problem is that there is lots of bad
+information available for Drupal 8. Check your sources and do
+not expect everything you read to actually work. Even d.o
+documentation can be out of date. poll module example.</li></ul><h3 id=architectural-differences>Architectural Differences</h3><p>I am not going to give you an exhaustive list of new Drupal 8
+features and in the end I will just give you a list of things to
+google.</p><h4 id=configuration-entities>Configuration Entities</h4><p>I am not going into detail about them other than to say
+generally that the configuration management initiative changed
+so much with regard to developing and deploying Drupal. All for
+the better. If you are committed to stick with the db-sync
+workflow, it still works with Drupal 8 but really learn as much
+as you can about configuration entities and what you can do with
+them. Really this could be a talk or two on this, and I don&rsquo;t
+have the time in this talk to do them justice.</p><p>I will say that configuration entities gives drupal a place
+other than a random variable to store configuration and keeps
+developers from having to manage a bunch of tables if they
+needed something more complex than a simple variable could
+offer.</p><h4 id=blocks>Blocks</h4><p>Blocks now function much like nodes insofar as they are full
+fledged entities with bundles and fields.</p><p>Blocks still have an Achilles heel in that they are both content
+and configuration. The content lives in the database and isn&rsquo;t
+easy to export and sync and the placement of the block is
+configuration and is easy to sync. This can lead to embarrassing
+deployment gaffes. Where the placement of a block that doesn&rsquo;t
+exist is possible. <a href=http://valuebound.com/resources/blog/how-to-sync-blocks-between-different-environments-a-drupal-8-website>Here is a good article about avoiding that</a>.</p><h4 id=display-modes>Display Modes</h4><h5 id=content-view-modes>Content View Modes</h5><p>If you used the entity view modes modules or display suite
+to provide view modes for content types and such, then you
+should already be familiar with this. If you don&rsquo;t know
+what view modes are, they are ways for providing different
+ways to display the same content. So for a node we could
+have a teaser or a full view mode or a grid view mode.
+Basically anything that the design called for. These existed
+for content in Drupal 7 but they required a contrib module
+such as entity view modes or the display suite module to
+configure them without code. Drupal 8 gave a full fledged UI
+to work with.</p><h5 id=form-view-modes>Form View Modes</h5><p>All that stuff I said about being able to display content in
+different configurable ways now also applies to forms with
+Drupal 8. So, as an example, let say you have a very
+complicated user registration form because your client wants
+to collect a bunch of information about the user, but none
+of it is required. Now you can create a new simplified form
+for adding users. You can do this in the UI in Drupal 8.</p><h3 id=things-to-google-many-have-been-backported-to-drupal-7>Things to google (many have been backported to Drupal 7)</h3><ul><li>Composer support</li><li>Toolbar update (Navbar in Drupal 7)</li><li>Responsive Image Styles (Picture Module in Drupal 7)</li><li>File Entities</li><li>RESTful api</li><li>Experimental Core Modules</li><li>Content Moderation</li><li>etc...</li></ul><h3 id=ui-changes>UI Changes</h3><p><strong>Good News!</strong> Not much has changed significantly in the UI. I guess
+that could be bad new too.</p><ul><li>This is going to be brief, mainly because the UI changes are
+minimal.</li></ul><h4 id=operations>Operations</h4><p><img src=/images/opdropdown.png alt></p><p>New Drop down thingy for selecting what we are doing to a thing. One change is Operations now go in a drop down with the maybe most
+common one first? Really I don&rsquo;t know how that was chosen so if
+someone here does know please tell me afterward.</p><h4 id=form-display-settings>Form Display Settings</h4><p>Multiple entity form settings on the Manage form display page, this
+includes field widget settings.</p><p><img src=/images/manageformdisplay.png alt></p><p>Another change you will find between D7 and D8 I have already hinted
+at with the Form View. If you have a alternate node form then you
+will find the option for editing that form view in &ldquo;Manage Form
+Display&rdquo; section. This also means that controls for the form
+widgets are configured on the form view display settings and not the
+&ldquo;Manage Fields&rdquo; page. Mange Fields is now entirely about the field
+and its storage.</p><h4 id=good-news-about-learning-curves>Good news about learning curves</h4><p><img src=http://www.freshform.com/blog/wp-content/uploads/2013/02/learning-curve.png alt="The Drupal learning
+curve"></p><p>Good news, there are fewer changes for site builders who are coming
+from Drupal 7 to worry about. Bad news is for someone coming from
+not Drupal the perceived Drupal learning curve could be
+intimidating.</p><h3 id=module-availability>Module Availability</h3><p><img src=http://68.media.tumblr.com/06a363a56c82b78b55dd9dc52df72174/tumblr_o2k1xwmoN91ritmyro1_500.jpg alt="elephant in the
+room" title="Lets acknowledge the elephant in the room"></p><p><strong>Big problem with my re-architecture exercise.</strong></p><p>EntityForm is not supported on Drupal 8.There is a discussion about whether or not this module is necessary. I of course believe the module is necessary. However, this doesn&rsquo;t make the module stable today. The module works well enough for this experiment, but if this were a full client project we would have to explore some options.</p><ul><li><p>Find an alternative</p></li><li><p>Custom Entities are an option</p></li><li><p>Comment module</p></li><li><p>Contact module extras</p></li><li><p>Relation module</p><p>Didn&rsquo;t bring this module up in the modules used because we didn&rsquo;t use it, but this is a really cool module. This module has the ability to supplant the functionality of flag and organic groups. It adds the concept of entity endpoints which allow us to make fieldable relations between entities. In the example of this LMS that entity would have all the fields for the response, an endpoint for the paragraphs item (renamed paragraph revision for Drupal 8), and an endpoint for the user.</p><p>I have used this module for saving user state in js apps and for keeping track of users completion status for resources in custom Professional Development portals.</p></li><li><p>Fund the development of a stable release.</p><p>While I do encourage finding alternatives, at this state in Drupal 8 development I would encourage us to choose the final option because, frankly, aside from the comment module none of the above options are any more stable than eform and more importantly Drupal 8 needs more stability in contrib.</p></li></ul><p><strong>Second problem</strong></p><ul><li>Paragraphs doesn&rsquo;t want me to reference paragraphs</li><li>It is possible, but requires use of the EXPERIMENTAL field
+widget. The main reason this is EXPERIMENTAL is that the
+paragraphs modules is not mean to be used to reuse content, that
+is more of a function of blocks. I spent more time on this than
+I would have liked, due to some of Drupal 8&rsquo;s UI changes that I
+didn&rsquo;t fully understand. But it turned out to be a non-problem.</li><li>In this case the problem wasn&rsquo;t the module but my own
+unfamiliarity and over confidence. The answer was staring me in
+the face.</li></ul><p><img src=/images/babyele.gif alt="Baby Elephant"></p><p>So we do have an elephant, but it is just a baby elephant.</p><h3 id=specifically-what-needs-to-change>Specifically What needs to change</h3><p><strong>Not Much</strong></p><ul><li>This site works more like a an app than a traditional site, this
+means we have slightly different expectations when choosing a
+Framework.</li><li>Drupal was chosen for its scaleability, strong user centric or
+permissions based content model, high quality contrib space, and
+familiarity. As I said before I have been doing drupal
+professionally for close to 10 years, so I am very familiar with the
+project, community, and workflow. However, I am constantly looking
+into other technology and I have built things with other tech when
+Drupal isn&rsquo;t the best choice, so this isn&rsquo;t a statement coming
+from the island.</li><li>Drupal 8 has lots of new Features but the biggest advances have been
+in underlying architecture (with the content/config entity system)
+and development workflow (with the switch to Semantic Versioning).</li></ul><h4 id=architecture--content-strategy>Architecture & Content Strategy</h4><p><strong>Mostly the same</strong></p><ul><li><p>Same Features</p></li><li><p>Same Modules</p></li><li><p>Same Architecture</p></li><li><p>Same Strategy</p></li><li><p>Architecturally the site remains the same</p><ul><li>The site has the same features and the same modules are
+available to provide us with the same architecture and content
+strategy.</li><li>It won&rsquo;t always be like this. But if you put the work into
+making sure you have a good content strategy in the first place
+it will be less likely that you will have to completely
+re-architect a site when you move platforms. This is why content
+strategy is important.</li></ul></li></ul><h4 id=custom-development-1>Custom Development</h4><p><strong>Biggest Changes</strong></p><ul><li>The largest change is the addition of developing a stable release
+for whatever we use for the response saving.</li></ul><h2 id=custom-development-2>Custom Development</h2><p>This is where the largest changes were made.</p><ul><li>Custom development</li><li>This is where the largest changes were made, but maybe not where it
+was expected.</li></ul><h3 id=not-much>Not Much</h3><ul><li><p>We still use hook_entity_view_alter</p></li><li><p>We still use hook_form_alter</p></li><li><p>In Drupal 7 we accomplished the HULK SMASH part, where we smash the
+form from the entity form into the display of the paragraphs item,
+with a hook_entity_view_alter implementation coupled with a
+hook_form_alter implementation. In Drupal 8 with its Object
+Oriented Architecture I was able to accomplish it in the exact same
+way.</p></li></ul><p><img src=http://i.imgur.com/vj1IG.gif alt="Incoming Transmission"></p><ul><li>&ldquo;But Wait&rdquo; you say, &ldquo;Drupal 8 is OOP we aren&rsquo;t supposed to put
+stuff into the .module file anymore. That is just there for
+decoration!&rdquo;</li><li>Oh no, the joy of modifying aspects of the program with hooks is not
+gone in D8. Hooks are good things, and even though Drupal is want to
+change things with new version and add modern development practices
+to Drupal, Drupal also isn&rsquo;t going to ditch what is likely the most
+flexible pattern of php development just because it stepped in some
+OOP.</li></ul><h3 id=okay-really-lots>Okay, really lots</h3><p>But all good!</p><ul><li>The Object Oriented Architecture is designed to make common things
+easier.</li><li>For example.</li><li>When building this with Drupal 7, we had to reimplement parts of the
+form builder from the entity forms module in order to display entity
+forms programatically. This was likely due to the incomplete nature
+of the entity api in Drupal 7.</li><li>In Drupal 8 the entity api is far more fleshed out. We still use
+Entity Field Queries to get the EntityForm Submission for the
+current user and the current paragraph revision, but this time
+Drupal has an api for creating the empty EntityForm submission
+object if the user has never submitted. And it has an interface for
+building forms for Entities, new or old. Thus we can get a form for
+a new entity in the same way we get the form for the old entity,
+with all the right fields filled in.</li></ul><p><em>Drupal 8 version</em>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>php</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// This creates a new eform submission.
+</span></span></span><span style=display:flex><span>    $eform_submission <span style=color:#f92672>=</span> <span style=color:#a6e22e>\Drupal</span><span style=color:#f92672>::</span><span style=color:#a6e22e>entityTypeManager</span>()
+</span></span><span style=display:flex><span>      <span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getStorage</span>(<span style=color:#e6db74>&#39;eform_submission&#39;</span>)
+</span></span><span style=display:flex><span>      <span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>create</span>([<span style=color:#e6db74>&#39;type&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#e6db74>&#39;multiple_choice_question&#39;</span>]);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// This loads an existing eform submission.
+</span></span></span><span style=display:flex><span>    $submitted_eform <span style=color:#f92672>=</span> <span style=color:#a6e22e>\Drupal</span><span style=color:#f92672>::</span><span style=color:#a6e22e>entityTypeManager</span>()
+</span></span><span style=display:flex><span>      <span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getStorage</span>(<span style=color:#e6db74>&#39;eform_submission&#39;</span>)<span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>load</span>(<span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Either way we build the form with a call to the entity.form_builder service.
+</span></span></span><span style=display:flex><span>    $form <span style=color:#f92672>=</span> <span style=color:#a6e22e>\Drupal</span><span style=color:#f92672>::</span><span style=color:#a6e22e>service</span>(<span style=color:#e6db74>&#39;entity.form_builder&#39;</span>)
+</span></span><span style=display:flex><span>      <span style=color:#f92672>-&gt;</span><span style=color:#a6e22e>getForm</span>($submitted_eform);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Then we append it to the render array.
+</span></span></span><span style=display:flex><span>    $build[] <span style=color:#f92672>=</span> $form;
+</span></span></code></pre></div><ul><li><p>To build a new entity, this could be a node, eform_submission, or
+comment, We user the Drupal::entityTypeManager class and call the
+create method or to load an existing one we use the same class with
+the load method and the entity id.</p></li><li><p>Then we user the entity form builder service to build the form for
+the entity. I tested this with nodes as well. It is the same generic
+interface for all content entities.</p></li><li><p>No more Drupal 7 non-existent entity api</p></li><li><p>Drupal 8 has intelligent use of OOP that makes site building easier</p></li><li><p>Over 100 lines of code is reduced to under 10</p></li></ul><p><img src=http://i.imgur.com/KP6cR.gif alt="Incoming Rainbow"></p><ul><li>No more Drupal 7 non-existent entity api</li><li>Drupal 8 has intelligent use of OOP that makes site building easier</li><li>Over 100 lines of code is reduced to under 10</li><li>Mind Blown</li></ul><p><strong>The End</strong></p><p><img src=https://nicspaull.files.wordpress.com/2013/10/you-are-here.jpg alt="Don&rsquo;t take things so seriously
+" title="You are here in the galaxy"></p><h2 id=when-are-sprints>When are sprints?</h2><p>April 24-27: Sprint Lounge at Baltimore Convention Center</p><p>April 28: <strong>Sprint Day</strong> - General Sprints, Mentored Core Sprint,
+<strong>First-Time Sprinter</strong> Workshop at Baltimore Convention Center</p><p>We also provide a 24-hour Sprinter Lounge that opens on April 24th at
+7:00pm and will close on Thursday, April 27th at midnight. The Sprinter
+Lounge will be located at the <strong>Hilton Baltimore (401 West Pratt Street)
+in room Peale A-C</strong>.</p><p>Based on community feedback and input from the Sprint Leads, we
+understand the need for &lsquo;shorter sprints with greater support&rsquo;, and as
+a result will <strong>not</strong> be hosting Extended Weekend Sprints at this
+DrupalCon.</p></article></div></main></div><div class=wrapper-footer><div class=container><footer><h2 class=sr-only>Footer</h2><div class=social-icons><h3>Social Networks</h3><a href=https://github.com/frob aria-label=GitHub><svg class="svg-icon" viewBox="0 0 16 16" fill="#000"><path d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+</a><a href=https://twitter.com/frobiovox aria-label=Twitter><svg class="svg-icon" viewBox="0 0 16 16" fill="#1DA1F2"><path d="M5.026 15c6.038.0 9.341-5.003 9.341-9.334.0-.14.0-.282-.006-.422A6.685 6.685.0 0016 3.542a6.658 6.658.0 01-1.889.518 3.301 3.301.0 001.447-1.817 6.533 6.533.0 01-2.087.793A3.286 3.286.0 007.875 6.03 9.325 9.325.0 011.108 2.601a3.289 3.289.0 001.018 4.382A3.323 3.323.0 01.64 6.575v.045a3.288 3.288.0 002.632 3.218 3.203 3.203.0 01-.865.115 3.23 3.23.0 01-.614-.057 3.283 3.283.0 003.067 2.277A6.588 6.588.0 01.78 13.58 6.32 6.32.0 010 13.535 9.344 9.344.0 005.026 15z"/></svg>
+</a><a href=/feed.xml aria-label=RSS><svg class="svg-icon" viewBox="0 0 16 16" fill="#000"><path d="M2 2v2.5c5.246.0 9.5 4.254 9.5 9.5H14C14 7.373 8.627 2 2 2zm0 4v2.5c3.038.0 5.5 2.462 5.5 5.5H10c0-4.418-3.582-8-8-8zm1.5 4.5a1.5 1.5.0 100 3 1.5 1.5.0 000-3z"/></svg></a></div><div class=blogroll><h3>Blogroll</h3><a href=https://www.btmash.com/>Blob of contradictions</a><br><a href=https://icodealot.com/>iCodealot</a><br></div><div class=copyright><p>&copy; 2026 Frank Robert Anderson</p></div></footer></div></div><script src=/js/links.js></script><script src=/js/site-description.js></script></body></html>

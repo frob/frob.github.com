@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frank Robert Anderson</title><link>https://www.frobiovox.com/</link><description>Prestigious operator of commplicated auto-complete.</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/feed.xml" rel="self" type="application/rss+xml"/><item><title>Farewell to the burgundy</title><link>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</link><pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</guid><description><![CDATA[<p>Last week I <a href="https://www.frobiovox.com/posts/2026/08/18/moving-on/">wrote a list</a> of everything I need to update. Second item: personal site. Here is what has been sitting at <a href="http://www.frankrobertanderson.com">www.frankrobertanderson.com</a> this whole time.</p>
+<p><img src="/images/2026/08/27/frankrobertanderson.png" alt="The frankrobertanderson.com homepage: a dark burgundy background, olive header bar, and a typewriter-font nameplate" title="Professional Drupal/Web Development, since 2009."></p>
+<p>Look at that footer. <em>© Copyright 2009.</em></p>
+<p>That site is old enough to drive. It was built on Drupal 6, with a theme I wrote myself. I still have a soft spot for the dark burgundy background and the typewriter-font nameplate. The contact link is broken &ndash; it is supposed to point at the contact form on my Drupal.org profile.</p>
+<p>This site was originally built when I was doing contract work for small and local businesses. I built the site in Drupal and I built most sites in Drupal. I have been using Drupal for almost twenty years, but it is no longer my only hammer. I used httrack to turn it from Drupal 6 to static HTML around the launch of Drupal 7 and I have never touched it since.</p>
+<p>That drawing in the middle. That the figure hunched over a pad of paper &ndash; I drew that. I had several versions: a blank page, a mixing console, and a computer. This one turned out the best but I was originally going to offer, UX, Development, and Audio Mixing services too.</p>
+<p>This site isn&rsquo;t exactly embarrassing, if looked at by the right people. If anything it is very obviously not AI slop. It is a genuine artifact of what web development looked like when I got serious about it, and I am not the sort of person who pretends the earlier versions did not happen. But a site that says 2009 in the footer is not telling anyone what I can do in 2026. It is telling them I stopped.</p>
+<p>So it gets replaced. Something static, something I can update in an afternoon, something that says what I actually work on now instead of what I hoped to sell seventeen years ago.</p>
+<p>Seventeen years is a good run for a homepage. Longer than most jobs. You can check out the new version <a href="https://www.frankrobertanderson.com">here</a>.</p>
+]]></description></item><item><title>Moving on</title><link>https://www.frobiovox.com/posts/2026/08/18/moving-on/</link><pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/08/18/moving-on/</guid><description><![CDATA[<p>After more than ten years, my time at Clarity Innovations has come to an end. I was laid off.</p>
+<p>I want to say up front that I enjoyed working there. Ten years is a long time to spend anywhere, and I would not have spent it there if I had not wanted to.</p>
+<h2 id="nobodys-fault">Nobody&rsquo;s fault</h2>
+<p>This was not my fault, and it was not theirs.</p>
+<p>An enormous amount of money was poured into education technology over the last decade. When that kind of money stops, things do not just go back to the way they were &ndash; it leaves a vacuum. That is the economy we are in right now. A lot of good people are getting the same news I got, for the same reasons.</p>
+<p>I am not going into specifics, but what I will say about Clarity is that they care about their employees, and they showed it in the way they handled this. I had notice. I had time to say goodbye. That is not nothing &ndash; plenty of people find out their access has been revoked before they find out they have been let go.</p>
+<h2 id="missing-the-fellowship">Missing the fellowship</h2>
+<p>The hardest part is the people.</p>
+<p>Ten years is long enough that your coworkers stop being coworkers. You know whose kid is graduating high school. You know who to ping when a build breaks at 4:45 on a Friday and who will actually answer. You develop a shorthand that takes years to build.</p>
+<p>I will miss them. I expect to keep missing them for a while. That is the cost of having liked the job.</p>
+<h2 id="gathering-my-strength">Gathering my strength</h2>
+<p>The other thing the notice period gave me was time to remember what I can actually do.</p>
+<p>When you work somewhere long enough, your skills stop being visible to you. They just become the furniture. All of your expertise gets expressed as institutional memory.</p>
+<p>So I spent some of that time going back through ten years of work and reminding myself what was in it.</p>
+<blockquote>
+<p>Your fingers would remember their old strength better, if they grasped your sword.</p>
+</blockquote>
+<p>They do, as it turns out. It just takes picking the thing back up. Though I will not be enumerating the past here &ndash; I have too much to do.</p>
+<h2 id="everything-is-out-of-date">Everything is out of date</h2>
+<p>Here is the genuinely worst part of being laid off after a decade, and nobody warns you about it: <em>everything</em> is stale. Every artifact of your professional existence was last touched during an administration that has since ended.</p>
+<p>The list, as it currently stands:</p>
+<ul>
+<li>Resume</li>
+<li>Personal site</li>
+<li>This blog</li>
+<li>LinkedIn profile</li>
+<li>Drupal, GitHub, and GitLab profiles</li>
+</ul>
+<p>None of it is hard. All of it is archaeology. Each one means sitting down and reconstructing what I actually did across ten years, which loops right back to the previous section &ndash; the work of updating the resume <em>is</em> the work of remembering the strength.</p>
+<h2 id="silver-shores">Silver shores</h2>
+<p>I am going to be fine. I know that.</p>
+<p>Ten years was a good long stay, and I am grateful for it, but the road does go ever on. There are worse things than finding yourself at the harbor with the sails already up.</p>
+<p>It is about time for another adventure.</p>
+<p><img src="/images/2026/08/18/anotheradventure.png" alt="A ship sailing out from the Grey Havens into the light" title="The road goes ever on."></p>
+]]></description></item><item><title>Project Space Game: a ten-year-old idea finally has a build</title><link>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</link><pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</guid><description><![CDATA[<p>About ten years ago I wrote down a question I couldn&rsquo;t shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called <a href="/posts/what-if-the-bullets-cost-money"><em>What if the bullets cost money?</em></a>, and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — <em>what does this cost you?</em></p>
+<p>Well. I finally started building the thing. It&rsquo;s called <strong>Project Space Game</strong>, and this is the first time I&rsquo;m writing about it as something that actually exists and runs rather than something I daydream about.</p>
+<h2 id="the-hook-ten-years-later">The hook, ten years later</h2>
+<p>The seed is exactly the one I planted back then: what if shooting the asteroids <em>cost you something</em>?</p>
+<p>Fuel is finite. Ammo has to be bought. The asteroids in your way are less of an arcade high-score machine and more of an economic problem to solve. Suddenly it isn&rsquo;t an arcade cabinet — it&rsquo;s a little world where you have to make decisions. Do I burn fuel to chase that scrap? Is this shot worth it? Can I make it home? <em>Space, but everything has a price</em> — that&rsquo;s still the whole pitch, and it turns out it holds up.</p>
+<h2 id="where-it-is-today">Where it is today</h2>
+<p>I want to be upfront: this is a work in progress, and an early one. The version history so far reads like someone learning in public, because that&rsquo;s exactly what it is.</p>
+<p>The early releases were about getting the bones in place. A ship you can actually fly, with engines and fuel that drains as you burn it — run dry and you&rsquo;re stranded, paying through the nose for an emergency delivery. Asteroids that spawn around you and quiet down when they drift off screen so the whole thing doesn&rsquo;t melt your computer. A dashboard with little rotary gauges for your heading and your destination. Points of interest scattered out in the dark that you tow scrap home from to earn your keep. Money you can actually run out of — and a game-over when you do.</p>
+<p>By the more recent work I&rsquo;d added the things that make it feel like a loop instead of a tech demo: weapons that cost ammo, sound when you fire and reload, a magazine to track your shots, and depots out in space where you can buy more. The economy and the action finally started talking to each other.</p>
+<p>Some of it is held together with tape. There are placeholder textures I&rsquo;m embarrassed by, console errors I haven&rsquo;t chased down yet, and a to-do list considerably longer than the done list. That&rsquo;s fine. That&rsquo;s what an early build <em>is</em>.</p>
+<h2 id="where-its-going">Where it&rsquo;s going</h2>
+<p>The aspiration is bigger than the current build, and I think that&rsquo;s how it should be.</p>
+<p>I want the space out there to feel less like random rubble and more like a place — asteroid fields generated with the care you&rsquo;d give a dungeon, so navigating them is a puzzle worth solving. I want the world to react to you: music that shifts with the moment, ships that aren&rsquo;t just you, missions and levels that string the moment-to-moment flying into something with shape and stakes. I want depots in deep space where fuel is precious and the math gets genuinely scary. I want the ship, the asteroids, the home base to all look like they belong to the same hand-drawn universe instead of a programmer&rsquo;s scratch pad.</p>
+<p>None of that is done. Most of it is barely started. But the through-line from that ten-year-old question to a world where every shot and every drop of fuel is a choice you have to weigh: that part is real now, and it&rsquo;s already fun to fly around in.</p>
+<p>More to come. It only took me a decade to start.</p>
+]]></description></item><item><title>Content gatekeeping in a GenAI world</title><link>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</guid><description><![CDATA[<p>Let me start with a bit of history. It might seem like a hard thing for today&rsquo;s generation to understand, but content used to cost money &ndash; especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.</p>
+<p>It was in this time that the foundations of the World Wide Web were being laid in the internet protocol that would become http &ndash; the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for &ldquo;Payment Required&rdquo; responses that has gone unused for 30 years.</p>
+<p>HTTP, the communication layer of the web, was designed with the expectation that content would cost money. Instead, the web became a mostly ad-based platform. But those days might be coming to an end. As the browser stops being a destination platform, more and more people are getting fed the content from means that don&rsquo;t feed them ads. Worse yet, they are even getting the direct content. As more and more people access content through Gen AI services, such as Claude, Gemini, ChatGPT, DeepSeek, or Copilot, they are no longer reading content from a single source, but rather a distillation of many sources. In that world, who should be paid, and do ads make sense?</p>
+<p>There is actually way more to it than that. We haven&rsquo;t even talked about training data.</p>
+<h2 id="the-training-data-fight-is-over-the-access-fight-is-just-starting">The training data fight is over. The access fight is just starting.</h2>
+<p>For two years now the conversation about AI and content has been stuck on one question: who gets paid for what was already used to train the models? It is a real question with billion-dollar answers, but it is also a question about the past. Meanwhile a different question has been quietly assembling itself in the background &ndash; who gets paid when a model goes to fetch something <em>right now</em> &ndash; and almost nobody is talking about it, even though the plumbing is already getting installed.</p>
+<p>There are two sides to the content payment coin: paying for training and paying for inference. So let me lay out the two paradigms next to each other, because I think the second one is where things actually get interesting.</p>
+<h2 id="paradigm-one-licensing-the-training-corpus">Paradigm one: licensing the training corpus</h2>
+<p>This is the world you have been reading about. Publishers spent 2024 and 2025 either suing AI companies or signing deals with them, and in many cases doing both at the same time with different companies. The Guardian, the Washington Post, NYT (with Amazon), Condé Nast, Hearst, AFP, USA Today &ndash; the list is long enough at this point that there is <a href="https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/">a running scorecard</a>. The big number this year is News Corp&rsquo;s <a href="https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/">up-to-$50M-a-year deal with Meta</a> for Llama. The Anthropic author settlement <a href="https://willscott.me/2025/10/04/ai-licensing-deals-search-visibility-in-2025/">set a $3,000-per-work floor for valuation</a> of pirated training material, which everybody in the room is now using as a reference price.</p>
+<p>But here is the catch, and it is a big one. <a href="https://www.niemanlab.org/2025/12/publishers-will-see-no-meaningful-ai-licensing-revenue/">As long as Google&rsquo;s search crawler and its AI-training crawler are functioning as a single system</a>, publishers have no real leverage. Blocking AI scraping means blocking search indexing means losing your audience. The result is what you would expect: publishers who block AI crawlers via robots.txt <a href="https://www.playwire.com/blog/common-crawl-is-an-ai-training-pipeline-publishers-are-done-pretending-otherwise">face a 23.1% monthly visit decline with no corresponding reduction in AI citations</a>. You get scraped either way; the only question is whether you also lose your traffic.</p>
+<p>It is a bad position to negotiate from. And it is fundamentally a <em>retrospective</em> position &ndash; the data is already in the weights. The deals being signed now are partly settlements for the past and partly access for future training rounds, but the leverage curve is pointed the wrong direction. Every additional month of synthetic data, every additional model trained, reduces the marginal value of any one publisher&rsquo;s archive.</p>
+<p>Which brings me to the other paradigm. The one where the question gets reframed entirely.</p>
+<h2 id="paradigm-two-paying-for-content-access">Paradigm two: paying for content access</h2>
+<h3 id="mcp-and-the-runtime-fetch">MCP and the runtime fetch</h3>
+<p><a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol</a> is an open standard Anthropic shipped in November 2024 and donated to the Linux Foundation a year later. The pitch is boring on its surface &ndash; it is a JSON-RPC protocol for letting AI applications talk to external tools and data sources in a standardized way. USB-C for AI, as the docs like to put it. The N×M integration problem solved by making every client and every server speak one protocol.</p>
+<p>But what MCP actually does, economically, is move the data question from training time to inference time.</p>
+<p>Here is what I mean. When I connect Claude to my Google Drive over MCP, the model is not being granted access to Drive as a corpus. It is being granted ephemeral, scoped, user-authorized access to <em>my</em> Drive <em>for this session</em>, using <em>my</em> credentials. The data flows in, the model reads it, the model answers, the data does not get baked into anybody&rsquo;s weights. <a href="https://www.databricks.com/blog/what-is-model-context-protocol">Models retrieve live records on demand rather than relying on cached embeddings or static training data</a>. Every tool call is logged. The publisher&rsquo;s existing auth and access controls do all the work.</p>
+<p>This is a fundamentally different deal than licensing. The Financial Times does not have to sell its archive to OpenAI. It has to ship an MCP server that authenticates against the same paywall it already runs. If you are an FT subscriber and you ask Claude about a story, Claude calls the MCP server with your credentials, the server returns the article, Claude reads it and answers. If you are not a subscriber, you get nothing. The content stays paywalled to humans, AI agents traverse the same paywall on behalf of authorized humans, and there is no training-data negotiation at all because no training is happening.</p>
+<p>The political shift is significant. In the licensing world, publishers are selling something they have already lost control of. In the MCP world, they are selling something they still hold &ndash; current, authenticated, real-time access to their actual systems. The leverage curve is finally pointed the right direction.</p>
+<p>MCP does not solve everything, though. It assumes the user already has an account. It does not help a stranger find your content and pay for it on the spot. For that you need the next layer.</p>
+<h3 id="x402-and-rsl--the-missing-payment-and-rights-layers">x402 and RSL &ndash; the missing payment and rights layers</h3>
+<p>This is the part I think will look obvious in retrospect.</p>
+<p>HTTP 402 has been sitting in the spec since the 1990s. It means &ldquo;Payment Required.&rdquo; It was never implemented. <a href="https://developers.cloudflare.com/agents/agentic-payments/x402/">x402 is a payment standard built around that status code</a>, and Cloudflare has been pushing it hard. The flow is dead simple: agent requests a resource, server returns 402 with a price, agent authorizes a stablecoin payment, server delivers the resource. One round trip. No human in the loop. No API key a human had to configure in a billing dashboard ahead of time.</p>
+<div class="mermaid-wrap"><pre class="mermaid">
+sequenceDiagram
+    participant A as Agent
+    participant S as Publisher Server
+    A->>S: GET /article
+    S-->>A: 402 Payment Required (price, asset)
+    A->>S: GET /article (X-PAYMENT: signed stablecoin tx)
+    S-->>A: 200 OK (article body)
+</pre></div><style>
+.mermaid-wrap{max-width:100%;margin:2rem auto;text-align:center;overflow-x:auto}
+.mermaid-wrap pre.mermaid{background:transparent;padding:0;margin:0;white-space:normal;font-family:inherit}
+.mermaid-wrap pre.mermaid svg{max-width:100% !important;height:auto !important}
+</style>
+<p>Cloudflare&rsquo;s <a href="https://blog.cloudflare.com/introducing-pay-per-crawl/">pay-per-crawl marketplace</a> sits on top of this, and the numbers are wild. <a href="https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help">Cloudflare&rsquo;s network is processing a billion HTTP 402 responses per day</a>. AI scrapers visit a site at tens-of-thousands to one relative to the human traffic they send back, compared to a 2-to-1 ratio a decade ago. The unit economics of the open web finally, structurally, support charging.</p>
+<p>And then there is <a href="https://willscott.me/2025/10/04/ai-licensing-deals-search-visibility-in-2025/">RSL &ndash; Really Simple Licensing</a> &ndash; which is robots.txt grown up. Instead of &ldquo;allowed/disallowed,&rdquo; sites declare <em>terms</em> in machine-readable form: pay-per-crawl, pay-per-inference, flat subscription, or free with attribution. Reddit and Medium are early backers. Crawlers and agents can negotiate against the terms before they fetch.</p>
+<p>The really interesting part is what happens when you combine these. AWS just shipped <a href="https://singhajit.com/dev-weekly/2026/may-4-10/anthropic-spacex-cloudflare-layoffs-cursor-33-aws-agent-payments/">Bedrock AgentCore Payments</a> &ndash; agents pay over x402 with stablecoins, and Coinbase runs an x402 Bazaar MCP server with over 10,000 paid endpoints agents can discover. So now MCP gives you the integration and authorization layer, x402 gives you the payment layer, RSL gives you the rights-declaration layer, and the agent traverses all three without ever pausing the user&rsquo;s workflow. The cost shows up on a session budget.</p>
+<div class="mermaid-wrap"><pre class="mermaid">
+flowchart LR
+    U[Human user] --> AG[AI agent]
+    AG -->|1. discover terms| RSL[(RSL<br/>rights & pricing)]
+    AG -->|2. authenticate / call tool| MCP[(MCP server<br/>scoped access)]
+    AG -->|3. settle payment| X402[(x402<br/>stablecoin rail)]
+    MCP --> PUB[(Publisher content)]
+    X402 --> PUB
+    PUB --> AG
+    AG --> U
+</pre></div>
+<p>That is the whole thing.</p>
+<h2 id="wrap-up">Wrap up</h2>
+<p>The licensing deals are a one-time settlement of the old web. They matter, the numbers are large, and they will keep happening &ndash; but the leverage curve is wrong and everyone in the business knows it. MCP plus x402 plus RSL is the architecture of the next web, where the unit of commerce is not &ldquo;human visits page, sees ad&rdquo; but &ldquo;agent fetches resource, settles micropayment, returns answer to a human.&rdquo; It is the architecture where my original instinct &ndash; content paywalled, AI pays to access &ndash; actually becomes mechanically possible, because the payment and the auth and the access all happen at the moment of use rather than once-ever at training time.</p>
+<p>I should be honest about the caveat. Most of this is still early. On-chain x402 volume was <a href="https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help">around $28,000 per day in March</a>, which is rounding error. MCP server quality is uneven. RSL is more aspiration than adoption. Nobody has settled the question of whether crypto rails win or fiat rails do &ndash; Visa and Mastercard have their own Trusted Agent Protocol pushing the same direction from the other side. The technical pieces exist; the market structure does not yet.</p>
+<p>But the technical pieces exist. That is the part that was not true a year ago. Build something, hook up an MCP server with a 402 in front of it, see what happens. That is the pitch, and I think it is going to work.</p>
+]]></description></item><item><title>An experienced developers view on writing software in the age of vibe coding and generative ai</title><link>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link><pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid><description><![CDATA[<h2 id="i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks">I have spent many tokens building with AI in many different ways and using different stacks</h2>
+<p>I have seen a recent trend revived among software developers. This is the belief that the productivity of a Software Engineer should (or can be) measured in lines of code per week. This is a metric that was, largely, discarded by Software Engineers 50 years ago. The truth of the matter is that every line of code is a liability. This liability used to be mitigated by the time it took skilled and experienced people to plan, design, and write the code. These were people who had accumulated enough <strong>passive knowledge</strong> to instinctively recognize when something was wrong, and enough <strong>active knowledge</strong> to make deliberate, informed decisions.</p>
+<p>Generative AI has changed everything and now non-skilled people who have never written a line of code before in their lives are starting to write complicated 10,000+ line applications. The dirty secret is that they still don&rsquo;t know what they are doing. If you are one of those people, I do not mean to offend you. It is you who, most of all, needs to read this post.</p>
+<h3 id="tldr">TL;DR</h3>
+<p>AI coding agents can generate a full-stack app in an afternoon, but whether that&rsquo;s a superpower or a liability depends on your experience. Senior devs have accumulated deep <strong>passive knowledge</strong> from years of shipping and debugging production systems; they can safely use agents as force multipliers and trust their instincts to catch bad output. Mid-level devs are still building <strong>active knowledge</strong> in areas like security and architecture; they should treat the agent as a collaborative partner and resist accepting suggestions they can&rsquo;t evaluate. Junior devs should flip the relationship entirely: use the agent as a tutor, not a generator, or risk shipping working code they can&rsquo;t explain, debug, or extend. The right workflow for each level is covered below.</p>
+<hr>
+<h2 id="vibe-coding-a-full-stack-app-how-your-experience-level-should-change-your-workflow">Vibe Coding a Full-Stack App: How Your Experience Level Should Change Your Workflow</h2>
+<p>AI agents can build a full-stack application in an afternoon. A database schema, auth system, API layer, and polished frontend, all generated from a few prompts. It feels like a superpower, and in many ways it is. But the right workflow for wielding that power depends entirely on what you already know.</p>
+<p>Getting this wrong has different consequences at different levels. Senior devs waste time untangling inconsistent generated code. Mid-level devs accumulate technical debt they don&rsquo;t realize is there. And junior devs face the most insidious risk of all: learning nothing while believing they&rsquo;ve learned everything.</p>
+<p>This post walks through a recommended workflow for using AI agents to plan and build a production full-stack application (one with user accounts, a web interface, and an authenticated API) and then shows how that workflow should change based on where you are in your career.</p>
+<hr>
+<h2 id="the-universal-foundation">The Universal Foundation</h2>
+<p>Regardless of experience level, a few principles hold:</p>
+<p><strong>Spec first, always.</strong> A mediocre agent with a great spec beats a great agent with a vague spec every time. Before any code is generated, you should have a written document covering your data model, API routes, auth flows, and key technical decisions. The spec is the single highest-leverage artifact in the entire process.</p>
+<p><strong>Commit before every agent session.</strong> Version control is your undo button. If a session goes sideways, <code>git reset --hard</code> and try again with better instructions. This sounds obvious, but it fundamentally changes your risk tolerance. You can let the agent take bigger swings when you know you can revert cleanly.</p>
+<p><strong>Be willing to throw away generated code.</strong> The sunk cost fallacy hits hard when an agent has produced 500 lines and you realize the approach is wrong. Throw it away. Rewrite the prompt. Try again. The code was cheap to produce and it&rsquo;s cheap to replace.</p>
+<p>The shared workflow skeleton looks like this: <strong>spec → scaffold → feature loop → testing and hardening → deployment.</strong> What changes across experience levels is how you move through each phase, how much you delegate, and where you apply scrutiny.</p>
+<hr>
+<h2 id="the-senior-dev-20-years">The Senior Dev (20+ Years)</h2>
+<p>At this level, the agent is a <strong>force multiplier on existing expertise</strong>. You already know what good code looks like, what production systems require, and where the sharp edges are. You have built, through experience shipping production software and, more importantly, you&rsquo;ve been there when production goes down. Maybe, you&rsquo;ve led a team of Juniors. An experienced engineer has built up enough <strong>passive knowledge</strong> to build software in nearly any stack with or without Generative AI. For an experienced developer the workflow is about directing the agent&rsquo;s output and maintaining quality at volume.</p>
+<h3 id="spec-phase">Spec Phase</h3>
+<p>You write the spec. Use the agent conversationally to sanity-check your decisions: rubber-duck your database schema, talk through auth strategies (JWT vs. session, OAuth provider choices), and pressure-test your API design. But the decisions are yours. You have the context the agent doesn&rsquo;t: your team&rsquo;s capabilities, your infrastructure constraints, your product timeline.</p>
+<h3 id="scaffolding">Scaffolding</h3>
+<p>Use one focused agent session to generate the entire project skeleton: ORM models, migration files, auth middleware, representative API routes, and the frontend shell with auth pages. Generate the skeleton of the whole app in one shot rather than building feature-by-feature. This lets the agent establish consistent patterns (error handling conventions, response envelope shapes, middleware chains, component structure) that it can follow in later sessions.</p>
+<p><strong>Review this output ruthlessly.</strong> Patterns established in the scaffold propagate everywhere. If the agent picks a weird error-handling convention or an inconsistent response shape, fix it now. Fixing patterns in the foundation is 100x cheaper than fixing them after fifty features are built on top.</p>
+<h3 id="feature-development">Feature Development</h3>
+<p>One feature per agent session. Each session gets context that includes the spec, the relevant slice of the codebase, and a clear description of the feature. The agent writes the migration, API routes, service logic, and frontend components. You review, test, and iterate within the session, then commit when it&rsquo;s solid.</p>
+<p>Keep sessions focused. If you find yourself saying &ldquo;now let&rsquo;s also add X,&rdquo; start a new session instead. Long sessions with lots of context-switching produce worse code.</p>
+<h3 id="where-to-apply-extra-scrutiny">Where to Apply Extra Scrutiny</h3>
+<p><strong>Auth and security.</strong> Use a battle-tested auth library (Auth.js for Next.js, Django&rsquo;s built-in auth, FastAPI-Users). The agent will happily write a custom JWT flow, but you&rsquo;ll spend more time auditing it than you save. Even with a library, manually verify token expiry, refresh flows, CORS configuration, CSRF protection, rate limiting on auth endpoints, and password hashing algorithms.</p>
+<p><strong>Cross-boundary refactoring.</strong> Agents are great at refactoring within a file or module. Refactoring across the API boundary, specifically changing response shapes that affect both frontend and backend, tends to produce subtle breakage. Do those manually or in very focused sessions with explicit instructions.</p>
+<p><strong>Testing.</strong> Use agents to generate test scaffolding, but drive what gets tested and review the assertions. Agents love to write tests that pass but don&rsquo;t actually verify meaningful behavior.</p>
+<h3 id="where-to-let-the-agent-rip">Where to Let the Agent Rip</h3>
+<p>CRUD routes, form validation, data transformation functions, migration files, Docker configs, CI/CD pipelines, infrastructure-as-code. The boring parts are where the ROI is highest. Let the agent handle the volume work and save your attention for the parts that require judgment.</p>
+<hr>
+<h2 id="the-mid-level-dev-510-years">The Mid-Level Dev (5–10 Years)</h2>
+<p>At this level, the agent shifts from force multiplier to <strong>collaborative partner</strong>. You have strong opinions about some parts of the architecture but genuine uncertainty about others. Maybe you&rsquo;ve built APIs but never designed an auth system from scratch, or you&rsquo;ve done frontend work but never thought hard about database indexing.</p>
+<p>The core risk at this level is <strong>hidden technical debt from decisions you couldn&rsquo;t evaluate</strong>. The agent will confidently fill in your knowledge gaps with plausible-sounding choices, and if you can&rsquo;t distinguish a good decision from a merely reasonable one, those choices accumulate silently. Question everything and don&rsquo;t ask the agent; instead look things up the old-fashioned way. If you lack the <strong>active knowledge</strong> to finish a task then you probably shouldn&rsquo;t just go along with whatever the GenAI has suggested.</p>
+<h3 id="spec-phase-1">Spec Phase</h3>
+<p>Instead of &ldquo;write me a spec,&rdquo; the workflow becomes &ldquo;explain the tradeoffs, then let me decide.&rdquo; For every architectural choice you&rsquo;re unsure about, ask the agent to lay out the options the way a tech lead would in a design review: what are the alternatives, what are the tradeoffs, what would you recommend for this specific use case and why. Then you make the call. This is slower, but it means you actually understand your own system. This would be a good time to phone a friend or ask for a more experienced set of eyes to look at what is being suggested.</p>
+<h3 id="scaffolding-1">Scaffolding</h3>
+<p>Same approach as the senior dev, but add a dedicated review step after generation. Before building any features, ask the agent to describe the patterns it established: &ldquo;What&rsquo;s the error-handling strategy? What&rsquo;s the API response envelope? How is auth middleware applied?&rdquo; If it describes something you don&rsquo;t recognize from the code, that&rsquo;s a red flag &ndash; the patterns aren&rsquo;t consistent even within the scaffold.</p>
+<h3 id="feature-development-1">Feature Development</h3>
+<p>Add a walkthrough step to the feature loop. After the agent generates a feature, ask it to walk you through the code before you review it yourself. Not because you can&rsquo;t read code, but because agents sometimes use patterns or libraries you haven&rsquo;t encountered, and understanding the intent before reading the implementation makes review dramatically more effective.</p>
+<h3 id="auth">Auth</h3>
+<p>Use a library and follow its official documentation exactly. Resist the temptation to customize the auth flow based on agent suggestions. Agents will happily add &ldquo;convenient&rdquo; shortcuts (disabling CSRF for API routes, storing tokens in localStorage) and if you don&rsquo;t have the security background to smell that something&rsquo;s off, you&rsquo;ll ship it. If the agent produces auth code that deviates from the library&rsquo;s documented patterns, ask it to explain why. If the explanation involves the word &ldquo;simpler,&rdquo; be skeptical.</p>
+<h3 id="testing-as-a-substitute-for-intuition">Testing as a Substitute for Intuition</h3>
+<p>Lean on testing more aggressively than a senior dev would. Not because you&rsquo;ll write better tests, but because tests are how you discover that something is wrong when you lack the intuition to sense it. Ask the agent to write integration tests for every API route, including unhappy paths: expired tokens, malformed input, unauthorized access to other users&rsquo; data. Run them and read the failures carefully. A failing test you don&rsquo;t understand is a learning opportunity about your own system.</p>
+<h3 id="the-learning-log">The Learning Log</h3>
+<p>Keep a running document of things the agent did that you didn&rsquo;t understand, decisions it made that you had to ask about, and patterns it used that were new to you. This serves two purposes: it&rsquo;s a reference for future decisions, and it&rsquo;s a forcing function to make sure you&rsquo;re understanding what&rsquo;s being generated rather than just accepting it.</p>
+<hr>
+<h2 id="the-intern--new-dev">The Intern / New Dev</h2>
+<p>This is where the recommendations change fundamentally, not just in emphasis but in kind. Because the core risk is completely different.</p>
+<p>For the senior dev, the risk is wasted time. For the mid-level dev, the risk is hidden technical debt. For the intern, the risk is <strong>learning nothing while believing you&rsquo;ve learned everything.</strong> An agent will happily build your entire app while you watch, and you&rsquo;ll feel productive the whole time, and at the end you&rsquo;ll have a working application you can&rsquo;t debug, can&rsquo;t extend, and can&rsquo;t explain in an interview.</p>
+<h3 id="dont-start-with-the-full-stack">Don&rsquo;t Start with the Full Stack</h3>
+<p>The workflow described above assumes you can read generated code and evaluate whether it&rsquo;s good. If you&rsquo;ve never shipped production code, you can&rsquo;t do that yet &ndash; not because you&rsquo;re not smart enough, but because you don&rsquo;t have the reference points. You don&rsquo;t know what &ldquo;normal&rdquo; looks like, so you can&rsquo;t spot &ldquo;weird.&rdquo;</p>
+<p>Start with a single layer.</p>
+<p><strong>Weeks 1–2: Build the API with no frontend.</strong> Use the agent to help, but change the workflow dramatically. Instead of asking the agent to generate a feature, ask it to explain what you need to build, then try writing it yourself, then use the agent to review what you wrote. The loop is: <strong>understand → attempt → compare → learn.</strong></p>
+<p>Use Postman or curl to test your API manually. This teaches you something critical: the API is the real application. The frontend is just one client. Starting full-stack tends to produce the misconception that the API exists to serve the React app, which leads to architectural instincts that take years to unlearn.</p>
+<p><strong>Weeks 3–4: Add the frontend.</strong> Now you have an API you understand because you built it. Add the frontend as a separate layer that talks to your existing API. Again, agent as collaborator, not generator.</p>
+<h3 id="use-managed-auth-not-a-library">Use Managed Auth, Not a Library</h3>
+<p>For the senior dev, the recommendation is &ldquo;use a library and audit the integration.&rdquo; For the mid-level dev, &ldquo;use a library and follow the docs exactly.&rdquo; For you: <strong>use a fully managed auth service</strong> like Clerk, Auth0, or Supabase Auth.</p>
+<p>Not because auth is conceptually beyond you, but because auth fails silently. A broken API route throws an error. A broken React component shows a blank screen. A broken auth system looks like it works perfectly until someone&rsquo;s account gets compromised. You need security intuition to evaluate auth code, and that takes time to develop. Use a service, learn how auth works conceptually on the side, and revisit the decision when you have more experience.</p>
+<h3 id="flip-the-agent-relationship">Flip the Agent Relationship</h3>
+<p>For experienced devs, the agent is a code generator you review. For you, flip that entirely. The agent is a <strong>tutor that occasionally writes code.</strong></p>
+<p>An experienced dev prompts: <em>&ldquo;Build me a paginated endpoint for listing users with role-based filtering.&rdquo;</em></p>
+<p>You, instead: <em>&ldquo;I need to build a paginated endpoint for listing users. Before writing any code, explain what pagination strategies exist, which one you&rsquo;d recommend for this use case, and what the SQL query would look like. Then I&rsquo;ll try implementing it.&rdquo;</em></p>
+<p>After your attempt: <em>&ldquo;Here&rsquo;s my implementation. Review it, tell me what I got wrong, and explain why it&rsquo;s wrong &ndash; not just how to fix it.&rdquo;</em></p>
+<p>This is radically different from vibe coding. It&rsquo;s more like pair programming with a very patient senior engineer. It&rsquo;s slower by a factor of maybe 5x. But you actually learn.</p>
+<h3 id="concepts-that-will-trip-you-up">Concepts That Will Trip You Up</h3>
+<p>There are things experienced devs handle unconsciously that you&rsquo;ll need to engage with explicitly:</p>
+<p><strong>Environment variables and secrets.</strong> Ask the agent to explain the difference between hardcoding a database URL, using a <code>.env</code> file, and using a secrets manager, and why each matters. If you don&rsquo;t understand this, you will eventually commit a secret to git, and that&rsquo;s a genuinely bad day.</p>
+<p><strong>Database migrations.</strong> The concept of schema changes as versioned, sequential operations is likely new. Don&rsquo;t let the agent just generate migrations silently. Ask it to explain what each migration does and why migrations exist at all, as opposed to just editing the schema directly.</p>
+<p><strong>Error handling as an API contract.</strong> You probably catch errors to prevent crashes. You don&rsquo;t yet think about error handling as a contract with the frontend developers consuming your API. Ask the agent to explain HTTP status codes, error response shapes, and why consistency here matters for everyone downstream.</p>
+<h3 id="the-learning-log-mandatory-version">The Learning Log (Mandatory Version)</h3>
+<p>The learning log from the mid-level section becomes non-negotiable here, but changes form. Don&rsquo;t just log things you didn&rsquo;t understand; log things you thought you understood but got wrong. Every time the agent corrects you, write down what you assumed, what was actually true, and why. After a few weeks, review the log. You&rsquo;ll start seeing patterns in your misconceptions, and those patterns tell you exactly what to study next.</p>
+<h3 id="resist-the-demo-trap">Resist the Demo Trap</h3>
+<p>You&rsquo;re going to have moments where the agent produces something impressive (a beautiful dashboard, a working auth flow, a real-time feature) and you&rsquo;ll want to show it off or ship it. The temptation is enormous because the gap between &ldquo;thing I could build alone&rdquo; and &ldquo;thing the agent built while I nodded along&rdquo; is massive at your level.</p>
+<p>But shipping code you can&rsquo;t explain is a career liability, not an asset. When your manager asks &ldquo;why did you implement it this way?&rdquo; or &ldquo;this broke in production, can you fix it?&rdquo; you need an answer beyond &ldquo;the AI did it.&rdquo;</p>
+<hr>
+<h2 id="the-common-thread">The Common Thread</h2>
+<p>Across all three levels, a few truths hold:</p>
+<p><strong>The spec is always the highest-leverage artifact.</strong> Whether you write it yourself, collaborate on it, or use it as a learning exercise, the spec shapes everything downstream. Time invested here pays compound returns.</p>
+<p><strong>Auth deserves more caution than you think.</strong> At every level, the recommendation is some version of &ldquo;don&rsquo;t hand-roll this, and be more careful than your instincts suggest.&rdquo; The severity of auth failures is disproportionate to how mundane the code looks.</p>
+<p><strong>The agent&rsquo;s willingness to help is not evidence that you should accept the help.</strong> Agents are infinitely willing. They&rsquo;ll generate anything you ask for, with confidence, whether or not it&rsquo;s a good idea. The judgment about when to accept generated code, when to push back, and when to write it yourself &ndash; that&rsquo;s on you at every level.</p>
+<p><strong>These levels aren&rsquo;t fixed.</strong> The whole point of having different workflows is that you&rsquo;re supposed to graduate from one to the next. The intern who follows the tutoring workflow rigorously will build the intuition to work at the mid-level workflow within months, not years. The mid-level dev who takes the learning log seriously will develop the architectural instincts that make the senior workflow effective. The agent accelerates that progression, but only if you&rsquo;re actually engaging with the work, not just outsourcing it.</p>
+<hr>
+<h2 id="closing-thought">Closing Thought</h2>
+<p>The best use of AI agents isn&rsquo;t building software faster. It&rsquo;s building software at the appropriate speed for your current level of understanding (your mix of <strong>active</strong> and <strong>passive knowledge</strong>) with a deliberate ramp toward building it faster as you grow. The agent meets you where you are, but you have to be honest about where that is.</p>
+]]></description></item><item><title>Add a JSON API to Any Static Site Generator</title><link>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link><pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid><description><![CDATA[<p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
+<p>That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.</p>
+<h2 id="the-idea-again">The idea, again</h2>
+<p>A static site generator takes your markdown and pushes it through templates to make HTML files. There is nothing special about HTML here &ndash;it is just the output format. If you write a template that outputs JSON instead of HTML, you get <code>.json</code> files. Your web server doesn&rsquo;t care, it serves them the same way and JavaScript on the client side can fetch them.</p>
+<h2 id="hugos-output-formats">Hugo&rsquo;s output formats</h2>
+<p>Hugo has this thing called <a href="https://gohugo.io/templates/output-formats/">custom output formats</a>. Instead of hacking JSON into a regular HTML template like I had to do with Jekyll, I defined a new output format and gave it its own templates. Hugo generates both the HTML and the JSON for you in the same build.</p>
+<h3 id="config">Config</h3>
+<p>First, tell Hugo about the JSON format. In <code>hugo.toml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">outputFormats</span>.<span style="color:#a6e22e">JSON</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">mediaType</span> = <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">baseName</span> = <span style="color:#e6db74">&#34;index&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">outputs</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">home</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;RSS&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">section</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">page</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
+</span></span></code></pre></div><p>The <code>outputs</code> section is where you decide what gets a JSON version. If you only want a listing endpoint and don&rsquo;t need individual post JSON, just leave <code>page</code> off.</p>
+<h3 id="the-list-template">The list template</h3>
+<p>Hugo will look for a template called <code>list.json.json</code> for sections and the homepage. Create it at <code>layouts/_default/list.json.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">range</span> <span style="color:#960050;background-color:#1e0010">$index,</span> <span style="color:#960050;background-color:#1e0010">$page</span> <span style="color:#960050;background-color:#1e0010">:=</span> <span style="color:#960050;background-color:#1e0010">.Pages</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">if</span> <span style="color:#960050;background-color:#1e0010">$index</span> }<span style="color:#960050;background-color:#1e0010">}</span>,{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;title&#34;</span>: {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Title</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }},
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.RelPermalink</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Date.Format</span> <span style="color:#f92672">&#34;2006-01-02&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.description</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#f92672">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.tags</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">slice</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>See that <code>jsonify</code> function? That is doing all the heavy lifting. It handles escaping, it handles arrays, it handles nil values. In the <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">Jekyll version</a> I had to loop through tags one at a time and build the JSON array by hand. Here I just pipe to <code>jsonify</code> and Hugo figures it out.</p>
+<h3 id="the-single-post-template">The single post template</h3>
+<p>For individual posts, create <code>layouts/_default/single.json.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;title&#34;</span>: {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Title</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }}<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.RelPermalink</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Date.Format</span> <span style="color:#f92672">&#34;2006-01-02&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.description</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#f92672">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.tags</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">slice</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;content&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Content</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span></code></pre></div><h3 id="build-it">Build it</h3>
+<p>Run <code>hugo</code> and check the output. For every page that has JSON in its output list, there will be an <code>index.json</code> sitting right next to the <code>index.html</code>:</p>
+<ul>
+<li><code>/posts/index.json</code> &ndash; all your posts</li>
+<li><code>/posts/2026/04/23/some-post/index.json</code> &ndash; one post</li>
+<li><code>/index.json</code> &ndash; homepage listing</li>
+</ul>
+<p>It is simpler with Hugo. No Gulp task, no separate build step, no copying files around. But this same idea is possible in nearly any Static Site Generator.</p>
+<h2 id="the-homepage-template">The homepage template</h2>
+<p>My homepage template is different from my default list template. It uses <code>.Site.RegularPages</code> instead of <code>.Pages</code> and limits to 50 posts. If yours is the same, you might want a separate <code>index.json.json</code> in your layouts root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">range</span> <span style="color:#960050;background-color:#1e0010">$index,</span> <span style="color:#960050;background-color:#1e0010">$page</span> <span style="color:#960050;background-color:#1e0010">:=</span> <span style="color:#960050;background-color:#1e0010">first</span> <span style="color:#960050;background-color:#1e0010">50</span> <span style="color:#960050;background-color:#1e0010">.Site.RegularPages</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">if</span> <span style="color:#960050;background-color:#1e0010">$index</span> }<span style="color:#960050;background-color:#1e0010">}</span>,{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;title&#34;</span>: {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Title</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }},
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;url&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.RelPermalink</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;date&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Date.Format</span> <span style="color:#f92672">&#34;2006-01-02&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;description&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.description</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#f92672">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.Params.tags</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">slice</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">jsonify</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">end</span> }<span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h2 id="what-hugo-gives-you-for-free">What Hugo gives you for free</h2>
+<p>Comparing this to what I went through with Jekyll:</p>
+<p>In Jekyll, I had to loop through tags and categories and manually comma-separate them with <code>forloop.last</code> checks. I had to add nil guards for when tags or categories were empty. I used Liquid&rsquo;s <code>escape</code> filter on content and hoped for the best. And I had a whole Gulp task that duplicated the posts from <code>_posts</code> into an <code>api/v01/posts</code> directory and swapped the layout from html to json.</p>
+<p>With Hugo, I write a template, add three lines to my config, and it just works. The <code>jsonify</code> function handles arrays, escaping, and nil values. The output format system handles the file generation. No Gulp task, no extra build step.</p>
+<h2 id="this-isnt-just-a-hugo-thing">This isn&rsquo;t just a Hugo thing</h2>
+<p>The core trick works anywhere. If your static site generator has templates, you can make it output JSON. Hugo happens to have first-class support for it, but the pattern is the same whether you are using 11ty, Astro, or even Jekyll like I was in 2015. Write a template, output JSON, let the build generate the files.</p>
+<p>I use it for client-side filtering. Fetch the listing endpoint, match on tags in JavaScript, render a related posts section without a page reload. It is not a replacement for a real API &ndash;there is no auth, no pagination, no writes. But for read-only content that is already public on your site, it is free and it ships with every build.</p>
+]]></description></item><item><title>Getting XDebug working with the Zed editor, starring Claude</title><link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid><description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
+<p>Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.</p>
+<h2 id="why-zed">Why Zed</h2>
+<p>The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.</p>
+<p>Zed is from the creators of Atom and is written in Rust. It is crazy fast. But, Zed isn&rsquo;t perfect.</p>
+<p>The main problem is me. I mostly work in PHP and Zed sucks at PHP. One thing that sucks is Xdebug support. I have finally gotten Xdebug working. What follows is my conversation with Claude Sonnet 4.5 to get Xdebug working.</p>
+<h2 id="initial-question-best-ai-enabled-ide-for-php">Initial Question: Best AI-Enabled IDE for PHP</h2>
+<p>I started out asking about AI enabled IDEs. I wasn&rsquo;t originally planning on asking about Xdebug.</p>
+<blockquote>
+<p><strong>User:</strong> What is the best AI enabled IDE for PHP</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> For PHP development with AI assistance, here are the strongest options:</p>
+</blockquote>
+<blockquote>
+<p><strong>PhpStorm with AI Assistant</strong> is probably your best bet. It&rsquo;s the most PHP-focused IDE and JetBrains recently added their AI Assistant plugin, which provides context-aware code completion, refactoring suggestions, and chat-based coding help. PhpStorm already has excellent PHP-specific features like deep framework integration (Laravel, Symfony), advanced refactoring, and debugging tools.</p>
+</blockquote>
+<blockquote>
+<p><strong>Cursor</strong> is gaining a lot of traction as an AI-first IDE. It&rsquo;s built on VS Code but designed from the ground up for AI pair programming. You get inline AI suggestions, the ability to chat with your codebase, and AI that understands your project context. For PHP specifically, you&rsquo;d pair it with PHP extensions, but the AI capabilities are quite powerful.</p>
+</blockquote>
+<blockquote>
+<p><strong>VS Code with GitHub Copilot</strong> is a solid middle ground - it&rsquo;s free (VS Code itself), lightweight, and Copilot works well for PHP. You can add extensions like PHP Intelephense for language support. This combination is popular because it&rsquo;s familiar and the AI assistance is reliable.</p>
+</blockquote>
+<blockquote>
+<p><strong>Windsurf</strong> is a newer AI-native IDE worth mentioning - it&rsquo;s similar to Cursor but with some different approaches to AI interaction.</p>
+</blockquote>
+<blockquote>
+<p>The choice really depends on whether you want the best PHP-specific tooling (PhpStorm) or the most advanced AI capabilities (Cursor/Windsurf). If you&rsquo;re heavily invested in PHP and work with frameworks daily, PhpStorm with AI Assistant gives you both excellent PHP support and good AI features. If you want cutting-edge AI assistance and don&rsquo;t mind configuring PHP support yourself, Cursor might be more exciting.</p>
+</blockquote>
+<hr>
+<h2 id="why-zed-wasnt-initially-recommended">Why Zed Wasn&rsquo;t Initially Recommended</h2>
+<p>The initial response didn&rsquo;t even have Zed in the running.</p>
+<blockquote>
+<p><strong>User:</strong> Why don&rsquo;t you recommend zed</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> You&rsquo;re right to bring up Zed! I should have mentioned it - it&rsquo;s a legitimate option, especially since it has built-in AI features and is gaining momentum.</p>
+</blockquote>
+<blockquote>
+<p><strong>Zed</strong> is a fast, modern code editor built by some of the Atom creators. It has native AI assistant integration and is designed for speed and collaboration. For PHP specifically, it has language support through extensions.</p>
+</blockquote>
+<blockquote>
+<p>I didn&rsquo;t lead with Zed for a few reasons:</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><strong>PHP ecosystem maturity</strong> - PhpStorm and VS Code have much deeper PHP tooling, framework integrations, and debugger support that PHP developers often rely on. Zed is still building out its extension ecosystem.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><strong>Market adoption for PHP</strong> - Most PHP developers I&rsquo;m aware of use PhpStorm or VS Code, so there&rsquo;s more community support, tutorials, and shared configurations for those tools.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><strong>AI feature maturity</strong> - While Zed has AI built in, tools like Cursor have more established AI pair-programming workflows at this point.</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>That said, Zed has real advantages:</p>
+<ul>
+<li>It&rsquo;s extremely fast (written in Rust)</li>
+<li>Clean, minimal interface</li>
+<li>Built-in collaboration features</li>
+<li>Native AI integration without plugins</li>
+<li>Completely free and open source</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="xdebug-integration-with-zed">Xdebug Integration with Zed</h2>
+<p>This made me think about why I don&rsquo;t use Zed so much for PHP. I use Drupal for most PHP projects and Xdebug has been a necessity of Drupal development since the release of Drupal 8. PhpStorm has a really good Xdebug integration and I haven&rsquo;t been able to find a suitable replacement.</p>
+<p>I have tried VSCode but it has similar issues with Xdebug as Zed and it isn&rsquo;t all that much faster. My primary problem with PhpStorm is the speed, but the latest version also integrates AI and I will just come out and say it. The PhpStorm AI sucks. 90% of the time is is auto completing things I don&rsquo;t want. When it gets it right, it can be like magic. But having to repair 90% of auto completed code is really annoying. I have had better results with Zed.</p>
+<blockquote>
+<p><strong>User:</strong> how do I integrate zed with XDebug?</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> Great news - Zed actually has built-in Xdebug support through its PHP extension! Here&rsquo;s how to set it up:</p>
+</blockquote>
+<blockquote>
+<h3 id="basic-setup">Basic Setup</h3>
+</blockquote>
+<blockquote>
+<ol>
+<li><strong>Install the PHP extension</strong> in Zed (if you haven&rsquo;t already)</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><strong>Configure Xdebug in your PHP.ini</strong> file:</li>
+</ol>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>   <span style="color:#a6e22e">zend_extension</span><span style="color:#f92672">=</span><span style="color:#e6db74">xdebug.so
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   xdebug.mode=debug
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   xdebug.start_with_request=yes
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   xdebug.client_port=9003</span>
+</span></span></code></pre></div><blockquote>
+<ol start="3">
+<li><strong>Create a debug configuration</strong> in Zed by creating a <code>.zed/debug.json</code> file in your project root:</li>
+</ol>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>   [
+</span></span><span style="display:flex;"><span>     {
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
+</span></span><span style="display:flex;"><span>     }
+</span></span><span style="display:flex;"><span>   ]
+</span></span></code></pre></div><blockquote>
+<ol start="4">
+<li><strong>Set breakpoints</strong> by clicking next to line numbers in the gutter</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li><strong>Start debugging</strong> by opening the debug panel and selecting your &ldquo;PHP: Listen to Xdebug&rdquo; configuration</li>
+</ol>
+</blockquote>
+<blockquote>
+<h3 id="for-ddev-or-docker-setups">For DDEV or Docker setups</h3>
+</blockquote>
+<blockquote>
+<p>If you&rsquo;re using DDEV or Docker, you&rsquo;ll need to add path mappings:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;pathMappings&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;/app&#34;</span>: <span style="color:#e6db74">&#34;$ZED_WORKTREE_ROOT&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><hr>
+<h2 id="troubleshooting-container-connection-issues">Troubleshooting Container Connection Issues</h2>
+<p>This is back to the normal issues. I had already gotten to this point before. All set up with no connection for unknown reasons.</p>
+<blockquote>
+<p><strong>User:</strong> Looks like the debugger cannot connect. I am getting this error in the PHP container &ldquo;Could not connect to debugging client. Tried: localhost:9003&rdquo;</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> This is a common issue with Docker/container setups. The problem is that <code>localhost</code> from inside the container refers to the container itself, not your host machine where Zed is running.</p>
+</blockquote>
+<blockquote>
+<h3 id="fix-the-xdebug-configuration">Fix the Xdebug Configuration</h3>
+</blockquote>
+<blockquote>
+<p>You need to tell Xdebug to connect to your <strong>host machine</strong> instead of localhost. Update your Xdebug configuration in PHP.ini:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">zend_extension</span><span style="color:#f92672">=</span><span style="color:#e6db74">xdebug.so</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">debug</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.start_with_request</span><span style="color:#f92672">=</span><span style="color:#e6db74">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">host.docker.internal  # For Docker Desktop</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_port</span><span style="color:#f92672">=</span><span style="color:#e6db74">9003</span>
+</span></span></code></pre></div><blockquote>
+<h3 id="platform-specific-solutions">Platform-specific solutions:</h3>
+</blockquote>
+<blockquote>
+<p><strong>For Docker Desktop (Mac/Windows):</strong></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">host.docker.internal</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>For Linux Docker or if the above doesn&rsquo;t work:</strong></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">172.17.0.1  # Default Docker bridge IP</span>
+</span></span></code></pre></div><blockquote>
+<p>Or dynamically discover it:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.discover_client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+</span></span></code></pre></div><hr>
+<h2 id="error-process-exited-before-debugger-attached">Error: &ldquo;process exited before debugger attached&rdquo;</h2>
+<p>This is when I started to make progress. There was a requirement that was unknown to me. Maybe I should have known that nodejs was a dependency but I didn&rsquo;t.</p>
+<p>I run everything in containers. The last thing I want is a random interpreter running on my system. I work in PHP, Go, Javascript, various DB, Python, and more. It all runs in containers. I compile Go using containers. I write Python using containers. Even my personal Godot projects are built/exported with containers. Why would I have node installed?</p>
+<p>At this point I didn&rsquo;t even follow any of the steps laid out by the AI. I just installed Node.</p>
+<blockquote>
+<p><strong>User:</strong> I am getting this error in zed &ldquo;process exited before debugger attached.&rdquo;</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> This error means the debug adapter (the bridge between Zed and Xdebug) is crashing before it can start listening. This is a known issue with Zed&rsquo;s Xdebug integration.</p>
+</blockquote>
+<blockquote>
+<h3 id="quick-fixes">Quick Fixes:</h3>
+</blockquote>
+<blockquote>
+<p><strong>1. Ensure Node.js is installed:</strong>
+Zed&rsquo;s Xdebug adapter requires Node.js to run. Install it if you haven&rsquo;t:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if you have it</span>
+</span></span><span style="display:flex;"><span>node --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If not, install it</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mac</span>
+</span></span><span style="display:flex;"><span>brew install node
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Linux (Ubuntu/Debian)</span>
+</span></span><span style="display:flex;"><span>sudo apt install nodejs npm
+</span></span></code></pre></div><blockquote>
+<p><strong>2. Simplify your debug.json:</strong>
+Start with the absolute minimum configuration:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><hr>
+<h2 id="breakpoints-not-working">Breakpoints Not Working</h2>
+<p>Now, it looks like it is going to work. All that is left is a little debugging. Here Claude did a great job of walking me through some of the debugging steps. I already had the logs setup so I was able to jump straight to the debugging.</p>
+<blockquote>
+<p><strong>User:</strong> I no longer get the error, but it still wont break at my breakpoint.</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> Good progress! Now we need to figure out why Xdebug isn&rsquo;t triggering the breakpoints. This is usually a path mapping issue or Xdebug not connecting properly.</p>
+</blockquote>
+<blockquote>
+<h3 id="debugging-steps">Debugging Steps:</h3>
+</blockquote>
+<blockquote>
+<p><strong>1. Verify Xdebug is actually connecting to Zed:</strong></p>
+</blockquote>
+<blockquote>
+<p>Add this to your PHP.ini to get detailed logs:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log</span><span style="color:#f92672">=</span><span style="color:#e6db74">/tmp/xdebug.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log_level</span><span style="color:#f92672">=</span><span style="color:#e6db74">7</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>2. Check the exact container paths:</strong></p>
+</blockquote>
+<blockquote>
+<p>Find out where your code actually lives in the container:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Inside your container</span>
+</span></span><span style="display:flex;"><span>pwd
+</span></span></code></pre></div><blockquote>
+<p>Then update your <code>.zed/debug.json</code> with the correct mapping:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;pathMappings&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;/var/www/html&#34;</span>: <span style="color:#e6db74">&#34;/Users/yourname/projects/yourproject&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><hr>
+<h2 id="testing-the-connection">Testing the Connection</h2>
+<p>This is more good suggestions from Claude. I used <code>netstat</code> to see if the port was being listened to and I installed <code>telnet</code> on the container to verify that communication was open both directions.</p>
+<blockquote>
+<p><strong>User:</strong> I don&rsquo;t see anything in zed&rsquo;s debug panel</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> If nothing shows up in Zed&rsquo;s debug panel, then Xdebug isn&rsquo;t successfully connecting to Zed at all. Let&rsquo;s verify the connection path:</p>
+</blockquote>
+<blockquote>
+<h3 id="test-the-connection-manually">Test the connection manually:</h3>
+</blockquote>
+<blockquote>
+<p><strong>From your host machine (not the container), test if Zed is listening:</strong></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># On your host machine</span>
+</span></span><span style="display:flex;"><span>netstat -an | grep <span style="color:#ae81ff">9003</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>lsof -i :9003
+</span></span></code></pre></div><blockquote>
+<p><strong>Test connection FROM the container:</strong></p>
+</blockquote>
+<blockquote>
+<p>Start Zed&rsquo;s debugger, then from inside your container:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># This should connect if everything is working</span>
+</span></span><span style="display:flex;"><span>telnet host.docker.internal <span style="color:#ae81ff">9003</span>
+</span></span></code></pre></div><hr>
+<h2 id="connection-success-but-still-not-breaking">Connection Success but Still Not Breaking</h2>
+<p>I have to be honest here. I don&rsquo;t think I have used <code>telnet</code> since playing Tradewars in college. I definitely wouldn&rsquo;t have tried it as a debugging tool here without the prompt. That said, I don&rsquo;t think it saved time. It did instill confidence that everything could communicate.</p>
+<blockquote>
+<p><strong>User:</strong> When I ran telnet, it said &ldquo;Escape character is &lsquo;^&rsquo;&rdquo;</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> Perfect! That &ldquo;Escape character is &lsquo;^]&rsquo;&rdquo; message means the telnet connection <strong>succeeded</strong> - your container CAN reach Zed&rsquo;s debugger. So the network path is working.</p>
+</blockquote>
+<blockquote>
+<p>The problem is likely a <strong>Path Mapping Issue</strong>.</p>
+</blockquote>
+<blockquote>
+<p>When Xdebug connects, it sends file paths from inside the container (like <code>/var/www/html/index.php</code>). If Zed doesn&rsquo;t know how to map that to your host path, it won&rsquo;t trigger breakpoints.</p>
+</blockquote>
+<blockquote>
+<h3 id="enable-xdebug-logging-to-see-whats-happening">Enable Xdebug logging to see what&rsquo;s happening:</h3>
+</blockquote>
+<blockquote>
+<p>In your container&rsquo;s PHP.ini:</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log</span><span style="color:#f92672">=</span><span style="color:#e6db74">/tmp/xdebug.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log_level</span><span style="color:#f92672">=</span><span style="color:#e6db74">7</span>
+</span></span></code></pre></div><blockquote>
+<p>Then check the log for file paths being sent and any errors.</p>
+</blockquote>
+<hr>
+<h2 id="finding-the-root-cause">Finding the Root Cause</h2>
+<p>For a while here things go a bit off the rails with the LLM. Things are tried, I know the path mapping is what isn&rsquo;t working but I don&rsquo;t know why it isn&rsquo;t working and the LLM has stopped giving useful results. It seemed like it was stuck in a loop. However, I did notice something while going through the Xdebug logs.</p>
+<p>The error from the logs was that the file with the breakpoints didn&rsquo;t exist. The kicker is that it didn&rsquo;t matter what I changed the <code>pathMappings</code> to &ndash;it always gave the same result. The file didn&rsquo;t exist. This also explains why the LLM got into the loop. Zed wasn&rsquo;t reloading the Xdebug configuration when I made changes or when I stopped and started the debugger.</p>
+<p>In order to get the debugger to reload the settings after I changed them, I needed to restart Zed. So I began to make a change, then stop Zed, start Zed back up again, and retest.</p>
+<p>For anyone who is following along at home, the correct <code>pathMappings</code> is a <code>json</code> object with the key as the absolute path in the container and the value as the absolute path on the host.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Listen for Xdebug remote&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;pathMappings&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;/var/www/html&#34;</span>: <span style="color:#e6db74">&#34;/home/frob/repos/client/project&#34;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><hr>
+<h2 id="resolution-settings-not-being-applied">Resolution: Settings Not Being Applied</h2>
+<p>This is one of those things that I still have a hard time getting over when dealing with LLMs. It&rsquo;s the uncanny valley with these interactions. They are so polite. It also sounds like a coworker that is unable to admit fault. As though it&rsquo;s saying &ldquo;I would have figured it out eventually&rdquo; in the nicest possible way.</p>
+<blockquote>
+<p><strong>User:</strong> You didn&rsquo;t have it backwards. It was correct. My settings weren&rsquo;t being applied. I had to restart zed to get the settings to apply correctly.</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> Ah, that makes sense! Zed doesn&rsquo;t always hot-reload debug configuration changes. Good catch on the restart - that&rsquo;s a common gotcha that&rsquo;s easy to miss.</p>
+</blockquote>
+<blockquote>
+<p>This is actually good to know for future reference. Unlike some settings that apply immediately, changes to <code>.zed/debug.json</code> seem to require either:</p>
+<ul>
+<li>Restarting Zed entirely, or</li>
+<li>Stopping and restarting the debug session (which might not always be enough)</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="nodejs-dependency-discussion">Node.js Dependency Discussion</h2>
+<p>I asked the LLM if it knew why node had to be installed. It is some good insight into how Zed uses the VSCode bridge to get the connection with minimal effort. This also makes sense, given the related pedigree of zed and vs-code.</p>
+<blockquote>
+<p><strong>User:</strong> Is there any way to get around having node as a requirement?</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> Unfortunately, no - Node.js is a hard requirement for Zed&rsquo;s Xdebug integration. Here&rsquo;s why:</p>
+</blockquote>
+<blockquote>
+<p><strong>The technical reason:</strong>
+Zed&rsquo;s Xdebug support uses the <code>vscode-php-debug</code> adapter (the same one VS Code uses), which is written in TypeScript/JavaScript and runs on Node.js. Zed downloads this adapter and runs it as a bridge between the editor and Xdebug&rsquo;s DBGp protocol.</p>
+</blockquote>
+<blockquote>
+<p><strong>Why Zed made this choice:</strong>
+Rather than reimplementing every debug adapter from scratch in Rust, Zed leverages existing Debug Adapter Protocol (DAP) implementations from the VS Code ecosystem. This lets them support many languages quickly, but means inheriting the runtime dependencies of those adapters.</p>
+</blockquote>
+<hr>
+<h2 id="alternative-debugging-approaches-without-node">Alternative Debugging Approaches Without Node</h2>
+<p>Here I lamented a bit and the LLM responded with some advice that might be useful if you&rsquo;re in the same boat that I was in; zed&rsquo;s debugger wasn&rsquo;t working but you&rsquo;d like to use it for more day to day tasks.</p>
+<blockquote>
+<p><strong>User:</strong> I&rsquo;d rather not have node installed if I can avoid it.</p>
+</blockquote>
+<blockquote>
+<p><strong>Assistant:</strong> That&rsquo;s totally fair - avoiding unnecessary dependencies is a reasonable stance. Given that, here are your practical options:</p>
+</blockquote>
+<blockquote>
+<p><strong>1. Use PhpStorm or VS Code just for debugging</strong></p>
+<ul>
+<li>Keep Zed for your daily coding/editing (which you clearly prefer)</li>
+<li>When you need to debug, open the project in PhpStorm/VS Code</li>
+<li>PhpStorm has native Xdebug support without Node (it&rsquo;s all Java-based)</li>
+<li>This is actually what many developers do - use lightweight editors for most work, heavier IDEs only when needed</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>2. Xdebug command-line debugging</strong></p>
+<ul>
+<li>Use <code>xdebug_break()</code> in your code as manual breakpoints</li>
+<li>Use <code>var_dump()</code> or error logging strategically</li>
+<li>Use Xdebug&rsquo;s trace/profiling features to write execution logs</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>3. Browser-based Xdebug clients</strong></p>
+<ul>
+<li>There are web-based Xdebug clients like DBGp Client</li>
+<li>They&rsquo;re clunky compared to IDE integration but don&rsquo;t require Node</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>4. Wait for Zed&rsquo;s ecosystem to mature</strong></p>
+<ul>
+<li>As Zed grows, someone might build a native Rust-based Xdebug adapter</li>
+<li>Or Zed might add native DBGp protocol support</li>
+<li>But this could be years away</li>
+</ul>
+</blockquote>
+<hr>
+<p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
+<p>Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
+<p>I look forward to using Zed, more, now that Xdebug is working.</p>
+]]></description></item><item><title>A Suggested Order for Watching TOS with Your Kids</title><link>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</link><pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</guid><description><![CDATA[<p>When I started at Clarity Innovations, the company culture interview question was &ldquo;Star Trek or Star Wars?&rdquo; Until recently I had leaned more toward Star Wars, but having grown up watching <em>The Next Generation</em> and the Star Trek movies, I was very much also a Star Trek fan.</p>
+<p>So naturally, my answer was &ldquo;they are not mutually exclusive because one happens in this galaxy and in the future and the other happened a long time ago in a galaxy far far away.&rdquo;</p>
+<p>I wanted to start watching <em>Star Trek: The Next Generation</em> with my kids, as that is my favorite series, but first, I wanted to give them a good canon of The Original Series so they could have a better appreciation of Star Trek as a whole. Knowing the best resource for this would likely be my own coworkers, I asked some folks at Clarity about the best order to watch TOS.</p>
+<p>I got a fantastic, well-thought-out response from Dale:</p>
+<blockquote>
+<p>In general, I would rank the initial three seasons of ST: TOS in the following way: Season 2, Season 1, and Season 3.  Season 1 has some wonderfully written episodes based on intriguing scenarios, but Season 2 is where the cast was really &ldquo;owning&rdquo; their characters. Season 3 has some good episodes, but got pretty silly at times.</p>
+</blockquote>
+<p>The following is the list of episodes and the order in which he recommended they be watched.</p>
+<h2 id="the-agreed-upon-order">The agreed-upon order</h2>
+<ul>
+<li><a href="#the-doomsday-machine">The Doomsday Machine</a> (s02e06)</li>
+<li><a href="#city-on-the-edge-of-forever">City on the Edge of Forever</a> (s01e28)</li>
+<li><a href="#the-enterprise-incident">The Enterprise Incident</a> (s03e02)</li>
+<li><a href="#amok-time">Amok Time</a> (s02e01)</li>
+<li><a href="#mirror-mirror">Mirror, Mirror</a> (s02e04)</li>
+<li><a href="#balance-of-terror">Balance of Terror</a> (s01e14)</li>
+<li><a href="#devil-in-the-dark">Devil in the Dark</a> (s01e25)</li>
+<li><a href="#arena">Arena</a> (s01e18)</li>
+<li><a href="#journey-to-babel">Journey to Babel</a> (s02e10)</li>
+<li><a href="#space-seed">Space Seed</a> (s01e22)</li>
+<li><a href="#the-tholian-web">The Tholian Web</a> (s03e09)</li>
+<li><a href="#a-piece-of-the-action">A Piece of the Action</a> (s02e17)</li>
+<li><a href="#the-trouble-with-tribbles">The Trouble with Tribbles</a> (s02e15)</li>
+</ul>
+<hr>
+<h2 id="the-list-in-detail">The list, in detail</h2>
+<h3 id="the-doomsday-machine">The Doomsday Machine</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248338">s02e06 on TVDB</a></p>
+<p>A giant alien weapon &ndash; think a massive cone that eats planets &ndash; is cutting a path of destruction through Federation space. The Enterprise finds a sister ship adrift with its crew dead and its commodore barely alive and completely broken. That commodore then steals a shuttle and flies it straight into the machine. It&rsquo;s a tense, well-paced episode that feels like a submarine thriller.</p>
+<h3 id="city-on-the-edge-of-forever">City on the Edge of Forever</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248331">s01e28 on TVDB</a></p>
+<p>This one is widely considered the best episode of TOS, and it earns it. McCoy accidentally injects himself with a stimulant, goes a little crazy, and jumps through a time portal back to 1930s Depression-era New York. Kirk and Spock follow to fix the timeline. Kirk falls in love. It doesn&rsquo;t end well. Harlan Ellison wrote it and fought with the studio over it for decades.</p>
+<h3 id="the-enterprise-incident">The Enterprise Incident</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248360">s03e02 on TVDB</a></p>
+<p>Kirk suddenly orders the Enterprise into Romulan space and then appears to lose his mind. It turns out to be a covert mission to steal a Romulan cloaking device. Spock has to charm a Romulan commander to buy time, which he does very effectively. There&rsquo;s a fun bit of spy tradecraft in this episode that you don&rsquo;t usually get in TOS. Season 3 gets a bad reputation but this one holds up.</p>
+<h3 id="amok-time">Amok Time</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248333">s02e01 on TVDB</a></p>
+<p>Spock is acting strange. Turns out Vulcans go through a mating cycle every seven years called pon farr, and if he doesn&rsquo;t get to Vulcan, and have sex, he&rsquo;ll die. Kirk takes the ship to Vulcan against direct orders. Once there, Spock&rsquo;s betrothed pulls a legal maneuver that puts Kirk and Spock in a fight to the death. This episode introduced Vulcan culture and the iconic fight music.</p>
+<h3 id="mirror-mirror">Mirror, Mirror</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248336">s02e04 on TVDB</a></p>
+<p>A transporter accident during an ion storm swaps Kirk, McCoy, Scotty, and Uhura into a parallel universe where the Federation is a brutal empire and everyone has a dark streak. Evil Spock has a goatee. It&rsquo;s a fun, well-constructed episode &ndash; you get the evil versions of the crew while the real crew deals with their evil counterparts back on the regular Enterprise.</p>
+<h3 id="balance-of-terror">Balance of Terror</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248317">s01e14 on TVDB</a></p>
+<p>The first appearance of the Romulans. A Romulan ship with a cloaking device has been destroying Federation outposts along the Neutral Zone, and Kirk has to hunt it down. It plays out like a submarine cat-and-mouse story and it&rsquo;s one of the most tightly written episodes in the series. There&rsquo;s also a subplot about a crew member who distrusts Spock because Romulans look like Vulcans, which the episode handles well.</p>
+<h3 id="devil-in-the-dark">Devil in the Dark</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248328">s01e25 on TVDB</a></p>
+<p>Miners on a remote planet are being killed by something that can move through solid rock. The creature turns out to be a silicon-based lifeform called a Horta. It&rsquo;s been destroying equipment because the miners were unknowingly destroying its eggs. Spock mind-melds with it and relays its distress. It sounds absurd written out like that, but this is one of those episodes that does exactly what good science fiction is supposed to do &ndash; it makes you reconsider what counts as a monster. &ldquo;It&rsquo;s life Jim, but not as we know it!&rdquo;</p>
+<h3 id="arena">Arena</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248321">s01e18 on TVDB</a></p>
+<p>The Enterprise chases a ship that attacked a Federation colony. An alien species called the Metrons stops them both and drops Kirk and the Gorn captain on a barren planet to fight it out. Kirk makes a cannon from raw materials he finds on the ground. It&rsquo;s a ridiculous setup that&rsquo;s also completely earnest and somehow works. The Gorn has become one of the more iconic images from TOS. This episode must be watched to fully appreciate one of the best lines from <em>Galaxy Quest</em>.</p>
+<h3 id="journey-to-babel">Journey to Babel</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248342">s02e10 on TVDB</a></p>
+<p>The Enterprise is ferrying a bunch of Federation ambassadors to a conference, including Spock&rsquo;s father Sarek. Sarek and Spock haven&rsquo;t spoken in years. Then someone on the ship gets murdered, an Orion spy ship starts tailing them, and Sarek has a heart attack. Spock refuses to leave the bridge to donate blood for his father&rsquo;s surgery because Kirk is hurt and Spock is in command. It&rsquo;s a good family drama wrapped around a solid mystery.</p>
+<h3 id="space-seed">Space Seed</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248325">s01e22 on TVDB</a></p>
+<p>The Enterprise picks up a 200-year-old ship adrift in space carrying a crew of genetically engineered humans in suspended animation from Earth&rsquo;s eugenics wars. Their leader is Khan Noonien Singh. He wakes up, immediately starts taking over the ship, and has to be stopped. Kirk understands him and takes pity on him. Instead of putting him in prison, he maroons him on a planet to give him the opportunity to build his own civilization. This sets up what is considered to be the best of the TOS movies, <em>Wrath of Khan</em>, which you should watch after you&rsquo;ve done this list.</p>
+<h3 id="the-tholian-web">The Tholian Web</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248367">s03e09 on TVDB</a></p>
+<p>Kirk gets trapped in an interphase between dimensions while investigating a dead ship, and starts flickering in and out of visibility. The Tholians, aliens who do not negotiate, start spinning an energy web around the Enterprise to trap it. Meanwhile Spock and McCoy have to figure out how to get Kirk back while managing a crew that&rsquo;s slowly losing their minds from the dimensional stress. It&rsquo;s a good episode where Kirk is mostly absent, which forces the rest of the cast to carry it.</p>
+<h3 id="a-piece-of-the-action">A Piece of the Action</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248349">s02e17 on TVDB</a></p>
+<p>A Federation ship visited this planet a hundred years ago and accidentally left behind a book about 1920s Chicago gangsters. The whole planet built its culture around it. Kirk and Spock have to negotiate with mob bosses and eventually decide the best approach is to just out-mob them. It&rsquo;s deliberately comedic and it works. There&rsquo;s a scene where Kirk tries to drive a stick shift car that&rsquo;s worth watching just for that.</p>
+<h3 id="the-trouble-with-tribbles">The Trouble with Tribbles</h3>
+<p><a href="https://thetvdb.com/series/star-trek/episodes/248347">s02e15 on TVDB</a></p>
+<p>Tribbles are small, round, warm, and purr when you hold them. They also breed fast enough to become a serious problem. The Enterprise stops at a space station where a shipment of grain bound for a disputed planet is stored. Klingons show up, tribbles multiply, and eventually the tribbles do what the Enterprise crew couldn&rsquo;t and sniff out a Klingon agent. It&rsquo;s a ridiculous but fun episode. There&rsquo;s a reason it&rsquo;s the one everyone remembers.</p>
+<h2 id="the-verdict">The verdict</h2>
+<p>After watching these, I have to say, it is a good order. I don&rsquo;t have the Trek expertise to argue with any of Dale&rsquo;s picks, but I can say the list worked. My family got a solid foundation in what Star Trek is, and we&rsquo;ve since been able to jump into the movies and <em>The Next Generation</em> without anyone feeling lost. And when my kids are old enough, they&rsquo;ll have all the context they need to enjoy <em>Galaxy Quest</em> with my wife and me.</p>
+]]></description></item><item><title>How to play gloom with a 52 card deck</title><link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</link><pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</guid><description><![CDATA[<p>I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&rsquo;t for you then try these rules on a standard 52 card deck.</p>
+<h2 id="rules">Rules</h2>
+<p>Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Players: 2-4</li>
+<li>Materials: 1 complete 52 card poker deck.</li>
+</ul>
+<h3 id="setup">Setup</h3>
+<ol>
+<li>Set aside all face cards: Ace, King, Queen, and Jack.</li>
+<li>Set aside Aces and organize remaining face cards by suit.</li>
+<li>Each player gets a set of face cards.</li>
+<li>Each player puts their face cards face up in front of them.</li>
+<li>Shuffle Aces back into the deck. (These will be the kill cards)
+Even if there are not four players all four sets of face cards (minus aces) are set reserved and not shuffled back into the deck.</li>
+<li>Shuffle deck thoroughly.</li>
+<li>Deal each player 5 cards.</li>
+<li>First player is:</li>
+</ol>
+<ul>
+<li>Dark side: The player which most recently went to a funeral.</li>
+<li>Light side: The player which most recently went to a birth (or baby shower).</li>
+</ul>
+<h3 id="game-play">Game play</h3>
+<p>Game play is setup into three phases.</p>
+<ol>
+<li>Action Phase 1: play any card in your hand on any live face card. Remember Aces are kill cards and can only be played this phase.</li>
+<li>Action Phase 2: play any number card on any live face card. Aces cannot be played on this round.</li>
+<li>Draw as many cards as is needed to get to 5 card in your hand.</li>
+</ol>
+<h3 id="end-game">End Game</h3>
+<p>The game is over when all four Aces have been played or when all of one players face cards are killed.</p>
+<h3 id="scoring">Scoring</h3>
+<p>Scoring is simple. Each played card is worth its face value. Black cards are scored positively and Red cards are scored negatively. Aces played on the same suit are scored with a positive 11 points &ndash;otherwise Aces hold no value.</p>
+<h4 id="house-rules">House rules</h4>
+<p>Please create some house rules that will increase the enjoyment of the game. Some house rules that I considered are:</p>
+<ul>
+<li>Playing the same number twice gives the player an additional play (including aces) (no more than four cards played at once).</li>
+<li>Play with the above rule and instead of limiting to four cards add the end game condition of if a player plays all their cards the game is over.</li>
+</ul>
+<p>House rules should be agreed to before the start of the game. Or if your hosting the game it is your house and your rules. :)</p>
+]]></description></item><item><title>Why DrupalCon</title><link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</guid><description><![CDATA[<h1 id="collaboration-and-contribution-at-drupalcon">Collaboration and Contribution at DrupalCon</h1>
+<p><a href="https://www.drupal.org/">Drupal</a> is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal advocates and aficionados convene to teach and learn from each other. What better way to do that than at DrupalCon?</p>
+<h2 id="what-is-drupalcon">What is DrupalCon?</h2>
+<p><a href="https://events.drupal.org/vienna2017">DrupalCon</a> is a conference where the Drupal Community can meet each other and exchange information in real life. The North American DrupalCon bounces around the Continental US, yet DrupalCon also happens in Europe, Asia, and South America.</p>
+<p>The conference spans multiple days starting with paid training. Throughout the week there are community contributed sessions,  a vendor exposition hall, and it all ends in community-driven project sprints.</p>
+<h2 id="why-go-to-drupalcon">Why go to DrupalCon?</h2>
+<p>At its core, DrupalCon is a technology conference, so a big part of going to DrupalCon is keeping up with the current trends in technology. These may not be just be specific to Drupal, but may feature trends within the php programming language and technology as a whole.</p>
+<p>Besides having structured, focused sessions, simple hallway conversations are a great way to keep up with current trends. I missed quite a few session while hanging out in the halls talking to people, yet this isn&rsquo;t a source of stress because all of the <a href="https://www.youtube.com/playlist?list=PLpeDXSh4nHjRbDdwHEBRHItfnjrJ8kEDK">DrupalCon sessions are posted to YouTube</a> by the association. Additionally, much of their information can be learned from reading blog posts online, attending local DUGs (Drupal User Groups), or <a href="https://www.drupal.org/irc">conversations on Drupal&rsquo;s IRC channels</a>, but it&rsquo;s important to get fully immersed by congregating for a few days with community members that are not local. The point of attending the conference is the people, the networking, and those conversations in the hallway.</p>
+<h3 id="open-source-contribution">Open Source Contribution</h3>
+<p>A large part of getting together is working together. Much of the work on an open source project happens remotely. This is difficult with many core maintainers being spread all over the globe in different timezones. At DrupalCon, we have the remarkable ability to be in the same room. This allows for many opportunities for collaboration. Code sprints occur all week with Friday being reserved as a sprint day. There are no sessions or talks on Friday, leaving the whole day for contribution, typically in a room with round tables organized by topic: migration, twig, install-systems, etc. This is also a good place to work on contributed modules. While at the Baltimore DrupalCon, I wrote the <a href="https://www.drupal.org/project/speedboxes">Drupal 8 version of the Speedboxes module</a>.</p>
+<h3 id="exploring-and-getting-familiar-with-drupal-8">Exploring and getting familiar with Drupal 8</h3>
+<p>Any software project that is under active development will be a moving target, and as users of this software, it is important to stay on top of the latest versions. In an effort to do this, I submitted a session for Baltimore DrupalCon about exploring and evaluating Drupal 8 by <a href="https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html">re-architecting a Custom Learning Management System</a> we had built for New Perspectives Online. By doing this session, I was able to both get more experience with a new product without having to learn on a high-stakes client project, and I also had the opportunity to share those experiences with others in the Drupal Community. Below is a video of my presentation.</p>
+<iframe src="https://www.youtube.com/embed/en-nC4ZjdXo" frameborder="0" width="560" height="315"></iframe>
+<p>Contribution isn&rsquo;t always about code. Contribution is possible regardless of skillset. Everything including bug reports, documentation, design, code, or even just attending DrupalCon is a worthwhile contribution.</p>
+]]></description></item></channel></rss>

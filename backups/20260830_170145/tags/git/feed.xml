@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/git/</link><description>Recent content in Git on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/git/feed.xml" rel="self" type="application/rss+xml"/><item><title>Semantic Git</title><link>https://www.frobiovox.com/posts/2016/05/27/semantic-git/</link><pubDate>Fri, 27 May 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/05/27/semantic-git/</guid><description><![CDATA[<p>Ever looked at a git branch name and had no idea what version of the product it belonged to? Or tagged a release and wondered if it should be a minor bump or a patch? This post is about eliminating that ambiguity by combining two things that already work well on their own &ndash; git-flow and semantic versioning &ndash; into a single workflow where each reinforces the other.</p>
+<h1 id="semantic-git-flow">Semantic git-flow</h1>
+<h2 id="background">Background</h2>
+<p><a href="#tldr">skip TLDR;</a></p>
+<h3 id="semantic-versioning">Semantic Versioning</h3>
+<p>At a high-level Semantic Versioning aims to solve dependency issues by creating a standard versioning system that allows anyone to understand what has changed in a new version.</p>
+<h4 id="example">Example</h4>
+<p><em>1.2.3</em></p>
+<p><em><em>Major</em></em>.<em><em>Minor</em></em>.<em><em>Patch</em></em></p>
+<dl>
+<dt>Major</dt>
+<dd>Changing this is mandatory in the case of a backwards incompatible api change.</dd>
+<dt>Minor</dt>
+<dd>Changing this is mandatory in the case of a backwards compatible api change or addition of new features.</dd>
+<dt>Patch</dt>
+<dd>Changing this is mandatory in the case of any other change, that is not adding functionality or breaking backwards compatibility.</dd>
+</dl>
+<h3 id="git-flow">Git Flow</h3>
+<p>A git workflow that dictates what branches to make and why. A typical git-flow workflow will include 3+ branches:</p>
+<dl>
+<dt><em>stable</em></dt>
+<dd>the current stable branch</dd>
+<dt><em>master</em></dt>
+<dd>the current development or HEAD</dd>
+<dt><em>master-feature</em></dt>
+<dd>where the work is actually accomplished</dd>
+</dl>
+<p>The git flow workflow is designed so that:</p>
+<ul>
+<li>hot-fixing the stable product is always possible</li>
+<li>new features can be added to the stable product by merging in the feature branch</li>
+<li>git history remains linear to that it doesn&rsquo;t become git branch spaghetti</li>
+</ul>
+<h2 id="semantic-git">Semantic git <a name="tldr"></a></h2>
+<p>By merging these two ideas we can make it clear what is in development on any branch at any time and what that means to the product.</p>
+<h3 id="stable">Stable</h3>
+<dl>
+<dt><em>1.2.3</em></dt>
+<dd>By utilizing semantic versioning we can always keep it clear what our stable code is by using tags to snapshot stable code. In this way <em>stable</em> wouldn&rsquo;t be a branch but rather a tag. Since the <em>patch</em> number should increment any time there is a new stable release this should be a sane mechanism for it.</dd>
+</dl>
+<h3 id="master">master</h3>
+<dl>
+<dt><em>1.2.x</em></dt>
+<dd>There could me multiple master branches, one of any supported major.minor version combination. No work should be done directly on the master branches.</dd>
+</dl>
+<h3 id="master-feature">master-feature</h3>
+<dl>
+<dt><em>1.2.x-feature</em></dt>
+<dd>It is obvious what is being worked on in the branch and what master version it is based on.</dd>
+</dl>
+<h2 id="workflow">Workflow</h2>
+<ol>
+<li>
+<p>Initialize git and create master branch</p>
+</li>
+<li>
+<p><code>git init</code></p>
+</li>
+<li>
+<p><code>git checkout -b 1.0.x</code></p>
+</li>
+<li>
+<p><code>git push -u origin 1.0.x</code></p>
+</li>
+<li>
+<p>Create new branch for &ldquo;Checkout Widget&rdquo; feature development</p>
+</li>
+<li>
+<p><code>git checkout -b 1.2.x-checkout-widget</code></p>
+</li>
+<li>
+<p><em>Work on project</em></p>
+</li>
+<li>
+<p><code>git fetch</code></p>
+</li>
+<li>
+<p><code>git pull --rebase origin 1.2.x</code></p>
+</li>
+<li>
+<p><code>git push origin 1.2.x-checkout-widget</code></p>
+</li>
+<li>
+<p>Create merge request in Gitlab or a pull request in github (shown here is what happens on the command line)</p>
+</li>
+<li>
+<p><code>git checkout 1.2.x-checkout-widget</code></p>
+</li>
+<li>
+<p><code>git pull --rebase 1.2.x</code></p>
+</li>
+<li>
+<p><em>test and peer review</em></p>
+</li>
+<li>
+<p><code>git checkout 1.2.x</code></p>
+</li>
+<li>
+<p><code>git merge 1.2.x-checkout-widget</code></p>
+</li>
+</ol>
+<pre><code>&gt; This is also handy if you are working on your own sub-feature branches that do not require further peer review.
+</code></pre>
+<ol>
+<li>Create release tag and publish new release
+<ul>
+<li><em>Patch release</em>
+<ol>
+<li><code>git tag 1.2.4</code> <em>Assumes the current release is 1.2.3</em></li>
+<li><code>git push origin 1.2.4</code></li>
+</ol>
+</li>
+<li><em>Minor release</em>
+<ol>
+<li><code>git tag 1.2.0</code> <em>Assumes the current release is 1.1.&lt;any-number&gt;</em></li>
+<li><code>git push origin 1.2.0</code></li>
+<li><code>git checkout -b 1.3.x</code></li>
+<li><code>git push -u origin 1.3.x</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Notice the new Minor Release comes from the branch of the same name. Same is true of Major Releases. As soon as it is known that backwards compatibility will be broken, then new Major Release branch should be made. Before work is started on a new feature, a new Minor Release branch should be made.</p>
+</blockquote>
+<h2 id="why-this-works">Why this works</h2>
+<p>The naming convention does the heavy lifting. Anyone on the team can look at a branch name like <code>1.2.x-checkout-widget</code> and immediately know what version it targets and what feature is being built. Tags become the single source of truth for what is stable. There is no guessing, no spreadsheet of version numbers, and no ambiguity about what is in production. The workflow enforces the versioning and the versioning gives the workflow meaning.</p>
+]]></description></item></channel></rss>
