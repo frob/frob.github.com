@@ -7,6 +7,7 @@
 ## Pages
 
 
+- [Introducing webform relay; forms without a backend](https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/) — 2026-09-08: A serverless form handler for static sites. Point a form at a URL, and it validates the submission and relays it to SES, SMTP, a webhook, or Salesforce Web2Lead. One YAML file, no application code.
 - [Introducing v; the easiest vendor utility](https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/) — 2026-08-30: Sometimes you have to copy a library straight into your project. v records exactly which commit you copied and gives you one command to refresh it.
 - [Farewell to the burgundy](https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/) — 2026-08-27
 - [Moving on](https://www.frobiovox.com/posts/2026/08/18/moving-on/) — 2026-08-18
