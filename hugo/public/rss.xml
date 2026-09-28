@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frank Robert Anderson</title><link>https://www.frobiovox.com/</link><description>Recent content on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/rss.xml" rel="self" type="application/rss+xml"/><item><title>Introducing webform relay; forms without a backend</title><link>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</link><pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</guid><description><![CDATA[<p>A static site is a wonderful thing right up until somebody asks for a contact form.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frank Robert Anderson</title><link>https://www.frobiovox.com/</link><description>Recent content on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/rss.xml" rel="self" type="application/rss+xml"/><item><title>Introducing ztd; disposable VMs for untrusted agent work</title><link>https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</link><pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</guid><description><![CDATA[<p><code>--dangerously-skip-permissions</code> is a flag with an honest name. It&rsquo;s risky, and I don&rsquo;t like it. However, most people who run coding agents claim to use it, because the alternative is worse in a way nobody likes admitting. An agent that stops to ask before every file write and every shell command is an agent you spend the afternoon babysitting, and the babysitting is the part that destroys the value. So you turn the prompts off, or you leave them on and click &ldquo;yes&rdquo; two hundred times, which is the same thing with extra steps and a worse outcome &ndash; after the fortieth prompt you are not reading them anymore. You are pattern-matching on the shape of the dialog. That is not a security control. That is a security control&rsquo;s costume.</p>
+<p>The honest version of the problem is that the approval prompt is doing a job it was never able to do. It is trying to be a boundary using your attention as the enforcement mechanism, and your attention is a consumable. I <a href="/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/">wrote a while back</a> about how the right workflow with these tools depends on what you already know. This is the infrastructure half of that argument: the fix is not to approve more carefully, it is to change what &ldquo;yes&rdquo; can possibly reach.</p>
+<p>So I wrote <a href="https://gitlab.com/frob/ztd">ztd</a>. It gives me a disposable VM to let my agents run free. You spin one up, you let the agent run completely wide open <em>inside</em> it, the work comes back over git, and then you throw the VM away. The blast radius of anything the agent does ends at a machine you were going to delete anyway.</p>
+<p>Sandbox escapes do exist, and so long as you&rsquo;re not telling the agent to go off the rails you should be able to get some work done. This isn&rsquo;t a research sandbox tool, it is a work tool.</p>
+<h2 id="the-whole-loop">The whole loop</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ztd check      <span style="color:#75715e"># host preflight -- it prints the fix for every gap it finds</span>
+</span></span><span style="display:flex;"><span>ztd init       <span style="color:#75715e"># writes .ztd/ztd.toml; every key commented, the defaults boot</span>
+</span></span><span style="display:flex;"><span>ztd up         <span style="color:#75715e"># boot the VM</span>
+</span></span><span style="display:flex;"><span>ztd auth       <span style="color:#75715e"># sync your existing Claude Code login into the guest</span>
+</span></span><span style="display:flex;"><span>ztd run <span style="color:#e6db74">&#34;port the reporting module off the deprecated client&#34;</span>
+</span></span></code></pre></div><p><code>ztd run</code> starts the agent in a tmux session inside the guest, on a fresh <code>ztd/&lt;run-id&gt;</code> branch, and attaches you to it. <code>Ctrl-b d</code> detaches and leaves it running; <code>ztd attach</code> comes back. When it&rsquo;s done:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ztd fetch      <span style="color:#75715e"># pull the agent&#39;s commits back into your checkout</span>
+</span></span><span style="display:flex;"><span>ztd audit      <span style="color:#75715e"># export the run record to .ztd/runs/&lt;run-id&gt;/</span>
+</span></span><span style="display:flex;"><span>ztd down       <span style="color:#75715e"># destroy the VM</span>
+</span></span></code></pre></div><p><code>ztd cattle &quot;&lt;task&gt;&quot;</code> composes the whole sequence into one command and leaves it running detached. There are four backends behind the same verbs &ndash; libvirt on Linux, lima on macOS, a Proxmox node, or EC2 &ndash; and <code>local</code> resolves to whichever of the first two matches the machine you&rsquo;re on, so a bare <code>ztd up</code> does the right thing either way.</p>
+<p>The goal here is to build on existing tools. Everything exists already to safely build with an agent on local and cloud hardware. What was missing was the orchestrator to keep everything working together.</p>
+<h2 id="what-actually-crosses-the-boundary">What actually crosses the boundary</h2>
+<p>This is the part I spent the most time on, because &ldquo;run it in a VM&rdquo; is the easy half of the sentence. The interesting question is what you hand the thing inside.</p>
+<p><strong>No forge credentials. Ever.</strong> The guest never clones from your forge and never pushes to it. It holds no GitHub or GitLab token, not even a narrowly scoped one, because a scoped token inside a box you are treating as compromised is still a credential you have handed to an attacker. The agent commits <em>locally</em>, <code>ztd fetch</code> adds a temporary git remote pointed at the guest and pulls those commits into your checkout, and then <strong>you</strong> push, from your machine, with your own credentials. Git is a distributed version control system and this is the one situation where everybody suddenly remembers that.</p>
+<p><strong>The Anthropic credential does go in,</strong> and I want to be straight about this rather than quiet about it. There is no agent without it. <code>ztd auth</code> copies your existing Claude Code login into the guest over the ephemeral key &ndash; only <code>~/.claude/.credentials.json</code>, not your whole config &ndash; and it dies when the VM does. It is the same risk class as everything else in there. I made a judgment call that one credential with a spend limit is an acceptable trade for the thing working at all, and a forge token that can rewrite your published history is not. Scope it if that math is different for you.</p>
+<p>For now, this project is built on Claude Code. I would like to expand it to more harnesses eventually but I had to start somewhere &ndash; might as well start with the subscription I already have.</p>
+<p><strong>A throwaway SSH key per VM.</strong> ztd generates a keypair before <code>up</code>, injects the public half as the guest&rsquo;s only authorized key, and deletes it on a successful <code>down</code>. Your personal key is never offered to the guest at all.</p>
+<p><strong>Two independent Docker daemons.</strong> The host runs one for ztd&rsquo;s own tooling &ndash; Terraform and Task live in a container so the host stays clean. The guest runs its own, so the agent can build and run containers all it likes. The host socket is never exposed to the guest, which is the whole ballgame; a mounted Docker socket is a root shell with extra typing.</p>
+<p>The repo itself is live-mounted over virtiofs on the local backends, and the detail I&rsquo;m happiest with is that files the agent creates come out owned by <em>you</em> on the host. virtiofsd reflects the guest uid, so there&rsquo;s no ACL shim and no <code>chown -R</code> afterward. QEMU stays confined. That one took a while.</p>
+<h2 id="two-things-that-will-bite-you-if-you-run-libvirt-at-all">Two things that will bite you, if you run libvirt at all</h2>
+<p>These are not really ztd problems. They are host problems ztd walked into, and both of them are worth knowing about even if you never touch any of this.</p>
+<p><strong>Docker breaks libvirt&rsquo;s guest networking, silently.</strong> The Docker daemon sets the netfilter <code>FORWARD</code> policy to <code>DROP</code> and isolates its own bridges. Your VM gets a DHCP lease, reaches its gateway, looks completely healthy, and has no internet &ndash; so cloud-init hangs partway through installing things and you go hunting for a DNS problem that isn&rsquo;t there. The fix is an accept rule for the libvirt bridge in the <code>DOCKER-USER</code> chain. The part that took me a second pass: <strong>Docker flushes <code>DOCKER-USER</code> every time the daemon restarts.</strong> So the rule alone is a shim that evaporates the next time you reboot, which is a wonderful way to spend two debugging sessions on the same bug. <code>ztd setup</code> installs a systemd unit that is <code>PartOf=docker.service</code> instead, and <code>ztd check</code> asserts the unit is enabled rather than just checking whether the rule happens to be there right now.</p>
+<p><strong>A host firewall kills guest DHCP, and it looks nothing like a firewall problem.</strong> This one is newer and genuinely nasty. The guest gets <em>no lease at all</em>, while every visible piece of libvirt is fine: bridge up, dnsmasq listening on the right interface, correct range in the network XML, tap device enslaved, guest sending DISCOVERs into the void. The cause is that libvirt 12 defaults to the nftables firewall backend. The old iptables backend used to insert libvirt&rsquo;s DHCP accept rules directly into the iptables <code>INPUT</code> chain, ahead of ufw&rsquo;s default deny &ndash; libvirt was punching through your firewall for you and nobody mentioned it. With the nftables backend those accepts live in libvirt&rsquo;s own table, no longer in front of ufw, and a DROP anywhere in netfilter still wins.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw allow in on virbr0 comment <span style="color:#e6db74">&#39;libvirt guest DHCP/DNS&#39;</span>
+</span></span></code></pre></div><p>That took a machine from no lease to an IP address immediately. Note it is a completely different failure from the Docker one &ndash; that&rsquo;s <code>FORWARD</code> and you get a lease with no internet, this is <code>INPUT</code> and you get no lease at all &ndash; so the Docker fix does not help you here, which cost me an evening.</p>
+<h2 id="what-it-doesnt-do">What it doesn&rsquo;t do</h2>
+<ul>
+<li><strong>It protects the host from the guest. That&rsquo;s the only direction.</strong> Not guest-from-host, not tenant-from-tenant. If you need a boundary that survives a determined hypervisor escape, this is not that, and I would rather say so than imply a guarantee I can&rsquo;t back.</li>
+<li><strong>On the local backends the result branch lands in your real working tree.</strong> The repo share is live, so <code>ztd run</code> checking out <code>ztd/&lt;run-id&gt;</code> switches the branch in the directory you&rsquo;re sitting in. The genuinely isolated cattle model is the remote backends, where there is no shared tree at all. This is a real caveat and not a small one.</li>
+<li><strong><code>ztd auth</code> doesn&rsquo;t work on a macOS host.</strong> It needs the login as a file, and macOS keeps it in the Keychain. Log in inside the guest instead. The <code>vz</code> backend is otherwise validated end to end on Apple Silicon.</li>
+<li><strong>No egress allowlist yet.</strong> The guest has ordinary outbound internet. Filtering it through a DNS resolver, so the agent can reach a package registry and not much else, is the next piece of work and it is not built.</li>
+<li><strong>No TTL or auto-destroy.</strong> Teardown is a thing you run. <code>ztd down</code> is deliberately never automatic, because I have not yet been in a situation where I wanted a machine holding an unfinished run to delete itself on a timer.</li>
+<li><strong>Run caps are only most of a seatbelt.</strong> There&rsquo;s a wall-clock cap that always applies. The turn cap is enforced through an agent hook, because there is no native flag for it in subscription mode, so if a future build drops that hook the turn cap quietly stops working and the clock is your real backstop.</li>
+</ul>
+<p>Mostly these are compromises, getting the most security while still trying to be useful. The most secure computer is the one that isn&rsquo;t turned on, but it isn&rsquo;t very useful.</p>
+<h2 id="is-this-for-you">Is this for you?</h2>
+<p>If you don&rsquo;t run agents with approvals off, no. You already have a boundary, it&rsquo;s you, and it&rsquo;s working.</p>
+<p>If you do &ndash; if you&rsquo;ve caught yourself approving a command because it was the fortieth one and it looked roughly like the previous thirty-nine, or if you want to hand something a task and go to bed &ndash; then the machine boundary is the piece you&rsquo;re missing, and it turns out to be cheap. A VM per task, the agent completely unrestricted inside it, and a git branch as the only thing that comes out.</p>
+<p>It&rsquo;s at <a href="https://gitlab.com/frob/ztd">gitlab.com/frob/ztd</a>, AGPLv3, with the docs published from the same repo. On Linux it&rsquo;s a tarball off the releases page. On macOS it&rsquo;s a Homebrew cask, from my own tap:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew tap frob/ztd https://gitlab.com/frob/homebrew-ztd.git
+</span></span><span style="display:flex;"><span>brew trust frob/ztd
+</span></span><span style="display:flex;"><span>brew install --cask ztd
+</span></span></code></pre></div><p>Which is a fine moment to point out the obvious: that first line is you deciding to trust a stranger&rsquo;s tap. It is a third-party repository that Homebrew will install software from, nobody at Homebrew has looked at it, and the binaries inside are unsigned &ndash; the cask strips the Gatekeeper quarantine attribute at install, which is precisely the kind of thing you would want to know before running it. It&rsquo;s four lines. <a href="https://gitlab.com/frob/homebrew-ztd/-/blob/main/Casks/ztd.rb">Read it</a>. If you&rsquo;d rather not extend that trust, the archives and a <code>checksums.txt</code> are on the releases page and building from source is a <code>go build</code>.</p>
+<p>I would find it a bit rich to write a whole post about not trusting things and then ask you to <code>curl | bash</code> me on faith.</p>
+<p>Then <code>ztd check</code>, which is the first thing to run and the thing to trust &ndash; it will tell you exactly what your host is missing, including both of the firewall traps above, with the command to fix each one.</p>
+]]></description></item><item><title>Introducing webform relay; forms without a backend</title><link>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</link><pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</guid><description><![CDATA[<p>A static site is a wonderful thing right up until somebody asks for a contact form.</p>
 <p>Everything else about the static site story holds together. Content in markdown, build in CI, files on a CDN, no server to patch, no database to back up, no PHP version to worry about at 2am. Then one form shows up and suddenly the answer is &ldquo;well, we&rsquo;ll need a backend.&rdquo; Not a big backend. A backend that accepts a POST, validates four fields, and sends an email. And now you own a server, or a container, or a runtime version, or a third-party SaaS that will start charging per submission the moment anyone actually uses the thing.</p>
 <p>I have watched this play out enough times. The form is never the interesting part of the project and it is always the part that drags a whole hosting story behind it. In other words I have written this form enough times and enough ways that I don&rsquo;t want to have to write it again. I know everything that it needs to do, in every variation. I kind of miss <a href="https://www.drupal.org/project/webform">Drupal&rsquo;s webform module</a> but I cannot use that on a static site.</p>
 <p>So I wrote <a href="https://gitlab.com/frob/webform-relay">webform relay</a>. Point a <code>&lt;form&gt;</code> at a URL, and it validates the submission and relays it to wherever it needs to go &ndash; email through SES, a plain SMTP server, a generic webhook, or Salesforce Web2Lead. There is no application code to write. There is no server. There is one YAML file. I even threw in some form conditionals and static content printing through htmx.</p>
@@ -487,404 +537,4 @@ flowchart LR
 <h2 id="this-isnt-just-a-hugo-thing">This isn&rsquo;t just a Hugo thing</h2>
 <p>The core trick works anywhere. If your static site generator has templates, you can make it output JSON. Hugo happens to have first-class support for it, but the pattern is the same whether you are using 11ty, Astro, or even Jekyll like I was in 2015. Write a template, output JSON, let the build generate the files.</p>
 <p>I use it for client-side filtering. Fetch the listing endpoint, match on tags in JavaScript, render a related posts section without a page reload. It is not a replacement for a real API &ndash;there is no auth, no pagination, no writes. But for read-only content that is already public on your site, it is free and it ships with every build.</p>
-]]></description></item><item><title>Getting XDebug working with the Zed editor, starring Claude</title><link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid><description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
-<p>Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.</p>
-<h2 id="why-zed">Why Zed</h2>
-<p>The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.</p>
-<p>Zed is from the creators of Atom and is written in Rust. It is crazy fast. But, Zed isn&rsquo;t perfect.</p>
-<p>The main problem is me. I mostly work in PHP and Zed sucks at PHP. One thing that sucks is Xdebug support. I have finally gotten Xdebug working. What follows is my conversation with Claude Sonnet 4.5 to get Xdebug working.</p>
-<h2 id="initial-question-best-ai-enabled-ide-for-php">Initial Question: Best AI-Enabled IDE for PHP</h2>
-<p>I started out asking about AI enabled IDEs. I wasn&rsquo;t originally planning on asking about Xdebug.</p>
-<blockquote>
-<p><strong>User:</strong> What is the best AI enabled IDE for PHP</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> For PHP development with AI assistance, here are the strongest options:</p>
-</blockquote>
-<blockquote>
-<p><strong>PhpStorm with AI Assistant</strong> is probably your best bet. It&rsquo;s the most PHP-focused IDE and JetBrains recently added their AI Assistant plugin, which provides context-aware code completion, refactoring suggestions, and chat-based coding help. PhpStorm already has excellent PHP-specific features like deep framework integration (Laravel, Symfony), advanced refactoring, and debugging tools.</p>
-</blockquote>
-<blockquote>
-<p><strong>Cursor</strong> is gaining a lot of traction as an AI-first IDE. It&rsquo;s built on VS Code but designed from the ground up for AI pair programming. You get inline AI suggestions, the ability to chat with your codebase, and AI that understands your project context. For PHP specifically, you&rsquo;d pair it with PHP extensions, but the AI capabilities are quite powerful.</p>
-</blockquote>
-<blockquote>
-<p><strong>VS Code with GitHub Copilot</strong> is a solid middle ground - it&rsquo;s free (VS Code itself), lightweight, and Copilot works well for PHP. You can add extensions like PHP Intelephense for language support. This combination is popular because it&rsquo;s familiar and the AI assistance is reliable.</p>
-</blockquote>
-<blockquote>
-<p><strong>Windsurf</strong> is a newer AI-native IDE worth mentioning - it&rsquo;s similar to Cursor but with some different approaches to AI interaction.</p>
-</blockquote>
-<blockquote>
-<p>The choice really depends on whether you want the best PHP-specific tooling (PhpStorm) or the most advanced AI capabilities (Cursor/Windsurf). If you&rsquo;re heavily invested in PHP and work with frameworks daily, PhpStorm with AI Assistant gives you both excellent PHP support and good AI features. If you want cutting-edge AI assistance and don&rsquo;t mind configuring PHP support yourself, Cursor might be more exciting.</p>
-</blockquote>
-<hr>
-<h2 id="why-zed-wasnt-initially-recommended">Why Zed Wasn&rsquo;t Initially Recommended</h2>
-<p>The initial response didn&rsquo;t even have Zed in the running.</p>
-<blockquote>
-<p><strong>User:</strong> Why don&rsquo;t you recommend zed</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> You&rsquo;re right to bring up Zed! I should have mentioned it - it&rsquo;s a legitimate option, especially since it has built-in AI features and is gaining momentum.</p>
-</blockquote>
-<blockquote>
-<p><strong>Zed</strong> is a fast, modern code editor built by some of the Atom creators. It has native AI assistant integration and is designed for speed and collaboration. For PHP specifically, it has language support through extensions.</p>
-</blockquote>
-<blockquote>
-<p>I didn&rsquo;t lead with Zed for a few reasons:</p>
-</blockquote>
-<blockquote>
-<ol>
-<li><strong>PHP ecosystem maturity</strong> - PhpStorm and VS Code have much deeper PHP tooling, framework integrations, and debugger support that PHP developers often rely on. Zed is still building out its extension ecosystem.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li><strong>Market adoption for PHP</strong> - Most PHP developers I&rsquo;m aware of use PhpStorm or VS Code, so there&rsquo;s more community support, tutorials, and shared configurations for those tools.</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3">
-<li><strong>AI feature maturity</strong> - While Zed has AI built in, tools like Cursor have more established AI pair-programming workflows at this point.</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>That said, Zed has real advantages:</p>
-<ul>
-<li>It&rsquo;s extremely fast (written in Rust)</li>
-<li>Clean, minimal interface</li>
-<li>Built-in collaboration features</li>
-<li>Native AI integration without plugins</li>
-<li>Completely free and open source</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="xdebug-integration-with-zed">Xdebug Integration with Zed</h2>
-<p>This made me think about why I don&rsquo;t use Zed so much for PHP. I use Drupal for most PHP projects and Xdebug has been a necessity of Drupal development since the release of Drupal 8. PhpStorm has a really good Xdebug integration and I haven&rsquo;t been able to find a suitable replacement.</p>
-<p>I have tried VSCode but it has similar issues with Xdebug as Zed and it isn&rsquo;t all that much faster. My primary problem with PhpStorm is the speed, but the latest version also integrates AI and I will just come out and say it. The PhpStorm AI sucks. 90% of the time is is auto completing things I don&rsquo;t want. When it gets it right, it can be like magic. But having to repair 90% of auto completed code is really annoying. I have had better results with Zed.</p>
-<blockquote>
-<p><strong>User:</strong> how do I integrate zed with XDebug?</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> Great news - Zed actually has built-in Xdebug support through its PHP extension! Here&rsquo;s how to set it up:</p>
-</blockquote>
-<blockquote>
-<h3 id="basic-setup">Basic Setup</h3>
-</blockquote>
-<blockquote>
-<ol>
-<li><strong>Install the PHP extension</strong> in Zed (if you haven&rsquo;t already)</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li><strong>Configure Xdebug in your PHP.ini</strong> file:</li>
-</ol>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span>   <span style="color:#a6e22e">zend_extension</span><span style="color:#f92672">=</span><span style="color:#e6db74">xdebug.so
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   xdebug.mode=debug
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   xdebug.start_with_request=yes
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   xdebug.client_port=9003</span>
-</span></span></code></pre></div><blockquote>
-<ol start="3">
-<li><strong>Create a debug configuration</strong> in Zed by creating a <code>.zed/debug.json</code> file in your project root:</li>
-</ol>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>   [
-</span></span><span style="display:flex;"><span>     {
-</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
-</span></span><span style="display:flex;"><span>       <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
-</span></span><span style="display:flex;"><span>     }
-</span></span><span style="display:flex;"><span>   ]
-</span></span></code></pre></div><blockquote>
-<ol start="4">
-<li><strong>Set breakpoints</strong> by clicking next to line numbers in the gutter</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="5">
-<li><strong>Start debugging</strong> by opening the debug panel and selecting your &ldquo;PHP: Listen to Xdebug&rdquo; configuration</li>
-</ol>
-</blockquote>
-<blockquote>
-<h3 id="for-ddev-or-docker-setups">For DDEV or Docker setups</h3>
-</blockquote>
-<blockquote>
-<p>If you&rsquo;re using DDEV or Docker, you&rsquo;ll need to add path mappings:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;pathMappings&#34;</span>: {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;/app&#34;</span>: <span style="color:#e6db74">&#34;$ZED_WORKTREE_ROOT&#34;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><hr>
-<h2 id="troubleshooting-container-connection-issues">Troubleshooting Container Connection Issues</h2>
-<p>This is back to the normal issues. I had already gotten to this point before. All set up with no connection for unknown reasons.</p>
-<blockquote>
-<p><strong>User:</strong> Looks like the debugger cannot connect. I am getting this error in the PHP container &ldquo;Could not connect to debugging client. Tried: localhost:9003&rdquo;</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> This is a common issue with Docker/container setups. The problem is that <code>localhost</code> from inside the container refers to the container itself, not your host machine where Zed is running.</p>
-</blockquote>
-<blockquote>
-<h3 id="fix-the-xdebug-configuration">Fix the Xdebug Configuration</h3>
-</blockquote>
-<blockquote>
-<p>You need to tell Xdebug to connect to your <strong>host machine</strong> instead of localhost. Update your Xdebug configuration in PHP.ini:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">zend_extension</span><span style="color:#f92672">=</span><span style="color:#e6db74">xdebug.so</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.mode</span><span style="color:#f92672">=</span><span style="color:#e6db74">debug</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.start_with_request</span><span style="color:#f92672">=</span><span style="color:#e6db74">yes</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">host.docker.internal  # For Docker Desktop</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_port</span><span style="color:#f92672">=</span><span style="color:#e6db74">9003</span>
-</span></span></code></pre></div><blockquote>
-<h3 id="platform-specific-solutions">Platform-specific solutions:</h3>
-</blockquote>
-<blockquote>
-<p><strong>For Docker Desktop (Mac/Windows):</strong></p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">host.docker.internal</span>
-</span></span></code></pre></div><blockquote>
-<p><strong>For Linux Docker or if the above doesn&rsquo;t work:</strong></p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">172.17.0.1  # Default Docker bridge IP</span>
-</span></span></code></pre></div><blockquote>
-<p>Or dynamically discover it:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.discover_client_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
-</span></span></code></pre></div><hr>
-<h2 id="error-process-exited-before-debugger-attached">Error: &ldquo;process exited before debugger attached&rdquo;</h2>
-<p>This is when I started to make progress. There was a requirement that was unknown to me. Maybe I should have known that nodejs was a dependency but I didn&rsquo;t.</p>
-<p>I run everything in containers. The last thing I want is a random interpreter running on my system. I work in PHP, Go, Javascript, various DB, Python, and more. It all runs in containers. I compile Go using containers. I write Python using containers. Even my personal Godot projects are built/exported with containers. Why would I have node installed?</p>
-<p>At this point I didn&rsquo;t even follow any of the steps laid out by the AI. I just installed Node.</p>
-<blockquote>
-<p><strong>User:</strong> I am getting this error in zed &ldquo;process exited before debugger attached.&rdquo;</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> This error means the debug adapter (the bridge between Zed and Xdebug) is crashing before it can start listening. This is a known issue with Zed&rsquo;s Xdebug integration.</p>
-</blockquote>
-<blockquote>
-<h3 id="quick-fixes">Quick Fixes:</h3>
-</blockquote>
-<blockquote>
-<p><strong>1. Ensure Node.js is installed:</strong>
-Zed&rsquo;s Xdebug adapter requires Node.js to run. Install it if you haven&rsquo;t:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check if you have it</span>
-</span></span><span style="display:flex;"><span>node --version
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If not, install it</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mac</span>
-</span></span><span style="display:flex;"><span>brew install node
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Linux (Ubuntu/Debian)</span>
-</span></span><span style="display:flex;"><span>sudo apt install nodejs npm
-</span></span></code></pre></div><blockquote>
-<p><strong>2. Simplify your debug.json:</strong>
-Start with the absolute minimum configuration:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><hr>
-<h2 id="breakpoints-not-working">Breakpoints Not Working</h2>
-<p>Now, it looks like it is going to work. All that is left is a little debugging. Here Claude did a great job of walking me through some of the debugging steps. I already had the logs setup so I was able to jump straight to the debugging.</p>
-<blockquote>
-<p><strong>User:</strong> I no longer get the error, but it still wont break at my breakpoint.</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> Good progress! Now we need to figure out why Xdebug isn&rsquo;t triggering the breakpoints. This is usually a path mapping issue or Xdebug not connecting properly.</p>
-</blockquote>
-<blockquote>
-<h3 id="debugging-steps">Debugging Steps:</h3>
-</blockquote>
-<blockquote>
-<p><strong>1. Verify Xdebug is actually connecting to Zed:</strong></p>
-</blockquote>
-<blockquote>
-<p>Add this to your PHP.ini to get detailed logs:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log</span><span style="color:#f92672">=</span><span style="color:#e6db74">/tmp/xdebug.log</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log_level</span><span style="color:#f92672">=</span><span style="color:#e6db74">7</span>
-</span></span></code></pre></div><blockquote>
-<p><strong>2. Check the exact container paths:</strong></p>
-</blockquote>
-<blockquote>
-<p>Find out where your code actually lives in the container:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Inside your container</span>
-</span></span><span style="display:flex;"><span>pwd
-</span></span></code></pre></div><blockquote>
-<p>Then update your <code>.zed/debug.json</code> with the correct mapping:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;PHP: Listen to Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;pathMappings&#34;</span>: {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;/var/www/html&#34;</span>: <span style="color:#e6db74">&#34;/Users/yourname/projects/yourproject&#34;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><hr>
-<h2 id="testing-the-connection">Testing the Connection</h2>
-<p>This is more good suggestions from Claude. I used <code>netstat</code> to see if the port was being listened to and I installed <code>telnet</code> on the container to verify that communication was open both directions.</p>
-<blockquote>
-<p><strong>User:</strong> I don&rsquo;t see anything in zed&rsquo;s debug panel</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> If nothing shows up in Zed&rsquo;s debug panel, then Xdebug isn&rsquo;t successfully connecting to Zed at all. Let&rsquo;s verify the connection path:</p>
-</blockquote>
-<blockquote>
-<h3 id="test-the-connection-manually">Test the connection manually:</h3>
-</blockquote>
-<blockquote>
-<p><strong>From your host machine (not the container), test if Zed is listening:</strong></p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># On your host machine</span>
-</span></span><span style="display:flex;"><span>netstat -an | grep <span style="color:#ae81ff">9003</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
-</span></span><span style="display:flex;"><span>lsof -i :9003
-</span></span></code></pre></div><blockquote>
-<p><strong>Test connection FROM the container:</strong></p>
-</blockquote>
-<blockquote>
-<p>Start Zed&rsquo;s debugger, then from inside your container:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># This should connect if everything is working</span>
-</span></span><span style="display:flex;"><span>telnet host.docker.internal <span style="color:#ae81ff">9003</span>
-</span></span></code></pre></div><hr>
-<h2 id="connection-success-but-still-not-breaking">Connection Success but Still Not Breaking</h2>
-<p>I have to be honest here. I don&rsquo;t think I have used <code>telnet</code> since playing Tradewars in college. I definitely wouldn&rsquo;t have tried it as a debugging tool here without the prompt. That said, I don&rsquo;t think it saved time. It did instill confidence that everything could communicate.</p>
-<blockquote>
-<p><strong>User:</strong> When I ran telnet, it said &ldquo;Escape character is &lsquo;^&rsquo;&rdquo;</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> Perfect! That &ldquo;Escape character is &lsquo;^]&rsquo;&rdquo; message means the telnet connection <strong>succeeded</strong> - your container CAN reach Zed&rsquo;s debugger. So the network path is working.</p>
-</blockquote>
-<blockquote>
-<p>The problem is likely a <strong>Path Mapping Issue</strong>.</p>
-</blockquote>
-<blockquote>
-<p>When Xdebug connects, it sends file paths from inside the container (like <code>/var/www/html/index.php</code>). If Zed doesn&rsquo;t know how to map that to your host path, it won&rsquo;t trigger breakpoints.</p>
-</blockquote>
-<blockquote>
-<h3 id="enable-xdebug-logging-to-see-whats-happening">Enable Xdebug logging to see what&rsquo;s happening:</h3>
-</blockquote>
-<blockquote>
-<p>In your container&rsquo;s PHP.ini:</p>
-</blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log</span><span style="color:#f92672">=</span><span style="color:#e6db74">/tmp/xdebug.log</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xdebug.log_level</span><span style="color:#f92672">=</span><span style="color:#e6db74">7</span>
-</span></span></code></pre></div><blockquote>
-<p>Then check the log for file paths being sent and any errors.</p>
-</blockquote>
-<hr>
-<h2 id="finding-the-root-cause">Finding the Root Cause</h2>
-<p>For a while here things go a bit off the rails with the LLM. Things are tried, I know the path mapping is what isn&rsquo;t working but I don&rsquo;t know why it isn&rsquo;t working and the LLM has stopped giving useful results. It seemed like it was stuck in a loop. However, I did notice something while going through the Xdebug logs.</p>
-<p>The error from the logs was that the file with the breakpoints didn&rsquo;t exist. The kicker is that it didn&rsquo;t matter what I changed the <code>pathMappings</code> to &ndash;it always gave the same result. The file didn&rsquo;t exist. This also explains why the LLM got into the loop. Zed wasn&rsquo;t reloading the Xdebug configuration when I made changes or when I stopped and started the debugger.</p>
-<p>In order to get the debugger to reload the settings after I changed them, I needed to restart Zed. So I began to make a change, then stop Zed, start Zed back up again, and retest.</p>
-<p>For anyone who is following along at home, the correct <code>pathMappings</code> is a <code>json</code> object with the key as the absolute path in the container and the value as the absolute path on the host.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Listen for Xdebug remote&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;adapter&#34;</span>: <span style="color:#e6db74">&#34;Xdebug&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;request&#34;</span>: <span style="color:#e6db74">&#34;launch&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;pathMappings&#34;</span>: {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;/var/www/html&#34;</span>: <span style="color:#e6db74">&#34;/home/frob/repos/client/project&#34;</span>,
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">9003</span>,
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><hr>
-<h2 id="resolution-settings-not-being-applied">Resolution: Settings Not Being Applied</h2>
-<p>This is one of those things that I still have a hard time getting over when dealing with LLMs. It&rsquo;s the uncanny valley with these interactions. They are so polite. It also sounds like a coworker that is unable to admit fault. As though it&rsquo;s saying &ldquo;I would have figured it out eventually&rdquo; in the nicest possible way.</p>
-<blockquote>
-<p><strong>User:</strong> You didn&rsquo;t have it backwards. It was correct. My settings weren&rsquo;t being applied. I had to restart zed to get the settings to apply correctly.</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> Ah, that makes sense! Zed doesn&rsquo;t always hot-reload debug configuration changes. Good catch on the restart - that&rsquo;s a common gotcha that&rsquo;s easy to miss.</p>
-</blockquote>
-<blockquote>
-<p>This is actually good to know for future reference. Unlike some settings that apply immediately, changes to <code>.zed/debug.json</code> seem to require either:</p>
-<ul>
-<li>Restarting Zed entirely, or</li>
-<li>Stopping and restarting the debug session (which might not always be enough)</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="nodejs-dependency-discussion">Node.js Dependency Discussion</h2>
-<p>I asked the LLM if it knew why node had to be installed. It is some good insight into how Zed uses the VSCode bridge to get the connection with minimal effort. This also makes sense, given the related pedigree of zed and vs-code.</p>
-<blockquote>
-<p><strong>User:</strong> Is there any way to get around having node as a requirement?</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> Unfortunately, no - Node.js is a hard requirement for Zed&rsquo;s Xdebug integration. Here&rsquo;s why:</p>
-</blockquote>
-<blockquote>
-<p><strong>The technical reason:</strong>
-Zed&rsquo;s Xdebug support uses the <code>vscode-php-debug</code> adapter (the same one VS Code uses), which is written in TypeScript/JavaScript and runs on Node.js. Zed downloads this adapter and runs it as a bridge between the editor and Xdebug&rsquo;s DBGp protocol.</p>
-</blockquote>
-<blockquote>
-<p><strong>Why Zed made this choice:</strong>
-Rather than reimplementing every debug adapter from scratch in Rust, Zed leverages existing Debug Adapter Protocol (DAP) implementations from the VS Code ecosystem. This lets them support many languages quickly, but means inheriting the runtime dependencies of those adapters.</p>
-</blockquote>
-<hr>
-<h2 id="alternative-debugging-approaches-without-node">Alternative Debugging Approaches Without Node</h2>
-<p>Here I lamented a bit and the LLM responded with some advice that might be useful if you&rsquo;re in the same boat that I was in; zed&rsquo;s debugger wasn&rsquo;t working but you&rsquo;d like to use it for more day to day tasks.</p>
-<blockquote>
-<p><strong>User:</strong> I&rsquo;d rather not have node installed if I can avoid it.</p>
-</blockquote>
-<blockquote>
-<p><strong>Assistant:</strong> That&rsquo;s totally fair - avoiding unnecessary dependencies is a reasonable stance. Given that, here are your practical options:</p>
-</blockquote>
-<blockquote>
-<p><strong>1. Use PhpStorm or VS Code just for debugging</strong></p>
-<ul>
-<li>Keep Zed for your daily coding/editing (which you clearly prefer)</li>
-<li>When you need to debug, open the project in PhpStorm/VS Code</li>
-<li>PhpStorm has native Xdebug support without Node (it&rsquo;s all Java-based)</li>
-<li>This is actually what many developers do - use lightweight editors for most work, heavier IDEs only when needed</li>
-</ul>
-</blockquote>
-<blockquote>
-<p><strong>2. Xdebug command-line debugging</strong></p>
-<ul>
-<li>Use <code>xdebug_break()</code> in your code as manual breakpoints</li>
-<li>Use <code>var_dump()</code> or error logging strategically</li>
-<li>Use Xdebug&rsquo;s trace/profiling features to write execution logs</li>
-</ul>
-</blockquote>
-<blockquote>
-<p><strong>3. Browser-based Xdebug clients</strong></p>
-<ul>
-<li>There are web-based Xdebug clients like DBGp Client</li>
-<li>They&rsquo;re clunky compared to IDE integration but don&rsquo;t require Node</li>
-</ul>
-</blockquote>
-<blockquote>
-<p><strong>4. Wait for Zed&rsquo;s ecosystem to mature</strong></p>
-<ul>
-<li>As Zed grows, someone might build a native Rust-based Xdebug adapter</li>
-<li>Or Zed might add native DBGp protocol support</li>
-<li>But this could be years away</li>
-</ul>
-</blockquote>
-<hr>
-<p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
-<p>Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
-<p>I look forward to using Zed, more, now that Xdebug is working.</p>
 ]]></description></item></channel></rss>

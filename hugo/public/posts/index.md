@@ -7,6 +7,7 @@
 ## Pages
 
 
+- [Introducing ztd; disposable VMs for untrusted agent work](https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/) — 2026-09-10: Running a coding agent with approvals turned off is only safe if a machine boundary, not a dialog box, protects your host. ztd gives every agent run its own throwaway VM across libvirt, lima, Proxmox, and EC2.
 - [Introducing webform relay; forms without a backend](https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/) — 2026-09-08: A serverless form handler for static sites. Point a form at a URL, and it validates the submission and relays it to SES, SMTP, a webhook, or Salesforce Web2Lead. One YAML file, no application code.
 - [The joys of unemployment](https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/) — 2026-09-01: The silver lining of being laid off is time to finish the open source projects that have been waiting for a weekend that never came -- and a reason to keep the work visible.
 - [Introducing v; the easiest vendor utility](https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/) — 2026-08-30: Sometimes you have to copy a library straight into your project. v records exactly which commit you copied and gives you one command to refresh it.

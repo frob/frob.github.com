@@ -8,10 +8,9 @@ tags:
     - open source
     - software development
     - frontpage
-draft: true
 ---
 
-`--dangerously-skip-permissions` is a flag with an honest name. It's risky, I don't like it. However, most people who run coding agents claim to use it, because the alternative is worse in a way nobody likes admitting. An agent that stops to ask before every file write and every shell command is an agent you spend the afternoon babysitting, and the babysitting is the part that destroys the value. So you turn the prompts off, or you leave them on and click "yes" two hundred times, which is the same thing with extra steps and a worse outcome -- after the fortieth prompt you are not reading them anymore. You are pattern-matching on the shape of the dialog. That is not a security control. That is a security control's costume.
+`--dangerously-skip-permissions` is a flag with an honest name. It's risky, and I don't like it. However, most people who run coding agents claim to use it, because the alternative is worse in a way nobody likes admitting. An agent that stops to ask before every file write and every shell command is an agent you spend the afternoon babysitting, and the babysitting is the part that destroys the value. So you turn the prompts off, or you leave them on and click "yes" two hundred times, which is the same thing with extra steps and a worse outcome -- after the fortieth prompt you are not reading them anymore. You are pattern-matching on the shape of the dialog. That is not a security control. That is a security control's costume.
 
 The honest version of the problem is that the approval prompt is doing a job it was never able to do. It is trying to be a boundary using your attention as the enforcement mechanism, and your attention is a consumable. I [wrote a while back](/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/) about how the right workflow with these tools depends on what you already know. This is the infrastructure half of that argument: the fix is not to approve more carefully, it is to change what "yes" can possibly reach.
 
@@ -39,7 +38,7 @@ ztd down       # destroy the VM
 
 `ztd cattle "<task>"` composes the whole sequence into one command and leaves it running detached. There are four backends behind the same verbs -- libvirt on Linux, lima on macOS, a Proxmox node, or EC2 -- and `local` resolves to whichever of the first two matches the machine you're on, so a bare `ztd up` does the right thing either way.
 
-The goal here is to build on existing tools. Everything exists already to safely build with an agent on local and cloud hardware. What was missing was the orchistrator to keep everything working together.
+The goal here is to build on existing tools. Everything exists already to safely build with an agent on local and cloud hardware. What was missing was the orchestrator to keep everything working together.
 
 ## What actually crosses the boundary
 
@@ -47,9 +46,9 @@ This is the part I spent the most time on, because "run it in a VM" is the easy 
 
 **No forge credentials. Ever.** The guest never clones from your forge and never pushes to it. It holds no GitHub or GitLab token, not even a narrowly scoped one, because a scoped token inside a box you are treating as compromised is still a credential you have handed to an attacker. The agent commits *locally*, `ztd fetch` adds a temporary git remote pointed at the guest and pulls those commits into your checkout, and then **you** push, from your machine, with your own credentials. Git is a distributed version control system and this is the one situation where everybody suddenly remembers that.
 
-**The Anthropic credential does go in,** and I want to be straight about this rather than quiet about it. There is no agent without it. `ztd auth` copies your existing Claude Code login into the guest over the ephemeral key -- only `~/.claude/.credentials.json`, not your whole config -- and it dies when the VM does. It is the same risk class as everything else in there. I made a judgement call that one credential with a spend limit is an acceptable trade for the thing working at all, and a forge token that can rewrite your published history is not. Scope it if that math is different for you.
+**The Anthropic credential does go in,** and I want to be straight about this rather than quiet about it. There is no agent without it. `ztd auth` copies your existing Claude Code login into the guest over the ephemeral key -- only `~/.claude/.credentials.json`, not your whole config -- and it dies when the VM does. It is the same risk class as everything else in there. I made a judgment call that one credential with a spend limit is an acceptable trade for the thing working at all, and a forge token that can rewrite your published history is not. Scope it if that math is different for you.
 
-For now, this project is built on claude code. I would like to expand it to more harneses eventually but I had to start somewhere -- might as well start with the subscription I already have.
+For now, this project is built on Claude Code. I would like to expand it to more harnesses eventually but I had to start somewhere -- might as well start with the subscription I already have.
 
 **A throwaway SSH key per VM.** ztd generates a keypair before `up`, injects the public half as the guest's only authorized key, and deletes it on a successful `down`. Your personal key is never offered to the guest at all.
 
@@ -80,7 +79,7 @@ That took a machine from no lease to an IP address immediately. Note it is a com
 - **No TTL or auto-destroy.** Teardown is a thing you run. `ztd down` is deliberately never automatic, because I have not yet been in a situation where I wanted a machine holding an unfinished run to delete itself on a timer.
 - **Run caps are only most of a seatbelt.** There's a wall-clock cap that always applies. The turn cap is enforced through an agent hook, because there is no native flag for it in subscription mode, so if a future build drops that hook the turn cap quietly stops working and the clock is your real backstop.
 
-Mostly these are compramises, getting the most security while still trying to be useful. The most secure computer is the one that isn't turned on, but it isn't very useful.
+Mostly these are compromises, getting the most security while still trying to be useful. The most secure computer is the one that isn't turned on, but it isn't very useful.
 
 ## Is this for you?
 
