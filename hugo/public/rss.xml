@@ -147,6 +147,11 @@
 <p>If you&rsquo;re on a host that includes forms in the price and you&rsquo;re happy with it, and you don&rsquo;t need complex submission handling, also no.</p>
 <p>But if you have a static site, or a Go binary, or a game&rsquo;s landing page, or anything else where the form is the only thing standing between you and having no server at all &ndash; this is the smallest, robust, version of that I could build. One YAML file in a bucket. No idle cost. No runtime to keep patched.</p>
 <p>It&rsquo;s at <a href="https://gitlab.com/frob/webform-relay">gitlab.com/frob/webform-relay</a>, AGPLv3 licensed, with the docs published from the same repo. It is not on GitHub, which I mention because I recently had to change all the docs pages where the GenAI decieded to link to github &ndash;alas, that is what writing software looks like in 2026.</p>
+]]></description></item><item><title>The joys of unemployment</title><link>https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/</link><pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/</guid><description><![CDATA[<p>The silver lining of being laid off is time. Specifically, time to finish the pile of open source projects that have been sitting on the back burner for years, waiting for a weekend that never came.</p>
+<p>I have been on <a href="https://www.drupal.org/u/frob">drupal.org</a> for almost twenty years. Eighteen and a half, as the profile counts it. Thirty-odd projects maintained or co-maintained, a stack of issue credits, twelve DrupalCons, and a stint organizing the front-end Drupal meetup in Portland and the Let&rsquo;s contribute together meetup in Long Beach. That is most of a career expressed as one long contribution log.</p>
+<p>But Drupal was never the whole of it. There is the Open edX work &ndash; getting a full platform to come up in Docker for both production and local development, which is harder than it sounds and matters more than it sounds. There is <a href="/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/">v</a>, and <a href="https://gitlab.com/frob/webform-relay">webform relay</a>, and a long tail of smaller things scattered across <a href="https://github.com/frob">github.com/frob</a> and <a href="https://gitlab.com/frob">gitlab.com/frob</a>.</p>
+<p>The other reason to do this now is that unemployment gives you a lot of time and not much to point at. A contribution graph that goes quiet the month you get laid off says something, and it is not the thing you want it to say. Staying busy in public keeps the work visible &ndash; commits, releases, issue queues. It is the portfolio that maintains itself, as long as you keep showing up to it.</p>
+<p>None of these got the attention they needed while I had a full-time job. They are getting it now.</p>
 ]]></description></item><item><title>Introducing v; the easiest vendor utility</title><link>https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</link><pubDate>Sun, 30 Aug 2026 16:54:03 -0700</pubDate><guid>https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</guid><description><![CDATA[<p>Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.</p>
 <p>That works fine right up until the moment you need to answer a question about it. Which commit did I copy? Has upstream changed since? Did somebody edit these files after they landed here? A <code>vendor/</code> directory that got there by hand is an undated snapshot of unknown provenance. Six months later it is indistinguishable from code you wrote yourself. I have been handed projects like that and I have been the person to fix it.</p>
 <p>I got tired of that, so I wrote <a href="https://github.com/frob/v">v</a>.</p>
@@ -882,71 +887,4 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
 <p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
 <p>Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
 <p>I look forward to using Zed, more, now that Xdebug is working.</p>
-]]></description></item><item><title>A Suggested Order for Watching TOS with Your Kids</title><link>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</link><pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/</guid><description><![CDATA[<p>When I started at Clarity Innovations, the company culture interview question was &ldquo;Star Trek or Star Wars?&rdquo; Until recently I had leaned more toward Star Wars, but having grown up watching <em>The Next Generation</em> and the Star Trek movies, I was very much also a Star Trek fan.</p>
-<p>So naturally, my answer was &ldquo;they are not mutually exclusive because one happens in this galaxy and in the future and the other happened a long time ago in a galaxy far far away.&rdquo;</p>
-<p>I wanted to start watching <em>Star Trek: The Next Generation</em> with my kids, as that is my favorite series, but first, I wanted to give them a good canon of The Original Series so they could have a better appreciation of Star Trek as a whole. Knowing the best resource for this would likely be my own coworkers, I asked some folks at Clarity about the best order to watch TOS.</p>
-<p>I got a fantastic, well-thought-out response from Dale:</p>
-<blockquote>
-<p>In general, I would rank the initial three seasons of ST: TOS in the following way: Season 2, Season 1, and Season 3.  Season 1 has some wonderfully written episodes based on intriguing scenarios, but Season 2 is where the cast was really &ldquo;owning&rdquo; their characters. Season 3 has some good episodes, but got pretty silly at times.</p>
-</blockquote>
-<p>The following is the list of episodes and the order in which he recommended they be watched.</p>
-<h2 id="the-agreed-upon-order">The agreed-upon order</h2>
-<ul>
-<li><a href="#the-doomsday-machine">The Doomsday Machine</a> (s02e06)</li>
-<li><a href="#city-on-the-edge-of-forever">City on the Edge of Forever</a> (s01e28)</li>
-<li><a href="#the-enterprise-incident">The Enterprise Incident</a> (s03e02)</li>
-<li><a href="#amok-time">Amok Time</a> (s02e01)</li>
-<li><a href="#mirror-mirror">Mirror, Mirror</a> (s02e04)</li>
-<li><a href="#balance-of-terror">Balance of Terror</a> (s01e14)</li>
-<li><a href="#devil-in-the-dark">Devil in the Dark</a> (s01e25)</li>
-<li><a href="#arena">Arena</a> (s01e18)</li>
-<li><a href="#journey-to-babel">Journey to Babel</a> (s02e10)</li>
-<li><a href="#space-seed">Space Seed</a> (s01e22)</li>
-<li><a href="#the-tholian-web">The Tholian Web</a> (s03e09)</li>
-<li><a href="#a-piece-of-the-action">A Piece of the Action</a> (s02e17)</li>
-<li><a href="#the-trouble-with-tribbles">The Trouble with Tribbles</a> (s02e15)</li>
-</ul>
-<hr>
-<h2 id="the-list-in-detail">The list, in detail</h2>
-<h3 id="the-doomsday-machine">The Doomsday Machine</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248338">s02e06 on TVDB</a></p>
-<p>A giant alien weapon &ndash; think a massive cone that eats planets &ndash; is cutting a path of destruction through Federation space. The Enterprise finds a sister ship adrift with its crew dead and its commodore barely alive and completely broken. That commodore then steals a shuttle and flies it straight into the machine. It&rsquo;s a tense, well-paced episode that feels like a submarine thriller.</p>
-<h3 id="city-on-the-edge-of-forever">City on the Edge of Forever</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248331">s01e28 on TVDB</a></p>
-<p>This one is widely considered the best episode of TOS, and it earns it. McCoy accidentally injects himself with a stimulant, goes a little crazy, and jumps through a time portal back to 1930s Depression-era New York. Kirk and Spock follow to fix the timeline. Kirk falls in love. It doesn&rsquo;t end well. Harlan Ellison wrote it and fought with the studio over it for decades.</p>
-<h3 id="the-enterprise-incident">The Enterprise Incident</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248360">s03e02 on TVDB</a></p>
-<p>Kirk suddenly orders the Enterprise into Romulan space and then appears to lose his mind. It turns out to be a covert mission to steal a Romulan cloaking device. Spock has to charm a Romulan commander to buy time, which he does very effectively. There&rsquo;s a fun bit of spy tradecraft in this episode that you don&rsquo;t usually get in TOS. Season 3 gets a bad reputation but this one holds up.</p>
-<h3 id="amok-time">Amok Time</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248333">s02e01 on TVDB</a></p>
-<p>Spock is acting strange. Turns out Vulcans go through a mating cycle every seven years called pon farr, and if he doesn&rsquo;t get to Vulcan, and have sex, he&rsquo;ll die. Kirk takes the ship to Vulcan against direct orders. Once there, Spock&rsquo;s betrothed pulls a legal maneuver that puts Kirk and Spock in a fight to the death. This episode introduced Vulcan culture and the iconic fight music.</p>
-<h3 id="mirror-mirror">Mirror, Mirror</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248336">s02e04 on TVDB</a></p>
-<p>A transporter accident during an ion storm swaps Kirk, McCoy, Scotty, and Uhura into a parallel universe where the Federation is a brutal empire and everyone has a dark streak. Evil Spock has a goatee. It&rsquo;s a fun, well-constructed episode &ndash; you get the evil versions of the crew while the real crew deals with their evil counterparts back on the regular Enterprise.</p>
-<h3 id="balance-of-terror">Balance of Terror</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248317">s01e14 on TVDB</a></p>
-<p>The first appearance of the Romulans. A Romulan ship with a cloaking device has been destroying Federation outposts along the Neutral Zone, and Kirk has to hunt it down. It plays out like a submarine cat-and-mouse story and it&rsquo;s one of the most tightly written episodes in the series. There&rsquo;s also a subplot about a crew member who distrusts Spock because Romulans look like Vulcans, which the episode handles well.</p>
-<h3 id="devil-in-the-dark">Devil in the Dark</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248328">s01e25 on TVDB</a></p>
-<p>Miners on a remote planet are being killed by something that can move through solid rock. The creature turns out to be a silicon-based lifeform called a Horta. It&rsquo;s been destroying equipment because the miners were unknowingly destroying its eggs. Spock mind-melds with it and relays its distress. It sounds absurd written out like that, but this is one of those episodes that does exactly what good science fiction is supposed to do &ndash; it makes you reconsider what counts as a monster. &ldquo;It&rsquo;s life Jim, but not as we know it!&rdquo;</p>
-<h3 id="arena">Arena</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248321">s01e18 on TVDB</a></p>
-<p>The Enterprise chases a ship that attacked a Federation colony. An alien species called the Metrons stops them both and drops Kirk and the Gorn captain on a barren planet to fight it out. Kirk makes a cannon from raw materials he finds on the ground. It&rsquo;s a ridiculous setup that&rsquo;s also completely earnest and somehow works. The Gorn has become one of the more iconic images from TOS. This episode must be watched to fully appreciate one of the best lines from <em>Galaxy Quest</em>.</p>
-<h3 id="journey-to-babel">Journey to Babel</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248342">s02e10 on TVDB</a></p>
-<p>The Enterprise is ferrying a bunch of Federation ambassadors to a conference, including Spock&rsquo;s father Sarek. Sarek and Spock haven&rsquo;t spoken in years. Then someone on the ship gets murdered, an Orion spy ship starts tailing them, and Sarek has a heart attack. Spock refuses to leave the bridge to donate blood for his father&rsquo;s surgery because Kirk is hurt and Spock is in command. It&rsquo;s a good family drama wrapped around a solid mystery.</p>
-<h3 id="space-seed">Space Seed</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248325">s01e22 on TVDB</a></p>
-<p>The Enterprise picks up a 200-year-old ship adrift in space carrying a crew of genetically engineered humans in suspended animation from Earth&rsquo;s eugenics wars. Their leader is Khan Noonien Singh. He wakes up, immediately starts taking over the ship, and has to be stopped. Kirk understands him and takes pity on him. Instead of putting him in prison, he maroons him on a planet to give him the opportunity to build his own civilization. This sets up what is considered to be the best of the TOS movies, <em>Wrath of Khan</em>, which you should watch after you&rsquo;ve done this list.</p>
-<h3 id="the-tholian-web">The Tholian Web</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248367">s03e09 on TVDB</a></p>
-<p>Kirk gets trapped in an interphase between dimensions while investigating a dead ship, and starts flickering in and out of visibility. The Tholians, aliens who do not negotiate, start spinning an energy web around the Enterprise to trap it. Meanwhile Spock and McCoy have to figure out how to get Kirk back while managing a crew that&rsquo;s slowly losing their minds from the dimensional stress. It&rsquo;s a good episode where Kirk is mostly absent, which forces the rest of the cast to carry it.</p>
-<h3 id="a-piece-of-the-action">A Piece of the Action</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248349">s02e17 on TVDB</a></p>
-<p>A Federation ship visited this planet a hundred years ago and accidentally left behind a book about 1920s Chicago gangsters. The whole planet built its culture around it. Kirk and Spock have to negotiate with mob bosses and eventually decide the best approach is to just out-mob them. It&rsquo;s deliberately comedic and it works. There&rsquo;s a scene where Kirk tries to drive a stick shift car that&rsquo;s worth watching just for that.</p>
-<h3 id="the-trouble-with-tribbles">The Trouble with Tribbles</h3>
-<p><a href="https://thetvdb.com/series/star-trek/episodes/248347">s02e15 on TVDB</a></p>
-<p>Tribbles are small, round, warm, and purr when you hold them. They also breed fast enough to become a serious problem. The Enterprise stops at a space station where a shipment of grain bound for a disputed planet is stored. Klingons show up, tribbles multiply, and eventually the tribbles do what the Enterprise crew couldn&rsquo;t and sniff out a Klingon agent. It&rsquo;s a ridiculous but fun episode. There&rsquo;s a reason it&rsquo;s the one everyone remembers.</p>
-<h2 id="the-verdict">The verdict</h2>
-<p>After watching these, I have to say, it is a good order. I don&rsquo;t have the Trek expertise to argue with any of Dale&rsquo;s picks, but I can say the list worked. My family got a solid foundation in what Star Trek is, and we&rsquo;ve since been able to jump into the movies and <em>The Next Generation</em> without anyone feeling lost. And when my kids are old enough, they&rsquo;ll have all the context they need to enjoy <em>Galaxy Quest</em> with my wife and me.</p>
 ]]></description></item></channel></rss>

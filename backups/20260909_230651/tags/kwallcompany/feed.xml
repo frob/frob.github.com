@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kwallcompany on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/kwallcompany/</link><description>Recent content in Kwallcompany on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/kwallcompany/feed.xml" rel="self" type="application/rss+xml"/><item><title>Drupal or Wordpress? Why not Jekyll.</title><link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link><pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid><description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
+<p>So if Jekyll isn&rsquo;t a CMS then what is it? Jekyll is a &ldquo;blog aware&rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.</p>
+<h2 id="what-are-the-advantages-to-static-site-generation">What are the advantages to static site generation?</h2>
+<p>The biggest advantage is simplified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necessary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.</p>
+<h3 id="another-advantage-is-simplicity-jekyll-has-a-very-logical-file-structure">Another Advantage is simplicity. Jekyll has a very logical file structure:</h3>
+<ul>
+<li>Configuration goes into the _config.yml file</li>
+<li>Posts go into _posts directory</li>
+<li>Layout Templates go into the _layouts directory</li>
+<li>Block Templates go into the _includes directory</li>
+</ul>
+<h2 id="basic-configuration">Basic Configuration</h2>
+<p>Inside the _config.yml you will find some basic configuration.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Name of your site (displayed in the header)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Name of the Site</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Short bio or description (displayed in the header)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#ae81ff">Web Developer from Somewhere</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># URL of your avatar or profile pic (you could use your GitHub profile pic)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">avatar</span>: <span style="color:#ae81ff">url to the logo</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Includes an icon in the footer for each username you enter</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">footer-links</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">dribbble</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">email</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">facebook</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">flickr</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">github</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">instagram</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">linkedin</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pinterest</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rss</span>: <span style="color:#75715e"># just type anything here for a working RSS icon, make sure you set the &#34;url&#34; above!</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">twitter</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">stackoverflow</span>: <span style="color:#75715e"># your stackoverflow profile, e.g. &#34;users/50476/bart-kiers&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Your disqus shortname, entering this will enable commenting on posts</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">disqus</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">google_analytics</span>:
+</span></span></code></pre></div><h2 id="plugins">Plugins</h2>
+<p>One of the cooler parts of Jekyll is that even though it is generating a static site it can have plugins that extend its functionality. Plugins will fall into one of four categories.</p>
+<ul>
+<li>Generators
+<ul>
+<li>Creating new content based on the existing content. Multilanguage sites, more content listings, etc..</li>
+</ul>
+</li>
+<li>Converters
+<ul>
+<li>Filtering content in some way. This could be adding tokens or just using something other than markdown.</li>
+</ul>
+</li>
+<li>Commands
+<ul>
+<li>These are commands that are outside of the content scope. For Drupal people think of this as drush commands for Jekyll.</li>
+</ul>
+</li>
+<li>Tags
+<ul>
+<li>Tags are taxonomy based functionality; categorization or linking of content.</li>
+</ul>
+</li>
+</ul>
+<h2 id="posts">Posts</h2>
+<p>As I said before the Jekyll system is blog aware. That means that aside from pages Jekyll expects there to be posts of content.</p>
+<p>All content is put into the _posts directory and has a specific naming convention including the date and expected url for the post. By default a post is written in markdown and it has a yaml header with some meta data about the post.</p>
+<h2 id="where-do-i-use-it">Where do I use it</h2>
+<h3 id="drupal-for-firebug-developer-blogapi-test">Drupal for Firebug Developer blog/api test</h3>
+<p>After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&rsquo;t want to ask the old maintainer to put the page back up and I didn&rsquo;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I decided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.</p>
+<h3 id="frobiovoxcom-or-frobgithubio">Frobiovox.com or frob.github.io</h3>
+<p>Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.</p>
+]]></description></item><item><title>WebGL with three.js</title><link>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</link><pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</guid><description><![CDATA[<p>There is a spinning green cube somewhere on this page. It is not a video, it is not a gif &ndash; it is being rendered in real-time by your browser&rsquo;s GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.</p>
+<p>Everything is moving away from the compiled native app and over to the web browser. This has the advantage of giving users (those not using IE) the same experience no matter what platform the webapp is running on. One relatively new api that has come out of this shift is WebGL.</p>
+<div id="screen-wrapper"></div>
+<p><a href="http://www.khronos.org/webgl/wiki/Main_Page" target="_blank">WebGL </a>is a way for web developers to directly access the <a href="http://www.opengl.org/" target="_blank">OpenGL </a>apis. WebGL has shown some remarkable adoption over the past few years and I have to think this is due to it being based on the very stable open apis from OpenGL. If you have used OpenGL (or any 3D programming) there is a lot to do before anything can be rendered to the screen. I am not talking about art assets either, I am talking about templated boilerplate code that makes this stuff very tedious to start with. Luckily there are lots of Javascript people writing libraries so I don&rsquo;t have to rewrite the same boiler-plate code over and over again.</p>
+<h2 id="enter-threejs">Enter Three.js</h2>
+<p><a href="http://threejs.org/" target="_blank">Three.js is a boiler-plate framework for building WebGL</a> applications. It takes care of much of the work that normally comes from building 3D apps and you can get up and running with a few lines of code.</p>
+<p>The code below is used to draw the spinning cube you see above.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scene</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Scene</span>();
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">camera</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">PerspectiveCamera</span>(<span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">640</span><span style="color:#f92672">/</span><span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">renderer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">WebGLRenderer</span>();
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">setSize</span>(<span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">480</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">setClearColor</span>(<span style="color:#ae81ff">0x000000</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">domElement</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body canvas&#34;</span>).<span style="color:#a6e22e">css</span>( {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;margin&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1em auto&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;display&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;block&#34;</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">geometry</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">BoxGeometry</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">material</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">MeshLambertMaterial</span>({<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0x00ff00</span>});
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cube</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Mesh</span>(<span style="color:#a6e22e">geometry</span>, <span style="color:#a6e22e">material</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Fog</span>(<span style="color:#ae81ff">0x000000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ambient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">AmbientLight</span>( <span style="color:#ae81ff">0x101030</span> );
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">directionalLight</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">DirectionalLight</span>( <span style="color:#ae81ff">0xffffff</span>, <span style="color:#ae81ff">0.5</span> );
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">directionalLight</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">set</span>( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span> );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">cube</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fog</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">ambient</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">directionalLight</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">camera</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">render</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">render</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">scene</span>, <span style="color:#a6e22e">camera</span>);
+</span></span><span style="display:flex;"><span>   };
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">render</span>();
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span></code></pre></div><h2 id="lets-dive-into-the-code">Lets dive into the code.</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>This first line just loads the current release of three.js from a cdn.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scene</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Scene</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">camera</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">PerspectiveCamera</span>(<span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">640</span><span style="color:#f92672">/</span><span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">renderer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">WebGLRenderer</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">setSize</span>(<span style="color:#ae81ff">640</span>, <span style="color:#ae81ff">480</span>);
+</span></span></code></pre></div><h2 id="initialize">Initialize!!</h2>
+<p>First thing we do to initialize the scene, camera, and renderer.</p>
+<ul>
+<li><em>scene</em>
+<ul>
+<li>The scene is an object that controls the 3D space that is rendered.</li>
+</ul>
+</li>
+<li><em>camera</em>
+<ul>
+<li>The camera controls how the scene is rendered. Options include:
+<ul>
+<li><strong>OrthographicCamera</strong> (no perspective, isometric view)</li>
+<li><strong>PerspectiveCamera</strong> (camera with perspective projection)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>renderer</em>
+<ul>
+<li>The renderer controls what is drawn on the screen and how. CanvasRenderer should be used in the case where WebGLRenderer is not supported. CanvasRenderer draws the scene as best as it can without GPU acceleration.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">domElement</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#34;#content article .field-name-body canvas&#34;</span>).<span style="color:#a6e22e">css</span>( {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;margin&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1em auto&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;display&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;block&#34;</span>
+</span></span><span style="display:flex;"><span>  });
+</span></span></code></pre></div><p>The renderer will create a canvas DOM object to use to draw the scene to the browser window. However, you still have to add the canvas to the page or alternatively you can pass the canvas element to the renderer constructor. In this case we are using jQuery to prepend the canvas element into the body field of this article. We are also assigning some style to the canvas element.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">geometry</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">BoxGeometry</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">material</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">MeshLambertMaterial</span>({<span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0x00ff00</span>});
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cube</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Mesh</span>(<span style="color:#a6e22e">geometry</span>, <span style="color:#a6e22e">material</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">Fog</span>(<span style="color:#ae81ff">0x000000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ambient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">AmbientLight</span>( <span style="color:#ae81ff">0x101030</span> );
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">directionalLight</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">THREE</span>.<span style="color:#a6e22e">DirectionalLight</span>( <span style="color:#ae81ff">0xffffff</span>, <span style="color:#ae81ff">0.5</span> );
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">directionalLight</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">set</span>( <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span> );
+</span></span></code></pre></div><h2 id="geometry-material-and-cube">geometry, material, and cube</h2>
+<p>Geometry and materials are used to define a renderable object in 3D space. The geometry defines the actual mesh of the object. The material defines how the object is seen. These two things are brought together to define the cube.</p>
+<p>Geometry is fairly simple, the material is where things get interesting. Polygon count doesn&rsquo;t mean nearly as much as it used to; far more impressive things are made with shaders and materials are what define how the shader interacts with the object (in this case the cube). For this simple demo I used the MeshLambertMaterial. All that means is that the object will interact with lights. There are many different things that a talented artist can do with lights and shaders on a simple two poly plane. That however, is far beyond the scope of this post. For more on the power of shaders watch this<a href="https://www.youtube.com/watch?v=GNO_CYUjMK8" target="_blank"> talk from JSConfUS on Shaders</a>.</p>
+<h2 id="fog-ambient-and-directionallight">fog, ambient, and directionalLight</h2>
+<p>These are all made to make the visual more appealing. Fog creates a gradually increasing shadow (which cannot even be noticed on my cube), ambient is the natural ambient lighting, and directionalLight is light that comes in from a set point. Light without direction has no shadows so this is important to the scene.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">cube</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">fog</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fog</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">ambient</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scene</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">directionalLight</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">camera</span>.<span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span></code></pre></div><h2 id="add-it-all-up">Add it all up</h2>
+<p>Once everything is defined then we simply add everything to the scene. Fog is a property of the scene so it isn&rsquo;t added in the same way. Once everything is complete we set the camera distance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">render</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">render</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">cube</span>.<span style="color:#a6e22e">rotation</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0.01</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">renderer</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">scene</span>, <span style="color:#a6e22e">camera</span>);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>();
+</span></span></code></pre></div><h2 id="one-more-thing">One more thing</h2>
+<p>One more thing is required to make the scene update. If the scene had no movement then there would be no point in making it use realtime hardware processing. By creating the render function and then calling that function with requestAnimationFrame and renderer.render we are creating the game loop and allowing updates to occur. This is why the cube is spinning.</p>
+<h2 id="where-to-go-from-here">Where to go from here</h2>
+<p>That is all it takes to get a 3D scene running in a browser. A scene, a camera, a renderer, some geometry with a material, a light or two, and a render loop. Three.js handles the boilerplate so you can focus on what you want to build. From here, try swapping in different geometries, adding textures, or loading a real model. The <a href="http://threejs.org/docs/">Three.js documentation</a> and <a href="http://threejs.org/examples/">examples page</a> are the best next steps.</p>
+]]></description></item><item><title>Utilizing Front End CSS Design Paradigms In Drupal</title><link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link><pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid><description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
+<p><a href="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank">Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014</a></p>
+<iframe allowfullscreen="true" frameborder="0" height="389" mozallowfullscreen="true" src="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/embed?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="480"></iframe>
+]]></description></item><item><title>Creating Auto Submitting Forms with Drupal's Form API</title><link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link><pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid><description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
+<p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
+<p>My use case was a semi-typical one: have the input from one select list affect the options in another select list.</p>
+<p>This could be done in any number of ways including:</p>
+<ul>
+<li>ahah (or ajax)</li>
+<li>I could have javascript limit the options after selection without a server call</li>
+<li>Or, I could reload the page after the first selection is made</li>
+</ul>
+<p>I chose to reload the page after the first choice was made.</p>
+<p>Drupal has a built in handler for ajax like behavior in its form api aptly named “#ajax”. Using the ajax element in the Drupal’s form api looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>$form[<span style="color:#e6db74">&#39;form_element&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;#type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;submit&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">‘</span><span style="color:#75715e">#value&#39; =&gt; t(&#39;Submit&#39;),
+</span></span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">‘</span><span style="color:#75715e">#ajax&#39; =&gt; array(
+</span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;callback&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;callback_function&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;method&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;replace&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;effect&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;fade&#39;</span>,
+</span></span><span style="display:flex;"><span>  ),
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>It is pretty verbose, requires a php callback, and can be a bit of overkill for auto-submitting a form. In the days of pure HTML forms, we would simply add the form submit straight to the form input. As it turns out we can do the same thing to our form by exploiting the fact that the form API uses render arrays. All we have to do is attach this code snippet to our form element.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#e6db74">&#39;#attributes&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;onChange&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;people-filter-form&#34;).submit();&#39;</span>)
+</span></span></code></pre></div><p>Notice what is happening here. We are adding attributes to the form element. This is the same way that we would attach classes, only this time we are adding the attribute <tt>onChange=&rsquo;&lt;some js to execute&gt;&rsquo;.</tt></p>
+<p>Below is the full form definition.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * Custom Report User Filter Form
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">people_filter_form</span>($form, <span style="color:#f92672">&amp;</span>$form_state) {
+</span></span><span style="display:flex;"><span>  $form[<span style="color:#e6db74">&#39;person&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;select&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#options&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Select a Person&#39;</span>,
+</span></span><span style="display:flex;"><span>    ),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#default_value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">empty</span>($_GET[<span style="color:#e6db74">&#39;person&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">check_plain</span>($_GET[<span style="color:#e6db74">&#39;person&#39;</span>]),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#attributes&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;onChange&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;iris-app-people-filter-form&#34;).submit();&#39;</span>),
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>  $people <span style="color:#f92672">=</span> <span style="color:#a6e22e">_get_select_list_data</span>(<span style="color:#e6db74">&#39;person&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">foreach</span> ($people <span style="color:#66d9ef">as</span> $person) {
+</span></span><span style="display:flex;"><span>    $form[<span style="color:#e6db74">&#39;person&#39;</span>][<span style="color:#e6db74">&#39;#options&#39;</span>][$person<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">uid</span>] <span style="color:#f92672">=</span> $person<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $form[<span style="color:#e6db74">&#39;submit&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;submit&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;#value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Search People&#39;</span>,
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $form;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>That is all there is to it. By adding a single <code>onChange</code> attribute through the form API&rsquo;s <code>#attributes</code> array, we get auto-submission without the overhead of <code>#ajax</code>. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.</p>
+]]></description></item><item><title>css less sass oocss drycss bem front end css design paradigm smacss down</title><link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link><pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid><description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
+<h2>Object Oriented CSS</h2>
+<p>OOCSS has several principles that it is built upon.</p>
+<ol><li>A style should be written once and only once.</li>
+<li>Separate <strong>Structure</strong> from <strong>Skin</strong> (or layout from style)</li>
+<li>Separate <strong>Content </strong>from <strong>Containers</strong></li>
+</ol><h3>A Style should be written once and only once</h3>
+<p>If you are declaring the same exact style rules over and over again then you are probably doing something wrong.<br>Take a look at this example.</p>
+<pre>#thumbnail {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+<p>#block {
+width: 400px;
+overflow: hidden;
+border: solid 1px #ccc;
+background: linear-gradient(#ccc, #222);
+box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</p>
+<p>#view {
+width: 500px;
+min-height: 200px;
+overflow: auto;
+border: solid 1px #ccc;
+background: linear-gradient(#ccc, #222);
+box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</pre><p>All of these above styles are unique; however, they are also repeating the same rules over and over again. These styles can be simplified if a class is added that absorbs these repeated rules. This class would then be applied to the html elements.</p></p>
+<pre>.thumbnail {
+  width: 200px;
+  height: 50px;
+}
+
+.block {
+  width: 400px;
+  overflow: hidden;
+}
+
+.view {
+  width: 500px;
+  min-height: 200px;
+  overflow: auto;
+}
+
+.box {
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}</pre><p>This is much simpler with far fewer lines and if the global style changes the change only needs to be made once.</p>
+<h3>Separate Structure from Skin</h3>
+<p>In OOCSS the <em>Structure</em> is generally non-repeated style that works toward organization. This is what puts a sidebar on the left and the content in the middle. The concept of the <em>Skin </em>are the branding or theme of the site. Fonts, Colors, Gradients, Borders, and Rounded Corners are all a part of the skin.</p>
+<h3>Separate Content from Containers</h3>
+<p>All this means is that the style should not depend on a complex (or simple) html structure. Instead of writing a rule like this:</p>
+<pre>#sidebar-first h2, #content h2, #header h1 {
+  ...
+}
+</pre><p>Instead apply a new class to the h2 in the header, content area, and first sidebar. That way the repeated rule can be applied to that single class and then on those specific CSS elements we can overwrite the rule. In other words let the rules cascade and then overwrite them the way CSS was designed.</p>
+<h3>What OOCSS doesn't want you to do</h3>
+<ul><li>DO NOT use descendant selectors</li>
+<li>DO NOT use ID for styling elements</li>
+<li>DO NOT use class attachment for CSS selectors</li>
+<li>*Avoid unless absolutely necessary* the use of !important</li>
+</ul><h4>The Down side to OOCSS</h4>
+<p>This doesn't easily apply to Drupal very well. This is a good concept, and should be reviewed as a good way to keep CSS organized. However, unless a site is requiring an extreme amount of front end work (to the point of completely custom html --where the default Drupal output just will not work) then this system is nearly unusable because it requires additional classes to be written to the html in order to accomplish this.</p>
+<h2>SMACSS Scalable and Modular Architecture for CSS</h2>
+<p><span style="line-height: 1.5em;"><img alt="This is the one with the lumberjack." src="http://www.kwallcompany.com/sites/default/files/jack-head.png" style="width: 112px; height: 101px; float: left;">There are far more rules for SMACSS than I can put into this article. Here is the simple orbital overview: Just like with OOCSS we are encouraged to put everything into classes and distribute those classes out to the html as needed. The big differences are that SMACSS knows that there are times when using descendant selectors and IDs are necessary. Therefore SMACSS gives us guidelines for using them. Isn't that nice!</span></p>
+<p>There are five categories that components will fall into when writing SMACSS: Base, Layout, Module, State, and Theme.</p>
+<p>Each of these rules has a coding standard and class prefix. That is beyond the scope of this article --I suggest reading the <a href="http://smacss.com/" target="_blank">SMACSS website</a> for detailed information.</p>
+<h3>The guide for each of these categories are as follows:</h3>
+<ul><li><strong>Base </strong>- Normalization or style resetting</li>
+<li><strong>Layout</strong> - Positional Styling of structural elements on the page</li>
+<li><strong>Module </strong>- Modules are meant to be standalone stylistic elements. These are the parts that will be defined by classes and applied where necessary to the html.</li>
+<li><strong>State</strong> - Hover, Active and other state aware styles. If the style is dependent upon JavaScript then it is in the <em>State</em> category.</li>
+<li><strong>Theme </strong>- This is the unique, non-repeated overrides of the style. The generic stuff gets put into Modules and then the Theme overrides where necessary.</li>
+</ul><h4>The Downside to SMACSS</h4>
+<p>SMACSS is extremely strict. There are rules for everything. When implementing SMACSS you really need to know what you are doing or you could end up spending all your time worrying about implementing SMACSS and not writing good CSS.</p>
+<h2>Block Element Modifier</h2>
+<p><img alt="BEM seems to have a random logo." src="http://www.kwallcompany.com/sites/default/files/lq8e64g0ns6kzt-l3glbq-saabe.png" style="width: 112px; height: 91px; float: left;">In practice <em>BEM</em> is a simplified combination of <em>OOCSS</em> and <em>SMACSS</em>. Unlike the other two <em>BEM</em> stresses for quick development over style structure. In <em>BEM</em> there are three types of component: a block, an element and a modifier.</p>
+<ul><li><strong>Blocks</strong> are the largest independent container; Header, Footer, and Content would all be considered blocks.</li>
+<li><strong>Elements</strong> are the independent components inside the block.</li>
+<li><strong>Modifiers</strong> are added to both blocks and elements to allow for both style reuse and visually uniqueness.</li>
+</ul><p>BEM offers a way to think about CSS and front-end development and just like OOCSS and SMACSS it offers a strict set of guidelines around it. So strict that they offer tools that will lay it all out for you and enforce the BEM naming conventions and html structure.</p>
+<h4>The Downside to BEM</h4>
+<p><em>BEM</em> is an ideal solution and it seems to know it. The <a href="http://bem.info/method/" target="_blank">BEM Methodology page</a> is shorter than this article. On the surface, <em>BEM</em> is a simple methodology; however, that simplicity goes away very quickly. Once you get past the philosophical methodology page and into the actual guidelines it becomes clear that the guidelines are far more strict. This strictness rules over the html structure and the CSS. If you are comfortable working the html and class names that a <a href="http://www.drupal.org" target="_blank">CMS</a> will give you then you should feel right at home with <em>BEM</em>.</p>
+<h2>DRY Don't Repeat Yourself</h2>
+<p>Keeping with the spirit of DRY I will not go into great detail about it. The reason is that it follows nearly the exact same principles as the above SMACSS and OOCSS. The only difference is that ID selectors are fine and naming convention should be based on content.</p>
+<h2>Who Wins?</h2>
+<p>SMACSS.</p>
+<p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>
+]]></description></item></channel></rss>
