@@ -1,12 +1,14 @@
-# A new take on old php in the modern era of web development
-
-| key | value |
-| --- | --- |
-| url | https://www.frobiovox.com/posts/2026/09/25/a-new-take-on-old-php-in-the-modern-era-of-web-development/ |
-| date | 2026-09-25 |
-| tags | frontpage, web development, software development, rant |
-| description | It's funny, I wrote this to complain about the direction php but my LLM keeps wanting to turn this into a positive take on php. |
-
+---
+title: A new take on old php in the modern era of web development
+date: "2026-10-07"
+description: It's funny, I wrote this to complain about the direction php but my LLM keeps wanting to turn this into a positive take on php.
+slug: a-new-take-on-old-php-in-the-modern-era-of-web-development
+tags:
+    - frontpage
+    - web development
+    - software development
+    - rant
+---
 
 ## php just responded to requests
 
@@ -41,4 +43,3 @@ I built a static site that has a client-side LLM. I built a static site that has
 ...
 
 Oh, and I build video games at my [Video Game Company, Happy Plight](https://www.happyplight.com), open source tools such as [v for vendoring](https://github.com/frob/v) for vendoring dependencies even when the language doesn't want you to, and [zero trust development](https://gitlab.com/frob/ztd) for building with an llm in an isolated environment.
-

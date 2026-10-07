@@ -7,7 +7,7 @@
 ## Pages
 
 
-- [A new take on old php in the modern era of web development](https://www.frobiovox.com/posts/2026/09/25/a-new-take-on-old-php-in-the-modern-era-of-web-development/) — 2026-09-25: It's funny, I wrote this to complain about the direction php but my LLM keeps wanting to turn this into a positive take on php.
+- [A new take on old php in the modern era of web development](https://www.frobiovox.com/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/) — 2026-10-07: It's funny, I wrote this to complain about the direction php but my LLM keeps wanting to turn this into a positive take on php.
 - [Introducing ztd; disposable VMs for untrusted agent work](https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/) — 2026-09-10: Running a coding agent with approvals turned off is only safe if a machine boundary, not a dialog box, protects your host. ztd gives every agent run its own throwaway VM across libvirt, lima, Proxmox, and EC2.
 - [Introducing webform relay; forms without a backend](https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/) — 2026-09-08: A serverless form handler for static sites. Point a form at a URL, and it validates the submission and relays it to SES, SMTP, a webhook, or Salesforce Web2Lead. One YAML file, no application code.
 - [The joys of unemployment](https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/) — 2026-09-01: The silver lining of being laid off is time to finish the open source projects that have been waiting for a weekend that never came -- and a reason to keep the work visible.
