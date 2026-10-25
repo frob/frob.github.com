@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/ |
+| url | http://localhost:1313/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/ |
 | date | 2014-05-06 |
 | tags | tutorial, css, frontpage |
 

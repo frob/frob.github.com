@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/ |
+| url | http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/ |
 | date | 2016-08-16 |
 | tags | frontpage, drupal, tutorial, quarzack13 |
 | description | A Hello World style introduction to Composer. |

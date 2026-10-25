@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/ |
+| url | http://localhost:1313/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/ |
 | date | 2026-09-10 |
 | tags | ai, open source, software development, frontpage |
 | description | Running a coding agent with approvals turned off is only safe if a machine boundary, not a dialog box, protects your host. ztd gives every agent run its own throwaway VM across libvirt, lima, Proxmox, and EC2. |

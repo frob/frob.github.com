@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/ |
+| url | http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/ |
 | date | 2014-01-24 |
 | tags | drupal, kwallcompany, tutorial, drupalcamp, quarzack13 |
 

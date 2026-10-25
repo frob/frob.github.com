@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/ |
+| url | http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/ |
 | date | 2026-04-29 |
 | tags | frontpage, rant, web development, ai |
 | description | AI agents can build a full-stack app in an afternoon, but should it. The right workflow depends on your experience level. A guide to using generative AI effectively whether you're a seasoned engineer or just starting out. |

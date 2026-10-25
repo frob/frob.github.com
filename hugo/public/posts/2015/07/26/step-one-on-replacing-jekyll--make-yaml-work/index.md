@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/ |
+| url | http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/ |
 | date | 2015-07-26 |
 | tags | frontpage, rant, cms, gulp |
 

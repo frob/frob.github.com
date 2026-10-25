@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/ |
+| url | http://localhost:1313/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/ |
 | date | 2015-12-22 |
 | tags | rant, frontpage |
 | description | Why do we need a new game system? Because everything made today does too much. |

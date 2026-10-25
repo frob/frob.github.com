@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/ |
+| url | http://localhost:1313/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/ |
 | date | 2026-09-08 |
 | tags | open source, web development, tutorial, frontpage |
 | description | A serverless form handler for static sites. Point a form at a URL, and it validates the submission and relays it to SES, SMTP, a webhook, or Salesforce Web2Lead. One YAML file, no application code. |

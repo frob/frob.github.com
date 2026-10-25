@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2013/10/06/support-should-not-be-based-on-marketshare/ |
+| url | http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/ |
 | date | 2013-10-06 |
 | tags | web development, rant, frontpage |
 | description | Some general thoughts on the how and why of Graceful Degradation and Progressive Enhancement. No tutorials here, more philosophical than functional |

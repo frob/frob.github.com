@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/ |
+| url | http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/ |
 | date | 2016-10-24 |
 | tags | frontpage, tutorial, web development |
 | description | I should continue my series on Machine Generated text or Composer or Drupal, but this just looks like too much fun. WebVR with AFrame. |

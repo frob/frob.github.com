@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/ |
+| url | http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/ |
 | date | 2015-06-15 |
 | tags | frontpage, rant, jekyll, cms |
 

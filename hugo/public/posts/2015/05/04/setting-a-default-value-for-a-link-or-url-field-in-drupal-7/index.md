@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/ |
+| url | http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/ |
 | date | 2015-05-04 |
 | tags | drupal, tutorial, frontpage, quarzack13 |
 | description | Sometimes the best solution is to do something hacky. I am not saying this is the best way to make Drupal forms autosubmit. I am only saying that this is one way. |

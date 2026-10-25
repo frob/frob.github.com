@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/ |
+| url | http://localhost:1313/posts/2026/09/01/the-joys-of-unemployment/ |
 | date | 2026-09-01 |
 | tags | open source, drupal, career, frontpage |
 | description | The silver lining of being laid off is time to finish the open source projects that have been waiting for a weekend that never came -- and a reason to keep the work visible. |

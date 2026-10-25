@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/ |
+| url | http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/ |
 | date | 2015-11-11 |
 | tags | frontpage, drupal, tutorial, quarzack13 |
 | description | EntityFieldQueries are one of the most useful things in Drupal 7, using tags we can get around some of the limitations of using them. |

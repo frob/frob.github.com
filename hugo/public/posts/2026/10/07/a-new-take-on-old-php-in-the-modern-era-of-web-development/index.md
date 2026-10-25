@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/ |
+| url | http://localhost:1313/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/ |
 | date | 2026-10-07 |
 | tags | frontpage, web development, software development, rant |
 | description | It's funny, I wrote this to complain about the direction php but my LLM keeps wanting to turn this into a positive take on php. |

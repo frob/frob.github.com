@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2026/08/18/moving-on/ |
+| url | http://localhost:1313/posts/2026/08/18/moving-on/ |
 | date | 2026-08-18 |
 | tags | career, frontpage |
 

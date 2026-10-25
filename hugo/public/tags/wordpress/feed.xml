@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wordpress on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/wordpress/</link><description>Recent content in Wordpress on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/wordpress/feed.xml" rel="self" type="application/rss+xml"/><item><title>Drupal or Wordpress? Why not Jekyll.</title><link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link><pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid><description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/wordpress/</link>
+    <description>Recent content in Wordpress on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/wordpress/feed.xml" rel="self" type="application/rss&#43;xml" />
+    <item>
+      <title>Drupal or Wordpress? Why not Jekyll.</title>
+      <link>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
+      <pubDate>Tue, 27 Jan 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
+      <description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
 <p>So if Jekyll isn&rsquo;t a CMS then what is it? Jekyll is a &ldquo;blog aware&rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.</p>
 <h2 id="what-are-the-advantages-to-static-site-generation">What are the advantages to static site generation?</h2>
 <p>The biggest advantage is simplified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necessary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.</p>
@@ -72,4 +86,7 @@
 <p>After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&rsquo;t want to ask the old maintainer to put the page back up and I didn&rsquo;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I decided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.</p>
 <h3 id="frobiovoxcom-or-frobgithubio">Frobiovox.com or frob.github.io</h3>
 <p>Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.</p>
-]]></description></item></channel></rss>
+]]></description>
+    </item>
+  </channel>
+</rss>

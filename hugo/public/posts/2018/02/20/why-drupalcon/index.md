@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/ |
+| url | http://localhost:1313/posts/2018/02/20/why-drupalcon/ |
 | date | 2018-02-20 |
 | tags | frontpage, quarzack13, drupal, drupalcon |
 | description | Contributing to Drupal allows us to ensure Drupal remains the best and most flexible general purpose Content Management System. Contributing to Drupal is the job of the Drupal Community. |

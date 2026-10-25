@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rest on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/rest/</link><description>Recent content in Rest on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/rest/feed.xml" rel="self" type="application/rss+xml"/><item><title>Add a JSON API to Any Static Site Generator</title><link>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link><pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid><description><![CDATA[<p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rest on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/rest/</link>
+    <description>Recent content in Rest on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/rest/feed.xml" rel="self" type="application/rss&#43;xml" />
+    <item>
+      <title>Add a JSON API to Any Static Site Generator</title>
+      <link>http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid>
+      <description><![CDATA[<p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
 <p>That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.</p>
 <h2 id="the-idea-again">The idea, again</h2>
 <p>A static site generator takes your markdown and pushes it through templates to make HTML files. There is nothing special about HTML here &ndash;it is just the output format. If you write a template that outputs JSON instead of HTML, you get <code>.json</code> files. Your web server doesn&rsquo;t care, it serves them the same way and JavaScript on the client side can fetch them.</p>
@@ -69,7 +83,14 @@
 <h2 id="this-isnt-just-a-hugo-thing">This isn&rsquo;t just a Hugo thing</h2>
 <p>The core trick works anywhere. If your static site generator has templates, you can make it output JSON. Hugo happens to have first-class support for it, but the pattern is the same whether you are using 11ty, Astro, or even Jekyll like I was in 2015. Write a template, output JSON, let the build generate the files.</p>
 <p>I use it for client-side filtering. Fetch the listing endpoint, match on tags in JavaScript, render a related posts section without a page reload. It is not a replacement for a real API &ndash;there is no auth, no pagination, no writes. But for read-only content that is already public on your site, it is free and it ships with every build.</p>
-]]></description></item><item><title>Add an API to Your Jekyll Blog</title><link>https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</link><pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</guid><description><![CDATA[<p>Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML &ndash; no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Add an API to Your Jekyll Blog</title>
+      <link>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</link>
+      <pubDate>Sun, 25 Oct 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</guid>
+      <description><![CDATA[<p>Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML &ndash; no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.</p>
 <p>I really like <a href="https://pages.github.com/">github pages</a>. I <a href="https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">built my blog on it</a>, even though <a href="https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html">I host it myself</a>. Markdown is so easy, liquid is so easy. What isn&rsquo;t easy is dynamic lists of content. I want to learn <a href="https://facebook.github.io/react/">Reactjs</a> &ndash;so I will build a content listing with that. That will require a RESTful API for my content.</p>
 <h2 id="the-easy-way">The easy way</h2>
 <p>To be clear I didn&rsquo;t write this <a href="http://jekyllsnippets.com/excluding-jsonify-your-site/">snippet</a> &ndash;but only because someone else did. And working code wins.</p>
@@ -194,4 +215,7 @@
 </span></span><span style="display:flex;"><span>post.json
 </span></span></code></pre></div><p>I think these are better names.</p>
 <p>With this setup, any Jekyll blog now has a JSON listing endpoint and individual JSON post endpoints &ndash; all generated at build time with no plugins and no server-side dependencies. From here, building a React or vanilla JS front-end that consumes this API is straightforward. The content stays in markdown, the API stays in Liquid, and GitHub Pages serves it all for free.</p>
-]]></description></item></channel></rss>
+]]></description>
+    </item>
+  </channel>
+</rss>

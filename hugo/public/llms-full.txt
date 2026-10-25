@@ -4,7 +4,126 @@ Prestigious operator of commplicated auto-complete.
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/
+url: http://localhost:1313/posts/2026/10/22/i-remember/
+title: I remember
+date: 2026-10-22
+---
+
+
+I remember when the web was fun. It was this new thing. People were trying new things all the time. There was no google, there was barely a yahoo. Search engines existed but you had to look for things yourself. You found pages by clicking links and exploring. Your site got discovered because someone else linked to you. Maybe your site had a niche community that allowed it into a webring. Most sites were just curiosities. 
+
+One such site I remember was interactive in a way I had never seen a website be interactive. I felt like Harry Potter on his first trip to Diagon Alley, except, Harry Potter didn't exist yet. 
+
+One page on this site was really interesting. It wrote itself while you watched. It wasn't typing, it was cursive, and it drew the letters on the screen. If you stopped reading the story, it would start to drift and doodle and then come back to writing as soon as you noticed it wasn't writing. 
+
+<style>
+.writing-canvas { display: block; width: 100%; }
+@media screen and (min-width: 1024px) {
+  .post .writing-canvas { width: calc(100% + 138px); margin-left: -69px; margin-right: -69px; }
+}
+</style>
+<canvas id="writing" class="writing-canvas" style="height: 90px;"></canvas>
+
+
+There is no point to this. Just a novelty, just for fun. This is what the web was before google. It was just fun.
+
+
+---
+url: http://localhost:1313/posts/2026/10/20/the-future-of-software-could-look-very-different-than-it-does-today/
+title: The future of software could look very different than it does today
+date: 2026-10-20
+tags: frontpage, ai, rant
+---
+
+
+# The future of Software could look very different in 20 years than it does today
+
+Ever since the beginning of the GenAI hype train, I have been convinced that Local AI is inevitable. I have gotten a bit of ridicule for that as well. I have been told "On prem AI will never take off." I hear this more from my aged contemporaries than from the younger engineers, which astounds me. These are fellows just barely too young to remember when it was said by aging executives "why would a normal person want a computer?"
+
+Don't completely misunderstand me, I am not saying everyone needs local AI. I am saying everyone will have local AI and if we are going to bring them the future of software and the future of technology then we should understand that. No one needs a calculator to do basic arithmetic, but everyone uses one. Partly, because they have one on their phone. It is in reach nearly all the time. So why not use it?
+
+> To do anything useful you need 512GB of memory. No one has 512GB of memory.
+
+Yeah, right now 512GB of memory sounds like a lot, but 10 years ago 32GB of memory sounded like a lot. 15 years ago 16GB of memory sounded like a lot. I still remember buying 16MB of memory to put into our computer so we could play Ultima 8 (I also remember being very disappointed). [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law) might not pan out like it used to and memory might be really expensive right now but you're missing a few things. 
+
+1. The memory shortage will be sorted out within the next 5 years
+2. The price of memory is 300% or more inflated
+3. Only Software Engineers need 512GB of memory to use AI today --before compression and optimization has been implemented
+4. Most people are not Software Engineers and can do most anything they want or need to do with 12GB or less of memory today.
+
+It is important to not be short sighted. We are building something completely new here. We have never before had the oportunity to use these tools in this way for our clients. It begs us not just to build something new but to build it in a new way. We need to think as much about how the tool relates to the product at hand as we are thinking about the product itself.
+
+I built a Proof of Concept that embedded a model in the user's browser. It used [Gemma's edge model](https://ai.google.dev/gemma/docs/gemma-3n) and [lunr](https://lunrjs.com/) (a static site search index) to create a RAG like search based on the content in the site. Context was controlled through the search index and fed to the model when the user queried the search. The downside is that downloading the model took 20 minutes, but Google is already trying to build the model into the browser. Gemma's edge model is less than 4GB. It handily fits in most computer's memory with room to spare. This is cumbersome today, but in 2 years this will likely be as expected a common feature as search. We should be building with this in mind so that when the feature is requested we don't have to rebuild the whole product to incorporate it.
+
+We cannot allow ourselves to be short sited. The products we build now are lasting longer than ever before. Even if the client hasn't asked for it and is unwilling to buy into it, we should have a 10 year plan for anything we launch.
+
+
+---
+url: http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/
+title: Who benefits from the AI guardrails
+date: 2026-10-13
+tags: ai, rant, frontpage
+description: The calls for AI regulation arrived just as the technology plateaued. The danger is people handing too much autonomy to a machine, and the guardrails mostly target local AI.
+---
+
+
+The calls for AI regulation got louder at the exact moment the models stopped getting dramatically better. I don't think that's a coincidence.
+
+## The plateau
+
+For a couple of years every release felt like a leap. Now the leaps are smaller. The newest models are better, but not in the way that justifies the money that went into them. The gains are coming from tooling, context and cost, not from some new kind of capability. That's a fine place for a technology to be. It is a terrible place to be if you've borrowed against the idea that it keeps doubling.
+
+When the product stops improving, the moat has to come from somewhere else.
+
+## It's math
+
+There is no AGI coming. This isn't consciousness. It's a [perceptron](https://en.wikipedia.org/wiki/Perceptron) with a lot more layers and a lot more data. It looks so advanced to the people who built it that they can't tell it from magic anymore, and they've convinced the rest of us that we can't either. It's still math.
+
+The danger is the same one we've always had: people handing too much autonomy to a machine. Yes, it can delete all your email if you give it that authority, the same way a car with a brick on the accelerator can drive off a cliff. Nobody blames the brick for where the car ends up, and we shouldn't blame AI for the dangers that come from handing it the wheel. The fix is not to ban bricks, or to make sure only licensed companies are allowed to own one. It's to stop putting the brick on the pedal. I built [ztd](https://gitlab.com/frob/ztd) to allow for the safe use of autonomous AI. But even with ztd, if you give the AI unlimited access to your email, it could send your boss your resignation and delete everything else.
+
+## Gatekeeping with a safety label
+
+The loudest voice for this comes from the top. In June, Anthropic's CEO told [ABC News](https://abcnews.com/Business/exclusive-anthropic-ceo-calls-stronger-regulation-ai/story?id=133753620) that he is "proposing giving the government the ability to, again, in a narrow way, block deployment of unsafe technology." The letter he published alongside it says the government should be able to block a model "in light of third-party assessment." He said nothing about open weights or local models, and I'm not putting words in his mouth. But think about what a regime like that needs to work: someone has to pass the assessment, someone has to pay for it, and someone has to be big enough to survive being told no. That is a short list.
+
+Look at what the proposals actually ask for. Licensing for anyone who trains a model above some size. Compliance regimes that only a company with a legal department can afford. Restrictions on open weights because they can't be "monitored." Every one of those lands hardest on the same target -- the model that runs on your own machine, that you downloaded once and that doesn't phone home.
+
+A hosted model can be metered, logged, audited and switched off. A local model can't. If you're selling access, that's the thing that scares you, not a rogue chatbot.
+
+I've said for a while that local AI is inevitable. Everyone will have it, the way everyone has a calculator. The people who would prefer that you rent it have noticed too. So the pitch becomes "only trusted providers should run these." It sounds responsible. What it does is turn a tool that anyone can run into a service that a few companies can sell, right when the open models are good enough that nobody has to buy.
+
+I can't prove anyone's motives. I can tell you who ends up holding the keys if it works.
+
+The next time you hear a call for guardrails, ask what happens to the model on your laptop.
+
+
+---
+url: http://localhost:1313/posts/2026/10/09/what-does-an-engineer-actually-do/
+title: What does an engineer actually do
+date: 2026-10-09
+---
+
+
+What does a Software Engineer actually do?
+
+If you're a software engineer worried about AI taking your job, you might want to consider what it is that you actually do. What is the reason you're payed to do what you do.
+
+In hindsight, a program is just math and we have been working on proving programs for decades. It really should have been no wonder that the act of programming has been mechanized. We have been mechanizing math since before the days of Babage and Ada Lovelace conceptualized a general purpose math machine.
+
+Did we really think we were beyond replacement? Writing code is not what I do. I have never liked the term "coder" even though to call myself a Software Engineer feels pretensous.
+
+There is nothing wrong with writing code but do not be fooled into thinking it is the only way to get a high quality result.
+
+> I'm an artist, you give me a tuba and I'll get you something out of it.
+
+The issue we have today is more about imagination. How can we use this tech? Content generation is a lazy idea. Using it to build web-pages is a web developer thinking that they are the user they are designing for. An AI help desk is also lazy. This needs to be a case by case issue. Look at [SendCutSend](https://sendcutsend.com/). The site is a metal laser cutting service. They offer quick turn around of custom orders, made to order. They have an AI part generator. You give it a prompt and it gives you a part based on the prompt. It isn't perfect. I asked it to give me a 12 tooth gear that is 22mm across. It didn't get the geometry of the teeth right, but it got all the dimensions correct and it gave me something that looked like a gear. This wasn't edge based, but it was fast and it matches the business. This is an example of a good solution. 
+
+Remote [MCPs](https://modelcontextprotocol.io/) (Model Context Protocol, a standard that lets an AI model call out to external tools and data sources over a defined interface, rather than every app rolling its own integration) are another untapped resource. MCPs offer user authenticated access. This means the content can be controlled or tailored to the user as well as other services. The mistake to avoid is imagining the machine doing what a human is doing today. Instead, imagine what is cost prohibitive to have a human do today. This is why services like [Grammarly](https://www.grammarly.com/) work so well and have gained wide spread adoption. People would prefer to have an AI check their spelling and grammar before they hit send because people don't want to look like an idiot. Everyone wants a copy editor, but no one can afford it.
+
+Someone who is unimaginative cannot see what products can be built that they do not use. Lazy people only see obvious one size fits all solutions. In game design you want someone who has a breadth of knowledge and experience more than a depth of knowledge. This will be more valuable in general product development moving forward.
+
+
+---
+url: http://localhost:1313/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/
 title: A new take on old php in the modern era of web development
 date: 2026-10-07
 tags: frontpage, web development, software development, rant
@@ -48,7 +167,7 @@ Oh, and I build video games at my [Video Game Company, Happy Plight](https://www
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/
+url: http://localhost:1313/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/
 title: Introducing ztd; disposable VMs for untrusted agent work
 date: 2026-09-10
 tags: ai, open source, software development, frontpage
@@ -149,7 +268,7 @@ Then `ztd check`, which is the first thing to run and the thing to trust -- it w
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/
+url: http://localhost:1313/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/
 title: Introducing webform relay; forms without a backend
 date: 2026-09-08
 tags: open source, web development, tutorial, frontpage
@@ -389,7 +508,7 @@ It's at [gitlab.com/frob/webform-relay](https://gitlab.com/frob/webform-relay), 
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/
+url: http://localhost:1313/posts/2026/09/01/the-joys-of-unemployment/
 title: The joys of unemployment
 date: 2026-09-01
 tags: open source, drupal, career, frontpage
@@ -409,7 +528,7 @@ None of these got the attention they needed while I had a full-time job. They ar
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/
+url: http://localhost:1313/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/
 title: Introducing v; the easiest vendor utility
 date: 2026-08-30
 tags: git, open source, tutorial, frontpage
@@ -535,7 +654,133 @@ The code is at [github.com/frob/v](https://github.com/frob/v). It's MIT licensed
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/
+url: http://localhost:1313/posts/2026/08/29/introducing-v-the-easiest-vendor-utility/
+title: Introducing v; the easiest vendor utility
+date: 2026-08-29
+tags: git, open source, tutorial, frontpage
+description: Sometimes you have to copy a library straight into your project. v records exactly which commit you copied and gives you one command to refresh it.
+---
+
+
+Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.
+
+That works fine right up until the moment you need to answer a question about it. Which commit did I copy? Has upstream changed since? Did somebody edit these files after they landed here? A ```vendor/``` directory that got there by hand is an undated snapshot of unknown provenance. Six months later it is indistinguishable from code you wrote yourself. I have been handed projects like that and I have been the person to fix it.
+
+I got tired of that, so I wrote [v](https://github.com/frob/v).
+
+## What it does
+
+Three things, and deliberately nothing else:
+
+1. It resolves whatever ref you give it --a branch, a tag, a commit hash --to an exact commit hash.
+2. It downloads the repository's contents into ```vendor/```, without the ```.git``` directory.
+3. It writes down what it did in a ```vendors.toml``` file in your project root.
+
+That's the whole tool. The interesting part is the third one.
+
+## A real world use case
+
+This blog [runs on Hugo](/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/) with a theme I maintain in a GitLab repository. The theme is not on any registry. It's not a Go module. It is a pile of layouts and CSS that belongs to me and lives somewhere else.
+
+The usual options for that situation are a git submodule or a Hugo module. Both work. Both also mean that anyone who clones this site now has to know about a second dependency system, and that my build has an opinion about network access. I didn't want a dependency system. I wanted the files to be in the repository, the way files are, plus a note saying where they came from.
+
+Here is what that note looks like on this site:
+
+```toml
+['git@gitlab.com:frob/frobiovox-theme.git']
+url = 'git@gitlab.com:frob/frobiovox-theme.git'
+ref = '0.0.x'
+commit = 'd0b29bbda2560331ddb849b0dcefc65b709454f4'
+path = 'hugo/themes/frobiovox-theme'
+```
+
+Four fields. Where it came from, what I asked for, what that actually resolved to, and where it landed. The ```commit``` field is the one doing the real work. A branch name drifts --```0.0.x``` means something different today than it did in June. The hash doesn't. It pins exactly what is sitting in ```hugo/themes/frobiovox-theme``` right now.
+
+Commit that file to your repository and the provenance survives. Someone else can see what you vendored, when it moved, and by how much, just by reading the git history of a four-line TOML entry.
+
+## Using it
+
+Install it with Homebrew:
+
+```bash
+brew install frob/v/v
+```
+
+Or with the shell script, which detects your OS and package manager and falls back to dropping a binary in ```/usr/local/bin```:
+
+```bash
+curl -sSf https://raw.githubusercontent.com/frob/v/0.2.x/install.sh | sh
+```
+
+There are ```.deb```, ```.rpm```, and Arch packages on the releases page too.
+
+Vendoring something is one command:
+
+```bash
+v add https://github.com/example/repo
+```
+
+That resolves the remote's default branch, downloads the contents to ```vendor/github.com/example/repo```, and records the entry. Pin to a tag instead:
+
+```bash
+v add https://github.com/example/repo v1.2.3
+```
+
+Or put it somewhere that is not ```vendor/```, which is what I do for the theme:
+
+```bash
+v add -d hugo/themes/frobiovox-theme git@gitlab.com:frob/frobiovox-theme.git 0.0.x
+```
+
+Later, when upstream has moved:
+
+```bash
+# everything, to the latest commit on each recorded ref
+v update
+
+# just the one
+v update https://github.com/example/repo
+
+# and switch it to a different tag while you are at it
+v update https://github.com/example/repo v2.0.0
+```
+
+```update``` tells you what changed:
+
+```
+updated https://github.com/example/repo a1b2c3d -> e4f5a6b
+```
+
+Then ```git diff``` shows you exactly what came along with it. That is the part I actually wanted. Not automation --visibility. When a vendored dependency changes under me, I want it to show up in a code review like everything else.
+
+## Why no ```.git``` directory
+
+Because a vendored tree should be files, not a repository. Submodules are a repository inside your repository, and they bring the whole apparatus with them: a second checkout state, detached heads, the ```--recursive``` flag everyone forgets, clones that come down empty. Subtrees avoid some of that and replace it with a merge strategy you have to think about.
+
+```v``` sidesteps both by not being a git integration at all. It downloads the contents and deletes the history. Your repository stays one repository. ```git clone``` gets you everything. There is no second state to be out of sync with, because there is no second state. The metadata a ```.git``` directory would have carried lives in ```vendors.toml``` instead, in four lines you can read.
+
+The tradeoff is real and I will name it: you can't ```git log``` a vendored dependency in place, and if you edit those files, ```v update``` will happily overwrite your edits. Vendored code is read-only code. If you want to change it, change it upstream.
+
+## What it does not do
+
+It is deliberately small. Some things are missing on purpose:
+
+- No integrity check. Nothing currently verifies that a vendored tree still matches its recorded commit. If someone edits a file in ```vendor/```, ```vendors.toml``` will keep insisting everything is fine. This is the next thing I am building.
+- No round trip. If you want to fix a bug in a vendored dependency and send it upstream, you are on your own: clone it separately, do the work there, then re-vendor. I would like to make that a single command.
+- No selective vendoring. Every entry in ```vendors.toml``` gets its files checked into your tree. There is no way yet to track a dependency's provenance while keeping its source out of your repository, which you might want for license reasons.
+- No dependency resolution, ever. If the thing you vendored has its own dependencies, that's your problem. ```v``` copies one repository at one commit. It's not going to grow a solver, and this is a feature.
+
+## Is this for you?
+
+Vendoring dependencies is awsome. It is more secure and stable than any package manager. But if I am being honest, most of the time you should just use the expected case package manager. If your language has a package manager and your dependency is published to it, use the package manager. That is what it is for.
+
+But when you are outside that path --a private repo, an unpublished theme, a library whose maintainer stopped cutting releases in 2019, a language where "just copy it in" is the community norm --you're going to copy the source anyway. All ```v``` does is make sure that when you do, you wrote down where it came from.
+
+The code is at [github.com/frob/v](https://github.com/frob/v). It's MIT licensed, it's a single Go binary with no runtime dependencies, and it is small enough that you can read the whole thing in an afternoon.
+
+
+---
+url: http://localhost:1313/posts/2026/08/27/farewell-to-the-burgundy/
 title: Farewell to the burgundy
 date: 2026-08-27
 tags: drupal, web development, frontpage
@@ -562,7 +807,7 @@ Seventeen years is a good run for a homepage. Longer than most jobs. You can che
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/08/18/moving-on/
+url: http://localhost:1313/posts/2026/08/18/moving-on/
 title: Moving on
 date: 2026-08-18
 tags: career, frontpage
@@ -627,7 +872,143 @@ It is about time for another adventure.
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/06/24/project-space-game/
+url: http://localhost:1313/posts/2026/08/07/the-80-20-of-testing/
+title: The 80/20 of Testing: Why End-to-End Tests Cost the Most and Matter the Most
+date: 2026-08-07
+tags: testing, software development
+---
+
+
+Most of the tests you write should be unit and integration tests. Call it 80% of the suite. The remaining 20% is end-to-end -- the tests that drive the real system the way a real user does. That 20% will eat 80% of your testing effort, and it is the part you can least afford to skip.
+
+That is not a failure of planning. It is the shape of the work.
+
+## Why the bulk is cheap
+
+Unit tests are cheap because they lie to you on purpose. You isolate a function, hand it fabricated inputs, and assert on its output. No network, no database, no clock, no filesystem. They run in milliseconds, they fail with a precise line number, and when one breaks you know exactly which change broke it.
+
+Integration tests are a little more expensive -- a real database, a real HTTP handler, maybe a container or two -- but they are still operating inside a world you control. You decide what is in the database. You decide what the upstream service returns. Setup is a fixture, teardown is a truncate.
+
+Because they are cheap, you write a lot of them, and you should. They are where you cover the combinatorics: the null case, the empty list, the off-by-one, the timezone that ruins everything, the malformed payload. Trying to cover that surface end-to-end would be absurd. Nobody wants to boot a browser to find out that a date parser mishandles February 29th.
+
+So the pyramid holds. Wide base of fast, narrow tests. Thin cap of slow, wide ones.
+
+## Why the cap is expensive
+
+Then you get to end-to-end, and every convenience you relied on disappears.
+
+You need the whole system running -- every service, every dependency, in something resembling the shape it takes in production. You need seeded data that is realistic enough to be meaningful and stable enough to assert against. You need authentication, because real users log in. You need to deal with time, because real systems have sessions and expirations and background jobs.
+
+Then you need the test itself to be reliable, which is where most of the effort actually goes. An end-to-end test is a distributed systems problem wearing a test's clothing. The button is there but not yet clickable. The API responded but the UI has not re-rendered. The job is queued but has not run. Every one of those is a race, and every race is a future flaky failure. Writing the assertion takes ten minutes. Making it pass a thousand times in a row takes a week.
+
+And when it does fail, it tells you almost nothing. "Expected the order confirmation page, got the cart page." Somewhere in fifteen thousand lines of code across four services, something went wrong. Go find it. Compare that to a unit test failure, which points at a function and a line.
+
+Then add the maintenance. Someone renames a CSS class and thirty tests break. Someone adds a required field to signup and every test that creates a user breaks. Someone changes a redirect and the whole suite falls over. None of these are real bugs, and all of them cost you an afternoon.
+
+That is the 80%. Not writing the tests. Owning them.
+
+## Why it is worth it anyway
+
+Here is the thing that justifies all of it: your unit tests can be 100% green while your product is completely broken.
+
+This is not a hypothetical. It is the normal case. Every unit passes because every unit is correct in isolation. Every integration test passes because each pair of components agrees. And the login flow is still broken, because the session cookie is set with a `SameSite` policy that the redirect from your identity provider does not survive. No unit owns that bug. No integration test spans it. It lives in the gaps.
+
+End-to-end tests are the only tests that exercise the gaps. They are the only tests that touch:
+
+- **Configuration.** Environment variables, feature flags, connection strings, TLS settings. Unit tests mock all of this away. Production does not.
+- **Wiring.** The dependency injection container, the route table, the middleware order. A route registered twice, a middleware in the wrong position -- invisible to everything below.
+- **The browser.** The bundle that failed to build, the JavaScript error that blanks the page, the CSS that puts the submit button behind a modal overlay.
+- **Real sequences.** Users do not call one endpoint. They sign up, verify an email, log in, add to cart, apply a coupon, pay, and get a receipt. The bugs are in the transitions between steps.
+- **Your assumptions about your own mocks.** Every mock is a claim about how a dependency behaves. End-to-end tests are where you find out the claim was wrong.
+
+And there is a value that has nothing to do with catching bugs: an end-to-end test is the only test that a non-engineer can believe. When you tell a stakeholder "checkout works," a passing unit test is a statement about a function. A passing end-to-end test is a recording of a purchase actually being made. One of those ends the conversation.
+
+## What to do with this
+
+The practical implication is not "write more end-to-end tests." It is: budget for the ones you have, and be ruthless about which ones you keep.
+
+**Pick the paths that pay rent.** For most products that is three to ten flows: sign up, log in, the core action the product exists to perform, and the flow that takes money. If a flow being broken for an hour would generate phone calls, it belongs in the 20%. If it would generate a ticket, push it down the pyramid.
+
+**Treat the harness as a product.** The seeded data, the auth helper, the wait-for-idle utility, the page objects -- this is infrastructure. If it is a pile of copy-pasted selectors, your 80% of effort becomes 95%. Give it the same review standards as shipping code.
+
+**Never sleep, always wait for a condition.** Every fixed sleep in an end-to-end suite is a flake with a delay fuse. Wait for the element, the network to settle, the job queue to drain. Ban the arbitrary timeout in review.
+
+**Delete flaky tests you will not fix.** A test that fails 5% of the time for no reason is worse than no test, because it teaches the team to re-run the build instead of reading the failure. Once people click "retry" reflexively, the whole suite has stopped meaning anything. Fix it or cut it.
+
+**Push discoveries down.** When an end-to-end test catches a real bug, that is a signal about a gap in your cheap tests. Fix the bug, then write the unit or integration test that would have caught it. End-to-end tests find the class of problem; the layers below should catch the next instance of it.
+
+The 80/20 split is not a target to optimize away. The cheap tests give you the coverage. The expensive ones give you the confidence. You need both, and you should stop being surprised that the small half is the hard half.
+
+
+---
+url: http://localhost:1313/posts/2026/07/06/pfsense-upgrade-broke-everything/
+title: The pfSense Upgrade That Broke Everything: A Post-Mortem, and Why I'm Moving to OPNsense
+date: 2026-07-06
+tags: routing, open source
+---
+
+
+A point release upgrade should be boring. You click the button, you wait ten minutes, you go back to your life. Instead, upgrading pfSense from 2.7.2 to 2.8.1 turned into a multi-day rescue operation involving a half-dead firewall, a hand-configured recovery network, an emergency router purchase, and a single orphaned config file that turned out to be the root of everything. Here's how it went, what actually broke, and why this experience is the last straw for me and pfSense.
+
+## The Failure
+
+The upgrade appeared to run normally, but the firewall never came back. On the console, boot died with:
+
+```
+Fatal error: Uncaught Error: Call to undefined function gettext() in /etc/inc/certs.inc
+```
+
+If you search this error, you'll find threads going back years across nearly every major pfSense version transition. The error itself is a symptom, not a cause: it means PHP loaded without its gettext extension, which means the PHP packages didn't finish installing, which means the upgrade died partway through. The system was left in a state where the base OS and the package set no longer agreed with each other — and since pfSense's entire boot process runs through PHP, nothing worked. No interfaces, no web GUI, no routing. Just a console menu sitting on top of a corpse.
+
+## Recovery Attempt: Getting the Patient Breathing
+
+The standard advice for this failure is to get to a shell, get network access, and run `pfSense-upgrade -d` to resume the interrupted upgrade. Simple in theory. In practice, every single layer had to be rebuilt by hand:
+
+**Networking.** The boot failed before interfaces were configured, so `dhclient` was the first stop — which immediately failed with a pidfile error because parts of `/var` hadn't been set up either. Once past that, I had an IP address but 100% packet loss to everything. The eventual realization: this box *was* the network's gateway. From its own recovery shell, it was trying to route internet traffic through itself — a perfect loop. Local devices could still talk to each other by IP (switching doesn't need a router), which made the network look deceptively alive. The fix was buying a cheap router just to give the broken firewall an upstream path that didn't depend on its own corpse.
+
+**DNS, then the clock.** With real connectivity, hostname resolution needed a hand-written `resolv.conf`, and the system clock was 30 minutes off — enough to make me nervous about TLS validation against the package servers, so that got corrected too.
+
+**The trust store.** Package fetches then complained about certificates. Some of that turned out to be harmless noise (`certctl` reporting blacklisted certs it was correctly skipping), but reinstalling `ca_root_nss` and the core pkg tooling was part of getting a working package system back.
+
+**The bootstrap loop.** With everything above fixed, `pfSense-upgrade` still kept demanding `pkg bootstrap -f`, endlessly. Forcing a reinstall of the pkg tooling produced the first real clue: pkg wanted to *downgrade* itself from 1.21.x to 1.20.x. The repo configuration was still pointed at the 2.7.2 branch, so the system kept "repairing" itself backward while the upgrade tooling demanded forward.
+
+**The architecture wall.** Pointing the repo at the 2.8.1 branch produced the second clue, and it was a big one: `wrong architecture: FreeBSD:15:amd64 instead of FreeBSD:14:amd64`. pfSense 2.8.1 is built on FreeBSD 15; the running system reported FreeBSD 14. The box appeared to be wedged *between* operating system versions — exactly the kind of state a package manager cannot repair on its own.
+
+## The Actual Root Cause
+
+The answer was hiding in `/usr/local/etc/pkg.conf`. During a cross-FreeBSD-version upgrade, pfSense's upgrade tooling writes an ABI pin into that file — deliberately holding the *old* FreeBSD version so the first phase of the upgrade can complete against a consistent package set. Once the new base OS is in place, that file has to be removed and the upgrade run a second time to pull in the new-ABI packages and finish the job.
+
+In my case, the upgrade was interrupted after the base OS had already moved to FreeBSD 15, but the pkg.conf ABI pin was left behind, still forcing the old version. Every subsequent repair attempt was sabotaged by it: the pinned ABI blocked the correct packages, produced the architecture mismatch, fed the bootstrap loop, and — going all the way back to the beginning — is why the PHP packages never installed and the boot died on a missing gettext function.
+
+The fix, in the end, was almost insulting in its simplicity: delete one file, run `pfSense-upgrade -d` one more time, reboot. The system completed the upgrade to 2.8.1 and came back to life.
+
+## Lessons Worth Keeping
+
+A few things from this ordeal transfer to any firewall platform:
+
+Snapshot before every upgrade if you're virtualized. A hypervisor snapshot turns this entire saga into a 30-second rollback. I will never skip this again.
+
+Keep a current config export somewhere off the box, and know that a clean install plus config restore is often faster than in-place forensics. I chose the forensic route and learned a lot, but "learned a lot" is not what you want from firewall maintenance.
+
+Have a backup path to the internet that doesn't depend on the firewall you're repairing. When your firewall is also your gateway, its recovery shell cannot route through itself.
+
+And check `/usr/local/etc/pkg.conf` early if a pfSense major upgrade dies partway. A stale ABI pin in that file explains a shocking number of "wrong architecture" and endless-bootstrap symptoms.
+
+## The Conclusion: I'm Done
+
+Here's the thing. I fixed it. The system runs 2.8.1 now. And I'm leaving anyway.
+
+This was supposed to be a routine upgrade, and it left a production firewall unbootable in a way that took days of console surgery to unwind — a failure mode with forum threads stretching back through version after version. The upgrade tooling wrote a critical piece of transitional state to disk and then failed to clean it up, and nothing in the recovery path surfaced that fact. I found it by exhaustion, not by diagnostics.
+
+Layer on top of that Netgate's decision to gate the pfSense CE installer download behind creating an account and completing a $0.00 "purchase" to agree to a license — for the free, open-source edition — and the relationship math stops working for me. When the software breaks this badly and the vendor adds friction to simply obtaining it, loyalty runs out.
+
+So my plan is set: this box runs pfSense 2.8.1 until its next scheduled upgrade window, and then it becomes an OPNsense box. The configs don't convert automatically — the projects diverged too long ago — but the concepts map nearly one-to-one, and since I'm virtualized I can build the OPNsense VM in parallel, test it properly, and cut over with instant rollback available. That's a migration on my terms, which is more than this upgrade ever offered.
+
+I've recommended pfSense to a lot of people over the years. I won't be doing that anymore.
+
+
+---
+url: http://localhost:1313/posts/2026/06/24/project-space-game/
 title: Project Space Game: a ten-year-old idea finally has a build
 date: 2026-06-24
 tags: gamedev, godot, frontpage
@@ -667,7 +1048,7 @@ More to come. It only took me a decade to start.
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/
+url: http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/
 title: Content gatekeeping in a GenAI world
 date: 2026-05-10
 tags: ai, web development, frontpage
@@ -760,7 +1141,7 @@ But the technical pieces exist. That is the part that was not true a year ago. B
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/
+url: http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/
 title: An experienced developers view on writing software in the age of vibe coding and generative ai
 date: 2026-04-29
 tags: frontpage, rant, web development, ai
@@ -948,7 +1329,7 @@ The best use of AI agents isn't building software faster. It's building software
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/
+url: http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/
 title: Add a JSON API to Any Static Site Generator
 date: 2026-04-23
 tags: tutorial, hugo, rest, frontpage
@@ -1066,7 +1447,7 @@ I use it for client-side filtering. Fetch the listing endpoint, match on tags in
 
 
 ---
-url: https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/
+url: http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/
 title: Getting XDebug working with the Zed editor, starring Claude
 date: 2026-01-05
 tags: frontpage, tutorial, debug, ai
@@ -1458,7 +1839,7 @@ I look forward to using Zed, more, now that Xdebug is working.
 
 
 ---
-url: https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/
+url: http://localhost:1313/posts/2019/12/16/startrek-tos-order/
 title: A Suggested Order for Watching TOS with Your Kids
 date: 2019-12-16
 description: Thirteen essential episodes of Star Trek: The Original Series, picked and ordered by a coworker who knows his Trek. A curated list for introducing your kids to the franchise.
@@ -1581,7 +1962,128 @@ After watching these, I have to say, it is a good order. I don't have the Trek e
 
 
 ---
-url: https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/
+url: http://localhost:1313/posts/2019/06/27/interesting-time-for-education/
+title: This is an iteresting time for education.
+date: 2019-06-27
+---
+
+
+Today I wanted to make some hard boiled eggs. I went to lookup how long to boild them and decided I was instead going to see if there was a better way to get hard cooked eggs than boiling.
+I went to youtube and found an old clip from Alton Brown's Good Eats where he steamed his eggs for 12 minutes. Next I found another video about steaming eggs for 9 mintues for soft-hard eggs from Chef Jon's Food Wishes.com.
+So I tried it, I needed 6 hard eggs. So I steamed 7 eggs with the timer set for 9 and 12 min. At 9 minutes I pulled one egg out and cooled it off per Chef Jon's instructions and it was perfectly cooked at soft-hard --sinse I wanted my eggs hard and not soft hard I left the rest in for the full 12 minutes.
+
+We live in a new time where anyone can find any information online they want. 
+When much of that information is also not very good. 
+When anyone can have an online mentor which they never meet in real life.
+
+Story about fencing books.
+Story about bad advice and purpossfully bad advise (drilling your iphone or putting it in the microwave)
+
+How does this affect education.
+
+
+---
+url: http://localhost:1313/posts/2019/05/16/mixing-strategy/
+title: Mixing strategies.
+date: 2019-05-16
+---
+
+
+```mermaid
+graph LR
+
+drums(drums-stereo)
+rythm(rythm-stereo)
+lead(lead-stereo)
+bass(bass-mono)
+amb(ambient-stereo)
+keys(keys-stereo)
+piano(piano-stereo)
+vox(vox-stereo)
+vox-vo(vox-mono)
+
+kick --> drums
+snare --> drums
+over-head-l --> drums
+over-head-r --> drums
+toms-1-->drums
+toms-2-->drums
+toms-3-->drums
+
+vox-1-->vox
+vox-n-->vox
+
+drums-->drums-compressor(3:1, 0)
+vox --> vox-compressor(3:1, +4)
+
+drums-compressor-->LR
+drums-compressor-->video
+
+
+
+```
+
+
+---
+url: http://localhost:1313/posts/2018/05/19/getting-starter-with-phpunit--hello-world/
+title: Getting starter with phpunit: hello world
+date: 2018-05-19
+description: How to get started with test driven development using composer and phpunit.
+---
+
+
+@TODO write some SEO friendly sentence about composer. Some SEO friendly sentence about phpunit and Drupal.
+
+## What is phpUnit
+
+## What is TDD
+
+If you know the merrits and reasoning for test driven development, then click the <a href="#tldr" aria-label="Skip the why and get to the how.">TLDR</a>; to get to the implementation. Test Driven Development is the act of developing software by means of writing tests that let you know if software works. This can happen because before we write the code we know what the code should do. We know what the code should do because we are writing software to a spec. The normal example is if we are writing a function that does addition ```fn add(a, b)``` then we can test that with an assertation that ```add(2, 2)``` will return the number *4*. This is a really effective way to write software because it requires us to only write enough code to make the test pass. Take a look at this graphic from wikipedia.
+
+This is easy if you have some simple specs. What this general description is missing is step we must take if we have a complicated spec. For a complicated spec we will have to *factor* the problem as well. So with a slightly more complicated example. For the sake of the example lets say the spec is that your code must take a list of user emails and send a reminder for the user. As a part of this we should factor out this problem into the smallest testable parts. To acomplish this task the code will need to retrieve the user list, this can be tested. The code will also have to verify the list only has unique emails so that the users don't get emails twice --this can also be tested. Hopefully you are getting the idea.
+
+## <a id="tldr"></a>Installing phpUnit with composer
+
+This example is assuming a composer based workflow. To get started with composer you can read my [guide on getting started with composer](). Installing phpunit is as easy as running.
+
+```bash
+$ composer require composer
+```
+
+That is all it takes to install phpunit. To run phpunit run this command:
+
+```bash
+$ vendor/bin/phpunit --bootstrap src/autoload.php tests
+```
+
+For most projects you will need to bootstrap with the ```src/autoload.php``` file, in order to load all the requirements for testing your code. There are exceptions to this, if you have a more complicated test suite that you are running as a part of a framework you will want to follow the guidelines for the framework. For example, with Drupal 8 you will need to load the ```core/test/bootstrap.php``` file if you want to take advantage of the platform specifc classes while testing.
+
+## Writing a failing test
+
+
+
+### Make that test pass
+
+### Why do we make the test fail and then make it pass
+
+### Other types of tests
+
+### Dealing with legacy code
+
+Once you start down the TDD route, forever will it dominate your destiny, consume you it will. So what about code that doesn't have tests? This is forever more called legacy code. A common practice is to add tests to any code that gets touched. In this case the test should pass when it is first written. This way as more and more code gets touched it should also be testable.
+
+## phpunit project configuration
+
+### bootstrap
+
+### Other phpunit xml attributes
+
+## Don't go Crazy
+
+Tests are good, but 100% test coverage isn't usually an obtainable goal and unit tests are of limited value. Do not over invest in unit tests.
+
+---
+url: http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/
 title: How to play gloom with a 52 card deck
 date: 2018-03-30
 tags: frontpage, tutorial, gaming
@@ -1641,7 +2143,7 @@ House rules should be agreed to before the start of the game. Or if your hosting
 
 
 ---
-url: https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/
+url: http://localhost:1313/posts/2018/02/20/why-drupalcon/
 title: Why DrupalCon
 date: 2018-02-20
 tags: frontpage, quarzack13, drupal, drupalcon
@@ -1679,7 +2181,7 @@ Contribution isn't always about code. Contribution is possible regardless of ski
 
 
 ---
-url: https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/
+url: http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/
 title: Rearchitecting for Drupal 8; a DrupalCon Session
 date: 2018-02-15
 tags: rant, quarzack13
@@ -2483,7 +2985,55 @@ DrupalCon.
 
 
 ---
-url: https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/
+url: http://localhost:1313/posts/2017/06/14/moving-drupal-8-configuration-from-another-install/
+title: Moving Drupal 8 configuration from another install.
+date: 2017-06-14
+---
+
+
+First remove all uuids from the config files. This is necessary because the uuids are specific to the install.
+
+```bash
+$ sed -i.bak '/uuid/d' config/sync/*.yml
+```
+
+Don't forget to remove all the .bak files that this will create. The mac version of sed requires **-i** to produce a backup.
+
+```bash
+$ rm config/sync/*.bak
+```
+
+Remove all system files.
+
+```bash
+$ rm config/sync/system.*
+```
+
+Also, remove any configuration for modules that won't be on the new site.
+
+```bash
+$ rm config/sync/google_analytics_lite.settings.yml
+```
+
+```bash
+$ drush @drupalvm.dev cim --partial
+```
+
+
+---
+url: http://localhost:1313/posts/2017/06/14/drupal-7-views-alter-sorting-relationships/
+title: Moving Drupal 8 configuration from another install.
+date: 2017-06-14
+---
+
+
+https://drupal.stackexchange.com/questions/108552/views-custom-sorting?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+https://api.drupal.org/api/views/plugins%21views_plugin_query_default.inc/class/views_plugin_query_default/7.x-3.x
+
+
+---
+url: http://localhost:1313/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/
 title: Switching to Celsius from Fahrenheit for normal people
 date: 2017-04-23
 tags: frontpage, tutorial
@@ -2677,7 +3227,7 @@ That's it, empower yourself. Celsius is easy. Just do it!
 
 
 ---
-url: https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/
+url: http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/
 title: My Dilemma; What Technology to Pursue
 date: 2016-11-21
 tags: web development, rant, frontpage, elixir
@@ -2719,7 +3269,7 @@ The heart of this dilemma is not really about Python versus Elixir. It is about 
 
 
 ---
-url: https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/
+url: http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/
 title: Lets take a look at webVR with AFrame
 date: 2016-10-24
 tags: frontpage, tutorial, web development
@@ -2929,7 +3479,7 @@ A-Frame makes WebVR approachable. My 30-line Three.js example became 9 lines of 
 
 
 ---
-url: https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/
+url: http://localhost:1313/posts/2016/09/30/a-new-simple-reading-rogue-like/
 title: a new simple reading rogue like
 date: 2016-09-30
 tags: frontpage, gaming, parenting, rogue-like, rogue-lite
@@ -3004,7 +3554,143 @@ The goal is a book that never runs out of new pages. If I can get the template s
 
 
 ---
-url: https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/
+url: http://localhost:1313/posts/2016/09/27/making-a-self-writing-childrens-book--step-one--making-lists/
+title: Making a self writing children's book: step one, making lists
+date: 2016-09-27
+---
+
+
+It is time to start getting more done on my reading rouge-like. Thus, as it is with any project for most any software engineer, this means making lists. From my introduction post on why and how I intend to do this, I have this list already.
+
+We start with a simple example book.
+
+1. This is Tom.
+1. Tom has a hat.
+1. Tom's hat is on his head.
+1. Tom has a cat.
+1. Tom's cat is wearing a hat.
+
+So the book's structure as follows should be:
+
+1. Introduction
+1. Possession
+1. Information
+1. Dependent Introduction
+1. Dependent Possession
+
+We can add some more plot later, for now we will focus on this.
+
+## Lists needed
+
+I will be putting these lists into gists.
+
+- [x] a [list of names](https://gist.github.com/frob/0628417b66c543f169c5056ea53dfdfe)
+- [ ] a list of things
+- [ ] a list of (age appropriate) body parts
+- [ ] a list of possessive words
+- [ ] a list of nouns
+- [ ] a list of templates
+- [ ] a template system
+
+## a template system (prerequisite)
+
+Before we can really start to write our templates we will need a template system.
+
+Something else I noticed is that most of the things on these lists have some sort of verbal or (pro)noun or template dependancy. For example: gender of character, place where the thing is (Tom's hat is on his head [generically Tom could be holding his thing]). This doesn't influence the template system as much as the way the next branch is chosen. Many possible choices are not relevant because of a previous choice. I will need to remember this.
+
+## a template system
+
+[Backus Naur Form](Backus–Naur Form - Wikipedia, the free encyclopedia) -- this is my initial thought for a language template system. If you are not familiar with Backus Naur Form, on a high level, is a way of organizing language statements from vague to specific. BNF is used in computer science as a way to define the grammar of a computer language, here is an example:
+
+| Statement | Possibilities       |
+|:----------|:--------------------|
+| Sentence  | Subject Verb Object |
+| Subject   | Noun                |
+| Object    | Noun                |
+| Verb      | Eat                 |
+| Verb      | Like                |
+| Noun      | I                   |
+| Noun      | Like                |
+| Noun      | Python              |
+
+> I know, technically in this case *I* is a pronoun.
+
+It can be difficult to explain in text, so here is a handing video from the folks at [Udacity](https://www.udacity.com/).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B4wMpOhOako" frameborder="0" allowfullscreen></iframe>
+
+Using this form we can organize the possibilities from the lists and organize our sentence structure. Using the simple table above (taken from the video) is not enough to give us more than a single valid very simple sentence. More work will need to be done to better define this as a way of giving use a true series of sentences and more specificity to the type of verb's, noun's, and object, used.
+
+## Sentence series definition
+
+Currently we have this as our list of sentence types.
+
+1. Introduction
+1. Possession
+1. Information
+1. Dependent Introduction
+1. Dependent Possession
+
+We could just follow them in a hard coded manner, but that wouldn't be flexible, it would develop a pattern that any intelligent child would pick up on and get board with, and it wouldn't be very fun for me (the guy who is developing all this). So lets do something about this.
+
+### Defining to create a non-repeating pattern
+
+If we distill what is happening in this story structure then we end up with this as the repeating pattern.
+
+1. Introduction ⟶ intro
+1. Possession ⟶ posse
+1. Information ⟶ info
+1. Dependent Introduction ⟶ dintro
+1. Dependent Possession ⟶ dpinfo
+
+Let take a closer look at the story structure I wrote earlier. There is something to notice about the dpinfo part and how it relates to the posse and info parts of the above list.
+
+| Sentence Type | Sentence                    |
+|:--------------|:----------------------------|
+| intro         | This is Tom.                |
+| posse         | Tom has a hat.              |
+| info          | Tom's hat is on his head.   |
+| dintro        | Tom has a cat.              |
+| dpinfo        | Tom's cat is wearing a hat. |
+
+Notice that the *dpinfo* part is directly related to the *posse* and *info*. This was intentionally done by me to break up the way that things can be said. Tom **has** a hat and his hat **is on his head**. This is the same a the cat **wearing**. This should be every time, but this tells us two things. First, there needs to be another sentence type; *dhposse*, this will be used in the case that the dependent possession statement doesn't provide and additional information.
+
+This also shows that we have split our story into two parts. Lets call these parts the *Primary* story and *Dependent* story. Both story parts have the same pieces, with the exception that the dependent story part depends on what the primary story part says.
+
+## Add the story structure to the BNF
+
+Now that we have our story structure defined we can organize our BNF table.
+
+| Statement | Possibilities                                         |
+|:----------|:------------------------------------------------------|
+| Story     | pstory dstory                                         |
+| pstory    | intro. posse. info.                                   |
+| dstory    | dintro. dposse. dpinfo.                               |
+| dstory    | dintro. dpinfo.                                       |
+| intro     | itrosen                                               |
+| posse     | possesen                                              |
+| info      | infosen                                               |
+| dintro    | dintrosen                                             |
+| dpinfo    | dpinfosen                                             |
+| introsen  | This is Pname                                         |
+| dintrosen | Pname knows Dname                                     |
+| possessen | Pname Verb(possessive|gender) a Object                |
+| dpossesen | Dname Verb(possessive|gender) a Object                |
+| infosen   | Pname's Object is Adverb Pronoun(possessive) Bodypart |
+| dinfosen  | Dname's Object is Adverb Pronoun(possessive) Bodypart |
+| Sentence  | Subject Verb Object                                   |
+| Subject   | Pronoun                                               |
+| Object    | Noun (from list of objects)                           |
+| Verb      | Has, Holding                                          |
+| Adverb    | On, In                                                |
+| Pronoun   | She, He, They, It                                     |
+| Bodypart  | Noun (from list of body parts)                        |
+
+I left the generic sentence in the BNF table because it might be useful later as a filler sentence definition.
+
+
+---
+url: http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/
 title: Basic Hello World with composer and php
 date: 2016-08-16
 tags: frontpage, drupal, tutorial, quarzack13
@@ -3309,7 +3995,251 @@ With Drupal 8 we are leaving the island and seeing how others have solved proble
 
 
 ---
-url: https://www.frobiovox.com/posts/2016/05/27/semantic-git/
+url: http://localhost:1313/posts/2016/08/11/composer-workflow/
+title: Composer workflow
+date: 2016-08-11
+---
+
+
+
+
+
+---
+url: http://localhost:1313/posts/2016/08/11/getting-started-with-drupal-and-composer/
+title: Getting started with Drupal and Composer
+date: 2016-08-11
+---
+
+
+
+
+mikey_p:
+Mixologic: is it possible to look at the json for an individual package on d.o composer facade?
+Mixologic:
+mikey_p: yeah, but it aint terribly simple. do you have a jsonviewer plugin in your browser?
+nielsonm has joined (~nielsonm@174-25-178-34.ptld.qwest.net)
+Mixologic:
+(I use JsonView)
+mikey_p:
+yeah, i was able to do a search, but I can't figure out that pattern for individual projects
+Mixologic:
+what project are you trying to inspect?
+mikey_p:
+better_exposed_filters
+mikey_p:
+found it via search at packages.drupal.org/8/search.json?s=better_exposed_filters
+Mixologic:
+so I would do "composer info -a -vvv drupal/better_exposed_filters" and watch for it to say something like "Downloading https://packages.drupal.org/8/drupal/better_exposed_filters%24e1db6ab3ef0bce75c5a05569b1e1b9656d55ab25ea449b86308bd436b2d8d344.json"
+Mixologic:
+mikey_p: is that what you're trying to find?
+Mixologic:
+otherwise composer info -a is pretty much parsing the individual package.json and already giving you a prettyfied version of it.
+nielsonm has left IRC (Read error: Connection reset by peer)
+frob: 
+Mixologic: is that json generated?
+mikey_p:
+looks like it got it from cache, so I'm not seeing that output
+Mixologic:
+frob: yep. its being generated via the project_composer module
+frob: 
+cool
+Mixologic:
+and merged with composer.json if its there.
+Mixologic:
+essentially what packagist does, except doesnt require a composer.json
+mikey_p:
+Mixologic: any reason for the weird hash like that?
+Mixologic:
+mikey_p: yep, its essentially an SHA256 of the json file. its composer's internal caching mechanism that for some reason they built instead of just using something like etags or something.
+Mixologic:
+composer loads -> packages.json, which lists "provider files". each provider file is a sha256 of its contents: https://packages.drupal.org/8/packages.json
+nielsonm has joined (~nielsonm@174-25-178-34.ptld.qwest.net)
+Mixologic:
+each of those provider files is essentially a quarterly subdivision of the last release.  which means the first time you run composer, ever, you download 24 files or so, so that composer knows where to find the specific metadata for a specific project.
+Mixologic:
+but each time you run it after that, it only gets the files that have changed. which in this case is most likely to be the 2016-3 file.
+Mixologic:
+it actually works out kinda nice because we can keep all that data in files, generate new files, and keep the old ones around for 10 minutes and there's never a race condition.
+
+
+---
+url: http://localhost:1313/posts/2016/06/30/when-i-see-a-problem/
+title: When I see a problem
+date: 2016-06-30
+description: When I see a problem, I tend to need to fix it. Even if this involves shaving a yak.
+---
+
+
+This is a story about a problem, [this problem](https://www.drupal.org/node/2678132) lead to lots of yak shaving. Hopefully, this will lead to the problem getting fixed too.
+
+!https://www.dropbox.com/s/pd4xv8488i8s6jr/Screenshot%202016-06-28%2012.01.06.png
+
+frob:
+Mixologic_: ping
+Mixologic_:
+frob :pong
+frob:
+I really want to fix this issue https://www.drupal.org/node/2678132 but I have no idea where to start.
+Druplicon:
+https://www.drupal.org/node/2678132 => Not able to login from groups.drupal.org [#2678132] => 9 comments, 5 IRC mentions
+frob:
+Mixologic_: any first steps I could take would be awesome
+benhartig is now known as benhartig|afk
+Greg-Boggs has left IRC (Remote host closed the connection)
+Mixologic_:
+frob: g.d.o. is on drupal 6. which is why nobody works on fixing it. I'm digging around to see if I can point you in the right spot
+frob:
+awesome, it is annoying and embarrassing. Is there a doc page on setting up a infrastructure development environment?
+nonsie has left IRC (Quit: nonsie)
+Greg-Boggs has joined (~greg_bogg@173.240.241.83)
+DyanneNova has left IRC (Quit: DyanneNova)
+Greg-Boggs has left IRC (Ping timeout: 252 seconds)
+DyanneNova has joined (~DyanneNov@199.127.229.254)
+Greg-Boggs has joined (~greg_bogg@173.240.241.83)
+Mixologic_:
+frob : there is, but this, also is a little bit tricky because we actually need two dev envs
+frob:
+Seriously, thank you.
+nonsie has joined (~anonymous@198.0.38.169)
+frob:
+do you have a link to the doc page?
+Mixologic_:
+frob : no, thank you, this kinda thing falls between the cracks because we just dont have the resources.
+Mixologic_:
+frob :  I had to stop for food, now Im gonna get you set up
+Mixologic_:
+frob : but Im also digging to find where to point you.
+frob:
+I understand, most people coming from a corporate product wont. They think that because there is a DA that means there is people working on this as a part of their job all the time.
+Mixologic_:
+There is, just not enough of us, and less of us.
+frob:
+this as in this issue.
+Mixologic_:
+And *many* of the things are so heinously complex, that volunteer assistance is often more of an obstacle than a boon.
+frob:
+this is little more than an annoyance.
+Mixologic_:
+frob : right, and fairly handoffable
+frob:
+I am sure there are more important things for DA employees to work on
+Mixologic_:
+frob : every person  in the community has an opinion on what those things are, too.
+frob:
+yup
+Mixologic_:
+frob : so right now, Im going to add your key to devwww2. You pretty much have to develop on our servers, remotely. Do you phpstorm?
+frob:
+yup
+Mixologic_:
+frob : https://www.drupal.org/contribute/drupalorg/code/develop
+frob:
+I get a 500 error when I go there
+Mixologic_:
+frob : so what I have found useful is setting up a deployment server and auto uploading to the dev site.
+Mixologic_:
+yeah, actually kinda bad timing to have this talk. d.o. is down right now. for who knows why.
+frob:
+oh, crap. Don't let me distract you then.
+nonsie has left IRC (Quit: nonsie)
+benhartig|afk is now known as benhartig
+Mixologic_:
+frob : so, which ssh key would you like me to use for the devwww2 server? https://www.drupal.org/user/249517/ssh-keys
+frob:
+clarity is the most current
+frob:
+I didn't realize I still had my old kwall keys in there. I have now deleted them
+Mixologic_:
+frob : so you should be able to ssh frob@devwww.drupalsystems.org -i .ssh/your_private_clarity_key, can you confirm that that works?
+frob:
+yup
+frob:
+Mixologic_: it works
+Mixologic_:
+frob : k. Im building you a couple of dev sites now. the drupal one wont matter, its just the bakery master.
+Mixologic_:
+(drupal being drupal.org)
+frob:
+awesome
+frob:
+looks like I have tonights reading all lined up
+Mixologic_:
+frob : yeah, from the looks of it this is a patch to the bakery module. https://www.dropbox.com/s/pd4xv8488i8s6jr/Screenshot%202016-06-28%2012.01.06.png?dl=0
+frob:
+Not sure why you sent the link
+Mixologic_:
+Because theres gonna be a bunch of yak shaving.
+frob:
+lol
+frob:
+I have never heard that term before. That is hilariose
+Mixologic_:
+frob : can you see this? https://bitbucket.org/drupalorg-infrastructure/groups.drupal.org/src/d8f2d2dbbff5aaf14a3791fb497d76172b1ea98a/groups.drupal.org.make?fileviewer=file-view-default
+frob:
+yes
+Mixologic_:
+The projects[bakery] stuff is the important parts.
+frob:
+So likely this will end with another patch in the make file?
+Mixologic_:
+frob : yup. I would probabaly look at this patch as some guidance: https://www.drupal.org/node/1967936#comment-7478158
+Druplicon:
+https://www.drupal.org/node/1967936 => Redirect to master a password reset request from a slave [#1967936] => 14 comments, 1 IRC mention
+frob:
+is anyone else going to be using the dev sites?
+Mixologic_:
+frob : this is your drupal.org dev site: https://login-drupal.dev.devdrupal.org/
+nonsie has joined (~anonymous@198.0.38.169)
+Mixologic_:
+frob : and this should be your https://login-groups.dev.devdrupal.org/ groups dev site
+frob:
+it requires a basic auth passowrd
+Mixologic_:
+drupal:drupal
+Mixologic_:
+thats in that "develop on our servers doc above"
+frob:
+gotcha, thanks
+Mixologic_:
+all user accounts have been blasted, but one gets reset: U: bacon P: bacon
+Mixologic_:
+frob : do you xdebug?
+frob:
+I can, I still prefer dpm where I can
+frob:
+I see there is guide in the docs
+Mixologic_:
+frob : also, if you want to observe typical behavior, you can hit https://bakery-api.dev.devdrupal.org/api/drupal - an api subsite that will redirect to composer-drupal.dev.devdrupal.org for login
+frob:
+okay
+Mixologic_:
+frob : so my preferred way is to have bakery checked out locally, and set up a "deployment server" on devwww via ssh with auto upload. Edit locally, it ends up on the server.
+frob:
+okay, I haven't done that with phpstorm before. But it sounds similar to the way I used to use coda
+Mixologic_:
+frob : be sure you're working from the same commit of bakery as is in the makefile, and apply the patches.
+frob:
+Thanks for removing all excuses for me not getting this done.
+frob:
+Mixologic_: ++
+frob:
+That patch looks very close to what needs to happen for login.
+frob:
+Login has quite a few more edge cases to deal with.
+Mixologic_:
+frob : yeah, its pretty simple, its under build execution deploymnet -> deployment-> add a server SFTP type, and add a path mapping under mappings of wherever bakery lives on the groups dev site.
+Mixologic_:
+frob : actually here: /var/www/dev/login-groups.dev.devdrupal.org/htdocs/sites/all/modules/bakery
+Mixologic_:
+cool, thanks for being willing to dig in. theres definitely a buncho hoops to jump through just to be able to make changes.
+Mixologic_:
+frob++
+frob:
+I will attempt to get this setup tonight or tomorrow morning. I'll ping back if I run into any problems.
+
+
+---
+url: http://localhost:1313/posts/2016/05/27/semantic-git/
 title: Semantic Git
 date: 2016-05-27
 tags: frontpage, git, tutorial
@@ -3423,7 +4353,7 @@ The naming convention does the heavy lifting. Anyone on the team can look at a b
 
 
 ---
-url: https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/
+url: http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/
 title: Simplify Drupal 8 field value calls
 date: 2016-03-28
 tags: frontpage, drupal, tutorial, quarzack13
@@ -3535,7 +4465,7 @@ The good news is that once you internalize the ```->get('field')->value``` patte
 
 
 ---
-url: https://www.frobiovox.com/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/
+url: http://localhost:1313/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/
 title: Working with Case Sensitive Files in a Case Insensitive world
 date: 2016-01-20
 tags: frontpage, tutorial
@@ -3589,7 +4519,7 @@ With this setup you get the best of both worlds: a case-sensitive file system fo
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/12/23/what-if-the-bullets-cost-money/
+url: http://localhost:1313/posts/2015/12/23/what-if-the-bullets-cost-money/
 title: What if the bullets cost money?
 date: 2015-12-23
 tags: rant, frontpage
@@ -3627,7 +4557,7 @@ Maybe I get to it next year. Maybe it takes ten. Either way, I know exactly what
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/
+url: http://localhost:1313/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/
 title: Lets plan a new Arduino based video game console
 date: 2015-12-22
 tags: rant, frontpage
@@ -3703,7 +4633,118 @@ I have seen articles where people have done each of these things independently w
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/
+url: http://localhost:1313/posts/2015/12/22/not-so-much-fun-with-drupal-8-rest-services/
+title: Not so much fun with Drupal 8 REST services
+date: 2015-12-22
+---
+
+
+http://stackoverflow.com/questions/7199496/git-checkout-warning-unable-to-unlink-files-permission-denied write a post about this permission denied error being caused by either write permissions of the containing folder or a syncing process for the virtual machine.
+
+
+---
+url: http://localhost:1313/posts/2015/11/24/you-git-to-know-when-to-merge-and-know-when-to-rebase/
+title: You Git to Know When To Merge and Know When to Rebase
+date: 2015-11-24
+---
+
+
+Where I work, we have recently switched to git for our vcs. Being the experienced Drupal Developer that I am, I am also an experienced git user. Git isn't perfact and like most good tools, learning to use it is like learning to play the harmonica: the only differnece between someone who has used it for 10 hours and someone who has used it for 10 years is the amount of songs they know.
+
+If you want to know how git works then go read this article explaining how git works. Otherwise keep reading and I will teach you the ``` git pull --rebase``` song.
+
+## Why rebase?
+
+If you don't know how git works then this isn't going to make sense and you should read that article I linked to earlier.
+
+> Git logs a history of changes. Each change is a commit and is stored as a snapshot of the codebase. Each commit links to the next to make this history sequenchial.
+
+### What is rebasing
+
+Rebasing takes all the local commits and rewindes them; making it as though they never happened. Then, git pulls in all the remote changes. Then, git makes the remote HEAD the local HEAD, and then applies the local commits on top of the remote ones.
+
+## Why not to rebase?
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↑·3|✚ 1]
+12:02 $ git commit sites/all/modules/custom/oen_custom/oen_custom.module -m "updated the comment form to use custom node for destination"
+[7.x-1.0.x 88ec2a1] updated the comment form to use custom node for destination
+ 1 file changed, 18 insertions(+)
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↑·4|✔]
+12:03 $ git status
+On branch 7.x-1.0.x
+Your branch is ahead of 'origin/7.x-1.0.x' by 4 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↑·4|✔]
+12:03 $ git fetch
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↑·4|✔]
+12:03 $ git fetch
+remote: Counting objects: 66, done.
+remote: Compressing objects: 100% (66/66), done.
+remote: Total 66 (delta 41), reused 0 (delta 0)
+Unpacking objects: 100% (66/66), done.
+From git.clarity-innovations.com:enetlearning/seed-pak
+   ceffcba..ba7fc6f  7.x-1.0.x  -> origin/7.x-1.0.x
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↓·5↑·4|✔]
+12:26 $ git status
+On branch 7.x-1.0.x
+Your branch and 'origin/7.x-1.0.x' have diverged,
+and have 4 and 5 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+nothing to commit, working directory clean
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↓·5↑·4|✔]
+12:26 $ git pull --rebase
+First, rewinding head to replay your work on top of it...
+Applying: updated the comment preprocessor to remove the reply link
+Applying: added code to make the resource view not ajax
+Applying: commented out the typekit script
+Applying: updated the comment form to use custom node for destination
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↑·4|✔]
+12:26 $ git status
+On branch 7.x-1.0.x
+Your branch is ahead of 'origin/7.x-1.0.x' by 4 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x ↑·4|✔]
+12:26 $ git push
+Counting objects: 39, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (39/39), done.
+Writing objects: 100% (39/39), 4.06 KiB | 0 bytes/s, done.
+Total 39 (delta 22), reused 0 (delta 0)
+To git@git.clarity-innovations.com:enetlearning/seed-pak.git
+   ba7fc6f..120e66a  7.x-1.0.x -> 7.x-1.0.x
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x|✔]
+12:26 $ git pull
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 9 (delta 5), reused 0 (delta 0)
+Unpacking objects: 100% (9/9), done.
+From git.clarity-innovations.com:enetlearning/seed-pak
+   120e66a..be4e779  7.x-1.0.x  -> origin/7.x-1.0.x
+Updating 120e66a..be4e779
+Fast-forward
+ web/public/sites/all/modules/custom/resource_quiz/resource_quiz.field_group.inc | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ mode change 100644 => 100755 web/public/sites/all/modules/custom/resource_quiz/resource_quiz.field_group.inc
+
+✔ ~/repos/clarity/client/enet/seed/project/build/web/public [7.x-1.0.x|✔]
+12:28 $ git status
+On branch 7.x-1.0.x
+Your branch is up-to-date with 'origin/7.x-1.0.x'.
+nothing to commit, working directory clean
+
+
+---
+url: http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/
 title: Altering Entity Field Queries for JOINS ORs and Profit
 date: 2015-11-11
 tags: frontpage, drupal, tutorial, quarzack13
@@ -3792,7 +4833,7 @@ To recap: tag your EntityFieldQuery, attach metadata with ```addMetaData()```, i
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/
+url: http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/
 title: Add an API to Your Jekyll Blog
 date: 2015-10-25
 tags: tutorial, jekyll, rest, reactjs, frontpage
@@ -3967,7 +5008,96 @@ With this setup, any Jekyll blog now has a JSON listing endpoint and individual 
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/
+url: http://localhost:1313/posts/2015/10/25/create-some-dynamic-elements-to-jekyll-on-github-pages-with-reactjs/
+title: create some dynamic elements to jekyll on github pages with reactjs
+date: 2015-10-25
+---
+
+
+## Proloug
+
+While this post isn't meant to be a series, I thought you would like to know [how to add a REST api to a jekyll blog](https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog.html). Eventually, I will be using this api to add related links to my blog's articles. For now I will just write about how I will use Reactjs to add related links from my REST api.
+
+# Reactjs
+
+Facebook released [Reactjs](https://facebook.github.io/react/index.html) as an open source front-end component based framework. [Reactjs](https://facebook.github.io/react/index.html) is a topic that deserves a blog post all for itself. Not that it's extremely complicated, instead that it's extremely useful. Some have called [Reactjs](https://facebook.github.io/react/index.html) the V in MVC --that is a gross simplification. [Reactjs](https://facebook.github.io/react/index.html) allows us to define the data that will be used in markup and then define that markup. But, the power and utility of [Reactjs](https://facebook.github.io/react/index.html) comes from the way [Reactjs](https://facebook.github.io/react/index.html) manages that piece of data and semantic structure. [Reactjs](https://facebook.github.io/react/index.html) uses [virtual DOM](http://acko.net/blog/shadow-dom/) to store the pieces that it manages. When something happens [Reactjs](https://facebook.github.io/react/index.html) will take the changes to those pieces and apply them to a new copy of the virtual DOM --it then compares the two copies and changes the real DOM only where it needs to.
+
+> This limits expensive DOM manipulation and allows a record of DOM changes. This can give us undo for an app in a browser.
+
+## Components
+
+I was purposefully using the vague term "pieces of data and markup." This is so I could explain Components in greater detail without having to cover them twice.
+
+The largest front-end tool that we get with Reactjs is the component. Components are designed to be a somewhat self-contained javascript module. Here is a [small Reactjs component example](https://facebook.github.io/react/docs/tutorial.html):
+
+```js
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+});
+ReactDOM.render(
+  <CommentBox />,
+  document.getElementById('content')
+);
+```
+
+This is a simple "Hello World" Reactjs example component. You will notice two things right away about this: There is no data-structure (and there doesn't have to be with Reactjs), and some strange XML like stuff in the render function return. That XML is something called JSX and while you might be thinking "What!?! We cannot have presentation in our logic!" You need to remember that JSX is just syntactical sugar, and semantics is functional. Thus, get over yourself. Read up more on the JSX docs page.
+
+> If you really want to see how it is done with Reactjs, checkout this [Reactjs starter kit on github](https://github.com/kriasoft/react-starter-kit).
+
+This is really all there is to components. Sure there is more stuff to go into such as: events, props, and state. If you want all that, I suggest reading [facebooks documentation on Components](https://facebook.github.io/react/docs/getting-started.html).
+
+## Pulling from our API
+
+Pulling from the api will require an ajax call (just like anytime we need to integrate a REST api with JavaScript).
+
+## Putting it all together
+
+Here is my basic Reactjs component that I will be using to show article teasers.
+
+```js
+// @TODO: Put js component here.
+```
+
+Here is my JavaScript ajax api caller thingy.
+
+```js
+// @TODO: Write ajax caller thingy and put it here.
+```
+
+Below, you should see the latest article on my blog. If you happen to be here right after this article is published, I am sorry but you have already read this one.
+
+<div class="related-content">
+</div>
+
+
+---
+url: http://localhost:1313/posts/2015/10/10/are-events-just-aspects-of-influence/
+title: are events just aspects of influence
+date: 2015-10-10
+---
+
+
+
+
+
+---
+url: http://localhost:1313/posts/2015/10/10/drupal-is-off-the-island--now-it-needs-to-get-off-the-php-planet/
+title: Drupal is off the island, Now it needs to get off the PHP Planet.
+date: 2015-10-10
+---
+
+
+
+
+
+---
+url: http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/
 title: Reflecting on Elixir and Phoenix
 date: 2015-10-09
 tags: drupal, elixir, jekyll, frontpage, quarzack13
@@ -4162,7 +5292,7 @@ Elixir and Phoenix are worth learning. The benchmarks speak for themselves, the 
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/
+url: http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/
 title: Modern Drupal7 Site Building Tools
 date: 2015-09-22
 tags: drupal, frontpage, quarzack13
@@ -4311,7 +5441,7 @@ No single module on this list is revolutionary. The power comes from combining t
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/
+url: http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/
 title: Add Some Style to Your JavaScript Log
 date: 2015-09-10
 tags: frontpage, tutorial, browsers, debug
@@ -4384,7 +5514,7 @@ Styled console output is a small thing, but it is useful for making important de
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/
+url: http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/
 title: Step One on replacing Jekyll, make yaml work
 date: 2015-07-26
 tags: frontpage, rant, cms, gulp
@@ -4445,7 +5575,7 @@ The lesson here is that Gulp is great at file transformation but the ecosystem i
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/
+url: http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/
 title: I like Jekyll, but is it necessary?
 date: 2015-06-15
 tags: frontpage, rant, jekyll, cms
@@ -4490,7 +5620,17 @@ I already know that there are gulp plug-ins that say they do, liquid templates, 
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/
+url: http://localhost:1313/posts/2015/06/11/don-t-forget-about-all-the-lovely-debug-functions-the-devel-module-gives-us-drupal-developers/
+title: Don&#39;t forget about all the lovely debug functions the devel module gives us Drupal developers
+date: 2015-06-11
+---
+
+
+https://api.drupal.org/api/devel/devel.module/7
+
+
+---
+url: http://localhost:1313/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/
 title: Need a join in an EntityFieldQuery, how about a subquery?
 date: 2015-06-10
 tags: drupal, tutorial
@@ -4556,7 +5696,17 @@ Seriously, well done with the whole DB layer in Drupal 7.
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204/
+url: http://localhost:1313/posts/2015/06/08/tablesaw-a-new-solution-for-responsive-tables/
+title: tablesaw a new solution for responsive tables
+date: 2015-06-08
+---
+
+
+https://github.com/filamentgroup/tablesaw
+
+
+---
+url: http://localhost:1313/posts/2015/05/19/setting-up-jenkins-on-1204/
 title: Setting Up Jenkins on 12.04
 date: 2015-05-19
 tags: frontpage, tutorial
@@ -4598,7 +5748,7 @@ If you don't like how Jenkins is listening only to port 8080, you can set up Jen
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/05/18/back-from-drupalconla/
+url: http://localhost:1313/posts/2015/05/18/back-from-drupalconla/
 title: Back from DrupalConLA (A postmortem)
 date: 2015-05-18
 tags: drupalcon, public transportation, rant
@@ -4633,7 +5783,7 @@ At this point I am positioning myself to bum rush him and ...
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/
+url: http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/
 title: Setting a default value for a link or url field in Drupal 7
 date: 2015-05-04
 tags: drupal, tutorial, frontpage, quarzack13
@@ -4696,7 +5846,7 @@ The issue didn't talk about this behavior of the #columns item. I just noticed i
 
 
 ---
-url: https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/
+url: http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/
 title: Drupal or Wordpress? Why not Jekyll.
 date: 2015-01-27
 tags: drupal, wordpress, jekyll, kwallcompany, tutorial, frontpage
@@ -4783,7 +5933,7 @@ Drupal is awesome for so many things. I spent a lot of time perfecting my drupal
 
 
 ---
-url: https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/
+url: http://localhost:1313/posts/2014/11/15/webgl-with-threejs/
 title: WebGL with three.js
 date: 2014-11-15
 tags: web development, kwallcompany, tutorial, frontpage
@@ -4934,7 +6084,7 @@ That is all it takes to get a 3D scene running in a browser. A scene, a camera, 
 
 
 ---
-url: https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/
+url: http://localhost:1313/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/
 title: Creating screen-reader friendly read more  links
 date: 2014-05-06
 tags: tutorial, css, frontpage
@@ -4999,7 +6149,7 @@ The technique is simple: hide the real link text with ```font-size: 0```, replac
 
 
 ---
-url: https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/
+url: http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/
 title: Utilizing Front End CSS Design Paradigms In Drupal
 date: 2014-01-24
 tags: drupal, kwallcompany, tutorial, drupalcamp, quarzack13
@@ -5014,7 +6164,7 @@ At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk 
 
 
 ---
-url: https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/
+url: http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/
 title: Creating Auto Submitting Forms with Drupal's Form API
 date: 2013-11-26
 tags: drupal, kwallcompany, tutorial, quarzack13
@@ -5092,7 +6242,7 @@ That is all there is to it. By adding a single ```onChange``` attribute through 
 
 
 ---
-url: https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/
+url: http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/
 title: css less sass oocss drycss bem front end css design paradigm smacss down
 date: 2013-11-21
 tags: drupal, kwallcompany, quarzack13, css, tutorial
@@ -5196,7 +6346,7 @@ tags: drupal, kwallcompany, quarzack13, css, tutorial
 
 
 ---
-url: https://www.frobiovox.com/posts/2013/10/06/support-should-not-be-based-on-marketshare/
+url: http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/
 title: Support should not be based on Marketshare
 date: 2013-10-06
 tags: web development, rant, frontpage
@@ -5213,5 +6363,66 @@ As web developers we have no control over how anything we ship will be consumed.
 So what is “<del>graceful degradation</del> Progressive Enhancement?” This is attempting to control the degradation in a meaningful way. The largest part of this in the management of expectations of the client. The current model of "we fully support these browsers based solely on market share" is a bad idea. Some things are so cost prohibitive that they are basically impossible on some browsers and that shouldn't mean that we shouldn't do them on the browsers that do support it. There are tools that help but all come at a cost. Usually a cost of performance. Sure this makes a site look more like the Photoshop/Fireworks/Sketch design, but it takes a toll and normally it will add small delays and make a site feel sluggish.
 
 The bottom line: support should be based on what features a browser can handle, not on how many people use it. Build for capability, enhance progressively, and let the browsers do what they were designed to do -- their best.
+
+
+---
+url: http://localhost:1313/posts/1/01/01/named-anchors-drupal-links/
+title: 
+---
+
+
+I recently came acros a problem with Drupal 7 render arrays and named anchors. I was attempting to the link on an image that normally linked to the node. I wanted to instead link to the image as denoted by a named anchor in the url. It is simple enough to change the path in the render array in the hook_node_view_alter implementation.
+
+```php
+/**
+ * Implements hook_node_view_alter().
+ */
+function MODULENAME_node_view_alter(&$build) {
+  if ($build['#bundle'] === 'activity_set' && $build['#view_mode'] === 'teaser') {
+    if (isset($build['field_page_worksheet']) && is_array($build['field_page_worksheet'])) {
+      foreach($build['field_page_worksheet'] as $key => &$value) {
+        if (is_numeric($key) && isset($value['#path']['path'])) {
+          $value['#path']['options'] = $value['#path']['path'] . "#page_{$key}";
+        }
+      }
+    }
+  }
+}
+```
+
+The above code did indeed edit the link path, however, it run through urlencode. This makes the hash in the url a url encoded ```%23```.
+
+```
+<a href="/node/123%23page_0">
+```
+
+instead of:
+
+```
+<a href="/node/123#page_0">
+```
+
+So how do we get around this without hacking core? This is when knowing Drupal's underlying api really come in handy. We know that the ```l``` function calls ```url``` and that ```url``` will encode the url. But, we also know that we can add more to it. https://www.drupal.org/node/81447#comment-2658418
+
+
+---
+url: http://localhost:1313/posts/1/01/01/css-post-processing-who-do-you-think-you-are-fooling/
+title: css post processing? who do you think you are fooling
+---
+
+
+
+---
+url: http://localhost:1313/posts/1/01/01/getting-your-testing-on/
+title: Getting Your Testing On
+---
+
+
+This will be about variuse automated test and how to get it all together
+
+ ## build
+ ## test
+ ## ci
+ ## deploy
 
 

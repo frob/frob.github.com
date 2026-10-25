@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/ |
+| url | http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/ |
 | date | 2015-10-09 |
 | tags | drupal, elixir, jekyll, frontpage, quarzack13 |
 | description | I reflect on what I have seen at ElixirConf 2015, what does this mean for Drupal, and Why use Elixir or Phoenix instead of Drupal or Jekyll. |

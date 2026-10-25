@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/ |
+| url | http://localhost:1313/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/ |
 | date | 2026-08-30 |
 | tags | git, open source, tutorial, frontpage |
 | description | Sometimes you have to copy a library straight into your project. v records exactly which commit you copied and gives you one command to refresh it. |

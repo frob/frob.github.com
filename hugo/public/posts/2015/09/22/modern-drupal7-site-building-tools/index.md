@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/ |
+| url | http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/ |
 | date | 2015-09-22 |
 | tags | drupal, frontpage, quarzack13 |
 

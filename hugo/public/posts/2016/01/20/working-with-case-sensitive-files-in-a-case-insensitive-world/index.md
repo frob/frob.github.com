@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/ |
+| url | http://localhost:1313/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/ |
 | date | 2016-01-20 |
 | tags | frontpage, tutorial |
 | description | How to work with case sensitive files on a file system that is case insensitive |

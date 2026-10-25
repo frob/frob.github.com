@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quarzack13 on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/quarzack13/</link><description>Recent content in Quarzack13 on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/quarzack13/feed.xml" rel="self" type="application/rss+xml"/><item><title>Why DrupalCon</title><link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</guid><description><![CDATA[<h1 id="collaboration-and-contribution-at-drupalcon">Collaboration and Contribution at DrupalCon</h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quarzack13 on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/quarzack13/</link>
+    <description>Recent content in Quarzack13 on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/quarzack13/feed.xml" rel="self" type="application/rss&#43;xml" />
+    <item>
+      <title>Why DrupalCon</title>
+      <link>http://localhost:1313/posts/2018/02/20/why-drupalcon/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2018/02/20/why-drupalcon/</guid>
+      <description><![CDATA[<h1 id="collaboration-and-contribution-at-drupalcon">Collaboration and Contribution at DrupalCon</h1>
 <p><a href="https://www.drupal.org/">Drupal</a> is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal advocates and aficionados convene to teach and learn from each other. What better way to do that than at DrupalCon?</p>
 <h2 id="what-is-drupalcon">What is DrupalCon?</h2>
 <p><a href="https://events.drupal.org/vienna2017">DrupalCon</a> is a conference where the Drupal Community can meet each other and exchange information in real life. The North American DrupalCon bounces around the Continental US, yet DrupalCon also happens in Europe, Asia, and South America.</p>
@@ -12,7 +26,14 @@
 <p>Any software project that is under active development will be a moving target, and as users of this software, it is important to stay on top of the latest versions. In an effort to do this, I submitted a session for Baltimore DrupalCon about exploring and evaluating Drupal 8 by <a href="https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html">re-architecting a Custom Learning Management System</a> we had built for New Perspectives Online. By doing this session, I was able to both get more experience with a new product without having to learn on a high-stakes client project, and I also had the opportunity to share those experiences with others in the Drupal Community. Below is a video of my presentation.</p>
 <iframe src="https://www.youtube.com/embed/en-nC4ZjdXo" frameborder="0" width="560" height="315"></iframe>
 <p>Contribution isn&rsquo;t always about code. Contribution is possible regardless of skillset. Everything including bug reports, documentation, design, code, or even just attending DrupalCon is a worthwhile contribution.</p>
-]]></description></item><item><title>Rearchitecting for Drupal 8; a DrupalCon Session</title><link>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</link><pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</guid><description><![CDATA[<h1 id="rearchitecting-for-drupal-8">Rearchitecting for Drupal 8</h1>
+]]></description>
+    </item>
+    <item>
+      <title>Rearchitecting for Drupal 8; a DrupalCon Session</title>
+      <link>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</link>
+      <pubDate>Thu, 15 Feb 2018 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</guid>
+      <description><![CDATA[<h1 id="rearchitecting-for-drupal-8">Rearchitecting for Drupal 8</h1>
 <p>This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.</p>
 <h2 id="in-case-you-are-wondering">In case you are wondering</h2>
 <p><img src="https://nicspaull.files.wordpress.com/2013/10/you-are-here.jpg" alt="You are here in the
@@ -780,7 +801,14 @@ in room Peale A-C</strong>.</p>
 understand the need for &lsquo;shorter sprints with greater support&rsquo;, and as
 a result will <strong>not</strong> be hosting Extended Weekend Sprints at this
 DrupalCon.</p>
-]]></description></item><item><title>Basic Hello World with composer and php</title><link>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link><pubDate>Tue, 16 Aug 2016 17:40:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid><description><![CDATA[<h1 id="getting-started-with-composer">Getting started with composer</h1>
+]]></description>
+    </item>
+    <item>
+      <title>Basic Hello World with composer and php</title>
+      <link>http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link>
+      <pubDate>Tue, 16 Aug 2016 17:40:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid>
+      <description><![CDATA[<h1 id="getting-started-with-composer">Getting started with composer</h1>
 <p>If you write PHP and you are not using <a href="https://getcomposer.org">Composer</a>, you are managing dependencies by hand &ndash; and that means you are doing more work than you need to. Composer handles autoloading, dependency resolution, and versioning so you do not have to. This post walks through a complete Hello World project from <code>composer init</code> to running tests, so you can see how all the pieces fit together.</p>
 <p>If you are looking for more information about using <a href="https://www.drupal.org">Drupal</a> with <a href="https://getcomposer.org">Composer</a> then you should checkout the <a href="https://www.drupal.org/node/2718229">official composer facade doc page</a> on drupal.org.</p>
 <p>I will <em>not</em> be talking about publishing to <a href="https://packagist.org">Packagist</a>. My php is nearly always for <a href="https://www.drupal.org">Drupal</a>, and as such, if I publish anything it will most likely be to a project on <a href="https://www.drupal.org">drupal.org</a>. In the end I will philosophize about <a href="https://www.drupal.org">Drupal</a> and <a href="https://getcomposer.org">Composer</a>, but we will start with the <a href="https://getcomposer.org">composer</a> basics.</p>
@@ -964,7 +992,14 @@ composer.lock
 <p>Drupal was special, it was special because when we (Drupal Developers) needed something we built it. Our issue was that we built it for us. Now the needs of Drupal aren&rsquo;t unique. We build drush, but every project seems to have a cli now-a-days.</p>
 <p>Drush has make functionality. It can handle bundling our projects together with a build process. It also gives us the ability to download and install modules or change/modify our configuration. We can start temporary web-servers with Drush and do simple development work or test patches. The issue is that Drush was our tool and no one else&rsquo;s.</p>
 <p>With Drupal 8 we are leaving the island and seeing how others have solved problems. We don&rsquo;t have to do it all ourselves and sometimes it is better not to even try. There is a whole slew of functionality out there that we can now incorporate into our modules. Composer is the key in all of that.</p>
-]]></description></item><item><title>Simplify Drupal 8 field value calls</title><link>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link><pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid><description><![CDATA[<p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Simplify Drupal 8 field value calls</title>
+      <link>http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link>
+      <pubDate>Mon, 28 Mar 2016 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid>
+      <description><![CDATA[<p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
 <h1 id="get-the-title-of-a-node">Get the title of a node</h1>
 <p>Let&rsquo;s load a node and return the title.</p>
 <h2 id="drupal-7">Drupal 7</h2>
@@ -1016,7 +1051,14 @@ composer.lock
 </span></span></code></pre></div><p>It&rsquo;s important to remember that when dealing with a new version it&rsquo;s tempting to say, &ldquo;This used to be easy and now it is hard.&rdquo;</p>
 <p>It only used to be easy because we knew how to do things without having to do too much research. Now things are hard &ndash;but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.</p>
 <p>The good news is that once you internalize the <code>-&gt;get('field')-&gt;value</code> pattern, it becomes second nature. One getter, one consistent API, regardless of field type or language. That is a real improvement over Drupal 7&rsquo;s <code>$node-&gt;field_name[0][LANGUAGE_NONE]['value']</code> guessing game.</p>
-]]></description></item><item><title>Altering Entity Field Queries for JOINS ORs and Profit</title><link>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link><pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid><description><![CDATA[<p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Altering Entity Field Queries for JOINS ORs and Profit</title>
+      <link>http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link>
+      <pubDate>Wed, 11 Nov 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid>
+      <description><![CDATA[<p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
 <p>I have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&rsquo;s hook and alter architecture.</p>
 <h2 id="simple-entityfieldquery">Simple EntityFieldQuery</h2>
 <p>For our example we will start with a simple EntityFieldQuery for getting a list of nodes.</p>
@@ -1060,7 +1102,14 @@ composer.lock
 </span></span></code></pre></div><p>There, we are done, right? Nope. We may think that we are, however, if we ran that code we would get a PDO exception. Why? Because we are not doing any propertyConditions on the original EntityFieldQuery. Drupal is smart enough to know that if it isn&rsquo;t using the node table in the EFQ that it doesn&rsquo;t need to <code>JOIN</code> it.</p>
 <p>To fix this, go back up to the original EntityFieldQuery and add this line <code>$query-&gt;propertyCondition('status', 1);</code>. This forces the node table into the query so our alter hook can reference <code>node.title</code>.</p>
 <p>To recap: tag your EntityFieldQuery, attach metadata with <code>addMetaData()</code>, implement <code>hook_query_TAG_alter()</code> to add your <code>OR</code> conditions, and make sure the base table is joined by including at least one <code>propertyCondition</code>. It is not obvious, but once you know the pattern it opens up EntityFieldQuery for nearly any query you need to build.</p>
-]]></description></item><item><title>Reflecting on Elixir and Phoenix</title><link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link><pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid><description><![CDATA[<p>Every developer eventually asks the question: what should I be learning next? I just got back from <a href="http://www.elixirconf.com">ElixirConf</a>, and this post is my attempt to answer that question for myself &ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Reflecting on Elixir and Phoenix</title>
+      <link>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link>
+      <pubDate>Fri, 09 Oct 2015 12:02:17 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid>
+      <description><![CDATA[<p>Every developer eventually asks the question: what should I be learning next? I just got back from <a href="http://www.elixirconf.com">ElixirConf</a>, and this post is my attempt to answer that question for myself &ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.</p>
 <h2 id="the-new-hotness">The New Hotness</h2>
 <p>I read a post recently that had the click bait title &ldquo;Is Drupal Dying?&rdquo; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the <q>next</q> thing &ndash;expecting Drupal to be old and busted in five years.</p>
 <p>I am at ElixirConf because I see great potential in Elixir, Erlang, and <a href="http://www.phoenixframework.com">Phoenix</a>. I expect it to be the next big thing and for it to help provide a scalable platform for highly available, highly scalable, and interactive / dynamic websites.</p>
@@ -1229,7 +1278,14 @@ Percentage of the requests served within a certain time (ms)
 <p>For the longest time I thought Drupal&rsquo;s biggest problem was PHP &ndash;and I mostly still think that. The difference between now and 5 years ago is that PHP&rsquo;s development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real potential. PHP has always been really fast and it is still really fast. Big pipe is the <q>new thing</q> for PHP and it can work, things are possible. All of this gives me hope. It gives me hope for Drupal.</p>
 <h2 id="so-where-does-this-leave-me">So where does this leave me?</h2>
 <p>Elixir and Phoenix are worth learning. The benchmarks speak for themselves, the developer experience is excellent, and the fault-tolerance story is unlike anything in the PHP world. But Drupal is not dying &ndash; it is adapting. For now, Phoenix earns a place in my toolbox for the kinds of problems it was built to solve: real-time, highly concurrent, connection-heavy applications. For content management, Drupal is still the answer. The best tools are the ones you pick for the right job.</p>
-]]></description></item><item><title>Modern Drupal7 Site Building Tools</title><link>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</link><pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</guid><description><![CDATA[<p>With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &ndash; for site builders specifically &ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Modern Drupal7 Site Building Tools</title>
+      <link>http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/</guid>
+      <description><![CDATA[<p>With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &ndash; for site builders specifically &ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.</p>
 <h2 id="why-build-a-site-with-drupal-7">Why build a site with Drupal 7</h2>
 <p>Drupal 8 is nearly out making Drupal 7 look like it isn&rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.</p>
 <h1 id="the-modules">The Modules</h1>
@@ -1297,7 +1353,14 @@ Percentage of the requests served within a certain time (ms)
 <p>Play with these modules before installing on production.</p>
 <h2 id="final-thoughts">Final thoughts</h2>
 <p>No single module on this list is revolutionary. The power comes from combining them. Title and Fences give you semantic markup. Field Group and Display Suite give you layout control. Context gives you conditional logic. Bean gives you fieldable blocks. Stack them together and you have a site-building toolkit that can handle complex designs without writing a single line of custom module code. Drupal 7 is not the new hotness, but it is a platform where the tools have had time to mature &ndash; and that maturity counts for a lot.</p>
-]]></description></item><item><title>Setting a default value for a link or url field in Drupal 7</title><link>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link><pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid><description><![CDATA[<p>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Setting a default value for a link or url field in Drupal 7</title>
+      <link>http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link>
+      <pubDate>Mon, 04 May 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid>
+      <description><![CDATA[<p>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.</p>
 <p>In case you don&rsquo;t I suggest reading these pages first:</p>
 <ul>
 <li><a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7">The Drupal Form API</a></li>
@@ -1334,10 +1397,24 @@ Percentage of the requests served within a certain time (ms)
 </span></span></code></pre></div><p>Therefore, in-order to set the default value of a link field, one must set the <code>$form['field_link']['#default_value']['url']</code>. This is assuming that it is desired to change the url of the link field. It could be that the title needs to be set or one of the other optional attributes for the link field.</p>
 <p>This should hold true for all fields of all types. I noticed this when I stumbled upon this <a href="https://www.drupal.org/node/1782516#comment-7552205">Drupal.org issue where someone was asking how to set the default value of a link field.</a></p>
 <p>The issue didn&rsquo;t talk about this behavior of the #columns item. I just noticed it when digging through that. Cool eh?</p>
-]]></description></item><item><title>Utilizing Front End CSS Design Paradigms In Drupal</title><link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link><pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid><description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Utilizing Front End CSS Design Paradigms In Drupal</title>
+      <link>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid>
+      <description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
 <p><a href="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank">Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014</a></p>
 <iframe allowfullscreen="true" frameborder="0" height="389" mozallowfullscreen="true" src="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/embed?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="480"></iframe>
-]]></description></item><item><title>Creating Auto Submitting Forms with Drupal's Form API</title><link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link><pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid><description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Creating Auto Submitting Forms with Drupal&#39;s Form API</title>
+      <link>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid>
+      <description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
 <p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
 <p>My use case was a semi-typical one: have the input from one select list affect the options in another select list.</p>
 <p>This could be done in any number of ways including:</p>
@@ -1388,7 +1465,14 @@ Percentage of the requests served within a certain time (ms)
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $form;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>That is all there is to it. By adding a single <code>onChange</code> attribute through the form API&rsquo;s <code>#attributes</code> array, we get auto-submission without the overhead of <code>#ajax</code>. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.</p>
-]]></description></item><item><title>css less sass oocss drycss bem front end css design paradigm smacss down</title><link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link><pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid><description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
+]]></description>
+    </item>
+    <item>
+      <title>css less sass oocss drycss bem front end css design paradigm smacss down</title>
+      <link>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
+      <pubDate>Thu, 21 Nov 2013 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
+      <description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
 <h2>Object Oriented CSS</h2>
 <p>OOCSS has several principles that it is built upon.</p>
 <ol><li>A style should be written once and only once.</li>
@@ -1480,4 +1564,7 @@ box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
 <h2>Who Wins?</h2>
 <p>SMACSS.</p>
 <p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>
-]]></description></item></channel></rss>
+]]></description>
+    </item>
+  </channel>
+</rss>

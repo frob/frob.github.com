@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/tutorial/</link><description>Recent content in Tutorial on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/tutorial/feed.xml" rel="self" type="application/rss+xml"/><item><title>Introducing webform relay; forms without a backend</title><link>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</link><pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</guid><description><![CDATA[<p>A static site is a wonderful thing right up until somebody asks for a contact form.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/tutorial/feed.xml" rel="self" type="application/rss&#43;xml" />
+    <item>
+      <title>Introducing webform relay; forms without a backend</title>
+      <link>http://localhost:1313/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</link>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</guid>
+      <description><![CDATA[<p>A static site is a wonderful thing right up until somebody asks for a contact form.</p>
 <p>Everything else about the static site story holds together. Content in markdown, build in CI, files on a CDN, no server to patch, no database to back up, no PHP version to worry about at 2am. Then one form shows up and suddenly the answer is &ldquo;well, we&rsquo;ll need a backend.&rdquo; Not a big backend. A backend that accepts a POST, validates four fields, and sends an email. And now you own a server, or a container, or a runtime version, or a third-party SaaS that will start charging per submission the moment anyone actually uses the thing.</p>
 <p>I have watched this play out enough times. The form is never the interesting part of the project and it is always the part that drags a whole hosting story behind it. In other words I have written this form enough times and enough ways that I don&rsquo;t want to have to write it again. I know everything that it needs to do, in every variation. I kind of miss <a href="https://www.drupal.org/project/webform">Drupal&rsquo;s webform module</a> but I cannot use that on a static site.</p>
 <p>So I wrote <a href="https://gitlab.com/frob/webform-relay">webform relay</a>. Point a <code>&lt;form&gt;</code> at a URL, and it validates the submission and relays it to wherever it needs to go &ndash; email through SES, a plain SMTP server, a generic webhook, or Salesforce Web2Lead. There is no application code to write. There is no server. There is one YAML file. I even threw in some form conditionals and static content printing through htmx.</p>
@@ -147,7 +161,14 @@
 <p>If you&rsquo;re on a host that includes forms in the price and you&rsquo;re happy with it, and you don&rsquo;t need complex submission handling, also no.</p>
 <p>But if you have a static site, or a Go binary, or a game&rsquo;s landing page, or anything else where the form is the only thing standing between you and having no server at all &ndash; this is the smallest, robust, version of that I could build. One YAML file in a bucket. No idle cost. No runtime to keep patched.</p>
 <p>It&rsquo;s at <a href="https://gitlab.com/frob/webform-relay">gitlab.com/frob/webform-relay</a>, AGPLv3 licensed, with the docs published from the same repo. It is not on GitHub, which I mention because I recently had to change all the docs pages where the GenAI decieded to link to github &ndash;alas, that is what writing software looks like in 2026.</p>
-]]></description></item><item><title>Introducing v; the easiest vendor utility</title><link>https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</link><pubDate>Sun, 30 Aug 2026 16:54:03 -0700</pubDate><guid>https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</guid><description><![CDATA[<p>Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Introducing v; the easiest vendor utility</title>
+      <link>http://localhost:1313/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</link>
+      <pubDate>Sun, 30 Aug 2026 16:54:03 -0700</pubDate>
+      <guid>http://localhost:1313/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</guid>
+      <description><![CDATA[<p>Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.</p>
 <p>That works fine right up until the moment you need to answer a question about it. Which commit did I copy? Has upstream changed since? Did somebody edit these files after they landed here? A <code>vendor/</code> directory that got there by hand is an undated snapshot of unknown provenance. Six months later it is indistinguishable from code you wrote yourself. I have been handed projects like that and I have been the person to fix it.</p>
 <p>I got tired of that, so I wrote <a href="https://github.com/frob/v">v</a>.</p>
 <h2 id="what-it-does">What it does</h2>
@@ -209,7 +230,83 @@
 <p>Probably not, most of the time. If your language has a package manager and your dependency is published to it, use the package manager. That is what it is for.</p>
 <p>But when you are outside that path &ndash;a private repo, an unpublished theme, a library whose maintainer stopped cutting releases in 2019, a language where &ldquo;just copy it in&rdquo; is the community norm &ndash;you&rsquo;re going to copy the source anyway. All <code>v</code> does is make sure that when you do, you wrote down where it came from.</p>
 <p>The code is at <a href="https://github.com/frob/v">github.com/frob/v</a>. It&rsquo;s MIT licensed, it&rsquo;s a single Go binary with no runtime dependencies, and it is small enough that you can read the whole thing in an afternoon.</p>
-]]></description></item><item><title>Add a JSON API to Any Static Site Generator</title><link>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link><pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid><description><![CDATA[<p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Introducing v; the easiest vendor utility</title>
+      <link>http://localhost:1313/posts/2026/08/29/introducing-v-the-easiest-vendor-utility/</link>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/08/29/introducing-v-the-easiest-vendor-utility/</guid>
+      <description><![CDATA[<p>Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.</p>
+<p>That works fine right up until the moment you need to answer a question about it. Which commit did I copy? Has upstream changed since? Did somebody edit these files after they landed here? A <code>vendor/</code> directory that got there by hand is an undated snapshot of unknown provenance. Six months later it is indistinguishable from code you wrote yourself. I have been handed projects like that and I have been the person to fix it.</p>
+<p>I got tired of that, so I wrote <a href="https://github.com/frob/v">v</a>.</p>
+<h2 id="what-it-does">What it does</h2>
+<p>Three things, and deliberately nothing else:</p>
+<ol>
+<li>It resolves whatever ref you give it &ndash;a branch, a tag, a commit hash &ndash;to an exact commit hash.</li>
+<li>It downloads the repository&rsquo;s contents into <code>vendor/</code>, without the <code>.git</code> directory.</li>
+<li>It writes down what it did in a <code>vendors.toml</code> file in your project root.</li>
+</ol>
+<p>That&rsquo;s the whole tool. The interesting part is the third one.</p>
+<h2 id="a-real-world-use-case">A real world use case</h2>
+<p>This blog <a href="/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/">runs on Hugo</a> with a theme I maintain in a GitLab repository. The theme is not on any registry. It&rsquo;s not a Go module. It is a pile of layouts and CSS that belongs to me and lives somewhere else.</p>
+<p>The usual options for that situation are a git submodule or a Hugo module. Both work. Both also mean that anyone who clones this site now has to know about a second dependency system, and that my build has an opinion about network access. I didn&rsquo;t want a dependency system. I wanted the files to be in the repository, the way files are, plus a note saying where they came from.</p>
+<p>Here is what that note looks like on this site:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;git@gitlab.com:frob/frobiovox-theme.git&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#39;git@gitlab.com:frob/frobiovox-theme.git&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#39;0.0.x&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">commit</span> = <span style="color:#e6db74">&#39;d0b29bbda2560331ddb849b0dcefc65b709454f4&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">path</span> = <span style="color:#e6db74">&#39;hugo/themes/frobiovox-theme&#39;</span>
+</span></span></code></pre></div><p>Four fields. Where it came from, what I asked for, what that actually resolved to, and where it landed. The <code>commit</code> field is the one doing the real work. A branch name drifts &ndash;<code>0.0.x</code> means something different today than it did in June. The hash doesn&rsquo;t. It pins exactly what is sitting in <code>hugo/themes/frobiovox-theme</code> right now.</p>
+<p>Commit that file to your repository and the provenance survives. Someone else can see what you vendored, when it moved, and by how much, just by reading the git history of a four-line TOML entry.</p>
+<h2 id="using-it">Using it</h2>
+<p>Install it with Homebrew:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install frob/v/v
+</span></span></code></pre></div><p>Or with the shell script, which detects your OS and package manager and falls back to dropping a binary in <code>/usr/local/bin</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sSf https://raw.githubusercontent.com/frob/v/0.2.x/install.sh | sh
+</span></span></code></pre></div><p>There are <code>.deb</code>, <code>.rpm</code>, and Arch packages on the releases page too.</p>
+<p>Vendoring something is one command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v add https://github.com/example/repo
+</span></span></code></pre></div><p>That resolves the remote&rsquo;s default branch, downloads the contents to <code>vendor/github.com/example/repo</code>, and records the entry. Pin to a tag instead:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v add https://github.com/example/repo v1.2.3
+</span></span></code></pre></div><p>Or put it somewhere that is not <code>vendor/</code>, which is what I do for the theme:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v add -d hugo/themes/frobiovox-theme git@gitlab.com:frob/frobiovox-theme.git 0.0.x
+</span></span></code></pre></div><p>Later, when upstream has moved:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># everything, to the latest commit on each recorded ref</span>
+</span></span><span style="display:flex;"><span>v update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># just the one</span>
+</span></span><span style="display:flex;"><span>v update https://github.com/example/repo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># and switch it to a different tag while you are at it</span>
+</span></span><span style="display:flex;"><span>v update https://github.com/example/repo v2.0.0
+</span></span></code></pre></div><p><code>update</code> tells you what changed:</p>
+<pre tabindex="0"><code>updated https://github.com/example/repo a1b2c3d -&gt; e4f5a6b
+</code></pre><p>Then <code>git diff</code> shows you exactly what came along with it. That is the part I actually wanted. Not automation &ndash;visibility. When a vendored dependency changes under me, I want it to show up in a code review like everything else.</p>
+<h2 id="why-no-git-directory">Why no <code>.git</code> directory</h2>
+<p>Because a vendored tree should be files, not a repository. Submodules are a repository inside your repository, and they bring the whole apparatus with them: a second checkout state, detached heads, the <code>--recursive</code> flag everyone forgets, clones that come down empty. Subtrees avoid some of that and replace it with a merge strategy you have to think about.</p>
+<p><code>v</code> sidesteps both by not being a git integration at all. It downloads the contents and deletes the history. Your repository stays one repository. <code>git clone</code> gets you everything. There is no second state to be out of sync with, because there is no second state. The metadata a <code>.git</code> directory would have carried lives in <code>vendors.toml</code> instead, in four lines you can read.</p>
+<p>The tradeoff is real and I will name it: you can&rsquo;t <code>git log</code> a vendored dependency in place, and if you edit those files, <code>v update</code> will happily overwrite your edits. Vendored code is read-only code. If you want to change it, change it upstream.</p>
+<h2 id="what-it-does-not-do">What it does not do</h2>
+<p>It is deliberately small. Some things are missing on purpose:</p>
+<ul>
+<li>No integrity check. Nothing currently verifies that a vendored tree still matches its recorded commit. If someone edits a file in <code>vendor/</code>, <code>vendors.toml</code> will keep insisting everything is fine. This is the next thing I am building.</li>
+<li>No round trip. If you want to fix a bug in a vendored dependency and send it upstream, you are on your own: clone it separately, do the work there, then re-vendor. I would like to make that a single command.</li>
+<li>No selective vendoring. Every entry in <code>vendors.toml</code> gets its files checked into your tree. There is no way yet to track a dependency&rsquo;s provenance while keeping its source out of your repository, which you might want for license reasons.</li>
+<li>No dependency resolution, ever. If the thing you vendored has its own dependencies, that&rsquo;s your problem. <code>v</code> copies one repository at one commit. It&rsquo;s not going to grow a solver, and this is a feature.</li>
+</ul>
+<h2 id="is-this-for-you">Is this for you?</h2>
+<p>Vendoring dependencies is awsome. It is more secure and stable than any package manager. But if I am being honest, most of the time you should just use the expected case package manager. If your language has a package manager and your dependency is published to it, use the package manager. That is what it is for.</p>
+<p>But when you are outside that path &ndash;a private repo, an unpublished theme, a library whose maintainer stopped cutting releases in 2019, a language where &ldquo;just copy it in&rdquo; is the community norm &ndash;you&rsquo;re going to copy the source anyway. All <code>v</code> does is make sure that when you do, you wrote down where it came from.</p>
+<p>The code is at <a href="https://github.com/frob/v">github.com/frob/v</a>. It&rsquo;s MIT licensed, it&rsquo;s a single Go binary with no runtime dependencies, and it is small enough that you can read the whole thing in an afternoon.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Add a JSON API to Any Static Site Generator</title>
+      <link>http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/</guid>
+      <description><![CDATA[<p>Back in 2015, I wrote about <a href="/posts/2015/10/25/add-an-api-to-your-jekyll-blog/">adding a JSON API to a Jekyll blog</a>. The idea was simple: if your static site generator can output HTML from templates, it can output JSON from those same templates. No server-side code, no plugins, no runtime dependencies. Just another output format alongside your pages.</p>
 <p>That technique is not specific to Jekyll. It works with any static site generator that has a templating system. This blog runs on Hugo now. Hugo has a built-in feature for exactly this kind of thing and it makes the whole process much cleaner. So I figured I would revisit the idea.</p>
 <h2 id="the-idea-again">The idea, again</h2>
 <p>A static site generator takes your markdown and pushes it through templates to make HTML files. There is nothing special about HTML here &ndash;it is just the output format. If you write a template that outputs JSON instead of HTML, you get <code>.json</code> files. Your web server doesn&rsquo;t care, it serves them the same way and JavaScript on the client side can fetch them.</p>
@@ -280,7 +377,14 @@
 <h2 id="this-isnt-just-a-hugo-thing">This isn&rsquo;t just a Hugo thing</h2>
 <p>The core trick works anywhere. If your static site generator has templates, you can make it output JSON. Hugo happens to have first-class support for it, but the pattern is the same whether you are using 11ty, Astro, or even Jekyll like I was in 2015. Write a template, output JSON, let the build generate the files.</p>
 <p>I use it for client-side filtering. Fetch the listing endpoint, match on tags in JavaScript, render a related posts section without a page reload. It is not a replacement for a real API &ndash;there is no auth, no pagination, no writes. But for read-only content that is already public on your site, it is free and it ships with every build.</p>
-]]></description></item><item><title>Getting XDebug working with the Zed editor, starring Claude</title><link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid><description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
+]]></description>
+    </item>
+    <item>
+      <title>Getting XDebug working with the Zed editor, starring Claude</title>
+      <link>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
+      <description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
 <p>Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.</p>
 <h2 id="why-zed">Why Zed</h2>
 <p>The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.</p>
@@ -680,7 +784,14 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
 <p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
 <p>Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
 <p>I look forward to using Zed, more, now that Xdebug is working.</p>
-]]></description></item><item><title>How to play gloom with a 52 card deck</title><link>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</link><pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/</guid><description><![CDATA[<p>I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&rsquo;t for you then try these rules on a standard 52 card deck.</p>
+]]></description>
+    </item>
+    <item>
+      <title>How to play gloom with a 52 card deck</title>
+      <link>http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/</guid>
+      <description><![CDATA[<p>I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, if the dark humor of the game isn&rsquo;t for you then try these rules on a standard 52 card deck.</p>
 <h2 id="rules">Rules</h2>
 <p>Each player will have a family of face cards. The Aces will act as kill cards and the red/black number cards are the score cards. At the end of the game the number cards are tallied with the Black numbers increasing the score and the Red cards decreasing the score. High score wins, tie-breaker is who has more cards.</p>
 <h3 id="requirements">Requirements</h3>
@@ -722,7 +833,14 @@ Even if there are not four players all four sets of face cards (minus aces) are 
 <li>Play with the above rule and instead of limiting to four cards add the end game condition of if a player plays all their cards the game is over.</li>
 </ul>
 <p>House rules should be agreed to before the start of the game. Or if your hosting the game it is your house and your rules. :)</p>
-]]></description></item><item><title>Switching to Celsius from Fahrenheit for normal people</title><link>https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</link><pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</guid><description><![CDATA[<p>For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Switching to Celsius from Fahrenheit for normal people</title>
+      <link>http://localhost:1313/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</link>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/</guid>
+      <description><![CDATA[<p>For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know.</p>
 <table>
 <thead>
 <tr>
@@ -889,7 +1007,14 @@ Even if there are not four players all four sets of face cards (minus aces) are 
 <td align="center">50 °C</td>
 </tr></tbody></table>
 <p>That&rsquo;s it, empower yourself. Celsius is easy. Just do it!</p>
-]]></description></item><item><title>Lets take a look at webVR with AFrame</title><link>https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/</link><pubDate>Mon, 24 Oct 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/</guid><description><![CDATA[<p>What if you could build a VR experience with nothing but HTML tags? No game engine, no compiled binaries, no 30-minute tutorial before you see a cube on screen. That is what <a href="https://aframe.io">A-Frame</a> promises, and in this post I am going to put it through its paces &ndash; converting my old Three.js demo, loading 3D models, and building billboard sprites, all with markup and minimal JavaScript.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Lets take a look at webVR with AFrame</title>
+      <link>http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/</link>
+      <pubDate>Mon, 24 Oct 2016 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/10/24/lets-take-a-look-at-webvr-with--aframe/</guid>
+      <description><![CDATA[<p>What if you could build a VR experience with nothing but HTML tags? No game engine, no compiled binaries, no 30-minute tutorial before you see a cube on screen. That is what <a href="https://aframe.io">A-Frame</a> promises, and in this post I am going to put it through its paces &ndash; converting my old Three.js demo, loading 3D models, and building billboard sprites, all with markup and minimal JavaScript.</p>
 <p>Just so you know we are not talking about the slightly older MVC Javascript framework also named AFrame; today, we are going to be talking about <a href="https://aframe.io">Mozilla&rsquo;s WebVR library A-Frame</a>.</p>
 <h1 id="what-is-a-frame">What is <a href="https://aframe.io/docs/0.3.0/introduction/faq.html#do-i-call-it-%E2%80%9Ca-frame%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D-or-%E2%80%9Caframevr%E2%80%9D-or-%E2%80%9Caframe%E2%80%9D">A-Frame</a></h1>
 <p>A-Frame is an open-source web framework for building virtual reality experiences on the web. We can use A-Frame to build VR web page using only some custom markup. Under the hood, A-Frame uses the threejs framework. A-Frame was built to make virtual reality more accessible to the web community and to kick-start the WebVR content ecosystem. It is easy to learn and extensible, allowing us to quickly prototype Virtual Reality experiences. A-Frame makes WebVR accessible to content creators and not just cutting edge developers.</p>
@@ -1023,7 +1148,14 @@ Even if there are not four players all four sets of face cards (minus aces) are 
 <p>Go checkout caniuse for WebGL and WebVR the browser support for A-Frame and the browser support for threejs.</p>
 <h2 id="wrap-up">Wrap up</h2>
 <p>A-Frame makes WebVR approachable. My 30-line Three.js example became 9 lines of custom HTML. Models, skyboxes, billboards, and animations all work with attributes instead of API calls. The entity-component-system architecture means it is extensible when markup is not enough. It is not a replacement for a full game engine, but for bringing VR to the web &ndash; especially for content creators who are more comfortable with HTML than with JavaScript &ndash; it is hard to beat. Build something, put it on a page, and hand someone a phone with a cardboard headset. That is the pitch, and it works.</p>
-]]></description></item><item><title>Basic Hello World with composer and php</title><link>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link><pubDate>Tue, 16 Aug 2016 17:40:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid><description><![CDATA[<h1 id="getting-started-with-composer">Getting started with composer</h1>
+]]></description>
+    </item>
+    <item>
+      <title>Basic Hello World with composer and php</title>
+      <link>http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link>
+      <pubDate>Tue, 16 Aug 2016 17:40:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid>
+      <description><![CDATA[<h1 id="getting-started-with-composer">Getting started with composer</h1>
 <p>If you write PHP and you are not using <a href="https://getcomposer.org">Composer</a>, you are managing dependencies by hand &ndash; and that means you are doing more work than you need to. Composer handles autoloading, dependency resolution, and versioning so you do not have to. This post walks through a complete Hello World project from <code>composer init</code> to running tests, so you can see how all the pieces fit together.</p>
 <p>If you are looking for more information about using <a href="https://www.drupal.org">Drupal</a> with <a href="https://getcomposer.org">Composer</a> then you should checkout the <a href="https://www.drupal.org/node/2718229">official composer facade doc page</a> on drupal.org.</p>
 <p>I will <em>not</em> be talking about publishing to <a href="https://packagist.org">Packagist</a>. My php is nearly always for <a href="https://www.drupal.org">Drupal</a>, and as such, if I publish anything it will most likely be to a project on <a href="https://www.drupal.org">drupal.org</a>. In the end I will philosophize about <a href="https://www.drupal.org">Drupal</a> and <a href="https://getcomposer.org">Composer</a>, but we will start with the <a href="https://getcomposer.org">composer</a> basics.</p>
@@ -1207,7 +1339,14 @@ composer.lock
 <p>Drupal was special, it was special because when we (Drupal Developers) needed something we built it. Our issue was that we built it for us. Now the needs of Drupal aren&rsquo;t unique. We build drush, but every project seems to have a cli now-a-days.</p>
 <p>Drush has make functionality. It can handle bundling our projects together with a build process. It also gives us the ability to download and install modules or change/modify our configuration. We can start temporary web-servers with Drush and do simple development work or test patches. The issue is that Drush was our tool and no one else&rsquo;s.</p>
 <p>With Drupal 8 we are leaving the island and seeing how others have solved problems. We don&rsquo;t have to do it all ourselves and sometimes it is better not to even try. There is a whole slew of functionality out there that we can now incorporate into our modules. Composer is the key in all of that.</p>
-]]></description></item><item><title>Semantic Git</title><link>https://www.frobiovox.com/posts/2016/05/27/semantic-git/</link><pubDate>Fri, 27 May 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/05/27/semantic-git/</guid><description><![CDATA[<p>Ever looked at a git branch name and had no idea what version of the product it belonged to? Or tagged a release and wondered if it should be a minor bump or a patch? This post is about eliminating that ambiguity by combining two things that already work well on their own &ndash; git-flow and semantic versioning &ndash; into a single workflow where each reinforces the other.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Semantic Git</title>
+      <link>http://localhost:1313/posts/2016/05/27/semantic-git/</link>
+      <pubDate>Fri, 27 May 2016 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/05/27/semantic-git/</guid>
+      <description><![CDATA[<p>Ever looked at a git branch name and had no idea what version of the product it belonged to? Or tagged a release and wondered if it should be a minor bump or a patch? This post is about eliminating that ambiguity by combining two things that already work well on their own &ndash; git-flow and semantic versioning &ndash; into a single workflow where each reinforces the other.</p>
 <h1 id="semantic-git-flow">Semantic git-flow</h1>
 <h2 id="background">Background</h2>
 <p><a href="#tldr">skip TLDR;</a></p>
@@ -1335,7 +1474,14 @@ composer.lock
 </blockquote>
 <h2 id="why-this-works">Why this works</h2>
 <p>The naming convention does the heavy lifting. Anyone on the team can look at a branch name like <code>1.2.x-checkout-widget</code> and immediately know what version it targets and what feature is being built. Tags become the single source of truth for what is stable. There is no guessing, no spreadsheet of version numbers, and no ambiguity about what is in production. The workflow enforces the versioning and the versioning gives the workflow meaning.</p>
-]]></description></item><item><title>Simplify Drupal 8 field value calls</title><link>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link><pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid><description><![CDATA[<p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Simplify Drupal 8 field value calls</title>
+      <link>http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link>
+      <pubDate>Mon, 28 Mar 2016 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid>
+      <description><![CDATA[<p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
 <h1 id="get-the-title-of-a-node">Get the title of a node</h1>
 <p>Let&rsquo;s load a node and return the title.</p>
 <h2 id="drupal-7">Drupal 7</h2>
@@ -1387,7 +1533,14 @@ composer.lock
 </span></span></code></pre></div><p>It&rsquo;s important to remember that when dealing with a new version it&rsquo;s tempting to say, &ldquo;This used to be easy and now it is hard.&rdquo;</p>
 <p>It only used to be easy because we knew how to do things without having to do too much research. Now things are hard &ndash;but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.</p>
 <p>The good news is that once you internalize the <code>-&gt;get('field')-&gt;value</code> pattern, it becomes second nature. One getter, one consistent API, regardless of field type or language. That is a real improvement over Drupal 7&rsquo;s <code>$node-&gt;field_name[0][LANGUAGE_NONE]['value']</code> guessing game.</p>
-]]></description></item><item><title>Working with Case Sensitive Files in a Case Insensitive world</title><link>https://www.frobiovox.com/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/</link><pubDate>Wed, 20 Jan 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/</guid><description><![CDATA[<p>TL;DR: Create a disk image that has a case sensitive file system. Then mount the disk image and work from it.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Working with Case Sensitive Files in a Case Insensitive world</title>
+      <link>http://localhost:1313/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/</link>
+      <pubDate>Wed, 20 Jan 2016 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2016/01/20/working-with-case-sensitive-files-in-a-case-insensitive-world/</guid>
+      <description><![CDATA[<p>TL;DR: Create a disk image that has a case sensitive file system. Then mount the disk image and work from it.</p>
 <blockquote>
 <p>Bonus points if you also symlink the mount to your normal working directory so that you do not have to change your workflow.</p>
 </blockquote>
@@ -1409,7 +1562,14 @@ composer.lock
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ln -s /Volumes/Disk<span style="color:#ae81ff">\\</span> Image/project-folder local-project-folder
 </span></span></code></pre></div><p>This will create a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlink</a> (that looks like a local directory) to our mounted volume in our current directory.</p>
 <p>With this setup you get the best of both worlds: a case-sensitive file system for your project and a workflow that looks and feels exactly like working from your normal directory. No more surprises when deploying files to a case-sensitive server.</p>
-]]></description></item><item><title>Altering Entity Field Queries for JOINS ORs and Profit</title><link>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link><pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid><description><![CDATA[<p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Altering Entity Field Queries for JOINS ORs and Profit</title>
+      <link>http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link>
+      <pubDate>Wed, 11 Nov 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid>
+      <description><![CDATA[<p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
 <p>I have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&rsquo;s hook and alter architecture.</p>
 <h2 id="simple-entityfieldquery">Simple EntityFieldQuery</h2>
 <p>For our example we will start with a simple EntityFieldQuery for getting a list of nodes.</p>
@@ -1453,7 +1613,14 @@ composer.lock
 </span></span></code></pre></div><p>There, we are done, right? Nope. We may think that we are, however, if we ran that code we would get a PDO exception. Why? Because we are not doing any propertyConditions on the original EntityFieldQuery. Drupal is smart enough to know that if it isn&rsquo;t using the node table in the EFQ that it doesn&rsquo;t need to <code>JOIN</code> it.</p>
 <p>To fix this, go back up to the original EntityFieldQuery and add this line <code>$query-&gt;propertyCondition('status', 1);</code>. This forces the node table into the query so our alter hook can reference <code>node.title</code>.</p>
 <p>To recap: tag your EntityFieldQuery, attach metadata with <code>addMetaData()</code>, implement <code>hook_query_TAG_alter()</code> to add your <code>OR</code> conditions, and make sure the base table is joined by including at least one <code>propertyCondition</code>. It is not obvious, but once you know the pattern it opens up EntityFieldQuery for nearly any query you need to build.</p>
-]]></description></item><item><title>Add an API to Your Jekyll Blog</title><link>https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</link><pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</guid><description><![CDATA[<p>Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML &ndash; no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Add an API to Your Jekyll Blog</title>
+      <link>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</link>
+      <pubDate>Sun, 25 Oct 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</guid>
+      <description><![CDATA[<p>Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML &ndash; no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.</p>
 <p>I really like <a href="https://pages.github.com/">github pages</a>. I <a href="https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">built my blog on it</a>, even though <a href="https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html">I host it myself</a>. Markdown is so easy, liquid is so easy. What isn&rsquo;t easy is dynamic lists of content. I want to learn <a href="https://facebook.github.io/react/">Reactjs</a> &ndash;so I will build a content listing with that. That will require a RESTful API for my content.</p>
 <h2 id="the-easy-way">The easy way</h2>
 <p>To be clear I didn&rsquo;t write this <a href="http://jekyllsnippets.com/excluding-jsonify-your-site/">snippet</a> &ndash;but only because someone else did. And working code wins.</p>
@@ -1578,7 +1745,14 @@ composer.lock
 </span></span><span style="display:flex;"><span>post.json
 </span></span></code></pre></div><p>I think these are better names.</p>
 <p>With this setup, any Jekyll blog now has a JSON listing endpoint and individual JSON post endpoints &ndash; all generated at build time with no plugins and no server-side dependencies. From here, building a React or vanilla JS front-end that consumes this API is straightforward. The content stays in markdown, the API stays in Liquid, and GitHub Pages serves it all for free.</p>
-]]></description></item><item><title>Add Some Style to Your JavaScript Log</title><link>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</link><pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid><description><![CDATA[<p>Did you know that <code>console.log</code> can render styled text? Colors, drop shadows, custom fonts &ndash; all in your browser&rsquo;s developer console. This post shows you how it is done and what it looks like across browsers.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Add Some Style to Your JavaScript Log</title>
+      <link>http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/</link>
+      <pubDate>Thu, 10 Sep 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid>
+      <description><![CDATA[<p>Did you know that <code>console.log</code> can render styled text? Colors, drop shadows, custom fonts &ndash; all in your browser&rsquo;s developer console. This post shows you how it is done and what it looks like across browsers.</p>
 <p><a href="#howitdo">Skip to the how-to</a></p>
 <h2 id="backstory">Backstory</h2>
 <p>Anytime I want to show off what the web can do with a simple blog I have to pull up <a href="http://acko.net">this awesome site</a>. I was on <a href="http://acko.net/">A Very Cool Site about Hackery, Math &amp; Design</a>, and the question was asked &ldquo;how did he do that?&rdquo;</p>
@@ -1613,7 +1787,14 @@ composer.lock
 <h4 id="appendix">Appendix</h4>
 <p>This doesn&rsquo;t work in Edge.</p>
 <p>Styled console output is a small thing, but it is useful for making important debug messages stand out in a noisy log. Library authors use it to brand their console output, and you can use it to highlight warnings or status messages during development. The <code>%c</code> format specifier is the key &ndash; everything after it gets the CSS you pass as the next argument.</p>
-]]></description></item><item><title>Need a join in an EntityFieldQuery, how about a subquery?</title><link>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</link><pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</guid><description><![CDATA[<p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it. EntityFieldQuery is the Drupal 7 way to fetch entities without writing raw SQL, but it has a well-known limitation: you cannot do arbitrary <code>JOIN</code>s the way you would with a normal <code>db_select()</code> query. That comes up the moment you try to filter users by role, since role assignments live in their own table rather than on the user entity itself. It turns out there is a clean way around this using a subquery, and it is worth knowing about because the same trick applies any time you need to filter an EntityFieldQuery against data that lives in another table.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Need a join in an EntityFieldQuery, how about a subquery?</title>
+      <link>http://localhost:1313/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</link>
+      <pubDate>Wed, 10 Jun 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</guid>
+      <description><![CDATA[<p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it. EntityFieldQuery is the Drupal 7 way to fetch entities without writing raw SQL, but it has a well-known limitation: you cannot do arbitrary <code>JOIN</code>s the way you would with a normal <code>db_select()</code> query. That comes up the moment you try to filter users by role, since role assignments live in their own table rather than on the user entity itself. It turns out there is a clean way around this using a subquery, and it is worth knowing about because the same trick applies any time you need to filter an EntityFieldQuery against data that lives in another table.</p>
 <p><em><strong>Shaddap and give me the code:</strong></em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EntityFieldQuery</span>();
 </span></span><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">entityCondition</span>(<span style="color:#e6db74">&#39;entity_type&#39;</span>, <span style="color:#e6db74">&#39;user&#39;</span>);
@@ -1648,7 +1829,14 @@ composer.lock
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">propertyCondition</span>(<span style="color:#e6db74">&#39;uid&#39;</span>, $roles_subquery, <span style="color:#e6db74">&#39;IN&#39;</span>);
 </span></span></code></pre></div><p>The interesting thing about this is that this isn&rsquo;t an array of results being passed to the propertyCondition. Instead, this is passing the query object. Then, Drupal&rsquo;s query builder will build the query to include that.</p>
 <p>Seriously, well done with the whole DB layer in Drupal 7.</p>
-]]></description></item><item><title>Setting Up Jenkins on 12.04</title><link>https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204/</link><pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204/</guid><description><![CDATA[<p>What I have noticed, is that every step by step for installing Jenkins on Ubuntu 12.04 is currently wrong. It is wrong because Jenkins recently began to require Java 1.7 instead of 1.6.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Setting Up Jenkins on 12.04</title>
+      <link>http://localhost:1313/posts/2015/05/19/setting-up-jenkins-on-1204/</link>
+      <pubDate>Tue, 19 May 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/05/19/setting-up-jenkins-on-1204/</guid>
+      <description><![CDATA[<p>What I have noticed, is that every step by step for installing Jenkins on Ubuntu 12.04 is currently wrong. It is wrong because Jenkins recently began to require Java 1.7 instead of 1.6.</p>
 <p>I was able to find one saving grace. This site gave a great <a href="http://www.whiteboardcoder.com/2014/01/install-jenkins-ubuntu.html">step by step on installing Jenkins</a> &ndash;which I am going to condense for you all here.</p>
 <h2 id="install-the-correct-java-rte">Install the correct JAVA RTE</h2>
 <ol>
@@ -1672,7 +1860,14 @@ composer.lock
 <p>I am not going to cover setting up Jenkins. If this is your first time installing Jenkins I recommend doing at least what is has here in the post install portion (<a href="http://www.whiteboardcoder.com/2014/01/install-jenkins-ubuntu.html">Securing Jenkins</a>). It goes over how to do the bare minimum in a secure install.</p>
 <h3 id="bonus">Bonus</h3>
 <p>If you don&rsquo;t like how Jenkins is listening only to port 8080, you can set up Jenkins to listen on port 80, or <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-jenkins-on-ubuntu-12-04">just have nginx do all the hard work</a>.</p>
-]]></description></item><item><title>Setting a default value for a link or url field in Drupal 7</title><link>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link><pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid><description><![CDATA[<p>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Setting a default value for a link or url field in Drupal 7</title>
+      <link>http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link>
+      <pubDate>Mon, 04 May 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid>
+      <description><![CDATA[<p>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.</p>
 <p>In case you don&rsquo;t I suggest reading these pages first:</p>
 <ul>
 <li><a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7">The Drupal Form API</a></li>
@@ -1709,7 +1904,14 @@ composer.lock
 </span></span></code></pre></div><p>Therefore, in-order to set the default value of a link field, one must set the <code>$form['field_link']['#default_value']['url']</code>. This is assuming that it is desired to change the url of the link field. It could be that the title needs to be set or one of the other optional attributes for the link field.</p>
 <p>This should hold true for all fields of all types. I noticed this when I stumbled upon this <a href="https://www.drupal.org/node/1782516#comment-7552205">Drupal.org issue where someone was asking how to set the default value of a link field.</a></p>
 <p>The issue didn&rsquo;t talk about this behavior of the #columns item. I just noticed it when digging through that. Cool eh?</p>
-]]></description></item><item><title>Drupal or Wordpress? Why not Jekyll.</title><link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link><pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid><description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Drupal or Wordpress? Why not Jekyll.</title>
+      <link>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
+      <pubDate>Tue, 27 Jan 2015 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
+      <description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
 <p>So if Jekyll isn&rsquo;t a CMS then what is it? Jekyll is a &ldquo;blog aware&rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.</p>
 <h2 id="what-are-the-advantages-to-static-site-generation">What are the advantages to static site generation?</h2>
 <p>The biggest advantage is simplified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necessary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.</p>
@@ -1783,7 +1985,14 @@ composer.lock
 <p>After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&rsquo;t want to ask the old maintainer to put the page back up and I didn&rsquo;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I decided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.</p>
 <h3 id="frobiovoxcom-or-frobgithubio">Frobiovox.com or frob.github.io</h3>
 <p>Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.</p>
-]]></description></item><item><title>WebGL with three.js</title><link>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</link><pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</guid><description><![CDATA[<p>There is a spinning green cube somewhere on this page. It is not a video, it is not a gif &ndash; it is being rendered in real-time by your browser&rsquo;s GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.</p>
+]]></description>
+    </item>
+    <item>
+      <title>WebGL with three.js</title>
+      <link>http://localhost:1313/posts/2014/11/15/webgl-with-threejs/</link>
+      <pubDate>Sat, 15 Nov 2014 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2014/11/15/webgl-with-threejs/</guid>
+      <description><![CDATA[<p>There is a spinning green cube somewhere on this page. It is not a video, it is not a gif &ndash; it is being rendered in real-time by your browser&rsquo;s GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.</p>
 <p>Everything is moving away from the compiled native app and over to the web browser. This has the advantage of giving users (those not using IE) the same experience no matter what platform the webapp is running on. One relatively new api that has come out of this shift is WebGL.</p>
 <div id="screen-wrapper"></div>
 <p><a href="http://www.khronos.org/webgl/wiki/Main_Page" target="_blank">WebGL </a>is a way for web developers to directly access the <a href="http://www.opengl.org/" target="_blank">OpenGL </a>apis. WebGL has shown some remarkable adoption over the past few years and I have to think this is due to it being based on the very stable open apis from OpenGL. If you have used OpenGL (or any 3D programming) there is a lot to do before anything can be rendered to the screen. I am not talking about art assets either, I am talking about templated boilerplate code that makes this stuff very tedious to start with. Luckily there are lots of Javascript people writing libraries so I don&rsquo;t have to rewrite the same boiler-plate code over and over again.</p>
@@ -1894,7 +2103,14 @@ composer.lock
 <p>One more thing is required to make the scene update. If the scene had no movement then there would be no point in making it use realtime hardware processing. By creating the render function and then calling that function with requestAnimationFrame and renderer.render we are creating the game loop and allowing updates to occur. This is why the cube is spinning.</p>
 <h2 id="where-to-go-from-here">Where to go from here</h2>
 <p>That is all it takes to get a 3D scene running in a browser. A scene, a camera, a renderer, some geometry with a material, a light or two, and a render loop. Three.js handles the boilerplate so you can focus on what you want to build. From here, try swapping in different geometries, adding textures, or loading a real model. The <a href="http://threejs.org/docs/">Three.js documentation</a> and <a href="http://threejs.org/examples/">examples page</a> are the best next steps.</p>
-]]></description></item><item><title>Creating screen-reader friendly read more links</title><link>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</link><pubDate>Tue, 06 May 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</guid><description><![CDATA[<p>Over the course of my career I have worked on more than a fair share of higher-education sites. When dealing with a universities website there are many challenges. One of the biggest challenges is in dealing with the accessibility standards. I am writing about <a href="http://www.w3.org/TR/WCAG20/">WCAG</a>. The WCAG, or Web Content Accessibility Guidelines, is a detailed list for how accessibility should be done on the web.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Creating screen-reader friendly read more  links</title>
+      <link>http://localhost:1313/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</link>
+      <pubDate>Tue, 06 May 2014 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2014/05/06/creating-screen-reader-friendly-read-more--links/</guid>
+      <description><![CDATA[<p>Over the course of my career I have worked on more than a fair share of higher-education sites. When dealing with a universities website there are many challenges. One of the biggest challenges is in dealing with the accessibility standards. I am writing about <a href="http://www.w3.org/TR/WCAG20/">WCAG</a>. The WCAG, or Web Content Accessibility Guidelines, is a detailed list for how accessibility should be done on the web.</p>
 <p>I might write about the problems with WCAG at some point, but this article is about strictly an incompatibility between what the designer/UX people want and what the WCAG says about &ldquo;READ MORE&rdquo; links. <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html">Specifically WCAG 2.0 SC 2.4.4</a>. This states that any link needs to have context.</p>
 <p>The issue with this is even though the standard says:</p>
 <p><q>A Web page contains a collection of news articles. The main page lists the first few sentences of each article, followed by a &ldquo;Read more&rdquo; link. A screen reader command to read the current paragraph provides the context to interpret the purpose of the link.</q></p>
@@ -1933,10 +2149,24 @@ composer.lock
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Thanks to <a href="https://translate.google.com/">Google Translator</a> for the Spanish and Simplified Chinese translations. Thanks to <a href="https://www.bing.com/translator/">Bing translator for the Klingon</a>.</p>
 <p>The technique is simple: hide the real link text with <code>font-size: 0</code>, replace it visually with a <code>:after</code> pseudo element, and let screen readers see the original accessible text. It is a small amount of CSS that makes a real difference for users who navigate by link list. If your site has &ldquo;Read More&rdquo; links, this is worth the five minutes it takes to implement.</p>
-]]></description></item><item><title>Utilizing Front End CSS Design Paradigms In Drupal</title><link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link><pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid><description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Utilizing Front End CSS Design Paradigms In Drupal</title>
+      <link>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid>
+      <description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
 <p><a href="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank">Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014</a></p>
 <iframe allowfullscreen="true" frameborder="0" height="389" mozallowfullscreen="true" src="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/embed?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="480"></iframe>
-]]></description></item><item><title>Creating Auto Submitting Forms with Drupal's Form API</title><link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link><pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid><description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
+]]></description>
+    </item>
+    <item>
+      <title>Creating Auto Submitting Forms with Drupal&#39;s Form API</title>
+      <link>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid>
+      <description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
 <p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
 <p>My use case was a semi-typical one: have the input from one select list affect the options in another select list.</p>
 <p>This could be done in any number of ways including:</p>
@@ -1987,7 +2217,14 @@ composer.lock
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $form;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>That is all there is to it. By adding a single <code>onChange</code> attribute through the form API&rsquo;s <code>#attributes</code> array, we get auto-submission without the overhead of <code>#ajax</code>. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.</p>
-]]></description></item><item><title>css less sass oocss drycss bem front end css design paradigm smacss down</title><link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link><pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid><description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
+]]></description>
+    </item>
+    <item>
+      <title>css less sass oocss drycss bem front end css design paradigm smacss down</title>
+      <link>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
+      <pubDate>Thu, 21 Nov 2013 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
+      <description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
 <h2>Object Oriented CSS</h2>
 <p>OOCSS has several principles that it is built upon.</p>
 <ol><li>A style should be written once and only once.</li>
@@ -2079,4 +2316,7 @@ box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
 <h2>Who Wins?</h2>
 <p>SMACSS.</p>
 <p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>
-]]></description></item></channel></rss>
+]]></description>
+    </item>
+  </channel>
+</rss>

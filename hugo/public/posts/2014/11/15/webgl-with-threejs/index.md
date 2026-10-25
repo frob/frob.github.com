@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/ |
+| url | http://localhost:1313/posts/2014/11/15/webgl-with-threejs/ |
 | date | 2014-11-15 |
 | tags | web development, kwallcompany, tutorial, frontpage |
 | description | Did you know that 3D is possible on the web with WEBGL? You did? Oh, well, go checkout Three.js then. |

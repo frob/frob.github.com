@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on Frank Robert Anderson</title>
+    <link>http://localhost:1313/tags/testing/</link>
+    <description>Recent content in Testing on Frank Robert Anderson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tags/testing/feed.xml" rel="self" type="application/rss&#43;xml" />
+    <item>
+      <title>The 80/20 of Testing: Why End-to-End Tests Cost the Most and Matter the Most</title>
+      <link>http://localhost:1313/posts/2026/08/07/the-80-20-of-testing/</link>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 &#43;0000</pubDate>
+      <guid>http://localhost:1313/posts/2026/08/07/the-80-20-of-testing/</guid>
+      <description><![CDATA[<p>Most of the tests you write should be unit and integration tests. Call it 80% of the suite. The remaining 20% is end-to-end &ndash; the tests that drive the real system the way a real user does. That 20% will eat 80% of your testing effort, and it is the part you can least afford to skip.</p>
+<p>That is not a failure of planning. It is the shape of the work.</p>
+<h2 id="why-the-bulk-is-cheap">Why the bulk is cheap</h2>
+<p>Unit tests are cheap because they lie to you on purpose. You isolate a function, hand it fabricated inputs, and assert on its output. No network, no database, no clock, no filesystem. They run in milliseconds, they fail with a precise line number, and when one breaks you know exactly which change broke it.</p>
+<p>Integration tests are a little more expensive &ndash; a real database, a real HTTP handler, maybe a container or two &ndash; but they are still operating inside a world you control. You decide what is in the database. You decide what the upstream service returns. Setup is a fixture, teardown is a truncate.</p>
+<p>Because they are cheap, you write a lot of them, and you should. They are where you cover the combinatorics: the null case, the empty list, the off-by-one, the timezone that ruins everything, the malformed payload. Trying to cover that surface end-to-end would be absurd. Nobody wants to boot a browser to find out that a date parser mishandles February 29th.</p>
+<p>So the pyramid holds. Wide base of fast, narrow tests. Thin cap of slow, wide ones.</p>
+<h2 id="why-the-cap-is-expensive">Why the cap is expensive</h2>
+<p>Then you get to end-to-end, and every convenience you relied on disappears.</p>
+<p>You need the whole system running &ndash; every service, every dependency, in something resembling the shape it takes in production. You need seeded data that is realistic enough to be meaningful and stable enough to assert against. You need authentication, because real users log in. You need to deal with time, because real systems have sessions and expirations and background jobs.</p>
+<p>Then you need the test itself to be reliable, which is where most of the effort actually goes. An end-to-end test is a distributed systems problem wearing a test&rsquo;s clothing. The button is there but not yet clickable. The API responded but the UI has not re-rendered. The job is queued but has not run. Every one of those is a race, and every race is a future flaky failure. Writing the assertion takes ten minutes. Making it pass a thousand times in a row takes a week.</p>
+<p>And when it does fail, it tells you almost nothing. &ldquo;Expected the order confirmation page, got the cart page.&rdquo; Somewhere in fifteen thousand lines of code across four services, something went wrong. Go find it. Compare that to a unit test failure, which points at a function and a line.</p>
+<p>Then add the maintenance. Someone renames a CSS class and thirty tests break. Someone adds a required field to signup and every test that creates a user breaks. Someone changes a redirect and the whole suite falls over. None of these are real bugs, and all of them cost you an afternoon.</p>
+<p>That is the 80%. Not writing the tests. Owning them.</p>
+<h2 id="why-it-is-worth-it-anyway">Why it is worth it anyway</h2>
+<p>Here is the thing that justifies all of it: your unit tests can be 100% green while your product is completely broken.</p>
+<p>This is not a hypothetical. It is the normal case. Every unit passes because every unit is correct in isolation. Every integration test passes because each pair of components agrees. And the login flow is still broken, because the session cookie is set with a <code>SameSite</code> policy that the redirect from your identity provider does not survive. No unit owns that bug. No integration test spans it. It lives in the gaps.</p>
+<p>End-to-end tests are the only tests that exercise the gaps. They are the only tests that touch:</p>
+<ul>
+<li><strong>Configuration.</strong> Environment variables, feature flags, connection strings, TLS settings. Unit tests mock all of this away. Production does not.</li>
+<li><strong>Wiring.</strong> The dependency injection container, the route table, the middleware order. A route registered twice, a middleware in the wrong position &ndash; invisible to everything below.</li>
+<li><strong>The browser.</strong> The bundle that failed to build, the JavaScript error that blanks the page, the CSS that puts the submit button behind a modal overlay.</li>
+<li><strong>Real sequences.</strong> Users do not call one endpoint. They sign up, verify an email, log in, add to cart, apply a coupon, pay, and get a receipt. The bugs are in the transitions between steps.</li>
+<li><strong>Your assumptions about your own mocks.</strong> Every mock is a claim about how a dependency behaves. End-to-end tests are where you find out the claim was wrong.</li>
+</ul>
+<p>And there is a value that has nothing to do with catching bugs: an end-to-end test is the only test that a non-engineer can believe. When you tell a stakeholder &ldquo;checkout works,&rdquo; a passing unit test is a statement about a function. A passing end-to-end test is a recording of a purchase actually being made. One of those ends the conversation.</p>
+<h2 id="what-to-do-with-this">What to do with this</h2>
+<p>The practical implication is not &ldquo;write more end-to-end tests.&rdquo; It is: budget for the ones you have, and be ruthless about which ones you keep.</p>
+<p><strong>Pick the paths that pay rent.</strong> For most products that is three to ten flows: sign up, log in, the core action the product exists to perform, and the flow that takes money. If a flow being broken for an hour would generate phone calls, it belongs in the 20%. If it would generate a ticket, push it down the pyramid.</p>
+<p><strong>Treat the harness as a product.</strong> The seeded data, the auth helper, the wait-for-idle utility, the page objects &ndash; this is infrastructure. If it is a pile of copy-pasted selectors, your 80% of effort becomes 95%. Give it the same review standards as shipping code.</p>
+<p><strong>Never sleep, always wait for a condition.</strong> Every fixed sleep in an end-to-end suite is a flake with a delay fuse. Wait for the element, the network to settle, the job queue to drain. Ban the arbitrary timeout in review.</p>
+<p><strong>Delete flaky tests you will not fix.</strong> A test that fails 5% of the time for no reason is worse than no test, because it teaches the team to re-run the build instead of reading the failure. Once people click &ldquo;retry&rdquo; reflexively, the whole suite has stopped meaning anything. Fix it or cut it.</p>
+<p><strong>Push discoveries down.</strong> When an end-to-end test catches a real bug, that is a signal about a gap in your cheap tests. Fix the bug, then write the unit or integration test that would have caught it. End-to-end tests find the class of problem; the layers below should catch the next instance of it.</p>
+<p>The 80/20 split is not a target to optimize away. The cheap tests give you the coverage. The expensive ones give you the confidence. You need both, and you should stop being surprised that the small half is the hard half.</p>
+]]></description>
+    </item>
+  </channel>
+</rss>
