@@ -1,41 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ai on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/ai/</link>
-    <description>Recent content in Ai on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/ai/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>The future of software could look very different than it does today</title>
-      <link>http://localhost:1313/posts/2026/10/20/the-future-of-software-could-look-very-different-than-it-does-today/</link>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/20/the-future-of-software-could-look-very-different-than-it-does-today/</guid>
-      <description><![CDATA[<h1 id="the-future-of-software-could-look-very-different-in-20-years-than-it-does-today">The future of Software could look very different in 20 years than it does today</h1>
-<p>Ever since the beginning of the GenAI hype train, I have been convinced that Local AI is inevitable. I have gotten a bit of ridicule for that as well. I have been told &ldquo;On prem AI will never take off.&rdquo; I hear this more from my aged contemporaries than from the younger engineers, which astounds me. These are fellows just barely too young to remember when it was said by aging executives &ldquo;why would a normal person want a computer?&rdquo;</p>
-<p>Don&rsquo;t completely misunderstand me, I am not saying everyone needs local AI. I am saying everyone will have local AI and if we are going to bring them the future of software and the future of technology then we should understand that. No one needs a calculator to do basic arithmetic, but everyone uses one. Partly, because they have one on their phone. It is in reach nearly all the time. So why not use it?</p>
-<blockquote>
-<p>To do anything useful you need 512GB of memory. No one has 512GB of memory.</p>
-</blockquote>
-<p>Yeah, right now 512GB of memory sounds like a lot, but 10 years ago 32GB of memory sounded like a lot. 15 years ago 16GB of memory sounded like a lot. I still remember buying 16MB of memory to put into our computer so we could play Ultima 8 (I also remember being very disappointed). <a href="https://en.wikipedia.org/wiki/Moore%27s_law">Moore&rsquo;s law</a> might not pan out like it used to and memory might be really expensive right now but you&rsquo;re missing a few things.</p>
-<ol>
-<li>The memory shortage will be sorted out within the next 5 years</li>
-<li>The price of memory is 300% or more inflated</li>
-<li>Only Software Engineers need 512GB of memory to use AI today &ndash;before compression and optimization has been implemented</li>
-<li>Most people are not Software Engineers and can do most anything they want or need to do with 12GB or less of memory today.</li>
-</ol>
-<p>It is important to not be short sighted. We are building something completely new here. We have never before had the oportunity to use these tools in this way for our clients. It begs us not just to build something new but to build it in a new way. We need to think as much about how the tool relates to the product at hand as we are thinking about the product itself.</p>
-<p>I built a Proof of Concept that embedded a model in the user&rsquo;s browser. It used <a href="https://ai.google.dev/gemma/docs/gemma-3n">Gemma&rsquo;s edge model</a> and <a href="https://lunrjs.com/">lunr</a> (a static site search index) to create a RAG like search based on the content in the site. Context was controlled through the search index and fed to the model when the user queried the search. The downside is that downloading the model took 20 minutes, but Google is already trying to build the model into the browser. Gemma&rsquo;s edge model is less than 4GB. It handily fits in most computer&rsquo;s memory with room to spare. This is cumbersome today, but in 2 years this will likely be as expected a common feature as search. We should be building with this in mind so that when the feature is requested we don&rsquo;t have to rebuild the whole product to incorporate it.</p>
-<p>We cannot allow ourselves to be short sited. The products we build now are lasting longer than ever before. Even if the client hasn&rsquo;t asked for it and is unwilling to buy into it, we should have a 10 year plan for anything we launch.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Who benefits from the AI guardrails</title>
-      <link>http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</link>
-      <pubDate>Tue, 13 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</guid>
-      <description><![CDATA[<p>The calls for AI regulation got louder at the exact moment the models stopped getting dramatically better. I don&rsquo;t think that&rsquo;s a coincidence.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ai on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/ai/</link><description>Recent content in Ai on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/ai/feed.xml" rel="self" type="application/rss+xml"/><item><title>Who benefits from the AI guardrails</title><link>https://www.frobiovox.com/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</link><pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</guid><description><![CDATA[<p>The calls for AI regulation got louder at the exact moment the models stopped getting dramatically better. I don&rsquo;t think that&rsquo;s a coincidence.</p>
 <h2 id="the-plateau">The plateau</h2>
 <p>For a couple of years every release felt like a leap. Now the leaps are smaller. The newest models are better, but not in the way that justifies the money that went into them. The gains are coming from tooling, context and cost, not from some new kind of capability. That&rsquo;s a fine place for a technology to be. It is a terrible place to be if you&rsquo;ve borrowed against the idea that it keeps doubling.</p>
 <p>When the product stops improving, the moat has to come from somewhere else.</p>
@@ -49,14 +12,7 @@
 <p>I&rsquo;ve said for a while that local AI is inevitable. Everyone will have it, the way everyone has a calculator. The people who would prefer that you rent it have noticed too. So the pitch becomes &ldquo;only trusted providers should run these.&rdquo; It sounds responsible. What it does is turn a tool that anyone can run into a service that a few companies can sell, right when the open models are good enough that nobody has to buy.</p>
 <p>I can&rsquo;t prove anyone&rsquo;s motives. I can tell you who ends up holding the keys if it works.</p>
 <p>The next time you hear a call for guardrails, ask what happens to the model on your laptop.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Introducing ztd; disposable VMs for untrusted agent work</title>
-      <link>http://localhost:1313/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</link>
-      <pubDate>Thu, 10 Sep 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</guid>
-      <description><![CDATA[<p><code>--dangerously-skip-permissions</code> is a flag with an honest name. It&rsquo;s risky, and I don&rsquo;t like it. However, most people who run coding agents claim to use it, because the alternative is worse in a way nobody likes admitting. An agent that stops to ask before every file write and every shell command is an agent you spend the afternoon babysitting, and the babysitting is the part that destroys the value. So you turn the prompts off, or you leave them on and click &ldquo;yes&rdquo; two hundred times, which is the same thing with extra steps and a worse outcome &ndash; after the fortieth prompt you are not reading them anymore. You are pattern-matching on the shape of the dialog. That is not a security control. That is a security control&rsquo;s costume.</p>
+]]></description></item><item><title>Introducing ztd; disposable VMs for untrusted agent work</title><link>https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</link><pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</guid><description><![CDATA[<p><code>--dangerously-skip-permissions</code> is a flag with an honest name. It&rsquo;s risky, and I don&rsquo;t like it. However, most people who run coding agents claim to use it, because the alternative is worse in a way nobody likes admitting. An agent that stops to ask before every file write and every shell command is an agent you spend the afternoon babysitting, and the babysitting is the part that destroys the value. So you turn the prompts off, or you leave them on and click &ldquo;yes&rdquo; two hundred times, which is the same thing with extra steps and a worse outcome &ndash; after the fortieth prompt you are not reading them anymore. You are pattern-matching on the shape of the dialog. That is not a security control. That is a security control&rsquo;s costume.</p>
 <p>The honest version of the problem is that the approval prompt is doing a job it was never able to do. It is trying to be a boundary using your attention as the enforcement mechanism, and your attention is a consumable. I <a href="/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/">wrote a while back</a> about how the right workflow with these tools depends on what you already know. This is the infrastructure half of that argument: the fix is not to approve more carefully, it is to change what &ldquo;yes&rdquo; can possibly reach.</p>
 <p>So I wrote <a href="https://gitlab.com/frob/ztd">ztd</a>. It gives me a disposable VM to let my agents run free. You spin one up, you let the agent run completely wide open <em>inside</em> it, the work comes back over git, and then you throw the VM away. The blast radius of anything the agent does ends at a machine you were going to delete anyway.</p>
 <p>Sandbox escapes do exist, and so long as you&rsquo;re not telling the agent to go off the rails you should be able to get some work done. This isn&rsquo;t a research sandbox tool, it is a work tool.</p>
@@ -106,14 +62,7 @@
 </span></span></code></pre></div><p>Which is a fine moment to point out the obvious: that first line is you deciding to trust a stranger&rsquo;s tap. It is a third-party repository that Homebrew will install software from, nobody at Homebrew has looked at it, and the binaries inside are unsigned &ndash; the cask strips the Gatekeeper quarantine attribute at install, which is precisely the kind of thing you would want to know before running it. It&rsquo;s four lines. <a href="https://gitlab.com/frob/homebrew-ztd/-/blob/main/Casks/ztd.rb">Read it</a>. If you&rsquo;d rather not extend that trust, the archives and a <code>checksums.txt</code> are on the releases page and building from source is a <code>go build</code>.</p>
 <p>I would find it a bit rich to write a whole post about not trusting things and then ask you to <code>curl | bash</code> me on faith.</p>
 <p>Then <code>ztd check</code>, which is the first thing to run and the thing to trust &ndash; it will tell you exactly what your host is missing, including both of the firewall traps above, with the command to fix each one.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Content gatekeeping in a GenAI world</title>
-      <link>http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</link>
-      <pubDate>Sun, 10 May 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</guid>
-      <description><![CDATA[<p>Let me start with a bit of history. It might seem like a hard thing for today&rsquo;s generation to understand, but content used to cost money &ndash; especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.</p>
+]]></description></item><item><title>Content gatekeeping in a GenAI world</title><link>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</link><pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/</guid><description><![CDATA[<p>Let me start with a bit of history. It might seem like a hard thing for today&rsquo;s generation to understand, but content used to cost money &ndash; especially novel or reliable content. In order to keep up with the latest in science or tech, one needed to subscribe to journals or magazines. An encyclopedia set was an expensive necessity before the age when almost all written content became free.</p>
 <p>It was in this time that the foundations of the World Wide Web were being laid in the internet protocol that would become http &ndash; the protocol that serves web pages and other hypermedia to the world. And that is why HTTP has had a provision for &ldquo;Payment Required&rdquo; responses that has gone unused for 30 years.</p>
 <p>HTTP, the communication layer of the web, was designed with the expectation that content would cost money. Instead, the web became a mostly ad-based platform. But those days might be coming to an end. As the browser stops being a destination platform, more and more people are getting fed the content from means that don&rsquo;t feed them ads. Worse yet, they are even getting the direct content. As more and more people access content through Gen AI services, such as Claude, Gemini, ChatGPT, DeepSeek, or Copilot, they are no longer reading content from a single source, but rather a distillation of many sources. In that world, who should be paid, and do ads make sense?</p>
 <p>There is actually way more to it than that. We haven&rsquo;t even talked about training data.</p>
@@ -168,14 +117,7 @@ flowchart LR
 <p>The licensing deals are a one-time settlement of the old web. They matter, the numbers are large, and they will keep happening &ndash; but the leverage curve is wrong and everyone in the business knows it. MCP plus x402 plus RSL is the architecture of the next web, where the unit of commerce is not &ldquo;human visits page, sees ad&rdquo; but &ldquo;agent fetches resource, settles micropayment, returns answer to a human.&rdquo; It is the architecture where my original instinct &ndash; content paywalled, AI pays to access &ndash; actually becomes mechanically possible, because the payment and the auth and the access all happen at the moment of use rather than once-ever at training time.</p>
 <p>I should be honest about the caveat. Most of this is still early. On-chain x402 volume was <a href="https://www.coindesk.com/tech/2026/05/05/ai-agents-are-breaking-web-economics-but-cloudflare-says-x402-can-help">around $28,000 per day in March</a>, which is rounding error. MCP server quality is uneven. RSL is more aspiration than adoption. Nobody has settled the question of whether crypto rails win or fiat rails do &ndash; Visa and Mastercard have their own Trusted Agent Protocol pushing the same direction from the other side. The technical pieces exist; the market structure does not yet.</p>
 <p>But the technical pieces exist. That is the part that was not true a year ago. Build something, hook up an MCP server with a 402 in front of it, see what happens. That is the pitch, and I think it is going to work.</p>
-]]></description>
-    </item>
-    <item>
-      <title>An experienced developers view on writing software in the age of vibe coding and generative ai</title>
-      <link>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid>
-      <description><![CDATA[<h2 id="i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks">I have spent many tokens building with AI in many different ways and using different stacks</h2>
+]]></description></item><item><title>An experienced developers view on writing software in the age of vibe coding and generative ai</title><link>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link><pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid><description><![CDATA[<h2 id="i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks">I have spent many tokens building with AI in many different ways and using different stacks</h2>
 <p>I have seen a recent trend revived among software developers. This is the belief that the productivity of a Software Engineer should (or can be) measured in lines of code per week. This is a metric that was, largely, discarded by Software Engineers 50 years ago. The truth of the matter is that every line of code is a liability. This liability used to be mitigated by the time it took skilled and experienced people to plan, design, and write the code. These were people who had accumulated enough <strong>passive knowledge</strong> to instinctively recognize when something was wrong, and enough <strong>active knowledge</strong> to make deliberate, informed decisions.</p>
 <p>Generative AI has changed everything and now non-skilled people who have never written a line of code before in their lives are starting to write complicated 10,000+ line applications. The dirty secret is that they still don&rsquo;t know what they are doing. If you are one of those people, I do not mean to offend you. It is you who, most of all, needs to read this post.</p>
 <h3 id="tldr">TL;DR</h3>
@@ -264,14 +206,7 @@ flowchart LR
 <hr>
 <h2 id="closing-thought">Closing Thought</h2>
 <p>The best use of AI agents isn&rsquo;t building software faster. It&rsquo;s building software at the appropriate speed for your current level of understanding (your mix of <strong>active</strong> and <strong>passive knowledge</strong>) with a deliberate ramp toward building it faster as you grow. The agent meets you where you are, but you have to be honest about where that is.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Getting XDebug working with the Zed editor, starring Claude</title>
-      <link>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
-      <pubDate>Mon, 05 Jan 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
-      <description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
+]]></description></item><item><title>Getting XDebug working with the Zed editor, starring Claude</title><link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid><description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
 <p>Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.</p>
 <h2 id="why-zed">Why Zed</h2>
 <p>The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.</p>
@@ -671,7 +606,4 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
 <p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
 <p>Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
 <p>I look forward to using Zed, more, now that Xdebug is working.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

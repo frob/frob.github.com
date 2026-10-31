@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2026/05/10/content-gatekeeping-in-a-genai-world/ |
+| url | https://www.frobiovox.com/posts/2026/05/10/content-gatekeeping-in-a-genai-world/ |
 | date | 2026-05-10 |
 | tags | ai, web development, frontpage |
 

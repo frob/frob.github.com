@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Debug on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/debug/</link>
-    <description>Recent content in Debug on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/debug/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>Getting XDebug working with the Zed editor, starring Claude</title>
-      <link>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link>
-      <pubDate>Mon, 05 Jan 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid>
-      <description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Debug on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/debug/</link><description>Recent content in Debug on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/debug/feed.xml" rel="self" type="application/rss+xml"/><item><title>Getting XDebug working with the Zed editor, starring Claude</title><link>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/</guid><description><![CDATA[<h1 id="zed-ide-and-xdebug">Zed IDE and Xdebug</h1>
 <p>Below is my journey at getting XDebug working with Zed. I have attempted this several times. If I had a spare hour, I would see if I could get Xdebug working. It normally ended in a fail, but not this time.</p>
 <h2 id="why-zed">Why Zed</h2>
 <p>The Zed editor is one of the more interesting new projects in a long while. Zed is an editor that is built like a multiplayer video game. It was designed in the onset with multi-user chat and to allow for multiple users to edit files together. When AI began to gain traction, they realized that the AI could be another user and added the AI chat and agent to the editor.</p>
@@ -412,14 +398,7 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
 <p>Essentially, this is what I was doing. I still used PhpStorm as my primary development environment but I would Zed for nearly anything else. This is close to how I was using VSCode before. VSCode started to get slow and bloated a couple of years ago. For PHP I have been using PhpStorm for over 10 years. This too is getting bloated. It is IntelliJ based &ndash;which means java. For desktop applications you could do worse than using java, but it does leave performance on the table.</p>
 <p>Lately, PhpStorm has begun its somewhat clunky AI integrations. I find the AI in PhpStorm causes, at least, as much delay as it does time savings. This is the primary reason I turned to Zed &ndash;it is far more AI first. Zed allows us to use AI&rsquo;s from many sources, including Ollama based local AIs.</p>
 <p>I look forward to using Zed, more, now that Xdebug is working.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Add Some Style to Your JavaScript Log</title>
-      <link>http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/</link>
-      <pubDate>Thu, 10 Sep 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid>
-      <description><![CDATA[<p>Did you know that <code>console.log</code> can render styled text? Colors, drop shadows, custom fonts &ndash; all in your browser&rsquo;s developer console. This post shows you how it is done and what it looks like across browsers.</p>
+]]></description></item><item><title>Add Some Style to Your JavaScript Log</title><link>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</link><pubDate>Thu, 10 Sep 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/</guid><description><![CDATA[<p>Did you know that <code>console.log</code> can render styled text? Colors, drop shadows, custom fonts &ndash; all in your browser&rsquo;s developer console. This post shows you how it is done and what it looks like across browsers.</p>
 <p><a href="#howitdo">Skip to the how-to</a></p>
 <h2 id="backstory">Backstory</h2>
 <p>Anytime I want to show off what the web can do with a simple blog I have to pull up <a href="http://acko.net">this awesome site</a>. I was on <a href="http://acko.net/">A Very Cool Site about Hackery, Math &amp; Design</a>, and the question was asked &ldquo;how did he do that?&rdquo;</p>
@@ -454,7 +433,4 @@ Rather than reimplementing every debug adapter from scratch in Rust, Zed leverag
 <h4 id="appendix">Appendix</h4>
 <p>This doesn&rsquo;t work in Edge.</p>
 <p>Styled console output is a small thing, but it is useful for making important debug messages stand out in a noisy log. Library authors use it to brand their console output, and you can use it to highlight warnings or status messages during development. The <code>%c</code> format specifier is the key &ndash; everything after it gets the CSS you pass as the next argument.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

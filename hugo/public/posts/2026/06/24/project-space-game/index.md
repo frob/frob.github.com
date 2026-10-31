@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2026/06/24/project-space-game/ |
+| url | https://www.frobiovox.com/posts/2026/06/24/project-space-game/ |
 | date | 2026-06-24 |
 | tags | gamedev, godot, frontpage |
 | description | An early look at the space game I'm building — the question that started it a decade ago, what actually runs today, and where it's headed. Very much a work in progress. |

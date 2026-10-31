@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Frank Robert Anderson</title>
-    <link>http://localhost:1313/</link>
-    <description>Prestigious operator of commplicated auto-complete.</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>I remember</title>
-      <link>http://localhost:1313/posts/2026/10/22/i-remember/</link>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/22/i-remember/</guid>
-      <description><![CDATA[<p>I remember when the web was fun. It was this new thing. People were trying new things all the time. There was no google, there was barely a yahoo. Search engines existed but you had to look for things yourself. You found pages by clicking links and exploring. Your site got discovered because someone else linked to you. Maybe your site had a niche community that allowed it into a webring. Most sites were just curiosities.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frank Robert Anderson</title><link>https://www.frobiovox.com/</link><description>Prestigious operator of commplicated auto-complete.</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/feed.xml" rel="self" type="application/rss+xml"/><item><title>I remember</title><link>https://www.frobiovox.com/posts/2026/10/22/i-remember/</link><pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/10/22/i-remember/</guid><description><![CDATA[<p>I remember when the web was fun. It was this new thing. People were trying new things all the time. There was no google, there was barely a yahoo. Search engines existed but you had to look for things yourself. You found pages by clicking links and exploring. Your site got discovered because someone else linked to you. Maybe your site had a niche community that allowed it into a webring. Most sites were just curiosities.</p>
 <p>One such site I remember was interactive in a way I had never seen a website be interactive. I felt like Harry Potter on his first trip to Diagon Alley, except, Harry Potter didn&rsquo;t exist yet.</p>
 <p>One page on this site was really interesting. It wrote itself while you watched. It wasn&rsquo;t typing, it was cursive, and it drew the letters on the screen. If you stopped reading the story, it would start to drift and doodle and then come back to writing as soon as you noticed it wasn&rsquo;t writing.</p>
 <style>
@@ -23,37 +9,7 @@
 </style>
 <p><canvas id="writing" class="writing-canvas" style="height: 90px;"></canvas></p>
 <p>There is no point to this. Just a novelty, just for fun. This is what the web was before google. It was just fun.</p>
-]]></description>
-    </item>
-    <item>
-      <title>The future of software could look very different than it does today</title>
-      <link>http://localhost:1313/posts/2026/10/20/the-future-of-software-could-look-very-different-than-it-does-today/</link>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/20/the-future-of-software-could-look-very-different-than-it-does-today/</guid>
-      <description><![CDATA[<h1 id="the-future-of-software-could-look-very-different-in-20-years-than-it-does-today">The future of Software could look very different in 20 years than it does today</h1>
-<p>Ever since the beginning of the GenAI hype train, I have been convinced that Local AI is inevitable. I have gotten a bit of ridicule for that as well. I have been told &ldquo;On prem AI will never take off.&rdquo; I hear this more from my aged contemporaries than from the younger engineers, which astounds me. These are fellows just barely too young to remember when it was said by aging executives &ldquo;why would a normal person want a computer?&rdquo;</p>
-<p>Don&rsquo;t completely misunderstand me, I am not saying everyone needs local AI. I am saying everyone will have local AI and if we are going to bring them the future of software and the future of technology then we should understand that. No one needs a calculator to do basic arithmetic, but everyone uses one. Partly, because they have one on their phone. It is in reach nearly all the time. So why not use it?</p>
-<blockquote>
-<p>To do anything useful you need 512GB of memory. No one has 512GB of memory.</p>
-</blockquote>
-<p>Yeah, right now 512GB of memory sounds like a lot, but 10 years ago 32GB of memory sounded like a lot. 15 years ago 16GB of memory sounded like a lot. I still remember buying 16MB of memory to put into our computer so we could play Ultima 8 (I also remember being very disappointed). <a href="https://en.wikipedia.org/wiki/Moore%27s_law">Moore&rsquo;s law</a> might not pan out like it used to and memory might be really expensive right now but you&rsquo;re missing a few things.</p>
-<ol>
-<li>The memory shortage will be sorted out within the next 5 years</li>
-<li>The price of memory is 300% or more inflated</li>
-<li>Only Software Engineers need 512GB of memory to use AI today &ndash;before compression and optimization has been implemented</li>
-<li>Most people are not Software Engineers and can do most anything they want or need to do with 12GB or less of memory today.</li>
-</ol>
-<p>It is important to not be short sighted. We are building something completely new here. We have never before had the oportunity to use these tools in this way for our clients. It begs us not just to build something new but to build it in a new way. We need to think as much about how the tool relates to the product at hand as we are thinking about the product itself.</p>
-<p>I built a Proof of Concept that embedded a model in the user&rsquo;s browser. It used <a href="https://ai.google.dev/gemma/docs/gemma-3n">Gemma&rsquo;s edge model</a> and <a href="https://lunrjs.com/">lunr</a> (a static site search index) to create a RAG like search based on the content in the site. Context was controlled through the search index and fed to the model when the user queried the search. The downside is that downloading the model took 20 minutes, but Google is already trying to build the model into the browser. Gemma&rsquo;s edge model is less than 4GB. It handily fits in most computer&rsquo;s memory with room to spare. This is cumbersome today, but in 2 years this will likely be as expected a common feature as search. We should be building with this in mind so that when the feature is requested we don&rsquo;t have to rebuild the whole product to incorporate it.</p>
-<p>We cannot allow ourselves to be short sited. The products we build now are lasting longer than ever before. Even if the client hasn&rsquo;t asked for it and is unwilling to buy into it, we should have a 10 year plan for anything we launch.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Who benefits from the AI guardrails</title>
-      <link>http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</link>
-      <pubDate>Tue, 13 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</guid>
-      <description><![CDATA[<p>The calls for AI regulation got louder at the exact moment the models stopped getting dramatically better. I don&rsquo;t think that&rsquo;s a coincidence.</p>
+]]></description></item><item><title>Who benefits from the AI guardrails</title><link>https://www.frobiovox.com/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</link><pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</guid><description><![CDATA[<p>The calls for AI regulation got louder at the exact moment the models stopped getting dramatically better. I don&rsquo;t think that&rsquo;s a coincidence.</p>
 <h2 id="the-plateau">The plateau</h2>
 <p>For a couple of years every release felt like a leap. Now the leaps are smaller. The newest models are better, but not in the way that justifies the money that went into them. The gains are coming from tooling, context and cost, not from some new kind of capability. That&rsquo;s a fine place for a technology to be. It is a terrible place to be if you&rsquo;ve borrowed against the idea that it keeps doubling.</p>
 <p>When the product stops improving, the moat has to come from somewhere else.</p>
@@ -67,32 +23,7 @@
 <p>I&rsquo;ve said for a while that local AI is inevitable. Everyone will have it, the way everyone has a calculator. The people who would prefer that you rent it have noticed too. So the pitch becomes &ldquo;only trusted providers should run these.&rdquo; It sounds responsible. What it does is turn a tool that anyone can run into a service that a few companies can sell, right when the open models are good enough that nobody has to buy.</p>
 <p>I can&rsquo;t prove anyone&rsquo;s motives. I can tell you who ends up holding the keys if it works.</p>
 <p>The next time you hear a call for guardrails, ask what happens to the model on your laptop.</p>
-]]></description>
-    </item>
-    <item>
-      <title>What does an engineer actually do</title>
-      <link>http://localhost:1313/posts/2026/10/09/what-does-an-engineer-actually-do/</link>
-      <pubDate>Fri, 09 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/09/what-does-an-engineer-actually-do/</guid>
-      <description><![CDATA[<p>What does a Software Engineer actually do?</p>
-<p>If you&rsquo;re a software engineer worried about AI taking your job, you might want to consider what it is that you actually do. What is the reason you&rsquo;re payed to do what you do.</p>
-<p>In hindsight, a program is just math and we have been working on proving programs for decades. It really should have been no wonder that the act of programming has been mechanized. We have been mechanizing math since before the days of Babage and Ada Lovelace conceptualized a general purpose math machine.</p>
-<p>Did we really think we were beyond replacement? Writing code is not what I do. I have never liked the term &ldquo;coder&rdquo; even though to call myself a Software Engineer feels pretensous.</p>
-<p>There is nothing wrong with writing code but do not be fooled into thinking it is the only way to get a high quality result.</p>
-<blockquote>
-<p>I&rsquo;m an artist, you give me a tuba and I&rsquo;ll get you something out of it.</p>
-</blockquote>
-<p>The issue we have today is more about imagination. How can we use this tech? Content generation is a lazy idea. Using it to build web-pages is a web developer thinking that they are the user they are designing for. An AI help desk is also lazy. This needs to be a case by case issue. Look at <a href="https://sendcutsend.com/">SendCutSend</a>. The site is a metal laser cutting service. They offer quick turn around of custom orders, made to order. They have an AI part generator. You give it a prompt and it gives you a part based on the prompt. It isn&rsquo;t perfect. I asked it to give me a 12 tooth gear that is 22mm across. It didn&rsquo;t get the geometry of the teeth right, but it got all the dimensions correct and it gave me something that looked like a gear. This wasn&rsquo;t edge based, but it was fast and it matches the business. This is an example of a good solution.</p>
-<p>Remote <a href="https://modelcontextprotocol.io/">MCPs</a> (Model Context Protocol, a standard that lets an AI model call out to external tools and data sources over a defined interface, rather than every app rolling its own integration) are another untapped resource. MCPs offer user authenticated access. This means the content can be controlled or tailored to the user as well as other services. The mistake to avoid is imagining the machine doing what a human is doing today. Instead, imagine what is cost prohibitive to have a human do today. This is why services like <a href="https://www.grammarly.com/">Grammarly</a> work so well and have gained wide spread adoption. People would prefer to have an AI check their spelling and grammar before they hit send because people don&rsquo;t want to look like an idiot. Everyone wants a copy editor, but no one can afford it.</p>
-<p>Someone who is unimaginative cannot see what products can be built that they do not use. Lazy people only see obvious one size fits all solutions. In game design you want someone who has a breadth of knowledge and experience more than a depth of knowledge. This will be more valuable in general product development moving forward.</p>
-]]></description>
-    </item>
-    <item>
-      <title>A new take on old php in the modern era of web development</title>
-      <link>http://localhost:1313/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</link>
-      <pubDate>Wed, 07 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</guid>
-      <description><![CDATA[<h2 id="php-just-responded-to-requests">php just responded to requests</h2>
+]]></description></item><item><title>A new take on old php in the modern era of web development</title><link>https://www.frobiovox.com/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</link><pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</guid><description><![CDATA[<h2 id="php-just-responded-to-requests">php just responded to requests</h2>
 <p>My two most viewed posts are my <a href="https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/">composer hello world tutorial</a> and my <a href="https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/">setting up xdebug in zed</a> post. These are followed by articles on <a href="https://www.frobiovox.com/tags/drupal/">Drupal</a>. My language of choice for doing websites has been php for a very long time. I have seen php grow from a template engine to a full-scale, object-oriented language with some very useful and flexible functional programming niceties. When people suggest that JavaScript is the real language of the web, it sets off my gag reflex.</p>
 <p>I have tried <a href="https://en.wikipedia.org/wiki/Isomorphic_JavaScript">isomorphic programming</a> (the same JavaScript running server and client) and it doesn&rsquo;t work. It was an interesting theory, but server-side business logic and client-side UX logic are almost never the same thing and it is not a good idea to force a backend language choice for a frontend limitation. php was beautiful in how it didn&rsquo;t try to do anything more than respond to requests. Sure, one can script in php, one can write CLIs in php, one can even run php&rsquo;s built-in webserver, but none of that was ever what one really did with php in production. The way php works is a webserver sees it is serving a php file, and it runs it through the php parser and it returns the result. It could be old-school apache with mod_php or something more fancy like frankenphp, but the result is the same <code>&lt;?php #php goes here ?&gt;</code>.</p>
 <h2 id="new-syntactic-sugar">new syntactic sugar</h2>
@@ -109,14 +40,7 @@
 <p>I built a static site that has a client-side LLM. I built a static site that has gated content. I built a static site that has password-protected content. While it isn&rsquo;t cryptographically secure, it is secure enough for this content. I could argue that, just like most password-protected sites, it would take a brute-force attack to get to it, so it is better than just security by obscurity. I think I will write a post on that soon. Subscripbe to my <a href="https://www.frobiovox.com/feed.xml">RSS Feed</a> to keep up with the latest ;)</p>
 <p>&hellip;</p>
 <p>Oh, and I build video games at my <a href="https://www.happyplight.com">Video Game Company, Happy Plight</a>, open source tools such as <a href="https://github.com/frob/v">v for vendoring</a> for vendoring dependencies even when the language doesn&rsquo;t want you to, and <a href="https://gitlab.com/frob/ztd">zero trust development</a> for building with an llm in an isolated environment.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Introducing ztd; disposable VMs for untrusted agent work</title>
-      <link>http://localhost:1313/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</link>
-      <pubDate>Thu, 10 Sep 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</guid>
-      <description><![CDATA[<p><code>--dangerously-skip-permissions</code> is a flag with an honest name. It&rsquo;s risky, and I don&rsquo;t like it. However, most people who run coding agents claim to use it, because the alternative is worse in a way nobody likes admitting. An agent that stops to ask before every file write and every shell command is an agent you spend the afternoon babysitting, and the babysitting is the part that destroys the value. So you turn the prompts off, or you leave them on and click &ldquo;yes&rdquo; two hundred times, which is the same thing with extra steps and a worse outcome &ndash; after the fortieth prompt you are not reading them anymore. You are pattern-matching on the shape of the dialog. That is not a security control. That is a security control&rsquo;s costume.</p>
+]]></description></item><item><title>Introducing ztd; disposable VMs for untrusted agent work</title><link>https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</link><pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/</guid><description><![CDATA[<p><code>--dangerously-skip-permissions</code> is a flag with an honest name. It&rsquo;s risky, and I don&rsquo;t like it. However, most people who run coding agents claim to use it, because the alternative is worse in a way nobody likes admitting. An agent that stops to ask before every file write and every shell command is an agent you spend the afternoon babysitting, and the babysitting is the part that destroys the value. So you turn the prompts off, or you leave them on and click &ldquo;yes&rdquo; two hundred times, which is the same thing with extra steps and a worse outcome &ndash; after the fortieth prompt you are not reading them anymore. You are pattern-matching on the shape of the dialog. That is not a security control. That is a security control&rsquo;s costume.</p>
 <p>The honest version of the problem is that the approval prompt is doing a job it was never able to do. It is trying to be a boundary using your attention as the enforcement mechanism, and your attention is a consumable. I <a href="/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/">wrote a while back</a> about how the right workflow with these tools depends on what you already know. This is the infrastructure half of that argument: the fix is not to approve more carefully, it is to change what &ldquo;yes&rdquo; can possibly reach.</p>
 <p>So I wrote <a href="https://gitlab.com/frob/ztd">ztd</a>. It gives me a disposable VM to let my agents run free. You spin one up, you let the agent run completely wide open <em>inside</em> it, the work comes back over git, and then you throw the VM away. The blast radius of anything the agent does ends at a machine you were going to delete anyway.</p>
 <p>Sandbox escapes do exist, and so long as you&rsquo;re not telling the agent to go off the rails you should be able to get some work done. This isn&rsquo;t a research sandbox tool, it is a work tool.</p>
@@ -166,14 +90,7 @@
 </span></span></code></pre></div><p>Which is a fine moment to point out the obvious: that first line is you deciding to trust a stranger&rsquo;s tap. It is a third-party repository that Homebrew will install software from, nobody at Homebrew has looked at it, and the binaries inside are unsigned &ndash; the cask strips the Gatekeeper quarantine attribute at install, which is precisely the kind of thing you would want to know before running it. It&rsquo;s four lines. <a href="https://gitlab.com/frob/homebrew-ztd/-/blob/main/Casks/ztd.rb">Read it</a>. If you&rsquo;d rather not extend that trust, the archives and a <code>checksums.txt</code> are on the releases page and building from source is a <code>go build</code>.</p>
 <p>I would find it a bit rich to write a whole post about not trusting things and then ask you to <code>curl | bash</code> me on faith.</p>
 <p>Then <code>ztd check</code>, which is the first thing to run and the thing to trust &ndash; it will tell you exactly what your host is missing, including both of the firewall traps above, with the command to fix each one.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Introducing webform relay; forms without a backend</title>
-      <link>http://localhost:1313/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</link>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</guid>
-      <description><![CDATA[<p>A static site is a wonderful thing right up until somebody asks for a contact form.</p>
+]]></description></item><item><title>Introducing webform relay; forms without a backend</title><link>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</link><pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/</guid><description><![CDATA[<p>A static site is a wonderful thing right up until somebody asks for a contact form.</p>
 <p>Everything else about the static site story holds together. Content in markdown, build in CI, files on a CDN, no server to patch, no database to back up, no PHP version to worry about at 2am. Then one form shows up and suddenly the answer is &ldquo;well, we&rsquo;ll need a backend.&rdquo; Not a big backend. A backend that accepts a POST, validates four fields, and sends an email. And now you own a server, or a container, or a runtime version, or a third-party SaaS that will start charging per submission the moment anyone actually uses the thing.</p>
 <p>I have watched this play out enough times. The form is never the interesting part of the project and it is always the part that drags a whole hosting story behind it. In other words I have written this form enough times and enough ways that I don&rsquo;t want to have to write it again. I know everything that it needs to do, in every variation. I kind of miss <a href="https://www.drupal.org/project/webform">Drupal&rsquo;s webform module</a> but I cannot use that on a static site.</p>
 <p>So I wrote <a href="https://gitlab.com/frob/webform-relay">webform relay</a>. Point a <code>&lt;form&gt;</code> at a URL, and it validates the submission and relays it to wherever it needs to go &ndash; email through SES, a plain SMTP server, a generic webhook, or Salesforce Web2Lead. There is no application code to write. There is no server. There is one YAML file. I even threw in some form conditionals and static content printing through htmx.</p>
@@ -322,26 +239,12 @@
 <p>If you&rsquo;re on a host that includes forms in the price and you&rsquo;re happy with it, and you don&rsquo;t need complex submission handling, also no.</p>
 <p>But if you have a static site, or a Go binary, or a game&rsquo;s landing page, or anything else where the form is the only thing standing between you and having no server at all &ndash; this is the smallest, robust, version of that I could build. One YAML file in a bucket. No idle cost. No runtime to keep patched.</p>
 <p>It&rsquo;s at <a href="https://gitlab.com/frob/webform-relay">gitlab.com/frob/webform-relay</a>, AGPLv3 licensed, with the docs published from the same repo. It is not on GitHub, which I mention because I recently had to change all the docs pages where the GenAI decieded to link to github &ndash;alas, that is what writing software looks like in 2026.</p>
-]]></description>
-    </item>
-    <item>
-      <title>The joys of unemployment</title>
-      <link>http://localhost:1313/posts/2026/09/01/the-joys-of-unemployment/</link>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/09/01/the-joys-of-unemployment/</guid>
-      <description><![CDATA[<p>The silver lining of being laid off is time. Specifically, time to finish the pile of open source projects that have been sitting on the back burner for years, waiting for a weekend that never came.</p>
+]]></description></item><item><title>The joys of unemployment</title><link>https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/</link><pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/</guid><description><![CDATA[<p>The silver lining of being laid off is time. Specifically, time to finish the pile of open source projects that have been sitting on the back burner for years, waiting for a weekend that never came.</p>
 <p>I have been on <a href="https://www.drupal.org/u/frob">drupal.org</a> for almost twenty years. Eighteen and a half, as the profile counts it. Thirty-odd projects maintained or co-maintained, a stack of issue credits, twelve DrupalCons, and a stint organizing the front-end Drupal meetup in Portland and the Let&rsquo;s contribute together meetup in Long Beach. That is most of a career expressed as one long contribution log.</p>
 <p>But Drupal was never the whole of it. There is the Open edX work &ndash; getting a full platform to come up in Docker for both production and local development, which is harder than it sounds and matters more than it sounds. There is <a href="/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/">v</a>, and <a href="https://gitlab.com/frob/webform-relay">webform relay</a>, and a long tail of smaller things scattered across <a href="https://github.com/frob">github.com/frob</a> and <a href="https://gitlab.com/frob">gitlab.com/frob</a>.</p>
 <p>The other reason to do this now is that unemployment gives you a lot of time and not much to point at. A contribution graph that goes quiet the month you get laid off says something, and it is not the thing you want it to say. Staying busy in public keeps the work visible &ndash; commits, releases, issue queues. It is the portfolio that maintains itself, as long as you keep showing up to it.</p>
 <p>None of these got the attention they needed while I had a full-time job. They are getting it now.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Introducing v; the easiest vendor utility</title>
-      <link>http://localhost:1313/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</link>
-      <pubDate>Sun, 30 Aug 2026 16:54:03 -0700</pubDate>
-      <guid>http://localhost:1313/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</guid>
-      <description><![CDATA[<p>Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.</p>
+]]></description></item><item><title>Introducing v; the easiest vendor utility</title><link>https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</link><pubDate>Sun, 30 Aug 2026 16:54:03 -0700</pubDate><guid>https://www.frobiovox.com/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/</guid><description><![CDATA[<p>Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.</p>
 <p>That works fine right up until the moment you need to answer a question about it. Which commit did I copy? Has upstream changed since? Did somebody edit these files after they landed here? A <code>vendor/</code> directory that got there by hand is an undated snapshot of unknown provenance. Six months later it is indistinguishable from code you wrote yourself. I have been handed projects like that and I have been the person to fix it.</p>
 <p>I got tired of that, so I wrote <a href="https://github.com/frob/v">v</a>.</p>
 <h2 id="what-it-does">What it does</h2>
@@ -403,76 +306,62 @@
 <p>Probably not, most of the time. If your language has a package manager and your dependency is published to it, use the package manager. That is what it is for.</p>
 <p>But when you are outside that path &ndash;a private repo, an unpublished theme, a library whose maintainer stopped cutting releases in 2019, a language where &ldquo;just copy it in&rdquo; is the community norm &ndash;you&rsquo;re going to copy the source anyway. All <code>v</code> does is make sure that when you do, you wrote down where it came from.</p>
 <p>The code is at <a href="https://github.com/frob/v">github.com/frob/v</a>. It&rsquo;s MIT licensed, it&rsquo;s a single Go binary with no runtime dependencies, and it is small enough that you can read the whole thing in an afternoon.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Introducing v; the easiest vendor utility</title>
-      <link>http://localhost:1313/posts/2026/08/29/introducing-v-the-easiest-vendor-utility/</link>
-      <pubDate>Sat, 29 Aug 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/08/29/introducing-v-the-easiest-vendor-utility/</guid>
-      <description><![CDATA[<p>Every so often you need a library in your project and there is no package manager standing by to hand it to you. Maybe it is a repository you own that was never published anywhere. Maybe the upstream project ships no releases. Maybe the language ecosystem in question has no dependency story worth the name. So you do what people have always done: you copy the source into your project and get on with your day.</p>
-<p>That works fine right up until the moment you need to answer a question about it. Which commit did I copy? Has upstream changed since? Did somebody edit these files after they landed here? A <code>vendor/</code> directory that got there by hand is an undated snapshot of unknown provenance. Six months later it is indistinguishable from code you wrote yourself. I have been handed projects like that and I have been the person to fix it.</p>
-<p>I got tired of that, so I wrote <a href="https://github.com/frob/v">v</a>.</p>
-<h2 id="what-it-does">What it does</h2>
-<p>Three things, and deliberately nothing else:</p>
-<ol>
-<li>It resolves whatever ref you give it &ndash;a branch, a tag, a commit hash &ndash;to an exact commit hash.</li>
-<li>It downloads the repository&rsquo;s contents into <code>vendor/</code>, without the <code>.git</code> directory.</li>
-<li>It writes down what it did in a <code>vendors.toml</code> file in your project root.</li>
-</ol>
-<p>That&rsquo;s the whole tool. The interesting part is the third one.</p>
-<h2 id="a-real-world-use-case">A real world use case</h2>
-<p>This blog <a href="/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/">runs on Hugo</a> with a theme I maintain in a GitLab repository. The theme is not on any registry. It&rsquo;s not a Go module. It is a pile of layouts and CSS that belongs to me and lives somewhere else.</p>
-<p>The usual options for that situation are a git submodule or a Hugo module. Both work. Both also mean that anyone who clones this site now has to know about a second dependency system, and that my build has an opinion about network access. I didn&rsquo;t want a dependency system. I wanted the files to be in the repository, the way files are, plus a note saying where they came from.</p>
-<p>Here is what that note looks like on this site:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#e6db74">&#39;git@gitlab.com:frob/frobiovox-theme.git&#39;</span>]
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#39;git@gitlab.com:frob/frobiovox-theme.git&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ref</span> = <span style="color:#e6db74">&#39;0.0.x&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">commit</span> = <span style="color:#e6db74">&#39;d0b29bbda2560331ddb849b0dcefc65b709454f4&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">path</span> = <span style="color:#e6db74">&#39;hugo/themes/frobiovox-theme&#39;</span>
-</span></span></code></pre></div><p>Four fields. Where it came from, what I asked for, what that actually resolved to, and where it landed. The <code>commit</code> field is the one doing the real work. A branch name drifts &ndash;<code>0.0.x</code> means something different today than it did in June. The hash doesn&rsquo;t. It pins exactly what is sitting in <code>hugo/themes/frobiovox-theme</code> right now.</p>
-<p>Commit that file to your repository and the provenance survives. Someone else can see what you vendored, when it moved, and by how much, just by reading the git history of a four-line TOML entry.</p>
-<h2 id="using-it">Using it</h2>
-<p>Install it with Homebrew:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install frob/v/v
-</span></span></code></pre></div><p>Or with the shell script, which detects your OS and package manager and falls back to dropping a binary in <code>/usr/local/bin</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -sSf https://raw.githubusercontent.com/frob/v/0.2.x/install.sh | sh
-</span></span></code></pre></div><p>There are <code>.deb</code>, <code>.rpm</code>, and Arch packages on the releases page too.</p>
-<p>Vendoring something is one command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v add https://github.com/example/repo
-</span></span></code></pre></div><p>That resolves the remote&rsquo;s default branch, downloads the contents to <code>vendor/github.com/example/repo</code>, and records the entry. Pin to a tag instead:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v add https://github.com/example/repo v1.2.3
-</span></span></code></pre></div><p>Or put it somewhere that is not <code>vendor/</code>, which is what I do for the theme:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v add -d hugo/themes/frobiovox-theme git@gitlab.com:frob/frobiovox-theme.git 0.0.x
-</span></span></code></pre></div><p>Later, when upstream has moved:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># everything, to the latest commit on each recorded ref</span>
-</span></span><span style="display:flex;"><span>v update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># just the one</span>
-</span></span><span style="display:flex;"><span>v update https://github.com/example/repo
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># and switch it to a different tag while you are at it</span>
-</span></span><span style="display:flex;"><span>v update https://github.com/example/repo v2.0.0
-</span></span></code></pre></div><p><code>update</code> tells you what changed:</p>
-<pre tabindex="0"><code>updated https://github.com/example/repo a1b2c3d -&gt; e4f5a6b
-</code></pre><p>Then <code>git diff</code> shows you exactly what came along with it. That is the part I actually wanted. Not automation &ndash;visibility. When a vendored dependency changes under me, I want it to show up in a code review like everything else.</p>
-<h2 id="why-no-git-directory">Why no <code>.git</code> directory</h2>
-<p>Because a vendored tree should be files, not a repository. Submodules are a repository inside your repository, and they bring the whole apparatus with them: a second checkout state, detached heads, the <code>--recursive</code> flag everyone forgets, clones that come down empty. Subtrees avoid some of that and replace it with a merge strategy you have to think about.</p>
-<p><code>v</code> sidesteps both by not being a git integration at all. It downloads the contents and deletes the history. Your repository stays one repository. <code>git clone</code> gets you everything. There is no second state to be out of sync with, because there is no second state. The metadata a <code>.git</code> directory would have carried lives in <code>vendors.toml</code> instead, in four lines you can read.</p>
-<p>The tradeoff is real and I will name it: you can&rsquo;t <code>git log</code> a vendored dependency in place, and if you edit those files, <code>v update</code> will happily overwrite your edits. Vendored code is read-only code. If you want to change it, change it upstream.</p>
-<h2 id="what-it-does-not-do">What it does not do</h2>
-<p>It is deliberately small. Some things are missing on purpose:</p>
+]]></description></item><item><title>Farewell to the burgundy</title><link>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</link><pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</guid><description><![CDATA[<p>Last week I <a href="https://www.frobiovox.com/posts/2026/08/18/moving-on/">wrote a list</a> of everything I need to update. Second item: personal site. Here is what has been sitting at <a href="http://www.frankrobertanderson.com">www.frankrobertanderson.com</a> this whole time.</p>
+<p><img src="/images/2026/08/27/frankrobertanderson.png" alt="The frankrobertanderson.com homepage: a dark burgundy background, olive header bar, and a typewriter-font nameplate" title="Professional Drupal/Web Development, since 2009."></p>
+<p>Look at that footer. <em>© Copyright 2009.</em></p>
+<p>That site is old enough to drive. It was built on Drupal 6, with a theme I wrote myself. I still have a soft spot for the dark burgundy background and the typewriter-font nameplate. The contact link is broken &ndash;it is supposed to point at the contact form on my Drupal.org profile.</p>
+<p>This site was originally built when I was doing contract work for small and local businesses. I built the site in Drupal and I built most sites in Drupal. I have been using Drupal for almost twenty years, but it is no longer my only hammer. I used httrack to turn it from Drupal 6 to static HTML around the launch of Drupal 7 and I have never touched it since.</p>
+<p>That drawing in the middle. That the figure hunched over a pad of paper &ndash; I drew that. I had several versions: a blank page, a mixing console, and a computer. This one turned out the best but I was originally going to offer, UX, Development, and Audio Mixing services too.</p>
+<p>This site isn&rsquo;t exactly embarrassing, if looked at by the right people. If anything it is very obviously not AI slop. It is a genuine artifact of what web development looked like when I got serious about it, and I am not the sort of person who pretends the earlier versions did not happen. But a site that says 2009 in the footer is not telling anyone what I can do in 2026. It is telling them I stopped.</p>
+<p>So it gets replaced. Something static, something I can update in an afternoon, something that says what I actually work on now instead of what I hoped to sell seventeen years ago.</p>
+<p>Seventeen years is a good run for a homepage. Longer than most jobs. You can check out the new version <a href="https://www.frankrobertanderson.com">here</a>.</p>
+]]></description></item><item><title>Moving on</title><link>https://www.frobiovox.com/posts/2026/08/18/moving-on/</link><pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/08/18/moving-on/</guid><description><![CDATA[<p>After more than ten years, my time at Clarity Innovations has come to an end. I was laid off.</p>
+<p>I want to say up front that I enjoyed working there. Ten years is a long time to spend anywhere, and I would not have spent it there if I had not wanted to.</p>
+<h2 id="nobodys-fault">Nobody&rsquo;s fault</h2>
+<p>This was not my fault, and it was not theirs.</p>
+<p>An enormous amount of money was poured into education technology over the last decade. When that kind of money stops, things do not just go back to the way they were &ndash; it leaves a vacuum. That is the economy we are in right now. A lot of good people are getting the same news I got, for the same reasons.</p>
+<p>I am not going into specifics, but what I will say about Clarity is that they care about their employees, and they showed it in the way they handled this. I had notice. I had time to say goodbye. That is not nothing &ndash;plenty of people find out their access has been revoked before they find out they have been let go.</p>
+<h2 id="missing-the-fellowship">Missing the fellowship</h2>
+<p>The hardest part is the people.</p>
+<p>Ten years is long enough that your coworkers stop being coworkers. You know whose kid is graduating high school. You know who to ping when a build breaks at 4:45 on a Friday and who will actually answer. You develop a shorthand that takes years to build.</p>
+<p>I will miss them. I expect to keep missing them for a while. That is the cost of having liked the job.</p>
+<h2 id="gathering-my-strength">Gathering my strength</h2>
+<p>The other thing the notice period gave me was time to remember what I can actually do.</p>
+<p>When you work somewhere long enough, your skills stop being visible to you. They just become the furniture. All of your expertise gets expressed as institutional memory.</p>
+<p>So I spent some of that time going back through ten years of work and reminding myself what was in it.</p>
+<blockquote>
+<p>Your fingers would remember their old strength better, if they grasped your sword.</p>
+</blockquote>
+<p>They do, as it turns out. It just takes picking the thing back up. Though I will not be enumerating the past here &ndash;I have too much to do.</p>
+<h2 id="everything-is-out-of-date">Everything is out of date</h2>
+<p>Here is the genuinely worst part of being laid off after a decade, and nobody warns you about it: <em>everything</em> is stale. Every artifact of your professional existence was last touched during an administration that has since ended.</p>
+<p>The list, as it currently stands:</p>
 <ul>
-<li>No integrity check. Nothing currently verifies that a vendored tree still matches its recorded commit. If someone edits a file in <code>vendor/</code>, <code>vendors.toml</code> will keep insisting everything is fine. This is the next thing I am building.</li>
-<li>No round trip. If you want to fix a bug in a vendored dependency and send it upstream, you are on your own: clone it separately, do the work there, then re-vendor. I would like to make that a single command.</li>
-<li>No selective vendoring. Every entry in <code>vendors.toml</code> gets its files checked into your tree. There is no way yet to track a dependency&rsquo;s provenance while keeping its source out of your repository, which you might want for license reasons.</li>
-<li>No dependency resolution, ever. If the thing you vendored has its own dependencies, that&rsquo;s your problem. <code>v</code> copies one repository at one commit. It&rsquo;s not going to grow a solver, and this is a feature.</li>
+<li>Resume</li>
+<li>Personal site</li>
+<li>This blog</li>
+<li>LinkedIn profile</li>
+<li>Drupal, GitHub, and GitLab profiles</li>
 </ul>
-<h2 id="is-this-for-you">Is this for you?</h2>
-<p>Vendoring dependencies is awsome. It is more secure and stable than any package manager. But if I am being honest, most of the time you should just use the expected case package manager. If your language has a package manager and your dependency is published to it, use the package manager. That is what it is for.</p>
-<p>But when you are outside that path &ndash;a private repo, an unpublished theme, a library whose maintainer stopped cutting releases in 2019, a language where &ldquo;just copy it in&rdquo; is the community norm &ndash;you&rsquo;re going to copy the source anyway. All <code>v</code> does is make sure that when you do, you wrote down where it came from.</p>
-<p>The code is at <a href="https://github.com/frob/v">github.com/frob/v</a>. It&rsquo;s MIT licensed, it&rsquo;s a single Go binary with no runtime dependencies, and it is small enough that you can read the whole thing in an afternoon.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+<p>None of it is hard. All of it is archaeology. Each one means sitting down and reconstructing what I actually did across ten years, which loops right back to the previous section &ndash; the work of updating the resume <em>is</em> the work of remembering the strength.</p>
+<h2 id="silver-shores">Silver shores</h2>
+<p>I am going to be fine. I know that.</p>
+<p>Ten years was a good long stay, and I am grateful for it, but the road does go ever on. There are worse things than finding yourself at the harbor with the sails already up.</p>
+<p>It is about time for another adventure.</p>
+<p><img src="/images/2026/08/18/anotheradventure.png" alt="A ship sailing out from the Grey Havens into the light" title="The road goes ever on."></p>
+]]></description></item><item><title>Project Space Game: a ten-year-old idea finally has a build</title><link>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</link><pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</guid><description><![CDATA[<p>About ten years ago I wrote down a question I couldn&rsquo;t shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called <a href="/posts/what-if-the-bullets-cost-money"><em>What if the bullets cost money?</em></a>, and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — <em>what does this cost you?</em></p>
+<p>Well. I finally started building the thing. It&rsquo;s called <strong>Project Space Game</strong>, and this is the first time I&rsquo;m writing about it as something that actually exists and runs rather than something I daydream about.</p>
+<h2 id="the-hook-ten-years-later">The hook, ten years later</h2>
+<p>The seed is exactly the one I planted back then: what if shooting the asteroids <em>cost you something</em>?</p>
+<p>Fuel is finite. Ammo has to be bought. The asteroids in your way are less of an arcade high-score machine and more of an economic problem to solve. Suddenly it isn&rsquo;t an arcade cabinet — it&rsquo;s a little world where you have to make decisions. Do I burn fuel to chase that scrap? Is this shot worth it? Can I make it home? <em>Space, but everything has a price</em> — that&rsquo;s still the whole pitch, and it turns out it holds up.</p>
+<h2 id="where-it-is-today">Where it is today</h2>
+<p>I want to be upfront: this is a work in progress, and an early one. The version history so far reads like someone learning in public, because that&rsquo;s exactly what it is.</p>
+<p>The early releases were about getting the bones in place. A ship you can actually fly, with engines and fuel that drains as you burn it — run dry and you&rsquo;re stranded, paying through the nose for an emergency delivery. Asteroids that spawn around you and quiet down when they drift off screen so the whole thing doesn&rsquo;t melt your computer. A dashboard with little rotary gauges for your heading and your destination. Points of interest scattered out in the dark that you tow scrap home from to earn your keep. Money you can actually run out of — and a game-over when you do.</p>
+<p>By the more recent work I&rsquo;d added the things that make it feel like a loop instead of a tech demo: weapons that cost ammo, sound when you fire and reload, a magazine to track your shots, and depots out in space where you can buy more. The economy and the action finally started talking to each other.</p>
+<p>Some of it is held together with tape. There are placeholder textures I&rsquo;m embarrassed by, console errors I haven&rsquo;t chased down yet, and a to-do list considerably longer than the done list. That&rsquo;s fine. That&rsquo;s what an early build <em>is</em>.</p>
+<h2 id="where-its-going">Where it&rsquo;s going</h2>
+<p>The aspiration is bigger than the current build, and I think that&rsquo;s how it should be.</p>
+<p>I want the space out there to feel less like random rubble and more like a place — asteroid fields generated with the care you&rsquo;d give a dungeon, so navigating them is a puzzle worth solving. I want the world to react to you: music that shifts with the moment, ships that aren&rsquo;t just you, missions and levels that string the moment-to-moment flying into something with shape and stakes. I want depots in deep space where fuel is precious and the math gets genuinely scary. I want the ship, the asteroids, the home base to all look like they belong to the same hand-drawn universe instead of a programmer&rsquo;s scratch pad.</p>
+<p>None of that is done. Most of it is barely started. But the through-line from that ten-year-old question to a world where every shot and every drop of fuel is a choice you have to weigh: that part is real now, and it&rsquo;s already fun to fly around in.</p>
+<p>More to come. It only took me a decade to start.</p>
+]]></description></item></channel></rss>

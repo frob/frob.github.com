@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/ |
+| url | https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/ |
 | date | 2016-03-28 |
 | tags | frontpage, drupal, tutorial, quarzack13 |
 | description | Explore a bit of field fetching with Drupal 8 |

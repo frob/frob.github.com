@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/ |
+| url | https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/ |
 | date | 2015-01-27 |
 | tags | drupal, wordpress, jekyll, kwallcompany, tutorial, frontpage |
 | description | Are you fed up with the offerings of Drupal, Wordpress, and other big CMSs? Then maybe a return to roots is in order. Let's look at Jekyll |

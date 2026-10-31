@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Cms on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/cms/</link>
-    <description>Recent content in Cms on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/cms/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>Step One on replacing Jekyll, make yaml work</title>
-      <link>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link>
-      <pubDate>Sun, 26 Jul 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid>
-      <description><![CDATA[<p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cms on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/cms/</link><description>Recent content in Cms on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/cms/feed.xml" rel="self" type="application/rss+xml"/><item><title>Step One on replacing Jekyll, make yaml work</title><link>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link><pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid><description><![CDATA[<p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
 <h1 id="yaml-parsing">YAML Parsing</h1>
 <p>First am trying to use <a href="https://www.npmjs.com/package/gulp-yaml">npm-yaml</a>. Simple installation, <code>npm install --save-dev npm-yaml</code>. And it works great with the _config file that holds general site information. So I try it with the html.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;test-index&#39;</span>, <span style="color:#66d9ef">function</span>() {
@@ -44,14 +30,7 @@
 <h2 id="bad-plug-ins">Bad plug-ins</h2>
 <p>So, here it is. The liquid plugin just didn&rsquo;t work. I don&rsquo;t have the time to waste on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.</p>
 <p>The lesson here is that Gulp is great at file transformation but the ecosystem is not ready to replace a purpose-built static site generator. YAML parsing works, front-matter stripping works, but the Liquid template plugin is not there yet. Sometimes the right call is to recognize when a dependency is not mature enough and come back later. Jekyll stays for now.</p>
-]]></description>
-    </item>
-    <item>
-      <title>I like Jekyll, but is it necessary?</title>
-      <link>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid>
-      <description><![CDATA[<p>Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.</p>
+]]></description></item><item><title>I like Jekyll, but is it necessary?</title><link>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link><pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid><description><![CDATA[<p>Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.</p>
 <p>One of the first &ldquo;Content Management Systems&rdquo; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&rsquo;t extremely useful to me. It was more of an academic experience – especially because, at the time, I wasn&rsquo;t a professional web developer.</p>
 <p>For the past 8 or so years I have been working primarily in <a href="https://www.drupal.org">Drupal</a>. I have seen other CMS&rsquo;s <a href="http://www.joomla.com">come and go and comeback</a>. I have seen forks and communities fall apart due to in fighting. I have seen major versions of projects that were worked on for years <a href="http://www.exult.sf.net">get shelved and ultimately abandoned</a>. I have seen much of this in the 8 or so years that I have been working with Drupal.</p>
 <p>Drupal has been rock solid. However, every-time I have tried to launch by blog on Drupal I would get stuck in the weeds. I have re-built wordpress 3 times with Drupal. Each time getting the blog to a different 80% mark before other work or obligations would take me away. So this time I launched my blog on Jekyll. I gathered together as much old content as I could find and consolidated here, using the Jekyll Quickstart repo.</p>
@@ -78,7 +57,4 @@
 </ul>
 <h2 id="the-plan">The plan</h2>
 <p>I already know that there are gulp plug-ins that say they do, liquid templates, markdown parsing, and yaml parsing. The issue with relying on Gulp is that it is still a relatively new technology. This means that plug-ins sometimes say they do something or they don&rsquo;t do something fully or they are simply empty repositories that show where something was once going to be built. I am going to attempt this. But <strong>no promises</strong>. <em>This</em> is for me. As I complete something I will post a link in the list above.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

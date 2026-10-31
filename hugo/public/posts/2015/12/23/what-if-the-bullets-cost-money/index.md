@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2015/12/23/what-if-the-bullets-cost-money/ |
+| url | https://www.frobiovox.com/posts/2015/12/23/what-if-the-bullets-cost-money/ |
 | date | 2015-12-23 |
 | tags | rant, frontpage |
 | description | Every "learn to make games" tutorial hands you the same space shooter. I want to make a different one — built around a question instead of a high score. |

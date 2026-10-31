@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2016/05/27/semantic-git/ |
+| url | https://www.frobiovox.com/posts/2016/05/27/semantic-git/ |
 | date | 2016-05-27 |
 | tags | frontpage, git, tutorial |
 | description | Using git-flow as a workflow for semantic versioning. This is a circular dependency that is good. |

@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Jekyll on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/jekyll/</link>
-    <description>Recent content in Jekyll on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/jekyll/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>Add an API to Your Jekyll Blog</title>
-      <link>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</link>
-      <pubDate>Sun, 25 Oct 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</guid>
-      <description><![CDATA[<p>Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML &ndash; no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jekyll on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/jekyll/</link><description>Recent content in Jekyll on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/jekyll/feed.xml" rel="self" type="application/rss+xml"/><item><title>Add an API to Your Jekyll Blog</title><link>https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</link><pubDate>Sun, 25 Oct 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/</guid><description><![CDATA[<p>Jekyll generates static HTML, which is great until you want a dynamic content listing or a search feature. The trick is to also generate a JSON endpoint alongside your HTML &ndash; no plugins required, no server-side code, just Liquid templates outputting JSON instead of markup. In this post I will build a RESTful API for a Jekyll blog that works on vanilla GitHub Pages.</p>
 <p>I really like <a href="https://pages.github.com/">github pages</a>. I <a href="https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll.html">built my blog on it</a>, even though <a href="https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204.html">I host it myself</a>. Markdown is so easy, liquid is so easy. What isn&rsquo;t easy is dynamic lists of content. I want to learn <a href="https://facebook.github.io/react/">Reactjs</a> &ndash;so I will build a content listing with that. That will require a RESTful API for my content.</p>
 <h2 id="the-easy-way">The easy way</h2>
 <p>To be clear I didn&rsquo;t write this <a href="http://jekyllsnippets.com/excluding-jsonify-your-site/">snippet</a> &ndash;but only because someone else did. And working code wins.</p>
@@ -137,14 +123,7 @@
 </span></span><span style="display:flex;"><span>post.json
 </span></span></code></pre></div><p>I think these are better names.</p>
 <p>With this setup, any Jekyll blog now has a JSON listing endpoint and individual JSON post endpoints &ndash; all generated at build time with no plugins and no server-side dependencies. From here, building a React or vanilla JS front-end that consumes this API is straightforward. The content stays in markdown, the API stays in Liquid, and GitHub Pages serves it all for free.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Reflecting on Elixir and Phoenix</title>
-      <link>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link>
-      <pubDate>Fri, 09 Oct 2015 12:02:17 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid>
-      <description><![CDATA[<p>Every developer eventually asks the question: what should I be learning next? I just got back from <a href="http://www.elixirconf.com">ElixirConf</a>, and this post is my attempt to answer that question for myself &ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.</p>
+]]></description></item><item><title>Reflecting on Elixir and Phoenix</title><link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link><pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid><description><![CDATA[<p>Every developer eventually asks the question: what should I be learning next? I just got back from <a href="http://www.elixirconf.com">ElixirConf</a>, and this post is my attempt to answer that question for myself &ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.</p>
 <h2 id="the-new-hotness">The New Hotness</h2>
 <p>I read a post recently that had the click bait title &ldquo;Is Drupal Dying?&rdquo; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the <q>next</q> thing &ndash;expecting Drupal to be old and busted in five years.</p>
 <p>I am at ElixirConf because I see great potential in Elixir, Erlang, and <a href="http://www.phoenixframework.com">Phoenix</a>. I expect it to be the next big thing and for it to help provide a scalable platform for highly available, highly scalable, and interactive / dynamic websites.</p>
@@ -313,14 +292,7 @@ Percentage of the requests served within a certain time (ms)
 <p>For the longest time I thought Drupal&rsquo;s biggest problem was PHP &ndash;and I mostly still think that. The difference between now and 5 years ago is that PHP&rsquo;s development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real potential. PHP has always been really fast and it is still really fast. Big pipe is the <q>new thing</q> for PHP and it can work, things are possible. All of this gives me hope. It gives me hope for Drupal.</p>
 <h2 id="so-where-does-this-leave-me">So where does this leave me?</h2>
 <p>Elixir and Phoenix are worth learning. The benchmarks speak for themselves, the developer experience is excellent, and the fault-tolerance story is unlike anything in the PHP world. But Drupal is not dying &ndash; it is adapting. For now, Phoenix earns a place in my toolbox for the kinds of problems it was built to solve: real-time, highly concurrent, connection-heavy applications. For content management, Drupal is still the answer. The best tools are the ones you pick for the right job.</p>
-]]></description>
-    </item>
-    <item>
-      <title>I like Jekyll, but is it necessary?</title>
-      <link>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid>
-      <description><![CDATA[<p>Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.</p>
+]]></description></item><item><title>I like Jekyll, but is it necessary?</title><link>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link><pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid><description><![CDATA[<p>Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.</p>
 <p>One of the first &ldquo;Content Management Systems&rdquo; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&rsquo;t extremely useful to me. It was more of an academic experience – especially because, at the time, I wasn&rsquo;t a professional web developer.</p>
 <p>For the past 8 or so years I have been working primarily in <a href="https://www.drupal.org">Drupal</a>. I have seen other CMS&rsquo;s <a href="http://www.joomla.com">come and go and comeback</a>. I have seen forks and communities fall apart due to in fighting. I have seen major versions of projects that were worked on for years <a href="http://www.exult.sf.net">get shelved and ultimately abandoned</a>. I have seen much of this in the 8 or so years that I have been working with Drupal.</p>
 <p>Drupal has been rock solid. However, every-time I have tried to launch by blog on Drupal I would get stuck in the weeds. I have re-built wordpress 3 times with Drupal. Each time getting the blog to a different 80% mark before other work or obligations would take me away. So this time I launched my blog on Jekyll. I gathered together as much old content as I could find and consolidated here, using the Jekyll Quickstart repo.</p>
@@ -347,14 +319,7 @@ Percentage of the requests served within a certain time (ms)
 </ul>
 <h2 id="the-plan">The plan</h2>
 <p>I already know that there are gulp plug-ins that say they do, liquid templates, markdown parsing, and yaml parsing. The issue with relying on Gulp is that it is still a relatively new technology. This means that plug-ins sometimes say they do something or they don&rsquo;t do something fully or they are simply empty repositories that show where something was once going to be built. I am going to attempt this. But <strong>no promises</strong>. <em>This</em> is for me. As I complete something I will post a link in the list above.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Drupal or Wordpress? Why not Jekyll.</title>
-      <link>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
-      <pubDate>Tue, 27 Jan 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
-      <description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
+]]></description></item><item><title>Drupal or Wordpress? Why not Jekyll.</title><link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link><pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid><description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
 <p>So if Jekyll isn&rsquo;t a CMS then what is it? Jekyll is a &ldquo;blog aware&rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.</p>
 <h2 id="what-are-the-advantages-to-static-site-generation">What are the advantages to static site generation?</h2>
 <p>The biggest advantage is simplified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necessary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.</p>
@@ -428,7 +393,4 @@ Percentage of the requests served within a certain time (ms)
 <p>After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&rsquo;t want to ask the old maintainer to put the page back up and I didn&rsquo;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I decided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.</p>
 <h3 id="frobiovoxcom-or-frobgithubio">Frobiovox.com or frob.github.io</h3>
 <p>Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

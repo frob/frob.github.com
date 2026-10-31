@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/ |
+| url | https://www.frobiovox.com/posts/2026/10/13/who-benefits-from-the-ai-guardrails/ |
 | date | 2026-10-13 |
 | tags | ai, rant, frontpage |
 | description | The calls for AI regulation arrived just as the technology plateaued. The danger is people handing too much autonomy to a machine, and the guardrails mostly target local AI. |

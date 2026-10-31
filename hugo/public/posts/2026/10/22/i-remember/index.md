@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2026/10/22/i-remember/ |
+| url | https://www.frobiovox.com/posts/2026/10/22/i-remember/ |
 | date | 2026-10-22 |
 
 

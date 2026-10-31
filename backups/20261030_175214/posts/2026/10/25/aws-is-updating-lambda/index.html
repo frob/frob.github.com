@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Robert Anderson</title>
+    <meta name="description" content="AWS keeps adding new ways to run Lambda at scale. Most of the hidden-cost stories that justify them are really stories about architecture nobody priced per user, not about Lambda, and Managed Instances is doing something cannier than it looks.">
+    <link rel="canonical" href="http://localhost:1313/posts/2026/10/25/aws-is-updating-lambda/">
+    <link rel="alternate" type="text/markdown" href="http://localhost:1313/posts/2026/10/25/aws-is-updating-lambda/index.md">
+    
+<meta property="og:title" content="AWS is updating Lambda | Frank Robert Anderson">
+<meta property="og:description" content="AWS keeps adding new ways to run Lambda at scale. Most of the hidden-cost stories that justify them are really stories about architecture nobody priced per user, not about Lambda, and Managed Instances is doing something cannier than it looks.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/posts/2026/10/25/aws-is-updating-lambda/">
+<meta property="og:site_name" content="Frank Robert Anderson">
+<meta property="og:image" content="http://localhost:1313/images/top.png">
+<meta property="article:published_time" content="2026-10-25T00:00:00Z">
+<meta property="article:modified_time" content="2026-10-25T00:00:00Z">
+<meta property="article:tag" content="software development">
+<meta property="article:tag" content="web development">
+<meta property="article:tag" content="open source">
+<meta property="article:tag" content="frontpage">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AWS is updating Lambda | Frank Robert Anderson">
+<meta name="twitter:description" content="AWS keeps adding new ways to run Lambda at scale. Most of the hidden-cost stories that justify them are really stories about architecture nobody priced per user, not about Lambda, and Managed Instances is doing something cannier than it looks.">
+<meta name="twitter:image" content="http://localhost:1313/images/top.png">
+<meta name="twitter:site" content="@frobiovox">
+<meta name="twitter:creator" content="@frobiovox">
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Frank Robert Anderson",
+    "sameAs": [
+      "https://github.com/frob",
+      "https://twitter.com/frobiovox"
+    ]
+  },
+  "dateModified": "2026-10-25T00:00:00Z",
+  "datePublished": "2026-10-25T00:00:00Z",
+  "description": "AWS keeps adding new ways to run Lambda at scale. Most of the hidden-cost stories that justify them are really stories about architecture nobody priced per user, not about Lambda, and Managed Instances is doing something cannier than it looks.",
+  "headline": "AWS is updating Lambda",
+  "image": "/images/top.png",
+  "keywords": "software development, web development, open source, frontpage",
+  "mainEntityOfPage": "http://localhost:1313/posts/2026/10/25/aws-is-updating-lambda/",
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/top.png"
+    },
+    "name": "Frank Robert Anderson"
+  },
+  "timeRequired": "PT7M",
+  "url": "http://localhost:1313/posts/2026/10/25/aws-is-updating-lambda/",
+  "wordCount": 1333
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "http://localhost:1313/",
+      "name": "Home",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "http://localhost:1313/posts/",
+      "name": "Posts",
+      "position": 2
+    },
+    {
+      "@type": "ListItem",
+      "item": "http://localhost:1313/posts/2026/10/25/aws-is-updating-lambda/",
+      "name": "AWS is updating Lambda",
+      "position": 3
+    }
+  ]
+}
+</script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=IBM+Plex+Sans:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+    
+</head>
+<body>
+    <div class="not-footer">
+        <div class="wrapper-masthead">
+    <div class="container">
+        <header class="masthead clearfix">
+            
+            <a href="/" class="site-avatar"><img src="/images/top.png" /></a>
+            
+
+            <div class="site-info">
+                <h1 class="site-name"><a href="/">Frank Robert Anderson</a></h1>
+                
+                
+                <p class="site-description sr-only">Prestigious operator of commplicated auto-complete.</p>
+                <p class="site-description site-description-rotating" data-rotate="[&#34;Quietly building things&#34;,&#34;Where the cursor still blinks&#34;,&#34;Compile, commit, caffeinate, repeat&#34;,&#34;Yes, I have an oppinion about that&#34;,&#34;Hand-rolled, no batteries included&#34;,&#34;Postcards from production&#34;,&#34;I used to write code, now I write text and it auto-completes to code&#34;]" data-interval="19000" aria-hidden="true"></p>
+                
+            </div>
+        </header>
+    </div>
+
+    <nav class="navigation-menu">
+        <ul class="navigation-menu-list container">
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/">Blog</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/tutorial/">Tutorials</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/tags/rant/">Rants</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="/posts/">Everything</a>
+            </li>
+            
+            <li class="navigation-menu-item">
+                <a class="navigation-menu-link" href="http://www.frankrobertanderson.com">Back to My Site</a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+        <main>
+            
+<div class="container">
+    <article class="post">
+        
+        <h1>AWS is updating Lambda</h1>
+        <div class="date">
+            <time datetime="2026-10-25T00:00:00Z">October 25, 2026</time>
+            
+        </div>
+         
+        <div class="flex flex-wrap gap-1 mb-2">
+            
+            <span class="badge">software development</span>
+            
+            <span class="badge">web development</span>
+            
+            <span class="badge">open source</span>
+            
+            <span class="badge">frontpage</span>
+            
+        </div>
+        
+        
+
+        <p>Lambda is getting some well-deserved attention with some new updates. It&rsquo;s one of my favorite AWS services, so I&rsquo;m pretty interested to see how all these changes can be utilized.</p>
+            <aside class="ai-summarize" aria-label="Summarize this post on an AI assistant">
+    <div class="ai-summarize-heading">Summarize &amp; save this content on:</div>
+    <ul class="ai-summarize-pills">
+        <li><a class="ai-pill" href="https://chatgpt.com/?hints=search&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F10%2F25%2Faws-is-updating-lambda%2F" target="_blank" rel="noopener">ChatGPT</a></li>
+        <li><a class="ai-pill" href="https://www.google.com/search?udm=50&amp;q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F10%2F25%2Faws-is-updating-lambda%2F" target="_blank" rel="noopener">Google AI</a></li>
+        <li><a class="ai-pill" href="https://www.perplexity.ai/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F10%2F25%2Faws-is-updating-lambda%2F" target="_blank" rel="noopener">Perplexity</a></li>
+        <li><a class="ai-pill" href="https://grok.com/?q=Summarize&#43;http%3A%2F%2Flocalhost%3A1313%2Fposts%2F2026%2F10%2F25%2Faws-is-updating-lambda%2F" target="_blank" rel="noopener">Grok</a></li>
+    </ul>
+    <ul class="ai-summarize-pills ai-summarize-pills-secondary">
+        <li><a class="ai-pill" href="https://www.google.com/preferences/source?hl=en" target="_blank" rel="noopener">Add us as a trusted Google Source</a></li>
+    </ul>
+</aside>
+
+            
+<p>On top of the classic one-event-at-a-time function, AWS is now shipping:</p>
+<ul>
+<li><strong><a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/">Web Functions</a>.</strong> A real HTTP server, multi-concurrency, billed for active CPU instead of wall-clock.</li>
+<li><strong><a href="https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/">MicroVMs</a>.</strong> Stateful sandboxes that suspend and resume for hours, with full disk and your own Dockerfile.</li>
+<li><strong><a href="https://aws.amazon.com/about-aws/whats-new/2025/12/lambda-durable-multi-step-applications-ai-workflows/">Durable Functions</a>.</strong> Checkpointed workflows that can run for a year.</li>
+<li><strong><a href="https://aws.amazon.com/about-aws/whats-new/2025/11/aws-lambda-managed-instances/">Managed Instances</a>.</strong> Lambda&rsquo;s developer experience, but on dedicated EC2 in your own VPC with 90-minute timeouts and Savings Plans attached.</li>
+</ul>
+<p>It&rsquo;s a real pile of new capability, and most of it is aimed squarely at a story I&rsquo;ve heard a hundred times: a company builds on Lambda, picks up actual customers, discovers those customers have outpaced the free tier, and realizes nobody ever worked out what this product costs per user. Then they spend a quarter re-architecting to find out before the bill decides for them.</p>
+<p>That surprise bill is usually called a hidden cost of serverless. I think it&rsquo;s being blamed on the wrong thing.</p>
+<h2 id="the-hidden-cost-isnt-a-lambda-problem">The hidden cost isn&rsquo;t a Lambda problem</h2>
+<p>Nobody gets surprised by an EC2 bill the same way. You provision a box, you know roughly what it costs, and if it&rsquo;s too small you resize it. There&rsquo;s no story where EC2 &ldquo;forces a rewrite&rdquo; at scale. Lambda bills get called a hidden cost specifically because people built as if the pricing model didn&rsquo;t apply to them, and it was always going to apply to them.</p>
+<p>If your function is doing what Lambda is for &ndash; validate a request, call one thing, return &ndash; the bill scales the way you&rsquo;d expect, because the work scales the way you&rsquo;d expect. The surprise shows up when the function is holding a connection open, polling something, or sitting there burning wall-clock while it waits on an upstream call that has nothing to do with CPU. That&rsquo;s not Lambda being expensive. That&rsquo;s a design that was never actually serverless-shaped, running on serverless pricing, with the free tier hiding that fact for exactly as long as the free tier covers your usage. Scale erases the subsidy and the architecture shows up for the first time. &ldquo;It worked fine on the free tier&rdquo; was never a verdict on the design, and &ldquo;it&rsquo;s basically free per user&rdquo; was never a number anyone actually checked. The design hadn&rsquo;t been load-tested, and the cost hadn&rsquo;t been priced, until an actual customer base did both at once.</p>
+<p>I built <a href="/posts/2026/09/08/introducing-webform-relay-forms-without-a-backend/">webform relay</a> around that pricing model instead of in spite of it. It&rsquo;s a serverless form handler for static sites: point a <code>&lt;form&gt;</code> at it, and it validates the submission and relays it to email, SMTP, a webhook, or Salesforce, all configured from one YAML file with no application code to write. One container image, <code>MemorySize: 128</code>, <code>Timeout: 25</code>. No session, no cache, no background anything. The config lives in S3, not in the deployment, so changing a form field is an upload, not a redeploy. The anti-spam check is an HMAC-signed timestamp with no storage behind it at all, because the entire economic case for the thing is that it costs nothing when nobody&rsquo;s submitting, and anything stateful breaks that immediately. There&rsquo;s no surprise waiting at the end of that road, because nothing about the design counts on being forgiven by cheap pricing later.</p>
+<p><a href="https://dailybreadle.com">Daily Breadle</a>, a daily Bible verse scramble game, is the busier of the two. A generator function picks the day&rsquo;s verse on a cron and fires an event; a builder function renders the Hugo site and pushes it to S3; a separate pair of functions handle the newsletter. Four functions, an event bus, two dead-letter queues so a dropped retry is something I can see instead of something that silently didn&rsquo;t happen. The most expensive thing in the whole stack gets <code>MemorySize: 2048</code> and <code>Timeout: 300</code>, five minutes, once a day. That&rsquo;s the ceiling for the entire project. None of it needed more room than classic Lambda already gives you, because none of it was ever asked to do more than classic Lambda is for.</p>
+<h2 id="paving-the-cowpath-out-of-serverless">Paving the cowpath out of serverless</h2>
+<p>Here&rsquo;s where Managed Instances gets interesting, and it&rsquo;s worth looking past the marketing to see what it&rsquo;s actually doing.</p>
+<p>Before Managed Instances, the moment a team decided Lambda&rsquo;s pricing model didn&rsquo;t fit their workload anymore, &ldquo;move off Lambda&rdquo; meant starting over. Containerize the function properly instead of letting SAM paper over it. Stand up an ECS or EKS cluster, or a fleet of EC2 instances, and own the autoscaling yourself. Redo the networking: security groups and subnets instead of a VPC config block. Rewrite the IAM from a function&rsquo;s execution role to instance roles and task roles. Replace the whole deploy pipeline, because <code>sam deploy</code> isn&rsquo;t the tool for any of what you just built. None of that work is really about the code. It&rsquo;s plumbing, and it&rsquo;s the kind of plumbing that takes a quarter and touches everything.</p>
+<p>That cliff was the real danger for AWS, and not just because of the migration cost. The moment a team is already tearing out the deploy pipeline, the networking, and the IAM to leave Lambda, there&rsquo;s nothing stopping them from doing that work on a different cloud entirely. If you&rsquo;re rebuilding everything anyway, rebuilding it on GCP costs about the same as rebuilding it on AWS.</p>
+<p>Managed Instances erases that cliff. Same SAM template, same event sources, same console; the only thing that changes is which capacity it runs on underneath. That&rsquo;s AWS paving the cowpath: noticing that everyone who outgrows Lambda walks the same worn path to EC2 or EKS, and laying a much smoother road right next to it that happens to stay inside Lambda&rsquo;s tooling and inside AWS. It&rsquo;s a genuinely less painful migration for whoever&rsquo;s doing it. It also removes the moment someone would have reconsidered their whole cloud, which is exactly the point. This is less a fix for the hidden cost than a way of making sure outgrowing Lambda never becomes a reason to leave AWS.</p>
+<h2 id="the-cpu-idle-problem-is-real-and-its-new">The CPU-idle problem is real, and it&rsquo;s new</h2>
+<p>Where the new stuff is honestly solving something, rather than patching around bad planning, is Web Functions and its active-CPU billing. In 2014, when Lambda shipped, waiting fifteen seconds for an upstream response while doing nothing wasn&rsquo;t a common shape of workload. Lambda was priced for short, bursty, mostly-CPU-bound work, because that&rsquo;s what event-driven glue code looked like at the time. Billing wall-clock and billing CPU were close enough to the same thing that nobody needed to tell them apart.</p>
+<p>Streaming a response while an LLM decodes tokens for twenty-five seconds breaks that assumption completely. You&rsquo;re paying full price for a function that&rsquo;s 99.9% idle, and no amount of good architecture fixes that, because the pricing model itself doesn&rsquo;t match the workload anymore. That one isn&rsquo;t a hidden cost from bad design. It&rsquo;s Lambda catching up to a workload it was never built to price, and it&rsquo;s a legitimately nice thing to see solved rather than worked around.</p>
+<p>MicroVMs are in the same honest category, and the one I&rsquo;d actually reach for myself. I plan on expanding <a href="/posts/2026/09/10/introducing-ztd-disposable-vms-for-untrusted-agent-work/">ztd</a> to support Firecracker directly, not just the EC2 backend it has today, and Lambda&rsquo;s MicroVM primitive is exactly the kind of managed Firecracker surface that makes doing that on AWS worth it, instead of rolling my own.</p>
+<h2 id="still-just-a-function">Still just a function</h2>
+<p>None of that changes what I reach for when I sit down to build a form handler or a cron job. Serverless has always meant someone else&rsquo;s computer, and the deal was always: you get to not think about the computer, in exchange for working inside the shape it&rsquo;s good at. Web Functions and MicroVMs are AWS extending that deal to workloads that genuinely didn&rsquo;t fit the old shape. They&rsquo;re not a refund for the ones that never should have been built to need it.</p>
+
+    </article>
+</div>
+
+        </main>
+    </div>
+    <div class="wrapper-footer">
+    <div class="container">
+        <footer>
+            <h2 class="sr-only">Footer</h2>
+            <div class="social-icons">
+                <h3>Social Networks</h3>
+                
+                <a href="https://github.com/frob" aria-label="GitHub">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#000000">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+                
+                
+                <a href="https://twitter.com/frobiovox" aria-label="Twitter">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#1DA1F2">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0016 3.542a6.658 6.658 0 01-1.889.518 3.301 3.301 0 001.447-1.817 6.533 6.533 0 01-2.087.793A3.286 3.286 0 007.875 6.03a9.325 9.325 0 01-6.767-3.429 3.289 3.289 0 001.018 4.382A3.323 3.323 0 01.64 6.575v.045a3.288 3.288 0 002.632 3.218 3.203 3.203 0 01-.865.115 3.23 3.23 0 01-.614-.057 3.283 3.283 0 003.067 2.277A6.588 6.588 0 01.78 13.58a6.32 6.32 0 01-.78-.045A9.344 9.344 0 005.026 15z"/>
+                    </svg>
+                </a>
+                
+                <a href="/feed.xml" aria-label="RSS">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#000000">
+                        <path d="M2 2v2.5c5.246 0 9.5 4.254 9.5 9.5H14C14 7.373 8.627 2 2 2zm0 4v2.5c3.038 0 5.5 2.462 5.5 5.5H10C10 9.582 6.418 6 2 6zm1.5 4.5A1.5 1.5 0 1 0 3.5 13.5 1.5 1.5 0 0 0 3.5 10.5z"/>
+                    </svg>
+                </a>
+            </div>
+
+            
+            <div class="blogroll">
+                <h3>Blogroll</h3>
+                
+                <a href="https://www.btmash.com/">Blob of contradictions</a><br>
+                
+                <a href="https://icodealot.com/">iCodealot</a><br>
+                
+            </div>
+            
+
+            <div class="copyright">
+                <p>&copy; 2026 Frank Robert Anderson</p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+    <script src="/js/links.js"></script>
+    <script src="/js/site-description.js"></script>
+    
+
+    
+    
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/ |
+| url | https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/ |
 | date | 2015-06-10 |
 | tags | drupal, tutorial |
 | description | Did you know that EntityFieldQueries can have subqueries? They can. |

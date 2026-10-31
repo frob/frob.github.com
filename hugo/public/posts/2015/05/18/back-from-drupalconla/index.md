@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2015/05/18/back-from-drupalconla/ |
+| url | https://www.frobiovox.com/posts/2015/05/18/back-from-drupalconla/ |
 | date | 2015-05-18 |
 | tags | drupalcon, public transportation, rant |
 

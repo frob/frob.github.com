@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/ |
+| url | https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/ |
 | date | 2013-11-26 |
 | tags | drupal, kwallcompany, tutorial, quarzack13 |
 

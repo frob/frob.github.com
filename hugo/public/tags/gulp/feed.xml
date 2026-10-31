@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Gulp on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/gulp/</link>
-    <description>Recent content in Gulp on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/gulp/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>Step One on replacing Jekyll, make yaml work</title>
-      <link>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link>
-      <pubDate>Sun, 26 Jul 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid>
-      <description><![CDATA[<p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gulp on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/gulp/</link><description>Recent content in Gulp on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/gulp/feed.xml" rel="self" type="application/rss+xml"/><item><title>Step One on replacing Jekyll, make yaml work</title><link>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link><pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid><description><![CDATA[<p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
 <h1 id="yaml-parsing">YAML Parsing</h1>
 <p>First am trying to use <a href="https://www.npmjs.com/package/gulp-yaml">npm-yaml</a>. Simple installation, <code>npm install --save-dev npm-yaml</code>. And it works great with the _config file that holds general site information. So I try it with the html.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;test-index&#39;</span>, <span style="color:#66d9ef">function</span>() {
@@ -44,7 +30,4 @@
 <h2 id="bad-plug-ins">Bad plug-ins</h2>
 <p>So, here it is. The liquid plugin just didn&rsquo;t work. I don&rsquo;t have the time to waste on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.</p>
 <p>The lesson here is that Gulp is great at file transformation but the ecosystem is not ready to replace a purpose-built static site generator. YAML parsing works, front-matter stripping works, but the Liquid template plugin is not there yet. Sometimes the right call is to recognize when a dependency is not mature enough and come back later. Jekyll stays for now.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

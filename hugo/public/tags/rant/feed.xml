@@ -1,41 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Rant on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/rant/</link>
-    <description>Recent content in Rant on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/rant/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>The future of software could look very different than it does today</title>
-      <link>http://localhost:1313/posts/2026/10/20/the-future-of-software-could-look-very-different-than-it-does-today/</link>
-      <pubDate>Tue, 20 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/20/the-future-of-software-could-look-very-different-than-it-does-today/</guid>
-      <description><![CDATA[<h1 id="the-future-of-software-could-look-very-different-in-20-years-than-it-does-today">The future of Software could look very different in 20 years than it does today</h1>
-<p>Ever since the beginning of the GenAI hype train, I have been convinced that Local AI is inevitable. I have gotten a bit of ridicule for that as well. I have been told &ldquo;On prem AI will never take off.&rdquo; I hear this more from my aged contemporaries than from the younger engineers, which astounds me. These are fellows just barely too young to remember when it was said by aging executives &ldquo;why would a normal person want a computer?&rdquo;</p>
-<p>Don&rsquo;t completely misunderstand me, I am not saying everyone needs local AI. I am saying everyone will have local AI and if we are going to bring them the future of software and the future of technology then we should understand that. No one needs a calculator to do basic arithmetic, but everyone uses one. Partly, because they have one on their phone. It is in reach nearly all the time. So why not use it?</p>
-<blockquote>
-<p>To do anything useful you need 512GB of memory. No one has 512GB of memory.</p>
-</blockquote>
-<p>Yeah, right now 512GB of memory sounds like a lot, but 10 years ago 32GB of memory sounded like a lot. 15 years ago 16GB of memory sounded like a lot. I still remember buying 16MB of memory to put into our computer so we could play Ultima 8 (I also remember being very disappointed). <a href="https://en.wikipedia.org/wiki/Moore%27s_law">Moore&rsquo;s law</a> might not pan out like it used to and memory might be really expensive right now but you&rsquo;re missing a few things.</p>
-<ol>
-<li>The memory shortage will be sorted out within the next 5 years</li>
-<li>The price of memory is 300% or more inflated</li>
-<li>Only Software Engineers need 512GB of memory to use AI today &ndash;before compression and optimization has been implemented</li>
-<li>Most people are not Software Engineers and can do most anything they want or need to do with 12GB or less of memory today.</li>
-</ol>
-<p>It is important to not be short sighted. We are building something completely new here. We have never before had the oportunity to use these tools in this way for our clients. It begs us not just to build something new but to build it in a new way. We need to think as much about how the tool relates to the product at hand as we are thinking about the product itself.</p>
-<p>I built a Proof of Concept that embedded a model in the user&rsquo;s browser. It used <a href="https://ai.google.dev/gemma/docs/gemma-3n">Gemma&rsquo;s edge model</a> and <a href="https://lunrjs.com/">lunr</a> (a static site search index) to create a RAG like search based on the content in the site. Context was controlled through the search index and fed to the model when the user queried the search. The downside is that downloading the model took 20 minutes, but Google is already trying to build the model into the browser. Gemma&rsquo;s edge model is less than 4GB. It handily fits in most computer&rsquo;s memory with room to spare. This is cumbersome today, but in 2 years this will likely be as expected a common feature as search. We should be building with this in mind so that when the feature is requested we don&rsquo;t have to rebuild the whole product to incorporate it.</p>
-<p>We cannot allow ourselves to be short sited. The products we build now are lasting longer than ever before. Even if the client hasn&rsquo;t asked for it and is unwilling to buy into it, we should have a 10 year plan for anything we launch.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Who benefits from the AI guardrails</title>
-      <link>http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</link>
-      <pubDate>Tue, 13 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</guid>
-      <description><![CDATA[<p>The calls for AI regulation got louder at the exact moment the models stopped getting dramatically better. I don&rsquo;t think that&rsquo;s a coincidence.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rant on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/rant/</link><description>Recent content in Rant on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/rant/feed.xml" rel="self" type="application/rss+xml"/><item><title>Who benefits from the AI guardrails</title><link>https://www.frobiovox.com/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</link><pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/10/13/who-benefits-from-the-ai-guardrails/</guid><description><![CDATA[<p>The calls for AI regulation got louder at the exact moment the models stopped getting dramatically better. I don&rsquo;t think that&rsquo;s a coincidence.</p>
 <h2 id="the-plateau">The plateau</h2>
 <p>For a couple of years every release felt like a leap. Now the leaps are smaller. The newest models are better, but not in the way that justifies the money that went into them. The gains are coming from tooling, context and cost, not from some new kind of capability. That&rsquo;s a fine place for a technology to be. It is a terrible place to be if you&rsquo;ve borrowed against the idea that it keeps doubling.</p>
 <p>When the product stops improving, the moat has to come from somewhere else.</p>
@@ -49,14 +12,7 @@
 <p>I&rsquo;ve said for a while that local AI is inevitable. Everyone will have it, the way everyone has a calculator. The people who would prefer that you rent it have noticed too. So the pitch becomes &ldquo;only trusted providers should run these.&rdquo; It sounds responsible. What it does is turn a tool that anyone can run into a service that a few companies can sell, right when the open models are good enough that nobody has to buy.</p>
 <p>I can&rsquo;t prove anyone&rsquo;s motives. I can tell you who ends up holding the keys if it works.</p>
 <p>The next time you hear a call for guardrails, ask what happens to the model on your laptop.</p>
-]]></description>
-    </item>
-    <item>
-      <title>A new take on old php in the modern era of web development</title>
-      <link>http://localhost:1313/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</link>
-      <pubDate>Wed, 07 Oct 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</guid>
-      <description><![CDATA[<h2 id="php-just-responded-to-requests">php just responded to requests</h2>
+]]></description></item><item><title>A new take on old php in the modern era of web development</title><link>https://www.frobiovox.com/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</link><pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/10/07/a-new-take-on-old-php-in-the-modern-era-of-web-development/</guid><description><![CDATA[<h2 id="php-just-responded-to-requests">php just responded to requests</h2>
 <p>My two most viewed posts are my <a href="https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/">composer hello world tutorial</a> and my <a href="https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/">setting up xdebug in zed</a> post. These are followed by articles on <a href="https://www.frobiovox.com/tags/drupal/">Drupal</a>. My language of choice for doing websites has been php for a very long time. I have seen php grow from a template engine to a full-scale, object-oriented language with some very useful and flexible functional programming niceties. When people suggest that JavaScript is the real language of the web, it sets off my gag reflex.</p>
 <p>I have tried <a href="https://en.wikipedia.org/wiki/Isomorphic_JavaScript">isomorphic programming</a> (the same JavaScript running server and client) and it doesn&rsquo;t work. It was an interesting theory, but server-side business logic and client-side UX logic are almost never the same thing and it is not a good idea to force a backend language choice for a frontend limitation. php was beautiful in how it didn&rsquo;t try to do anything more than respond to requests. Sure, one can script in php, one can write CLIs in php, one can even run php&rsquo;s built-in webserver, but none of that was ever what one really did with php in production. The way php works is a webserver sees it is serving a php file, and it runs it through the php parser and it returns the result. It could be old-school apache with mod_php or something more fancy like frankenphp, but the result is the same <code>&lt;?php #php goes here ?&gt;</code>.</p>
 <h2 id="new-syntactic-sugar">new syntactic sugar</h2>
@@ -73,14 +29,7 @@
 <p>I built a static site that has a client-side LLM. I built a static site that has gated content. I built a static site that has password-protected content. While it isn&rsquo;t cryptographically secure, it is secure enough for this content. I could argue that, just like most password-protected sites, it would take a brute-force attack to get to it, so it is better than just security by obscurity. I think I will write a post on that soon. Subscripbe to my <a href="https://www.frobiovox.com/feed.xml">RSS Feed</a> to keep up with the latest ;)</p>
 <p>&hellip;</p>
 <p>Oh, and I build video games at my <a href="https://www.happyplight.com">Video Game Company, Happy Plight</a>, open source tools such as <a href="https://github.com/frob/v">v for vendoring</a> for vendoring dependencies even when the language doesn&rsquo;t want you to, and <a href="https://gitlab.com/frob/ztd">zero trust development</a> for building with an llm in an isolated environment.</p>
-]]></description>
-    </item>
-    <item>
-      <title>An experienced developers view on writing software in the age of vibe coding and generative ai</title>
-      <link>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid>
-      <description><![CDATA[<h2 id="i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks">I have spent many tokens building with AI in many different ways and using different stacks</h2>
+]]></description></item><item><title>An experienced developers view on writing software in the age of vibe coding and generative ai</title><link>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</link><pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/04/29/an-experienced-developers-view-on-writing-software-in-the-age-of-vibe-coding-and-generative-ai/</guid><description><![CDATA[<h2 id="i-have-spent-many-tokens-building-with-ai-in-many-different-ways-and-using-different-stacks">I have spent many tokens building with AI in many different ways and using different stacks</h2>
 <p>I have seen a recent trend revived among software developers. This is the belief that the productivity of a Software Engineer should (or can be) measured in lines of code per week. This is a metric that was, largely, discarded by Software Engineers 50 years ago. The truth of the matter is that every line of code is a liability. This liability used to be mitigated by the time it took skilled and experienced people to plan, design, and write the code. These were people who had accumulated enough <strong>passive knowledge</strong> to instinctively recognize when something was wrong, and enough <strong>active knowledge</strong> to make deliberate, informed decisions.</p>
 <p>Generative AI has changed everything and now non-skilled people who have never written a line of code before in their lives are starting to write complicated 10,000+ line applications. The dirty secret is that they still don&rsquo;t know what they are doing. If you are one of those people, I do not mean to offend you. It is you who, most of all, needs to read this post.</p>
 <h3 id="tldr">TL;DR</h3>
@@ -169,14 +118,7 @@
 <hr>
 <h2 id="closing-thought">Closing Thought</h2>
 <p>The best use of AI agents isn&rsquo;t building software faster. It&rsquo;s building software at the appropriate speed for your current level of understanding (your mix of <strong>active</strong> and <strong>passive knowledge</strong>) with a deliberate ramp toward building it faster as you grow. The agent meets you where you are, but you have to be honest about where that is.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Rearchitecting for Drupal 8; a DrupalCon Session</title>
-      <link>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</link>
-      <pubDate>Thu, 15 Feb 2018 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/</guid>
-      <description><![CDATA[<h1 id="rearchitecting-for-drupal-8">Rearchitecting for Drupal 8</h1>
+]]></description></item><item><title>Rearchitecting for Drupal 8; a DrupalCon Session</title><link>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</link><pubDate>Thu, 15 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/</guid><description><![CDATA[<h1 id="rearchitecting-for-drupal-8">Rearchitecting for Drupal 8</h1>
 <p>This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page.</p>
 <h2 id="in-case-you-are-wondering">In case you are wondering</h2>
 <p><img src="https://nicspaull.files.wordpress.com/2013/10/you-are-here.jpg" alt="You are here in the
@@ -944,14 +886,7 @@ in room Peale A-C</strong>.</p>
 understand the need for &lsquo;shorter sprints with greater support&rsquo;, and as
 a result will <strong>not</strong> be hosting Extended Weekend Sprints at this
 DrupalCon.</p>
-]]></description>
-    </item>
-    <item>
-      <title>My Dilemma; What Technology to Pursue</title>
-      <link>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link>
-      <pubDate>Mon, 21 Nov 2016 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid>
-      <description><![CDATA[<p>Be warned, this is a rant.</p>
+]]></description></item><item><title>My Dilemma; What Technology to Pursue</title><link>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</link><pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/</guid><description><![CDATA[<p>Be warned, this is a rant.</p>
 <p>I have a Dilemma about what to focus on learning. I will always explore technology. I will always study, this is my nature. As God has built us, I will always work. This is not a question of what tech I will use here and there. Or what tech I will dabble in as an aside. I need another focus, I have been doing Drupal and php for a long time &ndash;now is not time to move on, just time to hedge my speciality.</p>
 <h1 id="my-dilemma">My dilemma</h1>
 <p>If this was a question that didn&rsquo;t involve programming, it would have an easier solution. Perhaps I should have been a carpenter. I need to choose to focus between Elixir and Python. Neither are really new languages, yet both are a bit of the new hotness at the moment. Not that I am basing this on popularity or a trending topics feed.</p>
@@ -967,14 +902,7 @@ DrupalCon.</p>
 <h2 id="time-to-learn-the-old-war-horse">Time to learn the old war horse</h2>
 <p>I have done some preliminary study to learn Python, but without a project I am not sure how much I will retain. I have learned many fundamentals that I will need to reinforce through repetition of work. I have little interest in building another search engine as it seems like the &ldquo;Hello World&rdquo; first project for getting started with Python. I also have no interest in building a site in Django. So then, what am I left with? I am not sure, but I want to figure it out soon. Maybe find a way to incorporate Python with cross platform app development.</p>
 <p>The heart of this dilemma is not really about Python versus Elixir. It is about finding a project that justifies the investment. A language without a purpose is just syntax. I am going with Python because the ecosystem demands it, but the real work starts when I find the right problem to solve with it.</p>
-]]></description>
-    </item>
-    <item>
-      <title>What if the bullets cost money?</title>
-      <link>http://localhost:1313/posts/2015/12/23/what-if-the-bullets-cost-money/</link>
-      <pubDate>Wed, 23 Dec 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/12/23/what-if-the-bullets-cost-money/</guid>
-      <description><![CDATA[<p>I have been thinking about old video games again. (See <a href="/posts/lets-plan-a-new-arduino-based-video-game-console">yesterday&rsquo;s post</a> — apparently this is a phase.)</p>
+]]></description></item><item><title>What if the bullets cost money?</title><link>https://www.frobiovox.com/posts/2015/12/23/what-if-the-bullets-cost-money/</link><pubDate>Wed, 23 Dec 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/12/23/what-if-the-bullets-cost-money/</guid><description><![CDATA[<p>I have been thinking about old video games again. (See <a href="/posts/lets-plan-a-new-arduino-based-video-game-console">yesterday&rsquo;s post</a> — apparently this is a phase.)</p>
 <p>The whole medium starts in roughly the same place. The very first thing anyone ever made that was a <em>game</em> on a screen was <a href="https://en.wikipedia.org/wiki/Spacewar!">Spacewar!</a> on the PDP-1 back in 1962 — two ships, a star with some gravity, and a handful of torpedoes. We have been making more or less that same thing ever since.</p>
 <h2 id="everyone-makes-the-space-shooter">Everyone makes the space shooter</h2>
 <p>Pick up any game engine, open any &ldquo;learn to make games&rdquo; tutorial, and I will bet you a cartridge that the first or second project is a space shooter. Dodge the asteroids. Shoot the asteroids. The rocks break into smaller rocks. You get a high score. It is the &ldquo;Hello, World&rdquo; of game development, and for good reason — it touches movement, collision, spawning, score, and a win/lose state in about a hundred lines.</p>
@@ -988,14 +916,7 @@ DrupalCon.</p>
 <h2 id="disclaimer-same-as-always">Disclaimer, same as always</h2>
 <p>I have not built this. I have built the tutorial version, like everyone, and then closed the laptop. This is a note-to-self disguised as a blog post: when I finally have the time and the right tools, the game I want to make is the one where shooting the asteroid is a choice you have to weigh, not a button you hold down.</p>
 <p>Maybe I get to it next year. Maybe it takes ten. Either way, I know exactly what game I want to make.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Lets plan a new Arduino based video game console</title>
-      <link>http://localhost:1313/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/</link>
-      <pubDate>Tue, 22 Dec 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/</guid>
-      <description><![CDATA[<p>Modern game consoles are marvels of engineering, but they are also black boxes. You download a game, you press a button, it plays. There is nothing to open, nothing to tinker with, nothing for a kid to look at and say &ldquo;I could build that.&rdquo; I want to change that &ndash; with an open source, cartridge-based video game console built from Arduinos.</p>
+]]></description></item><item><title>Lets plan a new Arduino based video game console</title><link>https://www.frobiovox.com/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/</link><pubDate>Tue, 22 Dec 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/12/22/lets-plan-a-new-arduino-based-video-game-console/</guid><description><![CDATA[<p>Modern game consoles are marvels of engineering, but they are also black boxes. You download a game, you press a button, it plays. There is nothing to open, nothing to tinker with, nothing for a kid to look at and say &ldquo;I could build that.&rdquo; I want to change that &ndash; with an open source, cartridge-based video game console built from Arduinos.</p>
 <h2 id="why-make-a-new-old-video-game-system">WHY make a new old video game system!?!</h2>
 <p>I saw this video.</p>
 <iframe width="420" height="315" src="https://www.youtube.com/embed/6kJV-BdsUWs" frameborder="0" allowfullscreen></iframe>
@@ -1035,14 +956,7 @@ DrupalCon.</p>
 <li>An Arduino getting input from an off the shelf game Controller</li>
 </ul>
 <p>I have seen articles where people have done each of these things independently with an Arduino. The pieces exist. The challenge is pulling them together into something a kid can hold in their hands, load a cartridge into, and play. That is the project. If I get far enough along, maybe someone who knows more about digital electronics than I do will see this and want to help make it real.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Step One on replacing Jekyll, make yaml work</title>
-      <link>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link>
-      <pubDate>Sun, 26 Jul 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid>
-      <description><![CDATA[<p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
+]]></description></item><item><title>Step One on replacing Jekyll, make yaml work</title><link>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</link><pubDate>Sun, 26 Jul 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/07/26/step-one-on-replacing-jekyll--make-yaml-work/</guid><description><![CDATA[<p>As you might remember in my post on replacing Jekyll with Gulp (and my post on Jekyll). YAML will be a large part of getting this working.</p>
 <h1 id="yaml-parsing">YAML Parsing</h1>
 <p>First am trying to use <a href="https://www.npmjs.com/package/gulp-yaml">npm-yaml</a>. Simple installation, <code>npm install --save-dev npm-yaml</code>. And it works great with the _config file that holds general site information. So I try it with the html.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">gulp</span>.<span style="color:#a6e22e">task</span>(<span style="color:#e6db74">&#39;test-index&#39;</span>, <span style="color:#66d9ef">function</span>() {
@@ -1074,14 +988,7 @@ DrupalCon.</p>
 <h2 id="bad-plug-ins">Bad plug-ins</h2>
 <p>So, here it is. The liquid plugin just didn&rsquo;t work. I don&rsquo;t have the time to waste on this right now. Looks like this is too far ahead of its time for now. So I am putting it on hold.</p>
 <p>The lesson here is that Gulp is great at file transformation but the ecosystem is not ready to replace a purpose-built static site generator. YAML parsing works, front-matter stripping works, but the Liquid template plugin is not there yet. Sometimes the right call is to recognize when a dependency is not mature enough and come back later. Jekyll stays for now.</p>
-]]></description>
-    </item>
-    <item>
-      <title>I like Jekyll, but is it necessary?</title>
-      <link>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid>
-      <description><![CDATA[<p>Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.</p>
+]]></description></item><item><title>I like Jekyll, but is it necessary?</title><link>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</link><pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/06/15/i-like-jekyll--but-is-it-necessary/</guid><description><![CDATA[<p>Jekyll solved my blog problem: it is fast to set up, free to host, and I actually write content on it instead of endlessly rebuilding the platform. But now I am wondering if I even need Jekyll, or if I can replace it with Gulp and cut out the Ruby dependency entirely.</p>
 <p>One of the first &ldquo;Content Management Systems&rdquo; I ever wrote was a perl script that took flat text files and wrapped templates around them and gave me html. I cobbled this thing together and thought, huh, it worked. At the time  everything was changing and I hardly ever wrote content. So a script that did this wasn&rsquo;t extremely useful to me. It was more of an academic experience – especially because, at the time, I wasn&rsquo;t a professional web developer.</p>
 <p>For the past 8 or so years I have been working primarily in <a href="https://www.drupal.org">Drupal</a>. I have seen other CMS&rsquo;s <a href="http://www.joomla.com">come and go and comeback</a>. I have seen forks and communities fall apart due to in fighting. I have seen major versions of projects that were worked on for years <a href="http://www.exult.sf.net">get shelved and ultimately abandoned</a>. I have seen much of this in the 8 or so years that I have been working with Drupal.</p>
 <p>Drupal has been rock solid. However, every-time I have tried to launch by blog on Drupal I would get stuck in the weeds. I have re-built wordpress 3 times with Drupal. Each time getting the blog to a different 80% mark before other work or obligations would take me away. So this time I launched my blog on Jekyll. I gathered together as much old content as I could find and consolidated here, using the Jekyll Quickstart repo.</p>
@@ -1108,14 +1015,7 @@ DrupalCon.</p>
 </ul>
 <h2 id="the-plan">The plan</h2>
 <p>I already know that there are gulp plug-ins that say they do, liquid templates, markdown parsing, and yaml parsing. The issue with relying on Gulp is that it is still a relatively new technology. This means that plug-ins sometimes say they do something or they don&rsquo;t do something fully or they are simply empty repositories that show where something was once going to be built. I am going to attempt this. But <strong>no promises</strong>. <em>This</em> is for me. As I complete something I will post a link in the list above.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Back from DrupalConLA (A postmortem)</title>
-      <link>http://localhost:1313/posts/2015/05/18/back-from-drupalconla/</link>
-      <pubDate>Mon, 18 May 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/05/18/back-from-drupalconla/</guid>
-      <description><![CDATA[<p>I have been in LA again for DrupalCon. To my surprise this was not the first year of a DrupalCon Stabbing.</p>
+]]></description></item><item><title>Back from DrupalConLA (A postmortem)</title><link>https://www.frobiovox.com/posts/2015/05/18/back-from-drupalconla/</link><pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/05/18/back-from-drupalconla/</guid><description><![CDATA[<p>I have been in LA again for DrupalCon. To my surprise this was not the first year of a DrupalCon Stabbing.</p>
 <p>I lived in Long Beach for around 7 years. Every time I had some regular obligation. I did my due diligence and checked to see if I could take public transit to wherever I was going, whenever I need to go there. Be it school, or work, or church. I was never able to find a reasonable commute on public transportation. Every time I found a 20 mile commute would lead to a 3 hour and 5 transfer bus route. It was simply a fact that nowhere that I needed to go was a place the bus wanted to take me.</p>
 <p>So now I live in Portland. I have been here for one week. I take the bus everyday and it always goes where I need it to. It is not as fast as driving, but my commute is under an hour and I sold my car.</p>
 <p>Now I live in Portland and DrupalCon is in LA a week after I move. I was sure to have permission from my new job to come back for the week of DrupalCon, however, this time I didn&rsquo;t have a car &ndash;I didn&rsquo;t have a car and now I am in LA. This is a problem, so I borrowed a car so that I could get to the park and ride and take the blue line up to the staples center.</p>
@@ -1128,19 +1028,9 @@ DrupalCon.</p>
 <p>&ldquo;Hello everyone, I need your attention. I am terribly sorry for this but I have to &hellip;&rdquo;</p>
 <p>At this point I am positioning myself to bum rush him and &hellip;</p>
 <p>&ldquo;&hellip; to ask you all for money.&rdquo; The entire train exhales and goes back to ignoring him. I nearly laughed the only kind of laugh that comes from thinking you&rsquo;re about to die.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Support should not be based on Marketshare</title>
-      <link>http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/</link>
-      <pubDate>Sun, 06 Oct 2013 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2013/10/06/support-should-not-be-based-on-marketshare/</guid>
-      <description><![CDATA[<p>The question &ldquo;which browsers do we support?&rdquo; comes up on every project, and the answer is almost always based on market share. I think that is the wrong approach. Here is why.</p>
+]]></description></item><item><title>Support should not be based on Marketshare</title><link>https://www.frobiovox.com/posts/2013/10/06/support-should-not-be-based-on-marketshare/</link><pubDate>Sun, 06 Oct 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/10/06/support-should-not-be-based-on-marketshare/</guid><description><![CDATA[<p>The question &ldquo;which browsers do we support?&rdquo; comes up on every project, and the answer is almost always based on market share. I think that is the wrong approach. Here is why.</p>
 <p>In web development IE has been the bane of front-end developers everywhere. For a long time it was IE6, and now it is IE8/9 that give the most grief. Every browser has its little issues here and there. Little quirks that make us developers need to test in every conceivable situation. Specifically it is that browsers do things their own way (for better or worse); they may or may not conform to standards and they may do somethings that are completely non-standard.</p>
 <p>As web developers we have no control over how anything we ship will be consumed. It could be viewed on a large Apple Cinema display or on an iPhone or any number of thousand Android devices &ndash;or heaven forbid a screen reader. So if a site is consumed across four browsers (IE, Firefox, Safari, and Chrome) and we have to support multiple versions of those browsers (IE7/8/9/10/11, Firefox Latest, Safari OSX-7/8/iOS-7-8, Firefox Latest, Chrome Latest and Mobile) and you add in the default of 4 breakpoints per. That means that fully testing these devices would mean QA across: 12 environments on 4 breakpoints and at least 4 OSs (Windows, OSX, Android, iOS) (and yes I know that not all these browsers work on all the OSs) that would make no less than 12 * 4 * 4 = 192 testable environments at launch. This means two things are important, graceful degradation  of features and graceful degradation of design (my PM told me not to call it Graceful Degradation but rather Progressive Enhancement). The way web browsers (and other web enabled devices) work is they make their best effort to display content in the way that it was intended. The problem is that some web portals are more effective at this than others.</p>
 <p>So what is “<del>graceful degradation</del> Progressive Enhancement?” This is attempting to control the degradation in a meaningful way. The largest part of this in the management of expectations of the client. The current model of &ldquo;we fully support these browsers based solely on market share&rdquo; is a bad idea. Some things are so cost prohibitive that they are basically impossible on some browsers and that shouldn&rsquo;t mean that we shouldn&rsquo;t do them on the browsers that do support it. There are tools that help but all come at a cost. Usually a cost of performance. Sure this makes a site look more like the Photoshop/Fireworks/Sketch design, but it takes a toll and normally it will add small delays and make a site feel sluggish.</p>
 <p>The bottom line: support should be based on what features a browser can handle, not on how many people use it. Build for capability, enhance progressively, and let the browsers do what they were designed to do &ndash; their best.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

@@ -1,30 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Drupal on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/drupal/</link>
-    <description>Recent content in Drupal on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/drupal/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>The joys of unemployment</title>
-      <link>http://localhost:1313/posts/2026/09/01/the-joys-of-unemployment/</link>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/09/01/the-joys-of-unemployment/</guid>
-      <description><![CDATA[<p>The silver lining of being laid off is time. Specifically, time to finish the pile of open source projects that have been sitting on the back burner for years, waiting for a weekend that never came.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Drupal on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/drupal/</link><description>Recent content in Drupal on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/drupal/feed.xml" rel="self" type="application/rss+xml"/><item><title>The joys of unemployment</title><link>https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/</link><pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/09/01/the-joys-of-unemployment/</guid><description><![CDATA[<p>The silver lining of being laid off is time. Specifically, time to finish the pile of open source projects that have been sitting on the back burner for years, waiting for a weekend that never came.</p>
 <p>I have been on <a href="https://www.drupal.org/u/frob">drupal.org</a> for almost twenty years. Eighteen and a half, as the profile counts it. Thirty-odd projects maintained or co-maintained, a stack of issue credits, twelve DrupalCons, and a stint organizing the front-end Drupal meetup in Portland and the Let&rsquo;s contribute together meetup in Long Beach. That is most of a career expressed as one long contribution log.</p>
 <p>But Drupal was never the whole of it. There is the Open edX work &ndash; getting a full platform to come up in Docker for both production and local development, which is harder than it sounds and matters more than it sounds. There is <a href="/posts/2026/08/30/introducing-v-the-easiest-vendor-utility/">v</a>, and <a href="https://gitlab.com/frob/webform-relay">webform relay</a>, and a long tail of smaller things scattered across <a href="https://github.com/frob">github.com/frob</a> and <a href="https://gitlab.com/frob">gitlab.com/frob</a>.</p>
 <p>The other reason to do this now is that unemployment gives you a lot of time and not much to point at. A contribution graph that goes quiet the month you get laid off says something, and it is not the thing you want it to say. Staying busy in public keeps the work visible &ndash; commits, releases, issue queues. It is the portfolio that maintains itself, as long as you keep showing up to it.</p>
 <p>None of these got the attention they needed while I had a full-time job. They are getting it now.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Farewell to the burgundy</title>
-      <link>http://localhost:1313/posts/2026/08/27/farewell-to-the-burgundy/</link>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/08/27/farewell-to-the-burgundy/</guid>
-      <description><![CDATA[<p>Last week I <a href="http://localhost:1313/posts/2026/08/18/moving-on/">wrote a list</a> of everything I need to update. Second item: personal site. Here is what has been sitting at <a href="http://www.frankrobertanderson.com">www.frankrobertanderson.com</a> this whole time.</p>
+]]></description></item><item><title>Farewell to the burgundy</title><link>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</link><pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/</guid><description><![CDATA[<p>Last week I <a href="https://www.frobiovox.com/posts/2026/08/18/moving-on/">wrote a list</a> of everything I need to update. Second item: personal site. Here is what has been sitting at <a href="http://www.frankrobertanderson.com">www.frankrobertanderson.com</a> this whole time.</p>
 <p><img src="/images/2026/08/27/frankrobertanderson.png" alt="The frankrobertanderson.com homepage: a dark burgundy background, olive header bar, and a typewriter-font nameplate" title="Professional Drupal/Web Development, since 2009."></p>
 <p>Look at that footer. <em>© Copyright 2009.</em></p>
 <p>That site is old enough to drive. It was built on Drupal 6, with a theme I wrote myself. I still have a soft spot for the dark burgundy background and the typewriter-font nameplate. The contact link is broken &ndash;it is supposed to point at the contact form on my Drupal.org profile.</p>
@@ -33,14 +12,7 @@
 <p>This site isn&rsquo;t exactly embarrassing, if looked at by the right people. If anything it is very obviously not AI slop. It is a genuine artifact of what web development looked like when I got serious about it, and I am not the sort of person who pretends the earlier versions did not happen. But a site that says 2009 in the footer is not telling anyone what I can do in 2026. It is telling them I stopped.</p>
 <p>So it gets replaced. Something static, something I can update in an afternoon, something that says what I actually work on now instead of what I hoped to sell seventeen years ago.</p>
 <p>Seventeen years is a good run for a homepage. Longer than most jobs. You can check out the new version <a href="https://www.frankrobertanderson.com">here</a>.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Why DrupalCon</title>
-      <link>http://localhost:1313/posts/2018/02/20/why-drupalcon/</link>
-      <pubDate>Tue, 20 Feb 2018 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2018/02/20/why-drupalcon/</guid>
-      <description><![CDATA[<h1 id="collaboration-and-contribution-at-drupalcon">Collaboration and Contribution at DrupalCon</h1>
+]]></description></item><item><title>Why DrupalCon</title><link>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2018/02/20/why-drupalcon/</guid><description><![CDATA[<h1 id="collaboration-and-contribution-at-drupalcon">Collaboration and Contribution at DrupalCon</h1>
 <p><a href="https://www.drupal.org/">Drupal</a> is the most flexible general purpose Content Management System on the market today—Open Source or not. Using Drupal enables us to provide a cost effective and flexible platform for our clients, while contributing to Drupal allows us to ensure it remains the most flexible general purpose Content Management System. As contributing to Drupal is the job of the Drupal Community, it’s essential that Drupal advocates and aficionados convene to teach and learn from each other. What better way to do that than at DrupalCon?</p>
 <h2 id="what-is-drupalcon">What is DrupalCon?</h2>
 <p><a href="https://events.drupal.org/vienna2017">DrupalCon</a> is a conference where the Drupal Community can meet each other and exchange information in real life. The North American DrupalCon bounces around the Continental US, yet DrupalCon also happens in Europe, Asia, and South America.</p>
@@ -54,14 +26,7 @@
 <p>Any software project that is under active development will be a moving target, and as users of this software, it is important to stay on top of the latest versions. In an effort to do this, I submitted a session for Baltimore DrupalCon about exploring and evaluating Drupal 8 by <a href="https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8.html">re-architecting a Custom Learning Management System</a> we had built for New Perspectives Online. By doing this session, I was able to both get more experience with a new product without having to learn on a high-stakes client project, and I also had the opportunity to share those experiences with others in the Drupal Community. Below is a video of my presentation.</p>
 <iframe src="https://www.youtube.com/embed/en-nC4ZjdXo" frameborder="0" width="560" height="315"></iframe>
 <p>Contribution isn&rsquo;t always about code. Contribution is possible regardless of skillset. Everything including bug reports, documentation, design, code, or even just attending DrupalCon is a worthwhile contribution.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Basic Hello World with composer and php</title>
-      <link>http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link>
-      <pubDate>Tue, 16 Aug 2016 17:40:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid>
-      <description><![CDATA[<h1 id="getting-started-with-composer">Getting started with composer</h1>
+]]></description></item><item><title>Basic Hello World with composer and php</title><link>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</link><pubDate>Tue, 16 Aug 2016 17:40:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/08/16/basic-hello-world-with-composer-and-php/</guid><description><![CDATA[<h1 id="getting-started-with-composer">Getting started with composer</h1>
 <p>If you write PHP and you are not using <a href="https://getcomposer.org">Composer</a>, you are managing dependencies by hand &ndash; and that means you are doing more work than you need to. Composer handles autoloading, dependency resolution, and versioning so you do not have to. This post walks through a complete Hello World project from <code>composer init</code> to running tests, so you can see how all the pieces fit together.</p>
 <p>If you are looking for more information about using <a href="https://www.drupal.org">Drupal</a> with <a href="https://getcomposer.org">Composer</a> then you should checkout the <a href="https://www.drupal.org/node/2718229">official composer facade doc page</a> on drupal.org.</p>
 <p>I will <em>not</em> be talking about publishing to <a href="https://packagist.org">Packagist</a>. My php is nearly always for <a href="https://www.drupal.org">Drupal</a>, and as such, if I publish anything it will most likely be to a project on <a href="https://www.drupal.org">drupal.org</a>. In the end I will philosophize about <a href="https://www.drupal.org">Drupal</a> and <a href="https://getcomposer.org">Composer</a>, but we will start with the <a href="https://getcomposer.org">composer</a> basics.</p>
@@ -245,14 +210,7 @@ composer.lock
 <p>Drupal was special, it was special because when we (Drupal Developers) needed something we built it. Our issue was that we built it for us. Now the needs of Drupal aren&rsquo;t unique. We build drush, but every project seems to have a cli now-a-days.</p>
 <p>Drush has make functionality. It can handle bundling our projects together with a build process. It also gives us the ability to download and install modules or change/modify our configuration. We can start temporary web-servers with Drush and do simple development work or test patches. The issue is that Drush was our tool and no one else&rsquo;s.</p>
 <p>With Drupal 8 we are leaving the island and seeing how others have solved problems. We don&rsquo;t have to do it all ourselves and sometimes it is better not to even try. There is a whole slew of functionality out there that we can now incorporate into our modules. Composer is the key in all of that.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Simplify Drupal 8 field value calls</title>
-      <link>http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link>
-      <pubDate>Mon, 28 Mar 2016 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid>
-      <description><![CDATA[<p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
+]]></description></item><item><title>Simplify Drupal 8 field value calls</title><link>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</link><pubDate>Mon, 28 Mar 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/03/28/simplify-drupal-8-field-value-calls/</guid><description><![CDATA[<p>Getting a field value in Drupal 8 looks verbose compared to Drupal 7. Three lines where you used to need two, with a fully qualified namespace to boot. But it does not have to stay that way. In this post I will take the long-form Drupal 8 getter and simplify it step by step, from four lines down to one.</p>
 <h1 id="get-the-title-of-a-node">Get the title of a node</h1>
 <p>Let&rsquo;s load a node and return the title.</p>
 <h2 id="drupal-7">Drupal 7</h2>
@@ -304,14 +262,7 @@ composer.lock
 </span></span></code></pre></div><p>It&rsquo;s important to remember that when dealing with a new version it&rsquo;s tempting to say, &ldquo;This used to be easy and now it is hard.&rdquo;</p>
 <p>It only used to be easy because we knew how to do things without having to do too much research. Now things are hard &ndash;but they will not stay that way. For better or worse Drupal 8 brought new architecture, new ideas, and new things to learn.</p>
 <p>The good news is that once you internalize the <code>-&gt;get('field')-&gt;value</code> pattern, it becomes second nature. One getter, one consistent API, regardless of field type or language. That is a real improvement over Drupal 7&rsquo;s <code>$node-&gt;field_name[0][LANGUAGE_NONE]['value']</code> guessing game.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Altering Entity Field Queries for JOINS ORs and Profit</title>
-      <link>http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link>
-      <pubDate>Wed, 11 Nov 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid>
-      <description><![CDATA[<p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
+]]></description></item><item><title>Altering Entity Field Queries for JOINS ORs and Profit</title><link>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</link><pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/11/11/altering-entity-field-querys-for-joins-ors-and-profit/</guid><description><![CDATA[<p>EntityFieldQuery is powerful, but it has a well-known limitation: no <code>OR</code> conditions. If you need to filter nodes by a taxonomy field AND also match a keyword in the title, you are stuck &ndash; unless you know about query tags and <code>hook_query_TAG_alter()</code>. This post shows how to break out of EntityFieldQuery&rsquo;s constraints by altering the underlying database query directly.</p>
 <p>I have written about <a href="https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery.html">extending EntityFieldQueries with subqueries</a> before. This time I will go into extending the query as a query object, using Drupal&rsquo;s hook and alter architecture.</p>
 <h2 id="simple-entityfieldquery">Simple EntityFieldQuery</h2>
 <p>For our example we will start with a simple EntityFieldQuery for getting a list of nodes.</p>
@@ -355,14 +306,7 @@ composer.lock
 </span></span></code></pre></div><p>There, we are done, right? Nope. We may think that we are, however, if we ran that code we would get a PDO exception. Why? Because we are not doing any propertyConditions on the original EntityFieldQuery. Drupal is smart enough to know that if it isn&rsquo;t using the node table in the EFQ that it doesn&rsquo;t need to <code>JOIN</code> it.</p>
 <p>To fix this, go back up to the original EntityFieldQuery and add this line <code>$query-&gt;propertyCondition('status', 1);</code>. This forces the node table into the query so our alter hook can reference <code>node.title</code>.</p>
 <p>To recap: tag your EntityFieldQuery, attach metadata with <code>addMetaData()</code>, implement <code>hook_query_TAG_alter()</code> to add your <code>OR</code> conditions, and make sure the base table is joined by including at least one <code>propertyCondition</code>. It is not obvious, but once you know the pattern it opens up EntityFieldQuery for nearly any query you need to build.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Reflecting on Elixir and Phoenix</title>
-      <link>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link>
-      <pubDate>Fri, 09 Oct 2015 12:02:17 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid>
-      <description><![CDATA[<p>Every developer eventually asks the question: what should I be learning next? I just got back from <a href="http://www.elixirconf.com">ElixirConf</a>, and this post is my attempt to answer that question for myself &ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.</p>
+]]></description></item><item><title>Reflecting on Elixir and Phoenix</title><link>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</link><pubDate>Fri, 09 Oct 2015 12:02:17 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/10/09/reflecting-on-elixir-and-phoenix/</guid><description><![CDATA[<p>Every developer eventually asks the question: what should I be learning next? I just got back from <a href="http://www.elixirconf.com">ElixirConf</a>, and this post is my attempt to answer that question for myself &ndash; by looking at Elixir, Phoenix, and what they mean for someone whose career has been built on Drupal and PHP.</p>
 <h2 id="the-new-hotness">The New Hotness</h2>
 <p>I read a post recently that had the click bait title &ldquo;Is Drupal Dying?&rdquo; Ironically I read this while attending ElixirConf. The basis of that post was clients asking for the <q>next</q> thing &ndash;expecting Drupal to be old and busted in five years.</p>
 <p>I am at ElixirConf because I see great potential in Elixir, Erlang, and <a href="http://www.phoenixframework.com">Phoenix</a>. I expect it to be the next big thing and for it to help provide a scalable platform for highly available, highly scalable, and interactive / dynamic websites.</p>
@@ -531,14 +475,7 @@ Percentage of the requests served within a certain time (ms)
 <p>For the longest time I thought Drupal&rsquo;s biggest problem was PHP &ndash;and I mostly still think that. The difference between now and 5 years ago is that PHP&rsquo;s development is starting to gain velocity. We are starting to see some of the improvements from HHVM and PHPng being brought into PHP. PHP7 holds some real potential. PHP has always been really fast and it is still really fast. Big pipe is the <q>new thing</q> for PHP and it can work, things are possible. All of this gives me hope. It gives me hope for Drupal.</p>
 <h2 id="so-where-does-this-leave-me">So where does this leave me?</h2>
 <p>Elixir and Phoenix are worth learning. The benchmarks speak for themselves, the developer experience is excellent, and the fault-tolerance story is unlike anything in the PHP world. But Drupal is not dying &ndash; it is adapting. For now, Phoenix earns a place in my toolbox for the kinds of problems it was built to solve: real-time, highly concurrent, connection-heavy applications. For content management, Drupal is still the answer. The best tools are the ones you pick for the right job.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Modern Drupal7 Site Building Tools</title>
-      <link>http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/</link>
-      <pubDate>Tue, 22 Sep 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/09/22/modern-drupal7-site-building-tools/</guid>
-      <description><![CDATA[<p>With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &ndash; for site builders specifically &ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.</p>
+]]></description></item><item><title>Modern Drupal7 Site Building Tools</title><link>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</link><pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/09/22/modern-drupal7-site-building-tools/</guid><description><![CDATA[<p>With Drupal 8 on the horizon, it is tempting to write off Drupal 7. Don&rsquo;t. The module ecosystem for Drupal 7 is mature, battle-tested, and &ndash; for site builders specifically &ndash; more powerful than ever. What follows is my curated list of the modules that let a site builder with some front-end skill create complicated sites with little to no custom module code.</p>
 <h2 id="why-build-a-site-with-drupal-7">Why build a site with Drupal 7</h2>
 <p>Drupal 8 is nearly out making Drupal 7 look like it isn&rsquo;t an appealing choice. However, Drupal 7 is still a contender for the conveniences in site-building crown. The module ecosystem for Drupal 7 is mature and, specifically for site builders, it is a very exciting time for Drupal 7.</p>
 <h1 id="the-modules">The Modules</h1>
@@ -606,14 +543,7 @@ Percentage of the requests served within a certain time (ms)
 <p>Play with these modules before installing on production.</p>
 <h2 id="final-thoughts">Final thoughts</h2>
 <p>No single module on this list is revolutionary. The power comes from combining them. Title and Fences give you semantic markup. Field Group and Display Suite give you layout control. Context gives you conditional logic. Bean gives you fieldable blocks. Stack them together and you have a site-building toolkit that can handle complex designs without writing a single line of custom module code. Drupal 7 is not the new hotness, but it is a platform where the tools have had time to mature &ndash; and that maturity counts for a lot.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Need a join in an EntityFieldQuery, how about a subquery?</title>
-      <link>http://localhost:1313/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</link>
-      <pubDate>Wed, 10 Jun 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</guid>
-      <description><![CDATA[<p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it. EntityFieldQuery is the Drupal 7 way to fetch entities without writing raw SQL, but it has a well-known limitation: you cannot do arbitrary <code>JOIN</code>s the way you would with a normal <code>db_select()</code> query. That comes up the moment you try to filter users by role, since role assignments live in their own table rather than on the user entity itself. It turns out there is a clean way around this using a subquery, and it is worth knowing about because the same trick applies any time you need to filter an EntityFieldQuery against data that lives in another table.</p>
+]]></description></item><item><title>Need a join in an EntityFieldQuery, how about a subquery?</title><link>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</link><pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/06/10/need-a-join-in-an-entityfieldquery--how-about-a-subquery/</guid><description><![CDATA[<p>I saw this over at <a href="http://drupal.stackexchange.com/a/153695/17227">stackexchange</a> and I had to write about it. EntityFieldQuery is the Drupal 7 way to fetch entities without writing raw SQL, but it has a well-known limitation: you cannot do arbitrary <code>JOIN</code>s the way you would with a normal <code>db_select()</code> query. That comes up the moment you try to filter users by role, since role assignments live in their own table rather than on the user entity itself. It turns out there is a clean way around this using a subquery, and it is worth knowing about because the same trick applies any time you need to filter an EntityFieldQuery against data that lives in another table.</p>
 <p><em><strong>Shaddap and give me the code:</strong></em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EntityFieldQuery</span>();
 </span></span><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">entityCondition</span>(<span style="color:#e6db74">&#39;entity_type&#39;</span>, <span style="color:#e6db74">&#39;user&#39;</span>);
@@ -648,14 +578,7 @@ Percentage of the requests served within a certain time (ms)
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">propertyCondition</span>(<span style="color:#e6db74">&#39;uid&#39;</span>, $roles_subquery, <span style="color:#e6db74">&#39;IN&#39;</span>);
 </span></span></code></pre></div><p>The interesting thing about this is that this isn&rsquo;t an array of results being passed to the propertyCondition. Instead, this is passing the query object. Then, Drupal&rsquo;s query builder will build the query to include that.</p>
 <p>Seriously, well done with the whole DB layer in Drupal 7.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Setting a default value for a link or url field in Drupal 7</title>
-      <link>http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link>
-      <pubDate>Mon, 04 May 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid>
-      <description><![CDATA[<p>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.</p>
+]]></description></item><item><title>Setting a default value for a link or url field in Drupal 7</title><link>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</link><pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/05/04/setting-a-default-value-for-a-link-or-url-field-in-drupal-7/</guid><description><![CDATA[<p>So everyone who does drupal development should know by now about hook_alter the form api and the setting of default values.</p>
 <p>In case you don&rsquo;t I suggest reading these pages first:</p>
 <ul>
 <li><a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7">The Drupal Form API</a></li>
@@ -692,14 +615,7 @@ Percentage of the requests served within a certain time (ms)
 </span></span></code></pre></div><p>Therefore, in-order to set the default value of a link field, one must set the <code>$form['field_link']['#default_value']['url']</code>. This is assuming that it is desired to change the url of the link field. It could be that the title needs to be set or one of the other optional attributes for the link field.</p>
 <p>This should hold true for all fields of all types. I noticed this when I stumbled upon this <a href="https://www.drupal.org/node/1782516#comment-7552205">Drupal.org issue where someone was asking how to set the default value of a link field.</a></p>
 <p>The issue didn&rsquo;t talk about this behavior of the #columns item. I just noticed it when digging through that. Cool eh?</p>
-]]></description>
-    </item>
-    <item>
-      <title>Drupal or Wordpress? Why not Jekyll.</title>
-      <link>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
-      <pubDate>Tue, 27 Jan 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
-      <description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
+]]></description></item><item><title>Drupal or Wordpress? Why not Jekyll.</title><link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link><pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid><description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
 <p>So if Jekyll isn&rsquo;t a CMS then what is it? Jekyll is a &ldquo;blog aware&rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.</p>
 <h2 id="what-are-the-advantages-to-static-site-generation">What are the advantages to static site generation?</h2>
 <p>The biggest advantage is simplified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necessary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.</p>
@@ -773,24 +689,10 @@ Percentage of the requests served within a certain time (ms)
 <p>After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&rsquo;t want to ask the old maintainer to put the page back up and I didn&rsquo;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I decided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.</p>
 <h3 id="frobiovoxcom-or-frobgithubio">Frobiovox.com or frob.github.io</h3>
 <p>Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Utilizing Front End CSS Design Paradigms In Drupal</title>
-      <link>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link>
-      <pubDate>Fri, 24 Jan 2014 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid>
-      <description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
+]]></description></item><item><title>Utilizing Front End CSS Design Paradigms In Drupal</title><link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link><pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid><description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
 <p><a href="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank">Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014</a></p>
 <iframe allowfullscreen="true" frameborder="0" height="389" mozallowfullscreen="true" src="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/embed?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="480"></iframe>
-]]></description>
-    </item>
-    <item>
-      <title>Creating Auto Submitting Forms with Drupal&#39;s Form API</title>
-      <link>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link>
-      <pubDate>Tue, 26 Nov 2013 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid>
-      <description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
+]]></description></item><item><title>Creating Auto Submitting Forms with Drupal's Form API</title><link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link><pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid><description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
 <p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
 <p>My use case was a semi-typical one: have the input from one select list affect the options in another select list.</p>
 <p>This could be done in any number of ways including:</p>
@@ -841,14 +743,7 @@ Percentage of the requests served within a certain time (ms)
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $form;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>That is all there is to it. By adding a single <code>onChange</code> attribute through the form API&rsquo;s <code>#attributes</code> array, we get auto-submission without the overhead of <code>#ajax</code>. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.</p>
-]]></description>
-    </item>
-    <item>
-      <title>css less sass oocss drycss bem front end css design paradigm smacss down</title>
-      <link>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
-      <pubDate>Thu, 21 Nov 2013 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
-      <description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
+]]></description></item><item><title>css less sass oocss drycss bem front end css design paradigm smacss down</title><link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link><pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid><description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
 <h2>Object Oriented CSS</h2>
 <p>OOCSS has several principles that it is built upon.</p>
 <ol><li>A style should be written once and only once.</li>
@@ -940,7 +835,4 @@ box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
 <h2>Who Wins?</h2>
 <p>SMACSS.</p>
 <p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

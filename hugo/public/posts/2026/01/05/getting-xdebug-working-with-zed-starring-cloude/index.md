@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/ |
+| url | https://www.frobiovox.com/posts/2026/01/05/getting-xdebug-working-with-zed-starring-cloude/ |
 | date | 2026-01-05 |
 | tags | frontpage, tutorial, debug, ai |
 | description | The Zed editor is one of the more interesting new projects in a long while. The only problem is I use PHP and Zed sucks at PHP. One thing that sucks is Xdebug support. I finally got Xdebug working with the help of Claude. Notice, however, that I didn't say Claude got Xdebug working. |

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2016/09/30/a-new-simple-reading-rogue-like/ |
+| url | https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/ |
 | date | 2016-09-30 |
 | tags | frontpage, gaming, parenting, rogue-like, rogue-lite |
 | description | With everyone's kids being so smart it is a wonder that we don't have machine generated children's book already. This sounds like an oversight to me because computers are already raising our kids. |

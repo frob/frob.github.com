@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/ |
+| url | https://www.frobiovox.com/posts/2026/04/23/add-a-json-api-to-any-static-site-generator/ |
 | date | 2026-04-23 |
 | tags | tutorial, hugo, rest, frontpage |
 | description | Static site generators output HTML, but they can output JSON too. Here is how to add a JSON API to your Hugo site, and why the technique works with any SSG. |

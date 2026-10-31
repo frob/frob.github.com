@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Godot on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/godot/</link>
-    <description>Recent content in Godot on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/godot/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>Project Space Game: a ten-year-old idea finally has a build</title>
-      <link>http://localhost:1313/posts/2026/06/24/project-space-game/</link>
-      <pubDate>Wed, 24 Jun 2026 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2026/06/24/project-space-game/</guid>
-      <description><![CDATA[<p>About ten years ago I wrote down a question I couldn&rsquo;t shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called <a href="/posts/what-if-the-bullets-cost-money"><em>What if the bullets cost money?</em></a>, and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — <em>what does this cost you?</em></p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Godot on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/godot/</link><description>Recent content in Godot on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/godot/feed.xml" rel="self" type="application/rss+xml"/><item><title>Project Space Game: a ten-year-old idea finally has a build</title><link>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</link><pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2026/06/24/project-space-game/</guid><description><![CDATA[<p>About ten years ago I wrote down a question I couldn&rsquo;t shake and then, in the great tradition of my to-do list, did nothing about it for a decade. The post was called <a href="/posts/what-if-the-bullets-cost-money"><em>What if the bullets cost money?</em></a>, and the short version is this: every space shooter gives you free, infinite ammunition, and that has always struck me as the least interesting answer to the most interesting question a game can ask — <em>what does this cost you?</em></p>
 <p>Well. I finally started building the thing. It&rsquo;s called <strong>Project Space Game</strong>, and this is the first time I&rsquo;m writing about it as something that actually exists and runs rather than something I daydream about.</p>
 <h2 id="the-hook-ten-years-later">The hook, ten years later</h2>
 <p>The seed is exactly the one I planted back then: what if shooting the asteroids <em>cost you something</em>?</p>
@@ -27,7 +13,4 @@
 <p>I want the space out there to feel less like random rubble and more like a place — asteroid fields generated with the care you&rsquo;d give a dungeon, so navigating them is a puzzle worth solving. I want the world to react to you: music that shifts with the moment, ships that aren&rsquo;t just you, missions and levels that string the moment-to-moment flying into something with shape and stakes. I want depots in deep space where fuel is precious and the math gets genuinely scary. I want the ship, the asteroids, the home base to all look like they belong to the same hand-drawn universe instead of a programmer&rsquo;s scratch pad.</p>
 <p>None of that is done. Most of it is barely started. But the through-line from that ten-year-old question to a world where every shot and every drop of fuel is a choice you have to weigh: that part is real now, and it&rsquo;s already fun to fly around in.</p>
 <p>More to come. It only took me a decade to start.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

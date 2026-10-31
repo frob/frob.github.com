@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/ |
+| url | https://www.frobiovox.com/posts/2017/04/23/switching-to-celsius-from-fahrenheit-for-normal-people/ |
 | date | 2017-04-23 |
 | tags | frontpage, tutorial |
 | description | For the majority of people who will be switching from Fahrenheit to Celsius, this is all you need to know. |

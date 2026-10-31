@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Kwallcompany on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/kwallcompany/</link>
-    <description>Recent content in Kwallcompany on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/kwallcompany/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>Drupal or Wordpress? Why not Jekyll.</title>
-      <link>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link>
-      <pubDate>Tue, 27 Jan 2015 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid>
-      <description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kwallcompany on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/kwallcompany/</link><description>Recent content in Kwallcompany on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/kwallcompany/feed.xml" rel="self" type="application/rss+xml"/><item><title>Drupal or Wordpress? Why not Jekyll.</title><link>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</link><pubDate>Tue, 27 Jan 2015 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2015/01/27/drupal-or-wordpress-why-not-jekyll/</guid><description><![CDATA[<p>If you want a blog then you might be tempted to use Wordpress over a more complicated Drupal based site. However, more recently I have to ask why should anyone even really need Wordpress. A far simpler approach is a program called Jekyll. Noticed I didn&rsquo;t call Jekyll a Content Management System.</p>
 <p>So if Jekyll isn&rsquo;t a CMS then what is it? Jekyll is a &ldquo;blog aware&rdquo; static site generator. The way it works is content editor can write the content and put it into the folder and then tell Jekyll to generate the site. Jekyll will generate the site in html files, just like in the before-time.</p>
 <h2 id="what-are-the-advantages-to-static-site-generation">What are the advantages to static site generation?</h2>
 <p>The biggest advantage is simplified hosting. All that is needed to host a static site is any html server, there is no database, script, or cgi necessary. The site is generated and then any browser can parse that html. That means that even with a small server the site will load very fast and with very little overhead. Github even uses it for its Github pages service.</p>
@@ -86,14 +72,7 @@
 <p>After I took over development for DrupalForFirebug I knew that it would be just a matter of time before the issue was filed on drupal.org saying that the demo page (hosted on chapterthree) was down. I didn&rsquo;t want to ask the old maintainer to put the page back up and I didn&rsquo;t want to have to host a special site here on kwallcompany.com just for a demo of DrupalForFirebug. I also wanted to expand on the DrupalForFirebug api so I decided that I would host a faux api site using Jekyll. Basically with Jekyll I have created a dev blog for DrupalForFirebug and I put a special fake api callback there as well. DrupalForFirebug just uses hidden HTML for the the api so it was very easy. You can check it out by visiting the DrupalForFirebug page on Drupal.org and clicking on the demonstration link.</p>
 <h3 id="frobiovoxcom-or-frobgithubio">Frobiovox.com or frob.github.io</h3>
 <p>Drupal is awesome for so many things. I spent a lot of time perfecting my drupal blog site. Then I got hired and I never touched it. I have already put several posts here It took five minutes to spin up an adequate site and it is hosted for free on github.</p>
-]]></description>
-    </item>
-    <item>
-      <title>WebGL with three.js</title>
-      <link>http://localhost:1313/posts/2014/11/15/webgl-with-threejs/</link>
-      <pubDate>Sat, 15 Nov 2014 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2014/11/15/webgl-with-threejs/</guid>
-      <description><![CDATA[<p>There is a spinning green cube somewhere on this page. It is not a video, it is not a gif &ndash; it is being rendered in real-time by your browser&rsquo;s GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.</p>
+]]></description></item><item><title>WebGL with three.js</title><link>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</link><pubDate>Sat, 15 Nov 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/11/15/webgl-with-threejs/</guid><description><![CDATA[<p>There is a spinning green cube somewhere on this page. It is not a video, it is not a gif &ndash; it is being rendered in real-time by your browser&rsquo;s GPU. That is what WebGL can do, and in this post I will show you how to get there in about 30 lines of JavaScript with a library called Three.js.</p>
 <p>Everything is moving away from the compiled native app and over to the web browser. This has the advantage of giving users (those not using IE) the same experience no matter what platform the webapp is running on. One relatively new api that has come out of this shift is WebGL.</p>
 <div id="screen-wrapper"></div>
 <p><a href="http://www.khronos.org/webgl/wiki/Main_Page" target="_blank">WebGL </a>is a way for web developers to directly access the <a href="http://www.opengl.org/" target="_blank">OpenGL </a>apis. WebGL has shown some remarkable adoption over the past few years and I have to think this is due to it being based on the very stable open apis from OpenGL. If you have used OpenGL (or any 3D programming) there is a lot to do before anything can be rendered to the screen. I am not talking about art assets either, I am talking about templated boilerplate code that makes this stuff very tedious to start with. Luckily there are lots of Javascript people writing libraries so I don&rsquo;t have to rewrite the same boiler-plate code over and over again.</p>
@@ -204,24 +183,10 @@
 <p>One more thing is required to make the scene update. If the scene had no movement then there would be no point in making it use realtime hardware processing. By creating the render function and then calling that function with requestAnimationFrame and renderer.render we are creating the game loop and allowing updates to occur. This is why the cube is spinning.</p>
 <h2 id="where-to-go-from-here">Where to go from here</h2>
 <p>That is all it takes to get a 3D scene running in a browser. A scene, a camera, a renderer, some geometry with a material, a light or two, and a render loop. Three.js handles the boilerplate so you can focus on what you want to build. From here, try swapping in different geometries, adding textures, or loading a real model. The <a href="http://threejs.org/docs/">Three.js documentation</a> and <a href="http://threejs.org/examples/">examples page</a> are the best next steps.</p>
-]]></description>
-    </item>
-    <item>
-      <title>Utilizing Front End CSS Design Paradigms In Drupal</title>
-      <link>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link>
-      <pubDate>Fri, 24 Jan 2014 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid>
-      <description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
+]]></description></item><item><title>Utilizing Front End CSS Design Paradigms In Drupal</title><link>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</link><pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2014/01/24/utilizing-front-end-css-design-paradigms-in-drupal/</guid><description><![CDATA[<p>At <a href="http://www.sandcamp.org" target="_blank">SandCamp</a> I gave a talk on utilizing front end design paradigms and how they can be used with Drupal. In this talk I focused on SMACSS, however, there are many more out there such as DRY, BEM, and OOCSS. For more information, checkout my blog post on the subject of<a href="http://www.kwallcompany.com/thought/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down"> the multitude of css paradigms</a>.</p>
 <p><a href="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank">Utilizing Front End CSS Design Paradigms In Drupal Talk from SandCamp 2014</a></p>
 <iframe allowfullscreen="true" frameborder="0" height="389" mozallowfullscreen="true" src="https://docs.google.com/presentation/d/1m1UlT1P5NGG4VvTdGy2LuJcCSTFTjL3q9ZraXbfspHY/embed?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="480"></iframe>
-]]></description>
-    </item>
-    <item>
-      <title>Creating Auto Submitting Forms with Drupal&#39;s Form API</title>
-      <link>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link>
-      <pubDate>Tue, 26 Nov 2013 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid>
-      <description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
+]]></description></item><item><title>Creating Auto Submitting Forms with Drupal's Form API</title><link>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</link><pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/26/creating-auto-submitting-forms-with-drupal-s-form-api/</guid><description><![CDATA[<p>Sometimes you need a form to submit itself. A select list changes, the page reloads with new options, no extra clicks required. Drupal’s Form API has an <code>#ajax</code> handler for this, but it can be overkill when all you want is a simple page reload on change. Here is a lighter approach.</p>
 <p>If you are unfamiliar with building forms in Drupal, please view Patrick’s post on the <a href="http://www.kwallcompany.com/blog/details-formation-forms">various options for building forms in Drupal</a>. I will be focusing on forms built with <a href="https://api.drupal.org/api/drupal/developer%21topics%21forms_api_reference.html/7" target="_blank">Drupal’s Form API (or fapi)</a>.</p>
 <p>My use case was a semi-typical one: have the input from one select list affect the options in another select list.</p>
 <p>This could be done in any number of ways including:</p>
@@ -272,14 +237,7 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> $form;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>That is all there is to it. By adding a single <code>onChange</code> attribute through the form API&rsquo;s <code>#attributes</code> array, we get auto-submission without the overhead of <code>#ajax</code>. It is not the most elegant solution, but for a simple dependent select list it gets the job done with minimal code and no callback functions.</p>
-]]></description>
-    </item>
-    <item>
-      <title>css less sass oocss drycss bem front end css design paradigm smacss down</title>
-      <link>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link>
-      <pubDate>Thu, 21 Nov 2013 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid>
-      <description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
+]]></description></item><item><title>css less sass oocss drycss bem front end css design paradigm smacss down</title><link>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</link><pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/</guid><description><![CDATA[<p>Front End CSS Design Paradigms have been a very hot topic lately and <a href="http://xkcd.com/927/" target="_blank">many people are attempting to solve the problem</a> of large CSS rule sets that are difficult to maintain. With all the new options it might be difficult to decide where you should focus your attention. Here is a little overview of some of the more popular options.</p>
 <h2>Object Oriented CSS</h2>
 <p>OOCSS has several principles that it is built upon.</p>
 <ol><li>A style should be written once and only once.</li>
@@ -371,7 +329,4 @@ box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
 <h2>Who Wins?</h2>
 <p>SMACSS.</p>
 <p>At least <a href="https://drupal.org/node/1887918" target="_blank">for Drupal SMACSS won</a>. The Drupal community adopted SMACSS as its CSS architecture standard, which means if you are writing themes for Drupal, SMACSS is the paradigm you should learn first. That said, all four approaches share a common goal: write CSS that is maintainable at scale. Whichever you choose, the important thing is to choose one and be consistent.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

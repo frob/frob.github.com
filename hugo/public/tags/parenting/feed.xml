@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Parenting on Frank Robert Anderson</title>
-    <link>http://localhost:1313/tags/parenting/</link>
-    <description>Recent content in Parenting on Frank Robert Anderson</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/tags/parenting/feed.xml" rel="self" type="application/rss&#43;xml" />
-    <item>
-      <title>a new simple reading rogue like</title>
-      <link>http://localhost:1313/posts/2016/09/30/a-new-simple-reading-rogue-like/</link>
-      <pubDate>Fri, 30 Sep 2016 00:00:00 &#43;0000</pubDate>
-      <guid>http://localhost:1313/posts/2016/09/30/a-new-simple-reading-rogue-like/</guid>
-      <description><![CDATA[<h2 id="my-kid-is-smart">My kid is smart™</h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Parenting on Frank Robert Anderson</title><link>https://www.frobiovox.com/tags/parenting/</link><description>Recent content in Parenting on Frank Robert Anderson</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://www.frobiovox.com/tags/parenting/feed.xml" rel="self" type="application/rss+xml"/><item><title>a new simple reading rogue like</title><link>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</link><pubDate>Fri, 30 Sep 2016 00:00:00 +0000</pubDate><guid>https://www.frobiovox.com/posts/2016/09/30/a-new-simple-reading-rogue-like/</guid><description><![CDATA[<h2 id="my-kid-is-smart">My kid is smart™</h2>
 <p>I am going to say what every parent says, my kid is smart™. We read to her all the time and she loves it. We have been reading to her all her life. Now it&rsquo;s time for her to start to learn to read, and we are struggling. She isn&rsquo;t struggling, we (her parents) are struggling. This is because of the limited amount of material there is in this space. My daughter has a memory that is amazing; she &ldquo;reads&rdquo; her Arthur books to us word for word. This is because she has them memorized. Normally this happens after a single reading. Now that we are having her read she is doing the same thing. After one time through she is no longer reading &ndash;she is reciting.</p>
 <h2 id="what-about-a-book-that-writes-itself">What about a book that writes itself</h2>
 <p>Inside every computer there is a book just waiting to be generated &ndash;or something like that. The solution to this problem is to have a book that writes itself. Easy right, write a program that writes children&rsquo;s books.</p>
@@ -68,7 +54,4 @@
 </ul>
 <p>There is the possibility of a sequel. In the sequel the game complexity could scale to the player/user (maybe later). I have thought about this, but it is too early to consider this a feature.</p>
 <p>The goal is a book that never runs out of new pages. If I can get the template system right, a child will never be able to memorize their way through it &ndash; they will have to actually read. That is the game, and it is one worth building.</p>
-]]></description>
-    </item>
-  </channel>
-</rss>
+]]></description></item></channel></rss>

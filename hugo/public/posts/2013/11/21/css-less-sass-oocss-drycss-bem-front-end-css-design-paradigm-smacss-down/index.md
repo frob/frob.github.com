@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/ |
+| url | https://www.frobiovox.com/posts/2013/11/21/css-less-sass-oocss-drycss-bem-front-end-css-design-paradigm-smacss-down/ |
 | date | 2013-11-21 |
 | tags | drupal, kwallcompany, quarzack13, css, tutorial |
 

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2018/02/15/rearchitecting-for-drupal8/ |
+| url | https://www.frobiovox.com/posts/2018/02/15/rearchitecting-for-drupal8/ |
 | date | 2018-02-15 |
 | tags | rant, quarzack13 |
 | description | This is an export of my session from DrupalCon Baltimore 2017. This is here for posterity. The least effort possible was put into transcribing it from presentation format to a web page. |

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2015/09/10/add-some-style-to-your-javascript-log/ |
+| url | https://www.frobiovox.com/posts/2015/09/10/add-some-style-to-your-javascript-log/ |
 | date | 2015-09-10 |
 | tags | frontpage, tutorial, browsers, debug |
 | description | Style can be passed as a parameter to the console.log function. |

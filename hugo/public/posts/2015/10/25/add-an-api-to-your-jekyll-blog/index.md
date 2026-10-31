@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2015/10/25/add-an-api-to-your-jekyll-blog/ |
+| url | https://www.frobiovox.com/posts/2015/10/25/add-an-api-to-your-jekyll-blog/ |
 | date | 2015-10-25 |
 | tags | tutorial, jekyll, rest, reactjs, frontpage |
 | description | Without adding any non-Github pages approved plugins, build a RESTfull api for your blog by adding a json endpoint. |

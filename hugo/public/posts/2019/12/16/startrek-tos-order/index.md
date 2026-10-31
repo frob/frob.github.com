@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2019/12/16/startrek-tos-order/ |
+| url | https://www.frobiovox.com/posts/2019/12/16/startrek-tos-order/ |
 | date | 2019-12-16 |
 | description | Thirteen essential episodes of Star Trek: The Original Series, picked and ordered by a coworker who knows his Trek. A curated list for introducing your kids to the franchise. |
 

@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2026/08/27/farewell-to-the-burgundy/ |
+| url | https://www.frobiovox.com/posts/2026/08/27/farewell-to-the-burgundy/ |
 | date | 2026-08-27 |
 | tags | drupal, web development, frontpage |
 

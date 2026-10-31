@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2015/05/19/setting-up-jenkins-on-1204/ |
+| url | https://www.frobiovox.com/posts/2015/05/19/setting-up-jenkins-on-1204/ |
 | date | 2015-05-19 |
 | tags | frontpage, tutorial |
 | description | In this post Frank walks through the basics of setting up Jenkins to run on Ubuntu. This is a simple step by step with links to more information. |

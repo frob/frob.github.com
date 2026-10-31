@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2018/03/30/gloom-with-52-card-deck/ |
+| url | https://www.frobiovox.com/posts/2018/03/30/gloom-with-52-card-deck/ |
 | date | 2018-03-30 |
 | tags | frontpage, tutorial, gaming |
 | description | I played the Edward Gorey inspired card game Gloom the other day. The game and mechanics are fun, but if the dark humor of the game isn't for you then try these rules on a standard 52 card deck. |

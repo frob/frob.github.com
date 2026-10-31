@@ -2,7 +2,7 @@
 
 | key | value |
 | --- | --- |
-| url | http://localhost:1313/posts/2016/11/21/my-dilemma--what-technology-to-pursue/ |
+| url | https://www.frobiovox.com/posts/2016/11/21/my-dilemma--what-technology-to-pursue/ |
 | date | 2016-11-21 |
 | tags | web development, rant, frontpage, elixir |
 | description | I need to know what to study, not that I am bored or have lots of time. I just need a new tool in my belt. |
