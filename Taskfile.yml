@@ -8,6 +8,7 @@ vars:
   AWS_IMAGE: amazon/aws-cli:latest
   THEME_DIR: hugo/themes/frobiovox-theme
   BUCKET: www.frobiovox.com
+  PROD_URL: https://www.frobiovox.com/
   NETWORK: frobiovox-net
   DEV_CONTAINER: frobiovox-site-dev
   PREVIEW_CONTAINER: frobiovox-site-preview
@@ -69,7 +70,15 @@ tasks:
   build:prod:
     desc: Build the site for production (minified)
     cmds:
-      - "{{.HUGO_RUN}} hugo --cleanDestinationDir --minify"
+      - "{{.HUGO_RUN}} hugo --cleanDestinationDir --minify --environment production --baseURL {{.PROD_URL}}"
+
+  check:prod:
+    desc: Fail unless hugo/public is a production build (no localhost URLs, sitemap under the production URL). Does not rebuild.
+    cmds:
+      - >-
+        docker run --rm -u {{.UID}}:{{.GID}}
+        -v {{.ROOT_DIR}}:/src -w /src
+        {{.PYTHON_IMAGE}} python3 scripts/check_prod_build.py hugo/public {{.PROD_URL}}
 
   build:all:
     desc: Build theme assets and the production site
@@ -162,6 +171,7 @@ tasks:
     cmds:
       - task: build:css
       - task: test:rss
+      - task: check:prod
       - >-
         docker run --rm -u {{.UID}}:{{.GID}}
         --env-file {{.ROOT_DIR}}/.env
